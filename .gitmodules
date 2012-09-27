@@ -1,0 +1,9 @@
+[submodule "coffeescripts/plugins/symbolset"]
+	path = coffeescripts/plugins/symbolset
+	url = git@github.com:hiof/symbolset-js.git
+[submodule "sass/plugins/symbolset"]
+	path = sass/plugins/symbolset
+	url = git@github.com:hiof/symbolset-css.git
+[submodule "fonts/symbolset"]
+	path = fonts/symbolset
+	url = git@github.com:hiof/symbolset-fonts.git
