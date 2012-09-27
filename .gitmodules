@@ -7,3 +7,9 @@
 [submodule "fonts/symbolset"]
 	path = fonts/symbolset
 	url = git@github.com:hiof/symbolset-fonts.git
+[submodule "sass/plugins/neted"]
+	path = sass/plugins/neted
+	url = git@github.com:hiof/neted-css.git
+[submodule "coffeescripts/plugins/neted"]
+	path = coffeescripts/plugins/neted
+	url = git@github.com:hiof/neted-js.git
