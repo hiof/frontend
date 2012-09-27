@@ -1,0 +1,1226 @@
+//--------------------------------------------------------------------------
+// GENERAL
+//--------------------------------------------------------------------------
+
+html
+  background-attachment: fixed !important
+  background: #f0f0ef
+  +background-image(linear-gradient(color-stops(#ffffff, #f0f0ef)))
+
+#body
+  +box-shadow(rgba(black, .3) 0px 0px 4px)
+  color: #363636
+  background: #fff
+a
+  color: $link
+  &:hover
+    color: $link-hover
+  &:visited
+    color: $link-visited
+
+// nav
+//   > ul
+//     > li
+//       > ul
+//         margin-left: 10px
+//         margin-left: 1rem
+//         > li
+//           > ul
+//             margin-left: 10px
+//             margin-left: 1rem
+//             > li
+//               > ul
+//                 margin-left: 10px
+//                 margin-left: 1rem
+
+// ---------------------------------------------------------
+/* Header
+#header
+  background: $base-color
+  +background-image(linear-gradient(color-stops($base-color-lighten, $base-color)))
+
+
+// LOGO
+@import logo/*.png
+@import faculty/*.png
+//@import logo-english/*.png
+@include all-logo-sprites
+@include all-faculty-sprites
+
+
+
+// Icons
+
+// @import icons/*.png
+// @include all-icons-sprites
+
+
+
+#logo-hiof, #site-sublogo
+  display: block
+  float: left
+
+#logo-hiof
+  width: 244px
+  width: 24.4rem
+  height: 44px
+  height: 4.4rem
+  margin: 20px 0 0 20px
+  margin: 2rem 0 0 2rem 
+
+#site-sublogo
+  width: 260px
+  width: 26rem
+  height: 28px
+  height: 2.8rem
+  margin-top: 28px
+  margin-top: 2.8rem
+
+
+
+// NAVIGATION
+#navigation
+
+
+
+
+// SEARCH
+#search
+  display: none
+
+
+
+
+// BREADCRUMB
+
+
+
+// Start - generated content from JavaScript
+#navigation-mobile, #navigation-sidebar
+  background: #3b5f75
+  margin-top: 6px
+  margin-top: .6rem
+  border-radius: 3px
+  +box-shadow(rgba(black, .8) 0px 0px 2px inset, rgba(white, .2) 0px 1px 0px)
+  position: relative
+  width: 34px
+  height: 30px
+  color: #fff
+  font-size: 20px
+  font-size: 2rem
+  padding: 5px 0 0 8px
+  +transition-property(content)
+  +transition-duration(2s)
+  &:hover
+    cursor: pointer
+
+
+#navigation-mobile
+  float: left
+  margin-left: 10px
+  margin-left: 1rem
+  margin-right: 10px
+  margin-right: 1rem
+
+
+#navigation-sidebar
+  float: right
+  margin-right: 10px
+  margin-right: 1rem
+
+// End - generated content from JavaScript
+
+
+
+
+
+// ---------------------------------------------------------
+/* Content
+
+#content
+  background: #fff
+  > a
+    display: none !important
+/* News
+.article
+  width: 50%
+  +transition-property(width)
+  +transition-duration(.5s)
+  +transition-timing-function(linear)
+  //+box-shadow(rgba(black, .3) 0px 1px 3px)
+  //+box-shadow(rgba(black, .3) 0rem .1rem .3rem)
+  +border-top-right-radius(25px)
+  +border-top-right-radius(2.5rem)
+  +border-bottom-right-radius(25px)
+  +border-bottom-right-radius(2.5rem)
+
+  a img
+    background: #fff
+    +box-shadow(rgba(black, .7) 0px 0px 3px)
+    +box-shadow(rgba(black, .7) 0rem 0rem .3rem)
+    +transition-property(width)
+    +transition-duration(.25s)
+    +transition-timing-function(linear)    
+    +transition-property(box-shadow)
+    +transition-duration(.25s)
+    +transition-timing-function(linear)
+
+.article-single
+  h1
+    font-size: 18px
+    font-size: 1.8rem
+  // img
+  //   max-width: 600px
+  //   max-width: 60rem
+
+.news_article-ingress
+  font-weight: bold
+  margin-bottom: 20px
+  margin-bottom: 2rem
+  display: block
+
+.read-more
+  padding: 5px 7px
+  padding: .5rem .7rem
+  //background: $blue
+  +box-shadow(rgba(black, .8) 0px 0px 1px, rgba(white, .2) 0px -1px 0px inset)
+  padding-left: .7rem
+  &:before
+    content: "> "
+    font-family: iconSweetsRegular
+    font-size: 10px
+    font-size: 1rem
+    color: $blue
+
+
+
+
+
+
+// ---------------------------------------------------------
+// Sidebars
+
+
+
+#page_tree_nav, #sidebar_a, #sidebar_b
+  > .box
+    margin-bottom: 20px
+    margin-bottom: 2rem
+    // > ul
+    //   > ul
+    //     margin-left: 10px
+
+
+
+
+//---------------------------------------------------------------------------
+// Ribbon
+//---------------------------------------------------------------------------
+
+
+
+
+.ribbon
+  position: relative
+  background: #fff
+  +text-shadow(rgba(black, .4) 0px 1px 1px)
+  +text-shadow(rgba(black, .4) 0rem .1rem .1rem)
+  display: block
+  font-size: 14px
+  font-size: 1.4rem
+  margin-top: 0px
+  margin-top: 0rem
+  +text-shadow(rgba(black, .4) 0px 1px 1px)
+  +text-shadow(rgba(black, .4) 0rem .1rem .1rem)
+  z-index: 2
+  margin-bottom: 2rem
+  &:before, &:after
+    content: ''
+    position: absolute
+    border-style: solid
+    border-color: transparent
+    bottom: -10px
+    bottom: -1rem
+  &:before
+    border-right-color: #ddd
+  &:after
+    border-left-color: #ddd
+
+  // Color variation of the ribbon
+  &.blue
+    background: $blue
+    +background-image(linear-gradient(color-stops($base-color-lighten, $base-color)))
+    color: #fff
+    &:before
+      border-right-color: #000
+    &:after
+      border-left-color: #000
+
+  &.red-it
+    background: $red-it
+    +background-image(linear-gradient(color-stops($red-it-lighten, $red-it)))
+    color: #fff
+    &:before
+      border-right-color: $red-it-darken
+    &:after
+      border-left-color: $red-it-darken
+
+  &.yellow-lu
+    background: $yellow-lu
+    +background-image(linear-gradient(color-stops($yellow-lu-lighten, $yellow-lu)))
+    color: #111
+
+    &:before
+      border-right-color: $yellow-lu-darken
+    &:after
+      border-left-color: $yellow-lu-darken
+
+  &.light-blue-oss
+    background: $light-blue-oss
+    +background-image(linear-gradient(color-stops($light-blue-oss-lighten, $light-blue-oss)))
+    color: #fff
+
+    &:before
+      border-right-color: $light-blue-oss-darken
+    &:after
+      border-left-color: $light-blue-oss-darken      
+
+  &.orange-ir
+    background: $orange-ir
+    +background-image(linear-gradient(color-stops($orange-ir-lighten, $orange-ir)))
+    color: #fff
+
+    &:before
+      border-right-color: $orange-ir-darken
+    &:after
+      border-left-color: $orange-ir-darken
+
+  &.green-hs
+    background: $red-it
+    +background-image(linear-gradient(color-stops($green-hs-lighten, $green-hs)))
+    color: #fff
+
+    &:before
+      border-right-color: $green-hs-darken
+    &:after
+      border-left-color: $green-hs-darken
+
+
+
+//---------------------------------------------------------------------------
+// /ribbon
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+
+
+.box
+  position: relative
+  padding: 0
+  padding: 0
+  background: $light-blue
+  padding: 15px 0
+  padding: 1.5rem 0
+  +border-radius($border-radius-small-px)
+  +border-radius($border-radius-small-rem)
+  +border-top-right-radius(0)
+  +border-bottom-right-radius(0)
+  +box-shadow(rgba(black, .3) 0 0 3px inset)
+  > *
+    margin: 0px 15px
+    margin: 0rem 1.5rem  
+  > a
+    display: block
+    width: 47px
+    width: 4.7rem
+    position: absolute
+    top: 5px
+    top: .5rem
+    right: 5px
+    right: .5rem
+    display: none
+  > h1
+    display: block
+    font-size: 14px
+    font-size: 1.4rem
+    line-height: 20px
+    line-height: 3rem
+    margin-bottom: 20px
+    margin-bottom: 2rem
+  > ul
+    padding: 0
+    margin: 0px
+    margin: 0rem
+    li
+      list-style: none
+    a
+      border-bottom: 1px solid #f3f8fc
+      border-bottom: 1px solid rgba(white, .6)
+    > li
+      position: relative
+      // padding: 0px 25px 0px 0px 
+      // padding: 0rem 2.5rem 0rem 0rem
+      &:hover
+        // background: #fff
+        // +box-shadow(rgba(black, 1) inset)
+      a
+        display: block
+        padding: 5px 0px
+        padding: .5rem 0rem
+        padding-left: 10px
+        padding-right: 15px
+        &:before
+          +transition (all, 3s, ease-in-out)
+        &:hover
+          text-decoration: none
+      li
+        position: relative
+        display: block
+        &:before
+          display: none
+          width: 20px
+          width: 2rem
+          height: 20px
+          height: 2rem
+          content: "navigateright"
+          position: absolute
+          left: 5px
+          left: .5rem
+          top: 7px
+          top: .7rem
+          font-family: SSStandard
+          font-size: 10px
+          font-size: 1rem
+          color: $base-color
+          opacity: 0
+          +transition-property(opacity)
+          +transition-duration(3s)
+        &:hover
+          &:before
+            opacity: 1
+            display: block
+        a
+          padding-left: 20px
+        li
+          &:before
+            left: 17px
+          a
+            padding-left: 30px
+          li
+            &:before
+              left: 27px
+            a
+              padding-left: 40px
+        // > ul
+        //   margin: 0
+        //   li
+        //     padding-left: 20px
+
+        //   ul
+        //     margin: 0
+        //     li
+        //       padding-left: 40px
+      //time
+  .rss-icon
+    display: none
+#active-link
+  position: relative
+  background: $hiof-blue
+  color: #fff
+  // +box-shadow(rgba(black, .8) 0 0 1px)
+  &:after
+    position: absolute
+    content: " "
+    width: 0
+    height: 0
+    border-top: 13px solid transparent
+    border-right: 13px solid #fff
+    border-bottom: 13px solid transparent
+    right: 0px
+    top: 0px
+    // +box-shadow(rgba(black, .3) -3px 0 1px)
+
+
+
+#sidebar_b, #sidebar_a, #page_tree_nav
+  .ribbon
+    +border-top-left-radius(23px)
+    +border-top-left-radius(2.3rem)
+    +border-bottom-left-radius(22px)
+    +border-bottom-left-radius(2.2rem)
+    margin-left: 15px
+    margin-left: 1.5rem
+    margin-right: -10px
+    margin-right: -1rem
+    padding: 10px 0 10px 20px
+    padding: 1rem 0 1rem 2rem
+    &:before
+      // border-right-color: transparent
+    &:after
+      border-width: 0 0 10px 10px
+      border-width: 0 0 1rem 1rem
+      right: 0px
+      right: 0rem
+
+@media only screen and (max-width: 1039px)
+  #sidebar_b, #sidebar_a, #page_tree_nav
+    .ribbon
+      &:before
+        border-right-color: transparent
+  #active-link
+    padding-left: 20px
+    &:after
+      left: 0px
+      border-left: 16px solid #fff
+      border-right: none
+
+
+// Module specific CSS
+.hogskoleavisa-navigation
+  ul
+    padding: 0
+    margin: 0
+    li
+      list-style: none
+      a
+        display: block
+        padding: 5px 10px
+        padding: .5rem 1rem
+        text-transform: uppercase
+        font-size: 14px
+        font-size: 1.4rem
+        line-height: 16px
+        line-height: 1.6rem
+      &:before
+        display: none
+
+
+
+
+
+// Neted generated content
+
+
+
+// News module
+
+.news_ingressOnly
+  float: left
+  clear: right
+.news_ingressOnly-article_block
+  margin: 10px 0px
+  margin: 1rem 0rem
+  clear: right
+.news_ingressOnly-article_block-title
+  font-size: 24px
+  font-size: 2.4rem
+  line-height: 40px
+  line-height: 4rem
+.news_ingressOnly-article_block-image_at_right
+  float: right
+
+
+// #active-link
+//   &:before
+//     width: 20px
+//     width: 2rem
+//     height: 20px
+//     height: 2rem
+//     display: block
+//     content: "location"
+//     position: absolute
+//     left: 7px
+//     left: .7em
+//     top: 7px
+//     top: .7rem
+//     font-family: SSStandard
+//     font-size: 10px
+//     font-size: 1rem
+//     color: $link
+// ul ul
+//   #active-link
+//     &:before
+//       left: -15px
+//       left: -1.5rem
+// Literaturliste styling
+
+.studieinfo_displayUserDefinedList table td
+  border: 1px solid #333
+
+
+.StudieinfoTdHeaderList
+  font-weight: bold !important
+
+.StudieinfoTdList
+  vertical-align: top !important
+
+
+
+//-------------------------------------------------------------------------------------------------------
+
+
+//---------------------------------------------------------------------------
+// buttons
+//---------------------------------------------------------------------------
+
+
+
+.btn
+  display: inline-block
+  float: left
+  background: $blue-medium
+  +background-image(linear-gradient(color-stops($blue-light 0%, $blue-medium 100%)))
+  border: 0.1em solid $blue-medium
+  border-radius: 0.3em
+  +box-shadow(rgba(black, .8) 0 1px 3px, inset rgba(white, .7) 0 0 1px)
+  +box-shadow(rgba(black, .8) 0 .1rem .3rem, inset rgba(white, .7) 0 0 .1rem)
+  color: white
+  font-size: 12px
+  font-size: 1.2rem
+  margin-right: 10px
+  margin-right: 1em
+  +text-shadow(rgba(black, .3) 1px 1px 0, rgba(white, .1) 2px 2px 0)
+  +text-shadow(rgba(black, .3) .1rem .1rem 0, rgba(white, .1) .2rem .2rem 0)
+  text-transform: uppercase
+  line-height: 44px
+  line-height: 4.4rem
+  position: relative
+  padding: 10px
+  padding: 1rem
+  height: 44px
+  height: 4.4rem
+  span.arrow, p
+    display: block
+    float: left
+    width: 30px
+    width: 3rem
+    padding-left: 10px
+    padding-left: 1rem
+    margin-right: 10px
+    margin-right: 1rem
+    +box-shadow(rgba(white, .3) 1px 0 0, rgba(black, .2) 2px 0 0)
+    +box-shadow(rgba(white, .3) .1rem 0 0, rgba(black, .2) .2rem 0 0)
+    padding-top: 1px
+    padding-top: .1rem
+    height: 43px
+    height: 4.3rem
+    line-height: 44px
+    line-height: 4.4rem
+  &:hover
+    cursor: hand
+    cursor: pointer
+    text-decoration: none
+    background: #47c5ed
+    span.arrow
+      +box-shadow(rgba(black, .3) -1px 0 0, rgba(white, .3) -2px 0 0)
+      +box-shadow(rgba(black, .3) -.1rem 0 0, rgba(white, .3) -.2rem 0 0)
+      //+background-image(linear-gradient(color-stops(#188dd9 0%, #47c5ed 100%)))
+      +background-image(linear-gradient(color-stops(#47c5ed 0%, #188dd9 100%)))
+      +rotate(180deg)
+
+  &.blue
+    background: $blue-medium
+    +background-image(linear-gradient(color-stops($blue-light 0%, $blue-medium 100%)))
+    border: 0.1em solid $blue-medium
+    color: #fff
+    &:hover
+      +background-image(linear-gradient(color-stops(lighten($blue-light, 5%) 0%, $blue-medium 100%)))
+    &:active
+      +background-image(linear-gradient(color-stops($blue-medium 0%, $blue-light 100%)))   
+  &.green
+    +background-image(linear-gradient(color-stops($green-light 0%, $green-medium 100%)))
+    border: 0.1em solid $green-medium
+    color: #fff
+    &:hover
+      +background-image(linear-gradient(color-stops(lighten($green-light, 5%) 0%, $green-medium 100%)))
+    &:active
+      +background-image(linear-gradient(color-stops($green-medium 0%, $green-light 100%)))
+  &.orange
+
+  &.red
+
+  &.gray
+    +background-image(linear-gradient(color-stops($white 0%, $gray 100%)))
+    border: 0.1em solid $gray
+    color: #333
+    &:hover
+      +background-image(linear-gradient(color-stops(lighten($gray, 74%) 0%, $white 100%)))
+  &:active
+    +box-shadow(inset rgba(black, .7) 0 0 3px)
+    +text-shadow(none)
+
+
+input[type="submit"].btn, select.btn
+  -webkit-appearance: none
+  -moz-appearance: none
+  -o-appearance: none
+  appearance: none
+  height: 44px
+  line-height: 20px
+
+
+select.btn
+  text-align: center
+  width: 100%
+
+
+// Strange fixes
+#shortcuts
+  .btn
+    padding: 0
+    padding-right: 1rem
+.tabcontent
+  display: block
+  width: 100%
+  height: 100%
+  .btn
+    line-height: 22px
+    line-height: 2.2rem
+    margin-top: 10px
+    margin-top: 1rem
+  a.btn
+    position: absolute
+    // bottom: 0
+    // // left: 0
+    right: 0
+    // // margin-right: 0px
+    // // width: 150px
+    // line-height: 2.2rem
+
+
+//---------------------------------------------------------------------------
+// /buttons
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------
+// Space
+//---------------------------------------------------------------------------
+
+
+
+
+.space-top
+  margin-top: 10px
+  margin-top: 1rem
+  padding-top: 10px
+  padding-top: 1rem
+  border-top: 1px solid rgba(0,0,0, .3)
+
+
+
+//---------------------------------------------------------------------------
+// /space
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------
+// Dropdown
+//---------------------------------------------------------------------------
+
+
+
+.drop
+  //display: none
+  margin: 0px
+  width: 320px
+  z-index: 200
+  height: 0
+  opacity: 0
+  overflow: hidden
+  position: absolute
+  top: 44px
+  left: 0px
+  background: #fff
+  padding: 10px
+  padding: 1rem
+  font-family: verdana, arial, sans-serif
+  text-shadow: none
+  +box-shadow(rgba(black, .8) 0 2px 4px)
+  +border-top-right-radius(5px)
+  +transition-property(opacity)
+  +transition-duration(.5s)
+  li
+    a
+      font-family: verdana, arial, sans-serif
+      line-height: 2.5rem
+      display: block
+      //width: 100%
+      padding: 0 1rem
+      +transition-property(padding)
+      +transition-duration(.25s)
+      &:hover
+        background: $hiof-blue
+        color: #fff
+        text-decoration: none
+        padding-left: 1.7rem
+
+
+
+//---------------------------------------------------------------------------
+// /dropdown
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+
+
+//---------------------------------------------------------------------------
+// Slideout
+//---------------------------------------------------------------------------
+
+
+
+.slideout
+  display: none
+  width: 250px
+  z-index: 200
+  height: 0
+  opacity: 0
+  overflow: hidden
+  position: absolute
+  top: -6px
+  left: 0px
+  background: #fff
+  padding: 10px 0
+  padding: 1rem 0
+  font-family: verdana, arial, sans-serif
+  text-shadow: none
+  // +box-shadow(rgba(black, .3) 1px 0px 3px)
+  +border-top-right-radius(5px)
+  +border-bottom-right-radius(5px)
+  +transition-property(opacity, left)
+  +transition-duration(1s)
+  +box-shadow(rgba(black, .3) 0 0 3px inset)
+  background: $light-blue
+  li
+    a
+      font-family: verdana, arial, sans-serif
+      line-height: 2.5rem
+      display: block
+      padding: 0 1rem
+      &:hover
+        text-decoration: none
+
+.head
+  position: relative
+  &:hover
+    .slideout
+      display: block
+      opacity: 1
+      // left: -261px
+      height: auto
+//---------------------------------------------------------------------------
+// /slideout
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+//---------------------------------------------------------------------------
+// Frontpage
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+
+#study
+  //border: 1px solid #333
+  //+border-radius(5px)
+  height: 345px
+  position: relative
+  //+box-shadow(rgba(black, 1) 0 0 1px)
+  padding-left: 30px
+  .tabs.vertical
+    position: absolute
+    top: 44px
+    left: 30px
+    width: 223px
+    float: left
+    +box-shadow(rgba(black, .7) 0 0 1px)
+    padding: 0
+    margin: 0
+    li
+      list-style: none
+      border-bottom: 1px solid #b7babd
+
+      a
+        
+        color: #346f91
+        display: block
+        line-height: 4.4rem
+        text-transform: uppercase
+        padding-left: 10px
+        +box-shadow(inset rgba(black, .2) -2px 0 1px)
+        &.active
+          background: #fff
+          background: #fff inline-image("graphic/studietilbud-selected.png") top left no-repeat
+          margin-left: -40px
+          margin-right: -1px
+          padding-left: 50px
+          position: relative
+          +box-shadow(rgba(black, .7) -2px 0 2px)
+          &:before
+            content: ''
+            position: absolute
+            bottom: -1rem
+            left: 0rem
+            width: 0
+            height: 0
+            border-top: 10px solid black
+            border-left: 10px solid transparent
+        &:hover
+          text-decoration: none
+      // &.selected
+      //   background: #fff
+      //   margin-left: -30px
+      //   margin-right: -30px
+      //   padding-left: 30px
+      //   +box-shadow(rgba(black, .7) -1px 0 2px)
+      //   z-index: 10
+      //   &:before
+
+      &:last-child
+        border-bottom: none
+  .tabcontents
+    position: absolute
+    top: 44px
+    right: 0
+    background: #fff
+    width: 55%
+    float: left
+    margin-left: -5px
+    padding: 10px
+    height: 305px
+    +box-shadow(rgba(black, .7) 0 0 1px)
+
+
+
+
+
+
+#news
+
+#news-promoted
+  padding-right: 30px
+  #slider
+    +box-shadow(rgba(black, .7) 0 0 1px)
+    border: 5px solid #fff
+    .nivo-main-image
+      //+box-shadow(rgba(black, 1) 0 0 2px)
+      //border: 5px solid #fff 
+
+
+#calendar
+  padding-left: 30px
+  div
+    float: left
+    width: 125px
+    height: 170px
+    +box-shadow(rgba(black, .7) 0 0 1px)
+    margin-right: 8px
+    position: relative
+    span
+      display: block
+      &[itemprop="description"], &[itemprop="location"]
+        display: none
+    time
+      &[itemprop="startDate"]
+        display: block
+        margin-top: 30px
+        width: 40px
+        border-left: 5px solid #2e576d
+        //text-align: center
+        font-size: 18px
+        padding: 5px
+        position: absolute
+        bottom: 20px
+      &[itemprop="endDate"]
+        display: none
+    a
+      width: 100%
+      height: 45px
+      height: 4.5rem
+      padding: 5px 10px
+      padding: .5rem 1rem
+      &[itemprop="url"]
+        position: absolute
+        top: 20px
+        left: 0
+        background: #2e576d
+        color: #fff
+#news-headlines
+  position: relative
+  padding-right: 30px
+  ul
+    padding: 0
+    margin: 0
+    +box-shadow(rgba(black, .5) 0 0 1px)
+  li
+    list-style: none
+    a
+      border-bottom: 1px solid #ddd
+      display: block
+      padding: 10px
+      padding: 1rem      
+      +transition-property(padding)
+      +transition-duration(.25s)
+      &:hover
+        text-decoration: none
+        padding-left: 20px
+        padding-left: 2rem
+    &:last-child
+      a
+        border: none
+  .btn
+    margin: 0
+    margin-top: 1rem
+    padding: 0rem 1rem
+    float: right
+    position: relative
+    padding-right: 25px
+    padding-right: 2.5rem
+    &:before
+      position: absolute
+      right: 5px
+      top: 1px
+#adds
+  ul
+    padding: 0
+    margin: 0
+  li
+    list-style: none
+    a
+      display: block
+      padding: 1rem
+      //height: 50px
+      //+box-shadow(rgba(black, .7) 0 0 1px)
+      margin-bottom: 10px
+      &:hover
+        text-decoration: none
+
+
+#social-media
+  a
+    width: 260px
+    height: 100px
+    display: block
+    +box-shadow(rgba(black, .7) 0 0 1px)
+    float: left
+    padding-left: 80px
+    font-family: "SSSocial"
+    font-size: 2em
+    padding-top: 44px
+    color: #fff
+    position: relative
+    +border-radius(3px)
+    &:before, &:after
+      font-size: 5rem
+      top: 28px
+      left: 30px
+      //background: $hiof-blue
+    &:hover
+      text-decoration: none
+    &.facebook
+      background: inline-image("graphic/bg-facebook-2x100.png") repeat-x
+      margin-left: 30px
+      margin-right: 10px
+      &:before
+        content: "facebook"
+        position: absolute
+
+    &.twitter
+      &:before
+        content: "twitter"
+    &.flickr
+      background: inline-image("graphic/bg-flickr-2x100.png") repeat-x
+      color: #0465dc
+      &:before
+        content: "flickr"
+        overflow: hidden
+        width: 25px
+        display: block
+        position: absolute
+        //top: 50px
+        //left: 50px
+      &:after
+        display: block
+        content: "flickr"
+        color: #fe0486
+        width: 25px
+        //font-size: 3rem
+        overflow: hidden
+        position: absolute
+        //top: 50px
+        left: 55px
+
+
+
+
+// Selectbox 
+
+
+#search
+  .select2-choice
+    border: none
+    background: none
+    // margin-top: 8px
+    // padding-left: 17px
+  .select2-drop
+    width: 220px
+    top: 45px
+  .select2-search
+    display: none
+  .select2-choice
+    +box-shadow(none)
+    height: 44px
+  .select2-container .select2-choice div
+    background: none
+    left: 5px
+    top: 10px
+    border: none
+
+
+
+
+//---------------------------------------------------------------------------
+// /frontpage
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+//---------------------------------------------------------------------------
+// profiles
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+.profile
+  &.vcard
+    width: 200px
+    float: left
+    padding: 0    
+    padding-top: 10px
+    .n
+      font-size: 1.4rem
+    h2
+      font-size: 1.3rem
+    .photo-wrap
+      width: 80px
+      height: 80px
+      float: left
+      margin: 1rem
+      margin-left: 0rem
+      margin-right: 2rem
+      +border-radius(80px)
+      +border-radius(8rem)
+      // +border-top-left-radius(20px)
+      // +border-top-left-radius(2rem)
+      // +border-top-right-radius(20px)
+      // +border-top-right-radius(2rem)
+      // +border-top-left-radius(4rem 2rem)
+      // +border-top-right-radius(4rem 2rem)
+      // +border-bottom-left-radius(4em 2rem)
+      // +border-bottom-right-radius(4rem 2rem)
+      overflow: hidden
+      border: .5rem solid #fff
+      +box-shadow(rgba(black, .7) 0 0 3px)
+
+      top: 0
+      margin-left: 50px
+
+  .expertise
+    padding-top: 27px
+    width: 380px
+    float: right
+
+// #content
+//   position: relative
+.sticky
+
+  .vcard
+    // left: 0
+
+    position: fixed
+    top: 0
+  .expertise
+
+
+
+
+//---------------------------------------------------------------------------
+// /profiles
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------
+// ansatt / student
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+
+#employee, #student
+  background: pink
+
+
+//---------------------------------------------------------------------------
+// /ansatt / student
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+// ---------------------------------------------------------
+/* Footer
+
+#footer
+  background: #f0f0ef
+
+#col_01
+  background: #E4EFF5
+  padding: 10px 30px
+  padding: 1rem 3rem
+  border-bottom: 10px solid #fff
+
+#col_02, #col_03, #col_04
+  padding: 10px
+
+
+
+// DESIGN TOOLS
+.share
+  position: absolute
+  top: 5px
+  right: 5px
+  .rss-icon
+.rss-icon
+  display: none !important
+
+.text-orange
+  color: $orange

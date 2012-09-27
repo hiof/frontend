@@ -1,0 +1,24 @@
+$sitewidth: 104rem
+$margin: .2rem
+#body
+  +column-setup
+#content
+  +column-width(1.85)
+  margin-left: 250px
+
+#page_tree_nav, #sidebar_a, #sidebar_b
+  +column-width(5)
+
+#page_tree_nav, #sidebar_a
+  position: absolute
+  left: 0
+// #sidebar_a
+//   top: 500px
+#sidebar_b
+  position: absolute
+  right: 0
+#footer
+  #col_01
+    +column-width(1)
+  #col_02, #col_03, #col_04
+    +column-width(3)

@@ -1,0 +1,81 @@
+//--------------------------------------------------------------------------
+/* Stylesheet section: layout/layout
+// Author: Kenneth Dahlstrøm Nordahl
+// Updated April 13th, 2012
+//--------------------------------------------------------------------------
+
+
+// TOOLS IN USE IN THIS DOCUMENT
+
+@import _scalablegs
+
+
+@import layout/_general
+
+
+
+@media only screen and (max-width: 599px)
+  @import layout/_up-to-600
+
+
+@media only screen and (min-width: 600px) and (max-width: 1039px)
+  @import layout/_600-to-1039
+
+
+@media only screen and (min-width: 1040px) and (max-width: 1139px)
+  @import layout/_1040-to-1139
+
+@media only screen and (min-width: 1140px)
+  @import layout/_1140-and-up
+
+
+// Special modules
+
+
+@media only screen and (max-width: 1039px)
+  #study, #news-promoted, #news-headlines, #calendar, #social-media, #adds
+    width: 100%
+    float: left
+    margin-bottom: 20px
+
+
+
+
+
+// @media only screen and (min-width: 1040px)
+$sitewidth: 114rem
+$margin: .2rem
+#frontpage
+  #body
+    +column-setup  
+
+// FRONT
+#content-frontpage
+  // margin-top: -44px
+  // margin-top: -4.4rem
+#study, #news-promoted, #news-headlines, #calendar, #social-media, #adds
+  width: 49.5%
+  float: left
+  margin-bottom: 20px
+
+// #news-headlines, #adds
+//   width: 24%
+#calendar
+  margin-top: -42px
+//   position: absolute
+//   top: 550px
+//   left: 0px
+//   float: left
+#news-promoted, #news-headlines, #adds
+  margin-left: 1%
+#news-promoted
+// #study
+//   position: absolute
+//   left: 0px
+// #news
+//   width: 50%
+//   position: absolute
+//   right: 0px
+#calendar
+#social-media
+

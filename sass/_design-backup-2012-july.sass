@@ -1,0 +1,1235 @@
+//--------------------------------------------------------------------------
+/* Stylesheet section: design/core
+// Author: Keneth Nordahl
+// Updated February 22nd, 2012
+//--------------------------------------------------------------------------
+
+
+// TOOLS IN USE IN THIS DOCUMENT
+
+@import compass/css3
+@import color
+
+
+
+//--------------------------------------------------------------------------
+// GENERAL
+//--------------------------------------------------------------------------
+
+html
+  background-attachment: fixed !important
+  background: #f0f0ef
+  +background-image(linear-gradient(color-stops(#ffffff, #f0f0ef)))
+
+#body
+  +box-shadow(rgba(black, .3) 0px 0px 4px)
+  color: #363636
+  background: #fff
+a
+  color: $link
+  &:hover
+    color: $link-hover
+  &:visited
+    color: $link-visited
+
+// ---------------------------------------------------------
+/* Header
+#header
+  background: $base-color
+  +background-image(linear-gradient(color-stops($base-color-lighten, $base-color)))
+
+
+// LOGO
+@import logo/*.png
+@import faculty/*.png
+//@import logo-english/*.png
+@include all-logo-sprites
+@include all-faculty-sprites
+
+
+
+
+// Icons
+
+// @import icons/*.png
+// @include all-icons-sprites
+
+
+
+#logo-hiof, #site-sublogo
+  display: block
+  float: left
+
+#logo-hiof
+  width: 244px
+  width: 24.4rem
+  height: 44px
+  height: 4.4rem
+  margin: 20px 0 0 20px
+  margin: 2rem 0 0 2rem 
+
+#site-sublogo
+  width: 260px
+  width: 26rem
+  height: 28px
+  height: 2.8rem
+  margin-top: 28px
+  margin-top: 2.8rem
+
+
+
+// NAVIGATION
+#navigation
+  background: #d9d9d8
+  +background-image(linear-gradient(color-stops(#d9d9d8 0%, #ffffff 50%, #d9d9d8 100%)))
+  ul
+    padding: 0
+    margin: 0
+    li
+      float: left
+      display: block
+      overflow: none
+      position: relative
+      &:hover, .active
+        +box-shadow(#ffffff 0 -5px 0)
+      a
+        text-transform: uppercase
+
+        &:hover
+          text-decoration: none
+    .dropdown
+      display: none
+
+
+
+// SEARCH
+
+
+#search
+  background: #e4eaee
+  position: relative
+  width: 300px
+  height: 44px
+  float: right
+  margin-top: 20px
+  margin-right: 20px
+  +border-radius(3px)
+  +border-radius(.3rem)
+  +box-shadow(rgba(black, .8) 0px 0px 2px inset)
+#search-select
+  -webkit-appearance: none
+  // position: relative
+  width: 34px
+  height: 34px
+  margin-top: 5px
+  line-height: 34px
+  opacity: 0
+  background-color: rgba(0, 0, 0, 0)
+  //background: inline-image("icons/dropdown.png")
+  // z-index: 10
+  // border: none
+  // //background: #e4eaee
+  // // position: absolute
+  // // left: 0px
+  // z-index: 2
+  // // top: 5px
+  // text-indent: -99em
+  // &:before
+  //   text-indent: 0em
+  // option
+  //   -webkit-appearance: none
+
+  //   width: 200px
+  //   border: none
+  //   height: 24px
+  //   line-height: 24px
+  //   font-size: 16px
+  //   &:hover
+  //     background-color: yellow
+  // &:focus
+  //   -webkit-appearance: none
+  //   width: 300px
+  //   background: yellow
+
+.searchselect
+  position: absolute
+  top: 5px
+  float: left
+  left: 0
+  width: 34px
+  height: 34px
+  line-height: 26px
+  text-indent: 10px
+  background: inline-image("icons/dropdown.png")
+  cursor: default
+  z-index: -1
+  text-indent: -99em
+
+.ui-selectmenu-menu
+  top: 64px !important
+  right: 68px !important
+#search-field
+
+  position: absolute
+  left: 34px
+  z-index: 1
+  top: 5px
+  input
+    width: 230px
+    height: 34px
+    line-height: 34px
+    padding-left: 10px
+    font-size: 16px
+    border: 1px solid #b2c4d4
+    +border-radius(3px)
+    +border-radius(.3rem)
+#search-button
+  -webkit-appearance: none
+  border: none
+  position: absolute
+  right: 5px
+  z-index: 2
+  top: 5px
+  input
+    width: 34px
+    height: 34px
+    -webkit-appearance: none
+    border: none
+    +background-image(linear-gradient(color-stops(#188dd9 0%, #47c5ed 100%)))
+    +border-top-right-radius(3px)
+    +border-bottom-right-radius(3px)
+    border: 1px solid #2c76b0
+    font-family: "SSStandard"
+    //background-image: url(/assets/logo-sa2af5af350.png)
+
+// nav#subnav
+//   > ul
+//     > li
+//       list-style: none
+//       float: left
+//       a
+//         color: #fff
+//         padding: 0 3px
+//         font-size: 10px
+//         font-size: 1rem
+//       .dropdown
+//         display: none
+
+
+// BREADCRUMB
+
+
+
+// Start - generated content from JavaScript
+#navigation-mobile, #navigation-sidebar
+  background: #3b5f75
+  margin-top: 2px
+  margin-top: .2rem
+  //border: 1px solid rgba(255,255,255,.2)
+  border-radius: 3px
+  //box-shadow: 0px 0px 3px rgba(0,0,0,.8)
+  +box-shadow(rgba(black, .8) 0px 0px 2px inset, rgba(white, .2) 0px 1px 0px)
+  position: relative
+  width: 34px
+  height: 30px
+  &:hover
+    cursor: pointer
+  &:after
+    content: attr(data-icon)
+    font: 30px/10px "iconsweetsRegular", sans-serif
+    position: absolute
+    top: 0
+    left: 0
+    text-indent: 0em
+    color: #ddd
+    display: block
+    text-align: center
+    padding: 5px
+    +text-shadow(rgba(black, .2) 0 1px 1px)
+#navigation-mobile
+  float: left
+  margin-left: 10px
+  margin-right: 10px
+#navigation-sidebar
+  float: right
+  margin-right: 10px
+  // &:after
+  //   +rotate(180deg)
+  //   bottom: 0px
+// End - generated content from JavaScript
+
+
+
+
+
+
+// ---------------------------------------------------------
+/* Content
+
+#content
+  background: #fff
+  > a
+    display: none !important
+/* News
+.article
+  width: 50%
+  +transition-property(width)
+  +transition-duration(.5s)
+  +transition-timing-function(linear)
+  //+box-shadow(rgba(black, .3) 0px 1px 3px)
+  //+box-shadow(rgba(black, .3) 0rem .1rem .3rem)
+  +border-top-right-radius(25px)
+  +border-top-right-radius(2.5rem)
+  +border-bottom-right-radius(25px)
+  +border-bottom-right-radius(2.5rem)
+
+  a img
+    background: #fff
+    +box-shadow(rgba(black, .7) 0px 0px 3px)
+    +box-shadow(rgba(black, .7) 0rem 0rem .3rem)
+    +transition-property(width)
+    +transition-duration(.25s)
+    +transition-timing-function(linear)    
+    +transition-property(box-shadow)
+    +transition-duration(.25s)
+    +transition-timing-function(linear)
+
+.article-single
+  h1
+    font-size: 18px
+    font-size: 1.8rem
+  // img
+  //   max-width: 600px
+  //   max-width: 60rem
+
+.news_article-ingress
+  font-weight: bold
+  margin-bottom: 20px
+  margin-bottom: 2rem
+  display: block
+
+.read-more
+  padding: 5px 7px
+  padding: .5rem .7rem
+  //background: $blue
+  +box-shadow(rgba(black, .8) 0px 0px 1px, rgba(white, .2) 0px -1px 0px inset)
+  padding-left: .7rem
+  &:before
+    content: "> "
+    font-family: iconSweetsRegular
+    font-size: 10px
+    font-size: 1rem
+    color: $blue
+
+
+
+
+
+
+// ---------------------------------------------------------
+// Sidebars
+
+
+
+#page_tree_nav, #sidebar_a, #sidebar_b
+  > .box
+    // +border-top-left-radius(25px)
+    // +border-top-left-radius(2.5rem)
+    // +border-bottom-left-radius(25px)
+    // +border-bottom-left-radius(2.5rem)
+    margin-bottom: 20px
+    margin-bottom: 2rem
+    // +box-shadow(rgba(black, .5) 1px 0px 0px)
+    // +box-shadow(rgba(black, .5) .1rem 0rem 0rem)
+
+    // &.middle > *
+    //   //background: $light-blue
+    //   +border-radius(25px)
+    //   +border-radius(2.5rem)
+    //   margin-bottom: 20px
+    //   margin-bottom: 2rem
+
+
+
+
+
+
+
+.box
+  position: relative
+  padding: 0
+  padding: 0
+  background: $light-blue
+  padding: 15px 0
+  padding: 1.5rem 0
+  > *
+    margin: 0px 15px
+    margin: 0rem 1.5rem  
+  > a
+    display: block
+    width: 47px
+    width: 4.7rem
+    position: absolute
+    top: 5px
+    top: .5rem
+    right: 5px
+    right: .5rem
+    display: none
+  h1
+    display: block
+    font-size: 14px
+    font-size: 1.4rem
+    line-height: 20px
+    line-height: 3rem
+    margin-bottom: 20px
+    margin-bottom: 2rem
+  ul
+    padding: 0
+    margin: 0px
+    margin: 0rem
+    li
+      list-style: none
+      position: relative
+      padding: 0px 25px
+      padding: 0rem 2.5rem
+      &:hover
+        background: #fff
+      a
+        display: block
+        padding: 5px 0px
+        padding: .5rem 0rem
+        &:before
+          width: 20px
+          width: 2rem
+          height: 20px
+          height: 2rem
+          display: block
+          content: ">"
+          position: absolute
+          left: 7px
+          left: .7rem
+          top: 4px
+          top: .4rem
+          font-family: iconSweetsRegular
+          font-size: 10px
+          font-size: 1rem
+          color: $base-color
+        &:hover
+          text-decoration: none
+          &:before
+            +transition (all, 3s, ease-in-out)
+            left: 14px
+            left: 1.4rem
+      //time
+  .rss-icon
+    display: none
+
+.ribbon
+  position: relative
+  background: #fff
+  +text-shadow(rgba(black, .4) 0px 1px 1px)
+  +text-shadow(rgba(black, .4) 0rem .1rem .1rem)
+  display: block
+  font-size: 14px
+  font-size: 1.4rem
+  margin-top: 0px
+  margin-top: 0rem
+  +text-shadow(rgba(black, .4) 0px 1px 1px)
+  +text-shadow(rgba(black, .4) 0rem .1rem .1rem)
+  z-index: 2
+  margin-bottom: 2rem
+  &:before, &:after
+    content: ''
+    position: absolute
+    border-style: solid
+    border-color: transparent
+    bottom: -10px
+    bottom: -1rem
+  &:before
+    border-right-color: #ddd
+  &:after
+    border-left-color: #ddd
+
+  // Color variation of the ribbon
+  &.blue
+    background: $blue
+    +background-image(linear-gradient(color-stops($base-color-lighten, $base-color)))
+    color: #fff
+    &:before
+      border-right-color: #000
+    &:after
+      border-left-color: #000
+
+  &.red-it
+    background: $red-it
+    +background-image(linear-gradient(color-stops($red-it-lighten, $red-it)))
+    color: #fff
+    &:before
+      border-right-color: $red-it-darken
+    &:after
+      border-left-color: $red-it-darken
+
+  &.yellow-lu
+    background: $yellow-lu
+    +background-image(linear-gradient(color-stops($yellow-lu-lighten, $yellow-lu)))
+    color: #111
+
+    &:before
+      border-right-color: $yellow-lu-darken
+    &:after
+      border-left-color: $yellow-lu-darken
+
+  &.light-blue-oss
+    background: $light-blue-oss
+    +background-image(linear-gradient(color-stops($light-blue-oss-lighten, $light-blue-oss)))
+    color: #fff
+
+    &:before
+      border-right-color: $light-blue-oss-darken
+    &:after
+      border-left-color: $light-blue-oss-darken      
+
+  &.orange-ir
+    background: $orange-ir
+    +background-image(linear-gradient(color-stops($orange-ir-lighten, $orange-ir)))
+    color: #fff
+
+    &:before
+      border-right-color: $orange-ir-darken
+    &:after
+      border-left-color: $orange-ir-darken
+
+  &.green-hs
+    background: $red-it
+    +background-image(linear-gradient(color-stops($green-hs-lighten, $green-hs)))
+    color: #fff
+
+    &:before
+      border-right-color: $green-hs-darken
+    &:after
+      border-left-color: $green-hs-darken
+
+
+
+#sidebar_b, #sidebar_a, #page_tree_nav
+  .ribbon
+    +border-top-left-radius(23px)
+    +border-top-left-radius(2.3rem)
+    +border-bottom-left-radius(22px)
+    +border-bottom-left-radius(2.2rem)
+    margin-left: 15px
+    margin-left: 1.5rem
+    margin-right: -10px
+    margin-right: -1rem
+    padding: 10px 0 10px 20px
+    padding: 1rem 0 1rem 2rem
+    &:before
+      border-right-color: transparent
+    &:after
+      border-width: 0 0 10px 10px
+      border-width: 0 0 1rem 1rem
+      right: 0px
+      right: 0rem
+@media only screen and (min-width: 769px)
+  #sidebar_a, #page_tree_nav
+    .ribbon
+      +border-top-left-radius(0px)
+      +border-top-left-radius(0rem)
+      +border-bottom-left-radius(0px)
+      +border-bottom-left-radius(0rem)
+      +border-top-right-radius(23px)
+      +border-top-right-radius(2.3rem)
+      +border-bottom-right-radius(22px)
+      +border-bottom-right-radius(2.2rem)
+      margin-right: 15px
+      margin-right: 1.5rem
+      margin-left: -10px
+      margin-left: -1rem
+      padding: 10px 0 10px 20px
+      padding: 1rem 0 1rem 2rem
+      &:before
+        border-width: 0 10px 10px 0
+        border-width: 0 1rem 1rem 0
+        left: 0px
+        left: 0rem
+
+
+
+
+// Module specific CSS
+.hogskoleavisa-navigation
+  ul
+    padding: 0
+    margin: 0
+    li
+      list-style: none
+      a
+        display: block
+        padding: 5px 10px
+        padding: .5rem 1rem
+        text-transform: uppercase
+        font-size: 14px
+        font-size: 1.4rem
+        line-height: 16px
+        line-height: 1.6rem
+      &:before
+        display: none
+
+
+
+
+
+// Neted generated content
+
+
+
+// News module
+
+.news_ingressOnly
+.news_ingressOnly-article_block
+  margin: 10px 0px
+  margin: 1rem 0rem
+.news_ingressOnly-article_block-title
+  font-size: 24px
+  font-size: 2.4rem
+  line-height: 40px
+  line-height: 4rem
+
+
+
+// Literaturliste styling
+
+.studieinfo_displayUserDefinedList table td
+  border: 1px solid #333
+
+
+.StudieinfoTdHeaderList
+  font-weight: bold !important
+
+.StudieinfoTdList
+  vertical-align: top !important
+
+
+
+// Frontpage
+
+#study
+
+
+
+
+
+
+
+#news
+
+
+
+
+
+
+#news-promoted
+  position: relative
+  width: 540px
+  margin: 0 auto
+#slider
+  width: 540px
+  height: 305px
+  background: #fff 
+  position: relative
+  margin: 0 auto
+  box-shadow: 0px 1px 5px #999999
+  img
+    position: absolute
+    border: none
+    display: none
+
+
+.slider-caption-bg, .slider-caption-bg2
+  position: absolute
+  width: 100%
+  height: auto
+  padding: 0
+  left: 0px
+  /*if the caption needs to be aligned from right, specify by right instead of left. i.e. right:20px;
+  bottom: 0px
+  /*if the caption needs to be aligned from top, specify by top instead of bottom. i.e. top:150px;
+  z-index: 3
+  overflow: hidden
+  font-size: 0
+.slider-caption-bg
+  background-color: black
+.slider-caption
+  font: bold 14px / 20px Arial
+  color: #EEE
+  z-index: 4
+  padding: 10px 0
+  /*Adding a padding-left or padding-right here will make the caption area wider than its background. Sometimes you may need to define its width again here to keep it the same width as its background area (div.slider-caption-bg).
+  text-align: center
+  a
+    color: #FB0
+    &:hover
+      color: #DA0
+
+
+#news-headlines
+
+
+#social-media
+
+
+
+
+
+
+
+
+// Front-page
+// .front-page
+//   #content
+//     margin-left: 420px
+//     width: 600px
+//   #sidebar_a
+//     width: 400px
+//     width: 40rem
+
+//   .ribbon
+//     width: 400px
+//     width: 40rem
+
+// .nivoSlider
+//   position: relative
+//   width: 640px
+//   height: 360px
+//   img
+//     position: absolute
+//     top: 0
+//     left: 0
+//     display: none
+//   .nivo-directionNav, 
+//   .nivo-controlNav
+//     position: absolute
+//     top: 380px
+//     left: 0px
+
+
+
+
+
+
+
+// ---------------------------------------------------------
+/* Footer
+
+#footer
+  background: #f0f0ef
+
+
+
+
+// DESIGN TOOLS
+.share
+  position: absolute
+  top: 5px
+  right: 5px
+  .rss-icon
+.rss-icon
+  display: none !important
+
+.text-orange
+  color: $orange
+
+// Department text colors
+.text-it
+  color: $red-it
+.text-lu
+  color: $yellow-lu
+.text-oss
+  color: $light-blue-oss
+.text-ir
+  color: $orange-ir
+.text-hs
+  color: $green-hs
+// Department background colors
+.bg-it
+  background: $red-it
+.bg-lu
+  background: $yellow-lu
+.bg-oss
+  background: $light-blue-oss
+.bg-ir
+  background: $orange-ir
+.bg-hs
+  background: $green-hs
+
+
+
+
+//--------------------------------------------------------------------------
+// TOUCH
+//--------------------------------------------------------------------------
+
+//#touch
+.touch
+  // Smartphones
+  @media screen and (max-width: 760px)
+    #body
+      border: none
+    #header
+      #logo
+        margin: 0
+        float: left
+      #logo-hiof, #logo-hogskoleavisa
+        background-size: 100%
+      #logo-hiof
+        width: 115px
+        width: 11.5rem
+        height: 19px
+        //height: 1.9rem
+        margin-top: 10px
+        margin-top: 1rem
+      #site-sublogo
+        width: 104px
+        width: 10.4rem
+        height: 22px
+        height: 2.2rem
+        margin-top: 8px
+        margin-top: .8rem
+
+      #navigation
+        background: #3b5f75
+        +box-shadow(inset rgba(black, .2) -2px 0px 2px)
+        ul
+          //background: #000
+          li
+            width: 100%
+            a
+              color: #fff
+              font-size: 1.4rem
+              display: block
+              +box-shadow(rgba(white, .1) 0px 1px 0px)
+              line-height: 34px
+              line-height: 3.4rem        
+              padding: 5px 10px
+              padding: .5rem 1rem
+      
+
+
+      #search
+    #content-container
+      background: #fff
+      padding-top: 1px
+      padding-top: .1rem
+
+    #sidebar_b
+      //+background-image(linear-gradient(left, #fff, #ddd))
+      +background(linear-gradient(left, $base-color, $base-color-lighten, $base-color), linear-gradient(left, rgba(0,0,0,.4), rgba(0,0,0,0), rgba(0,0,0,.4)))
+      //+background-image(radial-gradient(45px 45px, #0ff 10px, #1e90ff 30px), radial-gradient(100px 100px, $base-color 10px, yellow 30px))
+  .box
+    a
+      padding: 10px 0px
+      padding: 1rem 0rem
+      &:before      
+        top: 8px
+        top: .8rem
+
+  // Tablets
+  @media screen and (min-width: 761px)
+    #body
+      overflow-x: hidden
+    // HEADER
+    #search
+      display: none
+    #search-button
+      input
+        border: none
+
+    #breadcrumb
+      
+
+    #navigation-mobile
+      margin-top: 30px
+      margin-top: 3rem
+      margin-right: 20px
+      margin-right: 2rem
+
+    #navigation
+      background: #3b5f75
+      +box-shadow(inset rgba(black, .2) -2px 0px 2px)
+      ul
+        //background: #000
+        li
+          width: 100%
+          a
+            color: #fff
+            font-size: 1.4rem
+            display: block
+            +box-shadow(rgba(white, .1) 0px 1px 0px)
+            line-height: 34px
+            line-height: 3.4rem        
+            padding: 5px 10px
+            padding: .5rem 1rem
+    // SIDEBAR
+    // FOOTER
+
+
+
+
+
+//--------------------------------------------------------------------------
+// DESKTOP
+//--------------------------------------------------------------------------
+
+
+//#desktop
+.no-touch, .no-js
+  // NAVIGATION
+
+  #logo
+    float: left
+    // margin: 40px 20px
+    // margin: 4rem 2rem
+
+  #navigation
+    +background-image(linear-gradient(color-stops(#d9d9d8 0%, #ffffff 50%, #d9d9d8 100%)))
+    ul
+      > li
+        a        
+          display: block
+          text-transform: uppercase
+          font-size: 12px
+          font-size: 1.2rem
+          line-height: 24px
+          line-height: 2.4rem
+          padding: 5px 10px
+          padding: .5rem 1rem       
+          color: $text-color
+          height: 24px
+          height: 2.4rem
+
+        &:hover
+          background: $hiof-blue
+          a
+            color: white
+          .dropdown
+            display: block  
+
+    .dropdown
+      display: none
+      z-index: 300
+      position: absolute
+      top: 30px
+      top: 3rem
+      left: 0px
+      left: 0rem
+      +box-shadow(black 0px 1px 4px)
+      +box-shadow(black 0rem .1rem .4rem)
+      overflow: none
+      > li
+        width: 180px
+        width: 18rem
+        background: $hiof-blue
+        //border-top: 1px solid #fff
+        line-height: 15px
+        line-height: 1.5rem
+        a
+          display: block
+          text-transform: none
+          font-size: 12px
+          font-size: 1.2rem
+          line-height: 18px
+          line-height: 1.8rem
+          padding: 5px 10px
+          padding: .5rem 1rem       
+          color: white
+          // +transition-property(padding-left)
+          // +transition-duration(.25s)
+          // +transition-timing-function(linear)
+        &:hover
+          margin: none
+          +box-shadow(none)
+          position: relative
+          // &:before
+          //   content: ">"
+          //   position: absolute
+          //   top: 5px
+          //   top: .5rem
+          //   left: -20px
+          //   left: -2rem
+          //   display: block
+          //   font-family: iconSweetsRegular
+          //   font-size: 20px
+          //   font-size: 2rem
+          //   color: $hiof-blue
+        &:hover
+          background: $light-blue
+          a
+            color: $hiof-blue
+
+
+  // Search
+
+  // #search-select, #search-field , #search-button
+  //   float: left
+
+  // #search-select
+  //   width: 200px
+  //   width: 20rem
+  //   height: 25px
+  //   height: 2.5rem
+  //   font-size: 14px
+  //   font-size: 1.4rem
+  //   margin-bottom: 10px
+  //   margin-bottom: 1rem
+  // #search-field
+  //   width: 200px
+  //   width: 20rem
+  //   margin-right: 10px
+  //   margin-right: 1rem
+  //   input
+  //     font-size: 14px
+  //     font-size: 1.4rem
+  //     line-height: 20px
+  //     line-height: 2rem
+  //     width: 190px
+  //     width: 19rem
+  //     padding-left: 10px
+  //     padding-left: 1rem
+  //     height: 20px
+  //     height: 2rem
+  //     border: 1px solid #999
+  //     border: .1rem solid #999
+  // #search-button
+  //   width: 80px
+  //   width: 8rem
+  //   input
+  //     background: none
+  // #subnav
+  //   li
+  //     border-right: 1px solid $white
+  //     &:last-child
+  //       border-right: none
+  #breadcrumb
+    /* Clear floats
+    overflow: hidden
+    //width: 100%
+    background: $light-blue
+    border-top: $light-blue solid 3px
+    border-top: $light-blue solid .3rem
+    border-bottom: $light-blue solid 3px
+    border-bottom: $light-blue solid .3rem
+    div
+      float: left
+      margin: 0 .5em 0 1em
+      &:first-child
+        a
+          width: 25px
+          span
+            font-size: 2rem
+            line-height: 1rem
+            &:before
+              padding-top: 1rem
+            // position: relative
+            // margin-right: 0
+            // padding-right: 0
+            // text-indent: -999em
+            // overflow: hidden
+            // background-color: transparent
+            // background-repeat: no-repeat
+            // text-align: left
+            // direction: ltr
+            // display: block
+            // &:before
+            // //   content: "1"
+            //   position: absolute
+            //   top: -11px
+            //   top: -1.1rem
+            // //   left: 0
+            //   color: $base-color-lighten
+            //   text-indent: 0em
+            // //   //font-family: iconSweetsRegular
+            //   // font-size: 24px
+            //   // font-size: 2.4rem
+            //   // padding-left: 0px
+            //   // padding-left: 0rem
+            //   // margin-right: 0
+            //   // padding-right: 0
+            //   // height: 30px
+          &:hover
+            text-decoration: none
+            span
+              &:before
+                color: $black
+    a
+      background: #fff
+      padding: .7em 1em
+      float: left
+      text-decoration: none
+      color: #444
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)
+      position: relative
+      &:hover
+        background: darken($light-blue, 20%) 
+        color: #fff
+        +text-shadow(none)
+      &::before
+        content: ""
+        position: absolute
+        top: 50%
+        margin-top: -1.5em
+        border-width: 1.5em 0 1.5em 1em
+        border-style: solid
+        border-color: #fff #fff #fff transparent
+        left: -1em
+      &:hover::before
+        border-color: darken($light-blue, 20%)  darken($light-blue, 20%)  darken($light-blue, 20%)  transparent
+      &::after
+        content: ""
+        position: absolute
+        top: 50%
+        margin-top: -1.5em
+        border-top: 1.5em solid transparent
+        border-bottom: 1.5em solid transparent
+        border-left: 1em solid #fff
+        right: -1em
+      &:hover::after
+        border-left-color: darken($light-blue, 20%) 
+    .current
+      font-weight: bold
+      background: none
+      &:hover
+        font-weight: bold
+        background: none
+      &:after, &:before
+        content: normal
+
+  // Content
+    #content-container
+      #content
+        +transition-property(width)
+        +transition-duration(.5s)
+        +transition-timing-function(linear)
+  .article
+    &:hover
+      a img
+        +box-shadow(rgba(black, 1) 0px 0px 5px)
+        +box-shadow(rgba(black, 1) 0rem 0rem .5rem)
+
+
+  .read-more
+    &:hover
+      text-decoration: none
+      background: $hiof-blue
+      color: white
+      &:before
+        color: white
+
+
+  // SIDEBAR
+
+  .hogskoleavisa-navigation
+    ul
+      > li
+        a
+          +transition-property(padding)
+          +transition-duration(.25s)
+          +transition-timing-function(linear)
+          &:hover
+            //background: #06334c
+            //color: #fff
+            padding-left: 15px
+            text-decoration: none
+            &:before
+              width: 20px
+              width: 2rem
+              height: 20px
+              height: 2rem
+              display: block
+              content: ">"
+              position: absolute
+              left: 15px
+              left: 1.5rem
+              top: 0px
+              top: 0rem
+              font-family: iconSweetsRegular
+              font-size: 10px
+              font-size: 1rem
+              color: $base-color
+
+
+  #sidebar_right
+    > *
+      // +box-shadow(rgba(black, .5) 0px 1px 0px)
+      // +box-shadow(rgba(black, .5) 0px 1px 0rem)
+      &:before
+        content: ""
+        display: table
+      &:after
+        content: ""
+        display: table
+        clear: both
+        *zoom: 1
+  .sidebar-left
+    #sidebar_a, #page_tree_nav
+      .ribbon
+        +border-top-left-radius(0px)
+        +border-top-left-radius(0rem)
+        +border-bottom-left-radius(0px)
+        +border-bottom-left-radius(0rem)
+        +border-top-right-radius(23px)
+        +border-top-right-radius(2.3rem)
+        +border-bottom-right-radius(22px)
+        +border-bottom-right-radius(2.2rem)
+        margin-left: -10px
+        margin-left: -1rem
+        margin-right: 15px
+        margin-right: 1.5rem
+        padding: 10px 0 10px 35px
+        padding: 1rem 0 1rem 3.5rem
+        &:before
+          border-width: 0 10px 10px 0
+          border-width: 0 1rem 1rem 0
+          left: 0px
+          left: 0rem
+        &:after
+          border-left-color: transparent
+
+  .threecolumn
+    #page_tree_nav, #sidebar_a
+      > .box
+        //background: $light-blue
+        +border-top-left-radius(0px)
+        +border-top-left-radius(0rem)
+        +border-top-right-radius(25px)
+        +border-top-right-radius(2.5rem)
+        +border-bottom-left-radius(0px)
+        +border-bottom-left-radius(0rem)
+        +border-bottom-right-radius(25px)
+        +border-bottom-right-radius(2.5rem)
+        // +box-shadow(rgba(black, .5) 1px 0px 0px)
+        // +box-shadow(rgba(black, .5) .1rem 0rem .0rem)
+
+
+
+  // ---------------------------------------------------------
+  /* Footer
+  #footer
+    background: $grey
+  #col_01
+    border-top: 10px solid #fff
+    border-top: 1rem solid #fff
+    border-bottom: 10px solid #fff
+    border-bottom: 1rem solid #fff
+
+  #col_02, #col_03, #col_04
+    &:hover
+      box-shadow: inset 0px 0px 1px #777
+      box-shadow: inset 0rem 0rem .1rem #777
+
+
+  @media screen and (min-width: 1040px)
+
+    #col_03, #col_04
+      border-left: 10px solid #fff
+      border-left: 1rem solid #fff
+

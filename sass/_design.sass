@@ -1,0 +1,51 @@
+//--------------------------------------------------------------------------
+/* Stylesheet section: design/core
+// Author: Keneth Nordahl
+// Updated February 22nd, 2012
+//--------------------------------------------------------------------------
+
+
+// TOOLS IN USE IN THIS DOCUMENT
+
+@import compass/css3
+@import config
+
+
+@import design/_general
+
+
+@media only screen and (max-width: 599px)
+  @import design/_up-to-600
+
+
+
+
+@media only screen and (min-width: 600px)
+  @import design/_600-to-1039
+
+@media only screen and (min-width: 600px) and (max-width: 1039px)
+  #site-sublogo
+    width: 170px
+  #search
+    width: 150px
+
+  #search-field
+    input
+      width: 100px    
+
+@media only screen and (min-width: 600px) and (max-width: 750px)
+  
+  #site-sublogo
+    width: 130px
+  #shortcuts
+    li
+      width: 32px
+      text-indent: -99em
+      span
+        text-indent: 0
+
+@media only screen and (min-width: 1040px)
+  @import design/_1040-and-up
+
+
+// @import design/_webapp

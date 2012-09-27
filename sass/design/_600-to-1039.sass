@@ -1,0 +1,220 @@
+#navigation
+  +background-image(linear-gradient(color-stops(#d9d9d8 0%, #ffffff 50%, #d9d9d8 100%)))
+  ul
+    padding: 0
+    margin: 0
+    > li
+      float: left
+      display: block
+      overflow: none
+      position: relative
+      //width: 100%
+      &:hover, .active
+        +box-shadow(#ffffff 0 -5px 0)
+      > a        
+        display: block
+        text-transform: uppercase
+        font-size: 12px
+        font-size: 1.2rem
+        line-height: 25px
+        line-height: 2.5rem
+        padding: 5px 10px
+        padding: .5rem 1rem       
+        color: $text-color
+        // height: 34px
+        // height: 3.4rem
+      .drop
+        width: 215px
+        width: 21.5rem
+        li
+          width: 100%
+      &:hover
+        background: $hiof-blue
+        > a
+          color: white
+          text-decoration: none
+        .drop
+          //display: block  
+          top: 33px
+          height: auto
+          opacity: 1
+
+
+#breadcrumb
+  /* Clear floats
+  overflow: hidden
+  background: $light-blue
+  border-top: $light-blue solid 3px
+  border-top: $light-blue solid .3rem
+  border-bottom: $light-blue solid 3px
+  border-bottom: $light-blue solid .3rem
+  padding-left: 20px
+
+  a
+    background: #fff
+    padding: .7em 1em
+    float: left
+    text-decoration: none
+    color: #444
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)
+    position: relative
+    &:hover
+      background: darken($light-blue, 20%) 
+      color: #fff
+      +text-shadow(none)
+    &::before
+      content: ""
+      position: absolute
+      top: 50%
+      margin-top: -1.5em
+      border-width: 1.5em 0 1.5em 1em
+      border-style: solid
+      border-color: #fff #fff #fff transparent
+      left: -1em
+    &:hover::before
+      border-color: darken($light-blue, 20%)  darken($light-blue, 20%)  darken($light-blue, 20%)  transparent
+    &::after
+      content: ""
+      position: absolute
+      top: 50%
+      margin-top: -1.5em
+      border-top: 1.5em solid transparent
+      border-bottom: 1.5em solid transparent
+      border-left: 1em solid #fff
+      right: -1em
+    &:hover::after
+      border-left-color: darken($light-blue, 20%) 
+  .current
+    font-weight: bold
+    background: none
+    &:hover
+      font-weight: bold
+      background: none
+    &:after, &:before
+      content: normal
+  div
+    float: left
+    margin: 0 .5em 0 1em
+    &:first-child
+      a
+        //padding-top: 1rem
+        width: 40px
+        // text-indent: -99em
+        height: 35px
+        padding: 7px 11px
+        padding: .7rem 1.1rem
+        span
+          width: 20px
+          height: 20px
+          display: block
+          font-size: 2rem
+          line-height: 2.5rem
+          text-indent: 0px
+          overflow: hidden
+          // background: yellow
+          &:before, &:after
+            text-indent: 0px
+        &:hover
+          text-decoration: none
+          span
+            &:before
+              color: $black
+#shortcuts
+  float: right
+  margin-top: 20px
+  li
+    list-style: none
+    position: relative
+    &:hover
+      .drop
+        //display: block
+        height: auto
+        opacity: 1
+
+#search
+  display: block
+  background: #e4eaee
+  position: relative
+  width: 300px
+  height: 44px
+  float: right
+  margin-top: 20px
+  margin-right: 20px
+  +border-radius(3px)
+  +border-radius(.3rem)
+  +box-shadow(rgba(black, .8) 0px 0px 2px inset)
+  +transition-property(width)
+  +transition-duration(1s)
+#search-select
+  -webkit-appearance: none
+  // position: relative
+  width: 34px
+  height: 34px
+  // margin-top: 5px
+  // line-height: 34px
+  // opacity: 0
+  // background-color: rgba(0, 0, 0, 0)
+
+// .searchselect
+//   position: absolute
+//   top: 5px
+//   float: left
+//   left: 0
+//   width: 34px
+//   height: 34px
+//   line-height: 26px
+//   text-indent: 10px
+//   background: inline-image("icons/dropdown.png")
+//   cursor: default
+//   z-index: -1
+//   text-indent: -99em
+
+.ui-selectmenu-menu
+  top: 64px !important
+  right: 68px !important
+#search-field
+
+  position: absolute
+  left: 34px
+  z-index: 1
+  top: 5px
+  input    
+    +transition-property(width)
+    +transition-duration(1s)
+    width: 230px
+    height: 34px
+    line-height: 34px
+    padding-left: 10px
+    font-size: 16px
+    border: 1px solid #b2c4d4
+    +border-radius(3px)
+    +border-radius(.3rem)
+#search-button
+  -webkit-appearance: none
+  border: none
+  position: absolute
+  right: 5px
+  z-index: 2
+  top: 5px
+  input
+    width: 34px
+    height: 34px
+    -webkit-appearance: none
+    border: none
+    background: #188dd9
+    +background-image(linear-gradient(color-stops(#188dd9 0%, #47c5ed 100%)))
+    +border-top-right-radius(3px)
+    +border-bottom-right-radius(3px)
+    border: 1px solid #2c76b0
+    font-family: "SSStandard"
+
+// #content-container
+//   margin-bottom: 40px
+//   margin-bottom: 4rem
+
+
+
+// .box
+//   right: 0px
+//   +border-top-right-radius(0px)
+//   +border-top-left-radius(5px)
