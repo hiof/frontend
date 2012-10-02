@@ -13,7 +13,7 @@ class window.TestmodeController
     console.log "hello dev"
 
   createTestElement: ->
-    @body.append '<div id="dev-nav">Test shortcuts: <a href="/">Forside</a> - <a href="/student">Student</a> - <a href="/articles/1">Article</a></div>'
+    @body.append '<div id="dev-nav">Test shortcuts: <a href="/">Forside</a> - <a href="/student">Student</a> - <a href="/ansatt">Ansatt</a> - <a href="/pages/1">Page</a></div>'
     
   moveBodyElement: ->
     @body.css "marginTop", "20px"
