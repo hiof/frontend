@@ -16,8 +16,7 @@ Frontend kode til Høgskolen i Østfold sine sider.
 ## Installasjon
 
     $ git clone https://github.com/hiof/frontend.git
-    # Clones your fork of the repo into the current directory in terminal
-
+    # Kloner prosjektet inn i din nåværende lokale mappe.
 
 Se GitHub for en grundig guide https://help.github.com/articles/fork-a-repo
 
