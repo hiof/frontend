@@ -607,51 +607,13 @@ a
 
 
 
-// Neted generated content
 
 
 
-// News module
-
-.news_ingressOnly
-  float: left
-  clear: right
-.news_ingressOnly-article_block
-  margin: 10px 0px
-  margin: 1rem 0rem
-  clear: right
-.news_ingressOnly-article_block-title
-  font-size: 24px
-  font-size: 2.4rem
-  line-height: 40px
-  line-height: 4rem
-.news_ingressOnly-article_block-image_at_right
-  float: right
 
 
-// #active-link
-//   &:before
-//     width: 20px
-//     width: 2rem
-//     height: 20px
-//     height: 2rem
-//     display: block
-//     content: "location"
-//     position: absolute
-//     left: 7px
-//     left: .7em
-//     top: 7px
-//     top: .7rem
-//     font-family: SSStandard
-//     font-size: 10px
-//     font-size: 1rem
-//     color: $link
-// ul ul
-//   #active-link
-//     &:before
-//       left: -15px
-//       left: -1.5rem
-// Literaturliste styling
+
+
 
 .studieinfo_displayUserDefinedList table td
   border: 1px solid #333
@@ -986,6 +948,28 @@ select.btn
 
 //-------------------------------------------------------------------------------------------------------
 
+// Neted module module
+
+.news_ingressOnly
+  float: left
+  clear: right
+.news_ingressOnly-article_block
+  margin: 10px 0px
+  margin: 1rem 0rem
+  clear: right
+.news_ingressOnly-article_block-title
+  font-size: 24px
+  font-size: 2.4rem
+  line-height: 40px
+  line-height: 4rem
+.news_ingressOnly-article_block-image_at_right
+  float: right
+
+// /neted modules
+
+
+
+
 
 
 #news
@@ -1110,13 +1094,13 @@ select.btn
 
 
 //---------------------------------------------------------------------------
-// Study
+// Study selection
 //---------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------------
 
 
-#study
+#study-selection
   //border: 1px solid #333
   //+border-radius(5px)
   height: 345px
@@ -1188,7 +1172,7 @@ select.btn
 
 
 //---------------------------------------------------------------------------
-// /Study
+// /Study selection
 //---------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------------
@@ -1261,12 +1245,6 @@ select.btn
         +transition-property(background, color)
         +transition-duration(.5s)
         +transition-delay(.2s)
-        // +transition-property(color)
-        // +transition-duration(.5s)
-        // +transition-delay(.5s)
-        // &:hover
-        //   background: #63a288
-        //   color: #fff
 
     &:hover
       background: #fff
@@ -1291,6 +1269,9 @@ select.btn
           border-right: 5px solid transparent
           border-bottom: 5px solid #fff
           top: 45px
+
+
+
 //---------------------------------------------------------------------------
 // /Calendar
 //---------------------------------------------------------------------------
@@ -1515,6 +1496,144 @@ select.btn
 
 
 
+//---------------------------------------------------------------------------
+// student-employee-links
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+
+#links-student,
+#links-employee
+  width: 350px
+  margin: 0
+  padding: 0
+  li
+    float: left
+    list-style: none
+    a
+      width: 150px
+      display: block
+      background: #e3e3e3
+      margin-bottom: 5px
+      color: #333
+      line-height: 3rem
+      &:hover
+        text-decoration: none
+      span
+        background: #a3a3a3
+        display: inline-block
+        padding: 0 7px
+
+        border-right: 5px solid #fff
+        position: relative
+        color: #fff
+        margin-right: 5px
+        +text-shadow(rgba(black, .5) 0 1px 1px)
+        &:before
+          content: ""
+          border-top: 5px solid transparent
+          border-left: 5px solid #a3a3a3
+          border-bottom: 5px solid transparent
+          position: absolute
+          top: 10px
+          right: -5px
+
+        &:after
+          content: ""
+          border-top: 5px solid transparent
+          border-left: 5px solid #fff
+          border-bottom: 5px solid transparent
+          position: absolute
+          top: 10px
+          right: -10px
+    &:nth-child(odd)
+      a
+        margin-right: 5px
+
+//---------------------------------------------------------------------------
+// /student-employee-links
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+
+
+
+//---------------------------------------------------------------------------
+// food
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+
+#food
+  div
+    width: 170px
+  h1
+    background: #6195a9
+    display: block
+    position: relative
+    margin-bottom: 5px
+    color: #fff
+    font-size: 16px
+    line-height: 2em
+    +text-shadow(rgba(black, .5) 0 1px 1px)
+    &:after
+      content: ""
+      border-left: 5px solid transparent
+      border-right: 5px solid transparent
+      border-top: 5px solid #63a288
+      position: absolute
+      bottom: -5px
+      left: 5px
+  ul
+    margin: 0
+    padding: 0
+    li
+      display: block
+      margin-bottom: 5px
+      &:first-child
+        a
+          &:after
+            content: ""
+            border-left: 5px solid transparent
+            border-right: 5px solid transparent
+            border-top: 5px solid #e2eff5
+            position: absolute
+            bottom: -5px
+            left: 5px
+      a
+        display: block
+        padding: 5px 10px
+        padding-left: 20px
+        position: relative
+        background: #e2eff5
+        &:before
+          content: ""
+          border-left: 5px solid transparent
+          border-right: 5px solid transparent
+          border-top: 5px solid #fff
+          position: absolute
+          top: 0px
+          left: 5px      
+        &:hover
+          background: #fff
+          text-decoration: none
+          &:after
+            border-top: 5px solid #fff
+
+  .ss-icon
+    color: #fff
+    font-size: 0.7em
+    padding: 0 5px
+
+//---------------------------------------------------------------------------
+// /food
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
 
 
 //---------------------------------------------------------------------------
@@ -1524,8 +1643,18 @@ select.btn
 //-------------------------------------------------------------------------------------------------------
 
 
-#employee, #student
-  background: pink
+#tools-employee, #tools-student
+  float: left
+  #links-student,
+  #links-employee,
+  #calendar,
+  #food
+    float: left
+
+  #food
+    div
+      float: left
+      margin: 0 5px
 
 
 //---------------------------------------------------------------------------
@@ -1533,7 +1662,6 @@ select.btn
 //---------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------------
-
 
 
 
