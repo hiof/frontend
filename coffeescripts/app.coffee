@@ -58,8 +58,8 @@ class window.ApplicationController
         $("#" + activeTab).fadeIn()
       # console.log "frontpage tabcontent"
     else
-      @equalColumnHeight()
-      setInterval (=> @equalColumnHeight()), 3000
+      # @equalColumnHeight()
+      # setInterval (=> @equalColumnHeight()), 3000
     
 
 
@@ -145,32 +145,46 @@ class window.ApplicationController
 
 
   startImageSlider: ->
-    @slider.nivoSlider
-      effect: "fade"
-      # slices: 15
-      # boxCols: 8
-      # boxRows: 4
-      animSpeed: 500
-      pauseTime: 8000
-      startSlide: 0
-      directionNav: true
-      directionNavHide: true
-      controlNav: false
-      controlNavThumbs: false
-      pauseOnHover: true
-      manualAdvance: false
-      prevText: "Previous"
-      nextText: "Next"
-      randomStart: false
-      # beforeChange: ->
+    $("#slider").responsiveSlides
+      auto: false
+      pager: false
+      nav: true
+      speed: 500
+      namespace: "callbacks"
+      before: ->
+        # $(".events").append "<li>before event fired.</li>"
 
-      # afterChange: ->
+      after: ->
+        # $(".events").append "<li>after event fired.</li>"
+    console.log "scroll started"
 
-      # slideshowEnd: ->
 
-      # lastSlide: ->
+    # @slider.nivoSlider
+    #   effect: "fade"
+    #   # slices: 15
+    #   # boxCols: 8
+    #   # boxRows: 4
+    #   animSpeed: 500
+    #   pauseTime: 8000
+    #   startSlide: 0
+    #   directionNav: true
+    #   directionNavHide: true
+    #   controlNav: false
+    #   controlNavThumbs: false
+    #   pauseOnHover: true
+    #   manualAdvance: false
+    #   prevText: "Previous"
+    #   nextText: "Next"
+    #   randomStart: false
+    #   # beforeChange: ->
 
-      # afterLoad: ->
+    #   # afterChange: ->
+
+    #   # slideshowEnd: ->
+
+    #   # lastSlide: ->
+
+    #   # afterLoad: ->
 
 
 
