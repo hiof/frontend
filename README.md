@@ -10,7 +10,7 @@ Frontend kode til Høgskolen i Østfold sine sider.
 
 - Prosjektet er distrubiert under GNU General Public License v3 - se COPYING filen for detaljer. 
 - Prosjektet bruker diverse åpen kildekode teknologier. For mer informasjon om lisensieringen av disse kan du lese LICENSE.md filen.
-- Prosjektet inneholder submodule-linker til moduler som er kopibeskyttet (disse modulene er tilgjenglig på private repositories kun  for HiØ ansatte tilknyttet dette prosjektet).
+- Prosjektet inneholder submodule-linker til moduler som er kopibeskyttet (disse modulene er tilgjenglig på private repositories kun for HiØ ansatte tilknyttet dette prosjektet).
 
 
 ## Installasjon
