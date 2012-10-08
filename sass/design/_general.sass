@@ -1048,14 +1048,67 @@ select.btn
 
 
 
-#news
-
 #news-promoted
-  padding-right: 30px
-  #slider
-    +box-shadow(rgba(black, .7) 0 0 1px)
-    border: 5px solid #fff
-    .nivo-main-image
+
+  .callbacks_container
+    position: relative
+  .rslides
+    // position: relative
+    list-style: none
+    overflow: hidden
+    width: 100%
+    padding: 0
+    margin: 0
+    li
+      position: absolute
+      display: none
+      width: 100%
+      left: 0
+      top: 0
+      &:first-child
+        position: relative
+        display: block
+        float: left
+    img
+      display: block
+      height: auto
+      float: left
+      width: 100%
+      border: 0
+
+
+
+  .callbacks .caption
+    display: block
+    position: absolute
+    z-index: 2
+    font-size: 20px
+    text-shadow: none
+    color: #fff
+    background: #000
+    background: rgba(0, 0, 0, 0.8)
+    left: 0
+    right: 0
+    bottom: 0
+    padding: 10px 20px
+    margin: 0
+    max-width: none
+    background: #000
+
+  .callbacks_nav
+    &.prev,
+    &.next
+      position: absolute
+      top: 0
+
+
+
+// #news-promoted
+//   padding-right: 30px
+//   #slider
+//     +box-shadow(rgba(black, .7) 0 0 1px)
+//     border: 5px solid #fff
+//     .nivo-main-image
       //+box-shadow(rgba(black, 1) 0 0 2px)
       //border: 5px solid #fff 
 
