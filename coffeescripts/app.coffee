@@ -30,7 +30,7 @@ class window.ApplicationController
 
     @multiBox.select2()
     @pjax()
-
+    @equalColumnHeight()
 
     $("#logo-hiof").bind "contextmenu", (e) ->
       e.preventDefault()
@@ -45,6 +45,10 @@ class window.ApplicationController
     if $("#content-frontpage").length
       # console.log "frontpage!"
       @startImageSlider()
+
+
+
+
 
       # console.log "frontpage image slider!"
       $(".tabcontent").hide()
@@ -145,18 +149,27 @@ class window.ApplicationController
 
 
   startImageSlider: ->
-    $("#slider").responsiveSlides
-      auto: false
-      pager: false
-      nav: true
-      speed: 500
-      namespace: "callbacks"
-      before: ->
-        # $(".events").append "<li>before event fired.</li>"
+    $("#news-promoted").bjqs
+      height: 305
+      width: 540
+      animspeed: 10000
+      responsive: true
+      # showmarkers: false
+      prevtext : 'previous'
+      # nexttext : 'right'
 
-      after: ->
-        # $(".events").append "<li>after event fired.</li>"
-    console.log "scroll started"
+    # $("#slider").responsiveSlides
+    #   auto: false
+    #   pager: false
+    #   nav: true
+    #   speed: 500
+    #   namespace: "callbacks"
+    #   before: ->
+    #     # $(".events").append "<li>before event fired.</li>"
+
+    #   after: ->
+    #     # $(".events").append "<li>after event fired.</li>"
+    # console.log "scroll started"
 
 
     # @slider.nivoSlider
@@ -205,13 +218,15 @@ class window.ApplicationController
   
   equalColumnHeight: ->
     # console.log "equal height"
-    colLeft = 0
+    # colLeft = 0
+    if (@browserwidth > 1024)
+      $("#sidebar_a").css "marginTop", (@columnPageTreeNav + 20)
     #if (@browserwidth > 1024) or $.browser.msie
-    if @browserwidth > 1024
-      colLeft = (@columnPageTreeNav + @columnSidebarA)
-      colHeight = Math.max(colLeft, @columnPageTreeNav, @columnContent, @columnSidebarA, @columnSidebarB)
-      $("#content, #sidebar_b").height colHeight
-    else
+    #if @browserwidth > 1024
+    #  colLeft = (@columnPageTreeNav + @columnSidebarA)
+    #  colHeight = Math.max(colLeft, @columnPageTreeNav, @columnContent, @columnSidebarA, @columnSidebarB)
+    #  $("#content, #sidebar_b").height colHeight
+    #else
       # colHeight = Math.max(@columnPageTreeNav, @columnContent, @columnSidebarA, @columnSidebarB)
       # $("#content, #sidebar_a, #sidebar_b").height colHeight
     #$("#sidebar_a").top (@columnPageTreeNav + 20)
