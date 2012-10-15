@@ -11,3 +11,4 @@ Version: v1.1.0
 #= require pjax
 #= require_directory ./plugins
 #= require app
+
