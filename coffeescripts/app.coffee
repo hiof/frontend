@@ -30,7 +30,7 @@ class window.ApplicationController
 
     @multiBox.select2()
     @pjax()
-
+    @equalColumnHeight()
 
     $("#logo-hiof").bind "contextmenu", (e) ->
       e.preventDefault()
@@ -46,6 +46,10 @@ class window.ApplicationController
       # console.log "frontpage!"
       @startImageSlider()
 
+
+
+
+
       # console.log "frontpage image slider!"
       $(".tabcontent").hide()
       $(".tabcontent:first").show()
@@ -58,8 +62,8 @@ class window.ApplicationController
         $("#" + activeTab).fadeIn()
       # console.log "frontpage tabcontent"
     else
-      @equalColumnHeight()
-      setInterval (=> @equalColumnHeight()), 3000
+      # @equalColumnHeight()
+      # setInterval (=> @equalColumnHeight()), 3000
     
 
 
@@ -145,32 +149,55 @@ class window.ApplicationController
 
 
   startImageSlider: ->
-    @slider.nivoSlider
-      effect: "fade"
-      # slices: 15
-      # boxCols: 8
-      # boxRows: 4
-      animSpeed: 500
-      pauseTime: 8000
-      startSlide: 0
-      directionNav: true
-      directionNavHide: true
-      controlNav: false
-      controlNavThumbs: false
-      pauseOnHover: true
-      manualAdvance: false
-      prevText: "Previous"
-      nextText: "Next"
-      randomStart: false
-      # beforeChange: ->
+    $("#news-promoted").bjqs
+      height: 305
+      width: 540
+      animspeed: 10000
+      responsive: true
+      showmarkers: false
+      prevtext : 'previous'
+      # nexttext : 'right'
 
-      # afterChange: ->
+    # $("#slider").responsiveSlides
+    #   auto: false
+    #   pager: false
+    #   nav: true
+    #   speed: 500
+    #   namespace: "callbacks"
+    #   before: ->
+    #     # $(".events").append "<li>before event fired.</li>"
 
-      # slideshowEnd: ->
+    #   after: ->
+    #     # $(".events").append "<li>after event fired.</li>"
+    # console.log "scroll started"
 
-      # lastSlide: ->
 
-      # afterLoad: ->
+    # @slider.nivoSlider
+    #   effect: "fade"
+    #   # slices: 15
+    #   # boxCols: 8
+    #   # boxRows: 4
+    #   animSpeed: 500
+    #   pauseTime: 8000
+    #   startSlide: 0
+    #   directionNav: true
+    #   directionNavHide: true
+    #   controlNav: false
+    #   controlNavThumbs: false
+    #   pauseOnHover: true
+    #   manualAdvance: false
+    #   prevText: "Previous"
+    #   nextText: "Next"
+    #   randomStart: false
+    #   # beforeChange: ->
+
+    #   # afterChange: ->
+
+    #   # slideshowEnd: ->
+
+    #   # lastSlide: ->
+
+    #   # afterLoad: ->
 
 
 
@@ -191,13 +218,17 @@ class window.ApplicationController
   
   equalColumnHeight: ->
     # console.log "equal height"
-    colLeft = 0
+    # colLeft = 0
+    if (@browserwidth > 1024)
+      $("#sidebar_a").css "marginTop", (@columnPageTreeNav + 20)
     #if (@browserwidth > 1024) or $.browser.msie
-    if @browserwidth > 1024
-      colLeft = (@columnPageTreeNav + @columnSidebarA)
-      colHeight = Math.max(colLeft, @columnPageTreeNav, @columnContent, @columnSidebarA, @columnSidebarB)
-      $("#content, #sidebar_b").height colHeight
-    else
+
+
+    #if @browserwidth > 1024
+    #  colLeft = (@columnPageTreeNav + @columnSidebarA)
+    #  colHeight = Math.max(colLeft, @columnPageTreeNav, @columnContent, @columnSidebarA, @columnSidebarB)
+    #  $("#content, #sidebar_b").height colHeight
+    #else
       # colHeight = Math.max(@columnPageTreeNav, @columnContent, @columnSidebarA, @columnSidebarB)
       # $("#content, #sidebar_a, #sidebar_b").height colHeight
     #$("#sidebar_a").top (@columnPageTreeNav + 20)
@@ -258,11 +289,11 @@ class window.ApplicationController
   # Create 
   mobileAddMenu: ->
     if $("#navigation-mobile").length is 0
-      $("#header").prepend "<div id=\"navigation-mobile\" class=\"ss-icon\">list</div>"
+      $("#header").prepend "<div id=\"navigation-mobile\" class=\"ss-icon ss-standard\">list</div>"
     else
   mobileAddSidebar: ->
     if $("#navigation-sidebar").length is 0
-      $("#header").append "<div id=\"navigation-sidebar\" class=\"ss-icon\">layout</div>"
+      $("#header").append "<div id=\"navigation-sidebar\" class=\"ss-icon ss-standard\">layout</div>"
     else
 
 

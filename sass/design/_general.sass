@@ -181,6 +181,104 @@ a
 
 
 
+//---------------------------------------------------------------------------
+// Calendar
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+
+
+.calendar-item
+  float: left
+  width: 125px
+  height: 135px
+  +box-shadow(rgba(black, .7) 0 0 1px)
+  margin-right: 8px
+  position: relative
+  background: #6da486
+  +transition-property(background)
+  +transition-duration(.5s)
+  span
+    display: block
+    &[itemprop="description"], &[itemprop="location"]
+      display: none
+  time
+    &[itemprop="startDate"]
+      display: block
+      // margin-top: 30px
+      width: 70px
+      margin-left: 25px
+      text-align: center
+      font-size: 22px
+      padding: 5px
+      position: absolute
+      top: 10px
+      color: #fff
+      line-height: 1
+      +transition-property(color)
+      +transition-duration(.5s)
+    &[itemprop="endDate"]
+      display: none
+  a
+    width: 100%
+    height: 50px
+    height: 5rem
+    padding: 5px 10px
+    padding: 1.1rem .5rem 1rem
+    &:before
+      content: ""
+      width: 0
+      height: 0
+      border-left: 5px solid transparent
+      border-right: 5px solid transparent
+      border-top: 5px solid #63a288
+      position: absolute
+      top: 0
+      left: 55px
+      +transition-property(top)
+      +transition-duration(.5s)
+    &[itemprop="url"]
+      position: absolute
+      bottom: 5px
+      left: 0
+      background: #fff
+      color: #777
+      +transition-property(background, color)
+      +transition-duration(.5s)
+      +transition-delay(.2s)
+
+  //&:hover
+  //  background: #fff
+  //  time
+  //    color: #63a288
+  //  a
+  //    text-decoration: none
+  //    &[itemprop="url"]
+  //      color: #fff
+  //      background: #63a288
+  //      +box-shadow(inset rgba(black, .7) 0 0 1px)
+  //    &:before
+  //      border-top: 5px solid #fff
+  //    &:after
+  //      position: absolute
+  //      left: 55px
+  //      content: ""
+  //      width: 0
+  //      height: 0
+  //      border-top: 0px solid transparent
+  //      border-left: 5px solid transparent
+  //      border-right: 5px solid transparent
+  //      border-bottom: 5px solid #fff
+  //      top: 45px
+
+
+
+//---------------------------------------------------------------------------
+// /Calendar
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
 
 
 
@@ -331,8 +429,8 @@ a
 .ribbon
   position: relative
   background: #fff
-  +text-shadow(rgba(black, .4) 0px 1px 1px)
-  +text-shadow(rgba(black, .4) 0rem .1rem .1rem)
+  // +text-shadow(rgba(black, .4) 0px 1px 1px)
+  // +text-shadow(rgba(black, .4) 0rem .1rem .1rem)
   display: block
   font-size: 14px
   font-size: 1.4rem
@@ -423,10 +521,16 @@ a
 
 
 
-.box
+// Basic box setup
+.base-box
   position: relative
   padding: 0
   padding: 0
+  // background: yellow !important
+.box
+  @extend .base-box
+.navigation
+  @extend .box
   background: $light-blue
   padding: 15px 0
   padding: 1.5rem 0
@@ -497,7 +601,8 @@ a
           left: .5rem
           top: 7px
           top: .7rem
-          font-family: SSStandard
+          font-family: "SSStandard"
+          +font-feature-settings
           font-size: 10px
           font-size: 1rem
           color: $base-color
@@ -532,6 +637,46 @@ a
       //time
   .rss-icon
     display: none
+.paperstack
+  @extend .box
+  // position: relative
+  margin: 0 0 2em 0
+  background: #fff
+  padding: 10px
+  border: 1px solid rgba(0, 0, 0, 0.150)
+  +box-shadow(rgba(black, .18) 1px 1px 2px)
+  z-index: 1
+  &:before
+    z-index: -1
+    position: absolute
+    top: -2px
+    left: 0
+    content: ''
+    width: 100%
+    height: 100%
+    background-color: #fff
+    border: 1px solid rgba(0, 0, 0, 0.150)
+    +box-shadow(rgba(black, .19) 1px 1px 2px)
+    +transform(rotate(1deg))
+  &:after
+    z-index: -2
+    position: absolute
+    top: 1px
+    left: -2px
+    content: ''
+    width: 100%
+    height: 100%
+    background-color: #fff
+    border: 1px solid rgba(0, 0, 0, 0.150)
+    +box-shadow(rgba(black, .2) 1px 1px 2px)
+    +transform(rotate(359deg))
+
+.contact
+  @extend .box
+.calendar-item
+  @extend .box
+
+
 #active-link
   position: relative
   background: $hiof-blue
@@ -550,38 +695,56 @@ a
     // +box-shadow(rgba(black, .3) -3px 0 1px)
 
 
-
 #sidebar_b, #sidebar_a, #page_tree_nav
   .ribbon
-    +border-top-left-radius(23px)
-    +border-top-left-radius(2.3rem)
-    +border-bottom-left-radius(22px)
-    +border-bottom-left-radius(2.2rem)
-    margin-left: 15px
-    margin-left: 1.5rem
+    // +border-top-left-radius(23px)
+    // +border-top-left-radius(2.3rem)
+    // +border-bottom-left-radius(22px)
+    // +border-bottom-left-radius(2.2rem)
+    +box-shadow(inset rgba(black, .7) 1px 0px 2px)
+    +box-shadow(inset rgba(black, .7) .1rem 0rem .2rem)
+    margin-left: 0px
+    margin-left: 0rem
     margin-right: -10px
     margin-right: -1rem
     padding: 10px 0 10px 20px
     padding: 1rem 0 1rem 2rem
-    &:before
-      // border-right-color: transparent
+
     &:after
       border-width: 0 0 10px 10px
       border-width: 0 0 1rem 1rem
       right: 0px
       right: 0rem
 
+
+
 @media only screen and (max-width: 1039px)
   #sidebar_b, #sidebar_a, #page_tree_nav
     .ribbon
       &:before
         border-right-color: transparent
-  #active-link
-    padding-left: 20px
-    &:after
-      left: 0px
-      border-left: 16px solid #fff
-      border-right: none
+    #active-link
+      padding-left: 20px
+      &:after
+        left: 0px
+        border-left: 13px solid #fff
+        border-right: none
+@media only screen and (min-width: 1040px)
+  #sidebar_a, #page_tree_nav
+    .ribbon
+      +box-shadow(inset rgba(black, .7) -1px 0px 2px)
+      +box-shadow(inset rgba(black, .7) -.1rem 0rem .2rem)
+  #sidebar_b
+    .ribbon
+      &:before
+        border-right-color: transparent
+
+    #active-link
+      padding-left: 20px
+      &:after
+        left: 0px
+        border-left: 13px solid #fff
+        border-right: none
 
 
 // Module specific CSS
@@ -812,68 +975,6 @@ select.btn
 //-------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------
-// Paperstack
-//---------------------------------------------------------------------------
-
-.paperstack
-  position: relative
-  margin: 0 0 2em 0
-  background: #fff
-  padding: 10px
-  border: 1px solid rgba(0, 0, 0, 0.150)
-  // -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.18)
-  // -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.18)
-  // box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.18)
-  +box-shadow(rgba(black, .18) 1px 1px 2px)
-  z-index: 1
-  &:before
-    z-index: -1
-    position: absolute
-    top: -2px
-    left: 0
-    content: ''
-    width: 100%
-    height: 100%
-    background-color: #fff
-    border: 1px solid rgba(0, 0, 0, 0.150)
-    // -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.19)
-    // -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.19)
-    // box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.19)
-    +box-shadow(rgba(black, .19) 1px 1px 2px)
-    // -webkit-transform: rotate(1deg)
-    // -moz-transform: rotate(1deg)
-    // -o-transform: rotate(1deg)
-    // -ms-transform: rotate(1deg)
-    // transform: rotate(1deg)
-    +transform(rotate(1deg))
-  &:after
-    z-index: -2
-    position: absolute
-    top: 1px
-    left: -2px
-    content: ''
-    width: 100%
-    height: 100%
-    background-color: #fff
-    border: 1px solid rgba(0, 0, 0, 0.150)
-    // -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2)
-    // -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2)
-    // box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2)
-    +box-shadow(rgba(black, .2) 1px 1px 2px)
-    // -webkit-transform: rotate(359deg)
-    // -moz-transform: rotate(359deg)
-    // -o-transform: rotate(359deg)
-    // -ms-transform: rotate(359deg)
-    // transform: rotate(359deg)
-    +transform(rotate(359deg))
-
-//---------------------------------------------------------------------------
-// /paperstack
-//---------------------------------------------------------------------------
-
-//-------------------------------------------------------------------------------------------------------
-
-//---------------------------------------------------------------------------
 // Dropdown
 //---------------------------------------------------------------------------
 
@@ -1048,16 +1149,103 @@ select.btn
 
 
 
-#news
-
 #news-promoted
-  padding-right: 30px
-  #slider
-    +box-shadow(rgba(black, .7) 0 0 1px)
-    border: 5px solid #fff
-    .nivo-main-image
-      //+box-shadow(rgba(black, 1) 0 0 2px)
-      //border: 5px solid #fff 
+  margin-bottom: 100px
+  ul.bjqs
+    position: relative
+    list-style: none
+    padding: 0
+    margin: 0
+    overflow: hidden
+    display: none
+
+  li.bjqs-slide
+    position: absolute
+    display: none
+    a
+      position: relative
+      // height: 100%
+      display: block
+      .caption
+        position: absolute
+        bottom: 0px
+        background: #000
+        background: rgba(0,0,0,.6)
+        width: 100%
+        color: #fff
+        padding-left: 10px
+        h1
+          // padding-left: 10px
+          font-size: 16px
+  ul.bjqs-controls
+    list-style: none
+    margin: 0
+    padding: 0
+    z-index: 9999
+
+    &.v-centered li
+      a
+        position: absolute
+        // +border-radius(16px)
+        // width: 32px
+        // height: 32px
+        padding: 0
+      &.bjqs-next a
+        right: 0px
+        +border-top-left-radius(10px)
+        +border-bottom-left-radius(10px)
+      &.bjqs-prev a
+        left: 0px
+        +border-top-right-radius(10px)
+        +border-bottom-right-radius(10px)
+
+
+  ol.bjqs-markers
+    list-style: none
+    padding: 0
+    margin: 0
+    width: 100%
+    &.h-centered
+      text-align: center
+    li
+      display: inline
+      a
+        display: inline-block
+
+  p.bjqs-caption
+    display: block
+    width: 96%
+    margin: 0
+    padding: 2%
+    position: absolute
+    bottom: 0
+
+  ul.bjqs-controls.v-centered li a
+    display: block
+    padding: 20px 10px
+    background: rgba(black, .7)
+    color: #fff
+    text-decoration: none
+    font-family: "SSStandard"
+    +font-feature-settings
+    &:hover
+      background: rgba(black, 1)
+      color: #fff
+
+  ol.bjqs-markers li
+    a
+      padding: 5px 10px
+      background: #000
+      color: #fff
+      margin: 5px
+      text-decoration: none
+    &.active-marker a, a:hover
+      background: #999
+
+  p.bjqs-caption
+    background: rgba(255, 255, 255, 0.5)
+
+  a[data-direction]
 
 
 #news-headlines
@@ -1177,17 +1365,15 @@ select.btn
 
 
 #study-selection
-  //border: 1px solid #333
-  //+border-radius(5px)
+
   height: 345px
   position: relative
-  //+box-shadow(rgba(black, 1) 0 0 1px)
   padding-left: 30px
   .tabs.vertical
     position: absolute
     top: 44px
     left: 30px
-    width: 223px
+    width: 220px
     float: left
     +box-shadow(rgba(black, .7) 0 0 1px)
     padding: 0
@@ -1203,7 +1389,9 @@ select.btn
         line-height: 4.4rem
         text-transform: uppercase
         padding-left: 10px
-        +box-shadow(inset rgba(black, .2) -2px 0 1px)
+        // +box-shadow(inset rgba(black, .2) -2px 0 1px)
+
+        background: $gray
         &.active
           background: #fff
           background: #fff inline-image("graphic/studietilbud-selected.png") top left no-repeat
@@ -1211,7 +1399,7 @@ select.btn
           margin-right: -1px
           padding-left: 50px
           position: relative
-          +box-shadow(rgba(black, .7) -2px 0 2px)
+          +box-shadow(rgba(black, .7) -3px 1px 5px)
           &:before
             content: ''
             position: absolute
@@ -1254,105 +1442,6 @@ select.btn
 //-------------------------------------------------------------------------------------------------------
 
 
-//---------------------------------------------------------------------------
-// Calendar
-//---------------------------------------------------------------------------
-
-//-------------------------------------------------------------------------------------------------------
-
-
-#calendar
-  // padding-left: 30px
-  div
-    float: left
-    width: 125px
-    height: 135px
-    +box-shadow(rgba(black, .7) 0 0 1px)
-    margin-right: 8px
-    position: relative
-    background: #63a288
-    +transition-property(background)
-    +transition-duration(.5s)
-    span
-      display: block
-      &[itemprop="description"], &[itemprop="location"]
-        display: none
-    time
-      &[itemprop="startDate"]
-        display: block
-        // margin-top: 30px
-        width: 70px
-        margin-left: 25px
-        text-align: center
-        font-size: 22px
-        padding: 5px
-        position: absolute
-        top: 10px
-        color: #fff
-        line-height: 1
-        +transition-property(color)
-        +transition-duration(.5s)
-      &[itemprop="endDate"]
-        display: none
-    a
-      width: 100%
-      height: 50px
-      height: 5rem
-      padding: 5px 10px
-      padding: 1.1rem .5rem 1rem
-      &:before
-        content: ""
-        width: 0
-        height: 0
-        border-left: 5px solid transparent
-        border-right: 5px solid transparent
-        border-top: 5px solid #63a288
-        position: absolute
-        top: 0
-        left: 55px
-        +transition-property(top)
-        +transition-duration(.5s)
-      &[itemprop="url"]
-        position: absolute
-        bottom: 10px
-        left: 0
-        background: #fff
-        color: #777
-        +transition-property(background, color)
-        +transition-duration(.5s)
-        +transition-delay(.2s)
-
-    &:hover
-      background: #fff
-      time
-        color: #63a288
-      a
-        text-decoration: none
-        &[itemprop="url"]
-          color: #fff
-          background: #63a288
-          +box-shadow(inset rgba(black, .7) 0 0 1px)
-        &:before
-          border-top: 5px solid #fff
-        &:after
-          position: absolute
-          left: 55px
-          content: ""
-          width: 0
-          height: 0
-          border-top: 0px solid transparent
-          border-left: 5px solid transparent
-          border-right: 5px solid transparent
-          border-bottom: 5px solid #fff
-          top: 45px
-
-
-
-//---------------------------------------------------------------------------
-// /Calendar
-//---------------------------------------------------------------------------
-
-//-------------------------------------------------------------------------------------------------------
 
 
 //---------------------------------------------------------------------------
@@ -1512,9 +1601,22 @@ select.btn
 .profile
   &.vcard
     width: 200px
+    width: 20rem
     float: left
-    padding: 0    
-    padding-top: 10px
+    // padding: 0    
+    margin-top: 10px
+    margin-top: 1rem
+    // margin-bottom: -40px
+    // margin-bottom: -4rem
+    padding: 10px
+    padding: 1rem
+    padding-bottom: 0px
+    padding-bottom: 0rem
+    position: relative
+    // display: block
+    background: #fff
+    +box-shadow(rgba(black, .5) 0 0 3px)
+    +box-shadow(rgba(black, .5) 0 0 .3rem)
     .n
       font-size: 14px
       font-size: 1.4rem
@@ -1522,35 +1624,64 @@ select.btn
       padding-bottom: 1rem
       border-bottom: solid 1px #eee
       border-bottom: solid .1rem #eee
-    h2
+      display: block
+    .department
       font-size: 13px
       font-size: 1.3rem
+      margin: 0 !important
+    .title
+      display: block
     .photo-wrap
+      display: block
       width: 80px
       width: 8rem
       height: 80px
       height: 8rem
       float: left
-      margin: 10px
-      margin: 1rem
-      margin-left: 0rem
-      margin-left: 0px
-      margin-right: 20px
-      margin-right: 2rem
+      margin: 10px 50px
+      margin: 1rem 5rem
       +border-radius(80px)
       +border-radius(8rem)
       overflow: hidden
-      border: 5px solid #fff
-      border: .5rem solid #fff
-      +box-shadow(rgba(black, .7) 0 0 3px)
-      +box-shadow(rgba(black, .7) 0 0 .3rem)
-
-      top: 0
-      margin-left: 50px
-    > span
+      border: 1px solid #fff
+      border: .1rem solid #fff
+      font-size: 30px
+      font-size: 3rem
+      display: block    
+    .tel, .url
       display: block
+      line-height: 1.4
+      padding: 0
+    .type
+      width: 20px
+      width: 2rem
+      display: inline-block
+      text-indent: -999em
+      position: relative
+      span
+        text-indent: 0
+        position: absolute
+        top: 1px
+        top: .1rem
+        left: 0
+        +transition-property(transform)
+        +transition-duration(2)
 
-      .email
+    .adr, .email
+      display: block
+      padding: 0
+      // text-indent: 0
+    .email
+      display: block
+      // padding: 0
+      // overflow: hidden
+      span
+        width: 24px
+        width: 2.4rem
+        display: inline-block
+        color: $text-color
+      &:hover
+        text-decoration: none
     .title
       padding-bottom: 10px
       padding-bottom: 1rem
@@ -1558,15 +1689,43 @@ select.btn
       margin-bottom: 1rem
       border-bottom: solid 1px #eee
       border-bottom: solid .1rem #eee
-    .tel
-      .type
-    > .url
-      padding-top: 10px
-      padding-top: 1rem
-      margin-top: 10px
-      margin-top: 1rem
-      border-top: solid 1px #eee
-      border-top: solid .1rem #eee
+    > .downloadprofile
+      display: none
+      position: relative
+      bottom: -20px
+      left: 38%
+      display: inline-block
+      width: 40px
+      width: 4rem
+      height: 40px
+      height: 4rem
+      background: #fff
+      color: $hiof-blue
+      font-size: 20px
+      padding: 10px
+      +box-shadow(rgba(black, .5) 0 0 3px)
+      +box-shadow(rgba(black, .5) 0 0 .3rem)
+      +border-radius(20px)
+      +border-radius(2rem)
+      +transition-property(font-size, padding, box-shadow)
+      +transition-duration(.5s)
+      text-align: left
+      &:hover
+        +box-shadow(rgba(black, .8) 0 0 5px)
+        +box-shadow(rgba(black, .8) 0 0 .5rem)
+        padding: 20px
+        font-size: 0px
+        text-decoration: none
+        position: relative
+        &:after
+          content: "download"
+          position: absolute
+          top: 10px
+          left: 10px
+          font-size: 2rem
+      &:active
+        +box-shadow(inset rgba(black, .8) 0 0 3px)
+        +box-shadow(inset rgba(black, .8) 0 0 .3rem)
   &.expertise
     padding-top: 27px
     width: 380px
@@ -1580,7 +1739,7 @@ select.btn
     // left: 0
 
     position: fixed
-    top: 0
+    top: 10px
   .expertise
 
 
@@ -1592,6 +1751,35 @@ select.btn
 
 //-------------------------------------------------------------------------------------------------------
 
+
+
+//---------------------------------------------------------------------------
+// ansatt / student
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
+
+#tools-employee, #tools-student
+  float: left
+  margin-bottom: 20px
+  #links-student,
+  #links-employee,
+  #calendar,
+  #food-menu
+    float: left
+
+  #food-menu
+    div
+      float: left
+      margin: 0 5px
+
+
+//---------------------------------------------------------------------------
+// /ansatt / student
+//---------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
 
 
 
@@ -1608,6 +1796,7 @@ select.btn
   width: 350px
   margin: 0
   padding: 0
+  margin-left: 20px
   li
     float: left
     list-style: none
@@ -1621,7 +1810,7 @@ select.btn
       &:hover
         text-decoration: none
       span
-        background: #a3a3a3
+        background: $hiof-blue
         display: inline-block
         padding: 0 7px
 
@@ -1633,7 +1822,7 @@ select.btn
         &:before
           content: ""
           border-top: 5px solid transparent
-          border-left: 5px solid #a3a3a3
+          border-left: 5px solid $hiof-blue
           border-bottom: 5px solid transparent
           position: absolute
           top: 10px
@@ -1649,7 +1838,7 @@ select.btn
           right: -10px
     &:nth-child(odd)
       a
-        margin-right: 5px
+        margin-right: 10px
 
 //---------------------------------------------------------------------------
 // /student-employee-links
@@ -1667,11 +1856,11 @@ select.btn
 //-------------------------------------------------------------------------------------------------------
 
 
-#food
+#food-menu
   div
     width: 170px
   h1
-    background: #6195a9
+    background: $hiof-blue
     display: block
     position: relative
     margin-bottom: 5px
@@ -1683,7 +1872,7 @@ select.btn
       content: ""
       border-left: 5px solid transparent
       border-right: 5px solid transparent
-      border-top: 5px solid #63a288
+      border-top: 5px solid $hiof-blue
       position: absolute
       bottom: -5px
       left: 5px
@@ -1699,7 +1888,7 @@ select.btn
             content: ""
             border-left: 5px solid transparent
             border-right: 5px solid transparent
-            border-top: 5px solid #e2eff5
+            border-top: 5px solid #f0f0f0
             position: absolute
             bottom: -5px
             left: 5px
@@ -1708,7 +1897,7 @@ select.btn
         padding: 5px 10px
         padding-left: 20px
         position: relative
-        background: #e2eff5
+        background: #f0f0f0
         &:before
           content: ""
           border-left: 5px solid transparent
@@ -1735,33 +1924,6 @@ select.btn
 //-------------------------------------------------------------------------------------------------------
 
 
-
-//---------------------------------------------------------------------------
-// ansatt / student
-//---------------------------------------------------------------------------
-
-//-------------------------------------------------------------------------------------------------------
-
-
-#tools-employee, #tools-student
-  float: left
-  #links-student,
-  #links-employee,
-  #calendar,
-  #food
-    float: left
-
-  #food
-    div
-      float: left
-      margin: 0 5px
-
-
-//---------------------------------------------------------------------------
-// /ansatt / student
-//---------------------------------------------------------------------------
-
-//-------------------------------------------------------------------------------------------------------
 
 
 
