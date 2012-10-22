@@ -1,14 +1,14 @@
 ###
 File: Hiof 2012 - testmode functions
 Author: Kenneth Nordahl
-Updated August 29th, 2012
+Updated October 20th, 2012
 ###
 
 class window.TestmodeController
   constructor: ->
     @body = $("#body")
-    @createTestElement()
-    @moveBodyElement()
+    # @createTestElement()
+    # @moveBodyElement()
 
     console.log "hello dev"
 
