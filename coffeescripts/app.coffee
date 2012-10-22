@@ -154,7 +154,7 @@ class window.ApplicationController
       width: 540
       animspeed: 10000
       responsive: true
-      # showmarkers: false
+      showmarkers: false
       prevtext : 'previous'
       # nexttext : 'right'
 
@@ -222,6 +222,8 @@ class window.ApplicationController
     if (@browserwidth > 1024)
       $("#sidebar_a").css "marginTop", (@columnPageTreeNav + 20)
     #if (@browserwidth > 1024) or $.browser.msie
+
+
     #if @browserwidth > 1024
     #  colLeft = (@columnPageTreeNav + @columnSidebarA)
     #  colHeight = Math.max(colLeft, @columnPageTreeNav, @columnContent, @columnSidebarA, @columnSidebarB)
@@ -287,11 +289,11 @@ class window.ApplicationController
   # Create 
   mobileAddMenu: ->
     if $("#navigation-mobile").length is 0
-      $("#header").prepend "<div id=\"navigation-mobile\" class=\"ss-icon\">list</div>"
+      $("#header").prepend "<div id=\"navigation-mobile\" class=\"ss-icon ss-standard\">list</div>"
     else
   mobileAddSidebar: ->
     if $("#navigation-sidebar").length is 0
-      $("#header").append "<div id=\"navigation-sidebar\" class=\"ss-icon\">layout</div>"
+      $("#header").append "<div id=\"navigation-sidebar\" class=\"ss-icon ss-standard\">layout</div>"
     else
 
 
