@@ -188,90 +188,89 @@ a
 //-------------------------------------------------------------------------------------------------------
 
 
-#calendar
-  // padding-left: 30px
-  div.calendar
-    float: left
-    width: 125px
-    height: 135px
-    +box-shadow(rgba(black, .7) 0 0 1px)
-    margin-right: 8px
-    position: relative
-    background: #6da486
-    +transition-property(background)
-    +transition-duration(.5s)
-    span
-      display: block
-      &[itemprop="description"], &[itemprop="location"]
-        display: none
-    time
-      &[itemprop="startDate"]
-        display: block
-        // margin-top: 30px
-        width: 70px
-        margin-left: 25px
-        text-align: center
-        font-size: 22px
-        padding: 5px
-        position: absolute
-        top: 10px
-        color: #fff
-        line-height: 1
-        +transition-property(color)
-        +transition-duration(.5s)
-      &[itemprop="endDate"]
-        display: none
-    a
-      width: 100%
-      height: 50px
-      height: 5rem
-      padding: 5px 10px
-      padding: 1.1rem .5rem 1rem
-      &:before
-        content: ""
-        width: 0
-        height: 0
-        border-left: 5px solid transparent
-        border-right: 5px solid transparent
-        border-top: 5px solid #63a288
-        position: absolute
-        top: 0
-        left: 55px
-        +transition-property(top)
-        +transition-duration(.5s)
-      &[itemprop="url"]
-        position: absolute
-        bottom: 5px
-        left: 0
-        background: #fff
-        color: #777
-        +transition-property(background, color)
-        +transition-duration(.5s)
-        +transition-delay(.2s)
 
-    //&:hover
-    //  background: #fff
-    //  time
-    //    color: #63a288
-    //  a
-    //    text-decoration: none
-    //    &[itemprop="url"]
-    //      color: #fff
-    //      background: #63a288
-    //      +box-shadow(inset rgba(black, .7) 0 0 1px)
-    //    &:before
-    //      border-top: 5px solid #fff
-    //    &:after
-    //      position: absolute
-    //      left: 55px
-    //      content: ""
-    //      width: 0
-    //      height: 0
-    //      border-top: 0px solid transparent
-    //      border-left: 5px solid transparent
-    //      border-right: 5px solid transparent
-    //      border-bottom: 5px solid #fff
-    //      top: 45px
+.calendar-item
+  float: left
+  width: 125px
+  height: 135px
+  +box-shadow(rgba(black, .7) 0 0 1px)
+  margin-right: 8px
+  position: relative
+  background: #6da486
+  +transition-property(background)
+  +transition-duration(.5s)
+  span
+    display: block
+    &[itemprop="description"], &[itemprop="location"]
+      display: none
+  time
+    &[itemprop="startDate"]
+      display: block
+      // margin-top: 30px
+      width: 70px
+      margin-left: 25px
+      text-align: center
+      font-size: 22px
+      padding: 5px
+      position: absolute
+      top: 10px
+      color: #fff
+      line-height: 1
+      +transition-property(color)
+      +transition-duration(.5s)
+    &[itemprop="endDate"]
+      display: none
+  a
+    width: 100%
+    height: 50px
+    height: 5rem
+    padding: 5px 10px
+    padding: 1.1rem .5rem 1rem
+    &:before
+      content: ""
+      width: 0
+      height: 0
+      border-left: 5px solid transparent
+      border-right: 5px solid transparent
+      border-top: 5px solid #63a288
+      position: absolute
+      top: 0
+      left: 55px
+      +transition-property(top)
+      +transition-duration(.5s)
+    &[itemprop="url"]
+      position: absolute
+      bottom: 5px
+      left: 0
+      background: #fff
+      color: #777
+      +transition-property(background, color)
+      +transition-duration(.5s)
+      +transition-delay(.2s)
+
+  //&:hover
+  //  background: #fff
+  //  time
+  //    color: #63a288
+  //  a
+  //    text-decoration: none
+  //    &[itemprop="url"]
+  //      color: #fff
+  //      background: #63a288
+  //      +box-shadow(inset rgba(black, .7) 0 0 1px)
+  //    &:before
+  //      border-top: 5px solid #fff
+  //    &:after
+  //      position: absolute
+  //      left: 55px
+  //      content: ""
+  //      width: 0
+  //      height: 0
+  //      border-top: 0px solid transparent
+  //      border-left: 5px solid transparent
+  //      border-right: 5px solid transparent
+  //      border-bottom: 5px solid #fff
+  //      top: 45px
 
 
 
@@ -522,152 +521,161 @@ a
 
 
 
-.box
+// Basic box setup
+.base-box
   position: relative
   padding: 0
   padding: 0
-  &.navigation
-    background: $light-blue
-    padding: 15px 0
-    padding: 1.5rem 0
-    +border-radius($border-radius-small-px)
-    +border-radius($border-radius-small-rem)
-    +border-top-right-radius(0)
-    +border-bottom-right-radius(0)
-    +box-shadow(rgba(black, .3) 0 0 3px inset)
-    > *
-      margin: 0px 15px
-      margin: 0rem 1.5rem  
-    > a
-      display: block
-      width: 47px
-      width: 4.7rem
-      position: absolute
-      top: 5px
-      top: .5rem
-      right: 5px
-      right: .5rem
-      display: none
-    > h1
-      display: block
-      font-size: 14px
-      font-size: 1.4rem
-      line-height: 20px
-      line-height: 3rem
-      margin-bottom: 20px
-      margin-bottom: 2rem
-    > ul
-      padding: 0
-      margin: 0px
-      margin: 0rem
-      li
-        list-style: none
+  // background: yellow !important
+.box
+  @extend .base-box
+.navigation
+  @extend .box
+  background: $light-blue
+  padding: 15px 0
+  padding: 1.5rem 0
+  +border-radius($border-radius-small-px)
+  +border-radius($border-radius-small-rem)
+  +border-top-right-radius(0)
+  +border-bottom-right-radius(0)
+  +box-shadow(rgba(black, .3) 0 0 3px inset)
+  > *
+    margin: 0px 15px
+    margin: 0rem 1.5rem  
+  > a
+    display: block
+    width: 47px
+    width: 4.7rem
+    position: absolute
+    top: 5px
+    top: .5rem
+    right: 5px
+    right: .5rem
+    display: none
+  > h1
+    display: block
+    font-size: 14px
+    font-size: 1.4rem
+    line-height: 20px
+    line-height: 3rem
+    margin-bottom: 20px
+    margin-bottom: 2rem
+  > ul
+    padding: 0
+    margin: 0px
+    margin: 0rem
+    li
+      list-style: none
+    a
+      border-bottom: 1px solid #f3f8fc
+      border-bottom: 1px solid rgba(white, .6)
+    > li
+      position: relative
+      // padding: 0px 25px 0px 0px 
+      // padding: 0rem 2.5rem 0rem 0rem
+      &:hover
+        // background: #fff
+        // +box-shadow(rgba(black, 1) inset)
       a
-        border-bottom: 1px solid #f3f8fc
-        border-bottom: 1px solid rgba(white, .6)
-      > li
-        position: relative
-        // padding: 0px 25px 0px 0px 
-        // padding: 0rem 2.5rem 0rem 0rem
+        display: block
+        padding: 5px 0px
+        padding: .5rem 0rem
+        padding-left: 10px
+        padding-right: 15px
+        &:before
+          +transition (all, 3s, ease-in-out)
         &:hover
-          // background: #fff
-          // +box-shadow(rgba(black, 1) inset)
+          text-decoration: none
+      li
+        position: relative
+        display: block
+        &:before
+          display: none
+          width: 20px
+          width: 2rem
+          height: 20px
+          height: 2rem
+          content: "right"
+          position: absolute
+          left: 5px
+          left: .5rem
+          top: 7px
+          top: .7rem
+          font-family: "SSStandard"
+          +font-feature-settings
+          font-size: 10px
+          font-size: 1rem
+          color: $base-color
+          opacity: 0
+          +transition-property(opacity)
+          +transition-duration(3s)
+        &:hover
+          &:before
+            opacity: 1
+            display: block
         a
-          display: block
-          padding: 5px 0px
-          padding: .5rem 0rem
-          padding-left: 10px
-          padding-right: 15px
-          &:before
-            +transition (all, 3s, ease-in-out)
-          &:hover
-            text-decoration: none
+          padding-left: 20px
         li
-          position: relative
-          display: block
           &:before
-            display: none
-            width: 20px
-            width: 2rem
-            height: 20px
-            height: 2rem
-            content: "right"
-            position: absolute
-            left: 5px
-            left: .5rem
-            top: 7px
-            top: .7rem
-            font-family: "SSStandard"
-            +font-feature-settings
-            font-size: 10px
-            font-size: 1rem
-            color: $base-color
-            opacity: 0
-            +transition-property(opacity)
-            +transition-duration(3s)
-          &:hover
-            &:before
-              opacity: 1
-              display: block
+            left: 17px
           a
-            padding-left: 20px
+            padding-left: 30px
           li
             &:before
-              left: 17px
+              left: 27px
             a
-              padding-left: 30px
-            li
-              &:before
-                left: 27px
-              a
-                padding-left: 40px
-          // > ul
-          //   margin: 0
-          //   li
-          //     padding-left: 20px
+              padding-left: 40px
+        // > ul
+        //   margin: 0
+        //   li
+        //     padding-left: 20px
 
-          //   ul
-          //     margin: 0
-          //     li
-          //       padding-left: 40px
-        //time
-    .rss-icon
-      display: none
-  &.paperstack
-    position: relative
-    margin: 0 0 2em 0
-    background: #fff
-    padding: 10px
+        //   ul
+        //     margin: 0
+        //     li
+        //       padding-left: 40px
+      //time
+  .rss-icon
+    display: none
+.paperstack
+  @extend .box
+  // position: relative
+  margin: 0 0 2em 0
+  background: #fff
+  padding: 10px
+  border: 1px solid rgba(0, 0, 0, 0.150)
+  +box-shadow(rgba(black, .18) 1px 1px 2px)
+  z-index: 1
+  &:before
+    z-index: -1
+    position: absolute
+    top: -2px
+    left: 0
+    content: ''
+    width: 100%
+    height: 100%
+    background-color: #fff
     border: 1px solid rgba(0, 0, 0, 0.150)
-    +box-shadow(rgba(black, .18) 1px 1px 2px)
-    z-index: 1
-    &:before
-      z-index: -1
-      position: absolute
-      top: -2px
-      left: 0
-      content: ''
-      width: 100%
-      height: 100%
-      background-color: #fff
-      border: 1px solid rgba(0, 0, 0, 0.150)
-      +box-shadow(rgba(black, .19) 1px 1px 2px)
-      +transform(rotate(1deg))
-    &:after
-      z-index: -2
-      position: absolute
-      top: 1px
-      left: -2px
-      content: ''
-      width: 100%
-      height: 100%
-      background-color: #fff
-      border: 1px solid rgba(0, 0, 0, 0.150)
-      +box-shadow(rgba(black, .2) 1px 1px 2px)
-      +transform(rotate(359deg))
+    +box-shadow(rgba(black, .19) 1px 1px 2px)
+    +transform(rotate(1deg))
+  &:after
+    z-index: -2
+    position: absolute
+    top: 1px
+    left: -2px
+    content: ''
+    width: 100%
+    height: 100%
+    background-color: #fff
+    border: 1px solid rgba(0, 0, 0, 0.150)
+    +box-shadow(rgba(black, .2) 1px 1px 2px)
+    +transform(rotate(359deg))
 
-  &.contact
-  &.calendar
+.contact
+  @extend .box
+.calendar-item
+  @extend .box
+
 
 #active-link
   position: relative
@@ -1593,9 +1601,22 @@ select.btn
 .profile
   &.vcard
     width: 200px
+    width: 20rem
     float: left
-    padding: 0    
-    padding-top: 10px
+    // padding: 0    
+    margin-top: 10px
+    margin-top: 1rem
+    // margin-bottom: -40px
+    // margin-bottom: -4rem
+    padding: 10px
+    padding: 1rem
+    padding-bottom: 0px
+    padding-bottom: 0rem
+    position: relative
+    // display: block
+    background: #fff
+    +box-shadow(rgba(black, .5) 0 0 3px)
+    +box-shadow(rgba(black, .5) 0 0 .3rem)
     .n
       font-size: 14px
       font-size: 1.4rem
@@ -1608,32 +1629,59 @@ select.btn
       font-size: 13px
       font-size: 1.3rem
       margin: 0 !important
+    .title
+      display: block
     .photo-wrap
+      display: block
       width: 80px
       width: 8rem
       height: 80px
       height: 8rem
       float: left
-      margin: 10px
-      margin: 1rem
-      margin-left: 0rem
-      margin-left: 0px
-      margin-right: 20px
-      margin-right: 2rem
+      margin: 10px 50px
+      margin: 1rem 5rem
       +border-radius(80px)
       +border-radius(8rem)
       overflow: hidden
-      border: 5px solid #fff
-      border: .5rem solid #fff
-      +box-shadow(rgba(black, .7) 0 0 3px)
-      +box-shadow(rgba(black, .7) 0 0 .3rem)
-
-      // top: 0
+      border: 1px solid #fff
+      border: .1rem solid #fff
+      font-size: 30px
+      font-size: 3rem
+      display: block    
+    .tel, .url
       display: block
-    > span
-      display: block
+      line-height: 1.4
+      padding: 0
+    .type
+      width: 20px
+      width: 2rem
+      display: inline-block
+      text-indent: -999em
+      position: relative
+      span
+        text-indent: 0
+        position: absolute
+        top: 1px
+        top: .1rem
+        left: 0
+        +transition-property(transform)
+        +transition-duration(2)
 
-      .email
+    .adr, .email
+      display: block
+      padding: 0
+      // text-indent: 0
+    .email
+      display: block
+      // padding: 0
+      // overflow: hidden
+      span
+        width: 24px
+        width: 2.4rem
+        display: inline-block
+        color: $text-color
+      &:hover
+        text-decoration: none
     .title
       padding-bottom: 10px
       padding-bottom: 1rem
@@ -1641,15 +1689,43 @@ select.btn
       margin-bottom: 1rem
       border-bottom: solid 1px #eee
       border-bottom: solid .1rem #eee
-    .tel
-      .type
-    > .url
-      padding-top: 10px
-      padding-top: 1rem
-      margin-top: 10px
-      margin-top: 1rem
-      border-top: solid 1px #eee
-      border-top: solid .1rem #eee
+    > .downloadprofile
+      display: none
+      position: relative
+      bottom: -20px
+      left: 38%
+      display: inline-block
+      width: 40px
+      width: 4rem
+      height: 40px
+      height: 4rem
+      background: #fff
+      color: $hiof-blue
+      font-size: 20px
+      padding: 10px
+      +box-shadow(rgba(black, .5) 0 0 3px)
+      +box-shadow(rgba(black, .5) 0 0 .3rem)
+      +border-radius(20px)
+      +border-radius(2rem)
+      +transition-property(font-size, padding, box-shadow)
+      +transition-duration(.5s)
+      text-align: left
+      &:hover
+        +box-shadow(rgba(black, .8) 0 0 5px)
+        +box-shadow(rgba(black, .8) 0 0 .5rem)
+        padding: 20px
+        font-size: 0px
+        text-decoration: none
+        position: relative
+        &:after
+          content: "download"
+          position: absolute
+          top: 10px
+          left: 10px
+          font-size: 2rem
+      &:active
+        +box-shadow(inset rgba(black, .8) 0 0 3px)
+        +box-shadow(inset rgba(black, .8) 0 0 .3rem)
   &.expertise
     padding-top: 27px
     width: 380px
@@ -1663,7 +1739,7 @@ select.btn
     // left: 0
 
     position: fixed
-    top: 0
+    top: 10px
   .expertise
 
 
