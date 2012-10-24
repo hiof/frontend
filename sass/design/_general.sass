@@ -597,10 +597,10 @@ a
         display: block
         &::before
           display: none
-          width: 20px
-          width: 2rem
-          height: 20px
-          height: 2rem
+          // width: 20px
+          // width: 2rem
+          // height: 20px
+          // height: 2rem
           content: "right"
           position: absolute
           left: 5px
@@ -621,27 +621,35 @@ a
             display: block
         a
           padding-left: 20px
+          padding-left: 2rem
         li
           &::before
             left: 17px
+            left: 1.7rem
           a
             padding-left: 30px
+            padding-left: 3rem
           li
             &::before
               left: 27px
+              left: 2.7rem
             a
               padding-left: 40px
+              padding-left: 4rem
   .rss-icon
     display: none
 .paperstack
   @extend .base-box
   z-index: 1
-  // position: relative
+  margin: 0 0 20px 0
   margin: 0 0 2em 0
   background: #fff
   padding: 10px
+  padding: 1rem
   border: 1px solid rgba(0, 0, 0, 0.150)
+  border: .1rem solid rgba(0, 0, 0, 0.150)
   +box-shadow(rgba(black, .18) 1px 1px 2px)
+  +box-shadow(rgba(black, .18) .1rem .1rem .2rem)
   &::before, &::after
     position: absolute
     content: ''
@@ -682,11 +690,16 @@ a
     background: #eee
     +background-image(linear-gradient(color-stops(#fff 0%, #eee 100%)))
     margin: 0
-    padding-left: 3rem
+    padding-left: 35px
+    padding-left: 3.5rem
+    margin-top: -10px
     margin-top: -1rem
+    margin-bottom: 10px
     margin-bottom: 1rem
+    padding-top: 20px
     padding-top: 2rem
     border-bottom: 1px dashed #eee
+    border-bottom: .1rem dashed #eee
     color: $hiof-blue
     text-transform: uppercase
     &::before
@@ -698,7 +711,6 @@ a
       content: "news"
       font-family: SSStandard
       +font-feature-settings
-
   li
     list-style: none
     position: relative
@@ -711,6 +723,7 @@ a
       content: "navigateright"
       font-family: SSStandard
       +font-feature-settings
+      
   .news_boxHeadlinesOnly-list-date
     font-size: 10px
     font-size: 1rem
@@ -722,14 +735,10 @@ a
     h1
       &::before
         content: "student"
-  
-
 
 .box
-  
   &.calendar-item
     @extend .base-box
-
 
 #active-link
   position: relative
@@ -742,19 +751,17 @@ a
     width: 0
     height: 0
     border-top: 13px solid transparent
+    border-top: 1.3rem solid transparent
     border-right: 13px solid #fff
+    border-right: 1.3rem solid #fff
     border-bottom: 13px solid transparent
+    border-bottom: 1.3rem solid transparent
     right: 0px
     top: 0px
     // +box-shadow(rgba(black, .3) -3px 0 1px)
 
-
 #sidebar_b, #sidebar_a, #page_tree_nav
   .ribbon
-    // +border-top-left-radius(23px)
-    // +border-top-left-radius(2.3rem)
-    // +border-bottom-left-radius(22px)
-    // +border-bottom-left-radius(2.2rem)
     +box-shadow(inset rgba(black, .7) 1px 0px 2px)
     +box-shadow(inset rgba(black, .7) .1rem 0rem .2rem)
     margin-left: 0px
@@ -770,8 +777,6 @@ a
       right: 0px
       right: 0rem
 
-
-
 @media only screen and (max-width: 1039px)
   #sidebar_b, #sidebar_a, #page_tree_nav
     .ribbon
@@ -780,9 +785,11 @@ a
     #active-link
       padding-left: 20px
       &::after
-        left: 0px
+        left: 0
         border-left: 13px solid #fff
+        border-left: 1.3rem solid #fff
         border-right: none
+
 @media only screen and (min-width: 1040px)
   #sidebar_a, #page_tree_nav
     .ribbon
@@ -819,14 +826,6 @@ a
         line-height: 1.6rem
       &::before
         display: none
-
-
-
-
-
-
-
-
 
 
 
@@ -999,7 +998,7 @@ select.btn
 
 
 .aside
-  // width: 150px
+
 
 //---------------------------------------------------------------------------
 // /.aside
