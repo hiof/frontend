@@ -28,7 +28,7 @@ class window.ApplicationController
     @smallScreenNav()
 
     @multiBox.select2()
-    @pjax()
+    # @pjax()
     @equalColumnHeight()
 
     $("#logo-hiof").bind "contextmenu", (e) ->
@@ -157,46 +157,6 @@ class window.ApplicationController
       prevtext : 'previous'
       # nexttext : 'right'
 
-    # $("#slider").responsiveSlides
-    #   auto: false
-    #   pager: false
-    #   nav: true
-    #   speed: 500
-    #   namespace: "callbacks"
-    #   before: ->
-    #     # $(".events").append "<li>before event fired.</li>"
-
-    #   after: ->
-    #     # $(".events").append "<li>after event fired.</li>"
-    # console.log "scroll started"
-
-
-    # @slider.nivoSlider
-    #   effect: "fade"
-    #   # slices: 15
-    #   # boxCols: 8
-    #   # boxRows: 4
-    #   animSpeed: 500
-    #   pauseTime: 8000
-    #   startSlide: 0
-    #   directionNav: true
-    #   directionNavHide: true
-    #   controlNav: false
-    #   controlNavThumbs: false
-    #   pauseOnHover: true
-    #   manualAdvance: false
-    #   prevText: "Previous"
-    #   nextText: "Next"
-    #   randomStart: false
-    #   # beforeChange: ->
-
-    #   # afterChange: ->
-
-    #   # slideshowEnd: ->
-
-    #   # lastSlide: ->
-
-    #   # afterLoad: ->
 
 
 
@@ -219,7 +179,11 @@ class window.ApplicationController
     # console.log "equal height"
     # colLeft = 0
     if (@browserwidth > 1024)
-      $("#sidebar_a").css "marginTop", (@columnPageTreeNav + 20)
+      $("#sidebar_a").css "top", (@columnPageTreeNav + 190)
+      if (@columnLeft > @columnContent)
+        $("#content").height @columnLeft
+
+        # body...
     #if (@browserwidth > 1024) or $.browser.msie
 
 
