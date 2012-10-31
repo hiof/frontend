@@ -21,15 +21,53 @@ $border-radius-large-rem: 2.3rem
 
 
 // Mixin for symbolfont
-=font-feature-settings
+
+
+
+
+
+%font-feature-settings
+  font-style: normal
+  text-decoration: none
+  text-rendering: optimizeLegibility
+  white-space: nowrap
+  /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
   -webkit-font-feature-settings: "liga"
   -moz-font-feature-settings: "liga=1"
   -moz-font-feature-settings: "liga"
   -ms-font-feature-settings: "liga" 1
   -o-font-feature-settings: "liga"
   font-feature-settings: "liga"
+  -webkit-font-smoothing: antialiased
 
 
+
+
+%SSStandard
+  font-family: "SSStandard"
+  font-weight: normal
+  @extend %font-feature-settings
+
+
+%SSSocial
+  font-family: "SSSocial"
+  font-weight: normal
+  @extend %font-feature-settings
+
+%SSsocial-circle
+  @extend %SSSocial
+  font-weight: bold
+
+%SSSymbolicons-block
+  font-family: "SSSymbolicons"
+  font-weight: normal
+  @extend %font-feature-settings
+
+
+%SSSymbolicons-line
+  font-family: "SSSymbolicons"
+  font-weight: 300
+  @extend %font-feature-settings
 
 
 // Colours

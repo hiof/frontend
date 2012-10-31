@@ -172,7 +172,7 @@ a
   //background: $blue
   +box-shadow(rgba(black, .8) 0px 0px 1px, rgba(white, .2) 0px -1px 0px inset)
   padding-left: .7rem
-  &::before
+  &:before
     content: "> "
     font-family: iconSweetsRegular
     font-size: 10px
@@ -226,7 +226,7 @@ a
     height: 5rem
     padding: 5px 10px
     padding: 1.1rem .5rem 1rem
-    &::before
+    &:before
       content: ""
       width: 0
       height: 0
@@ -258,9 +258,9 @@ a
   //      color: #fff
   //      background: #63a288
   //      +box-shadow(inset rgba(black, .7) 0 0 1px)
-  //    &::before
+  //    &:before
   //      border-top: 5px solid #fff
-  //    &::after
+  //    &:after
   //      position: absolute
   //      left: 55px
   //      content: ""
@@ -440,16 +440,16 @@ a
   +text-shadow(rgba(black, .4) 0rem .1rem .1rem)
   z-index: 2
   margin-bottom: 2rem
-  &::before, &::after
+  &:before, &:after
     content: ''
     position: absolute
     border-style: solid
     border-color: transparent
     bottom: -10px
     bottom: -1rem
-  &::before
+  &:before
     border-right-color: #ddd
-  &::after
+  &:after
     border-left-color: #ddd
 
   // Color variation of the ribbon
@@ -457,18 +457,18 @@ a
     background: $blue
     +background-image(linear-gradient(color-stops($base-color-lighten, $base-color)))
     color: #fff
-    &::before
+    &:before
       border-right-color: #000
-    &::after
+    &:after
       border-left-color: #000
 
   &.red-it
     background: $red-it
     +background-image(linear-gradient(color-stops($red-it-lighten, $red-it)))
     color: #fff
-    &::before
+    &:before
       border-right-color: $red-it-darken
-    &::after
+    &:after
       border-left-color: $red-it-darken
 
   &.yellow-lu
@@ -476,9 +476,9 @@ a
     +background-image(linear-gradient(color-stops($yellow-lu-lighten, $yellow-lu)))
     color: #111
 
-    &::before
+    &:before
       border-right-color: $yellow-lu-darken
-    &::after
+    &:after
       border-left-color: $yellow-lu-darken
 
   &.light-blue-oss
@@ -486,9 +486,9 @@ a
     +background-image(linear-gradient(color-stops($light-blue-oss-lighten, $light-blue-oss)))
     color: #fff
 
-    &::before
+    &:before
       border-right-color: $light-blue-oss-darken
-    &::after
+    &:after
       border-left-color: $light-blue-oss-darken      
 
   &.orange-ir
@@ -496,9 +496,9 @@ a
     +background-image(linear-gradient(color-stops($orange-ir-lighten, $orange-ir)))
     color: #fff
 
-    &::before
+    &:before
       border-right-color: $orange-ir-darken
-    &::after
+    &:after
       border-left-color: $orange-ir-darken
 
   &.green-hs
@@ -506,9 +506,9 @@ a
     +background-image(linear-gradient(color-stops($green-hs-lighten, $green-hs)))
     color: #fff
 
-    &::before
+    &:before
       border-right-color: $green-hs-darken
-    &::after
+    &:after
       border-left-color: $green-hs-darken
 
 
@@ -522,7 +522,7 @@ a
 
 
 // Basic box setup
-.base-box
+%base-box
   position: relative
   padding: 10px 0
   padding: 1rem 0
@@ -547,9 +547,9 @@ a
   * a
     text-decoration: none
 .box
-  @extend .base-box
+  @extend %base-box
 .basic
-  @extend .base-box
+  @extend %base-box
   margin: 0 5px 20px
   margin: 0 .5rem 2rem
   border: 1px solid #e1e1e1
@@ -588,14 +588,14 @@ a
         padding: .5rem 0rem
         padding-left: 10px
         padding-right: 15px
-        &::before
+        &:before
           +transition (all, 3s, ease-in-out)
         &:hover
           text-decoration: none
       li
         position: relative
         display: block
-        &::before
+        &:before
           display: none
           // width: 20px
           // width: 2rem
@@ -607,8 +607,7 @@ a
           left: .5rem
           top: 7px
           top: .7rem
-          font-family: "SSStandard"
-          +font-feature-settings
+          @extend %SSStandard
           font-size: 10px
           font-size: 1rem
           color: $base-color
@@ -616,21 +615,21 @@ a
           +transition-property(opacity)
           +transition-duration(3s)
         &:hover
-          &::before
+          &:before
             opacity: 1
             display: block
         a
           padding-left: 20px
           padding-left: 2rem
         li
-          &::before
+          &:before
             left: 17px
             left: 1.7rem
           a
             padding-left: 30px
             padding-left: 3rem
           li
-            &::before
+            &:before
               left: 27px
               left: 2.7rem
             a
@@ -639,7 +638,7 @@ a
   .rss-icon
     display: none
 .paperstack
-  @extend .base-box
+  @extend %base-box
   z-index: 1
   margin: 0 0 20px 0
   margin: 0 0 2em 0
@@ -650,7 +649,7 @@ a
   border: .1rem solid rgba(0, 0, 0, 0.150)
   +box-shadow(rgba(black, .18) 1px 1px 2px)
   +box-shadow(rgba(black, .18) .1rem .1rem .2rem)
-  &::before, &::after
+  &:before, &:after
     position: absolute
     content: ''
     width: 100%
@@ -660,12 +659,12 @@ a
     border: .1rem solid rgba(0, 0, 0, 0.150)
     +box-shadow(rgba(black, .2) 1px 1px 2px)
     +box-shadow(rgba(black, .2) .1rem .1rem .2rem)
-  &::before
+  &:before
     z-index: -1
     top: -2px
     left: 0
     +transform(rotate(2deg))
-  &::after
+  &:after
     z-index: -5
     top: 1px
     top: .1rem
@@ -674,7 +673,7 @@ a
     +transform(rotate(359deg))
 
 .contact
-  @extend .base-box
+  @extend %base-box
   img
     margin: 0 0 10px
     margin: 0 0 1rem
@@ -702,50 +701,53 @@ a
     border-bottom: .1rem dashed #eee
     color: $hiof-blue
     text-transform: uppercase
-    &::before
+    position: relative
+    &:before
       position: absolute
       left: 12px
       left: 1.2rem
       top: 22px
       top: 2.2rem
       content: "news"
-      font-family: SSStandard
-      +font-feature-settings
+      // font-family: "SSStandard"
+      @extend %SSStandard
   li
     list-style: none
     position: relative
-    &::before
+    &:before
       position: absolute
       left: -14px
       left: -1.4rem
       top: 2px
       top: .2rem
-      content: "navigateright"
-      font-family: SSStandard
-      +font-feature-settings
-      
+      content: "right"
+      // font-family: "SSStandard"
+      // +font-feature-settings
+      @extend %SSSymbolicons-block
+      background: yellow
+
   .news_boxHeadlinesOnly-list-date
     font-size: 10px
     font-size: 1rem
   &.emplyee
     h1
-      &::before
+      &:before
         content: "users"
   &.student
     h1
-      &::before
+      &:before
         content: "student"
 
 .box
   &.calendar-item
-    @extend .base-box
+    @extend %base-box
 
 #active-link
   position: relative
   background: $hiof-blue
   color: #fff
   // +box-shadow(rgba(black, .8) 0 0 1px)
-  &::after
+  &:after
     position: absolute
     content: " "
     width: 0
@@ -771,7 +773,7 @@ a
     padding: 10px 0 10px 20px
     padding: 1rem 0 1rem 2rem
 
-    &::after
+    &:after
       border-width: 0 0 10px 10px
       border-width: 0 0 1rem 1rem
       right: 0px
@@ -780,11 +782,11 @@ a
 @media only screen and (max-width: 1039px)
   #sidebar_b, #sidebar_a, #page_tree_nav
     .ribbon
-      &::before
+      &:before
         border-right-color: transparent
     #active-link
       padding-left: 20px
-      &::after
+      &:after
         left: 0
         border-left: 13px solid #fff
         border-left: 1.3rem solid #fff
@@ -797,12 +799,12 @@ a
       +box-shadow(inset rgba(black, .7) -.1rem 0rem .2rem)
   #sidebar_b
     .ribbon
-      &::before
+      &:before
         border-right-color: transparent
 
     #active-link
       padding-left: 20px
-      &::after
+      &:after
         left: 0px
         border-left: 13px solid #fff
         border-right: none
@@ -824,7 +826,7 @@ a
         font-size: 1.4rem
         line-height: 16px
         line-height: 1.6rem
-      &::before
+      &:before
         display: none
 
 
@@ -1279,8 +1281,9 @@ select.btn
     background: rgba(black, .7)
     color: #fff
     text-decoration: none
-    font-family: "SSStandard"
-    +font-feature-settings
+    // font-family: "SSStandard"
+    // +font-feature-settings
+    @extend %SSStandard
     &:hover
       background: rgba(black, 1)
       color: #fff
@@ -1332,7 +1335,7 @@ select.btn
     position: relative
     padding-right: 25px
     padding-right: 2.5rem
-    &::before
+    &:before
       position: absolute
       right: 5px
       top: 1px
@@ -1453,7 +1456,7 @@ select.btn
           padding-left: 50px
           position: relative
           +box-shadow(rgba(black, .7) -3px 1px 5px)
-          &::before
+          &:before
             content: ''
             position: absolute
             bottom: -1rem
@@ -1471,7 +1474,7 @@ select.btn
       //   padding-left: 30px
       //   +box-shadow(rgba(black, .7) -1px 0 2px)
       //   z-index: 10
-      //   &::before
+      //   &:before
 
       &:last-child
         border-bottom: none
@@ -1552,7 +1555,7 @@ select.btn
     color: #fff
     position: relative
     +border-radius(3px)
-    &::before, &::after
+    &:before, &:after
       font-size: 5rem
       top: 28px
       left: 30px
@@ -1563,17 +1566,17 @@ select.btn
       background: inline-image("graphic/bg-facebook-2x100.png") repeat-x
       margin-left: 30px
       margin-right: 10px
-      &::before
+      &:before
         content: "facebook"
         position: absolute
 
     &.twitter
-      &::before
+      &:before
         content: "twitter"
     &.flickr
       background: inline-image("graphic/bg-flickr-2x100.png") repeat-x
       color: #0465dc
-      &::before
+      &:before
         content: "flickr"
         overflow: hidden
         width: 25px
@@ -1581,7 +1584,7 @@ select.btn
         position: absolute
         //top: 50px
         //left: 50px
-      &::after
+      &:after
         display: block
         content: "flickr"
         color: #fe0486
@@ -1763,7 +1766,7 @@ select.btn
         font-size: 0px
         text-decoration: none
         // position: relative
-        &::after
+        &:after
           content: "download"
           position: absolute
           top: 10px
@@ -1865,7 +1868,7 @@ select.btn
         color: #fff
         margin-right: 5px
         +text-shadow(rgba(black, .5) 0 1px 1px)
-        &::before
+        &:before
           content: ""
           border-top: 5px solid transparent
           border-left: 5px solid $hiof-blue
@@ -1874,7 +1877,7 @@ select.btn
           top: 10px
           right: -5px
 
-        &::after
+        &:after
           content: ""
           border-top: 5px solid transparent
           border-left: 5px solid #fff
@@ -1914,7 +1917,7 @@ select.btn
     font-size: 16px
     line-height: 2em
     +text-shadow(rgba(black, .5) 0 1px 1px)
-    &::after
+    &:after
       content: ""
       border-left: 5px solid transparent
       border-right: 5px solid transparent
@@ -1930,7 +1933,7 @@ select.btn
       margin-bottom: 5px
       &:first-child
         a
-          &::after
+          &:after
             content: ""
             border-left: 5px solid transparent
             border-right: 5px solid transparent
@@ -1944,7 +1947,7 @@ select.btn
         padding-left: 20px
         position: relative
         background: #f0f0f0
-        &::before
+        &:before
           content: ""
           border-left: 5px solid transparent
           border-right: 5px solid transparent
@@ -1955,7 +1958,7 @@ select.btn
         &:hover
           background: #fff
           text-decoration: none
-          &::after
+          &:after
             border-top: 5px solid #fff
 
   .ss-icon
