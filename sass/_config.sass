@@ -32,7 +32,7 @@ $border-radius-large-rem: 2.3rem
   text-rendering: optimizeLegibility
   white-space: nowrap
   /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
-  -webkit-font-feature-settings: "liga"
+  // -webkit-font-feature-settings: "liga"
   -moz-font-feature-settings: "liga=1"
   -moz-font-feature-settings: "liga"
   -ms-font-feature-settings: "liga" 1
@@ -47,12 +47,13 @@ $border-radius-large-rem: 2.3rem
   font-family: "SSStandard"
   font-weight: normal
   @extend %font-feature-settings
-
+  // +font-feature-settings
 
 %SSSocial
   font-family: "SSSocial"
   font-weight: normal
   @extend %font-feature-settings
+  // +font-feature-settings
 
 %SSsocial-circle
   @extend %SSSocial
@@ -62,12 +63,14 @@ $border-radius-large-rem: 2.3rem
   font-family: "SSSymbolicons"
   font-weight: normal
   @extend %font-feature-settings
+  // +font-feature-settings
 
 
 %SSSymbolicons-line
   font-family: "SSSymbolicons"
   font-weight: 300
   @extend %font-feature-settings
+  // +font-feature-settings
 
 
 // Colours
