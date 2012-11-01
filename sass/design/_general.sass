@@ -716,14 +716,15 @@ a
     position: relative
     &:before
       position: absolute
+      display: block
       left: -14px
       left: -1.4rem
       top: 2px
       top: .2rem
-      content: "right"
+      content: "next"
       // font-family: "SSStandard"
       // +font-feature-settings
-      @extend %SSSymbolicons-block
+      @extend %SSStandard
       // background: yellow
 
   .news_boxHeadlinesOnly-list-date
@@ -1563,18 +1564,19 @@ select.btn
     &:hover
       text-decoration: none
     &.facebook
-      background: inline-image("graphic/bg-facebook-2x100.png") repeat-x
+      // background: inline-image("graphic/bg-facebook-2x100.png") repeat-x
       margin-left: 30px
       margin-right: 10px
+      background: $hiof-blue
       &:before
         content: "facebook"
         position: absolute
-
+        top: 10px
     &.twitter
       &:before
         content: "twitter"
     &.flickr
-      background: inline-image("graphic/bg-flickr-2x100.png") repeat-x
+      // background: inline-image("graphic/bg-flickr-2x100.png") repeat-x
       color: #0465dc
       &:before
         content: "flickr"
@@ -1759,6 +1761,7 @@ select.btn
       +border-radius(2rem)
       +transition-property(font-size, padding, box-shadow)
       +transition-duration(.5s)
+      text-decoration: none
       &:hover
         +box-shadow(rgba(black, .8) 0 0 5px)
         +box-shadow(rgba(black, .8) 0 0 .5rem)
@@ -1772,6 +1775,7 @@ select.btn
           top: 10px
           left: 10px
           font-size: 2rem
+          // @extend %SSSocial
       &:active
         +box-shadow(inset rgba(black, .8) 0 0 3px)
         +box-shadow(inset rgba(black, .8) 0 0 .3rem)
