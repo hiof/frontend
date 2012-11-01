@@ -1,15 +1,24 @@
 ###
 Name: Functionality for Østfold University Collage
 Author: Kenneth Dahlstrøm
-Updated: October 22nd, 2012
-Version: v1.2.0
+Updated: November 1st, 2012
+Version: v1.2.4
 ###
 
 # require respond.min
 #= require modernizr
+#= require ./plugins/neted/neted-common.js
 #= require jquery
-#= require pjax
+# require pjax
+#= require ./plugins/neted/neted-AC_RunActiveContent.js
+#= require ./plugins/neted/neted-changeSelect.js
+
+#= require ./plugins/neted/neted-neted.js
+#= require ./plugins/neted/neted-util.js
+# require_directory ./plugins/neted
+#= require_directory ./plugins/symbolset/ss-social
+#= require_directory ./plugins/symbolset/ss-standard
+#= require_directory ./plugins/symbolset/ss-symbolicons-block
 #= require_directory ./plugins
 #= require app
-
 
