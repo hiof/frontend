@@ -6,7 +6,7 @@ class window.ApplicationController
   constructor: ->
     # Document setup
     @browserwidth = $(window).width()
-    @eContent = $("#main")
+    @eContent = $("#content")
     @ePageTreeNav = $("#page_tree_nav")
     @eSidebarA = $("#sidebar_a")
     @eSidebarB = $("#sidebar_b")
@@ -29,40 +29,23 @@ class window.ApplicationController
 
     @multiBox.select2()
     # @pjax()
-    @equalColumnHeight()
+    @moveSidebarAOnTReeColumn()
 
-    $("#logo-hiof").bind "contextmenu", (e) ->
-      e.preventDefault()
-      # Right Mousebutton was clicked! 
-      window.location.href = "http://hiof.no/logo"  if e.which is 3
+    @logoRedirect()
+
+
+    # if
 
     if $(".vcard").length
       @attachVcard()
-      # console.log "vcard!"
 
     # Check if 
     if $("#content-frontpage").length
-      # console.log "frontpage!"
       @startImageSlider()
-
-
-
-
-
-      # console.log "frontpage image slider!"
-      $(".tabcontent").hide()
-      $(".tabcontent:first").show()
-      $(".tabs li a").click (event) ->
-        event.preventDefault()
-        $("ul.tabs li a").removeClass "active"
-        $(this).addClass "active"
-        $(".tabcontent").hide()
-        activeTab = $(this).attr("rel")
-        $("#" + activeTab).fadeIn()
-      # console.log "frontpage tabcontent"
+      @enableTabContent()
     else
-      # @equalColumnHeight()
-      # setInterval (=> @equalColumnHeight()), 3000
+      @moveSidebarAOnTReeColumn()
+      setInterval (=> @moveSidebarAOnTReeColumn()), 3000
     
 
 
@@ -70,16 +53,9 @@ class window.ApplicationController
     if $.browser.msie
       @ieFixes()
       $("#navigation").css "zIndex", "-1"
-
       $("#breadcrumb").css "zIndex", "-2"
       $("#page_tree_nav").css "zIndex", ""
       $(".drop").css "zIndex", "100"
-      # @equalColumnHeight()
-      # setInterval (=> @equalColumnHeight()), 3000
-
-
-      # if $("html").hasClass("ie7")
-      #   $("#content").css "marginLeft", "230"
 
 
     # ----------------------------------------------------------------------------------------
@@ -96,15 +72,36 @@ class window.ApplicationController
     $("#navigation-sidebar").bind "click", (event) => @toggleSidebar()
     # $("#overlay").bind "click", (event) => @toggleNavigation()
     # $("#overlay").bind "click", (event) => @toggleSidebar()
-  
+    # $("#page_tree_nav a").bind "click", (event) => @pjax()
 
+    # $("#page_tree_nav a").bind "click", (e) => @fadeContent()
 
-
-
+    @fadeContent()
   # ----------------------------------------------------------------------------------------
   # ----------------------------------------------------------------------------------------
   # ----------------------------------------------------------------------------------------
   # Functions
+
+  fadeContent:  ->
+    $("body").css "display", "none"
+    $("body").fadeIn 1000
+    $("#page_tree_nav a").click (e) ->
+      event.preventDefault()
+      linkLocation = @href
+      # console.log @linkLocation
+      $("body").fadeOut 500
+      redirectPage(linkLocation)
+      # $("body").fadeOut 100, redirectPage(linkLocation)
+    redirectPage = (e) ->
+      console.log e
+      window.location.href = e
+
+
+
+  logoRedirect: ->
+    $("#logo-hiof").bind "contextmenu", (e) ->
+      e.preventDefault()
+      window.location.href = "http://hiof.no/logo"  if e.which is 3
 
   attachVcard: ->
     $.waypoints.settings.scrollThrottle = 10
@@ -118,22 +115,12 @@ class window.ApplicationController
       event.stopPropagation()
 
 
-
-
-
-
   ieFixes: ->
-
-    # z-index fix
+    # z-index fix for older IE
     zIndexNumber = 50
-
-    # Put your target element(s) in the selector below!
     $("body > *").each ->
       $(this).css "zIndex", zIndexNumber
       zIndexNumber -= 10
-
-
-
 
 
   stopHorizontalScroll: ->
@@ -141,25 +128,29 @@ class window.ApplicationController
     $(window).scroll ->
       documentScrollLeft = $(document).scrollLeft()
       unless lastScrollLeft is documentScrollLeft
-        #console.log "scroll x"
         lastScrollLeft = documentScrollLeft
-
-
 
 
   startImageSlider: ->
     $("#news-promoted").bjqs
       height: 305
       width: 540
-      animspeed: 10000
+      animspeed: 5000
       responsive: true
       showmarkers: false
       prevtext : 'previous'
       # nexttext : 'right'
 
-
-
-
+  enableTabContent: ->
+    $(".tabcontent").hide()
+    $(".tabcontent:first").show()
+    $(".tabs li a").click (event) ->
+      event.preventDefault()
+      $("ul.tabs li a").removeClass "active"
+      $(this).addClass "active"
+      $(".tabcontent").hide()
+      activeTab = $(this).attr("rel")
+      $("#" + activeTab).fadeIn()    
 
 
   smallScreenNav: ->
@@ -173,7 +164,9 @@ class window.ApplicationController
     else if @browserwidth > 600
       $(".mobilenav").remove()
 
-
+  moveSidebarAOnTReeColumn: ->
+    if (@browserwidth > 1024)
+      $("#sidebar_a").css "marginTop", (@columnPageTreeNav)
   
   equalColumnHeight: ->
     # console.log "equal height"
@@ -183,30 +176,24 @@ class window.ApplicationController
       if (@columnLeft > @columnContent)
         $("#content").height @columnLeft
 
-        # body...
-    #if (@browserwidth > 1024) or $.browser.msie
-
-
-    #if @browserwidth > 1024
-    #  colLeft = (@columnPageTreeNav + @columnSidebarA)
-    #  colHeight = Math.max(colLeft, @columnPageTreeNav, @columnContent, @columnSidebarA, @columnSidebarB)
-    #  $("#content, #sidebar_b").height colHeight
-    #else
-      # colHeight = Math.max(@columnPageTreeNav, @columnContent, @columnSidebarA, @columnSidebarB)
-      # $("#content, #sidebar_a, #sidebar_b").height colHeight
-    #$("#sidebar_a").top (@columnPageTreeNav + 20)
-    #console.log @columnPageTreeNav
-    # $("#sidebar_a").css "top", (@columnPageTreeNav + 190)
-
-
-
-
-
 
 
   pjax: ->
-    $('#page_tree_nav a').pjax('#content')
+    $("html").bind("start.pjax", ->
+      $("html").hide 0
+    ).bind "end.pjax", ->
+      $("html").fadeIn 1000
 
+
+    # $("#page_tree_nav a").bind "click", (e) ->
+    #   console.log "link clicked"
+    #   e.preventDefault()
+
+    #   $(this).pjax('#content')
+        # $("#content").bind("start.pjax", ->
+        #   $("#content").fadeOut 1000
+        # ).bind "end.pjax", ->
+        #   $("#content").fadeIn 1000
 
   highresExcist: ->
     $.ajax
