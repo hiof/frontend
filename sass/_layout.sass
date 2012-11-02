@@ -7,149 +7,185 @@
 
 // TOOLS IN USE IN THIS DOCUMENT
 
-@import _scalablegs
+// @import _scalablegs
 
 
 @import layout/_general
 
 
 
-@media only screen and (max-width: 599px)
-  @import layout/_up-to-600
-
-
-@media only screen and (min-width: 600px) and (max-width: 1039px)
-  @import layout/_600-to-1039
-
-
-@media only screen and (min-width: 1040px) and (max-width: 1139px)
-  @import layout/_1040-to-1139
-
-@media only screen and (min-width: 1140px)
-  @import layout/_1140-and-up
-
-
-// Special modules
-
-
-
-
-
-
-
-// @media only screen and (min-width: 1040px)
-$sitewidth: 114rem
-$margin: .2rem
-#frontpage
-  #body
-    +column-setup  
-
-// FRONT
-#content-frontpage
-  // margin-top: -44px
-  // margin-top: -4.4rem
-#study-selection, #news-promoted, #news-headlines, #calendar, #social-media, #adds
-  width: 49.5%
-  float: left
-  margin-bottom: 20px
-
-// #news-headlines, #adds
-//   width: 24%
-#calendar
-  // margin-top: -42px
-//   position: absolute
-//   top: 550px
-//   left: 0px
-//   float: left
-#news-promoted, #news-headlines, #adds
-  margin-left: 1%
-#news-promoted
-// #study
-//   position: absolute
-//   left: 0px
-// #news
-//   width: 50%
-//   position: absolute
-//   right: 0px
-#calendar
-#social-media
-
-@media only screen and (max-width: 1039px)
-  #study-selection, #news-promoted, #news-headlines, #calendar, #social-media, #adds
-    width: 100%
-    float: left
-    margin-bottom: 20px
-
-
-
-
-
-
-
 // @media only screen and (max-width: 599px)
-//   // standard layout
-//   // 2-column layout
-//   // 3-column layout
-//   #content,
-//   #content-frontpage
-//     width: 100%
-//   #page_tree_nav, 
-//   #sidebar_a, 
-//   #sidebar_b
-//     width: 200px
+//   @import layout/_up-to-600
 
-// @media only screen and (min-width: 600px)
-//   // standard layout
-//   #body
-//     margin: 0 auto
-//   // 2-column layout
-//   #content-frontpage
-//     > *
-//       width: 49%
-//       float: left
-//       &:nth-child(odd)
-//         margin-right: 1%
-//       &:nth-child(even)
-//         margin-left: 1%
-//   // 3-column layout
-//   #content
-//     width: 75%
-//     float: left
-//   #page_tree_nav,
-//   #sidebar_a, 
-//   #sidebar_b
-//     width: 25%
-//     float: right
-//   #footer
-//     > *
-//       float: left
-//       width: 33%
-//     #col_01
-//       width: 100%
-// @media only screen and (min-width: 1040px)
-//   // standard layout
-//   // 2-column layout
-//   // 3-column layout
-//   #content
-//     width: 60%
-//     margin-left: 20%
-//     padding: 3rem
-//   #page_tree_nav,
-//   #sidebar_a, 
-//   #sidebar_b
-//     width: 20%
-//   #page_tree_nav,
-//   #sidebar_a
-//     margin-left: -80%
-//     float: left
+
+// @media only screen and (min-width: 600px) and (max-width: 1039px)
+//   @import layout/_600-to-1039
+
+
+// @media only screen and (min-width: 1040px) and (max-width: 1139px)
+//   @import layout/_1040-to-1139
 
 // @media only screen and (min-width: 1140px)
-//   // Standard layout
-//   #body
-//     width: 1140px
-//   // 2-column layout
+//   @import layout/_1140-and-up
 
-//   // 3-column layout
+
+// // Special modules
+
+
+
+
+
+
+
+// // @media only screen and (min-width: 1040px)
+// $sitewidth: 114rem
+// $margin: .2rem
+// #frontpage
+//   #body
+//     +column-setup  
+
+// // FRONT
+// #content-frontpage
+//   // margin-top: -44px
+//   // margin-top: -4.4rem
+// #study-selection, #news-promoted, #news-headlines, #calendar, #social-media, #adds
+//   width: 49.5%
+//   float: left
+//   margin-bottom: 20px
+
+// // #news-headlines, #adds
+// //   width: 24%
+// #calendar
+//   // margin-top: -42px
+// //   position: absolute
+// //   top: 550px
+// //   left: 0px
+// //   float: left
+// #news-promoted, #news-headlines, #adds
+//   margin-left: 1%
+// #news-promoted
+// // #study
+// //   position: absolute
+// //   left: 0px
+// // #news
+// //   width: 50%
+// //   position: absolute
+// //   right: 0px
+// #calendar
+// #social-media
+
+// @media only screen and (max-width: 1039px)
+//   #study-selection, #news-promoted, #news-headlines, #calendar, #social-media, #adds
+//     width: 100%
+//     float: left
+//     margin-bottom: 20px
+
+
+
+
+
+
+
+@media only screen and (max-width: 599px)
+  // standard layout
+  // 2-column layout
+  // 3-column layout
+  #content,
+  #content-frontpage
+    width: 100%
+  #page_tree_nav, 
+  #sidebar_a, 
+  #sidebar_b
+    width: 200px
+
+
+
+  #body
+    //+column-setup
+    width: 100%
+    position: absolute
+    top: 0
+    left: 0
+    overflow-x: hidden
+  #header
+    height: 44px
+    height: 4.4rem
+    margin-bottom: 0
+  #content
+    width: 100%
+    z-index: 10
+    padding: 0 10px
+    padding: 1rem 1rem 0
+  #page_tree_nav, 
+  #sidebar_a, 
+  #sidebar_b
+    z-index: -1
+    position: absolute
+    right: 0px
+    top: 0
+    overflow-x: hidden
+    display: none
+    width: 250px
+  #navigation
+    position: absolute
+    top: 0
+    left: -250px
+
+
+
+
+@media only screen and (min-width: 600px)
+  // standard layout
+  #body
+    margin: 0 auto
+  // 2-column layout
+  #content-frontpage
+    > *
+      width: 49%
+      float: left
+      &:nth-child(odd)
+        margin-right: 1%
+      &:nth-child(even)
+        margin-left: 1%
+  // 3-column layout
+  #content
+    width: 75%
+    float: left
+  #page_tree_nav,
+  #sidebar_a, 
+  #sidebar_b
+    width: 25%
+    float: right
+  #footer
+    > *
+      float: left
+      width: 33%
+    #col_01
+      width: 100%
+@media only screen and (min-width: 1040px)
+  // standard layout
+  // 2-column layout
+  // 3-column layout
+  #content
+    width: 60%
+    margin-left: 20%
+    padding: 3rem
+  #page_tree_nav,
+  #sidebar_a, 
+  #sidebar_b
+    width: 20%
+  #page_tree_nav,
+  #sidebar_a
+    margin-left: -80%
+    float: left
+
+@media only screen and (min-width: 1140px)
+  // Standard layout
+  #body
+    width: 1140px
+  // 2-column layout
+
+  // 3-column layout
 
 
 #content
