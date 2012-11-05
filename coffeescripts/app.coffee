@@ -10,6 +10,7 @@ class window.ApplicationController
     @ePageTreeNav = $("#page_tree_nav")
     @eSidebarA = $("#sidebar_a")
     @eSidebarB = $("#sidebar_b")
+    @eHeader = $("#header")
     @multiBox = $(".multibox")
     @slider = $('#slider')
     @columnContent = $("#content").height()
@@ -77,10 +78,52 @@ class window.ApplicationController
     # $("#page_tree_nav a").bind "click", (e) => @fadeContent()
 
     @fadeContent()
+
+
+    # @addBlackBar()
   # ----------------------------------------------------------------------------------------
   # ----------------------------------------------------------------------------------------
   # ----------------------------------------------------------------------------------------
   # Functions
+
+
+  addBlackBar: ->
+    @eHeader.append '<div id="fixed-background"></div>'
+
+    # grab the initial top offset of the navigation 
+    sticky_navigation_offset_top = 120
+
+    # our function that decides weather the navigation bar should have "fixed" css position or not.
+    sticky_navigation = ->
+      scroll_top = $(window).scrollTop() # our current vertical position from the top
+      
+      # if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
+      if scroll_top > sticky_navigation_offset_top
+        $("#fixed-background").show()
+        $("#body").addClass 'scrolling'
+        # $("#logo, #search, #shortcuts, #fixed-background").css
+        #   position: "fixed"
+        #   top: 0
+        #   left: 0
+
+      else
+        $("#logo, #search, #shortcuts, #fixed-background").css position: "relative"
+        $("#fixed-background").hide()
+
+
+    # run our function on load
+    sticky_navigation()
+
+    # and run it again every time you scroll
+    $(window).scroll ->
+      sticky_navigation()
+
+
+    # NOT required:
+    # for this demo disable all links that point to "#"
+    $("a[href=\"#\"]").click (event) ->
+      event.preventDefault()
+
 
   fadeContent:  ->
     $("body").css "display", "none"
