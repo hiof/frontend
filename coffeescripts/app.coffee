@@ -77,7 +77,7 @@ class window.ApplicationController
 
     # $("#page_tree_nav a").bind "click", (e) => @fadeContent()
 
-    @fadeContent()
+    # @fadeContent()
 
 
     # @addBlackBar()
