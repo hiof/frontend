@@ -208,15 +208,17 @@ a
 .read-more
   padding: 5px 7px
   padding: .5rem .7rem
-  //background: $blue
   +box-shadow(rgba(black, .8) 0px 0px 1px, rgba(white, .2) 0px -1px 0px inset)
-  padding-left: .7rem
+  padding-left: 1rem
+  text-decoration: none !important
   &:before
-    content: "> "
-    font-family: iconSweetsRegular
+    content: "right"
+    @extend %SSSymbolicons-block
     font-size: 10px
     font-size: 1rem
     color: $blue
+    padding-right: .3rem
+    // padding-top: .2rem
 
 
 
