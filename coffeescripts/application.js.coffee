@@ -1,8 +1,8 @@
 ###
 Name: Functionality for Østfold University Collage
 Author: Kenneth Dahlstrøm
-Updated: November 1st, 2012
-Version: v1.3.0b1
+Updated: November 15th, 2012
+Version: v1.4.0b2
 ###
 
 # require respond.min
@@ -20,4 +20,6 @@ Version: v1.3.0b1
 #= require_directory ./plugins/symbolset/ss-symbolicons-block
 #= require_directory ./plugins
 #= require app
+
+
 
