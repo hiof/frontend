@@ -1941,7 +1941,7 @@ select.btn
 
 #food-menu
   div
-    width: 165px
+    width: 46.5%
   h1
     background: $hiof-blue
     display: block
@@ -2002,6 +2002,18 @@ select.btn
     color: #fff
     font-size: 0.7em
     padding: 0 5px
+
+@media screen and (max-width: 1024px)
+  #food-menu
+    div
+      width: 98%
+    ul
+      li
+        display: none
+        &:first-child
+          display: block
+          a:after
+            display: none
 
 //---------------------------------------------------------------------------
 // /food
