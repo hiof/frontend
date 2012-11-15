@@ -9,51 +9,41 @@
 html
   @extend %typography-setup
 
+img, video, object
+  max-width: 100%
+
+.article, .article-single
+  img, video
+    height: auto
+
+html
+  width: 100%
 
 
-// // @media only screen and (min-width: 1040px)
-// $sitewidth: 114rem
-// $margin: .2rem
-// #frontpage
-//   #body
-//     +column-setup  
+*
+  // Fix that combines the padding inside the total box size
+  +box-sizing(border-box)
 
-// // FRONT
-// #content-frontpage
-//   // margin-top: -44px
-//   // margin-top: -4.4rem
-// #study-selection, #news-promoted, #news-headlines, #calendar, #social-media, #adds
-//   width: 49.5%
-//   float: left
-//   margin-bottom: 20px
 
-// // #news-headlines, #adds
-// //   width: 24%
-// #calendar
-//   // margin-top: -42px
-// //   position: absolute
-// //   top: 550px
-// //   left: 0px
-// //   float: left
-// #news-promoted, #news-headlines, #adds
-//   margin-left: 1%
-// #news-promoted
-// // #study
-// //   position: absolute
-// //   left: 0px
-// // #news
-// //   width: 50%
-// //   position: absolute
-// //   right: 0px
-// #calendar
-// #social-media
-
-// @media only screen and (max-width: 1039px)
-//   #study-selection, #news-promoted, #news-headlines, #calendar, #social-media, #adds
-//     width: 100%
-//     float: left
-//     margin-bottom: 20px
-
+#header
+  height: 88px
+  height: 8.8rem
+  margin-bottom: 108px
+  margin-bottom: 10.8rem
+  position: relative
+#navigation
+  position: absolute
+  bottom: -34px
+  bottom: -3.4rem
+  width: 100%
+  height: 34px
+#breadcrumb
+  position: absolute
+  bottom: -88px
+  bottom: -8.8rem
+  width: 100%
+#shortcuts
+#search
 
 
 
