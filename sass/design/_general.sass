@@ -232,7 +232,7 @@ a
 
 .calendar-item
   float: left
-  width: 125px
+  width: 31%
   height: 135px
   +box-shadow(rgba(black, .7) 0 0 1px)
   margin-right: 8px
@@ -293,30 +293,13 @@ a
         background: #63a288
         color: #fff
 
-  //&:hover
-  //  background: #fff
-  //  time
-  //    color: #63a288
-  //  a
-  //    text-decoration: none
-  //    &[itemprop="url"]
-  //      color: #fff
-  //      background: #63a288
-  //      +box-shadow(inset rgba(black, .7) 0 0 1px)
-  //    &:before
-  //      border-top: 5px solid #fff
-  //    &:after
-  //      position: absolute
-  //      left: 55px
-  //      content: ""
-  //      width: 0
-  //      height: 0
-  //      border-top: 0px solid transparent
-  //      border-left: 5px solid transparent
-  //      border-right: 5px solid transparent
-  //      border-bottom: 5px solid #fff
-  //      top: 45px
-
+@media screen and (max-width: 1024px)
+  .calendar-item
+    time
+      &[itemprop="startDate"]
+        margin-left: 35%
+    a:before
+      left: 48%
 
 
 //---------------------------------------------------------------------------
