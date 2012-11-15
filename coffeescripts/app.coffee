@@ -48,7 +48,10 @@ class window.ApplicationController
       @moveSidebarAOnTReeColumn()
       setInterval (=> @moveSidebarAOnTReeColumn()), 3000
     
-
+    # if $("#tools-employee").length
+      # console.log "tools-employee"
+      # @swapTools()
+    # else
 
     # Internet explorer stuff
     if $.browser.msie
@@ -65,7 +68,9 @@ class window.ApplicationController
       @stopHorizontalScroll()
 
 
-
+    # $(window).resize ->
+    #   @swapTools()
+      # swapTools()
 
 
     # Listeners
@@ -86,6 +91,17 @@ class window.ApplicationController
   # ----------------------------------------------------------------------------------------
   # Functions
 
+  # _initBehavior: ->
+  #   $(window).resize @swapTools
+
+  # swapTools: =>
+  #   if @browserwidth < 1024
+  #     #Swap the #food-menu and the calendar on tablet and mobile screens
+  #     $("#food-menu").insertBefore "#calendar"
+  #     false
+  #   else if @browserwidth > 1024
+  #     $("#calendar").insertBefore "#food-menu"
+  #     false
 
   addBlackBar: ->
     @eHeader.append '<div id="fixed-background"></div>'
