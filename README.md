@@ -22,6 +22,8 @@ Se GitHub for en grundig guide https://help.github.com/articles/fork-a-repo
 
 ## Versjon
 
+* v1.3.0 - Ny layout module
+* v1.2.0 - Ansatt katalog
 * v1.1.0 - Sass is now build in modules
 * v1.0.0 - Responsive design av den genrelle malen
 * v0.1.1 - Bugfikser
@@ -30,9 +32,7 @@ Se GitHub for en grundig guide https://help.github.com/articles/fork-a-repo
 
 ### Roadmap
 
-* v1.2.0 - Ansatt katalog
-* v1.3.0 - /student & /ansatt
-* v1.4.0 - Forsiden
+* v1.4.0 - Forsiden /student & /ansatt
 * v1.5.0 - Styling for the device app
 * v2.0.0 - Everything converted to the "2012 refresh"
 
