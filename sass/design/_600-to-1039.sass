@@ -8,7 +8,6 @@
       display: block
       overflow: none
       position: relative
-      //width: 100%
       &:hover, .active
         +box-shadow(#ffffff 0 -5px 0)
       > a        
@@ -21,8 +20,6 @@
         padding: 5px 10px
         padding: .5rem 1rem       
         color: $text-color
-        // height: 34px
-        // height: 3.4rem
       .drop
         width: 215px
         width: 21.5rem
@@ -34,14 +31,10 @@
           color: white
           text-decoration: none
         .drop
-          //display: block  
           top: 33px
           height: auto
           opacity: 1
-
-
 #breadcrumb
-  /* Clear floats
   overflow: hidden
   background: $light-blue
   border-top: $light-blue solid 3px
@@ -49,7 +42,6 @@
   border-bottom: $light-blue solid 3px
   border-bottom: $light-blue solid .3rem
   padding-left: 20px
-
   a
     background: #fff
     padding: .7em 1em
@@ -97,9 +89,7 @@
     margin: 0 .5em 0 1em
     &:first-child
       a
-        //padding-top: 1rem
         width: 40px
-        // text-indent: -99em
         height: 35px
         padding: 7px 11px
         padding: .7rem 1.1rem
@@ -111,7 +101,6 @@
           line-height: 2.5rem
           text-indent: 0px
           overflow: hidden
-          // background: yellow
           &:before, &:after
             text-indent: 0px
         &:hover
@@ -128,10 +117,8 @@
     position: relative
     &:hover
       .drop
-        //display: block
         height: auto
         opacity: 1
-
 #search
   display: block
   background: #e4eaee
@@ -148,33 +135,12 @@
   +transition-duration(1s)
 #search-select
   -webkit-appearance: none
-  // position: relative
   width: 34px
   height: 34px
-  // margin-top: 5px
-  // line-height: 34px
-  // opacity: 0
-  // background-color: rgba(0, 0, 0, 0)
-
-// .searchselect
-//   position: absolute
-//   top: 5px
-//   float: left
-//   left: 0
-//   width: 34px
-//   height: 34px
-//   line-height: 26px
-//   text-indent: 10px
-//   background: inline-image("icons/dropdown.png")
-//   cursor: default
-//   z-index: -1
-//   text-indent: -99em
-
 .ui-selectmenu-menu
   top: 64px !important
   right: 68px !important
 #search-field
-
   position: absolute
   left: 34px
   z-index: 1
@@ -209,13 +175,3 @@
     border: 1px solid #2c76b0
     font-family: "SSStandard"
 
-// #content-container
-//   margin-bottom: 40px
-//   margin-bottom: 4rem
-
-
-
-// .box
-//   right: 0px
-//   +border-top-right-radius(0px)
-//   +border-top-left-radius(5px)
