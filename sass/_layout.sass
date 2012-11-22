@@ -127,13 +127,32 @@ html
     margin: 0 auto
   // 2-column layout
   #content-frontpage
-    > *
-      width: 49%
-      float: left
-      &:nth-child(odd)
-        margin-right: 1%
-      &:nth-child(even)
-        margin-left: 1%
+
+    position: relative
+    margin-top: -50px
+    margin-top: -5rem
+    // > *
+    //   width: 49%
+    //   float: left
+    //   &:nth-child(odd)
+    //     margin-right: 1%
+    //   &:nth-child(even)
+    //     margin-left: 1%
+  #study-selection,
+  #calendar,
+  #social-media
+    width: 48%
+    float: left
+    position: relative
+    // margin-right: 50%
+
+
+  #news-promoted
+    padding-left: 50%
+    // position: absolute
+    left: 0
+    top: 0
+
   // 3-column layout
   #content
     width: 75%
