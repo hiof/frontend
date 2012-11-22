@@ -35,6 +35,13 @@ class window.ApplicationController
     @logoRedirect()
 
 
+    # extract data from a jQuery selection and return it as an array
+    # arr = $("*").map(->
+    #   x: y
+    # ).get()
+    # echo arr
+
+
     # if
 
     if $(".vcard").length
