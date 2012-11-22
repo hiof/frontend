@@ -42,7 +42,7 @@ class window.ApplicationController
 
     # Check if 
     if $("#content-frontpage").length
-      @startImageSlider()
+      # @startImageSlider()
       @enableTabContent()
     else
       @moveSidebarAOnTReeColumn()
