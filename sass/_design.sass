@@ -14,21 +14,23 @@
 @import design/_general
 
 
+
+
+
+// Small screens
 @media only screen and (max-width: 599px)
   @import design/_up-to-600
-
-
 
 
 @media only screen and (min-width: 600px)
   @import design/_600-to-1039
 
+// Specific fixes between
 @media only screen and (min-width: 600px) and (max-width: 1039px)
   #site-sublogo
     width: 170px
   #search
     width: 150px
-
   #search-field
     input
       width: 100px    
@@ -46,6 +48,3 @@
 
 @media only screen and (min-width: 1040px)
   @import design/_1040-and-up
-
-
-// @import design/_webapp
