@@ -1460,74 +1460,62 @@ select.btn
 
 
 #study-selection
-
-  height: 345px
   position: relative
-  padding-left: 30px
+  padding-left: 10px
+  padding-left: 1rem
+  border: 1px solid $gray
+  border: 0.1rem solid $gray
+  margin-left: 20px
+  margin-left: 2rem
+  h1
+    text-transform: uppercase
+    font-size: 14px
+    font-size: 1.4rem
+    padding-left: 10px
+    padding-left: 1rem
   .tabs.vertical
-    position: absolute
-    top: 44px
-    left: 30px
-    width: 220px
+    width: 39%
     float: left
     +box-shadow(rgba(black, .7) 0 0 1px)
     padding: 0
     margin: 0
     li
       list-style: none
-      border-bottom: 1px solid #b7babd
-
+      // border-bottom: 1px solid $hiof-blue
       a
-        
         color: #346f91
         display: block
+        line-height: 44px
         line-height: 4.4rem
         text-transform: uppercase
         padding-left: 10px
-        // +box-shadow(inset rgba(black, .2) -2px 0 1px)
-
-        background: $gray
+        padding-left: 1rem
+        background: $light-blue
+        text-decoration: none
+        +box-shadow(inset rgba($hiof-blue, 1) 0 0 1px)
         &.active
           background: #fff
-          background: #fff inline-image("graphic/studietilbud-selected.png") top left no-repeat
-          margin-left: -40px
           margin-right: -1px
-          padding-left: 50px
+          margin-right: -0.1rem
           position: relative
-          +box-shadow(rgba(black, .7) -3px 1px 5px)
-          &:before
-            content: ''
-            position: absolute
-            bottom: -1rem
-            left: 0rem
-            width: 0
-            height: 0
-            border-top: 10px solid black
-            border-left: 10px solid transparent
+          +box-shadow(none)
         &:hover
           text-decoration: none
-      // &.selected
-      //   background: #fff
-      //   margin-left: -30px
-      //   margin-right: -30px
-      //   padding-left: 30px
-      //   +box-shadow(rgba(black, .7) -1px 0 2px)
-      //   z-index: 10
-      //   &:before
 
       &:last-child
         border-bottom: none
   .tabcontents
-    position: absolute
-    top: 44px
-    right: 0
     background: #fff
-    width: 55%
+    width: 60%
     float: left
-    margin-left: -5px
-    padding: 10px
-    height: 305px
-    +box-shadow(rgba(black, .7) 0 0 1px)
+    padding: 10px 20px
+    padding: 1rem 2rem
+    min-height: 305px
+    min-height: 30.5rem
+    border-left: 1px solid $gray
+    border-left: 0.1rem solid $gray
+    margin-top: -51px
+    padding-top: 61px
 
 
 //---------------------------------------------------------------------------
