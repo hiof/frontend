@@ -1,0 +1,44 @@
+%layout-with-display-table
+  .display-table
+    display: table
+    width: 100%
+    .display-table-row
+      display: table-row
+      border: 1px #000 dotted
+      padding: 3px
+      margin: 3px
+    .display-table-cell
+      display: table-cell
+      border: 1px #000 dotted
+      padding: 3px
+      margin: 3px
+    .display-table-caption
+      display: table-caption
+    .display-table-column
+      display: table-column
+    .display-table-column-group
+      display: table-column-group
+    .display-table-footer-group
+      display: table-footer-group
+    .display-table-header-group
+      display: table-header-group
+    .display-table-row-group
+      display: table-row-group
+    &.two-column
+      .display-table-cell
+        width: 50%
+    &.three-column
+      .display-table-cell
+        width: 33%
+    &.two-thirds-left
+      .display-table-row
+        &:first-child
+          width: 65%
+        &:last-child
+          width: 35%
+    &.two-thirds-right
+      .display-table-row
+        &:first-child
+          width: 35%
+        &:last-child
+          width: 65%
