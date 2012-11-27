@@ -1603,60 +1603,73 @@ select.btn
 
 
 #social-media
-  a
+  > a
     width: 260px
     height: 100px
     display: block
     +box-shadow(rgba(black, .7) 0 0 1px)
     float: left
     padding-left: 80px
-    font-family: "SSSocial"
+    // font-family: "SSSocial"
     font-size: 2em
     padding-top: 44px
     color: #fff
     position: relative
     +border-radius(3px)
-    &:before, &:after
-      font-size: 5rem
-      top: 28px
-      left: 30px
-      //background: $hiof-blue
-    &:hover
-      text-decoration: none
+    margin-bottom: 1rem
+    // &:before, &:after
+    //   font-size: 5rem
+    //   top: 28px
+    //   left: 30px
+    //   //background: $hiof-blue
+    // &:hover
+    //   text-decoration: none
+    // &.facebook
+    //   // background: inline-image("graphic/bg-facebook-2x100.png") repeat-x
+    //   // margin-left: 30px
+    //   // margin-right: 10px
+    //   background: $hiof-blue
+    //   &:before
+    //     content: "facebook"
+    //     position: absolute
+    //     top: 10px
+    //     @extend %SSSocial
+    // &.twitter
+    //   &:before
+    //     content: "twitter"
+    // &.flickr
+    //   // background: inline-image("graphic/bg-flickr-2x100.png") repeat-x
+    //   color: #0465dc
+    //   &:before
+    //     content: "flickr"
+    //     overflow: hidden
+    //     width: 25px
+    //     display: block
+    //     position: absolute
+    //     @extend %SSSocial
+    //     //top: 50px
+    //     //left: 50px
+    //   &:after
+    //     display: block
+    //     content: "flickr"
+    //     color: #fe0486
+    //     width: 25px
+    //     //font-size: 3rem
+    //     overflow: hidden
+    //     position: absolute
+    //     //top: 50px
+    //     left: 55px
+    //     @extend %SSSocial
     &.facebook
-      // background: inline-image("graphic/bg-facebook-2x100.png") repeat-x
-      margin-left: 30px
-      margin-right: 10px
-      background: $hiof-blue
-      &:before
-        content: "facebook"
-        position: absolute
-        top: 10px
+      background: blue
+    &.instagram
+      background: red
     &.twitter
-      &:before
-        content: "twitter"
+      background: orange
     &.flickr
-      // background: inline-image("graphic/bg-flickr-2x100.png") repeat-x
-      color: #0465dc
-      &:before
-        content: "flickr"
-        overflow: hidden
-        width: 25px
-        display: block
-        position: absolute
-        //top: 50px
-        //left: 50px
-      &:after
-        display: block
-        content: "flickr"
-        color: #fe0486
-        width: 25px
-        //font-size: 3rem
-        overflow: hidden
-        position: absolute
-        //top: 50px
-        left: 55px
-
+      background: green
+    &:nth-child(odd)
+      margin-right: 1rem
 
 //---------------------------------------------------------------------------
 // /Social media
