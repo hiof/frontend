@@ -6,8 +6,8 @@
   border-style: solid
   +border-radius(5px)
   +border-radius(.5rem)
-  padding-left: 50px
-  padding-left: 5rem
+  padding: 10px 50px .5rem
+  padding: 1rem 5rem .5rem
   &:before
     content: "info"
     display: block
@@ -17,8 +17,13 @@
     height: 4.4rem
     font-size: 30px
     font-size: 3rem
-    margin-left: -50px
-    margin-left: -5rem
+    // margin-left: -50px
+    // margin-left: -5rem
+    position: absolute
+    top: 10px
+    top: 1rem
+    left: 10px
+    left: 1rem
     @extend %SSStandard
 
 %message-hiof
@@ -37,7 +42,7 @@
       background: rgb(242, 219, 212)
       color: rgb(190, 75, 34)
       &:before
-        content: "stop"
+        content: "delete"
     &.warning
       // @extend %message
       border-color: rgb(225, 188, 136)
