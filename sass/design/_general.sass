@@ -456,6 +456,10 @@ a
     // > ul
     //   > ul
     //     margin-left: 10px
+#sidebar_a .sidebar-news, .sidebar-standard, .sidebar-info, .sidebar-plain
+    border-left: 0
+#sidebar_b .sidebar-news, .sidebar-standard, .sidebar-info, .sidebar-plain
+    border-right: 0
 
 
 
@@ -724,7 +728,7 @@ a
     margin: 0
     padding: 0
     padding-left: 10px
-    padding-left: 1rem
+    padding-left: 2.5rem
   h1
     background: #eee
     +background-image(linear-gradient(color-stops(#fff 0%, #eee 100%)))
@@ -774,7 +778,7 @@ a
     margin: 0
     padding: 0
     padding-left: 10px
-    padding-left: 1rem
+    padding-left: 2.5rem
   h1
     background: #eee
     +background-image(linear-gradient(color-stops(#fff 0%, #eee 100%)))
@@ -824,7 +828,7 @@ a
     margin: 0
     padding: 0
     padding-left: 10px
-    padding-left: 1rem
+    padding-left: 2.5rem
   h1
     background: #eee
     +background-image(linear-gradient(color-stops(#fff 0%, #eee 100%)))
@@ -858,6 +862,36 @@ a
       @extend %SSStandard
       // background: yellow
 
+.sidebar-plain
+  @extend .basic
+  margin: 0 0 2rem 0
+  border: 0
+  p
+    padding: 0
+    margin: 0
+  a
+    border: 0
+  ul, ol
+    margin: 0
+    padding: 0
+    padding-left: 10px
+    padding-left: 2.5rem
+  li
+    list-style: none
+    position: relative
+    &:before
+      position: absolute
+      display: block
+      left: -14px
+      left: -1.4rem
+      top: 2px
+      top: .2rem
+      content: "next"
+      // font-family: "SSStandard"
+      // +font-feature-settings
+      @extend %SSStandard
+      // background: yellow
+
 .sidebar-instagram
   @extend .basic
   margin: 0 0 2rem 0
@@ -865,7 +899,7 @@ a
     margin: 0
     padding: 0
     padding-left: 10px
-    padding-left: 1rem
+    padding-left: 2.5rem
   h1
     background: #eee
     +background-image(linear-gradient(color-stops(#fff 0%, #eee 100%)))
@@ -900,7 +934,7 @@ a
     margin: 0
     padding: 0
     padding-left: 10px
-    padding-left: 1rem
+    padding-left: 2.5rem
   h1
     background: #eee
     +background-image(linear-gradient(color-stops(#fff 0%, #eee 100%)))
@@ -935,7 +969,7 @@ a
     margin: 0
     padding: 0
     padding-left: 10px
-    padding-left: 1rem
+    padding-left: 2.5rem
   h1
     background: #eee
     +background-image(linear-gradient(color-stops(#fff 0%, #eee 100%)))
