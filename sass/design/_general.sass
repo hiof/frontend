@@ -461,6 +461,7 @@ a
 
 
 
+
 //---------------------------------------------------------------------------
 // Ribbon
 //---------------------------------------------------------------------------
@@ -767,6 +768,8 @@ a
       // +font-feature-settings
       @extend %SSStandard
       // background: yellow
+  .news_boxHeadlinesOnly
+    margin: 0
 
 .sidebar-info
   @extend .basic
@@ -817,6 +820,116 @@ a
       // +font-feature-settings
       @extend %SSStandard
       // background: yellow
+
+.box-studenttorget
+  @extend .basic
+  margin: 0 0 2rem 0
+  padding-bottom: 90px
+  ul, ol
+    margin: 0
+    padding: 0
+    padding-left: 10px
+    padding-left: 2.5rem
+  h1
+    background: #eee
+    +background-image(linear-gradient(color-stops(#fff 0%, #eee 100%)))
+    margin: 0
+    padding-left: 35px
+    padding-left: 3.5rem
+    margin-top: -10px
+    margin-top: -1rem
+    margin-bottom: 10px
+    margin-bottom: 1rem
+    padding-top: 10px
+    padding-top: 1rem
+    border-bottom: 1px dashed #eee
+    border-bottom: .1rem dashed #eee
+    color: $hiof-blue
+    text-transform: uppercase
+    position: relative
+    &:before
+      position: absolute
+      left: 12px
+      left: 1.2rem
+      top: 12px
+      top: 1.2rem
+      content: "chat"
+      // font-family: "SSStandard"
+      @extend %SSStandard
+  li
+    list-style: none
+    position: relative
+    &:before
+      position: absolute
+      display: block
+      left: -14px
+      left: -1.4rem
+      top: 2px
+      top: .2rem
+      content: "next"
+      // font-family: "SSStandard"
+      // +font-feature-settings
+      @extend %SSStandard
+      // background: yellow
+  .btn
+    margin-top: 20px
+
+.box-news
+  @extend .basic
+  margin: 0 0 2rem 0
+  min-height: 63rem
+  ul, ol
+    margin: 0
+    padding: 0
+    padding-left: 10px
+    padding-left: 2.5rem
+  h1
+    background: #eee
+    +background-image(linear-gradient(color-stops(#fff 0%, #eee 100%)))
+    margin: 0
+    padding-left: 35px
+    padding-left: 3.5rem
+    margin-top: -10px
+    margin-top: -1rem
+    margin-bottom: 10px
+    margin-bottom: 1rem
+    padding-top: 10px
+    padding-top: 1rem
+    border-bottom: 1px dashed #eee
+    border-bottom: .1rem dashed #eee
+    color: $hiof-blue
+    text-transform: uppercase
+    position: relative
+    &:before
+      position: absolute
+      left: 12px
+      left: 1.2rem
+      top: 12px
+      top: 1.2rem
+      content: "news"
+      // font-family: "SSStandard"
+      @extend %SSStandard
+  li
+    list-style: none
+    position: relative
+    &:before
+      position: absolute
+      display: block
+      left: -14px
+      left: -1.4rem
+      top: 2px
+      top: .2rem
+      content: "next"
+      // font-family: "SSStandard"
+      // +font-feature-settings
+      @extend %SSStandard
+      // background: yellow
+  .btn
+    margin-top: 20px
+  .article
+    min-height: 16rem
+    padding-left: 42%
+    width: 95%
 
 .sidebar-standard
   @extend .basic
