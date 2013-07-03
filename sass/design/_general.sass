@@ -115,6 +115,12 @@ a
 
 #content
   background: #fff
+  .display-table
+    .display-table-row
+      border: 0 none
+      .display-table-cell 
+        border: 0 none
+
 
 //---------------------------------------------------------------------------
 // News
@@ -122,15 +128,10 @@ a
 
 //-------------------------------------------------------------------------------------------------------
 
-//---------------------------------------------------------------------------
-// /Table
-//---------------------------------------------------------------------------
 
 
-.display-table,
-.display-table-row,
-.display-table-cell 
-  border: 0 none
+
+
 
 
 
@@ -1140,6 +1141,42 @@ select#list2
   &.calendar-item
     @extend %base-box
 
+// tillegg 2013
+//
+//.box_general 
+//  margin: 0px 1rem 2rem 0px
+//  border: 0.1rem solid rgb(240, 240, 240)
+//  position: relative
+//  padding: 1rem 0px
+//  h1
+//    background: linear-gradient(rgb(255, 255, 255) 0%, rgb(238, 238, 238) 100%) repeat scroll 0% 0% rgb(238, 238, 238)
+//    margin: -1rem 0px 1rem
+//    padding-left: 1.5rem
+//    padding-top: 1rem
+//    border-bottom: 0.1rem dashed rgb(238, 238, 238)
+//    color: rgb(7, 59, 88)
+//    text-transform: uppercase
+//    position: relative
+//    display: block
+//    font-size: 1.4rem
+//    line-height: 3rem
+//  h2,
+//  h3
+//    margin: 0rem 1.5rem 0.5rem 1.5rem
+//  p
+//    margin: 0rem 1.5rem 1rem 1.5rem
+//  .btn 
+//    width: 183px
+//    margin-left: 1.5rem
+//    margin-bottom: 1.5rem
+//    font-size: 2rem
+//    line-height: 2.2rem
+//    text-align: center
+//    span.ss-icon
+//      font-size: 1.5rem
+//
+//// /tillegg
+
 #active-link
   position: relative
   background: $hiof-blue
@@ -1376,6 +1413,59 @@ select.btn
     text-decoration: none
 
 
+// Contact page buttons
+
+#content
+  #contact_buttons
+    width: 100%
+    margin: 0 0 20px 0
+    padding: 0
+    float: left
+    text-align: center
+    .contact_button
+      width: 145px
+      height: 235px
+      margin-right: 10px
+      float: left
+      a.contact_link
+        //width: 135px 
+        //height: 50px
+        color: #ffffff
+        padding: 30px 30px 100px 30px
+        text-decoration: none
+        text-shadow: 0rem 0.1rem 0.1rem rgba(0, 0, 0, 0.4)
+      .contact_title
+        width: 135px
+        height: 50px
+        color: #ffffff
+        text-shadow: 0rem 0.1rem 0.1rem rgba(0, 0, 0, 0.4)
+      .contact_info
+        width: 145px
+        height: 70px
+        padding: 10px 5px 10px 5px
+        background: #f2f2f2
+    .color-yellow
+      background: #c0c47a
+    .color-green
+      background: #87c0a3
+    .color-blue 
+      background: #84b2b3
+    .color-grey
+      background: #a9b2ad
+    
+
+#content
+  .contact_form
+    padding: 3px
+  .formTextLarge,
+  .formTextSmall,
+  .formTextAreaLarge 
+    border: 1px solid #CCCCCC
+    font-size: 12px
+    padding: 3px
+  .formTextSmall 
+    width: 100%
+    
 
 // Retina button enhancehement
 
