@@ -49,3 +49,9 @@ output/**/*
 stylesheets/
 stylesheets/**/*
 # coffeescripts/**/*
+
+
+
+
+# NODE STUFF #
+node_modules
