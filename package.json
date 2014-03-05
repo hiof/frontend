@@ -1,0 +1,10 @@
+{
+  "name": "hiof-frontend",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-coffee": "^0.10.1",
+    "grunt-contrib-sass": "^0.7.2",
+    "grunt-assets-versioning": "^0.1.5"
+  }
+}
