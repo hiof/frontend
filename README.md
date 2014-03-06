@@ -18,10 +18,16 @@ Frontend kode til Høgskolen i Østfold sine sider.
     $ git clone https://github.com/hiof/frontend.git
     # Kloner prosjektet inn i din nåværende lokale mappe.
 
-Se GitHub for en grundig guide https://help.github.com/articles/fork-a-repo
+Installer [Node.js](http://nodejs.org) hvis du ikke allerede har det installert.
+
+    $ sudo npm install -g grunt-cli
+    $ npm install
+
+Du har nå `$ grunt dev` og `$ grunt dev` tilgjengelig. Disse oppgavene har to forskjellgie formål. `$ grunt prod` er en oppgave som genererer frontend stacken til ./build mappen. `$ grunt dev` er en oppgave som kontinuelig overvåker endringer i dine assets filer for å se om de endres. Hvis en asset fil endres når `$ grunt dev` tråden kjøres vil oppgaver for output generering automatisk kjøres.
 
 ## Versjon
 
+* v2.0.0 - Some bugfixes + build prosess updated to use grunt
 * v1.3.0 - Ny layout module
 * v1.2.0 - Ansatt katalog
 * v1.1.0 - Sass is now build in modules
@@ -32,14 +38,14 @@ Se GitHub for en grundig guide https://help.github.com/articles/fork-a-repo
 
 ### Roadmap
 
-* v1.4.0 - Forsiden /student & /ansatt
-* v1.5.0 - Styling for the device app
-* v2.0.0 - Everything converted to the "2012 refresh"
+
+* v2.9.0 - Prototype of new visual profile. Progressjon kan følges i prototype branchen
 
 
 ### Future goal
 
 * v3.0.0 - Redesign of the information architecture layer + new visual profile 
+
 
 ## Prosjekt informasjon
 
