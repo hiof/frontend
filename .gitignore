@@ -55,3 +55,8 @@ stylesheets/**/*
 
 # NODE STUFF #
 node_modules
+
+# Tmp and build files #
+
+tmp
+build
