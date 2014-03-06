@@ -1,17 +1,27 @@
 {
   "name": "hiof-frontend",
-  "version": "0.1.0",
+  "version": "2.0.0",
+  "author": "HiØ ved Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>",
+  "repository": {  
+      "type" : "git",
+      "url" : "https://github.com/hiof/frontend.git"
+  },
+   "contributors": [ 
+    {
+      "name": "Kenneth Dahlstrøm",
+      "email": "kenneth.dahlstrom@hiof.no"
+    } 
+  ],
   "devDependencies": {
     "grunt": "~0.4.2",
-    "grunt-contrib-coffee": "*",
-    "grunt-contrib-sass": "*",
-    "grunt-assets-versioning": "*",
-    "grunt-contrib-cssmin": "*",
-    "grunt-contrib-watch": "*",
     "grunt-contrib-compass": "^0.7.2",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-copy": "^0.5.0",
-    "grunt-static-versioning": "^0.2.1"
+    "grunt-static-versioning": "^0.2.1",
+    "grunt-contrib-coffee": "^0.10.1",
+    "grunt-contrib-cssmin": "^0.9.0",
+    "grunt-contrib-watch": "^0.5.3"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "license": "GNU"
 }
