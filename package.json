@@ -3,8 +3,15 @@
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.2",
-    "grunt-contrib-coffee": "^0.10.1",
-    "grunt-contrib-sass": "^0.7.2",
-    "grunt-assets-versioning": "^0.1.5"
-  }
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-assets-versioning": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-compass": "^0.7.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-static-versioning": "^0.2.1"
+  },
+  "dependencies": {}
 }
