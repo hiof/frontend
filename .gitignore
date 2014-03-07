@@ -50,8 +50,6 @@ stylesheets/
 stylesheets/**/*
 # coffeescripts/**/*
 
-tmp/**/*
-build/**/*
 
 
 
