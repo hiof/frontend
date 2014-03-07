@@ -4,7 +4,7 @@ css_dir = "../../public/assets"
 sass_dir = "assets/sass"
 images_dir = "assets/images"
 javascripts_dir = "javascripts"
-
+generated_images_dir = "tmp/images"
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
 
@@ -15,5 +15,5 @@ javascripts_dir = "javascripts"
 # line_comments = false
 
 preferred_syntax = :sass
-output_style = :compressed
+output_style = :expanded
 line_comments = false

@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         options: {
           config: 'config/config.rb',
           sassDir: 'assets/sass',
-          cssDir: 'tmp/css/'
+          cssDir: 'tmp/'
         }
       }
     },
@@ -18,19 +18,26 @@ module.exports = function(grunt) {
           banner: '/* HiØ styling by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */'
         },
         files: [{
-          src: ['tmp/css/application.css'],
-          dest: 'tmp/css/application.min.css'
+          src: ['tmp/application.css'],
+          dest: 'tmp/application.min.css'
         }]
       }
     },
     copy: {
-      main: {
+      images: {
         expand: true,
-        cwd: 'build/css/',
-        src: 'tmp/css/*',
-        dest: 'build/',
+        cwd: 'tmp/',
+        src: 'images/*',
+        dest: 'build/assets/',
         filter: 'isFile'
       },
+      fonts: {
+        expand: true,
+        cwd: 'assets/fonts/',
+        src: '**',
+        dest: 'build/assets/',
+        filter: 'isFile'
+      }
     },
 
     versioning: {
@@ -42,7 +49,7 @@ module.exports = function(grunt) {
         files: [{
           assets: '<%= cssmin.main.files %>',
           key: 'global',
-          dest: 'css',
+          dest: 'assets',
           type: 'css',
           ext: '.min.css'
         }]
@@ -50,15 +57,27 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      before: ['build/css'],
-      after: ["tmp/css"]
+      before: ['build/css', 'build/images'],
+      after: ["tmp/css", 'tmp/images']
     },
 
+    concat:{
+      pages: {
+        files:{
+          'build/index.html': ['views/partials/_header.html', 'views/pages/index.html', 'views/partials/_footer.html'],
+          'build/studier-ingenior.html': ['views/partials/_header.html', 'views/pages/studier_ingeior_data.html', 'views/partials/_footer.html']
+        }
+      }
+    },
 
     watch: {
       css: {
         files: ['assets/sass/**/*.sass'],
-        tasks: ['clean:before', 'compass', 'cssmin', 'versioning', 'clean:after']
+        tasks: ['compass', 'cssmin', 'versioning', 'copy:images']
+      },
+      views: {
+        files: ['views/**/*.html'],
+        tasks: ['concat:pages']
       }
     }
 
@@ -71,8 +90,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-static-versioning');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
   // Register tasks
   grunt.registerTask('dev', ['watch']);
-  grunt.registerTask('prod', ['clean:before', 'compass', 'cssmin', 'versioning', 'clean:after']);
+  grunt.registerTask('prod', ['clean:before', 'compass', 'cssmin', 'versioning', 'copy', 'concat:pages', 'clean:after']);
 };
