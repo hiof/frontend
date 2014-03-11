@@ -2,6 +2,13 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     // Tasks
+    coffee: {
+      compile: {
+        files: {
+          'tmp/js/app.js': ['assets/coffeescripts/app.coffee'] // compile and concat into single file
+        }
+      },
+    },
     compass: {
       dev: {
         options: {
@@ -40,39 +47,119 @@ module.exports = function(grunt) {
       }
     },
 
+
+
+    clean: {
+      before: ['build/assets', 'build/css', 'build/js', 'build/config'],
+      after: ["tmp/css", 'tmp/images']
+    },
+
+    concat: {
+      pages: {
+        files: {
+          'build/index.html': [
+            'views/partials/_header.html',
+            'views/pages/index.html',
+            'views/partials/_footer.html'
+          ],
+          'build/studier-ingenior.html': [
+            'views/partials/_header.html',
+            'views/pages/studier_ingenior.html',
+            'views/partials/_footer.html'
+          ],
+          'build/studentrad.html': [
+            'views/partials/_header.html',
+            'views/pages/studentradet_ir.html',
+            'views/partials/_footer.html'
+          ],
+          'build/studier.html': [
+            'views/partials/_header.html',
+            'views/pages/studier.html',
+            'views/partials/_footer.html'
+          ]
+        }
+      },
+      plugins: {
+        files: {
+          'tmp/js/neted-common.js': [
+            'assets/coffeescripts/plugins/neted/neted-common.js'
+          ],
+          'tmp/js/neted.js': [
+            'assets/coffeescripts/plugins/neted/neted-AC_RunActiveContent.js',
+            'assets/coffeescripts/plugins/neted/neted-changeSelect.js',
+            'assets/coffeescripts/plugins/neted/neted-neted.js',
+            'assets/coffeescripts/plugins/neted/neted-util.js'
+          ],
+
+          'tmp/js/symbolset.js': [
+            'assets/coffeescripts/plugins/symbolset/ss-social/ss-social.js',
+            'assets/coffeescripts/plugins/symbolset/ss-standard/ss-standard.js',
+            'assets/coffeescripts/plugins/symbolset/ss-symbolicons-block/ss-symbolicons-block.js'
+          ],
+          'build/assets/js/plugin/tabpane.js': [
+            'assets/coffeescripts/plugins/neted/tabpane.js'
+          ],
+          'build/assets/js/plugin/jquery.js': [
+            'vendor/jquery/jquery.js'
+          ]
+        }
+      },
+      scripts: {
+        files: {
+          'tmp/js/application.js': [
+            'vendor/modernizr/modernizr.js',
+            'tmp/js/neted-common.js',
+            //'vendor/jquery/jquery.js',
+            'tmp/js/neted.js',
+            'tmp/js/symbolset.js',
+            'assets/coffeescripts/plugins/select2.js',
+            'assets/coffeescripts/plugins/waypoints.min.js',
+            'tmp/js/app.js'
+          ]
+        }
+      }
+    },
+
+    uglify: {
+      main: {
+        files: {
+          'tmp/js/application.min.js': ['tmp/js/application.js']
+        }
+      }
+    },
+
     versioning: {
       options: {
-        cwd: 'build',
+        cwd: 'build/assets',
         outputConfigDir: 'build/config'
       },
       dist: {
         files: [{
+          assets: [{
+            src: ['tmp/js/application.min.js'],
+            dest: 'tmp/js/application.min.js'
+          }],
+          key: 'global',
+          dest: 'js',
+          type: 'js',
+          ext: '.min.js'
+        }, {
           assets: '<%= cssmin.main.files %>',
           key: 'global',
-          dest: 'assets',
+          dest: 'css',
           type: 'css',
           ext: '.min.css'
         }]
       }
     },
 
-    clean: {
-      before: ['build/css', 'build/images'],
-      after: ["tmp/css", 'tmp/images']
-    },
-
-    concat:{
-      pages: {
-        files:{
-          'build/index.html': ['views/partials/_header.html', 'views/pages/index.html', 'views/partials/_footer.html'],
-          'build/studier-ingenior.html': ['views/partials/_header.html', 'views/pages/studier_ingeior_data.html', 'views/partials/_footer.html']
-        }
-      }
-    },
-
     watch: {
+      js: {
+        files: ['assets/coffeescripts/**/*', 'vendor/**/*'],
+        tasks: ['coffee', 'concat:plugins', 'concat:scripts', 'uglify', 'versioning']
+      },
       css: {
-        files: ['assets/sass/**/*.sass'],
+        files: ['assets/sass/**/*.sass', 'assets/sass/**/*.scss'],
         tasks: ['compass', 'cssmin', 'versioning', 'copy:images']
       },
       views: {
@@ -91,8 +178,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-static-versioning');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+
 
   // Register tasks
   grunt.registerTask('dev', ['watch']);
-  grunt.registerTask('prod', ['clean:before', 'compass', 'cssmin', 'versioning', 'copy', 'concat:pages', 'clean:after']);
+  grunt.registerTask('prod', ['clean:before', 'coffee', 'concat:plugins', 'concat:scripts', 'uglify', 'compass', 'cssmin', 'versioning', 'copy', 'concat:pages', 'clean:after']);
 };

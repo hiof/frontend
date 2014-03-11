@@ -1,0 +1,14 @@
+{
+  "name": "Hiof-frontend",
+  "version": "2.0.0",
+  "homepage": "https://github.com/hiof/frontend",
+  "authors": [
+    "Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>"
+  ],
+  "description": "Frontend code for hiof.no",
+  "license": "GNU",
+  "dependencies": {
+    "modernizr": "~2.5.3",
+    "jquery": "~1.8.3"
+  }
+}

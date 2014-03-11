@@ -55,3 +55,7 @@ stylesheets/**/*
 
 # NODE STUFF #
 node_modules
+
+
+# Bower STUFF #
+vendor
