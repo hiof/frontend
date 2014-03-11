@@ -52,9 +52,6 @@
 
 <div id="fb-root"></div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-
 
 <script type="text/javascript">
   $(function(){
@@ -64,17 +61,19 @@
     $.getJSON( "config/assets.config.json", function( data ) {
 
       var assets = data.staticAssets.global,
-          cssPath = assets.css[0],
-          css = assets.css[0];
-          //jsPath = assets.js[0],
-          //js = jsPath.replace("/assets/", '');
+          prefix = "/assets",
+          cssPath = prefix + assets.css[0],
+          jsPath = prefix + assets.js[0];          
 
-      $("#app-css").attr("href", css);
-      //$("#app-js").attr("href", js);
+      $("#app-css").attr("href", cssPath);
+      $("#app-js").attr("src", jsPath);
+      //console.log(cssPath);
+      //console.log(jsPath);
 
+      //document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>'
     });
 
-
+    //applicationController = new window.ApplicationController();
 
 
   });
