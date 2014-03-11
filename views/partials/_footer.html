@@ -66,14 +66,14 @@
           jsPath = prefix + assets.js[0];          
 
       $("#app-css").attr("href", cssPath);
-      $("#app-js").attr("src", jsPath);
+      //$("#app-js").attr("src", jsPath);
       //console.log(cssPath);
       //console.log(jsPath);
 
       //document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>'
     });
 
-    //applicationController = new window.ApplicationController();
+    applicationController = new window.ApplicationController();
 
 
   });
