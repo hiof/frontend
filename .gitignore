@@ -58,4 +58,4 @@ node_modules
 
 
 # Bower STUFF #
-vendor
+app/vendor
