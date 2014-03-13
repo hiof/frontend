@@ -1,5 +1,9 @@
 module.exports = function(grunt) {
+  // Loads each task referenced in the packages.json file
+  require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
+
+  // Initiate grunt tasks
   grunt.initConfig({
     // Tasks
 
@@ -57,6 +61,13 @@ module.exports = function(grunt) {
         src: '**',
         dest: 'build/assets/',
         filter: 'isFile'
+      },
+      vendor: {
+        expand: true,
+        cwd: 'app/vendor/',
+        src: '**',
+        dest: 'build/vendor',
+        filter: 'isFile'
       }
     },
 
@@ -82,30 +93,6 @@ module.exports = function(grunt) {
           //]          
         }
       },
-      //plugins: {
-      //  files: {
-      //    'tmp/js/neted-common.js': [
-      //      'app/assets/coffeescripts/plugins/neted/neted-common.js'
-      //    ],
-      //    'tmp/js/neted.js': [
-      //      'app/assets/coffeescripts/plugins/neted/neted-AC_RunActiveContent.js',
-      //      'app/assets/coffeescripts/plugins/neted/neted-changeSelect.js',
-      //      'app/assets/coffeescripts/plugins/neted/neted-neted.js',
-      //      'app/assets/coffeescripts/plugins/neted/neted-util.js'
-      //    ],
-      //    'tmp/js/symbolset.js': [
-      //      'app/assets/coffeescripts/plugins/symbolset/ss-social/ss-social.js',
-      //      'app/assets/coffeescripts/plugins/symbolset/ss-standard/ss-standard.js',
-      //      'app/assets/coffeescripts/plugins/symbolset/ss-symbolicons-block/ss-symbolicons-block.js'
-      //    ],
-      //    'build/assets/js/plugin/tabpane.js': [
-      //      'app/assets/coffeescripts/plugins/neted/tabpane.js'
-      //    ],
-      //    'build/assets/js/plugin/jquery.js': [
-      //      'vendor/jquery/jquery.js'
-      //    ]
-      //  }
-      //},
       scripts: {
         files: {
           'tmp/js/application.js': [
@@ -157,34 +144,23 @@ module.exports = function(grunt) {
       //  tasks: ['coffee', 'concat:plugins', 'concat:scripts', 'uglify', 'versioning']
       //},
       css: {
-        files: ['app/assets/sass/**/*.sass', 'app/assets/sass/**/*.scss'],
+        files: ['app/assets/less/**/*.less', 'app/assets/less/**/*.less'],
         tasks: ['less', 'autoprefixer', 'cssmin', 'versioning', 'copy:images']
       },
       views: {
         files: ['app/views/**/*.html'],
         tasks: ['concat:pages']
       }
-    }
+    },
+    dist: {
 
+    }
   });
 
-  // Load tasks
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  //grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-static-versioning');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  //grunt.loadNpmTasks('grunt-contrib-coffee');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
 
 
   // Register tasks
   grunt.registerTask('dev', ['watch']);
-
   grunt.registerTask('prod', ['clean:before', 'less', 'autoprefixer', 'cssmin', 'concat:scripts', 'uglify', 'versioning', 'copy', 'concat:pages', 'clean:after']);
+
 };
