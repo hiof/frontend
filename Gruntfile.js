@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 
   // Initiate grunt tasks
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
     // Tasks
 
     less: {
@@ -50,16 +51,16 @@ module.exports = function(grunt) {
     copy: {
       images: {
         expand: true,
-        cwd: 'tmp/',
-        src: 'images/*',
-        dest: 'build/assets/',
+        cwd: 'app/assets/images/',
+        src: '**',
+        dest: 'build/assets/images/',
         filter: 'isFile'
       },
       fonts: {
         expand: true,
         cwd: 'app/assets/fonts/',
         src: '**',
-        dest: 'build/assets/',
+        dest: 'build/assets/fonts/',
         filter: 'isFile'
       },
       vendor: {
@@ -77,11 +78,15 @@ module.exports = function(grunt) {
       before: ['build/assets', 'build/css', 'build/js', 'build/config'],
       after: ["tmp/css", 'tmp/images']
     },
+    jshint:{
+      files: ['app/assets/js/**/*.js']
+    },
 
     concat: {
       pages: {
         files: {
           'build/index.html': [
+            'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/index.html',
             'app/views/partials/_footer.html'
@@ -139,10 +144,10 @@ module.exports = function(grunt) {
 
     },
     watch: {
-      //js: {
-      //  files: ['app/assets/coffeescripts/**/*', 'vendor/**/*'],
-      //  tasks: ['coffee', 'concat:plugins', 'concat:scripts', 'uglify', 'versioning']
-      //},
+      js: {
+        files: ['app/assets/js/**/*.js', 'app/assets/js/**/*.js'],
+        tasks: ['jshint', 'concat:scripts', 'uglify', 'versioning']
+      },
       css: {
         files: ['app/assets/less/**/*.less', 'app/assets/less/**/*.less'],
         tasks: ['less', 'autoprefixer', 'cssmin', 'versioning', 'copy:images']
@@ -162,5 +167,6 @@ module.exports = function(grunt) {
   // Register tasks
   grunt.registerTask('dev', ['watch']);
   grunt.registerTask('prod', ['clean:before', 'less', 'autoprefixer', 'cssmin', 'concat:scripts', 'uglify', 'versioning', 'copy', 'concat:pages', 'clean:after']);
-
+  
+  //grunt.registerTask('dist', ['dist']);
 };
