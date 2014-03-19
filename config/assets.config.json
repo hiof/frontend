@@ -1,0 +1,12 @@
+{
+  "staticAssets": {
+    "global": {
+      "js": [
+        "/js/application.dc8de7da.min.js"
+      ],
+      "css": [
+        "/css/application.e6e5e51f.min.css"
+      ]
+    }
+  }
+}
