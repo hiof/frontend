@@ -99,16 +99,28 @@ module.exports = function(grunt) {
             'app/views/pages/index.html',
             'app/views/partials/_footer.html'
           ],
-          'build/typography/index.html': [
+          'build/typography-index.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/typography/index.html',
             'app/views/partials/_footer.html'
           ],
-          'build/typography/kitchen-sink.html': [
+          'build/typography-kitchen-sink.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/typography/kitchen-sink.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/form-index.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/form-control/index.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/form-buttons.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/form-control/buttons.html',
             'app/views/partials/_footer.html'
           ]
         }

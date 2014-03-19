@@ -11,12 +11,16 @@
 <script type="text/javascript">
   $(function(){
     //$("body").append("<h1>Markup from jQuery</h1>");
- 
- 
-    $.getJSON( "/config/assets.config.json", function( data ) {
+  
+
+
+
+
+    
+    $.getJSON( "config/assets.config.json", function( data ) {
  
       var assets = data.staticAssets.global,
-          prefix = "/assets",
+          prefix = "assets",
           cssPath = prefix + assets.css[0],
           jsPath = prefix + assets.js[0];          
  
