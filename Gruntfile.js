@@ -29,9 +29,9 @@ module.exports = function(grunt) {
       options: {
 
       },
-      prefix: {   
+      prefix: {
         expand: true,
-        flatten: true,     
+        flatten: true,
         src: 'tmp/css/*.css',
         dest: 'tmp/css/prefixed/'
       }
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
     cssmin: {
       main: {
         options: {
-          banner: '/* HiØ styling by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */'
+          banner: '/* HiØ stylesheets by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */'
         },
         files: [{
           src: ['tmp/css/prefixed/*.css', '!{print,var,mix}*.css'],
@@ -69,6 +69,13 @@ module.exports = function(grunt) {
         src: '**',
         dest: 'build/vendor',
         filter: 'isFile'
+      },
+      dist: {
+        expand: true,
+        cwd: 'build/',
+        src: '**',
+        dest: 'dist',
+        filter: 'isFile'
       }
     },
 
@@ -76,9 +83,10 @@ module.exports = function(grunt) {
 
     clean: {
       before: ['build/assets', 'build/css', 'build/js', 'build/config'],
-      after: ["tmp/css", 'tmp/images']
+      after: ["tmp/css", 'tmp/images'],
+      dist: ['dist/**/*']
     },
-    jshint:{
+    jshint: {
       files: ['app/assets/js/**/*.js']
     },
 
@@ -96,13 +104,13 @@ module.exports = function(grunt) {
             'app/views/partials/_header.html',
             'app/views/pages/typography/index.html',
             'app/views/partials/_footer.html'
-          ],  
+          ],
           'build/typography/kitchen-sink.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/typography/kitchen-sink.html',
             'app/views/partials/_footer.html'
-          ]       
+          ]
         }
       },
       scripts: {
@@ -150,6 +158,8 @@ module.exports = function(grunt) {
       }
 
     },
+
+
     watch: {
       js: {
         files: ['app/assets/js/**/*.js', 'app/assets/js/**/*.js'],
@@ -166,10 +176,8 @@ module.exports = function(grunt) {
         files: ['app/views/**/*.html'],
         tasks: ['concat:pages']
       }
-    },
-    dist: {
-
     }
+
   });
 
 
@@ -177,6 +185,6 @@ module.exports = function(grunt) {
   // Register tasks
   grunt.registerTask('dev', ['watch']);
   grunt.registerTask('prod', ['clean:before', 'less', 'autoprefixer', 'cssmin', 'concat:scripts', 'uglify', 'versioning', 'copy', 'concat:pages', 'clean:after']);
-  
-  //grunt.registerTask('dist', ['dist']);
+
+  grunt.registerTask('dist', ['clean:dist', 'copy:dist']);
 };
