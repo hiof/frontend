@@ -90,12 +90,19 @@ module.exports = function(grunt) {
             'app/views/partials/_header.html',
             'app/views/pages/index.html',
             'app/views/partials/_footer.html'
-          ]
-          //'build/content.html': [
-          //  'app/views/partials/_header.html',
-          //  'app/views/pages/content.html',
-          //  'app/views/partials/_footer.html'
-          //]          
+          ],
+          'build/typography/index.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/typography/index.html',
+            'app/views/partials/_footer.html'
+          ],  
+          'build/typography/kitchen-sink.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/typography/kitchen-sink.html',
+            'app/views/partials/_footer.html'
+          ]       
         }
       },
       scripts: {
@@ -150,7 +157,10 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['app/assets/less/**/*.less', 'app/assets/less/**/*.less'],
-        tasks: ['less', 'autoprefixer', 'cssmin', 'versioning', 'copy:images']
+        tasks: ['less', 'autoprefixer', 'cssmin', 'versioning', 'copy:images'],
+        //options: {
+        //  livereload: true,
+        //},
       },
       views: {
         files: ['app/views/**/*.html'],
