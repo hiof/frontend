@@ -1,5 +1,5 @@
 $(function(){
 
-  console.log("Hello world from navigation.js");
+  //console.log("Hello world from navigation.js");
 
 });
