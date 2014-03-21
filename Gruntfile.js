@@ -40,7 +40,7 @@ module.exports = function(grunt) {
     cssmin: {
       main: {
         options: {
-          banner: '/* HiØ stylesheets by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */'
+          banner: '/*!  HiØ stylesheets v<%= pkg.version %> by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */'
         },
         files: [{
           src: ['tmp/css/prefixed/*.css', '!{print,var,mix}*.css'],
@@ -170,7 +170,14 @@ module.exports = function(grunt) {
       }
 
     },
-
+    connect: {
+      server: {
+        options: {
+          port: 9666,
+          base: 'build'
+        }
+      }
+    },
 
     watch: {
       js: {
@@ -180,9 +187,9 @@ module.exports = function(grunt) {
       css: {
         files: ['app/assets/less/**/*.less', 'app/assets/less/**/*.less'],
         tasks: ['less', 'autoprefixer', 'cssmin', 'versioning', 'copy:images'],
-        //options: {
-        //  livereload: true,
-        //},
+        options: {
+          livereload: 9666,
+        },
       },
       views: {
         files: ['app/views/**/*.html'],
