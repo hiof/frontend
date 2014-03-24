@@ -92,7 +92,8 @@ module.exports = function(grunt) {
     clean: {
       before: ['build/assets', 'build/css', 'build/js', 'build/config'],
       after: ["tmp/css", 'tmp/images'],
-      dist: ['dist/**/*']
+      dist: ['dist/**/*'],
+      build: ['build/assets', 'build/config', 'build/*.html']
     },
     jshint: {
       files: ['app/assets/js/**/*.js']
@@ -205,30 +206,59 @@ module.exports = function(grunt) {
       }
 
     },
-    connect: {
-      server: {
+
+
+
+
+
+
+
+    express: {
+      all: {
         options: {
-          port: 9666,
-          base: 'build/'
+          port: 9000,
+          hostname: "0.0.0.0",
+          bases: './build',
+          // Replace with the directory you want the files served from
+          // Make sure you don't use `.` or `..` in the path as Express
+          // is likely to return 403 Forbidden responses if you do
+          // http://stackoverflow.com/questions/14594121/express-res-sendfile-throwing-forbidden-error
+          livereload: true
         }
       }
     },
+ 
+    // grunt-open will open your browser at the project's URL
+    open: {
+      all: {
+        // Gets the port from the connect configuration
+        path: 'http://localhost:<%= express.all.options.port%>'
+      }
+    },
+
+
 
     watch: {
       js: {
         files: ['app/assets/js/**/*.js', 'app/assets/js/**/*.js'],
-        tasks: ['jshint', 'concat:scripts', 'uglify', 'versioning']
+        tasks: ['jshint', 'concat:scripts', 'uglify', 'versioning'],
+        options: {
+          livereload: true,
+        },
       },
       css: {
         files: ['app/assets/less/**/*.less', 'app/assets/less/**/*.less'],
         tasks: ['less', 'autoprefixer', 'cssmin', 'versioning', 'copy:images'],
         options: {
-          livereload: 9666,
+          livereload: true,
         },
       },
       views: {
         files: ['app/views/**/*.html'],
-        tasks: ['concat:pages']
+        tasks: ['clean:build', 'concat:pages'],
+        options: {
+          livereload: true,
+        },
       }
     }
 
@@ -238,7 +268,16 @@ module.exports = function(grunt) {
 
   // Register tasks
   grunt.registerTask('dev', ['watch']);
-  grunt.registerTask('prod', ['clean:before', 'less', 'autoprefixer', 'cssmin', 'concat:scripts', 'uglify', 'versioning', 'copy', 'concat:pages', 'clean:after']);
+  grunt.registerTask('prod', ['clean:before', 'less', 'autoprefixer', 'cssmin', 'concat:scripts', 'uglify', 'versioning', 'copy:images', 'copy:fonts', 'copy:vendor', 'concat:pages', 'clean:after']);
 
   grunt.registerTask('dist', ['clean:dist', 'copy:dist']);
+
+
+  grunt.registerTask('server', [
+    'express',
+    'open',
+    'watch'
+  ]);
+
+
 };
