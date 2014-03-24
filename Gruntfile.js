@@ -42,9 +42,17 @@ module.exports = function(grunt) {
         options: {
           banner: '/*!  HiØ stylesheets v<%= pkg.version %> by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */'
         },
-        files: [{
-          src: ['tmp/css/prefixed/*.css', '!{print,var,mix}*.css'],
-          dest: 'tmp/application.css'
+        standard: [{
+          src: ['tmp/css/prefixed/theme-standard.css', '!{print,var,mix}*.css'],
+          dest: 'tmp/theme-standard.css'
+        }],
+        helvetica: [{
+          src: ['tmp/css/prefixed/theme-helvetica.css', '!{print,var,mix}*.css'],
+          dest: 'tmp/theme-helvetica.css'
+        }],
+        verdana: [{
+          src: ['tmp/css/prefixed/theme-verdana.css', '!{print,var,mix}*.css'],
+          dest: 'tmp/theme-verdana.css'
         }]
       }
     },
@@ -111,6 +119,24 @@ module.exports = function(grunt) {
             'app/views/pages/typography/kitchen-sink.html',
             'app/views/partials/_footer.html'
           ],
+          'build/typography-exploration-helvetica.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/typography/typography-exploration-helvetica.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/typography-exploration-varela.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/typography/typography-exploration-varela.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/typography-exploration-verdana.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/typography/typography-exploration-verdana.html',
+            'app/views/partials/_footer.html'
+          ],
           'build/form-index.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
@@ -160,7 +186,16 @@ module.exports = function(grunt) {
           },
 
           {
-            assets: '<%= cssmin.main.files %>',
+            assets: [{
+              src: '<%= cssmin.main.standard %>',
+              dest: 'tmp/css/theme-standard.css'
+            }, {
+              src: '<%= cssmin.main.helvetica %>',
+              dest: 'tmp/css/theme-helvetica.css'
+            }, {
+              src: '<%= cssmin.main.verdana %>',
+              dest: 'tmp/css/theme-verdana.css'
+            }],
             key: 'global',
             dest: 'css',
             type: 'css',
@@ -174,7 +209,7 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 9666,
-          base: 'build'
+          base: 'build/'
         }
       }
     },

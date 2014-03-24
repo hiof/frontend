@@ -14,5 +14,38 @@
 <script type="text/javascript" id="app-js"></script>
 <script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="vendor/modernizr/modernizr.js"></script>
+
+<script type="text/javascript">
+
+
+
+  $(function(){
+  // Check if custom font is enabled in the view
+  if(customFont === false){
+
+      //console.log("Custom font is false, adding standard stylesheet");
+      $.getJSON( "config/assets.config.json", function( data ) {
+   
+        var assets = data.staticAssets.global,
+            prefix = "assets",
+            cssPath = prefix + assets.css[0],
+            jsPath = prefix + assets.js[0];          
+   
+        $("#app-css").attr("href", cssPath);
+        $("#app-js").attr("src", jsPath);
+      });
+    }else{
+      //console.log("Custom font is true, adding custom stylesheet");
+    }
+
+
+  });
+
+var customFont = false;
+
+</script>
+
+
+
 </head>
 <body id="body">
