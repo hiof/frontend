@@ -14,6 +14,39 @@
 <script type="text/javascript" id="app-js"></script>
 <script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="vendor/modernizr/modernizr.js"></script>
+
+<script type="text/javascript">
+
+
+
+  $(function(){
+  // Check if custom font is enabled in the view
+  if(customFont === false){
+
+      //console.log("Custom font is false, adding standard stylesheet");
+      $.getJSON( "config/assets.config.json", function( data ) {
+   
+        var assets = data.staticAssets.global,
+            prefix = "assets",
+            cssPath = prefix + assets.css[0],
+            jsPath = prefix + assets.js[0];          
+   
+        $("#app-css").attr("href", cssPath);
+        $("#app-js").attr("src", jsPath);
+      });
+    }else{
+      //console.log("Custom font is true, adding custom stylesheet");
+    }
+
+
+  });
+
+var customFont = false;
+
+</script>
+
+
+
 </head>
 <body id="body">
 
@@ -67,6 +100,16 @@
   <ol>
     <li>Artikkel / enkelside
       <ol>
+        <li>Typografisk eksprement
+          <ul>
+            <li><a href="typography-exploration-varela.html">Source Pro / Varela</a>
+            </li>
+            <li><a href="typography-exploration-verdana.html">Verdana</a>
+            </li>
+            <li><a href="typography-exploration-helvetica.html">Helvetica</a>
+            </li>
+          </ul>
+        </li>
         <li>Typografi/Text
           <ul>
             <li><a href="typography-kitchen-sink.html">Diverse text eksempler ("kitchen sink")</a>
@@ -100,46 +143,11 @@
 </footer>
 
     </main>
-  
-
-<footer id="footer">
-  <!--<p><small>Kopibeskyttet Høgskolen i Østfold</small></p>-->
-
-</footer>
-
-
-
-<script type="text/javascript">
-  $(function(){
-    //$("body").append("<h1>Markup from jQuery</h1>");
-  
-
-
-
-
     
-    $.getJSON( "config/assets.config.json", function( data ) {
- 
-      var assets = data.staticAssets.global,
-          prefix = "assets",
-          cssPath = prefix + assets.css[0],
-          jsPath = prefix + assets.js[0];          
- 
-      $("#app-css").attr("href", cssPath);
-      $("#app-js").attr("src", jsPath);
-      //console.log(cssPath);
-      //console.log(jsPath);
- 
-      //document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>'
-    });
- 
-    //applicationController = new window.ApplicationController();
- 
- 
-  });
- 
-</script>
 
+    <footer id="footer">
+      <!--<p><small>Kopibeskyttet Høgskolen i Østfold</small></p>-->
 
+    </footer>
   </body>
 </html>

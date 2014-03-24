@@ -5,7 +5,9 @@
         "/js/application.4e4fdbad.min.js"
       ],
       "css": [
-        "/css/application.9d1ffdf2.min.css"
+        "/css/theme-standard.bc0366de.min.css",
+        "/css/theme-helvetica.1c560029.min.css",
+        "/css/theme-verdana.a2499165.min.css"
       ]
     }
   }
