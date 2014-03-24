@@ -119,19 +119,19 @@ module.exports = function(grunt) {
             'app/views/pages/typography/kitchen-sink.html',
             'app/views/partials/_footer.html'
           ],
-          'build/typography-exploration-helvetica.html': [
+          'build/typography-3.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/typography/typography-exploration-helvetica.html',
             'app/views/partials/_footer.html'
           ],
-          'build/typography-exploration-varela.html': [
+          'build/typography-1.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/typography/typography-exploration-varela.html',
             'app/views/partials/_footer.html'
           ],
-          'build/typography-exploration-verdana.html': [
+          'build/typography-2.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/typography/typography-exploration-verdana.html',
