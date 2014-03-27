@@ -80,16 +80,19 @@ var customFont = false;
 
 <main role="main" id="main">
 <script type="text/javascript">
+
+customFont = true;
+
 $(function() {
   $.getJSON("config/assets.config.json", function(data) {
 
     var assets = data.staticAssets.global,
       prefix = "assets",
-      cssPath = prefix + assets.css[3];
-      //jsPath = prefix + assets.js[0];          
+      cssPath = prefix + assets.css[1],
+      jsPath = prefix + assets.js[0];          
 
       $("#app-css").attr("href", cssPath);
-    //$("#app-js").attr("src", jsPath);
+      $("#app-js").attr("src", jsPath);
   });
 });
 </script>

@@ -83,16 +83,17 @@ var customFont = false;
 
 customFont = true;
 
+
 $(function() {
   $.getJSON("config/assets.config.json", function(data) {
 
     var assets = data.staticAssets.global,
       prefix = "assets",
-      cssPath = prefix + assets.css[1],
+      cssPath = prefix + assets.css[2],
       jsPath = prefix + assets.js[0];          
 
-      $("#app-css").attr("href", cssPath);
-      $("#app-js").attr("src", jsPath);
+    $("#app-css").attr("href", cssPath);
+    $("#app-js").attr("src", jsPath);
   });
 });
 </script>
