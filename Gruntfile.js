@@ -148,6 +148,12 @@ module.exports = function(grunt) {
             'app/views/pages/typography/typography-exploration-verdana.html',
             'app/views/partials/_footer.html'
           ],
+          'build/media.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/media/media.html',
+            'app/views/partials/_footer.html'
+          ],
           'build/form-index.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
@@ -269,6 +275,21 @@ module.exports = function(grunt) {
       views: {
         files: ['app/views/**/*.html'],
         tasks: ['concat:pages'],
+        options: {
+          livereload: true,
+        },
+      },
+      images:{
+        files: ['app/assets/images/**/*.jpg', 'app/assets/images/**/*.png'],
+        tasks: ['copy:images'],
+        options: {
+          livereload: true,
+        },
+
+      },
+      fonts:{
+        files: ['app/assets/fonts/**/*'],
+        tasks: ['copy:fonts'],
         options: {
           livereload: true,
         },
