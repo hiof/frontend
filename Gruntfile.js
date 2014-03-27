@@ -53,6 +53,10 @@ module.exports = function(grunt) {
         verdana: [{
           src: ['tmp/css/prefixed/theme-verdana.css', '!{print,var,mix}*.css'],
           dest: 'tmp/theme-verdana.css'
+        }],
+        source: [{
+          src: ['tmp/css/prefixed/theme-source-pro.css', '!{print,var,mix}*.css'],
+          dest: 'tmp/theme-source-pro.css'
         }]
       }
     },
@@ -120,7 +124,7 @@ module.exports = function(grunt) {
             'app/views/pages/typography/kitchen-sink.html',
             'app/views/partials/_footer.html'
           ],
-          'build/typography-3.html': [
+          'build/typography-4.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/typography/typography-exploration-helvetica.html',
@@ -133,6 +137,12 @@ module.exports = function(grunt) {
             'app/views/partials/_footer.html'
           ],
           'build/typography-2.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/typography/typography-exploration-source-pro.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/typography-3.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/typography/typography-exploration-verdana.html',
@@ -196,6 +206,9 @@ module.exports = function(grunt) {
             }, {
               src: '<%= cssmin.main.verdana %>',
               dest: 'tmp/css/theme-verdana.css'
+            }, {
+              src: '<%= cssmin.main.source %>',
+              dest: 'tmp/css/theme-source-pro.css'
             }],
             key: 'global',
             dest: 'css',
@@ -255,7 +268,7 @@ module.exports = function(grunt) {
       },
       views: {
         files: ['app/views/**/*.html'],
-        tasks: ['clean:build', 'concat:pages'],
+        tasks: ['concat:pages'],
         options: {
           livereload: true,
         },
