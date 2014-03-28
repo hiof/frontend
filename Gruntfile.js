@@ -112,6 +112,12 @@ module.exports = function(grunt) {
             'app/views/pages/index.html',
             'app/views/partials/_footer.html'
           ],
+          'build/index2.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/index2.html',
+            'app/views/partials/_footer.html'
+          ],
           'build/typography-index.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
