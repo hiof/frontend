@@ -685,9 +685,9 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 #body {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.8em;
-  font-family: 'Helvetica';
+  font-family: 'Verdana';
   padding-top: 88px;
   font-style: normal;
   font-weight: 400;
@@ -695,7 +695,7 @@ html {
 h1,
 h2,
 h3 {
-  font-family: 'Helvetica Neue';
+  font-family: 'Verdana';
 }
 ul {
   list-style: disc;
@@ -828,7 +828,7 @@ i,
 }
 small,
 .caption {
-  font-family: 'Helvetica';
+  font-family: 'Verdana';
   font-size: 1.2rem;
 }
 abbr {
@@ -988,6 +988,13 @@ html.cover #content {
 #header #logo .item {
   fill: #000;
 }
+#header #logo-aternative {
+  margin-top: -40px;
+  width: 200px;
+  position: absolute;
+  left: 42%;
+  z-index: 999;
+}
 #header li {
   display: inline-block;
   list-style: none;
@@ -999,6 +1006,25 @@ html.cover #content {
 #header h1 {
   float: left;
   margin: 0;
+}
+#header.display {
+  display: block;
+}
+#header.display.inline {
+  position: relative;
+  margin-top: 40rem;
+  margin-bottom: 40rem;
+}
+#header.display.inline.first-header {
+  margin-top: 20rem;
+}
+#header.display.inline.logo-left #logo-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#header.display.inline.logo-left #nav-main {
+  margin-left: 43rem;
 }
 .btn {
   display: inline-block;
@@ -1612,20 +1638,19 @@ img {
   max-width: 100%;
   border-radius: .4rem;
 }
-html.cover.study:before {
-  content: "";
-  background: url(../images/bg-study.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.cover-inline {
+  display: none;
+}
+html.cover .cover-inline {
+  display: block;
+  background: url(../images/bg-study.jpg) fixed;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  height: 30rem;
-  z-index: -1;
+  max-height: 50rem;
+  z-index: -10;
 }
 #study {
   margin-top: -40rem;
