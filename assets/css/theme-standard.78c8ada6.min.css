@@ -1026,6 +1026,10 @@ html.cover #content {
 #header.display.inline.logo-left #nav-main {
   margin-left: 43rem;
 }
+html.no-sticky-header #header,
+html.no-sticky #header {
+  position: absolute !important;
+}
 .btn {
   display: inline-block;
   margin-bottom: 0;
@@ -1651,6 +1655,9 @@ html.cover .cover-inline {
   left: 0;
   max-height: 50rem;
   z-index: -10;
+}
+html.cover.no-sticky .cover-inline {
+  background-attachment: initial;
 }
 #study {
   margin-top: -40rem;
