@@ -171,6 +171,138 @@ module.exports = function(grunt) {
             'app/views/partials/_header.html',
             'app/views/pages/form-control/buttons.html',
             'app/views/partials/_footer.html'
+          ],
+          'build/analyse-start.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/analyse/step0.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/step-1.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/analyse/step1.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/step-2.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/analyse/step2.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/step-3.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/analyse/step3.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/step-4.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/analyse/step4.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/step-5.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/analyse/step5.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/step-6.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/analyse/step6.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/step-7.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/analyse/step7.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/step-8.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/analyse/step8.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/step-9.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/analyse/step9.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/step-10.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/analyse/step10.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/step-11.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/analyse/step11.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/part2-step-1.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/analyse/part2-step1.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/part3-step-1.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/analyse/part3-step1.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/part4-step-1.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/media/media.html',
+            'app/views/pages/analyse/part4-step1.html',
+            'app/views/partials/_activate_design_study.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/part4-step-2.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/media/media.html',
+            'app/views/pages/analyse/part4-step2.html',
+            'app/views/partials/_activate_design_study.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/part4-step-3.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/media/media.html',
+            'app/views/pages/analyse/part4-step3.html',
+            'app/views/partials/_activate_design_study.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/part5-step-1.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/index2.html',
+            'app/views/pages/analyse/part5-step1.html',
+            'app/views/partials/_activate_design_index.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/part5-step-2.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/index2-2.html',
+            'app/views/pages/analyse/part5-step2.html',
+            'app/views/partials/_activate_design_index.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/part5-step-3.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/index2.html',
+            'app/views/pages/analyse/part5-step3.html',
+            'app/views/partials/_activate_design_index.html',
+            'app/views/partials/_footer.html'
           ]
         }
       },
@@ -286,7 +418,7 @@ module.exports = function(grunt) {
         },
       },
       images:{
-        files: ['app/assets/images/**/*.jpg', 'app/assets/images/**/*.png'],
+        files: ['app/assets/images/**/*.jpg', 'app/assets/images/**/*.png', 'app/assets/images/**/*.svg'],
         tasks: ['copy:images'],
         options: {
           livereload: true,

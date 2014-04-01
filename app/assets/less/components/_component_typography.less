@@ -132,10 +132,12 @@
   .alpha + p, .alpha + ol, .alpha + ul, .alpha + blockquote p, .alpha + pre,
   h2 + p, h2 + ol, h2 + ul, h2 + blockquote p, h2 + pre,
   .beta + p, .beta + ol, .beta + ul, .beta + blockquote p, .beta + pre,
-  img + p, img + ol, img + ul, img + blockquote p, img + pre {
+  img + p, img + ol, img + ul, img + blockquote p, img + pre, header + form {
     margin-top: 2rem;
   }
-
+  form{
+    margin-bottom: 2rem;
+  }
   // Remove padding-top from first heading
   section > .container > :first-child {
     padding-top: 0;

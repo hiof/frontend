@@ -38,8 +38,9 @@ Du har nå `$ grunt dev` og `$ grunt prod` tilgjengelig. Disse oppgavene har to 
 
 ### Roadmap
 
+v3.0.0.X - Ukentlige releaser etter hvert som sprinter blir ferdige.
 
-* v2.9.0 - Prototype of new visual profile. Progressjon kan følges i next branchen
+
 
 
 ### Future goal

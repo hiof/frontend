@@ -1,0 +1,51 @@
+.universal(){
+  #calendar{}
+  .calendar{
+
+  }
+
+  #person, #calendar{
+    margin-bottom: 4rem;
+    > header{
+      position: relative;
+      width: 100%;
+      float: left;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .calendar-entry{
+    float: left;
+    width: 50%;
+    margin-bottom: 1rem;
+
+    time{
+      max-width: 6rem;
+      float: left;
+      display:block;
+      margin-right: 3rem;
+      span, strong{
+        display:block;
+      }
+      span{
+        font-size: 3rem;
+        text-align: center
+      }
+      strong{
+
+      }
+    }
+    h3{
+      display: block;
+      float: left;
+      width: 21rem;
+      font-size: 1.2rem;
+      line-height: 1.4;
+      margin-top: 0;
+      padding-top:1rem;
+      a{
+        color: @hiof-blue;
+      }
+    }
+  }
+}
