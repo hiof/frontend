@@ -687,7 +687,7 @@ html {
 #body {
   font-size: 1.6rem;
   line-height: 1.8em;
-  font-family: 'source_sans_proregular';
+  font-family: 'Helvetica';
   padding-top: 88px;
   font-style: normal;
   font-weight: 400;
@@ -695,7 +695,7 @@ html {
 h1,
 h2,
 h3 {
-  font-family: 'source_sans_probold';
+  font-family: 'Helvetica Neue';
 }
 ul {
   list-style: disc;
@@ -832,7 +832,7 @@ i,
 }
 small,
 .caption {
-  font-family: 'source_sans_proregular';
+  font-family: 'Helvetica';
   font-size: 1.2rem;
 }
 abbr {
@@ -1835,6 +1835,7 @@ img {
   display: inline-block;
   margin: 0;
   margin-right: 2rem;
+  position: relative;
 }
 #study footer li a {
   line-height: 4.4rem;
@@ -1851,6 +1852,29 @@ img {
 }
 #study footer li ul {
   display: none;
+  position: absolute;
+  width: 40rem;
+  left: -1rem;
+  z-index: 999;
+  border-top: 0.2rem solid #275b89;
+}
+#study footer li ul li {
+  display: block;
+}
+#study footer li ul li a {
+  background: #3276b1;
+  display: block;
+  padding: 0 2rem;
+}
+#study footer li ul li a:hover {
+  background: #4a90cc;
+}
+#study footer li ul li:last-child a {
+  border-bottom-left-radius: .4rem;
+  border-bottom-right-radius: .4rem;
+}
+#study footer li:hover ul {
+  display: block;
 }
 #study footer .btn-link:before,
 #study footer .btn-link:after {
