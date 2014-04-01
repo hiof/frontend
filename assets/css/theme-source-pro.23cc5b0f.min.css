@@ -685,9 +685,9 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 #body {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 1.8em;
-  font-family: 'Verdana';
+  font-family: 'source_sans_proregular';
   padding-top: 88px;
   font-style: normal;
   font-weight: 400;
@@ -695,7 +695,7 @@ html {
 h1,
 h2,
 h3 {
-  font-family: 'Verdana';
+  font-family: 'source_sans_probold';
 }
 ul {
   list-style: disc;
@@ -832,7 +832,7 @@ i,
 }
 small,
 .caption {
-  font-family: 'Verdana';
+  font-family: 'source_sans_proregular';
   font-size: 1.2rem;
 }
 abbr {
@@ -2022,7 +2022,7 @@ img {
     padding-left: 2rem;
   }
   .one-third {
-    width: 32%;
+    width: 33%;
     padding-right: 4rem;
   }
   #header {
