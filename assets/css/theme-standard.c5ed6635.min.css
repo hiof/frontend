@@ -966,6 +966,9 @@ html.cover #content {
 .full header h2 {
   float: left;
 }
+#body > #header {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
 #header {
   display: none;
   position: fixed;
@@ -973,7 +976,6 @@ html.cover #content {
   left: 0rem;
   width: 100%;
   z-index: 999;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 #header:before {
   width: 300%;

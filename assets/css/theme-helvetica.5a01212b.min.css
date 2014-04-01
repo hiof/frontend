@@ -685,9 +685,9 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 #body {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 1.8em;
-  font-family: 'Verdana';
+  font-family: 'Helvetica';
   padding-top: 88px;
   font-style: normal;
   font-weight: 400;
@@ -695,7 +695,7 @@ html {
 h1,
 h2,
 h3 {
-  font-family: 'Verdana';
+  font-family: 'Helvetica Neue';
 }
 ul {
   list-style: disc;
@@ -832,7 +832,7 @@ i,
 }
 small,
 .caption {
-  font-family: 'Verdana';
+  font-family: 'Helvetica';
   font-size: 1.2rem;
 }
 abbr {
@@ -966,6 +966,9 @@ html.cover #content {
 .full header h2 {
   float: left;
 }
+#body > #header {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
 #header {
   display: none;
   position: fixed;
@@ -973,7 +976,6 @@ html.cover #content {
   left: 0rem;
   width: 100%;
   z-index: 999;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 #header:before {
   width: 300%;
