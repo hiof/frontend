@@ -184,7 +184,7 @@ var customFont = false;
 
     <article class="one-third">
       <header><h3>Masterstudium i scenografi</h3></header>
-      <p>Studiet fokuserer på fordypning innenfor en bredere forståelse av scenografi og bidrar til å definere rom i en performativ sammenheng. </p>
+      <img src="assets/images/analyse/studier-1.jpg" style="margin-top: 0;">
       <a href="#" class="btn btn-primary btn-line">Les om masterstudium i scenografi</a>
     </article>
     <article class="one-third">
@@ -202,8 +202,9 @@ var customFont = false;
     <article class="one-third">
       <header><h3>Studiestart</h3></header>
 
-      <p>Gratis <a href="">buss fra Fredrikstad og tilbake</a>, alle studenter <a href="">registrerer seg ved sine avdelinger</a>, <a href="">formell åpningssermoni</a>, <a href="">åpning av fadderukene med stor konsert</a>.</p>
-      <p><a href="" class="btn btn-primary btn-line">Se våre studiestart sider for mer informasjon</a> </p>
+      
+      <img src="assets/images/analyse/studier-2.jpg" style="margin-top: 0;">
+      <a href="" class="btn btn-primary btn-line">Se våre studiestart sider for mer informasjon</a>
     </article>
 
 
@@ -211,7 +212,7 @@ var customFont = false;
 
   <footer>
     <ul class="nav">
-      <li class="dropdown"><a href="#" class="btn btn-link arrow arrow-right">Finn studier etter fagområde</a>
+      <li class="dropdown"><a href="#" class="btn btn-link arrow arrow-right">Studier etter fagområde</a>
         <ul class="dropdown-menu">
           <li><a href="#">Forkurs og realfagskurs</a>
           </li>
@@ -231,7 +232,7 @@ var customFont = false;
           </li>
         </ul>
       </li>
-      <li><a href="#" class="btn btn-link arrow arrow-right">Etter studienivå</a>
+      <li><a href="#" class="btn btn-link arrow arrow-right">Studier etter studienivå</a>
         <ul class="dropdown-menu">
           <li>
             <a href="#">Bachelorprogram</a>
@@ -253,7 +254,8 @@ var customFont = false;
           </li>
         </ul>
       </li>
-      <li><a href="#" class="btn btn-link arrow arrow-right">Etter tilrettelegging</a>
+      </li>
+      <li><a href="#" class="btn btn-link arrow arrow-right">Tilrettelagte studier</a>
         <ul class="dropdown-menu">
           <li>
             <a href="#">Etter- og videreutdanning</a>
@@ -270,11 +272,8 @@ var customFont = false;
         <a href="#" class="btn btn-link arrow arrow-right">Alle studier</a>
 
       </li>
-      <li>
-        <a href="#" class="btn btn-link arrow arrow-right">Senter for kompetanseutvikling (SKUT)</a>
-
-      </li>
     </ul>
+
   </footer>
 
 </section>
@@ -426,21 +425,26 @@ var customFont = false;
 
 <div class="float-right">
   <a href="part5-step-1.html" class="btn btn-primary btn-line">Forrige</a>
-  <a href="part5-step-3.html" class="btn btn-primary ">Neste</a>
+  <a href="analyse-start.html" class="btn btn-default ">Slutt</a>
 </div>
-
 </div>
 
 
 <script type="text/javascript">
   $(function(){
-    $("#calendar header h2").prepend('<span class="icon-calendar"></span>');
-    $("#research header h2").prepend('<span class="icon-research"></span>');
-    $("#news header h2").prepend('<span class="icon-news"></span>');
-    $("#people header h2").prepend('<span class="icon-people"></span>');
-    $("#research header, #news header").addClass("blue-background");
+    $(".article").each(function(i, obj){
+      if ( $(this).hasClass('article-vertical') ) {
+        $(this).removeClass('article-vertical').addClass('article-horizontal');
+      }
+    });
+
+    $("#calendar time").addClass("bg");
+    $("#research header, #news header").addClass("top-devider");
   });
+
 </script>
+
+
 <script type="text/javascript">
   $(function(){
     $("#header").addClass("display");

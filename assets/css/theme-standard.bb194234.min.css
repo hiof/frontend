@@ -695,7 +695,7 @@ html {
 h1,
 h2,
 h3 {
-  font-family: 'source_sans_probold';
+  font-family: 'varela-round';
 }
 ul {
   list-style: disc;
@@ -1762,14 +1762,28 @@ img {
   float: left;
   display: block;
   margin-right: 3rem;
+  width: 4.4rem;
+  height: 4.4rem;
+  text-align: center;
+  padding-top: .7rem;
 }
 .calendar-entry time span,
 .calendar-entry time strong {
   display: block;
 }
 .calendar-entry time span {
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
+  line-height: 1;
+}
+.calendar-entry time strong {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.calendar-entry time.bg {
+  background: #073b58;
+  color: #ffffff;
+  border-radius: .4rem;
 }
 .calendar-entry h3 {
   display: block;
