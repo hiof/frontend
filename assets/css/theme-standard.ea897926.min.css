@@ -516,6 +516,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .input-group-btn button.btn {
   margin: 0;
 }
+.fade-in {
+  opacity: 0;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
      v2.0 | 20110126
      License: none (public domain)
@@ -687,7 +690,7 @@ html {
 #body {
   font-size: 1.6rem;
   line-height: 1.8em;
-  font-family: 'Helvetica';
+  font-family: 'source_sans_proregular';
   padding-top: 88px;
   font-style: normal;
   font-weight: 400;
@@ -695,13 +698,26 @@ html {
 h1,
 h2,
 h3 {
-  font-family: 'Helvetica Neue';
+  font-family: 'varela-round';
 }
 ul {
   list-style: disc;
 }
 ol {
   list-style: decimal;
+}
+dt,
+dd {
+  display: inline-block;
+}
+dt {
+  float: left;
+  clear: left;
+  margin-right: .5rem;
+  font-weight: bold;
+}
+dt:after {
+  content: ": ";
 }
 a {
   -webkit-transition: .1s color;
@@ -832,7 +848,7 @@ i,
 }
 small,
 .caption {
-  font-family: 'Helvetica';
+  font-family: 'source_sans_proregular';
   font-size: 1.2rem;
 }
 abbr {
@@ -966,9 +982,6 @@ html.cover #content {
 .full header h2 {
   float: left;
 }
-#body > #header {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
 #header {
   display: none;
   position: fixed;
@@ -976,12 +989,14 @@ html.cover #content {
   left: 0rem;
   width: 100%;
   z-index: 999;
+  margin-top: 0rem;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 #header:before {
   width: 300%;
   height: 100%;
   content: "";
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.97);
   display: block;
   position: absolute;
   left: -20%;
@@ -1008,11 +1023,15 @@ html.cover #content {
   fill: #000;
 }
 #header #logo-aternative {
-  margin-top: -40px;
-  width: 200px;
+  margin-top: 0;
+  height: 100px;
   position: absolute;
   left: 42%;
   z-index: 999;
+  border-radius: .4rem;
+}
+#header #logo-aternative #text {
+  display: none;
 }
 #header li {
   display: inline-block;
@@ -1025,6 +1044,28 @@ html.cover #content {
 #header h1 {
   float: left;
   margin: 0;
+}
+#header.light {
+  margin-top: 2rem;
+  transition: margin-top 1s;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+}
+#header.light:before {
+  background: rgba(255, 255, 255, 0);
+}
+#header.light #logo-aternative {
+  margin-top: -2rem;
+  transition: margin-top 1s;
+}
+#header.light #logo-aternative .item {
+  fill: #fff;
+}
+#header.light #logo-aternative #text {
+  display: block;
+}
+#header.light a {
+  transition: color 1s;
+  color: #fff;
 }
 #header.display {
   display: block;
@@ -1068,6 +1109,9 @@ html.cover.study .cover-inline {
 html.cover.index .cover-inline {
   background: url(../images/bg-index.jpg) fixed;
   max-height: 61.8rem;
+}
+html.cover.page .cover-inline {
+  background: url(../images/bg-index.jpg) fixed;
 }
 html.cover.no-sticky .cover-inline {
   background-attachment: initial;
@@ -1714,6 +1758,15 @@ input[type="button"].btn-block {
   background-image: url("../images/analyse/news.svg");
   background-size: 100%;
 }
+table {
+  width: 100%;
+  margin: 0 2rem;
+}
+th {
+  text-align: left;
+  font-weight: bold;
+  line-height: 4rem;
+}
 #body {
   color: #333333;
 }
@@ -1750,7 +1803,7 @@ img {
   position: relative;
   width: 100%;
   float: left;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 .calendar-entry {
   float: left;
@@ -1766,6 +1819,9 @@ img {
   height: 4.4rem;
   text-align: center;
   padding-top: .7rem;
+  background: #073b58;
+  color: #ffffff;
+  border-radius: .4rem;
 }
 .calendar-entry time span,
 .calendar-entry time strong {
@@ -1781,9 +1837,9 @@ img {
   line-height: 1;
 }
 .calendar-entry time.bg {
-  background: #073b58;
-  color: #ffffff;
-  border-radius: .4rem;
+  background: none;
+  color: #073b58;
+  border-radius: 0;
 }
 .calendar-entry h3 {
   display: block;
@@ -1947,6 +2003,12 @@ img {
   display: block;
   border-top: 1px solid rgba(7, 59, 88, 0.1);
   z-index: -10;
+}
+#footer {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid #eee;
+  width: 100%;
 }
 @media screen and (max-width: 640px) {
   #content,
