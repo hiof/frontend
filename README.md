@@ -48,5 +48,3 @@ v3.0.0.X - Ukentlige releaser etter hvert som sprinter blir ferdige.
 * v3.0.0 - Redesign of the information architecture layer + new visual profile 
 
 
-## Prosjekt informasjon
-
