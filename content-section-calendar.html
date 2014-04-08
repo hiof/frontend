@@ -2,49 +2,47 @@
 <!--[if lt IE 7]> <html class="no-js ie6" lang="nb"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7" lang="nb"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8" lang="nb"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="nb"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="nb">
+<!--<![endif]-->
+
 <head>
-<meta charset="utf-8">
-<title>Høgskolen i Østfold</title>
-<meta name="Author" content="">
-<meta name="KeyWords" content="">
-<meta name="Description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link rel="stylesheet" id="app-css" type="text/css">
-<script type="text/javascript" id="app-js"></script>
-<script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
-<script type="text/javascript" src="vendor/modernizr/modernizr.js"></script>
+  <meta charset="utf-8">
+  <title>Høgskolen i Østfold</title>
+  <meta name="Author" content="">
+  <meta name="KeyWords" content="">
+  <meta name="Description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" id="app-css" type="text/css">
+  <script type="text/javascript" id="app-js"></script>
+  <script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="vendor/modernizr/modernizr.js"></script>
 
-<script type="text/javascript">
-
-
-
-  $(function(){
-  // Check if custom font is enabled in the view
-  if(customFont === false){
+  <script type="text/javascript">
+  $(function() {
+    // Check if custom font is enabled in the view
+    if (customFont === false) {
 
       //console.log("Custom font is false, adding standard stylesheet");
-      $.getJSON( "config/assets.config.json", function( data ) {
-   
+      $.getJSON("config/assets.config.json", function(data) {
+
         var assets = data.staticAssets.global,
-            prefix = "assets",
-            cssPath = prefix + assets.css[0],
-            jsPath = prefix + assets.js[0];          
-   
+          prefix = "assets",
+          cssPath = prefix + assets.css[0],
+          jsPath = prefix + assets.js[0];
+
         $("#app-css").attr("href", cssPath);
         $("#app-js").attr("src", jsPath);
       });
-    }else{
+    } else {
       //console.log("Custom font is true, adding custom stylesheet");
     }
 
 
   });
 
-var customFont = false;
-
-</script>
-
+  var customFont = false;
+  </script>
 
 </head>
 <body id="body">
@@ -178,20 +176,25 @@ var customFont = false;
 
 <main role="main" id="main">
 
-<div class="cover-inline gradient"></div>
+<div class="cover-inline "></div>
 <section id="content">
- <header>
+  <header>
     <h2>Arrangementer</h2>
   </header>
 
-  <br><br><br><br><br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <article class="calendar-entry">
     <time datetime="2014-09-20" class="icon">
       <span>9</span>
       <strong>Aug</strong>
     </time>
     <section>
-      <h3><a href="#">Akademiet: Åpen gjesteforelesning</a></h3>
+      <h3><a href="#">Akademiet: Åpen gjesteforelesning</a>
+      </h3>
     </section>
   </article>
   <article class="calendar-entry">
@@ -200,7 +203,8 @@ var customFont = false;
       <strong>Sep</strong>
     </time>
     <section>
-      <h3><a href="#">ØSS-seminar om fremmedspråk</a></h3>
+      <h3><a href="#">ØSS-seminar om fremmedspråk</a>
+      </h3>
     </section>
   </article>
   <article class="calendar-entry">
@@ -209,7 +213,8 @@ var customFont = false;
       <strong>Sep</strong>
     </time>
     <section>
-      <h3><a href="#">Innovasion Camp 2014</a></h3>
+      <h3><a href="#">Innovasion Camp 2014</a>
+      </h3>
     </section>
   </article>
   <article class="calendar-entry">
@@ -218,24 +223,29 @@ var customFont = false;
       <strong>Sep</strong>
     </time>
     <section>
-      <h3><a href="#">Pedagogisk lunsj</a></h3>
+      <h3><a href="#">Pedagogisk lunsj</a>
+      </h3>
     </section>
   </article>
 
 
-  <br><br><br><br><br>
-  <br><br><br><br><br>
-  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
 </section>
+
 <script type="text/javascript">
   $(function(){
     //$("#header").addClass("display");
     $("html").addClass("cover page");
-
-
-
-
-
   });
 </script>
     </main>
