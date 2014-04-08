@@ -10,7 +10,7 @@
       position: relative;
       width: 100%;
       float: left;
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
     }
   }
 
@@ -18,21 +18,37 @@
     float: left;
     width: 50%;
     margin-bottom: 1rem;
-
+    //&:nth-child(1), &:nth-child(3){
+    //  border-bottom: .1rem solid #f00;
+    //}
     time{
       max-width: 6rem;
       float: left;
       display:block;
       margin-right: 3rem;
+      width: 4.4rem;
+      height: 4.4rem;
+      text-align:center;
+      padding-top: .7rem;        
+      background: @hiof-blue;
+      color: @white;
+      border-radius: .4rem;
       span, strong{
         display:block;
       }
       span{
-        font-size: 3rem;
-        text-align: center
+        font-size: 2rem;
+        text-align: center;
+        line-height: 1;
       }
       strong{
-
+        font-size: 1.2rem;
+        line-height: 1;
+      }
+      &.bg{
+        background: none;
+        color: @hiof-blue;
+        border-radius: 0;
       }
     }
     h3{

@@ -5,7 +5,6 @@
   html.cover {
     .cover-inline{
         display:block;
-        //background: url(../images/bg-study.jpg) fixed;
         width: 100%;
         height: 100%;
         position: absolute;
@@ -24,9 +23,13 @@
           background: url(../images/bg-index.jpg) fixed;
           max-height: 61.8rem;
       }      
+    }    
+    &.page{
+      .cover-inline{
+          background: url(../images/bg-index.jpg) fixed;
+          //max-height: 61.8rem;
+      }      
     }
-
-
 
 
     &.no-sticky{
@@ -43,7 +46,7 @@
 .universal(){
   #body{
     > #header{
-      box-shadow: 0 1px 1px rgba(0,0,0,.1);
+      //box-shadow: 0 1px 1px rgba(0,0,0,.1);
     }
   }
   #header{
@@ -53,12 +56,13 @@
     left: 0rem;
     width: 100%;
     z-index: 999;
-
+    margin-top: 0rem;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
     &:before{
       width: 300%;
       height: 100%;
       content: "";
-      background: rgba(255,255,255,1);
+      background: rgba(255,255,255,.97);
       display: block;
       position: absolute;
       left: -20%;
@@ -90,11 +94,16 @@
       }
     }
     #logo-aternative{
-      margin-top: -40px;
-      width: 200px;
+      margin-top:0;
+      //width: 200px;
+      height: 100px;
       position: absolute;
       left: 42%;
       z-index: 999;
+      border-radius: .4rem;
+      #text{
+        display: none;
+      }
     }
     li{
       display: inline-block;
@@ -109,7 +118,31 @@
       float: left;
       margin: 0;
     }
-
+    &.light{
+      margin-top: 2rem;
+      transition: margin-top 1s;
+      box-shadow: 0 1px 1px rgba(0,0,0,0);
+      &:before{
+        //transition: background 1s;
+        background: rgba(255,255,255,0);
+      }
+      #logo-aternative{
+        //background-color: #fff;
+        margin-top:-2rem;
+        transition: margin-top 1s;
+        .item{
+          fill: #fff;
+          //transition: fill 1s;
+        }
+        #text{
+          display: block;
+        }
+      }
+      a{
+        transition: color 1s;
+        color: #fff;
+      }
+    }
   }
   #header.display{
     display: block;

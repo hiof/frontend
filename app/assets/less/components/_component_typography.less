@@ -42,7 +42,19 @@
     list-style: decimal;
   }
 
+  dt,dd{
+    display: inline-block;
+  }
+  dt{
+    float: left;
+    clear: left;
+    margin-right: .5rem;
+    font-weight: bold;
+    &:after{
+      content: ": ";
 
+    }
+  }
 
 
 
@@ -128,11 +140,11 @@
   }
 
   // Nice spacing after high level headings and images. Text sits directly below h4, h5 and h6.
-  h1 + p, h1 + ol, h1 + ul, h1 + blockquote p, h1 + pre,
+  h1 + p, h1 + ol, h1 + ul, h1 + dl, h1 + blockquote p, h1 + pre,
   .alpha + p, .alpha + ol, .alpha + ul, .alpha + blockquote p, .alpha + pre,
-  h2 + p, h2 + ol, h2 + ul, h2 + blockquote p, h2 + pre,
+  h2 + p, h2 + ol, h2 + ul, h2 + dl, h2 + blockquote p, h2 + pre,
   .beta + p, .beta + ol, .beta + ul, .beta + blockquote p, .beta + pre,
-  img + p, img + ol, img + ul, img + blockquote p, img + pre, header + form {
+  img + p, img + ol, img + ul, img + blockquote p, img + pre, #main header + *{
     margin-top: 2rem;
   }
   form{
