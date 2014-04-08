@@ -14,14 +14,11 @@ module.exports = function(grunt) {
 
         },
         files: [{
-          //"tmp/css/*.css": "app/assets/less/*.less"
           expand: true,
           cwd: 'app/assets/less/',
           src: ['*.less'],
           dest: 'tmp/css/',
           ext: '.css'
-
-
         }]
       }
     },
@@ -35,7 +32,6 @@ module.exports = function(grunt) {
         src: 'tmp/css/*.css',
         dest: 'tmp/css/prefixed/'
       }
-
     },
     cssmin: {
       main: {
@@ -90,8 +86,6 @@ module.exports = function(grunt) {
         filter: 'isFile'
       }
     },
-
-
 
     clean: {
       before: ['build/assets', 'build/css', 'build/js', 'build/config'],
@@ -154,7 +148,7 @@ module.exports = function(grunt) {
             'app/views/pages/typography/typography-exploration-verdana.html',
             'app/views/partials/_footer.html'
           ],
-          'build/media.html': [
+          'build/page-dataingenioer.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/media/media.html',
@@ -291,27 +285,43 @@ module.exports = function(grunt) {
           'build/part5-step-2.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/index2-2.html',
+            'app/views/pages/index2-3.html',
             'app/views/pages/analyse/part5-step2.html',
             'app/views/partials/_activate_design_index.html',
             'app/views/partials/_footer.html'
           ],
-          'build/part5-step-3.html': [
+          'build/content-section-person.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/index2.html',
-            'app/views/pages/analyse/part5-step3.html',
-            'app/views/partials/_activate_design_index.html',
+            'app/views/pages/person/search.html',
+            'app/views/partials/_activate_design_page.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/content-section-calendar.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/calendar/entries.html',
+            'app/views/partials/_activate_design_page.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/content-section-calendar-event.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/calendar/event.html',
+            'app/views/partials/_activate_design_page.html',
             'app/views/partials/_footer.html'
           ]
+
         }
       },
       scripts: {
-        files: {
-          'tmp/js/application.js': [
-            'app/assets/js/components/navigation.js'
-          ]
-        }
+        src: 'app/assets/js/components/*.js',
+        dest: 'tmp/js/application.js'
+        //files: {
+        //  'tmp/js/application.js': [
+        //    'app/assets/js/components/navigation.js'
+        //  ]
+        //}
       }
     },
 
@@ -405,7 +415,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['app/assets/less/**/*.less', 'app/assets/less/**/*.less'],
-        tasks: ['less', 'autoprefixer', 'cssmin', 'versioning', 'copy:images'],
+        tasks: ['less', 'autoprefixer', 'cssmin', 'versioning'],
         options: {
           livereload: true,
         },
