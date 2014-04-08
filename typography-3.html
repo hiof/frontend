@@ -18,6 +18,13 @@
   <script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="vendor/modernizr/modernizr.js"></script>
 
+
+
+
+  <script type="text/javascript" src="vendor/footable/js/footable.js"></script>
+  <script type="text/javascript" src="vendor/footable/js/footable.paginate.js"></script>
+  <script type="text/javascript" src="vendor/footable/js/footable.filter.js"></script>
+
   <script type="text/javascript">
   $(function() {
     // Check if custom font is enabled in the view
@@ -37,15 +44,15 @@
     } else {
       //console.log("Custom font is true, adding custom stylesheet");
     }
-
-
   });
 
   var customFont = false;
   </script>
 
+
 </head>
 <body id="body">
+
 <header id="header" role="banner">
 
   <div class="inner">
@@ -310,5 +317,33 @@ $(function() {
     <footer id="footer">
       <p><small>Sist oppdatert 08.04.14 <a href="http://www.hiof.no/nor/hogskolen-i-ostfold/diverse/alle-ansatte?displayitem=8148&module=admin">Kenneth Dahlstrøm</a></small> - <small>Kopibeskyttet <a href="http://hiof.no">Høgskolen i Østfold</a></small></p>
     </footer>
+
+
+<script type="text/javascript">
+  $(function(){
+    $("#main table:not(.not-responsive)").footable().bind({
+        'footable_paging' : function(e) {
+          //console.log("Paging clicked");
+          //console.log(e.page);
+          showPreAndNextPages(e);
+        }
+    });
+
+
+    $('.filter-status').change(function (e) {
+      console.log("change triggered");
+      console.log($('.filter-status').val());
+      e.preventDefault();
+      $('#main table').trigger('footable_filter', {filter: $('.filter-status').val()});
+    });
+
+
+  });
+
+
+
+
+</script>
+
   </body>
 </html>

@@ -2,13 +2,14 @@
   "staticAssets": {
     "global": {
       "js": [
-        "/js/application.fe13f531.min.js"
+        "/js/application.f9edc0d1.min.js",
+        "/js/plugins.c881e2f3.min.js"
       ],
       "css": [
-        "/css/theme-standard.48639fbb.min.css",
-        "/css/theme-helvetica.f8a70761.min.css",
-        "/css/theme-verdana.88ce8808.min.css",
-        "/css/theme-source-pro.00349242.min.css"
+        "/css/theme-standard.dc19887e.min.css",
+        "/css/theme-helvetica.78b367bd.min.css",
+        "/css/theme-verdana.dc35acaa.min.css",
+        "/css/theme-source-pro.948a1742.min.css"
       ]
     }
   }
