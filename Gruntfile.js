@@ -315,13 +315,17 @@ module.exports = function(grunt) {
         }
       },
       scripts: {
-        src: 'app/assets/js/components/*.js',
+        src: ['app/assets/js/components/*.js'],
         dest: 'tmp/js/application.js'
         //files: {
         //  'tmp/js/application.js': [
         //    'app/assets/js/components/navigation.js'
         //  ]
         //}
+      },
+      plugins: {
+        src: 'app/vendor/footable/js/footable.js',
+        dest: 'tmp/js/plugins.js'
       }
     },
 
@@ -338,11 +342,14 @@ module.exports = function(grunt) {
         cwd: 'build/assets',
         outputConfigDir: 'build/config'
       },
-      dist: {
+      prod: {
         files: [{
             assets: [{
               src: ['tmp/js/application.min.js'],
               dest: 'tmp/js/application.min.js'
+            },{
+              src: ['tmp/js/plugins.js'],
+              dest: 'tmp/js/plugins.js'
             }],
             key: 'global',
             dest: 'js',
@@ -407,8 +414,8 @@ module.exports = function(grunt) {
 
     watch: {
       js: {
-        files: ['app/assets/js/**/*.js', 'app/assets/js/**/*.js'],
-        tasks: ['jshint', 'concat:scripts', 'uglify', 'versioning'],
+        files: ['app/assets/js/**/*.js'],
+        tasks: ['jshint', 'concat:scripts', 'concat:plugins', 'uglify', 'versioning'],
         options: {
           livereload: true,
         },
@@ -450,7 +457,7 @@ module.exports = function(grunt) {
 
   // Register tasks
   grunt.registerTask('dev', ['watch']);
-  grunt.registerTask('prod', ['clean:before', 'less', 'autoprefixer', 'cssmin', 'concat:scripts', 'uglify', 'versioning', 'copy:images', 'copy:fonts', 'copy:vendor', 'concat:pages', 'clean:after']);
+  grunt.registerTask('prod', ['clean:before', 'less', 'autoprefixer', 'cssmin', 'concat:scripts', 'concat:plugins', 'uglify', 'versioning', 'copy:images', 'copy:fonts', 'copy:vendor', 'concat:pages', 'clean:after']);
 
   grunt.registerTask('dist', ['clean:dist', 'copy:dist']);
 

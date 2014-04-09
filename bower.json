@@ -11,6 +11,7 @@
     "modernizr": "~2.7.1",
     "jquery": "~2.1.0",
     "bootstrap": "~3.1.1",
-    "livereload": "~2.0.8"
+    "livereload": "~2.0.8",
+    "footable": "git@github.com:bradvin/FooTable.git#bs3"
   }
 }
