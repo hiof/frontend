@@ -579,35 +579,41 @@
 </script>
     </main>
     <footer id="footer">
-      <p><small>Sist oppdatert 08.04.14 <a href="http://www.hiof.no/nor/hogskolen-i-ostfold/diverse/alle-ansatte?displayitem=8148&module=admin">Kenneth Dahlstrøm</a></small> - <small>Kopibeskyttet <a href="http://hiof.no">Høgskolen i Østfold</a></small></p>
+      <p><small>Sist oppdatert 09.04.14 <a href="http://www.hiof.no/nor/hogskolen-i-ostfold/diverse/alle-ansatte?displayitem=8148&module=admin">Kenneth Dahlstrøm</a></small> - <small>Kopibeskyttet <a href="http://hiof.no">Høgskolen i Østfold</a></small></p>
     </footer>
+  <script type="text/javascript">
+    $(function(){
 
 
-<script type="text/javascript">
-  $(function(){
-    $("#main table:not(.not-responsive)").footable().bind({
-        'footable_paging' : function(e) {
-          //console.log("Paging clicked");
-          //console.log(e.page);
-          showPreAndNextPages(e);
-        }
+      // If there is a table on the page, activate the footable() plugin
+      if($('#main table').length){
+        $("#main table:not(.not-responsive)").footable().bind({
+            'footable_paging' : function(e) {
+
+              showPreAndNextPages(e);
+            }
+        });
+      }
+
+
+      // Check if the page has a filter element for the table
+      if($('.filter').length){
+        $('.filter').change(function (e) {
+          e.preventDefault();
+          $('#main table').trigger('footable_filter', {filter: $('.filter').val()});
+        });
+        $('#search').click(function (e) {
+          e.preventDefault();
+          $('#main table').trigger('footable_filter', {filter: $('#person-filter').val()});
+        });
+
+        $('#search-advanced-activate').click(function (e) {
+          $("#search-advanced").toggle();
+        });
+       
+      }
+
     });
-
-
-    $('.filter-status').change(function (e) {
-      console.log("change triggered");
-      console.log($('.filter-status').val());
-      e.preventDefault();
-      $('#main table').trigger('footable_filter', {filter: $('.filter-status').val()});
-    });
-
-
-  });
-
-
-
-
-</script>
-
+  </script>
   </body>
 </html>

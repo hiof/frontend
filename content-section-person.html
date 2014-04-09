@@ -194,27 +194,61 @@
 
   <form>
     <div class="input-group">
+      <span class="input-group-addon">
+        <label><input type="checkbox" id="search-advanced-activate">  Avansert</label>
+      </span>
       <input id="person-filter" type="text" placeholder="Søk etter personer eller kompetanse" class="form-control">
       <span class="input-group-btn">
-        <button class="btn btn-primary" type="button">Søk</button>
-
-        <button class="btn btn-default" type="button">Avansert</button>
+        <button id="search" class="btn btn-primary" type="button">Søk</button>
       </span>
+
     </div>
+    <div id="search-advanced" style="display:none;">
+
+
+
+
     <br>
-    <select class="form-control filter-status">
-      <option>Velg stillingstype</option>
-      <option value="Høgskolelektor">Høgskolelektor</option>
-      <option value="Førstelektor">Førstelektor</option>
-      <option value="Førsteamanuensis">Førsteamanuensis</option>
-      <option value="Førstekonsulent">Førstekonsulent</option>
-      <option value="Spesialbibliotekar">Spesialbibliotekar</option>
-      <option value="Førstesekretær">Førstesekretær</option>
-      <option value="EDB-sjef">EDB-sjef</option>
-      <option value="Professor">Professor</option>
-      <option value="Konsulent">Konsulent</option>
-      <option value="Driftstekniker">Driftstekniker</option>
-    </select>
+
+
+      <select class="form-control filter">
+        <option value="">Velg stillingstype</option>
+        <option value="Høgskolelektor">Høgskolelektor</option>
+        <option value="Førstelektor">Førstelektor</option>
+        <option value="Førsteamanuensis">Førsteamanuensis</option>
+        <option value="Førstekonsulent">Førstekonsulent</option>
+        <option value="Spesialbibliotekar">Spesialbibliotekar</option>
+        <option value="Førstesekretær">Førstesekretær</option>
+        <option value="EDB-sjef">EDB-sjef</option>
+        <option value="Professor">Professor</option>
+        <option value="Konsulent">Konsulent</option>
+        <option value="Driftstekniker">Driftstekniker</option>
+      </select>
+
+    <br>
+
+      <select class="form-control filter" style="display:none;">
+        <option value="" selected="">Alle fagområder</option>
+        <option value="Estetiske fag, skuespill, kunst- og musikkfag">Estetiske fag, skuespill, kunst- og musikkfag</option>
+        <option value="Fiskeri-, husdyr- og landbruksfag">Fiskeri-, husdyr- og landbruksfag</option>
+        <option value="Historie, religion, idèfag">Historie, religion, idèfag</option>
+        <option value="Hotell- og reiselivsfag">Hotell- og reiselivsfag</option>
+        <option value="Idrettsfag, kroppsøving og friluftsliv">Idrettsfag, kroppsøving og friluftsliv</option>
+        <option value="Informasjonsteknologi og informatikk">Informasjonsteknologi og informatikk</option>
+        <option value="Jus">Jus</option>
+        <option value="Lærer- og lektorutdanning">Lærer- og lektorutdanning</option>
+        <option value="Matematikk og naturfag">Matematikk og naturfag</option>
+        <option value="Mediefag, bibliotekfag og journalistfag">Mediefag, bibliotekfag og journalistfag</option>
+        <option value="Medisin, odontologi, helse- og sosialfag">Medisin, odontologi, helse- og sosialfag</option>
+        <option value="Pedagogiske fag">Pedagogiske fag</option>
+        <option value="Samfunnsfag, statsvitenskap og psykologi">Samfunnsfag, statsvitenskap og psykologi</option>
+        <option value="Språk, litteratur">Språk, litteratur</option>
+        <option value="Teknologi, ingeniørfag og arkitektur">Teknologi, ingeniørfag og arkitektur</option>
+        <option value="Økonomi og administrasjon">Økonomi og administrasjon</option>
+      </select>
+
+
+    </div>
   </form>
 
 
@@ -10461,13 +10495,13 @@
       </tr>
 
     </tbody>
-      <tfoot>
-    <tr>
-      <td colspan="8">
-        <ul class="pagination pagination-centered hide-if-no-paging"></ul>
-      </td>
-    </tr>
-  </tfoot>
+    <tfoot>
+      <tr>
+        <td colspan="8">
+          <ul class="pagination pagination-centered hide-if-no-paging"></ul>
+        </td>
+      </tr>
+    </tfoot>
   </table>
 
 </section>
@@ -10480,35 +10514,41 @@
 </script>
     </main>
     <footer id="footer">
-      <p><small>Sist oppdatert 08.04.14 <a href="http://www.hiof.no/nor/hogskolen-i-ostfold/diverse/alle-ansatte?displayitem=8148&module=admin">Kenneth Dahlstrøm</a></small> - <small>Kopibeskyttet <a href="http://hiof.no">Høgskolen i Østfold</a></small></p>
+      <p><small>Sist oppdatert 09.04.14 <a href="http://www.hiof.no/nor/hogskolen-i-ostfold/diverse/alle-ansatte?displayitem=8148&module=admin">Kenneth Dahlstrøm</a></small> - <small>Kopibeskyttet <a href="http://hiof.no">Høgskolen i Østfold</a></small></p>
     </footer>
+  <script type="text/javascript">
+    $(function(){
 
 
-<script type="text/javascript">
-  $(function(){
-    $("#main table:not(.not-responsive)").footable().bind({
-        'footable_paging' : function(e) {
-          //console.log("Paging clicked");
-          //console.log(e.page);
-          showPreAndNextPages(e);
-        }
+      // If there is a table on the page, activate the footable() plugin
+      if($('#main table').length){
+        $("#main table:not(.not-responsive)").footable().bind({
+            'footable_paging' : function(e) {
+
+              showPreAndNextPages(e);
+            }
+        });
+      }
+
+
+      // Check if the page has a filter element for the table
+      if($('.filter').length){
+        $('.filter').change(function (e) {
+          e.preventDefault();
+          $('#main table').trigger('footable_filter', {filter: $('.filter').val()});
+        });
+        $('#search').click(function (e) {
+          e.preventDefault();
+          $('#main table').trigger('footable_filter', {filter: $('#person-filter').val()});
+        });
+
+        $('#search-advanced-activate').click(function (e) {
+          $("#search-advanced").toggle();
+        });
+       
+      }
+
     });
-
-
-    $('.filter-status').change(function (e) {
-      console.log("change triggered");
-      console.log($('.filter-status').val());
-      e.preventDefault();
-      $('#main table').trigger('footable_filter', {filter: $('.filter-status').val()});
-    });
-
-
-  });
-
-
-
-
-</script>
-
+  </script>
   </body>
 </html>
