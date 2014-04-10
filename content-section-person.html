@@ -195,7 +195,8 @@
   <form>
     <div class="input-group">
       <span class="input-group-addon">
-        <label><input type="checkbox" id="search-advanced-activate">  Avansert</label>
+        <label>
+          <input type="checkbox" id="search-advanced-activate">Avansert</label>
       </span>
       <input id="person-filter" type="text" placeholder="Søk etter personer eller kompetanse" class="form-control">
       <span class="input-group-btn">
@@ -208,51 +209,47 @@
 
 
 
-    <br>
+      <br>
 
-
-      <select class="form-control filter">
-        <option value="">Velg stillingstype</option>
-        <option value="Høgskolelektor">Høgskolelektor</option>
-        <option value="Førstelektor">Førstelektor</option>
-        <option value="Førsteamanuensis">Førsteamanuensis</option>
-        <option value="Førstekonsulent">Førstekonsulent</option>
-        <option value="Spesialbibliotekar">Spesialbibliotekar</option>
-        <option value="Førstesekretær">Førstesekretær</option>
-        <option value="EDB-sjef">EDB-sjef</option>
-        <option value="Professor">Professor</option>
-        <option value="Konsulent">Konsulent</option>
-        <option value="Driftstekniker">Driftstekniker</option>
-      </select>
-
-    <br>
-
-      <select class="form-control filter" style="display:none;">
-        <option value="" selected="">Alle fagområder</option>
-        <option value="Estetiske fag, skuespill, kunst- og musikkfag">Estetiske fag, skuespill, kunst- og musikkfag</option>
-        <option value="Fiskeri-, husdyr- og landbruksfag">Fiskeri-, husdyr- og landbruksfag</option>
-        <option value="Historie, religion, idèfag">Historie, religion, idèfag</option>
-        <option value="Hotell- og reiselivsfag">Hotell- og reiselivsfag</option>
-        <option value="Idrettsfag, kroppsøving og friluftsliv">Idrettsfag, kroppsøving og friluftsliv</option>
-        <option value="Informasjonsteknologi og informatikk">Informasjonsteknologi og informatikk</option>
-        <option value="Jus">Jus</option>
-        <option value="Lærer- og lektorutdanning">Lærer- og lektorutdanning</option>
-        <option value="Matematikk og naturfag">Matematikk og naturfag</option>
-        <option value="Mediefag, bibliotekfag og journalistfag">Mediefag, bibliotekfag og journalistfag</option>
-        <option value="Medisin, odontologi, helse- og sosialfag">Medisin, odontologi, helse- og sosialfag</option>
-        <option value="Pedagogiske fag">Pedagogiske fag</option>
-        <option value="Samfunnsfag, statsvitenskap og psykologi">Samfunnsfag, statsvitenskap og psykologi</option>
-        <option value="Språk, litteratur">Språk, litteratur</option>
-        <option value="Teknologi, ingeniørfag og arkitektur">Teknologi, ingeniørfag og arkitektur</option>
-        <option value="Økonomi og administrasjon">Økonomi og administrasjon</option>
-      </select>
-
+      <div class="half">
+        <select class="form-control filter">
+          <option value="" selected="">Velg stillingstype</option>
+          <option value="Høgskolelektor">Høgskolelektor</option>
+          <option value="Førstelektor">Førstelektor</option>
+          <option value="Førsteamanuensis">Førsteamanuensis</option>
+          <option value="Førstekonsulent">Førstekonsulent</option>
+          <option value="Spesialbibliotekar">Spesialbibliotekar</option>
+          <option value="Førstesekretær">Førstesekretær</option>
+          <option value="EDB-sjef">EDB-sjef</option>
+          <option value="Professor">Professor</option>
+          <option value="Konsulent">Konsulent</option>
+          <option value="Driftstekniker">Driftstekniker</option>
+        </select>
+      </div>
+      <div class="half">
+        <select class="form-control filter">
+          <option value="" selected="">Velg fagområder</option>
+          <option value="Estetiske fag, skuespill, kunst- og musikkfag">Estetiske fag, skuespill, kunst- og musikkfag</option>
+          <option value="Fiskeri-, husdyr- og landbruksfag">Fiskeri-, husdyr- og landbruksfag</option>
+          <option value="Historie, religion, idèfag">Historie, religion, idèfag</option>
+          <option value="Hotell- og reiselivsfag">Hotell- og reiselivsfag</option>
+          <option value="Idrettsfag, kroppsøving og friluftsliv">Idrettsfag, kroppsøving og friluftsliv</option>
+          <option value="Informasjonsteknologi og informatikk">Informasjonsteknologi og informatikk</option>
+          <option value="Jus">Jus</option>
+          <option value="Lærer- og lektorutdanning">Lærer- og lektorutdanning</option>
+          <option value="Matematikk og naturfag">Matematikk og naturfag</option>
+          <option value="Mediefag, bibliotekfag og journalistfag">Mediefag, bibliotekfag og journalistfag</option>
+          <option value="Medisin, odontologi, helse- og sosialfag">Medisin, odontologi, helse- og sosialfag</option>
+          <option value="Pedagogiske fag">Pedagogiske fag</option>
+          <option value="Samfunnsfag, statsvitenskap og psykologi">Samfunnsfag, statsvitenskap og psykologi</option>
+          <option value="Språk, litteratur">Språk, litteratur</option>
+          <option value="Teknologi, ingeniørfag og arkitektur">Teknologi, ingeniørfag og arkitektur</option>
+          <option value="Økonomi og administrasjon">Økonomi og administrasjon</option>
+        </select>
+      </div>
 
     </div>
   </form>
-
-
-
 
 </section>
 <section classs="full">
@@ -10514,7 +10511,7 @@
 </script>
     </main>
     <footer id="footer">
-      <p><small>Sist oppdatert 09.04.14 <a href="http://www.hiof.no/nor/hogskolen-i-ostfold/diverse/alle-ansatte?displayitem=8148&module=admin">Kenneth Dahlstrøm</a></small> - <small>Kopibeskyttet <a href="http://hiof.no">Høgskolen i Østfold</a></small></p>
+      <p><small>Sist oppdatert 10.04.14 <a href="http://www.hiof.no/nor/hogskolen-i-ostfold/diverse/alle-ansatte?displayitem=8148&module=admin">Kenneth Dahlstrøm</a></small> - <small>Kopibeskyttet <a href="http://hiof.no">Høgskolen i Østfold</a></small></p>
     </footer>
   <script type="text/javascript">
     $(function(){
