@@ -459,7 +459,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', ['watch']);
   grunt.registerTask('prod', ['clean:before', 'less', 'autoprefixer', 'cssmin', 'concat:scripts', 'concat:plugins', 'uglify', 'versioning', 'copy:images', 'copy:fonts', 'copy:vendor', 'concat:pages', 'clean:after']);
 
-  grunt.registerTask('dist', ['clean:dist', 'copy:dist']);
+  grunt.registerTask('dist', ['prod','clean:dist', 'copy:dist']);
 
 
   grunt.registerTask('server', [
