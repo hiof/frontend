@@ -1,8 +1,6 @@
 @import "components/_component_typography_font_source_sans.less";
 @import "components/_component_typography_font_varela.less";
-//@import "../../vendor/lessline/components/_component_lessline.less";
-//@import "../../vendor/lessline/components/_component_variables.less";
-//@import "components/_component_lessline";
+
 
 .universal(){
   .font-source-sans-pro-regular();
@@ -24,14 +22,12 @@
   }
 
   // Headings
-
   h1, h2,h3{
     font-family: @h-font-family;
   }
 
 
   // Lists
-
   ul,ol{
     //margin-left: 2rem;
   }
@@ -117,21 +113,21 @@
   h3, .gamma {
     padding-top: 1rem;
     //.fontsize-0(20);
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   // Heading level 4.
   h4, .delta {
     padding-top: 1rem;
     //.fontsize-0(18);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   // Heading level 5.
   h5, .epsilon {
     padding-top: 1rem;
     //.fontsize-0(17);
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 
   // Heading level 6.
@@ -144,7 +140,7 @@
   .alpha + p, .alpha + ol, .alpha + ul, .alpha + blockquote p, .alpha + pre,
   h2 + p, h2 + ol, h2 + ul, h2 + dl, h2 + blockquote p, h2 + pre,
   .beta + p, .beta + ol, .beta + ul, .beta + blockquote p, .beta + pre,
-  img + p, img + ol, img + ul, img + blockquote p, img + pre, #main header + *{
+  img + p, img + ol, img + ul, img + blockquote p, img + pre, #content header + *, #sidebar header + *{
     margin-top: 2rem;
   }
   form{
