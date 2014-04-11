@@ -30,12 +30,37 @@
           //max-height: 61.8rem;
       }      
     }
-
-
     &.no-sticky{
       .cover-inline{
         background-attachment: initial;
       }
+    }
+    #header{
+          &.light{
+      margin-top: 2rem;
+      transition: margin-top 1s;
+      box-shadow: 0 1px 1px rgba(0,0,0,0);
+      &:before{
+        //transition: background 1s;
+        background: rgba(255,255,255,0);
+      }
+      #logo-aternative{
+        //background-color: #fff;
+        margin-top:-2rem;
+        transition: margin-top 1s;
+        .item{
+          fill: #fff;
+          //transition: fill 1s;
+        }
+        #text{
+          display: block;
+        }
+      }
+      a{
+        transition: color 1s;
+        color: #fff;
+      }
+    }
     }
   }
 }
@@ -118,34 +143,11 @@
       float: left;
       margin: 0;
     }
-    &.light{
-      margin-top: 2rem;
-      transition: margin-top 1s;
-      box-shadow: 0 1px 1px rgba(0,0,0,0);
-      &:before{
-        //transition: background 1s;
-        background: rgba(255,255,255,0);
-      }
-      #logo-aternative{
-        //background-color: #fff;
-        margin-top:-2rem;
-        transition: margin-top 1s;
-        .item{
-          fill: #fff;
-          //transition: fill 1s;
-        }
-        #text{
-          display: block;
-        }
-      }
-      a{
-        transition: color 1s;
-        color: #fff;
-      }
-    }
+
   }
   #header.display{
     display: block;
+    // This is stuff is related to the analyse 
     &.inline{
       position: relative;
       margin-top: 40rem;

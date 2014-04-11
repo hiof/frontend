@@ -5,7 +5,6 @@
   <script type="text/javascript">
     $(function(){
 
-
       // If there is a table on the page, activate the footable() plugin
       if($('#main table').length){
         $("#main table:not(.not-responsive)").footable().bind({
@@ -15,7 +14,6 @@
             }
         });
       }
-
 
       // Check if the page has a filter element for the table
       if($('.filter').length){
@@ -30,10 +28,8 @@
 
         $('#search-advanced-activate').click(function (e) {
           $("#search-advanced").toggle();
-        });
-       
+        });       
       }
-
     });
   </script>
   </body>

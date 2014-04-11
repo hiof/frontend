@@ -1,16 +1,66 @@
-
-.universal(){
+.universal() {
 
   @import "../../vendor/bootstrap/less/buttons.less";
   @import "../../vendor/bootstrap/less/button-groups.less";
 
-  .btn-line{
+  .btn-line {
     background: none;
-    color: rgb(53, 126, 189);
-    &:hover{
+    &:hover {
       background: none;
-      color: rgb(53, 126, 189);
     }
   }
 
+  .btn-default {
+    //&.btn-line {
+    //  color: rgb(53, 126, 189);
+    //  &:hover {
+    //    color: rgb(53, 126, 189);
+    //  }
+    //}
+  }
+  .btn-primary {
+    &.btn-line {
+      color: @btn-primary-bg;
+      &:hover {
+        background: @btn-primary-bg;
+        color: @btn-primary-color;
+      }
+    }
+  }
+  .btn-success {
+    &.btn-line {
+      color: @btn-success-bg;
+      &:hover {
+        background: @btn-success-bg;
+        color: @btn-success-color;
+      }
+    }
+  }
+  .btn-info {
+    &.btn-line {
+      color: @btn-info-bg;
+      &:hover {
+        background: @btn-info-bg;
+        color: @btn-info-color;
+      }
+    }
+  }
+  .btn-warning {
+    &.btn-line {
+      color: @btn-warning-bg;
+      &:hover {
+        background: @btn-warning-bg;
+        color: @btn-warning-color;
+      }
+    }
+  }
+  .btn-danger {
+    &.btn-line {
+      color: @btn-danger-bg;
+      &:hover {
+        background: @btn-danger-bg;
+        color: @btn-danger-color;
+      }
+    }
+  }
 }

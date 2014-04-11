@@ -172,54 +172,6 @@ module.exports = function(grunt) {
             'app/views/pages/analyse/step0.html',
             'app/views/partials/_footer.html'
           ],
-          'build/step-1.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/analyse/step1.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/step-2.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/analyse/step2.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/step-3.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/analyse/step3.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/step-4.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/analyse/step4.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/step-5.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/analyse/step5.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/step-6.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/analyse/step6.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/step-7.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/analyse/step7.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/step-8.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/analyse/step8.html',
-            'app/views/partials/_footer.html'
-          ],
           'build/step-9.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
@@ -230,12 +182,6 @@ module.exports = function(grunt) {
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/analyse/step10.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/step-11.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/analyse/step11.html',
             'app/views/partials/_footer.html'
           ],
           'build/part2-step-1.html': [
@@ -301,14 +247,18 @@ module.exports = function(grunt) {
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/calendar/entries.html',
-            'app/views/partials/_activate_design_page.html',
             'app/views/partials/_footer.html'
           ],
           'build/content-section-calendar-event.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/calendar/event.html',
-            'app/views/partials/_activate_design_page.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/content-contact-web-responsible.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/contact/web-responsible.html',
             'app/views/partials/_footer.html'
           ]
 
@@ -317,15 +267,6 @@ module.exports = function(grunt) {
       scripts: {
         src: ['app/assets/js/components/*.js'],
         dest: 'tmp/js/application.js'
-        //files: {
-        //  'tmp/js/application.js': [
-        //    'app/assets/js/components/navigation.js'
-        //  ]
-        //}
-      },
-      plugins: {
-        src: 'app/vendor/footable/js/footable.js',
-        dest: 'tmp/js/plugins.js'
       }
     },
 
@@ -347,9 +288,6 @@ module.exports = function(grunt) {
             assets: [{
               src: ['tmp/js/application.min.js'],
               dest: 'tmp/js/application.min.js'
-            },{
-              src: ['tmp/js/plugins.js'],
-              dest: 'tmp/js/plugins.js'
             }],
             key: 'global',
             dest: 'js',
@@ -415,7 +353,7 @@ module.exports = function(grunt) {
     watch: {
       js: {
         files: ['app/assets/js/**/*.js'],
-        tasks: ['jshint', 'concat:scripts', 'concat:plugins', 'uglify', 'versioning'],
+        tasks: ['jshint', 'concat:scripts', 'uglify', 'versioning'],
         options: {
           livereload: true,
         },
@@ -457,7 +395,7 @@ module.exports = function(grunt) {
 
   // Register tasks
   grunt.registerTask('dev', ['watch']);
-  grunt.registerTask('prod', ['clean:before', 'less', 'autoprefixer', 'cssmin', 'concat:scripts', 'concat:plugins', 'uglify', 'versioning', 'copy:images', 'copy:fonts', 'copy:vendor', 'concat:pages', 'clean:after']);
+  grunt.registerTask('prod', ['clean:before', 'less', 'autoprefixer', 'cssmin', 'concat:scripts', 'uglify', 'versioning', 'copy:images', 'copy:fonts', 'copy:vendor', 'concat:pages', 'clean:after']);
 
   grunt.registerTask('dist', ['prod','clean:dist', 'copy:dist']);
 

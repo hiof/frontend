@@ -10,17 +10,16 @@
       position: relative;
       width: 100%;
       float: left;
-      margin-bottom: 2rem;
+      margin-bottom: @whitespace-2rem;
     }
   }
 
   .calendar-entry{
-    float: left;
-    width: 50%;
-    margin-bottom: 1rem;
-    //&:nth-child(1), &:nth-child(3){
-    //  border-bottom: .1rem solid #f00;
-    //}
+    //float: left;
+    //width: 50%;
+    padding-bottom: 1rem;
+    margin-bottom: @whitespace-4rem;
+    border-bottom: @divider-border-standard;
     time{
       max-width: 6rem;
       float: left;
@@ -32,7 +31,8 @@
       padding-top: .7rem;        
       background: @hiof-blue;
       color: @white;
-      border-radius: .4rem;
+      border: 1px solid darken(@hiof-blue, 8%);
+      border-radius: @border-radius-standard;
       span, strong{
         display:block;
       }
@@ -43,7 +43,12 @@
       }
       strong{
         font-size: 1.2rem;
-        line-height: 1;
+        line-height: 1.8rem;
+        background: darken(@hiof-blue, 8%);
+        //height: 1.7rem;
+        border-bottom-left-radius: @border-radius-standard;
+        border-bottom-right-radius: @border-radius-standard;
+        text-transform: lowercase;
       }
       &.bg{
         background: none;
@@ -54,7 +59,7 @@
     h3{
       display: block;
       float: left;
-      width: 21rem;
+      //width: 21rem;
       font-size: 1.2rem;
       line-height: 1.4;
       margin-top: 0;
