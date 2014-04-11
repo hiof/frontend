@@ -4,7 +4,7 @@
 
   }
 
-  #person, #calendar{
+  #people, #calendar{
     margin-bottom: 4rem;
     > header{
       position: relative;
@@ -18,7 +18,7 @@
     //float: left;
     //width: 50%;
     padding-bottom: 1rem;
-    margin-bottom: @whitespace-4rem;
+    margin-bottom: @whitespace-2rem;
     border-bottom: @divider-border-standard;
     time{
       max-width: 6rem;
@@ -68,5 +68,13 @@
         color: @hiof-blue;
       }
     }
+  }
+  #calendar{
+      .calendar-entry{
+        border-bottom: none;
+        h3{
+          width: 21rem;
+        }
+      }
   }
 }
