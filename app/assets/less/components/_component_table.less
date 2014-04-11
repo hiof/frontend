@@ -1,13 +1,46 @@
-.universal(){
-
-  table{
+.universal() {
+  table {
     width: 100%;
     margin: 0 2rem;
   }
-  th{
+  th {
     text-align: left;
     font-weight: bold;
-    line-height: 4rem;
+    line-height: 3;
+    padding-left: 1rem;
   }
-
+  td {
+    padding-left: 1rem;
+  }
+  thead {
+    tr {
+      border-bottom: .1rem solid #ccc;
+    }
+  }
+  tbody {
+    td {
+      border-right: .1rem solid #eee;
+      line-height: 2.4;
+    }
+    tr {
+      border-bottom: .1rem solid #eee;
+      &:last-child {
+        border-bottom: none;
+      }
+      td {
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+  tfoot{
+    tr {
+      border-top: .1rem solid #ccc;
+      line-height: 3;
+    }
+  }
 }
+
+
+
