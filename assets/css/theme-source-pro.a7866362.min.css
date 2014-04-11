@@ -698,7 +698,7 @@ html {
 h1,
 h2,
 h3 {
-  font-family: 'varela-round';
+  font-family: 'source_sans_probold';
 }
 ul {
   list-style: disc;
@@ -921,13 +921,13 @@ pre code {
 *:after {
   box-sizing: border-box;
 }
-.full,
-.half,
-.quarter,
-.auron-1-3,
-.auron-2-3,
-.one-third,
-.two-thirds {
+.lo-full,
+.lo-half,
+.lo-quarter,
+.lo-auron-1-3,
+.lo-auron-2-3,
+.lo-one-third,
+.lo-two-thirds {
   float: left;
   margin-bottom: 2rem;
 }
@@ -981,7 +981,7 @@ html.cover #content {
 #main header {
   clear: both;
 }
-.full header h2 {
+.lo-full header h2 {
   float: left;
 }
 #header {
@@ -1047,28 +1047,6 @@ html.cover #content {
   float: left;
   margin: 0;
 }
-#header.light {
-  margin-top: 2rem;
-  transition: margin-top 1s;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
-}
-#header.light:before {
-  background: rgba(255, 255, 255, 0);
-}
-#header.light #logo-aternative {
-  margin-top: -2rem;
-  transition: margin-top 1s;
-}
-#header.light #logo-aternative .item {
-  fill: #fff;
-}
-#header.light #logo-aternative #text {
-  display: block;
-}
-#header.light a {
-  transition: color 1s;
-  color: #fff;
-}
 #header.display {
   display: block;
 }
@@ -1117,6 +1095,28 @@ html.cover.page .cover-inline {
 }
 html.cover.no-sticky .cover-inline {
   background-attachment: initial;
+}
+html.cover #header.light {
+  margin-top: 2rem;
+  transition: margin-top 1s;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+}
+html.cover #header.light:before {
+  background: rgba(255, 255, 255, 0);
+}
+html.cover #header.light #logo-aternative {
+  margin-top: -2rem;
+  transition: margin-top 1s;
+}
+html.cover #header.light #logo-aternative .item {
+  fill: #fff;
+}
+html.cover #header.light #logo-aternative #text {
+  display: block;
+}
+html.cover #header.light a {
+  transition: color 1s;
+  color: #fff;
 }
 #nav-guide {
   background: rgba(0, 0, 0, 0);
@@ -1664,11 +1664,44 @@ input[type="button"].btn-block {
 }
 .btn-line {
   background: none;
-  color: #357ebd;
 }
 .btn-line:hover {
   background: none;
-  color: #357ebd;
+}
+.btn-primary.btn-line {
+  color: #428bca;
+}
+.btn-primary.btn-line:hover {
+  background: #428bca;
+  color: #ffffff;
+}
+.btn-success.btn-line {
+  color: #5cb85c;
+}
+.btn-success.btn-line:hover {
+  background: #5cb85c;
+  color: #ffffff;
+}
+.btn-info.btn-line {
+  color: #5bc0de;
+}
+.btn-info.btn-line:hover {
+  background: #5bc0de;
+  color: #ffffff;
+}
+.btn-warning.btn-line {
+  color: #f0ad4e;
+}
+.btn-warning.btn-line:hover {
+  background: #f0ad4e;
+  color: #ffffff;
+}
+.btn-danger.btn-line {
+  color: #d9534f;
+}
+.btn-danger.btn-line:hover {
+  background: #d9534f;
+  color: #ffffff;
 }
 #icon-person {
   position: absolute;
@@ -1875,7 +1908,16 @@ th {
   color: #333333;
 }
 #content {
-  background: #fff;
+  background: #ffffff;
+}
+hr {
+  border: 0;
+  height: 1px;
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background: linear-gradient(left, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
 }
 .media-frame {
   position: relative;
@@ -1910,9 +1952,9 @@ img {
   margin-bottom: 2rem;
 }
 .calendar-entry {
-  float: left;
-  width: 50%;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid #eeeeee;
 }
 .calendar-entry time {
   max-width: 6rem;
@@ -1925,7 +1967,8 @@ img {
   padding-top: .7rem;
   background: #073b58;
   color: #ffffff;
-  border-radius: .4rem;
+  border: 1px solid #042232;
+  border-radius: 0.4rem;
 }
 .calendar-entry time span,
 .calendar-entry time strong {
@@ -1938,7 +1981,11 @@ img {
 }
 .calendar-entry time strong {
   font-size: 1.2rem;
-  line-height: 1;
+  line-height: 1.8rem;
+  background: #042232;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  text-transform: lowercase;
 }
 .calendar-entry time.bg {
   background: none;
@@ -1948,7 +1995,6 @@ img {
 .calendar-entry h3 {
   display: block;
   float: left;
-  width: 21rem;
   font-size: 1.2rem;
   line-height: 1.4;
   margin-top: 0;
@@ -2117,8 +2163,8 @@ img {
 @media screen and (max-width: 640px) {
   #content,
   #sidebar,
-  .full,
-  .half {
+  .lo-full,
+  .lo-half {
     width: 100%;
   }
   html.cover #body {
@@ -2151,10 +2197,10 @@ img {
   }
 }
 @media screen and (min-width: 641px) and (max-width: 899px) {
-  .full {
+  .lo-full {
     width: 100%;
   }
-  .half {
+  .lo-half {
     width: 48%;
     margin: 1%;
     float: left;
@@ -2185,23 +2231,23 @@ img {
   }
 }
 @media screen and (min-width: 900px) {
-  .full {
+  .lo-full {
     width: 100%;
   }
-  .half {
+  .lo-half {
     width: 48%;
     margin-left: 1%;
     margin-right: 1%;
   }
-  .auron-1-3 {
+  .lo-auron-1-3 {
     width: 38.2%;
     padding-right: 2rem;
   }
-  .auron-2-3 {
+  .lo-auron-2-3 {
     width: 61.8%;
     padding-left: 2rem;
   }
-  .one-third {
+  .lo-one-third {
     width: 33%;
     padding-right: 4rem;
   }
