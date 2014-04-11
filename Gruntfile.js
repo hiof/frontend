@@ -260,8 +260,13 @@ module.exports = function(grunt) {
             'app/views/partials/_header.html',
             'app/views/pages/contact/web-responsible.html',
             'app/views/partials/_footer.html'
+          ],
+          'build/content-table.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/table/table.html',
+            'app/views/partials/_footer.html'
           ]
-
         }
       },
       scripts: {
