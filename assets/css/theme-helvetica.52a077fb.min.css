@@ -709,20 +709,6 @@ html.cover #content {
   float: left;
 }
 @font-face {
-  font-family: 'source_sans_proextralight';
-  src: url('../fonts/sourcesanspro-extralight-webfont.eot');
-  src: url('../fonts/sourcesanspro-extralight-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/sourcesanspro-extralight-webfont.woff') format('woff'), url('../fonts/sourcesanspro-extralight-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-extralight-webfont.svg#source_sans_proextralight') format('svg');
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'source_sans_proXLtIt';
-  src: url('../fonts/sourcesanspro-extralightitalic-webfont.eot');
-  src: url('../fonts/sourcesanspro-extralightitalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/sourcesanspro-extralightitalic-webfont.woff') format('woff'), url('../fonts/sourcesanspro-extralightitalic-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-extralightitalic-webfont.svg#source_sans_proXLtIt') format('svg');
-  font-weight: 100;
-  font-style: italic;
-}
-@font-face {
   font-family: 'source_sans_proregular';
   src: url('../fonts/sourcesanspro-regular-webfont.eot');
   src: url('../fonts/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/sourcesanspro-regular-webfont.woff') format('woff'), url('../fonts/sourcesanspro-regular-webfont.ttf') format('truetype'), url('../fonts/sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
@@ -765,7 +751,7 @@ html {
 #body {
   font-size: 1.6rem;
   line-height: 1.8em;
-  font-family: 'source_sans_proregular';
+  font-family: 'Helvetica';
   padding-top: 88px;
   font-style: normal;
   font-weight: 400;
@@ -773,7 +759,7 @@ html {
 h1,
 h2,
 h3 {
-  font-family: 'source_sans_probold';
+  font-family: 'Helvetica Neue';
 }
 ul {
   list-style: disc;
@@ -926,7 +912,7 @@ i,
 }
 small,
 .caption {
-  font-family: 'source_sans_proregular';
+  font-family: 'Helvetica';
   font-size: 1.2rem;
 }
 abbr {
