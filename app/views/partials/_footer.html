@@ -1,36 +1,62 @@
     </main>
-    <footer id="footer" class="lo-full">
-      <p><small>Sist oppdatert 10.04.14 <a href="http://www.hiof.no/nor/hogskolen-i-ostfold/diverse/alle-ansatte?displayitem=8148&module=admin">Kenneth Dahlstrøm</a></small> - <small>Kopibeskyttet <a href="http://hiof.no">Høgskolen i Østfold</a></small></p>
+    <footer id="footer">
+    <section clasS="lo-full ta-center">
+        <small>Sist oppdatert 10.04.14 <a href="http://www.hiof.no/nor/hogskolen-i-ostfold/diverse/alle-ansatte?displayitem=8148&module=admin">Kenneth Dahlstrøm</a></small>
+    </section>
+    <section class="lo-quarter">
+
+
+
+
+      <h2>Studietilbud</h2>
+      <ul>
+        <li><a href="#">Ingeniør</a></li>
+        <li><a href="#">Sykepleier</a></li>
+        <li><a href="#">Økonom</a></li>
+        <li><a href="#">Sykepleier</a></li>
+      </ul>
+    </section>
+    <section class="lo-quarter">
+      <h2>Kontakt</h2>
+      <dl>
+        <dt>Sentralbord</dt>
+        <dd>(+47) 69 21 50 00</dd>
+      </dl>
+    </section>
+    <section class="lo-quarter">
+      
+    </section>
+
+    <section class="lo-full ta-right">
+            <small>Kopibeskyttet <a href="http://hiof.no">Høgskolen i Østfold</a></small></p>
+    </section>
+
     </footer>
-  <script type="text/javascript">
-    $(function(){
-
-      // If there is a table on the page, activate the footable() plugin
-      if($('#main table').length){
-        $("#main table:not(.not-responsive)").footable().bind({
-            'footable_paging' : function(e) {
-
-              showPreAndNextPages(e);
-            }
-        });
-      }
-
-      // Check if the page has a filter element for the table
-      if($('.filter').length){
-        $('.filter').change(function (e) {
-          e.preventDefault();
-          $('#main table').trigger('footable_filter', {filter: $('.filter').val()});
-        });
-        $('#search').click(function (e) {
-          e.preventDefault();
-          $('#main table').trigger('footable_filter', {filter: $('#person-filter').val()});
-        });
-
-        $('#search-advanced-activate').click(function (e) {
-          $("#search-advanced").toggle();
-        });       
-      }
-    });
+  <script type="text/javascript" defer>
+    //$(function(){
+    //  // If there is a table on the page, activate the //footable() plugin
+    //  if($('#main table').length){
+    //    $("#main table:not(.not-responsive)").footable().bind({
+    //        'footable_paging' : function(e) {
+    //          showPreAndNextPages(e);
+    //        }
+    //    });
+    //  }
+    //  // Check if the page has a filter element for the table
+    //  if($('.filter').length){
+    //    $('.filter').change(function (e) {
+    //      e.preventDefault();
+    //      $('#main table').trigger('footable_filter', {filter: $(//'.filter').val()});
+    //    });
+    //    $('#search').click(function (e) {
+    //      e.preventDefault();
+    //      $('#main table').trigger('footable_filter', {filter: $(//'#person-filter').val()});
+    //    });
+    //    $('#search-advanced-activate').click(function (e) {
+    //      $("#search-advanced").toggle();
+    //    });       
+    //  }
+    //});
   </script>
   </body>
 </html>
