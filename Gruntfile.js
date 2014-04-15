@@ -261,6 +261,12 @@ module.exports = function(grunt) {
             'app/views/pages/contact/web-responsible.html',
             'app/views/partials/_footer.html'
           ],
+          'build/content-contact.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/contact/general.html',
+            'app/views/partials/_footer.html'
+          ],
           'build/content-table.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
@@ -276,6 +282,9 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      options: {
+        mangle: false
+      },
       main: {
         files: {
           'tmp/js/application.min.js': ['tmp/js/application.js']
@@ -399,7 +408,7 @@ module.exports = function(grunt) {
 
 
   // Register tasks
-  grunt.registerTask('dev', ['watch']);
+  //grunt.registerTask('dev', ['watch']);
   grunt.registerTask('prod', ['clean:before', 'less', 'autoprefixer', 'cssmin', 'concat:scripts', 'uglify', 'versioning', 'copy:images', 'copy:fonts', 'copy:vendor', 'concat:pages', 'clean:after']);
 
   grunt.registerTask('dist', ['prod','clean:dist', 'copy:dist']);
