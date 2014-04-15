@@ -239,7 +239,7 @@ module.exports = function(grunt) {
           'build/content-section-person.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/person/search.html',
+            'app/views/pages/content/person-search.html',
             'app/views/partials/_activate_design_page.html',
             'app/views/partials/_footer.html'
           ],
@@ -258,13 +258,19 @@ module.exports = function(grunt) {
           'build/content-contact-web-responsible.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/contact/web-responsible.html',
+            'app/views/pages/content/contact-web-responsible.html',
             'app/views/partials/_footer.html'
           ],
           'build/content-contact.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/contact/general.html',
+            'app/views/pages/content/contact-general.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/content-privacy-policy.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/privacy-policy.html',
             'app/views/partials/_footer.html'
           ],
           'build/content-table.html': [
