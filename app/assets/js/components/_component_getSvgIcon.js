@@ -1,17 +1,21 @@
+// Defualt namespace
+var Hiof = Hiof || {};
+
+
+Hiof.getSvgIcon = function(icon){
 
 
 
-//Hiof.getSvgIcon = function(icon){
-//
-//
-//
-//  var url = "/assets/images/icons/" + icon + ".svg";
-//
-//  xhr = new XMLHttpRequest();
-//
-//
-//  xhr.open("GET",url,false);
-//  xhr.overrideMimeType("image/svg+xml");
-//  xhr.send("");
-//  console.log(xhr.responseXML.documentElement);
-//};
+  var url = "/assets/images/icons/" + icon + ".svg";
+
+  xhr = new XMLHttpRequest();
+
+
+  xhr.open("GET",url,false);
+  xhr.overrideMimeType("image/svg+xml");
+  xhr.send("");
+
+  var response = xhr.responseXML.documentElement;
+  return response;
+  //console.log(xhr.responseXML.documentElement);
+};
