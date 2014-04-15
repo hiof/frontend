@@ -1,4 +1,10 @@
 .universal(){
+
+
+  
+
+
+
   .ta-left{
     text-align: left;
   }
@@ -24,4 +30,46 @@
       top: 0px;
     }
   }
+
+
+
+  .hidden {
+      display: none !important;
+      visibility: hidden;
+  }
+  .visuallyhidden {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+  }
+
+
+
+  // From bootstrap Type:
+  .bg-primary {
+    // Given the contrast here, this is the only class to have its color inverted
+    // automatically.
+    color: #fff;
+    .bg-variant(@brand-primary);
+  }
+  .bg-success {
+    .bg-variant(@state-success-bg);
+  }
+  .bg-info {
+    .bg-variant(@state-info-bg);
+    padding: 0.5rem;
+    border-radius: @border-radius-standard;
+  }
+  .bg-warning {
+    .bg-variant(@state-warning-bg);
+  }
+  .bg-danger {
+    .bg-variant(@state-danger-bg);
+  }
+
 }

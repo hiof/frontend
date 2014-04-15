@@ -36,31 +36,34 @@
       }
     }
     #header{
-          &.light{
-      margin-top: 2rem;
-      transition: margin-top 1s;
-      box-shadow: 0 1px 1px rgba(0,0,0,0);
-      &:before{
-        //transition: background 1s;
-        background: rgba(255,255,255,0);
-      }
-      #logo-aternative{
-        //background-color: #fff;
-        margin-top:-2rem;
+      &.light{
+        margin-top: 2rem;
         transition: margin-top 1s;
-        .item{
-          fill: #fff;
-          //transition: fill 1s;
+        box-shadow: 0 1px 1px rgba(0,0,0,0);
+        &:before{
+          //transition: background 1s;
+          background: rgba(255,255,255,0);
         }
-        #text{
-          display: block;
+        #logo-aternative{
+          //background-color: #fff;
+          margin-top:-2rem;
+          transition: margin-top 1s;
+          .item{
+            fill: #fff;
+            //transition: fill 1s;
+          }
+          #text{
+            display: block;
+          }
+        }
+        a{
+          transition: color 1s;
+          color: #fff;
         }
       }
-      a{
-        transition: color 1s;
-        color: #fff;
+      &.header-dark{
+
       }
-    }
     }
   }
 }
@@ -75,7 +78,7 @@
     }
   }
   #header{
-    display: none;
+    //display: none;
     position: fixed;
     top: 0rem;
     left: 0rem;
@@ -130,10 +133,7 @@
         display: none;
       }
     }
-    li{
-      display: inline-block;
-      list-style: none;
-    }
+
     a{
       color: #000;
 
@@ -173,7 +173,63 @@
       position: absolute !important;
     }
   }
+
+
+  #nav{
+    ul{
+      ul{
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: -2rem;
+        li{
+          display: block;
+          width: 26rem;
+          background: @white;
+          //border-radius: @border-radius-standard;
+          color: @white;
+          a{
+            color: @hiof-blue;
+            border-bottom: .1rem solid @hiof-blue;
+            display: block;
+            padding: 0 2rem;
+          }
+          &:last-child{
+            a{
+              border-bottom: none;
+            }
+            border-bottom-left-radius: @border-radius-standard;
+            border-bottom-right-radius: @border-radius-standard;
+          }
+        }
+
+      }
+      li{
+        display: inline-block;
+        list-style: none;
+        position: relative; 
+        cursor: pointer;
+        &:hover{
+          ul{
+            display: block;
+          }
+        }
+      }
+
+
+    }
+  }
+
+  #global-search{
+    width: 200px;
+  }
+
+
   .cover();
+
+
+
+
 }
 
 
