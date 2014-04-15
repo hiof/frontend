@@ -276,7 +276,7 @@ module.exports = function(grunt) {
         }
       },
       scripts: {
-        src: ['app/assets/js/components/*.js'],
+        src: ['app/assets/js/components/*.js', 'app/assets/js/*.js'],
         dest: 'tmp/js/application.js'
       }
     },
