@@ -7,17 +7,31 @@ var Hiof = Hiof || {};
 $(function() {
 
 
+    // ----------------------------------------------------------------------------------------------------
     // Fire code
-    Hiof.Toolbar();
-    Hiof.Toolbar.SocialShare();
-    Hiof.Toolbar.Print();
 
+
+      // Append toolbar
+      Hiof.Toolbar();
+      Hiof.Toolbar.SocialShare();
+      Hiof.Toolbar.Print();
+
+      // Start the responsive table plugin
+      //Hiof.ResponsiveTables();
+
+    // ----------------------------------------------------------------------------------------------------
+    // Responsive Tables
 
       // If there is a table on the page, activate the footable() plugin
       if($('#main table').length){
-        $("#main table:not(.not-responsive)").footable().bind({
+        $("#main table:not(.not-responsive)").footable({
+            breakpoints: {
+              phone: 640,
+              tablet: 899,
+              desktop: 900
+            }
+          }).bind({
             'footable_paging' : function(e) {
-
               showPreAndNextPages(e);
             }
         });
