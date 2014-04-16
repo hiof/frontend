@@ -55,19 +55,31 @@
   <div class="inner">
     <nav id="nav">
       <ul id="nav-main" class="nav">
-        <li><a href="#">Bli student</a> 
+        <li><a href="#">Bli student</a></li>
+        <!-- <li><a href="#">Forskning</a></li>-->
+        <li><a href="content-section-person.html">Personer</a></li>
+        <!-- <li><a href="#">Stillinger</a></li>-->
+        <li>Om oss
+          <ul>
+            <li><a href="#">Om Høgskolen i Østfold</a></li>
+            <li><a href="#">Ledige stillinger</a></li>
+            <li><a href="#">Campus Fredikstad og Halden</a></li>
+          </ul>
         </li>
-        <li><a href="#">Forskning</a> 
-        </li>
-        <li><a href="content-section-person.html">Personer</a> 
-        </li>
-        <li><a href="#">Stillinger</a> 
-        </li>
-        <li><a href="#">Om oss</a> 
+        <li>
+        <!--
+          <form id="global-search">
+            <div class="input-group">   
+              <input id="global-search-input" type="text" placeholder="Søk i våre sider" class="form-control">
+              <span class="input-group-btn">
+                <button id="search" class="btn btn-primary" type="button">Søk</button>
+              </span>
+            </div>
+          </form>-->
         </li>
       </ul>
       <h1 id="logo-wrapper">
-        <a href="/">
+        <a href="/"><span class="visuallyhidden">Høgskolen i Østfold</span>
           <svg version="1.1" id="logo-aternative" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="241.667px" height="130.333px" viewBox="58.333 -70.333 241.667 130.333" enable-background="new 58.333 -70.333 241.667 130.333" xml:space="preserve">
             <g id="circle">
               <polygon class="item" points="161.039,-18.521 166.946,-18.521 175.094,-40.758 169.186,-40.758   " />
@@ -236,38 +248,74 @@ $(function() {
 </script>
 
     </main>
-    <footer id="footer" class="lo-full">
-      <p><small>Sist oppdatert 10.04.14 <a href="http://www.hiof.no/nor/hogskolen-i-ostfold/diverse/alle-ansatte?displayitem=8148&module=admin">Kenneth Dahlstrøm</a></small> - <small>Kopibeskyttet <a href="http://hiof.no">Høgskolen i Østfold</a></small></p>
+    <footer id="footer">
+    <nav id="breadcrumb" class="lo-full">
+      <ol>
+        <li><a href="/">Høgskolen i Østfold</a></li>
+        <li><a href="/">Kontakt</a></li>
+        <li><a href="/">Veibeskrivelse</a></li>
+      </ol>
+    </nav>
+    <section class="lo-quarter">
+
+
+      <h2>Studietilbud</h2>
+      <ul>
+        <li><a href="#">Etter- og videreutdanninger</a></li>
+        <li><a href="#">IT- utdanninger</a></li>
+        <li><a href="#">Ingeniør</a></li>
+        <li><a href="#">Helse- og Sosialfag</a></li>
+        <li><a href="#">Økonomomi og administrasjon</a></li>
+        <li><a href="#">Sykepleier</a></li>
+        <li><a href="#">Samfunnsfag- og språkutdanninger</a></li>
+        <li><a href="#">Scenekunstutdanninger</a></li>
+        <li><a href="#">Lærer- og pedagogiske utdanninger</a></li>
+      </ul>
+    </section>
+    <section class="lo-quarter">
+        <section>
+          
+      <h2>Våre sider</h2>
+  
+        <p><a href="http://hiof.no">hiof.no</a><br>
+        <a href="http://blistudent.no">BliStudent.no</a><br>
+        <a href="http://hiof.no/student">Student sider</a><br>
+        <a href="http://hiof.no/ansatt">Ansatt sider</a>
+
+        </p>
+          
+        </section>
+        <section>
+          
+      <h2>Om nettstedet</h2>
+  
+        <p><a href="content-contact-web-responsible.html">Kontakt nettredaksjonen</a><br>
+        <a href="content-privacy-policy.html">Personvernpolitikk</a></p>
+
+        </section>
+
+
+    </section>
+    <section class="lo-quarter">
+      <h2>Kontakt</h2>
+      <p><a href="content-contact.html">Kontakt oss</a><br>
+      <a href="content-contact.html#map">Kart og veibeskrivelser</a></p>
+      <div class="bg-info">        
+        <dl>
+          <dt>Sentralbord</dt>
+          <dd>(+47) 69 21 50 00</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="lo-quarter bg-map">
+
+      <h2 class="visuallyhidden">Studiesteds-illustrasjon</h2>
+    </section>
+    <section class="lo-full">
+        <p><small>Kopibeskyttet <a href="http://hiof.no">Høgskolen i Østfold</a></small> -   <small>Siden ble sist oppdatert 16.04.14 av <a href="http://www.hiof.no/nor/hogskolen-i-ostfold/diverse/alle-ansatte?displayitem=8148&module=admin">Kenneth Dahlstrøm</a></small></p>
+
+    </section>
     </footer>
-  <script type="text/javascript">
-    $(function(){
-
-      // If there is a table on the page, activate the footable() plugin
-      if($('#main table').length){
-        $("#main table:not(.not-responsive)").footable().bind({
-            'footable_paging' : function(e) {
-
-              showPreAndNextPages(e);
-            }
-        });
-      }
-
-      // Check if the page has a filter element for the table
-      if($('.filter').length){
-        $('.filter').change(function (e) {
-          e.preventDefault();
-          $('#main table').trigger('footable_filter', {filter: $('.filter').val()});
-        });
-        $('#search').click(function (e) {
-          e.preventDefault();
-          $('#main table').trigger('footable_filter', {filter: $('#person-filter').val()});
-        });
-
-        $('#search-advanced-activate').click(function (e) {
-          $("#search-advanced").toggle();
-        });       
-      }
-    });
-  </script>
   </body>
 </html>

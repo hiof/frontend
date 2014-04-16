@@ -672,19 +672,16 @@ html {
 #body {
   min-height: 80rem;
 }
-#main {
+#main,
+#footer {
   max-width: 104rem;
   margin: 0 auto;
 }
 #content {
   padding-left: 2rem;
 }
-#footer {
-  float: left;
-  width: 100%;
-}
-#footer p {
-  text-align: center;
+#content header {
+  position: relative;
 }
 .float-left {
   float: left;
@@ -751,7 +748,7 @@ html {
 #body {
   font-size: 1.6rem;
   line-height: 1.8em;
-  font-family: 'source_sans_proregular';
+  font-family: 'Helvetica';
   padding-top: 88px;
   font-style: normal;
   font-weight: 400;
@@ -759,7 +756,7 @@ html {
 h1,
 h2,
 h3 {
-  font-family: 'varela-round';
+  font-family: 'Helvetica Neue';
 }
 ul {
   list-style: disc;
@@ -912,7 +909,7 @@ i,
 }
 small,
 .caption {
-  font-family: 'source_sans_proregular';
+  font-family: 'Helvetica';
   font-size: 1.2rem;
 }
 abbr {
@@ -1546,6 +1543,39 @@ input[type="button"].btn-block {
   background: #d9534f;
   color: #ffffff;
 }
+.btn-icon {
+  background: none;
+  height: 3rem;
+  padding: .3rem;
+  line-height: 2.4rem;
+  opacity: .5;
+  transition: opacity .4s;
+}
+.btn-icon svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.btn-icon .helper-text {
+  display: inline-block;
+  margin-left: 1rem;
+  margin-top: -1.4rem;
+  vertical-align: middle;
+}
+.btn-icon:hover {
+  opacity: 1;
+}
+.no-touch .btn-icon .helper-text {
+  display: none;
+  transition: width 1s;
+  width: 0;
+}
+.no-touch .btn-icon:hover .helper-text {
+  display: inline-block;
+  width: auto;
+}
+.no-touch.cover .btn-icon:hover .helper-text {
+  color: #fff;
+}
 #icon-person {
   position: absolute;
   top: 0;
@@ -1636,9 +1666,27 @@ input[type="button"].btn-block {
   background-image: url("../images/analyse/news.svg");
   background-size: 100%;
 }
+#icon-facebook,
+#icon-twitter,
+#icon-print {
+  border-radius: 0.4rem;
+}
+.footable-toggle {
+  display: inline-block;
+  background-image: url("../images/icons/arrow-right.svg");
+  background-size: 100%;
+  width: 2.4rem;
+  height: 2.4rem;
+  line-height: 3rem;
+  margin: 0;
+  margin-right: 1rem;
+}
+.footable-detail-show .footable-toggle {
+  background-image: url("../images/icons/arrow-down.svg");
+}
 table {
   width: 100%;
-  margin: 0 2rem;
+  margin: 0;
 }
 th {
   text-align: left;
@@ -1654,7 +1702,6 @@ thead tr {
 }
 tbody td {
   border-right: .1rem solid #eee;
-  line-height: 2.4;
 }
 tbody tr {
   border-bottom: .1rem solid #eee;
@@ -1771,6 +1818,51 @@ tfoot tr {
 .pagination .footable-page.clickable {
   display: inline;
 }
+#toolbar li {
+  list-style: none;
+  display: inline-block;
+}
+#nav-guide {
+  background: rgba(0, 0, 0, 0);
+  transition: background .2s;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  margin-bottom: 0;
+  padding-right: 2rem;
+}
+#nav-guide div {
+  background: #000000;
+  padding: .5rem;
+  border-top-left-radius: .4rem;
+  border-top-right-radius: .4rem;
+}
+#breadcrumb:before {
+  content: "";
+  height: 4.4rem;
+  position: absolute;
+  left: -25%;
+  width: 300%;
+  background: #073b58;
+  z-index: -1;
+}
+#breadcrumb ol {
+  margin-bottom: 0;
+}
+#breadcrumb li {
+  display: inline-block;
+  list-style: none;
+  line-height: 4.4rem;
+}
+#breadcrumb li a {
+  color: #ffffff;
+}
+#breadcrumb li:after {
+  content: " >";
+  color: #ffffff;
+}
 #header {
   display: none;
   position: fixed;
@@ -1822,10 +1914,6 @@ tfoot tr {
 #header #logo-aternative #text {
   display: none;
 }
-#header li {
-  display: inline-block;
-  list-style: none;
-}
 #header a {
   color: #000;
 }
@@ -1856,6 +1944,43 @@ tfoot tr {
 html.no-sticky-header #header,
 html.no-sticky #header {
   position: absolute !important;
+}
+#nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -2rem;
+}
+#nav ul ul li {
+  display: block;
+  width: 26rem;
+  background: #ffffff;
+  color: #ffffff;
+}
+#nav ul ul li a {
+  color: #073b58;
+  border-bottom: 0.1rem solid #073b58;
+  display: block;
+  padding: 0 2rem;
+}
+#nav ul ul li:last-child {
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+}
+#nav ul ul li:last-child a {
+  border-bottom: none;
+}
+#nav ul li {
+  display: inline-block;
+  list-style: none;
+  position: relative;
+  cursor: pointer;
+}
+#nav ul li:hover ul {
+  display: block;
+}
+#global-search {
+  width: 200px;
 }
 .cover-inline {
   display: none;
@@ -1904,23 +2029,6 @@ html.cover #header.light #logo-aternative #text {
 html.cover #header.light a {
   transition: color 1s;
   color: #fff;
-}
-#nav-guide {
-  background: rgba(0, 0, 0, 0);
-  transition: background .2s;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 44px;
-  margin-bottom: 0;
-  padding-right: 2rem;
-}
-#nav-guide div {
-  background: #000000;
-  padding: .5rem;
-  border-top-left-radius: .4rem;
-  border-top-right-radius: .4rem;
 }
 #body {
   color: #333333;
@@ -2178,11 +2286,10 @@ img {
   border-top: 1px solid rgba(7, 59, 88, 0.1);
   z-index: -10;
 }
-#footer {
-  margin-top: 4rem;
-  padding-top: 4rem;
-  border-top: 1px solid #eee;
-  width: 100%;
+#footer .bg-map {
+  background-image: url(../images/hiof-oestfold-illustration.jpg);
+  background-size: 100%;
+  height: 42rem;
 }
 .ta-left {
   text-align: left;
@@ -2192,6 +2299,65 @@ img {
 }
 .ta-right {
   text-align: right;
+}
+.bg-divider {
+  background: #073b58;
+  color: #ffffff;
+}
+.bg-divider a {
+  color: #ffffff;
+  font-weight: bold;
+}
+.csssticky .sticky {
+  position: sticky;
+  top: 0px;
+}
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.bg-primary {
+  color: #fff;
+  background-color: #428bca;
+}
+a.bg-primary:hover {
+  background-color: #3071a9;
+}
+.bg-success {
+  background-color: #dff0d8;
+}
+a.bg-success:hover {
+  background-color: #c1e2b3;
+}
+.bg-info {
+  background-color: #d9edf7;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+}
+a.bg-info:hover {
+  background-color: #afd9ee;
+}
+.bg-warning {
+  background-color: #fcf8e3;
+}
+a.bg-warning:hover {
+  background-color: #f7ecb5;
+}
+.bg-danger {
+  background-color: #f2dede;
+}
+a.bg-danger:hover {
+  background-color: #e4b9b9;
 }
 @media screen and (max-width: 640px) {
   .lo-full,
@@ -2291,6 +2457,21 @@ img {
   }
   .lo-last {
     padding-right: 0;
+  }
+  .cover #icon-print .item {
+    fill: #ffffff;
+  }
+  .cover #toolbar {
+    position: absolute;
+    left: 106%;
+    top: 0;
+    width: 3rem;
+  }
+  .cover #toolbar li {
+    display: block;
+  }
+  .cover #toolbar .btn-icon {
+    opacity: 1;
   }
   #header {
     height: 6rem;
