@@ -278,6 +278,30 @@ module.exports = function(grunt) {
             'app/views/partials/_header.html',
             'app/views/pages/table/table.html',
             'app/views/partials/_footer.html'
+          ],
+          'build/article-research.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/article/research.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/article-single.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/article/article-single.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/article-chronicle.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/article/chronicle.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/article-list.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/article/article-list.html',
+            'app/views/partials/_footer.html'
           ]
         }
       },
