@@ -84,6 +84,13 @@ module.exports = function(grunt) {
         src: '**',
         dest: 'dist',
         filter: 'isFile'
+      },
+      jsdata: {
+        expand: true,
+        cwd: 'app/assets/js/data/',
+        src: '**',
+        dest: 'build/assets/js/data/',
+        filter: 'isFile'
       }
     },
 
@@ -302,12 +309,30 @@ module.exports = function(grunt) {
             'app/views/partials/_header.html',
             'app/views/pages/article/article-list.html',
             'app/views/partials/_footer.html'
+          ],
+          'build/studier-index.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/study-programs.html',
+            'app/views/pages/content/study-programs-sidebar-start.html',
+            'app/views/pages/content/study-programs-sidebar-search.html',
+            'app/views/pages/content/study-programs-sidebar-end.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/studier-dataingenior.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/study-program-ingenior-computer.html',
+            'app/views/pages/content/study-programs-sidebar-start.html',
+            'app/views/pages/content/study-programs-sidebar-page-nav.html',
+            'app/views/pages/content/study-programs-sidebar-end.html',
+            'app/views/partials/_footer.html'
           ]
         }
       },
       scripts: {
-        src: ['app/assets/js/components/*.js', 'app/assets/js/*.js'],
-        dest: 'tmp/js/application.js'
+        src: ['app/assets/js/components/*.js', 'app/assets/js/*.js', 'app/vendor/jquery.scrollTo/jquery.scrollTo.js'],
+        dest: 'tmp/js/application.min.js'
       }
     },
 
@@ -317,7 +342,7 @@ module.exports = function(grunt) {
       },
       main: {
         files: {
-          'tmp/js/application.min.js': ['tmp/js/application.js']
+          'tmp/js/application.min.js': ['tmp/js/application.min.js']
         }
       }
     },
@@ -368,7 +393,6 @@ module.exports = function(grunt) {
 
 
 
-
     express: {
       all: {
         options: {
@@ -396,8 +420,8 @@ module.exports = function(grunt) {
 
     watch: {
       js: {
-        files: ['app/assets/js/**/*.js'],
-        tasks: ['jshint', 'concat:scripts', 'uglify', 'versioning'],
+        files: ['app/assets/js/**/*.js', 'app/assets/js/**/*.json'],
+        tasks: ['jshint', 'concat:scripts', 'versioning', 'copy:jsdata'],
         options: {
           livereload: true,
         },
