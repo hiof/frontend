@@ -80,7 +80,8 @@
     .helper-text{
       display: inline-block;
       //line-height: 8rem;
-      margin-left: 1rem;
+      padding-right: 1rem;
+      padding-left: .5rem;
       margin-top: -1.4rem;
       vertical-align:middle;
     }
@@ -94,17 +95,20 @@
     .btn-icon{
       .helper-text{
         display: none;
+        background: #fff;
         //margin-left: -3rem;
-        transition: width 1s;
-        width: 0;
+        transition: padding-left 1s;
+        padding: 0;
         //position: absolute;
         //text-align: right;
+        //width: 0;
 
       }
       &:hover{
         .helper-text{
           display: inline-block;
-          width: auto;
+          //width: auto;
+          padding-left: 1rem;
         }
       }
     }
@@ -113,7 +117,7 @@
     .btn-icon{
       &:hover{
         .helper-text{
-          color: #fff;
+          color: @hiof-blue;
         }
       }
     }

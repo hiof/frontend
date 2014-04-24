@@ -1,7 +1,13 @@
 .universal(){
 
 
-  
+  .clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+  }
 
 
 
@@ -25,10 +31,14 @@
     }
   }
   .csssticky{
-    .sticky{
-      position: sticky;
-      top: 0px;
-    }
+    //.sticky{
+    //  position: -webkit-sticky;
+    //  position: -moz-sticky;
+    //  position: -ms-sticky;
+    //  position: -o-sticky;
+    //  position: sticky;
+    //  top: 15px;
+    //}
   }
 
 

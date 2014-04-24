@@ -28,12 +28,13 @@
 
   #breadcrumb{
     //background: lighten(@hiof-blue, 80%);
+
     &:before{
       content: "";
       height: 4.4rem;
       position: absolute;
-      left: -25%;
-      width: 300%;
+      left: 0;
+      width: 100%;
       background: @hiof-blue;
       z-index: -1;
     }
@@ -49,6 +50,29 @@
         content: " >";
         color: @white;
       }
+    }
+  }
+  .sticky{
+    position:fixed;
+    top:6.2rem;
+    z-index:99;
+  }
+  .csssticky{
+
+    //.sticky{
+    //  position: -webkit-sticky;
+    //  position: -moz-sticky;
+    //  position: -ms-sticky;
+    //  position: -o-sticky;
+    //  position: sticky;
+    //  top: 6.2rem;
+    //}
+    
+  }
+  .nav-page{
+    li{
+      list-style: none;
+
     }
   }
 }
