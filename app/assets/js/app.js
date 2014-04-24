@@ -16,6 +16,23 @@ $(function() {
       Hiof.Toolbar.SocialShare();
       Hiof.Toolbar.Print();
 
+
+
+
+      // Add Quotes
+      if($('.cover.page.quote').length){
+        Hiof.Quotes();
+        window.setInterval(function(){
+          $(".cover-quote").fadeOut(500, function() { 
+            var quoteId = $(this).data("id");
+            //console.log(quoteId);
+            $(this).remove();
+            Hiof.Quotes(quoteId);
+          });
+        }, 10000);
+      }
+
+
       // Start the responsive table plugin
       //Hiof.ResponsiveTables();
 
@@ -37,6 +54,7 @@ $(function() {
         });
       }
 
+
       // Check if the page has a filter element for the table
       if($('.filter').length){
         $('.filter').change(function (e) {
@@ -55,4 +73,3 @@ $(function() {
 
 
 });
-

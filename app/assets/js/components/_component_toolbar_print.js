@@ -9,6 +9,6 @@ Hiof.Toolbar.Print = function(){
   svgPrint = Hiof.getSvgIcon("print");
   //console.log(svgFacebook);
 
-  $("#print-page").html("").addClass("btn-icon btn-print").append(svgPrint).append('<span class="helper-text">Print</span>');
+  $("#print-page").html("").addClass("btn-icon btn-print").append(svgPrint).prepend('<span class="helper-text">Print</span>');
 
 }; 
