@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="nb"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="nb"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="nb"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="nb">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <title>Høgskolen i Østfold</title>
+  <meta name="Author" content="">
+  <meta name="KeyWords" content="">
+  <meta name="Description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" id="app-css" type="text/css">
+  <script type="text/javascript" id="app-js"></script>
+  <script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="vendor/modernizr/modernizr.js"></script>
+
+
+
+
+  <script type="text/javascript" src="vendor/footable/js/footable.js"></script>
+  <script type="text/javascript" src="vendor/footable/js/footable.paginate.js"></script>
+  <script type="text/javascript" src="vendor/footable/js/footable.filter.js"></script>
+  <script type="text/javascript" src="vendor/footable/js/footable.sort.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // Check if custom font is enabled in the view
+    if (customFont === false) {
+
+      //console.log("Custom font is false, adding standard stylesheet");
+      $.getJSON("config/assets.config.json", function(data) {
+
+        var assets = data.staticAssets.global,
+          prefix = "assets",
+          cssPath = prefix + assets.css[0],
+          jsPath = prefix + assets.js[0];
+
+        $("#app-css").attr("href", cssPath);
+        $("#app-js").attr("src", jsPath);
+      });
+    } else {
+      //console.log("Custom font is true, adding custom stylesheet");
+    }
+  });
+
+  var customFont = false;
+  </script>
+</head>
+<body id="body">
+
+<header id="header" role="banner">
+  <div class="inner">
+    <nav id="nav">
+      <ul id="nav-main" class="nav">
+        <li><a href="studier-index.html" class="btn btn-primary ">Bli student</a></li>
+        <!-- <li><a href="#">Forskning</a></li>-->
+        <li><a href="content-section-person.html" class="btn btn-primary ">Personer</a></li>
+        <!-- <li><a href="#">Stillinger</a></li>-->
+        <li><span class="btn btn-primary ">Om oss</span>
+          <ul>
+            <li><a href="#">Om Høgskolen i Østfold</a></li>
+            <li><a href="#">Ledige stillinger</a></li>
+            <li><a href="#">Campus Fredikstad og Halden</a></li>
+          </ul>
+        </li>
+        <li>
+        <!--
+          <form id="global-search">
+            <div class="input-group">   
+              <input id="global-search-input" type="text" placeholder="Søk i våre sider" class="form-control">
+              <span class="input-group-btn">
+                <button id="search" class="btn btn-primary" type="button">Søk</button>
+              </span>
+            </div>
+          </form>-->
+        </li>
+      </ul>
+      <h1 id="logo-wrapper">
+        <a href="/"><span class="visuallyhidden">Høgskolen i Østfold</span>
+          <svg version="1.1" id="logo-aternative" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="241.667px" height="130.333px" viewBox="58.333 -70.333 241.667 130.333" enable-background="new 58.333 -70.333 241.667 130.333" xml:space="preserve">
+            <g id="circle">
+              <polygon class="item" points="161.039,-18.521 166.946,-18.521 175.094,-40.758 169.186,-40.758   " />
+              <path class="item" d="M184.122-49.042l-1.921,5.216c5.893,3.374,9.866,9.722,9.866,16.999c0,10.812-8.769,19.588-19.586,19.588
+    s-19.586-8.773-19.586-19.588c0-10.815,8.769-19.588,19.586-19.588c1.573,0,3.1,0.192,4.565,0.544l1.909-5.187
+    c-2.065-0.548-4.235-0.845-6.476-0.845c-13.848,0-25.075,11.225-25.075,25.076c0,13.851,11.228,25.076,25.075,25.076
+    c13.851,0,25.076-11.227,25.076-25.076C197.557-36.471,192.111-44.843,184.122-49.042z" />
+              <polygon class="item" points="172.967,-18.521 178.873,-18.521 183.959,-32.444 178.051,-32.444   " />
+            </g>
+            <g id="text">
+              <path class="item" d="M73.232,39.43v-7.873h-6.548v7.873h-4.136V20.503h4.136v7.268h6.548v-7.268h4.134v18.925h-4.134V39.43z" />
+              <path class="item" d="M86.695,39.738c-0.395,0-0.848-0.055-1.19-0.111l-1.061,2.834l-2.228-0.727l1.011-2.754
+    c-1.859-1.035-2.865-3.137-2.865-6.195c0-4.65,2.969-7.591,6.97-7.591c0.268,0,0.612,0,0.955,0.056l0.956-2.612l2.253,0.701
+    l-0.929,2.523c1.725,0.952,3.074,2.801,3.074,6.306C93.642,36.717,90.646,39.738,86.695,39.738z M86.38,28.694
+    c-1.139,0.28-2.203,1.235-2.203,3.615c0,1.037,0.161,2.077,0.558,2.655l2.306-6.324C86.832,28.612,86.59,28.641,86.38,28.694z
+     M89.136,29.646l-2.411,6.568c0.236,0.026,0.502,0.047,0.765,0.026c1.275-0.204,2.359-1.352,2.359-3.795
+    C89.85,31.217,89.613,30.377,89.136,29.646z" />
+              <path class="item" d="M101.595,46.381c-3.605,0-5.728-1.37-5.728-4.15c0-1.315,0.903-2.683,1.908-3.248
+    c-0.765-0.385-1.269-1.178-1.269-2.159c0-1.121,0.688-2.187,1.614-2.574c-1.192-0.681-1.987-1.966-1.987-3.758
+    c0-2.857,1.987-5.328,5.993-5.328c0.9,0,1.564,0.138,2.304,0.337h4.48v3.363h-1.509c0.236,0.286,0.37,0.728,0.37,1.23
+    c0,3.03-1.906,4.995-5.701,4.995c-0.288,0-0.5-0.033-0.792-0.087c-0.32,0.167-0.478,0.478-0.478,0.7
+    c0,0.59,0.399,0.672,1.882,0.729l1.777,0.084c2.835,0.117,4.53,1.348,4.53,4.151C108.99,43.691,106.128,46.381,101.595,46.381z
+     M103.342,39.764l-2.088-0.053c-0.161-0.027-0.37,0-0.507-0.027c-0.583,0.504-0.929,1.123-0.929,1.743
+    c0,1.034,0.877,1.728,2.364,1.728c1.881,0,2.833-0.836,2.833-1.934C105.014,40.443,104.564,39.822,103.342,39.764z M101.966,28.242
+    c-1.245,0-1.959,0.822-1.959,1.962c0,1.241,0.662,1.994,1.987,1.994c1.219,0,1.962-0.728,1.962-1.935
+    C103.956,29.064,103.291,28.242,101.966,28.242z" />
+              <path class="item" d="M114.347,39.738c-1.036,0-2.07-0.139-2.917-0.393l0.215-3.474c0.795,0.368,1.772,0.556,2.754,0.556
+    c1.006,0,1.617-0.419,1.617-1.092c0-2.041-4.852-0.896-4.852-5.523c0-2.552,1.803-4.651,5.831-4.651
+    c0.713,0,1.566,0.109,2.306,0.248l-0.13,3.338c-0.665-0.249-1.512-0.36-2.282-0.36c-1.032,0-1.509,0.421-1.509,1.062
+    c0,1.856,4.932,1.071,4.932,5.516C120.312,37.918,117.924,39.738,114.347,39.738z" />
+              <path class="item" d="M130.992,39.43l-3.576-6.701v6.701h-4.03V18.964h4.03v12.138l3.338-5.603h4.959l-4.348,6.39l4.665,7.539
+    h-5.038V39.43z" />
+              <path class="item" d="M143.399,39.738c-3.817,0-6.334-1.989-6.334-6.953c0-4.543,2.943-7.591,6.97-7.591
+    c4.003,0,6.31,2.353,6.31,6.974C150.345,36.682,147.375,39.738,143.399,39.738z M143.769,28.833c-1.273,0-2.518,1.042-2.518,3.476
+    c0,2.553,0.77,3.729,2.441,3.729c1.458,0,2.462-1.287,2.462-3.619C146.155,30.041,145.44,28.833,143.769,28.833z" />
+              <path class="item" d="M153.342,39.43V18.964h4.027v20.464h-4.027V39.43z" />
+              <path class="item" d="M172.352,33.541h-7.85c0.027,1.828,1.087,2.889,3.26,2.889c1.271,0,2.598-0.273,3.87-0.867l0.396,3.219
+    c-1.512,0.648-3.311,0.958-4.93,0.958c-4.298,0-6.681-2.216-6.681-7.123c0-4.285,2.253-7.453,6.336-7.453
+    c3.979,0,5.728,2.832,5.728,6.472C172.48,32.225,172.427,32.842,172.352,33.541z M166.648,28.278c-1.166,0-2.015,0.978-2.146,2.438
+    h4.003C168.557,29.113,167.816,28.278,166.648,28.278z" />
+              <path class="item" d="M183.48,39.43v-8.854c0-1.125-0.295-1.792-1.219-1.792c-1.434,0-2.627,1.875-2.627,3.891v6.756h-4.027V25.5
+    h3.765c0,0.531-0.026,1.514-0.163,2.187l0.031,0.025c0.818-1.464,2.277-2.518,4.373-2.518c2.938,0,3.896,2.015,3.896,4.429v9.807
+    H183.48z" />
+              <path class="item" d="M199.783,23.87c-1.35,0-2.467-1.119-2.467-2.525c0-1.369,1.117-2.515,2.467-2.515
+    c1.377,0,2.494,1.117,2.494,2.515C202.277,22.751,201.16,23.87,199.783,23.87z M197.77,39.43V25.5h4.03v13.93H197.77z" />
+              <path class="item" d="M219.454,39.793c-0.476,0-0.875-0.029-1.3-0.109l-0.877,2.727l-2.967-0.982l0.852-2.611
+    c-2.68-1.487-3.932-4.627-3.932-8.61c0-6.162,3.957-10.061,8.886-10.061c0.345,0,0.69,0.034,1.061,0.088l0.819-2.584l3,0.96
+    L224.2,21.04c2.489,1.295,4.161,4.01,4.161,8.665C228.361,35.93,224.49,39.793,219.454,39.793z M218.688,24.213
+    c-1.83,0.477-3.26,2.351-3.26,5.635c0,2.042,0.396,3.583,1.163,4.451l3.392-10.256C219.559,24.042,219.137,24.071,218.688,24.213z
+     M222.818,25.332l-3.469,10.542c0.315,0.056,0.631,0.056,0.976,0.024c1.938-0.276,3.849-2.021,3.849-5.938
+    C224.174,27.941,223.721,26.226,222.818,25.332z" />
+              <path class="item" d="M233.85,39.738c-1.035,0-2.065-0.139-2.916-0.393l0.211-3.474c0.795,0.368,1.775,0.556,2.754,0.556
+    c1.013,0,1.619-0.419,1.619-1.092c0-2.041-4.852-0.896-4.852-5.523c0-2.552,1.805-4.651,5.833-4.651
+    c0.715,0,1.565,0.109,2.306,0.248l-0.134,3.338c-0.661-0.249-1.507-0.36-2.276-0.36c-1.035,0-1.514,0.421-1.514,1.062
+    c0,1.856,4.932,1.071,4.932,5.516C239.812,37.918,237.43,39.738,233.85,39.738z" />
+              <path class="item" d="M247.555,39.738c-3.048,0-4.029-1.067-4.029-4.482v-6.473h-1.986V25.5h1.986v-4.119l4.056-1.15V25.5h2.836
+    v3.283h-2.836v5.492c0,1.427,0.346,1.902,1.351,1.902c0.476,0,0.928-0.078,1.379-0.195l0.238,3.338
+    C249.648,39.573,248.508,39.738,247.555,39.738z" />
+              <path class="item" d="M261.499,22.416c-0.476-0.169-1.007-0.255-1.457-0.255c-1.222,0-1.781,0.617-1.781,2.108V25.5h2.703v3.283
+    h-2.703V39.43h-4.026V28.783h-2.014V25.5h2.014v-1.205c0-3.7,1.562-5.578,5.408-5.578c0.685,0,1.436,0.06,2.118,0.222
+    L261.499,22.416z" />
+              <path class="item" d="M268.812,39.738c-3.814,0-6.334-1.989-6.334-6.953c0-4.543,2.941-7.591,6.977-7.591
+    c4.002,0,6.307,2.353,6.307,6.974C275.76,36.682,272.79,39.738,268.812,39.738z M269.188,28.833c-1.272,0-2.515,1.042-2.515,3.476
+    c0,2.553,0.767,3.729,2.438,3.729c1.455,0,2.465-1.287,2.465-3.619C271.575,30.041,270.859,28.833,269.188,28.833z" />
+              <path class="item" d="M278.759,39.43V18.964h4.025v20.464h-4.025V39.43z" />
+              <path class="item" d="M294.552,39.43c0-0.591,0.032-1.289,0.142-1.986h-0.055c-0.717,1.338-2.041,2.32-4.005,2.32
+    c-3.181,0-4.799-2.552-4.799-6.531c0-4.568,2.574-8.014,7.081-8.014c0.449,0,0.898,0.031,1.322,0.082v-6.336h4.031V39.43H294.552z
+     M294.238,28.783c-0.45-0.119-0.902-0.17-1.377-0.17c-1.566,0-2.762,1.064-2.762,4.173c0,2.332,0.586,3.43,1.832,3.43
+    c1.353,0,2.307-1.687,2.307-4.017V28.783z" />
+            </g>
+          </svg>
+        </a>
+      </h1>
+      <div class="float-right">
+        <button class="btn btn-primary icon">
+          Student | Ansatt
+          <svg version="1.1" id="icon-person" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">
+            <path id="item" fill-rule="evenodd" clip-rule="evenodd" fill="none" d="M20.637,23.109c-1.282-0.33-2.381-1.021-2.381-1.021
+  l-0.426-1.578c0-0.068-0.067-1.07-0.067-1.07c0.952-0.32,0.854-2.203,0.854-2.203c0.604,0.334,0.997-1.635,0.997-1.635
+  c1.023-2.552-0.354-1.944-0.354-1.944c0.34-1.549,0.758-1.504,0.758-3.407c0-1.902-2.888-3.567-4.816-3.567
+  c-1.929,0-4.661,1.719-4.661,3.567s0.519,3.407,0.519,3.407c-1.76,0-0.03,1.382,0,2.187c0.044,1.188,0.771,1.423,0.771,1.423
+  c0.046,1.959,0.532,2.217,0.532,2.217c0.181,1.23,0,1.124,0,1.124l-0.312,1.441c0,0-0.817,0.589-1.824,1.028
+  c-0.623,0.272-1.297,0.069-1.931,0.322C6.029,21.375,4.6,18.437,4.6,15.171C4.6,9.077,9.089,4.6,15.2,4.6
+  c6.111,0,10.6,4.478,10.6,10.571c0.001,3.132-1.313,5.96-3.419,7.974C22.381,23.145,21.21,23.257,20.637,23.109z M3,15
+  c0,6.627,5.373,12,12,12c6.627,0,12-5.373,12-12S21.627,3,15,3C8.373,3,3,8.373,3,15z" />
+          </svg>
+        </button>
+        <button class="btn btn-primary btn-line">uu</button>
+      </div>
+    </nav>
+  </div>
+</header>
+<main role="main" id="main" class="clearfix">
+<div class="cover-inline"></div>
+<section id="content" class="lo-auron-2-3">
+    <header>
+
+        <h1>
+            Studier
+        </h1>
+    </header>
+
+    <div class="studieinfo_search_cat_default" id="studieinfo_search_cat_main_area"></div>
+    <div class="studieinfo_search_cat_default-title">
+        <div class="label label-warning">
+            <span>114</span> studier funnet
+        </div>
+    </div>
+
+
+
+    <table data-page-size="120" data-filter-minimum="2" data-filter="#searchcontent">
+
+        <thead>
+            <tr>
+                <th>Navn</th>
+                <th data-hide="all">Studiepoeng</th>
+                <th data-hide="all">Avdeling</th>
+                <th data-hide="all">Studiested</th>
+                <th>
+                    <!--Les mer-->
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_1 kat_71 kat_79 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Akuttgeriatri, videreutdanning</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for helse- og sosialfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1933&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_1 kat_71 kat_79 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Akuttsykepleie, videreutdanning</td>
+                <td class="studieinfoinner stProgNavn stColumn2">90</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for helse- og sosialfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1929&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_1 kat_71 kat_79 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Anestesisykepleie, videreutdanning</td>
+                <td class="studieinfoinner stProgNavn stColumn2">90</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for helse- og sosialfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1513&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_71 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">arbeids- og velferdsfag</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for helse- og sosialfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=957&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_2 kat_74 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">barnehagelærerutdanning, deltid</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1542&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_2 kat_74 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">barnehagelærerutdanning, heltid</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1545&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_71 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">barnevern</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for helse- og sosialfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=186&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_71 kat_72 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">bioingeniørfag</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=185&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_71 kat_72 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">bioingeniørfag, Y-veien</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1623&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_2 kat_73 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">digital medieproduksjon</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for informasjonsteknologi
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=60&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_2 kat_73 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">informasjonssystemer</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for informasjonsteknologi
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=958&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_2 kat_73 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">informatikk - design og utvikling av IT-systemer</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for informasjonsteknologi
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=961&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_72 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - bygg</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=189&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_72 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - bygg, TRESS</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1948&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_2 kat_72 kat_73 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - data</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for informasjonsteknologi
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=84&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_2 kat_72 kat_73 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - data, TRESS</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for informasjonsteknologi
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1953&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_2 kat_72 kat_73 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - data, Y-veien</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for informasjonsteknologi
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1000&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_72 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - elektro</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=190&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_72 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - elektro, TRESS</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1949&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_72 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - elektro, Y-veien</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=470&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_72 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - industriell design</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=291&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_72 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - industriell design, TRESS</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1950&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_72 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - kjemi</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1564&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_72 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - kjemi, TRESS</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1951&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_72 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - kjemi, Y-veien</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=472&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_72 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - maskin</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=300&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_72 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - maskin, TRESS</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1952&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_72 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">ingeniørfag - maskin, Y-veien</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=471&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_72 kat_76 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">innovasjon og prosjektledelse</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=748&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_2 kat_75 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">internasjonal kommunikasjon</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=164&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_2 kat_76 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">regnskap og revisjon</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1129&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_2 kat_75 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">samfunn, språk og kultur</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=161&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_77 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">scenografi</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Akademi for scenekunst
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=75&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_77 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">skuespill</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Akademi for scenekunst
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=77&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_71 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">sosialt arbeid</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for helse- og sosialfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=204&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_71 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">sykepleie, heltid</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for helse- og sosialfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=413&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_1 kat_71 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">vernepleie, heltid</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for helse- og sosialfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=207&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_bachelor camp_2 kat_76 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">økonomi og administrasjon</td>
+                <td class="studieinfoinner stProgNavn stColumn2">180</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=163&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_76 kat_79 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Bedriftsøkonomi, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=453&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_73 kat_79 kat_80 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Big data - Data analysis</td>
+                <td class="studieinfoinner stProgNavn stColumn2">15</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=2028&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Engelsk for lærere 1</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1928&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_75 kat_79 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Engelsk, påbyggingsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=166&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_75 kat_79 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Engelsk, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=165&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_8 kat_71 kat_79 kat_80 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Familieterapi og systemisk praksis 1, videreutdanning</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Andre studiesteder (se utdypende i tekst)</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=2027&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Flerkulturell pedagogikk 1</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1998&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_1 kat_70 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Forkurs for ingeniørutdanning</td>
+                <td class="studieinfoinner stProgNavn stColumn2">0</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=191&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_75 kat_79 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Fransk, påbyggingsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1313&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_75 kat_79 kat_80 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Fransk, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=168&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_8 kat_74 kat_79 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Grunnleggende pedagogikk for assistenter i barnehage og skole</td>
+                <td class="studieinfoinner stProgNavn stColumn2">15</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Andre studiesteder (se utdypende i tekst)</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=2005&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_YU camp_2 kat_74 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Grunnskolelærerutdanning 1. - 7. trinn</td>
+                <td class="studieinfoinner stProgNavn stColumn2">240</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=965&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_YU camp_2 kat_74 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Grunnskolelærerutdanning 5. - 10. trinn</td>
+                <td class="studieinfoinner stProgNavn stColumn2">240</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=966&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_1 kat_71 kat_79 kat_80 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Helserett og saksbehandling, videreutdanning fleksibel modell</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1264&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_8 kat_71 kat_79 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Hverdagsrehabilitering</td>
+                <td class="studieinfoinner stProgNavn stColumn2">15</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Andre studiesteder (se utdypende i tekst)</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=2038&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Idrett, påbyggingsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=469&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_73 kat_74 kat_79 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">IKT for lærere</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=298&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_73 kat_79 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Informasjonsteknologi, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for informasjonsteknologi
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=960&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_8 kat_76 kat_79 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Innovasjon i offentlig sektor</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Andre studiesteder (se utdypende i tekst)</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=2009&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_1 kat_71 kat_79 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Intensivsykepleie, videreutdanning</td>
+                <td class="studieinfoinner stProgNavn stColumn2">90</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for helse- og sosialfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1931&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Interkulturelle studier 1</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=368&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_8 kat_76 kat_79 kat_80 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Jus i arbeidslivet</td>
+                <td class="studieinfoinner stProgNavn stColumn2">15</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Andre studiesteder (se utdypende i tekst)</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=2006&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Konsekvenspedagogikk 1</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1994&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_80 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Konsekvenspedagogikk 2</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1995&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_74 kat_79 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Kroppsøving og idrett, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=212&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Kunst og håndverk 1</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1557&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Kunst og håndverk 2</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=475&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_74 kat_79 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Kunst og håndverk, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=225&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_master camp_2 kat_73 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">anvendt informatikk</td>
+                </td>
+                <td class="studieinfoinner stProgNavn stColumn2">120</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for informasjonsteknologi
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=959&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_master camp_2 kat_74 kat_80 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">barnehagepedagogikk og småbarnsvitenskap (0-3 år)</td>
+                </td>
+                <td class="studieinfoinner stProgNavn stColumn2">120</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1936&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_master camp_2 kat_74 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">fremmedspråk i skolen</td>
+                </td>
+                <td class="studieinfoinner stProgNavn stColumn2">120</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=452&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_master camp_2 kat_74 kat_80 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">mangfold og inkludering i pedagogisk virksomhet</td>
+                </td>
+                <td class="studieinfoinner stProgNavn stColumn2">120</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1013&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_master camp_2 kat_76 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">organisasjon og ledelse</td>
+                </td>
+                <td class="studieinfoinner stProgNavn stColumn2">120</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=170&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_master camp_1 kat_71 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">psykososialt arbeid - helse- og sosialfaglig yrkespraksis</td>
+                </td>
+                <td class="studieinfoinner stProgNavn stColumn2">120</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for helse- og sosialfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1248&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_master camp_1 kat_77 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">scenografi</td>
+                </td>
+                <td class="studieinfoinner stProgNavn stColumn2">120</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Akademi for scenekunst
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1937&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_master camp_2 kat_74 kat_80 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">spesialpedagogikk, deltid</td>
+                </td>
+                <td class="studieinfoinner stProgNavn stColumn2">120</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1918&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_master camp_1 kat_71 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">tverrfaglig samarbeid i helse- og sosialsektoren, deltid</td>
+                </td>
+                <td class="studieinfoinner stProgNavn stColumn2">120</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for helse- og sosialfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=401&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Matematikk 1</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=988&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Matematikk 1 for grunnskolelærerutdanning 1-7</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1993&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Matematikk 2</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=989&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_74 kat_79 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Matematikk, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=547&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_74 kat_79 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Musikk, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=214&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Naturfag 1</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=479&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Naturfag 2</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=480&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_74 kat_79 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Naturfag, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=280&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Norsk 1</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=499&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Norsk 1 for grunnskolelærerutdanning 1-7</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1992&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Norsk 2</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=500&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_74 kat_79 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Norsk, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=286&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_1 kat_71 kat_79 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Operasjonssykepleie, videreutdanning</td>
+                <td class="studieinfoinner stProgNavn stColumn2">90</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for helse- og sosialfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1512&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_1 kat_76 kat_79 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Organisasjonspsykologi</td>
+                <td class="studieinfoinner stProgNavn stColumn2">15</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1990&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_80 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Pedagogikk - grunnleggende enhet</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1996&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Pedagogisk veiledning</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1917&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_1 kat_76 kat_79 kat_80 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Personaladministrasjon/personalledelse</td>
+                <td class="studieinfoinner stProgNavn stColumn2">15</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1989&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_74 kat_79 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Praktisk-pedagogisk utdanning for yrkesfag for trinn 8-13, deltid</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1911&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_74 kat_79 kat_80 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Praktisk-pedagogisk utdanning, deltid</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=253&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_74 kat_79 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Praktisk-pedagogisk utdanning, heltid</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=209&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_1 kat_70 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Realfagskurs</td>
+                <td class="studieinfoinner stProgNavn stColumn2">0</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for ingeniørfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1379&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Religion, livssyn og etikk 1</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=481&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Religion, livssyn og etikk 2</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=482&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_74 kat_79 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Religion, livssyn og etikk, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=484&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_74 kat_79 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Samfunnsfag, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=217&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Småbarnsstudier</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=518&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_80 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Småbarnsstudier, deltid</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1324&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Sosiale- og emosjonelle vansker 1, videreutdanning</td>
+                <td class="studieinfoinner stProgNavn stColumn2">15</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1999&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_75 kat_79 kat_80 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Spansk, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=296&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Spesialpedagogikk 1</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1991&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_75 kat_79 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Statsvitenskap, påbyggingsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=199&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_75 kat_79 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Statsvitenskap, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=198&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Tekstkultur og formidling</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=478&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_1 kat_71 kat_79 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Tiltak mot seksuelle overgrep mot barn, videreutdanning</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for helse- og sosialfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1925&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_75 kat_79 kat_80 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Tysk, påbyggingsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=201&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_AR camp_2 kat_75 kat_79 kat_80 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Tysk, årsstudium</td>
+                <td class="studieinfoinner stProgNavn stColumn2">60</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for økonomi, språk og samfunnsfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=169&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_2 kat_74 kat_79 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Utefag</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for lærerutdanning
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Halden</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=290&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_8 kat_71 kat_79 kat_80 kat_81 studieinfoSelected studieinfoOddRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Utviklingshemming og aldring</td>
+                <td class="studieinfoinner stProgNavn stColumn2">15</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    SKUT, Senter for kompetanseutvikling
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Andre studiesteder (se utdypende i tekst)</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=2039&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+
+            <tr class="StudieinfoProgramDiv sttype_lavere camp_1 kat_71 kat_79 kat_81 studieinfoSelected studieinfoEvenRow">
+                <td class="studieinfoinner stProgNavn stColumn1 studieinfoSearchBold">Velferdsteknologi i helse- og sosialtjenestene, videreutdanning</td>
+                <td class="studieinfoinner stProgNavn stColumn2">30</td>
+                <td class="studieinfoinner stProgFakultet stColumn3">
+                    Avdeling for helse- og sosialfag
+                </td>
+                <td class="studieinfoinner stProgStudiested stColumn5">Fredrikstad</td>
+                <td class="studieinfoinner stProgSok stColumn4 studieinfoSearchBold">
+                    <a href="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?&amp;displayitem=1636&amp;module=studieinfo&amp;type=katalog" class="btn btn-primary btn-line">Les mer!</a>
+                </td>
+            </tr>
+        </tbody>
+        <!--
+    <tfoot>
+      <tr>
+        <td colspan="5">
+          <ul class="pagination pagination-centered hide-if-no-paging"></ul>
+        </td>
+      </tr>
+    </tfoot>
+    -->
+    </table>
+
+
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+<script type="text/javascript">
+$(function() {
+    $("html").addClass("cover page quote");
+});
+</script>
+
+<aside id="sidebar" class="lo-auron-1-3">
+<section class="lo-full">
+
+
+
+    <form action="/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/?" id="studie" name="studie" method="GET" class="catalogForm lo-full">
+        <div id="freetext" class="lo-full">
+            <div class="input-group">
+                <!--<label for="searchcontent" class="studieinfoSearchBold">Fritekstsøk</label>-->
+                <input placeholder="Fritekstsøk" type="text" name="searchcontent" id="searchcontent" class=" form-control">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">Søk</button>
+                </span>
+            </div>
+        </div>
+                <div id="studtype" class="lo-full">
+            <div class="studieinfoSearchBold studieinfoSearchHeader">
+                <h3>Typer studier</h3>
+            </div>
+            <div class="checkbox studieinfoSearchBold">
+                <label class="sttype" for="sttype_all">
+                    <input class="studieinfoAllSelector" type="checkbox" name="sttype_all" id="sttype_all" checked="">Alle typer studier</label>
+            </div>
+            <div class="checkbox">
+                <label class="sttype" for="sttype_firearrig">
+                    <input class="studieinfoSingleSelector" type="checkbox" name="sttype_firearrig" id="sttype_firearrig" style="margin-right:8px;">4-årig lærerutdanning</label>
+            </div>
+            <div class="checkbox">
+                <label class="sttype" for="sttype_bachelor">
+                    <input class="studieinfoSingleSelector" type="checkbox" name="sttype_bachelor" id="sttype_bachelor">Bachelorprogram</label>
+            </div>
+            <div class="checkbox">
+                <label class="sttype" for="sttype_aar">
+                    <input class="studieinfoSingleSelector" type="checkbox" name="sttype_aar" id="sttype_aar">Årsstudier</label>
+            </div>
+            <div class="checkbox">
+                <label class="sttype" for="sttype_lavere">
+                    <input class="studieinfoSingleSelector" type="checkbox" name="sttype_lavere" id="sttype_lavere">Lavere grads studier</label>
+            </div>
+            <div class="checkbox">
+                <label class="sttype" for="sttype_master">
+                    <input class="studieinfoSingleSelector" type="checkbox" name="sttype_master" id="sttype_master">Masterprogram</label>
+            </div>
+            <div class="checkbox">
+                <label class="sttype" for="sttype_master5">
+                    <input class="studieinfoSingleSelector" type="checkbox" name="sttype_master5" id="sttype_master5">Studier på masternivå</label>
+            </div>
+            <div class="studieinfoSearchBold studieinfoSearchHeader">
+                <h3>Øvrige studier/alternativer</h3>
+            </div>
+            <div class="checkbox">
+                <label class="sttype" for="ovrig_79">
+                    <input id="ovrig_79" class="studieinfoSingleSelector" type="checkbox" name="ovrig_79">Etter- og videreutdanning</label>
+            </div>
+            <div class="checkbox">
+                <label class="sttype" for="ovrig_80">
+                    <input id="ovrig_80" class="studieinfoSingleSelector" type="checkbox" name="ovrig_80">Nett- og /eller samlingsbasert</label>
+            </div>
+            <div class="checkbox">
+                <label class="sttype" for="ovrig_81">
+                    <input id="ovrig_81" class="studieinfoSingleSelector" type="checkbox" name="ovrig_81">Deltid</label>
+            </div>
+
+
+        </div>
+        <div id="stprogDiv" class="lo-full">
+
+            <div class="studieinfoSearchBold studieinfoSearchHeader">
+                <h3>Fagområder</h3>
+            </div>
+            <div class="checkbox studieinfoSearchBold">
+                <label class="kat" for="kat_all">
+                    <input class="studieinfoAllSelector" type="checkbox" name="kat_all" id="kat_all" checked="">Alle fagområder</label>
+            </div>
+            <div class="checkbox">
+                <label class="kat" for="kat_70">
+                    <input class="studieinfoSingleSelector" type="checkbox" id="kat_70" name="kat_70">Forkurs og realfagskurs</label>
+            </div>
+            <div class="checkbox">
+                <label class="kat" for="kat_71">
+                    <input class="studieinfoSingleSelector" type="checkbox" id="kat_71" name="kat_71">Helse- og sosialfaglige utdanninger</label>
+            </div>
+            <div class="checkbox">
+                <label class="kat" for="kat_72">
+                    <input class="studieinfoSingleSelector" type="checkbox" id="kat_72" name="kat_72">Ingeniørutdanninger</label>
+            </div>
+            <div class="checkbox">
+                <label class="kat" for="kat_73">
+                    <input class="studieinfoSingleSelector" type="checkbox" id="kat_73" name="kat_73">IT-utdanninger</label>
+            </div>
+            <div class="checkbox">
+                <label class="kat" for="kat_74">
+                    <input class="studieinfoSingleSelector" type="checkbox" id="kat_74" name="kat_74">Lærer- og pedagogiske utdanninger</label>
+            </div>
+            <div class="checkbox">
+                <label class="kat" for="kat_75">
+                    <input class="studieinfoSingleSelector" type="checkbox" id="kat_75" name="kat_75">Samfunnsfag- og språkfagutdanninger</label>
+            </div>
+            <div class="checkbox">
+                <label class="kat" for="kat_76">
+                    <input class="studieinfoSingleSelector" type="checkbox" id="kat_76" name="kat_76">Økonomi, administrasjon og ledelsesutdanninger</label>
+            </div>
+            <div class="checkbox">
+                <label class="kat" for="kat_77">
+                    <input class="studieinfoSingleSelector" type="checkbox" id="kat_77" name="kat_77">Scenekunstutdanninger</label>
+            </div>
+
+        </div>
+
+        <div id="campus" class="lo-full">
+            <div class="studieinfoSearchBold studieinfoSearchHeader">
+                <h3>Alle studiesteder</h3>
+            </div>
+            <div class="checkbox studieinfoSearchBold">
+                <label class="camp" for="camp_all">
+                    <input class="studieinfoAllSelector" type="checkbox" name="camp_all" id="camp_all" checked="">Alle studiesteder</label>
+            </div>
+            <div class="checkbox">
+                <label for="camp_2" class="sttype">
+                    <input type="checkbox" name="camp_2" class="studieinfoSingleSelector" id="camp_2">Studiested Halden</label>
+            </div>
+            <div class="checkbox">
+                <label for="camp_1" class="sttype">
+                    <input type="checkbox" name="camp_1" class="studieinfoSingleSelector" id="camp_1">Studiested Fredrikstad</label>
+            </div>
+            <div class="checkbox">
+                <label for="camp_8" class="sttype">
+                    <input type="checkbox" name="camp_8" class="studieinfoSingleSelector" id="camp_8">Andre studiesteder</label>
+            </div>
+        </div>
+        <div id="study-alternativly" class="lo-full">
+
+        </div>
+
+
+
+
+    </form>
+
+
+</section>
+
+</aside>
+    </main>
+    <footer id="footer">
+    <nav id="breadcrumb" class="lo-full">
+      <ol>
+        <li><a href="/">Høgskolen i Østfold</a></li>
+        <li><a href="/">Kontakt</a></li>
+        <li><a href="/">Veibeskrivelse</a></li>
+      </ol>
+    </nav>
+    <section class="lo-quarter">
+
+
+      <h2>Studietilbud</h2>
+      <ul>
+        <li><a href="#">Etter- og videreutdanninger</a></li>
+        <li><a href="#">IT- utdanninger</a></li>
+        <li><a href="#">Ingeniør</a></li>
+        <li><a href="#">Helse- og Sosialfag</a></li>
+        <li><a href="#">Økonomomi og administrasjon</a></li>
+        <li><a href="#">Sykepleier</a></li>
+        <li><a href="#">Samfunnsfag- og språkutdanninger</a></li>
+        <li><a href="#">Scenekunstutdanninger</a></li>
+        <li><a href="#">Lærer- og pedagogiske utdanninger</a></li>
+      </ul>
+    </section>
+    <section class="lo-quarter">
+        <section>
+          
+      <h2>Våre sider</h2>
+  
+        <p><a href="http://hiof.no">hiof.no</a><br>
+        <a href="http://blistudent.no">BliStudent.no</a><br>
+        <a href="http://hiof.no/student">Student sider</a><br>
+        <a href="http://hiof.no/ansatt">Ansatt sider</a>
+
+        </p>
+          
+        </section>
+        <section>
+          
+      <h2>Om nettstedet</h2>
+  
+        <p><a href="content-contact-web-responsible.html">Kontakt nettredaksjonen</a><br>
+        <a href="content-privacy-policy.html">Personvernpolitikk</a></p>
+
+        </section>
+
+
+    </section>
+    <section class="lo-quarter">
+      <h2>Kontakt</h2>
+      <p><a href="content-contact.html">Kontakt oss</a><br>
+      <a href="content-contact.html#map">Kart og veibeskrivelser</a></p>
+      <div class="bg-info">        
+        <dl>
+          <dt>Sentralbord</dt>
+          <dd>(+47) 69 21 50 00</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="lo-quarter bg-map">
+
+      <h2 class="visuallyhidden">Studiesteds-illustrasjon</h2>
+    </section>
+    <section class="lo-full">
+        <p class="ta-center"><small>Kopibeskyttet <a href="http://hiof.no">Høgskolen i Østfold</a></small> -   <small>Siden ble sist oppdatert 16.04.14 av <a href="http://www.hiof.no/nor/hogskolen-i-ostfold/diverse/alle-ansatte?displayitem=8148&module=admin">Kenneth Dahlstrøm</a></small></p>
+
+    </section>
+    </footer>
+  </body>
+</html>
