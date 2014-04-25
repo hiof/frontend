@@ -251,10 +251,17 @@ module.exports = function(grunt) {
             'app/views/partials/_activate_design_index.html',
             'app/views/partials/_footer.html'
           ],
-          'build/content-section-person.html': [
+          'build/content-section-person-search.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/content/person-search.html',
+            'app/views/partials/_activate_design_page.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/content-section-person-profile.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/person-profile.html',
             'app/views/partials/_activate_design_page.html',
             'app/views/partials/_footer.html'
           ],
