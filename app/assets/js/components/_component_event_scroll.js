@@ -37,12 +37,21 @@ $(function() {
         var distanceToTop = $(window).scrollTop();
 
         //console.log(distanceToTop);
-
-
-        if (distanceToTop > 410) {
-            $("#header").removeClass("light");
+        if ($("#study").length) {
+            if (distanceToTop > 30) {
+                $("#header").removeClass("light");
+            } else {
+                $("#header").addClass("light");
+            }
         } else {
-            $("#header").addClass("light");
+            if (distanceToTop > 410) {
+                $("#header").removeClass("light");
+            } else {
+                $("#header").addClass("light");
+            }
+
+
+
         }
 
         if ($(".nav-page").length) {
@@ -52,7 +61,6 @@ $(function() {
                 $(".nav-page").removeClass("sticky");
             }
         }
-
 
 
         //if (distanceToTop > 440) {
