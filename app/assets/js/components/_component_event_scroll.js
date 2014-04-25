@@ -25,6 +25,7 @@ var fadeInContent = function(distanceToTop) {
 //}
 
 
+
 $(function() {
 
     fadeInContent(0);

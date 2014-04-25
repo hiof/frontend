@@ -17,3 +17,4 @@ Hiof.Quotes = function(quoteId) {
     $('.cover-quote').fadeIn("slow");
   });
 };
+
