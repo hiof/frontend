@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
   // Loads each task referenced in the packages.json file
   require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
-
+  require('time-grunt')(grunt);
 
   // Initiate grunt tasks
   grunt.initConfig({
@@ -24,13 +24,14 @@ module.exports = function(grunt) {
     },
     autoprefixer: {
       options: {
-        browsers: ['last 2 version', 'ie 8', 'ie 9']
+        browsers: ['last 2 versions', 'ie 8', 'ie 9']
+        //diff: 'build/config/*.diff'
       },
       prefix: {
         expand: true,
-        flatten: true,
-        src: 'tmp/css/*.css',
-        dest: 'tmp/css/prefixed/'
+        //flatten: true,
+        src: 'tmp/css/*.css'
+        //dest: 'tmp/css/prefixed/'
       }
     },
     cssmin: {
@@ -38,22 +39,29 @@ module.exports = function(grunt) {
         options: {
           banner: '/*!  HiØ stylesheets v<%= pkg.version %> by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */'
         },
-        standard: [{
-          src: ['tmp/css/prefixed/theme-standard.css', '!{print,var,mix}*.css'],
-          dest: 'tmp/theme-standard.css'
-        }],
-        helvetica: [{
-          src: ['tmp/css/prefixed/theme-helvetica.css', '!{print,var,mix}*.css'],
-          dest: 'tmp/theme-helvetica.css'
-        }],
-        verdana: [{
-          src: ['tmp/css/prefixed/theme-verdana.css', '!{print,var,mix}*.css'],
-          dest: 'tmp/theme-verdana.css'
-        }],
-        source: [{
-          src: ['tmp/css/prefixed/theme-source-pro.css', '!{print,var,mix}*.css'],
-          dest: 'tmp/theme-source-pro.css'
-        }]
+
+          expand: true,
+          cwd: 'tmp/css/',
+          src: ['*.css', '!*.min.css'],
+          dest: 'tmp/css/',
+          ext: '.min.css'
+
+        //standard: [{
+        //  src: ['tmp/css/theme-standard.css', '!{print,var,mix}*.css'],
+        //  dest: 'tmp/theme-standard-prefixed.css'
+        //}],
+        //helvetica: [{
+        //  src: ['tmp/css/theme-helvetica.css', '!{print,var,mix}*.css'],
+        //  dest: 'tmp/theme-helvetica-prefixed.css'
+        //}],
+        //verdana: [{
+        //  src: ['tmp/css/theme-verdana.css', '!{print,var,mix}*.css'],
+        //  dest: 'tmp/theme-verdana-prefixed.css'
+        //}],
+        //source: [{
+        //  src: ['tmp/css/theme-source-pro.css', '!{print,var,mix}*.css'],
+        //  dest: 'tmp/theme-source-pro-prefixed.css'
+        //}]
       }
     },
     copy: {
@@ -96,7 +104,7 @@ module.exports = function(grunt) {
 
     clean: {
       before: ['build/assets', 'build/css', 'build/js', 'build/config'],
-      after: ["tmp/css", 'tmp/images'],
+      after: ['tmp/**/*'],
       dist: ['dist/**/*'],
       build: ['build/assets', 'build/config', 'build/*.html']
     },
@@ -366,16 +374,16 @@ module.exports = function(grunt) {
 
           {
             assets: [{
-              src: '<%= cssmin.main.standard %>',
+              src: 'tmp/css/theme-standard.min.css',
               dest: 'tmp/css/theme-standard.css'
             }, {
-              src: '<%= cssmin.main.helvetica %>',
+              src: 'tmp/css/theme-helvetica.min.css',
               dest: 'tmp/css/theme-helvetica.css'
             }, {
-              src: '<%= cssmin.main.verdana %>',
+              src: 'tmp/css/theme-verdana.min.css',
               dest: 'tmp/css/theme-verdana.css'
             }, {
-              src: '<%= cssmin.main.source %>',
+              src: 'tmp/css/theme-source-pro.min.css',
               dest: 'tmp/css/theme-source-pro.css'
             }],
             key: 'global',
@@ -387,11 +395,6 @@ module.exports = function(grunt) {
       }
 
     },
-
-
-
-
-
 
     express: {
       all: {
@@ -427,7 +430,7 @@ module.exports = function(grunt) {
         },
       },
       css: {
-        files: ['app/assets/less/**/*.less', 'app/assets/less/**/*.less'],
+        files: ['app/assets/less/**/*.less'],
         tasks: ['less', 'autoprefixer', 'cssmin', 'versioning'],
         options: {
           livereload: true,
@@ -463,12 +466,18 @@ module.exports = function(grunt) {
 
   // Register tasks
   //grunt.registerTask('dev', ['watch']);
-  grunt.registerTask('prod', ['clean:before', 'less', 'autoprefixer', 'cssmin', 'concat:scripts', 'uglify', 'versioning', 'copy:jsdata', 'copy:images', 'copy:fonts', 'copy:vendor', 'concat:pages', 'clean:after']);
+  grunt.registerTask('subtaskJs', ['jshint', 'concat:scripts', 'uglify', 'copy:jsdata']);
+  grunt.registerTask('subtaskCss', ['less', 'autoprefixer', 'cssmin']);
+  grunt.registerTask('subtaskCopy', ['copy:images', 'copy:fonts', 'copy:vendor']);
+  grunt.registerTask('subtaskViews', ['concat:pages']);
 
+
+  grunt.registerTask('prod', ['clean:before', 'subtaskCss', 'subtaskJs', 'versioning', 'subtaskCopy', 'subtaskViews']);
   grunt.registerTask('dist', ['prod','clean:dist', 'copy:dist']);
 
 
   grunt.registerTask('server', [
+    'prod',
     'express',
     'open',
     'watch'
