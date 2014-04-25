@@ -1,6 +1,6 @@
 {
   "name": "Hiof-frontend",
-  "version": "2.0.0",
+  "version": "3.0.0.6",
   "homepage": "https://github.com/hiof/frontend",
   "authors": [
     "Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>"
@@ -12,7 +12,7 @@
     "jquery": "~2.1.0",
     "bootstrap": "~3.1.1",
     "livereload": "~2.0.8",
-    "footable": "git@github.com:bradvin/FooTable.git#bs3",
+    "footable": "git@github.com:bradvin/FooTable.git#V2",
     "jquery.scrollTo": "~1.4.11"
   }
 }
