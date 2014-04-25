@@ -46,7 +46,8 @@ $(function() {
               phone: 640,
               tablet: 899,
               desktop: 900
-            }
+            }, 
+            limitNavigation: 5
           }).bind({
             'footable_paging' : function(e) {
               showPreAndNextPages(e);
