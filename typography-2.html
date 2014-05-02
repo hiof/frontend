@@ -27,19 +27,17 @@
   <script type="text/javascript" src="vendor/footable/js/footable.sort.js"></script>
   <script type="text/javascript" src="vendor/footable/js/footable.striping.js"></script>
 
+
   <script type="text/javascript">
   $(function() {
     // Check if custom font is enabled in the view
     if (customFont === false) {
-
       //console.log("Custom font is false, adding standard stylesheet");
       $.getJSON("config/assets.config.json", function(data) {
-
         var assets = data.staticAssets.global,
           prefix = "assets",
           cssPath = prefix + assets.css[0],
           jsPath = prefix + assets.js[0];
-
         $("#app-css").attr("href", cssPath);
         $("#app-js").attr("src", jsPath);
       });
@@ -47,16 +45,17 @@
       //console.log("Custom font is true, adding custom stylesheet");
     }
   });
-
   var customFont = false;
   </script>
+  <script type="text/javascript" src="//use.typekit.net/kbf8ctj.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body id="body">
-
+<div class="cover-inline"></div>
 <header id="header" role="banner">
   <div class="inner">
-    <nav id="nav">
-      <ul id="nav-main" class="nav">
+    <nav id="nav" class="lo-full">
+      <ul id="nav-pages" class="navigation">
         <li><a href="studier-index.html" class="btn btn-primary ">Bli student</a></li>
         <!-- <li><a href="#">Forskning</a></li>-->
         <li><a href="content-section-person.html" class="btn btn-primary ">Personer</a></li>
@@ -69,20 +68,20 @@
           </ul>
         </li>
         <li>
-        <!--
-          <form id="global-search">
+        
+          <form class="form" id="global-search">
             <div class="input-group">   
               <input id="global-search-input" type="text" placeholder="Søk i våre sider" class="form-control">
               <span class="input-group-btn">
-                <button id="search" class="btn btn-primary" type="button">Søk</button>
+                <button id="search" class="btn btn-primary btn-line" type="button">Søk</button>
               </span>
             </div>
-          </form>-->
+          </form>
         </li>
       </ul>
       <h1 id="logo-wrapper">
         <a href="/"><span class="visuallyhidden">Høgskolen i Østfold</span>
-          <svg version="1.1" id="logo-aternative" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="241.667px" height="130.333px" viewBox="58.333 -70.333 241.667 130.333" enable-background="new 58.333 -70.333 241.667 130.333" xml:space="preserve">
+          <svg version="1.1" id="logo-alternative" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="241.667px" height="130.333px" viewBox="58.333 -70.333 241.667 130.333" enable-background="new 58.333 -70.333 241.667 130.333" xml:space="preserve">
             <g id="circle">
               <polygon class="item" points="161.039,-18.521 166.946,-18.521 175.094,-40.758 169.186,-40.758   " />
               <path class="item" d="M184.122-49.042l-1.921,5.216c5.893,3.374,9.866,9.722,9.866,16.999c0,10.812-8.769,19.588-19.586,19.588
@@ -155,11 +154,11 @@
           </svg>
         </a>
       </h1>
-      <div class="float-right">
+      <div id="nav-internal" class="float-right">
         <button class="btn btn-primary icon">
           Student | Ansatt
           <svg version="1.1" id="icon-person" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">
-            <path id="item" fill-rule="evenodd" clip-rule="evenodd" fill="none" d="M20.637,23.109c-1.282-0.33-2.381-1.021-2.381-1.021
+            <path class="item" fill-rule="evenodd" clip-rule="evenodd" fill="none" d="M20.637,23.109c-1.282-0.33-2.381-1.021-2.381-1.021
   l-0.426-1.578c0-0.068-0.067-1.07-0.067-1.07c0.952-0.32,0.854-2.203,0.854-2.203c0.604,0.334,0.997-1.635,0.997-1.635
   c1.023-2.552-0.354-1.944-0.354-1.944c0.34-1.549,0.758-1.504,0.758-3.407c0-1.902-2.888-3.567-4.816-3.567
   c-1.929,0-4.661,1.719-4.661,3.567s0.519,3.407,0.519,3.407c-1.76,0-0.03,1.382,0,2.187c0.044,1.188,0.771,1.423,0.771,1.423
@@ -169,10 +168,66 @@
   c0,6.627,5.373,12,12,12c6.627,0,12-5.373,12-12S21.627,3,15,3C8.373,3,3,8.373,3,15z" />
           </svg>
         </button>
-        <button class="btn btn-primary btn-line">uu</button>
+        <button id="universal-access" class="btn btn-primary btn-line icon">Universiell utforming
+        <svg version="1.1" id="icon-universal-access" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+   x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<path class="item" d="M23.862,47.725c-3.29,0-6.385-0.627-9.286-1.883c-2.899-1.256-5.427-2.96-7.581-5.113c-2.154-2.154-3.859-4.682-5.113-7.581
+  C0.627,30.247,0,27.152,0,23.862c0-3.29,0.627-6.376,1.883-9.26c1.254-2.883,2.959-5.41,5.113-7.581
+  c2.153-2.171,4.681-3.884,7.581-5.139C17.477,0.627,20.572,0,23.862,0c3.291,0,6.377,0.627,9.26,1.883
+  c2.884,1.254,5.41,2.967,7.581,5.139c2.171,2.171,3.884,4.698,5.139,7.581c1.256,2.884,1.883,5.97,1.883,9.26
+  c0,3.291-0.627,6.385-1.883,9.286c-1.255,2.899-2.968,5.427-5.139,7.581c-2.171,2.153-4.698,3.858-7.581,5.113
+  C30.239,47.098,27.152,47.725,23.862,47.725z M23.862,3.205c-2.849,0-5.529,0.542-8.039,1.628c-2.51,1.085-4.698,2.561-6.563,4.427
+  c-1.866,1.865-3.341,4.053-4.427,6.563c-1.085,2.51-1.628,5.19-1.628,8.039s0.542,5.529,1.628,8.039
+  c1.085,2.511,2.561,4.699,4.427,6.563c1.865,1.866,4.053,3.342,6.563,4.427c2.51,1.085,5.19,1.628,8.039,1.628
+  s5.529-0.543,8.039-1.628c2.511-1.085,4.699-2.561,6.563-4.427c1.866-1.864,3.342-4.053,4.427-6.563
+  c1.085-2.51,1.628-5.189,1.628-8.039s-0.543-5.529-1.628-8.039c-1.085-2.51-2.561-4.698-4.427-6.563
+  C36.6,7.394,34.411,5.918,31.9,4.833C29.391,3.748,26.711,3.205,23.862,3.205z M27.372,9.463c0-0.984-0.338-1.815-1.018-2.493
+  c-0.678-0.679-1.509-1.018-2.493-1.018c-0.983,0-1.806,0.339-2.467,1.018c-0.662,0.678-0.992,1.509-0.992,2.493
+  c0,0.983,0.331,1.814,0.992,2.493c0.661,0.678,1.484,1.018,2.467,1.018c0.984,0,1.815-0.339,2.493-1.018
+  C27.034,11.278,27.372,10.447,27.372,9.463z M36.684,21.521l-5.037-4.376c-0.17-0.169-0.364-0.356-0.586-0.56
+  c-0.22-0.204-0.448-0.407-0.687-0.61c-0.339-0.305-0.652-0.594-0.941-0.865c-0.287-0.271-0.517-0.458-0.687-0.56
+  c-0.373-0.271-0.721-0.449-1.043-0.534c-0.322-0.084-0.721-0.127-1.196-0.127h-5.291c-0.475,0-0.874,0.043-1.196,0.127
+  c-0.322,0.085-0.67,0.246-1.043,0.483c-0.169,0.136-0.398,0.339-0.687,0.61c-0.288,0.271-0.602,0.56-0.941,0.865
+  c-0.237,0.204-0.466,0.407-0.687,0.61c-0.22,0.204-0.416,0.391-0.585,0.56l-5.037,4.376c-0.305,0.271-0.492,0.628-0.56,1.068
+  c0,0.441,0.135,0.831,0.407,1.17c0.271,0.306,0.636,0.475,1.094,0.509c0.458,0.034,0.839-0.084,1.145-0.356
+  c0.136-0.102,0.441-0.364,0.916-0.788c0.475-0.424,1.018-0.899,1.628-1.425c0.61-0.526,1.238-1.06,1.882-1.603
+  c0.645-0.543,1.188-1,1.628-1.374c0.305-0.271,0.551-0.398,0.738-0.381c0.187,0.017,0.28,0.263,0.28,0.738v2.951
+  c0,1.255-0.034,2.23-0.102,2.926c-0.067,0.695-0.119,1.077-0.152,1.145l-2.29,13.076c-0.102,0.577,0,1.068,0.306,1.476
+  c0.271,0.441,0.696,0.712,1.272,0.813c0.543,0.103,1.035-0.009,1.476-0.33c0.44-0.322,0.712-0.738,0.814-1.247l0.127-0.737
+  c0,0,0.102-0.618,0.306-1.857c0.203-1.238,0.339-2.043,0.407-2.417c0.068-0.372,0.212-1.195,0.433-2.468
+  c0.221-1.271,0.348-1.959,0.382-2.061l0.229-1.145c0.034-0.135,0.051-0.246,0.051-0.331c0-0.084,0.017-0.178,0.051-0.279
+  c0.068-0.373,0.187-0.551,0.356-0.534c0.169,0.018,0.289,0.195,0.356,0.534c0.034,0.102,0.051,0.195,0.051,0.279
+  c0,0.085,0.017,0.196,0.051,0.331l0.229,1.145c0,0,0.127,0.688,0.381,2.061c0.255,1.374,0.399,2.197,0.433,2.468
+  c0.034,0.272,0.17,1.077,0.407,2.417c0.237,1.341,0.339,1.959,0.305,1.857l0.128,0.737c0.068,0.475,0.288,0.865,0.661,1.171
+  c0.374,0.305,0.798,0.458,1.272,0.458c0.17,0,0.288-0.017,0.355-0.052c0.577-0.102,1.001-0.372,1.272-0.813
+  c0.305-0.407,0.407-0.898,0.305-1.476l-2.289-13.025c0-0.102-0.042-0.5-0.127-1.195s-0.128-1.671-0.128-2.926l-0.051-3.002
+  c0-0.474,0.103-0.712,0.306-0.712s0.458,0.136,0.763,0.407v-0.051c0.442,0.407,0.984,0.882,1.629,1.425
+  c0.645,0.542,1.271,1.077,1.883,1.603c0.61,0.526,1.153,1,1.628,1.425c0.476,0.424,0.78,0.687,0.916,0.788
+  c0.305,0.272,0.687,0.399,1.145,0.382s0.823-0.195,1.094-0.534c0.272-0.339,0.399-0.729,0.382-1.17
+  C37.201,22.149,37.022,21.793,36.684,21.521z"/>
+</svg>
+        </button>
       </div>
     </nav>
   </div>
+
+
+  <a id="" class="mobile-pages navigation-mobile" title="Aktiver navigasjon på små enheter" href="#">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="lo-inline-block" width="16" height="16" viewBox="0 0 32 32" title="Navigasjons knapp">
+          <path class="icon-element" d="M28.748 7.043h-25.221c-0.647 0-1.172-0.525-1.172-1.172s0.525-1.172 1.172-1.172h25.221c0.647 0 1.172 0.525 1.172 1.172s-0.525 1.172-1.172 1.172z" fill="#444444" />
+          <path class="icon-element" d="M28.748 17.172h-25.221c-0.647 0-1.172-0.525-1.172-1.172s0.525-1.172 1.172-1.172h25.221c0.647 0 1.172 0.525 1.172 1.172s-0.525 1.172-1.172 1.172z" fill="#444444" />
+          <path class="icon-element" d="M28.748 27.576h-25.221c-0.647 0-1.172-0.525-1.172-1.172s0.525-1.172 1.172-1.172h25.221c0.647 0 1.172 0.525 1.172 1.172s-0.525 1.172-1.172 1.172z" fill="#444444" />
+      </svg>
+      <!--<span>Meny</span>-->
+  </a>
+  <!--
+  <a id="" class="mobile-user navigation-mobile">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 32 32">
+          <path class="icon-element" d="M19.584 17.14v2.224c0.405 0.177 0.868 0.38 1.387 0.609 0.52 0.227 1.054 0.462 1.606 0.703 0.551 0.242 1.109 0.48 1.672 0.723 0.564 0.241 1.101 0.464 1.607 0.676 0.506 0.207 0.963 0.393 1.368 0.559 0.406 0.166 0.734 0.291 0.987 0.379 0.532 0.191 0.965 0.479 1.295 0.867 0.329 0.386 0.587 0.777 0.778 1.187 0.228 0.469 0.393 0.963 0.494 1.483v2.414h-29.555v-2.414c0.115-0.52 0.284-1.014 0.512-1.483 0.19-0.41 0.451-0.801 0.78-1.187 0.33-0.388 0.753-0.676 1.273-0.867 0.266-0.088 0.615-0.216 1.046-0.39 0.432-0.172 0.913-0.368 1.444-0.588 0.532-0.221 1.094-0.459 1.684-0.713 0.589-0.256 1.175-0.506 1.756-0.76 0.583-0.255 1.134-0.493 1.654-0.722 0.521-0.23 0.977-0.432 1.369-0.608v-2.169c-0.025-0.099-0.066-0.256-0.123-0.464-0.058-0.209-0.117-0.421-0.181-0.637-0.075-0.251-0.165-0.524-0.266-0.816-0.367-0.684-0.659-1.459-0.874-2.327-0.215-0.868-0.324-1.791-0.324-2.766 0-1.281 0.137-2.364 0.409-3.251 0.274-0.888 0.644-1.609 1.114-2.166 0.468-0.558 1.016-0.965 1.644-1.217 0.627-0.255 1.301-0.38 2.023-0.38 0.71 0 1.378 0.12 2.005 0.37 0.628 0.248 1.179 0.646 1.654 1.197 0.476 0.552 0.848 1.272 1.122 2.168 0.274 0.891 0.409 1.987 0.409 3.278 0 0.951-0.105 1.852-0.314 2.708-0.209 0.856-0.498 1.625-0.865 2.311-0.101 0.314-0.197 0.612-0.284 0.89-0.076 0.243-0.147 0.474-0.209 0.692-0.064 0.226-0.095 0.388-0.095 0.488z" fill="#444444" />
+      </svg>
+  </a>
+-->
+
 </header>
 <main role="main" id="main" class="clearfix">
 <script type="text/javascript">
@@ -367,9 +422,10 @@ $(function() {
       <h2 class="visuallyhidden">Studiesteds-illustrasjon</h2>
     </section>
     <section class="lo-full">
-        <p class="ta-center"><small>Kopibeskyttet <a href="http://hiof.no">Høgskolen i Østfold</a></small> -   <small>Siden ble sist oppdatert 16.04.14 av <a href="http://www.hiof.no/nor/hogskolen-i-ostfold/diverse/alle-ansatte?displayitem=8148&module=admin">Kenneth Dahlstrøm</a></small></p>
+        <p class="ta-center"><small>Kopibeskyttet <a href="http://hiof.no">Høgskolen i Østfold</a></small> -   <small>Siden ble sist oppdatert 29.04.14 av <a href="http://www.hiof.no/nor/hogskolen-i-ostfold/diverse/alle-ansatte?displayitem=8148&module=admin">Kenneth Dahlstrøm</a></small></p>
 
     </section>
     </footer>
+
   </body>
 </html>

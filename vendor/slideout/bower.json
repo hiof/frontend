@@ -1,0 +1,31 @@
+{
+  "name": "Slideout-navigation",
+  "version": "0.2.0",
+  "homepage": "https://github.com/okb/Slideout",
+  "authors": [
+    "Kenneth Dahlstrøm <kenneth@keda.no>"
+  ],
+  "description": "Slideout navigation component",
+  "main": [
+    "./components/_component_navigation.less",
+    "./slideout-navigation.less",
+    "./slideout-navigation.js",
+    "./images/icons/icon-list.svg",
+    "./images/icons/icon-user.svg"
+  ],
+  "keywords": [
+    "slideout",
+    "navigation",
+    "css",
+    "mobile",
+    "ui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor",
+    "test",
+    "tests"
+  ]
+}

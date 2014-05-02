@@ -1,0 +1,10 @@
+.remit(@property; @value){
+  // Variable setup
+  @prop: @property;
+  @remValue: (@value / 10);
+  @pxValue: @value;
+
+  // Outlet
+  @{prop}: ~"@{pxValue}px"; 
+  @{prop}: ~"@{remValue}rem";
+}
