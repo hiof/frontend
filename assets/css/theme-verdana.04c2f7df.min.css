@@ -711,9 +711,9 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 #body {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.8em;
-  font-family: 'source-sans-pro';
+  font-family: 'Verdana';
   padding-top: 88px;
   font-style: normal;
   font-weight: 400;
@@ -721,7 +721,7 @@ html {
 h1,
 h2,
 h3 {
-  font-family: 'ff-nuvo-web-pro';
+  font-family: 'Verdana';
 }
 ul {
   list-style: disc;
@@ -870,7 +870,7 @@ i,
 }
 small,
 .caption {
-  font-family: 'source-sans-pro';
+  font-family: 'Verdana';
   font-size: 1.2rem;
 }
 abbr {
@@ -2360,6 +2360,7 @@ a.list-group-item.active > .badge,
   background: rgba(255, 255, 255, 0.6);
 }
 #header {
+  display: none;
   position: fixed;
   top: 0rem;
   left: 0rem;
