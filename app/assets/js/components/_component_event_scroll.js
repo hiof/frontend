@@ -1,4 +1,4 @@
-var fadeInContent = function(distanceToTop) {
+Hiof.FadeInContent = function(distanceToTop) {
     var toTop = distanceToTop;
     $('.fade-in').each(function(i) {
 
@@ -25,42 +25,42 @@ var fadeInContent = function(distanceToTop) {
 //}
 
 
-
 $(function() {
 
-    fadeInContent(0);
+    Hiof.FadeInContent(0);
     $("#header").addClass("light");
 
 
 
     $(window).scroll(function() {
         var distanceToTop = $(window).scrollTop();
+        var windowWidth = $(window).width();
+        //console.log(windowWidth);
 
-        //console.log(distanceToTop);
-        if ($("#study").length) {
-            if (distanceToTop > 30) {
-                $("#header").removeClass("light");
+
+
+
+            if ($("#study").length) {
+                if (distanceToTop > 30) {
+                    $("#header").removeClass("light");
+                } else {
+                    $("#header").addClass("light");
+                }
             } else {
-                $("#header").addClass("light");
+                if (distanceToTop > 410) {
+                    $("#header").removeClass("light");
+                } else {
+                    $("#header").addClass("light");
+                }
             }
-        } else {
-            if (distanceToTop > 410) {
-                $("#header").removeClass("light");
-            } else {
-                $("#header").addClass("light");
+            if ($(".nav-page").length) {
+                if (distanceToTop > 575) {
+                    $(".nav-page").addClass("sticky");
+                } else {
+                    $(".nav-page").removeClass("sticky");
+                }
             }
-
-
-
-        }
-
-        if ($(".nav-page").length) {
-            if (distanceToTop > 575) {
-                $(".nav-page").addClass("sticky");
-            } else {
-                $(".nav-page").removeClass("sticky");
-            }
-        }
+ 
 
 
         //if (distanceToTop > 440) {
@@ -68,9 +68,7 @@ $(function() {
         //} else if (distanceToTop === 0) {
         //  $("#header").removeClass("sticky");
         //}
-
-
-        fadeInContent(distanceToTop);
+        Hiof.FadeInContent(distanceToTop);
 
 
 

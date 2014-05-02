@@ -1,7 +1,8 @@
 
 
-.universal(){
 
+.universal(){
+  @import "../../vendor/bootstrap/less/navs.less";
   // UI helper helper
   #nav-guide{
     background: fade(@black, 0%);
@@ -90,17 +91,76 @@
     z-index:99;
   }
   .csssticky{
-
     //.sticky{
     //  position: sticky;
     //  top: 6.2rem;
-    //}
-    
+    //}  
   }
-  .nav-page{
+  .nav{
     li{
-      list-style: none;
-
+      margin-left: 0;
     }
   }
+  #sidebar{
+    .nav{
+      margin-bottom: 4rem;
+    }
+  }
+  .nav{}
+  #study{
+    .nav{
+      li{
+        a{
+          padding-right: 2.4rem;
+          padding-top: 0;         
+          padding-bottom: 0;   
+          &.arrow-right{
+            &:before,
+            &:after{
+              top: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  //.nav-subpages{
+  //  ul{
+  //      //background: #eee;
+  //      //padding: 2rem 0;
+  //      border: 1px solid #eee;
+  //  }
+  //  li{
+  //    list-style: none;
+  //    a{
+  //      display: block;
+  //      padding:0 2rem;
+  //      border-bottom: 1px solid #eee;
+  //      line-height: 2.4;
+  //    }
+  //  }
+  //}
+  //.nav-page{
+  //  li{
+  //    list-style: none;
+  //  }
+  //}
+}
+.small(){
+  .nav-page{
+    background-color: #fff;
+    top: -100%;
+    transition: top .3s ease;
+  }
+  .nav-page-show{
+    .nav-page{
+      top: 4.4rem;
+    }
+  }
+}
+.medium(){
+
+}
+.large(){
+
 }

@@ -11,11 +11,11 @@ $(function() {
     // Fire code
 
 
+
       // Append toolbar
       Hiof.Toolbar();
       Hiof.Toolbar.SocialShare();
       Hiof.Toolbar.Print();
-
 
 
 
@@ -31,6 +31,12 @@ $(function() {
           });
         }, 10000);
       }
+
+      // Equal height of articles
+      Hiof.EqualHeight($(".article"));
+
+
+    
 
 
       // Start the responsive table plugin
@@ -54,7 +60,6 @@ $(function() {
             }
         });
       }
-
 
       // Check if the page has a filter element for the table
       if($('.filter').length){

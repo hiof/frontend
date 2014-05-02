@@ -5,14 +5,63 @@
 .universal(){
 
   // SVG icons
-  #icon-person{
+  #icon-person, 
+  #icon-universal-access{
     position: absolute;
     top: 0;
     right: .5rem;
-    #item{
+    .item{
       fill: @white;
     }
   }
+  #icon-universal-access{
+    width: 2.6rem;
+    height: 2.6rem;
+    top: .2rem;
+    .item{
+      fill: @hiof-blue;
+    }
+  }
+  #icon-facebook, 
+  #icon-twitter,
+  #icon-print{
+    border-radius: @border-radius-standard;
+  }
+  
+  .icon-calendar,
+  .icon-people,
+  .icon-research,
+  .icon-news{
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    top:1rem;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .icon-calendar{
+    //margin-top: 1rem;
+    //background: #f00;
+    //line-height: 4.8rem;
+    background-image: url("../images/analyse/calendar.svg");
+  }
+
+  .icon-people{
+    background-image: url("../images/analyse/person.svg");
+  }
+
+  .icon-research{
+    background-image: url("../images/analyse/research.svg");
+  }
+
+  .icon-news{
+    background-image: url("../images/analyse/news.svg");
+  }
+
+
+
 
 
   .arrow{
@@ -48,17 +97,29 @@
       border-left: 5px solid @white;
       }
     }
+
     &.btn-link{
       &:before{
 
-      border-left: 5px solid @white;
+      border-left: 5px solid @color-primary-action;
       }
       &:after{
         
-      border-left: 5px solid @color-primary-action;
+      border-left: 5px solid @white;
       }
     }
-
+  }
+  #study{
+    .arrow{
+      &.btn-link{
+        &:before{
+          border-left: 5px solid @white;
+        }
+        &:after{
+          border-left: 5px solid @color-primary-action;
+        }
+      }
+    }
   }
 
 
@@ -92,70 +153,7 @@
 
   }
 
-  .icon-calendar{
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    margin-right: 1rem;
-    //margin-top: 1rem;
-    //background: #f00;
-    //line-height: 4.8rem;
-    top:1rem;
-    background-repeat: no-repeat;
-    background-image: url("../images/analyse/calendar.svg");
-    background-size: 100%;
-  }
 
-
-
-
-  .icon-people{
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    margin-right: 1rem;
-    //margin-top: 1rem;
-    //background: #f00;
-    top:1rem;
-    background-repeat: no-repeat;
-    background-image: url("../images/analyse/person.svg");
-    background-size: 100%;
-  }
-
-  .icon-research{
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    margin-right: 1rem;
-    //margin-top: 1rem;
-    //background: #f00;
-    top:1rem;
-    background-repeat: no-repeat;
-    background-image: url("../images/analyse/research.svg");
-    background-size: 100%;
-  }
-
-
-  .icon-news{
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    margin-right: 1rem;
-    //margin-top: 1rem;
-    //background: #f00;
-    top:1rem;
-    background-repeat: no-repeat;
-    background-image: url("../images/analyse/news.svg");
-    background-size: 100%;
-  }
-
-
-  // SVG icons
-  #icon-facebook, 
-  #icon-twitter,
-  #icon-print{
-    border-radius: @border-radius-standard;
-  }
 
   // Footable icons
   .footable-toggle{

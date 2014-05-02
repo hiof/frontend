@@ -124,7 +124,7 @@ module.exports = function(grunt) {
           'build/index2.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/index2.html',
+            'app/views/pages/index2-3.html',
             'app/views/partials/_footer.html'
           ],
           'build/typography-index.html': [
@@ -258,10 +258,24 @@ module.exports = function(grunt) {
             'app/views/partials/_activate_design_page.html',
             'app/views/partials/_footer.html'
           ],
-          'build/content-section-person-profile.html': [
+          'build/content-section-person-profile-jo.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/content/person-profile.html',
+            'app/views/pages/content/person-profile-jo.html',
+            'app/views/partials/_activate_design_page.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/content-section-person-profile-nina.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/person-profile-nina.html',
+            'app/views/partials/_activate_design_page.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/content-section-person-profile-baard.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/person-profile-baard.html',
             'app/views/partials/_activate_design_page.html',
             'app/views/partials/_footer.html'
           ],
@@ -305,24 +319,38 @@ module.exports = function(grunt) {
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/article/research.html',
+            'app/views/pages/article/article-sidebar.html',
+            'app/views/pages/article/article-footer.html',
             'app/views/partials/_footer.html'
           ],
           'build/article-single.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/article/article-single.html',
+            'app/views/pages/article/article-sidebar.html',
+            'app/views/pages/article/article-footer.html',
             'app/views/partials/_footer.html'
           ],
           'build/article-chronicle.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/article/chronicle.html',
+            'app/views/pages/article/article-sidebar.html',
+            'app/views/pages/article/article-footer.html',
             'app/views/partials/_footer.html'
           ],
           'build/article-list.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/article/article-list.html',
+            'app/views/pages/article/article-sidebar.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/article-archive.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/article/article-archive.html',
+            'app/views/pages/article/article-sidebar.html',
             'app/views/partials/_footer.html'
           ],
           'build/studier-index.html': [
@@ -346,11 +374,10 @@ module.exports = function(grunt) {
         }
       },
       scripts: {
-        src: ['app/assets/js/components/*.js', 'app/assets/js/*.js', 'app/vendor/jquery.scrollTo/jquery.scrollTo.js'],
+        src: ['app/assets/js/components/*.js', 'app/assets/js/*.js', 'app/vendor/jquery.scrollTo/jquery.scrollTo.js', 'app/vendor/bootstrap/js/dropdown.js', 'app/vendor/slideout/slideout-navigation.js'],
         dest: 'tmp/js/application.min.js'
       }
     },
-
     uglify: {
       options: {
         mangle: false
@@ -361,7 +388,6 @@ module.exports = function(grunt) {
         }
       }
     },
-
     versioning: {
       options: {
         cwd: 'build/assets',

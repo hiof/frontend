@@ -1,3 +1,6 @@
+// Import slideout navigation mixin
+@import "../../vendor/slideout/slideout-navigation.less";
+
 .cover() {
   .cover-inline{
     display: none;
@@ -50,7 +53,7 @@
           //transition: background 1s;
           background: rgba(255,255,255,0);
         }
-        #logo-aternative{
+        #logo-alternative{
           //background-color: #fff;
           margin-top:-2rem;
           transition: margin-top 1s;
@@ -74,110 +77,7 @@
   }
 }
 
-.universal(){
-  #body{
-    > #header{
-      //box-shadow: 0 1px 1px rgba(0,0,0,.1);
-    }
-  }
-  #header{
-    display: none;
-    position: fixed;
-    top: 0rem;
-    left: 0rem;
-    width: 100%;
-    z-index: 999;
-    margin-top: 0rem;
-    box-shadow: 0 1px 1px rgba(0,0,0,.1);
-    &:before{
-      width: 300%;
-      height: 100%;
-      content: "";
-      background: rgba(255,255,255,.97);
-      display: block;
-      position: absolute;
-      left: -20%;
-      z-index: -1;
-    }
-    .icon{
-      position: relative;
-      padding-right: 4rem;
-    }
-
-    .inner{
-      width: 104rem;
-      margin: 0 auto;
-      position: relative;
-    }
-    #logo-wrapper{
-      //text-indent: -999em;
-      padding: 0;
-      height: 44px;
-      //position: absolute;
-      //left: 0;
-      z-index: 999;
-   
-    }
-    #logo{
-      width: 100%;
-      .item{
-        fill: #000;
-      }
-    }
-    #logo-aternative{
-      margin-top:0;
-      //width: 200px;
-      height: 100px;
-      position: absolute;
-      left: 42%;
-      z-index: 999;
-      border-radius: .4rem;
-      #text{
-        display: none;
-      }
-    }
-
-    a{
-      //color: #000;
-
-    }
-    
-    ul,h1{
-      float: left;
-      margin: 0;
-    }
-
-  }
-  #header.display{
-    display: block;
-    // This is stuff is related to the analyse 
-    &.inline{
-      position: relative;
-      margin-top: 40rem;
-      margin-bottom: 40rem;
-      &.first-header{
-        margin-top: 20rem;
-      }
-      &.logo-left{
-        #logo-wrapper{
-          position: absolute;
-          left: 0;
-          top: 0;
-        }
-        #nav-main{
-          margin-left: 43rem;
-        }
-      }
-    }
-  }
-
-  html.no-sticky-header, html.no-sticky{
-    #header{
-      position: absolute !important;
-    }
-  }
-
-
+.nav-horizontal(){
   #nav{
     ul{
       ul{
@@ -218,14 +118,178 @@
           }
         }
       }
-
-
     }
   }
 
+
+  #universal-access{
+    color: @color-primary-action;
+    #icon-universal-access{
+
+    }
+    .item{
+      fill: @color-primary-action;
+    }
+  }
+
+  .light{
+  #universal-access{
+    color: @white;
+    #icon-universal-access{
+
+    }
+    .item{
+      fill: @white;
+    }
+  }
+  }
+  .mobile-pages{display: none;}
+  #global-search{display:none;}
+}
+.nav-vertical(){
+  .slideout-navigation();
+  #nav{
+    ul{
+      ul{
+        display: none;
+      }
+    }
+    //position: absolute;
+    //left: -100%;
+  }
+  #header{
+    transition: left .3s ease;
+  }
+  #nav-pages{
+    //top: 0rem;
+    padding-top: .2rem;
+    z-index: -1;
+    // Override .btn styling
+    box-shadow: 1px 0 1px rgba(0,0,0,.1);
+    .btn-primary{
+      background: none;
+      color: @hiof-blue;
+      border: none;
+      text-align: left;
+      display: block;
+      padding: 0;
+      padding-left: 1rem;
+      line-height: 4.4rem;
+      border-radius: 0;
+      &:hover{
+        background-color: #eee;
+      }
+    }
+  }
+
+  .mobile-pages,
+  .mobile-user{
+    top: 0rem;
+  }
+
+  .push-right {
+    #header{
+      left: 240px;
+    }
+  }
+
+  #logo-wrapper{
+    //margin-left: 40px !important;
+  }
+  #global-search{display:none;}
+}
+
+
+
+.nav-search(){
+
   #global-search{
     width: 200px;
+    height: 32px;
   }
+}
+
+
+.universal(){
+  #body{
+    > #header{
+      //box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    }
+  }
+  #header{
+    display: none;
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    width: 100%;
+    z-index: 999;
+    margin-top: 0rem;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    &:before{
+      width: 300%;
+      height: 100%;
+      content: "";
+      background: rgba(255,255,255,.97);
+      display: block;
+      position: absolute;
+      left: -20%;
+      z-index: -1;
+    }
+    .icon{
+      position: relative;
+      padding-right: 4rem;
+    }
+
+    .inner{
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+    #logo-wrapper{
+      //text-indent: -999em;
+      padding: 0;
+      height: 44px;
+      //position: absolute;
+      //left: 0;
+      z-index: 999;
+   
+    }
+    #logo{
+      width: 100%;
+      .item{
+        fill: #000;
+      }
+    }
+
+
+    
+    ul,h1{
+      float: left;
+      margin: 0;
+    }
+
+  }
+      #logo-alternative{
+      margin-top:-.4rem;
+      width: 180px;
+      margin-left: -90px;
+      height: 100px;
+      position: absolute;
+      left: 50%;
+      z-index: 999;
+      border-radius: .4rem;
+      #text{
+        display: none;
+      }
+    }
+    .light{
+      #logo-alternative{
+        margin-top:-14px;
+      }
+    }
+
+
+
 
 
   .cover();
@@ -238,6 +302,7 @@
 
 
 .small(){
+  .nav-vertical();
   #header{
     height: 3rem;
     height: 4.4rem;
@@ -261,11 +326,30 @@
     .nav{
       display: none;
     }
+    .icon{
+      text-indent: -999em;
+      width: 4rem;
+      line-height: 3rem;
+      padding: 0;
+    }
   }
-
+    #logo-alternative{
+      margin-top:-14px;
+      width: 121px;
+      margin-left: -60px;
+      height: 100px;
+      position: absolute;
+      left: 50%;
+      z-index: 999;
+      border-radius: .4rem;
+      #text{
+        display: none;
+      }
+    }
 }
 
 .medium(){
+  .nav-horizontal();
   #header{
     height: 4.4rem;
     #logo{
@@ -298,25 +382,9 @@
 
 
 .large(){
+  .nav-horizontal();
   #header{
     height: 6rem;
-    #logo{
-      position: relative;
-      height: 4.4rem;
-      margin-top: .8rem;
-      #circle{
-        position: absolute;
-        top: 0;
-        left: 4rem;
-      }
-      #text{
-
-   
-        position: absolute;
-        top: 3rem;
-        left: 0rem;
-      }
-    }
     li{
 
       line-height: 6rem;
@@ -326,6 +394,15 @@
     button{
       margin-top: 1.2rem;
     }
+    .inner{
+      width: 104rem;
+    }
   }
 
+}
+.print(){
+  #nav-pages,
+  #nav-internal{
+    display: none;
+  }
 }
