@@ -8,7 +8,8 @@ $(function() {
     // ----------------------------------------------------------------------------------------------------
     // Variables
     var distanceToTop = $(window).scrollTop(),
-        distanceToTopBreakPoint;
+        distanceToTopBreakPoint,
+        viewportWidth = $(window).width();
 
 
 
@@ -53,7 +54,7 @@ $(function() {
       }
 
       if (distanceToTop > 1) {
-          Hiof.HeaderToggle(distanceToTop, distanceToTopBreakPoint);
+          Hiof.HeaderToggle(distanceToTop, distanceToTopBreakPoint, viewportWidth);
       } else {
           $("#header").addClass("light");
       }
@@ -75,7 +76,7 @@ $(function() {
         var url = $(this).attr("href");
         // If the link is internal, prevent default behaviour 
         if (url.indexOf("#") != -1) {
-            console.log("Url has a Hash");
+            //console.log("Url has a Hash");
             e.preventDefault();
             $.scrollTo($(url), 500, {
                 axis: 'y',
@@ -89,12 +90,22 @@ $(function() {
     });
 
 
+    // When window resize, fire the following code
+     $(window).resize(function() {
+        viewportWidth = $(window).width();
+        if(viewportWidth < 770){
+          Hiof.HeaderToggle(distanceToTop, distanceToTopBreakPoint, viewportWidth);
+        }
+     });
+
+
+
 
     $(window).scroll(function() {
-        var distanceToTop = $(window).scrollTop(),
-            windowWidth = $(window).width();
+        var distanceToTop = $(window).scrollTop();
+            //windowWidth = $(window).width();
 
-        Hiof.HeaderToggle(distanceToTop, distanceToTopBreakPoint);
+        Hiof.HeaderToggle(distanceToTop, distanceToTopBreakPoint, viewportWidth);
 
         Hiof.NavigationPageSection(distanceToTop);
         Hiof.FadeInContent(distanceToTop);
