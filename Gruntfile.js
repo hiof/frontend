@@ -425,6 +425,43 @@ module.exports = function(grunt) {
             ext: '.min.css'
           }
         ]
+      },
+      dist: {
+        options: {
+          output: 'php',
+          namespace: 'hiof'
+        },
+        files: [{
+            assets: [{
+              src: ['tmp/js/application.min.js'],
+              dest: 'tmp/js/application.min.js'
+            }],
+            key: 'assets',
+            dest: 'js',
+            type: 'js',
+            ext: '.min.js'
+          },
+
+          {
+            assets: [{
+              src: 'tmp/css/theme-standard.min.css',
+              dest: 'tmp/css/theme-standard.css'
+            }, {
+              src: 'tmp/css/theme-helvetica.min.css',
+              dest: 'tmp/css/theme-helvetica.css'
+            }, {
+              src: 'tmp/css/theme-verdana.min.css',
+              dest: 'tmp/css/theme-verdana.css'
+            }, {
+              src: 'tmp/css/theme-source-pro.min.css',
+              dest: 'tmp/css/theme-source-pro.css'
+            }],
+            key: 'assets',
+            dest: 'css',
+            type: 'css',
+            ext: '.min.css'
+          }
+        ]
       }
 
     },
@@ -457,14 +494,14 @@ module.exports = function(grunt) {
     watch: {
       js: {
         files: ['app/assets/js/**/*.js', 'app/assets/js/**/*.json'],
-        tasks: ['jshint', 'concat:scripts', 'versioning', 'copy:jsdata'],
+        tasks: ['jshint', 'concat:scripts', 'versioning:prod', 'copy:jsdata'],
         options: {
           livereload: true,
         },
       },
       css: {
         files: ['app/assets/less/**/*.less'],
-        tasks: ['less', 'autoprefixer', 'cssmin', 'versioning'],
+        tasks: ['less', 'autoprefixer', 'cssmin', 'versioning:prod'],
         options: {
           livereload: true,
         },
@@ -505,12 +542,12 @@ module.exports = function(grunt) {
   grunt.registerTask('subtaskViews', ['concat:pages']);
 
 
-  grunt.registerTask('prod', ['clean:before', 'subtaskCss', 'subtaskJs', 'versioning', 'subtaskCopy', 'subtaskViews']);
-  grunt.registerTask('dist', ['prod','clean:dist', 'copy:dist']);
+  grunt.registerTask('build', ['clean:before', 'subtaskCss', 'subtaskJs', 'versioning:prod', 'subtaskCopy', 'subtaskViews']);
+  grunt.registerTask('dist', ['clean:before', 'subtaskCss', 'subtaskJs', 'versioning:dist', 'subtaskCopy', 'subtaskViews', 'clean:dist', 'copy:dist']);
 
 
   grunt.registerTask('server', [
-    'prod',
+    'build',
     'express',
     'open',
     'watch'
