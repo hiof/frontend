@@ -247,6 +247,24 @@ module.exports = function(grunt) {
             'app/views/pages/content/study-programs-sidebar-page-nav.html',
             'app/views/pages/content/study-programs-sidebar-end.html',
             'app/views/partials/_footer.html'
+          ],
+          'build/universiell-utforming.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/universal-access.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/student.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/intranet-student.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/ansatt.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/intranet-employee.html',
+            'app/views/partials/_footer.html'
           ]
         }
       },
