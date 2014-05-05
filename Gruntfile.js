@@ -45,23 +45,6 @@ module.exports = function(grunt) {
           src: ['*.css', '!*.min.css'],
           dest: 'tmp/css/',
           ext: '.min.css'
-
-        //standard: [{
-        //  src: ['tmp/css/theme-standard.css', '!{print,var,mix}*.css'],
-        //  dest: 'tmp/theme-standard-prefixed.css'
-        //}],
-        //helvetica: [{
-        //  src: ['tmp/css/theme-helvetica.css', '!{print,var,mix}*.css'],
-        //  dest: 'tmp/theme-helvetica-prefixed.css'
-        //}],
-        //verdana: [{
-        //  src: ['tmp/css/theme-verdana.css', '!{print,var,mix}*.css'],
-        //  dest: 'tmp/theme-verdana-prefixed.css'
-        //}],
-        //source: [{
-        //  src: ['tmp/css/theme-source-pro.css', '!{print,var,mix}*.css'],
-        //  dest: 'tmp/theme-source-pro-prefixed.css'
-        //}]
       }
     },
     copy: {
@@ -124,131 +107,25 @@ module.exports = function(grunt) {
           'build/index2.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/index2-3.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/typography-index.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/typography/index.html',
+            'app/views/pages/index2.html',
             'app/views/partials/_footer.html'
           ],
           'build/typography-kitchen-sink.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/typography/kitchen-sink.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/typography-4.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/typography/typography-exploration-helvetica.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/typography-1.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/typography/typography-exploration-varela.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/typography-2.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/typography/typography-exploration-source-pro.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/typography-3.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/typography/typography-exploration-verdana.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/page-dataingenioer.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/media/media.html',
+            'app/views/pages/content/typography-kitchen-sink.html',
             'app/views/partials/_footer.html'
           ],
           'build/form-index.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/form-control/index.html',
+            'app/views/pages/content/form-control-index.html',
             'app/views/partials/_footer.html'
           ],
           'build/form-buttons.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/form-control/buttons.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/analyse-start.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/analyse/step0.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/step-9.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/analyse/step9.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/step-10.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/analyse/step10.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/part2-step-1.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/analyse/part2-step1.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/part3-step-1.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/analyse/part3-step1.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/part4-step-1.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/media/media.html',
-            'app/views/pages/analyse/part4-step1.html',
-            'app/views/partials/_activate_design_study.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/part4-step-2.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/media/media.html',
-            'app/views/pages/analyse/part4-step2.html',
-            'app/views/partials/_activate_design_study.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/part4-step-3.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/media/media.html',
-            'app/views/pages/analyse/part4-step3.html',
-            'app/views/partials/_activate_design_study.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/part5-step-1.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/index2.html',
-            'app/views/pages/analyse/part5-step1.html',
-            'app/views/partials/_activate_design_index.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/part5-step-2.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/index2-3.html',
-            'app/views/pages/analyse/part5-step2.html',
-            'app/views/partials/_activate_design_index.html',
+            'app/views/pages/content/form-control-buttons.html',
             'app/views/partials/_footer.html'
           ],
           'build/content-section-person-search.html': [
@@ -282,13 +159,13 @@ module.exports = function(grunt) {
           'build/content-section-calendar.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/calendar/entries.html',
+            'app/views/pages/content/calendar-entries.html',
             'app/views/partials/_footer.html'
           ],
           'build/content-section-calendar-event.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/calendar/event.html',
+            'app/views/pages/content/calendar-event.html',
             'app/views/partials/_footer.html'
           ],
           'build/content-contact-web-responsible.html': [
@@ -312,45 +189,45 @@ module.exports = function(grunt) {
           'build/content-table.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/table/table.html',
+            'app/views/pages/content/table.html',
             'app/views/partials/_footer.html'
           ],
           'build/article-research.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/article/research.html',
-            'app/views/pages/article/article-sidebar.html',
-            'app/views/pages/article/article-footer.html',
+            'app/views/pages/articles/research.html',
+            'app/views/pages/articles/article-sidebar.html',
+            'app/views/pages/articles/article-footer.html',
             'app/views/partials/_footer.html'
           ],
           'build/article-single.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/article/article-single.html',
-            'app/views/pages/article/article-sidebar.html',
-            'app/views/pages/article/article-footer.html',
+            'app/views/pages/articles/article-single.html',
+            'app/views/pages/articles/article-sidebar.html',
+            'app/views/pages/articles/article-footer.html',
             'app/views/partials/_footer.html'
           ],
           'build/article-chronicle.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/article/chronicle.html',
-            'app/views/pages/article/article-sidebar.html',
-            'app/views/pages/article/article-footer.html',
+            'app/views/pages/articles/chronicle.html',
+            'app/views/pages/articles/article-sidebar.html',
+            'app/views/pages/articles/article-footer.html',
             'app/views/partials/_footer.html'
           ],
           'build/article-list.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/article/article-list.html',
-            'app/views/pages/article/article-sidebar.html',
+            'app/views/pages/articles/article-list.html',
+            'app/views/pages/articles/article-sidebar.html',
             'app/views/partials/_footer.html'
           ],
           'build/article-archive.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/article/article-archive.html',
-            'app/views/pages/article/article-sidebar.html',
+            'app/views/pages/articles/article-archive.html',
+            'app/views/pages/articles/article-sidebar.html',
             'app/views/partials/_footer.html'
           ],
           'build/studier-index.html': [
@@ -391,7 +268,8 @@ module.exports = function(grunt) {
     versioning: {
       options: {
         cwd: 'build/assets',
-        outputConfigDir: 'build/config'
+        outputConfigDir: 'build/config',
+          namespace: 'hiof'
       },
       prod: {
         files: [{
@@ -399,7 +277,7 @@ module.exports = function(grunt) {
               src: ['tmp/js/application.min.js'],
               dest: 'tmp/js/application.min.js'
             }],
-            key: 'global',
+            key: 'assets',
             dest: 'js',
             type: 'js',
             ext: '.min.js'
@@ -409,17 +287,18 @@ module.exports = function(grunt) {
             assets: [{
               src: 'tmp/css/theme-standard.min.css',
               dest: 'tmp/css/theme-standard.css'
-            }, {
-              src: 'tmp/css/theme-helvetica.min.css',
-              dest: 'tmp/css/theme-helvetica.css'
-            }, {
-              src: 'tmp/css/theme-verdana.min.css',
-              dest: 'tmp/css/theme-verdana.css'
-            }, {
-              src: 'tmp/css/theme-source-pro.min.css',
-              dest: 'tmp/css/theme-source-pro.css'
-            }],
-            key: 'global',
+            }], 
+            //
+            // src: 'tmp/css/theme-helvetica.min.css',
+            // dest: 'tmp/css/theme-helvetica.css'
+            //, {
+            // src: 'tmp/css/theme-verdana.min.css',
+            // dest: 'tmp/css/theme-verdana.css'
+            //, {
+            // src: 'tmp/css/theme-source-pro.min.css',
+            // dest: 'tmp/css/theme-source-pro.css'
+            //],
+            key: 'assets',
             dest: 'css',
             type: 'css',
             ext: '.min.css'
@@ -428,8 +307,7 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
-          output: 'php',
-          namespace: 'hiof'
+          output: 'php'
         },
         files: [{
             assets: [{
@@ -446,16 +324,17 @@ module.exports = function(grunt) {
             assets: [{
               src: 'tmp/css/theme-standard.min.css',
               dest: 'tmp/css/theme-standard.css'
-            }, {
-              src: 'tmp/css/theme-helvetica.min.css',
-              dest: 'tmp/css/theme-helvetica.css'
-            }, {
-              src: 'tmp/css/theme-verdana.min.css',
-              dest: 'tmp/css/theme-verdana.css'
-            }, {
-              src: 'tmp/css/theme-source-pro.min.css',
-              dest: 'tmp/css/theme-source-pro.css'
-            }],
+            }], 
+            //{
+            //  src: 'tmp/css/theme-helvetica.min.css',
+            //  dest: 'tmp/css/theme-helvetica.css'
+            //}, {
+            //  src: 'tmp/css/theme-verdana.min.css',
+            //  dest: 'tmp/css/theme-verdana.css'
+            //}, {
+            //  src: 'tmp/css/theme-source-pro.min.css',
+            //  dest: 'tmp/css/theme-source-pro.css'
+            //}],
             key: 'assets',
             dest: 'css',
             type: 'css',
@@ -471,7 +350,7 @@ module.exports = function(grunt) {
         options: {
           port: 9000,
           hostname: "0.0.0.0",
-          bases: './build',
+          bases: 'build',
           // Replace with the directory you want the files served from
           // Make sure you don't use `.` or `..` in the path as Express
           // is likely to return 403 Forbidden responses if you do
@@ -535,7 +414,6 @@ module.exports = function(grunt) {
 
 
   // Register tasks
-  //grunt.registerTask('dev', ['watch']);
   grunt.registerTask('subtaskJs', ['jshint', 'concat:scripts', 'uglify', 'copy:jsdata']);
   grunt.registerTask('subtaskCss', ['less', 'autoprefixer', 'cssmin']);
   grunt.registerTask('subtaskCopy', ['copy:images', 'copy:fonts', 'copy:vendor']);
@@ -544,7 +422,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', ['clean:before', 'subtaskCss', 'subtaskJs', 'versioning:prod', 'subtaskCopy', 'subtaskViews']);
   grunt.registerTask('dist', ['clean:before', 'subtaskCss', 'subtaskJs', 'versioning:dist', 'subtaskCopy', 'subtaskViews', 'clean:dist', 'copy:dist']);
-
 
   grunt.registerTask('server', [
     'build',
