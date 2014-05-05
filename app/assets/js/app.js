@@ -5,6 +5,11 @@ var Hiof = Hiof || {};
 
 
 $(function() {
+    // ----------------------------------------------------------------------------------------------------
+    // Variables
+    var distanceToTop = $(window).scrollTop(),
+        distanceToTopBreakPoint;
+
 
 
     // ----------------------------------------------------------------------------------------------------
@@ -19,9 +24,11 @@ $(function() {
 
 
 
-      // Add Quotes
+      // Check if the page should use quotes
       if($('.cover.page.quote').length){
+        // Add Quotes
         Hiof.Quotes();
+        // Refresh Quotes
         window.setInterval(function(){
           $(".cover-quote").fadeOut(500, function() { 
             var quoteId = $(this).data("id");
@@ -35,8 +42,67 @@ $(function() {
       // Equal height of articles
       Hiof.EqualHeight($(".article"));
 
+      // Fade in all visible content
+      Hiof.FadeInContent(0);
 
-    
+      // Toggle #Header if the page is scrolled to a sertain point
+      if ($("#index").length) {
+          distanceToTopBreakPoint = 30;
+      } else {
+          distanceToTopBreakPoint = 410;
+      }
+
+      if (distanceToTop > 1) {
+          Hiof.HeaderToggle(distanceToTop, distanceToTopBreakPoint);
+      } else {
+          $("#header").addClass("light");
+      }
+
+
+
+    // ----------------------------------------------------------------------------------------------------
+    // Events
+
+
+    $(document).on("click touchstart", ".mobile-pages", function(e) {
+        e.preventDefault();
+        toggleLeftNavigation();
+    });
+
+
+    // Page navigation
+    $(".nav-page a").on("click", function(e) {
+        var url = $(this).attr("href");
+        // If the link is internal, prevent default behaviour 
+        if (url.indexOf("#") != -1) {
+            console.log("Url has a Hash");
+            e.preventDefault();
+            $.scrollTo($(url), 500, {
+                axis: 'y',
+                offset: {
+                    top: -62
+                }
+            });
+        } else {
+            //console.log("URL does not contain a hash");
+        }
+    });
+
+
+
+    $(window).scroll(function() {
+        var distanceToTop = $(window).scrollTop(),
+            windowWidth = $(window).width();
+
+        Hiof.HeaderToggle(distanceToTop, distanceToTopBreakPoint);
+
+        Hiof.NavigationPageSection(distanceToTop);
+        Hiof.FadeInContent(distanceToTop);
+    });
+
+
+
+
 
 
       // Start the responsive table plugin
@@ -76,6 +142,13 @@ $(function() {
           $("#search-advanced").toggle();
         });       
       }
+
+
+
+
+
+
+
 });
 
 // Verktøy
