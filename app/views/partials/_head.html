@@ -34,7 +34,7 @@
     if (customFont === false) {
       //console.log("Custom font is false, adding standard stylesheet");
       $.getJSON("config/assets.config.json", function(data) {
-        var assets = data.staticAssets.global,
+        var assets = data.hiof.assets,
           prefix = "assets",
           cssPath = prefix + assets.css[0],
           jsPath = prefix + assets.js[0];
