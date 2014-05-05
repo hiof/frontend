@@ -1,4 +1,27 @@
+.lo-cover(){
+  // Study
+  html.cover{
+    #body{
+      background: #fff;
+      margin-top: 55rem;
+      float: left;
+    }
+    #content{
+      margin-top: -15rem;
+      border-radius: .4rem;
+      padding-top: 10px;
+    }
+    #sidebar{
 
+    } 
+  }
+  #main{
+    header{
+      clear: both;
+    }
+  }
+
+}
 
 
 .universal(){
@@ -74,27 +97,6 @@
     float: right;
   }
 
-  // Study
-  html.cover{
-    #body{
-      background: #fff;
-      margin-top: 55rem;
-      float: left;
-    }
-    #content{
-      margin-top: -15rem;
-      border-radius: .4rem;
-      padding-top: 10px;
-    }
-    #sidebar{
-
-    } 
-  }
-  #main{
-    header{
-      clear: both;
-    }
-  }
 
 
   .lo-full,
@@ -137,7 +139,7 @@
 }
 
 .medium(){
-
+  .lo-cover();
   .lo-full{
     width: 100%;
   }
@@ -156,18 +158,8 @@
 
 
 .large(){
+  .lo-cover();
 
-  // more whitespace on large screens
-  //#content{
-  //  padding: 0;
-  //  padding-left: 0;
-  //  padding-right: 4rem;
-  //}
-  //#sidebar{
-  //  padding: 0;
-  //  padding-left: 4rem;
-  //  padding-right: 0;
-  //}
 
 
   .lo-full{
