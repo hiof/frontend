@@ -20,7 +20,5 @@ Hiof.Toolbar.SocialShare = function() {
         //$("#social-twitter").append(svgTwitter);
     } else {
 
-
-
     }
 };
