@@ -186,7 +186,14 @@
   .mobile-user{
     top: 0rem;
   }
-
+  .mobile-pages{
+    width: 8rem;
+    svg{
+      float: left;
+      margin-top: .8rem;
+      margin-left: .8rem;
+    }
+  }
   .push-right {
     #header{
       left: 240px;
@@ -217,7 +224,7 @@
     }
   }
   #header{
-    display: none;
+    //display: none;
     position: fixed;
     top: 0rem;
     left: 0rem;
@@ -295,14 +302,19 @@
   .cover();
 
 
-
-
+  // Custom breakpoint for the navigation fold
+  @media screen and (max-width: 769px){
+    .nav-vertical();
+  }  
+  @media screen and (min-width: 770px){
+    .nav-horizontal()
+  }
 }
 
 
 
 .small(){
-  .nav-vertical();
+  //.nav-vertical();
   #header{
     height: 3rem;
     height: 4.4rem;
@@ -349,7 +361,7 @@
 }
 
 .medium(){
-  .nav-horizontal();
+  //.nav-horizontal();
   #header{
     height: 4.4rem;
     #logo{
@@ -382,7 +394,7 @@
 
 
 .large(){
-  .nav-horizontal();
+  //.nav-horizontal();
   #header{
     height: 6rem;
     li{
@@ -395,7 +407,7 @@
       margin-top: 1.2rem;
     }
     .inner{
-      width: 104rem;
+      max-width: 104rem;
     }
   }
 
