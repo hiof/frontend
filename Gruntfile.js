@@ -82,6 +82,13 @@ module.exports = function(grunt) {
         src: '**',
         dest: 'build/assets/js/data/',
         filter: 'isFile'
+      },
+      favicon: {
+        expand: true,
+        cwd: 'app/assets/images/app-icons',
+        src: 'favicon.ico',
+        dest: 'build/',
+        filter: 'isFile'
       }
     },
 
@@ -89,7 +96,7 @@ module.exports = function(grunt) {
       before: ['build/assets', 'build/css', 'build/js', 'build/config'],
       after: ['tmp/**/*'],
       dist: ['dist/**/*'],
-      build: ['build/assets', 'build/config', 'build/*.html']
+      build: ['build/**/*']
     },
     jshint: {
       files: ['app/assets/js/**/*.js']
@@ -416,8 +423,19 @@ module.exports = function(grunt) {
         options: {
           livereload: true,
         },
-
       },
+
+      favicon:{
+        files: ['app/assets/images/**/*.ico'],
+        tasks: ['copy:favicon'],
+        options: {
+          livereload: true,
+        },
+      },
+ 
+
+
+
       fonts:{
         files: ['app/assets/fonts/**/*'],
         tasks: ['copy:fonts'],
@@ -434,12 +452,12 @@ module.exports = function(grunt) {
   // Register tasks
   grunt.registerTask('subtaskJs', ['jshint', 'concat:scripts', 'uglify', 'copy:jsdata']);
   grunt.registerTask('subtaskCss', ['less', 'autoprefixer', 'cssmin']);
-  grunt.registerTask('subtaskCopy', ['copy:images', 'copy:fonts', 'copy:vendor']);
+  grunt.registerTask('subtaskCopy', ['copy:images', 'copy:fonts', 'copy:vendor', 'copy:favicon']);
   grunt.registerTask('subtaskViews', ['concat:pages']);
 
 
-  grunt.registerTask('build', ['clean:before', 'subtaskCss', 'subtaskJs', 'versioning:prod', 'subtaskCopy', 'subtaskViews']);
-  grunt.registerTask('dist', ['clean:before', 'subtaskCss', 'subtaskJs', 'versioning:dist', 'subtaskCopy', 'subtaskViews', 'clean:dist', 'copy:dist']);
+  grunt.registerTask('build', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:prod', 'subtaskCopy', 'subtaskViews']);
+  grunt.registerTask('dist', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:dist', 'subtaskCopy', 'subtaskViews', 'clean:dist', 'copy:dist']);
 
   grunt.registerTask('server', [
     'build',
