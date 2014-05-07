@@ -9,16 +9,20 @@ var Hiof = Hiof || {};
 
 
 Hiof.HeaderToggle = function(distanceToTop, distanceToTopBreakPoint, viewportWidth) {
-  if(viewportWidth < 770){
-      //console.log("mobile navigation is activated");
-      $("#header").removeClass("light");
-  }else{
-    if (distanceToTop > distanceToTopBreakPoint) {
-        $("#header").removeClass("light");
-    } else {
-        $("#header").addClass("light");
+    if ($("html.cover").length) {
+        if (viewportWidth < 770) {
+            //console.log("mobile navigation is activated");
+            $("#header").removeClass("light");
+        } else {
+            if (distanceToTop > distanceToTopBreakPoint) {
+                $("#header").removeClass("light");
+            } else {
+                $("#header").addClass("light");
+            }
+        }
     }
-  }
+
+
 };
 Hiof.NavigationPageSection = function(distanceToTop) {
     if ($(".nav-page").length) {
@@ -30,3 +34,6 @@ Hiof.NavigationPageSection = function(distanceToTop) {
     }
 };
 
+Hiof.ToggleUserNavigation = function (){
+  $("#nav-internal").toggleClass("show");
+};
