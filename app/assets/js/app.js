@@ -42,7 +42,7 @@ $(function() {
 
       // Equal height of articles
       Hiof.EqualHeight($(".article"));
-
+      Hiof.EqualHeightContentAndSidebar();
       // Fade in all visible content
       Hiof.FadeInContent(0);
 
@@ -53,10 +53,10 @@ $(function() {
           distanceToTopBreakPoint = 410;
       }
 
-      if (distanceToTop > 1) {
+      if (distanceToTop > 0) {
           Hiof.HeaderToggle(distanceToTop, distanceToTopBreakPoint, viewportWidth);
       } else {
-          $("#header").addClass("light");
+          //$("#header").addClass("light");
       }
 
 
@@ -68,6 +68,18 @@ $(function() {
     $(document).on("click touchstart", ".mobile-pages", function(e) {
         e.preventDefault();
         toggleLeftNavigation();
+    });    
+    $(document).on("click touchstart", ".mobile-user", function(e) {
+        e.preventDefault();
+        Hiof.ToggleUserNavigation();
+    });
+
+    // Redirect the user to the brand site when they right-clicl on the logo
+    $("#logo-hiof").bind("contextmenu", function(e) {
+      e.preventDefault();
+      if (e.which === 3) {
+        window.location.href = "http://hiof.no/designmal";
+      }
     });
 
 
@@ -78,6 +90,8 @@ $(function() {
         if (url.indexOf("#") != -1) {
             //console.log("Url has a Hash");
             e.preventDefault();
+            $(".nav-page .active").removeClass("active");
+            $(this).parent().addClass("active");
             $.scrollTo($(url), 500, {
                 axis: 'y',
                 offset: {

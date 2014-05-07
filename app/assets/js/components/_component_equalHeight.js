@@ -13,3 +13,9 @@ Hiof.EqualHeight = function(group) {
     group.height(tallest);
 
 };
+
+
+Hiof.EqualHeightContentAndSidebar = function(){
+  var highestCol = Math.max($('#content').height(),$('#sidebar').height());
+  $('#content, #sidebar').height(highestCol);
+};
