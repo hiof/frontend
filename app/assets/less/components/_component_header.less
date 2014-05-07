@@ -48,6 +48,9 @@
       &.light{
         margin-top: 2rem;
         transition: margin-top 1s;
+        //#nav{
+        //  border-bottom: none;
+        //}
         box-shadow: 0 1px 1px rgba(0,0,0,0);
         &:before{
           //transition: background 1s;
@@ -143,8 +146,19 @@
     }
   }
   }
-  .mobile-pages{display: none;}
-  #global-search{display:none;}
+  .mobile-pages,
+  .mobile-user{
+    display: none;
+  }
+  #global-search{
+    display:none;
+  }
+  #nav-pages{
+    padding-left: 2rem;
+  }
+  #nav-internal{
+    margin-right: 2rem;
+  }
 }
 .nav-vertical(){
   .slideout-navigation();
@@ -181,18 +195,53 @@
       }
     }
   }
+  #nav-internal{
+    //li{
+    //  display: inline-block;
+    //  list-style: none;
+    //}
+    //margin: 0 4rem;
+    padding: 2rem;
+    width: 100%;
+    background: @white;
+    position: absolute;
+    top: -14rem;
+    transition: top .5s ease;
+    z-index: -9;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    li{
+      list-style: none;
+      margin-bottom: .5rem;
+      a{
+        display: block;
+        text-align: left;
+      }
+    }
+    &.show{
+      top: 4.2rem;
 
+    }
+  }
   .mobile-pages,
   .mobile-user{
     top: 0rem;
   }
   .mobile-pages{
-    width: 8rem;
     svg{
       float: left;
       margin-top: .8rem;
       margin-left: .8rem;
+      .item{
+
+        //fill: #f00;
+
+      }
+
     }
+  }
+
+  .mobile-pages{
+    width: 8rem;
   }
   .push-right {
     #header{
@@ -204,6 +253,12 @@
     //margin-left: 40px !important;
   }
   #global-search{display:none;}
+
+
+
+
+
+
 }
 
 
@@ -232,6 +287,14 @@
     z-index: 999;
     margin-top: 0rem;
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    //#nav{
+    //  //box-shadow: 0 2px 1px rgba(0,0,0,.1);
+    //  border-bottom: .1rem solid #eee;
+    //  //&:before,
+    //  //&:after{
+    //  //  content: "";
+    //  //}
+    //}
     &:before{
       width: 300%;
       height: 100%;
@@ -271,35 +334,35 @@
 
     
     ul,h1{
-      float: left;
+      //float: left;
       margin: 0;
     }
 
   }
-      #logo-alternative{
-      margin-top:-.4rem;
-      width: 180px;
-      margin-left: -90px;
-      height: 100px;
-      position: absolute;
-      left: 50%;
-      z-index: 999;
-      border-radius: .4rem;
-      #text{
-        display: none;
-      }
+  #logo-alternative{
+    margin-top:-.4rem;
+    width: 180px;
+    margin-left: -90px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    z-index: 999;
+    border-radius: .4rem;
+    #text{
+      display: none;
     }
-    .light{
-      #logo-alternative{
-        margin-top:-14px;
-      }
+  }
+  .light{
+    #logo-alternative{
+      margin-top:-14px;
     }
+  }
 
 
 
 
 
-  .cover();
+
 
 
   // Custom breakpoint for the navigation fold
@@ -318,17 +381,17 @@
   #header{
     height: 3rem;
     height: 4.4rem;
-    #logo{
-      height: 3rem;
-      margin-top: .5rem;
-      margin-left: 23%;
-      #circle{
-        padding-left: 4rem;
-      }
-      #text{
-        display: none;
-      }
-    }
+    //#logo{
+    //  height: 3rem;
+    //  margin-top: .5rem;
+    //  margin-left: 23%;
+    //  #circle{
+    //    padding-left: 4rem;
+    //  }
+    //  #text{
+    //    display: none;
+    //  }
+    //}
 
     li{
 
@@ -339,10 +402,10 @@
       display: none;
     }
     .icon{
-      text-indent: -999em;
-      width: 4rem;
-      line-height: 3rem;
-      padding: 0;
+      //text-indent: -999em;
+      //width: 4rem;
+      //line-height: 3rem;
+      //padding: 0;
     }
   }
     #logo-alternative{
@@ -354,6 +417,7 @@
       left: 50%;
       z-index: 999;
       border-radius: .4rem;
+      top: -.5rem;
       #text{
         display: none;
       }
@@ -362,21 +426,22 @@
 
 .medium(){
   //.nav-horizontal();
+  .cover();
   #header{
     height: 4.4rem;
-    #logo{
-      height: 10rem;
-      #circle{
-        position: absolute;
-        top: 0;
-        left: 4rem;
-      }
-      #text{
-        position: absolute;
-        top: 3rem;
-        left: 0rem;
-      }
-    }
+    //#logo{
+    //  height: 10rem;
+    //  #circle{
+    //    position: absolute;
+    //    top: 0;
+    //    left: 4rem;
+    //  }
+    //  #text{
+    //    position: absolute;
+    //    top: 3rem;
+    //    left: 0rem;
+    //  }
+    //}
 
     li{
 
@@ -389,12 +454,26 @@
       margin-top: .8rem;
     }
   }
-
+    #logo-alternative{
+      margin-top:-14px;
+      width: 121px;
+      margin-left: -60px;
+      height: 100px;
+      position: absolute;
+      left: 50%;
+      z-index: 999;
+      border-radius: .4rem;
+      top: -.5rem;
+      #text{
+        display: none;
+      }
+    }
 }
 
 
 .large(){
   //.nav-horizontal();
+  .cover();
   #header{
     height: 6rem;
     li{
