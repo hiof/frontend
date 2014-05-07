@@ -42,17 +42,26 @@
       font-weight: bold;
     }
   }
-  .csssticky{
-    //.sticky{
-    //  position: -webkit-sticky;
-    //  position: -moz-sticky;
-    //  position: -ms-sticky;
-    //  position: -o-sticky;
-    //  position: sticky;
-    //  top: 15px;
-    //}
-  }
 
+  // Sticky helper
+  .sticky{
+    background: @white;
+    top:6.2rem;
+    //right: 0;
+    width: 100%;
+    z-index:99;
+  }
+  .no-csssticky{
+    .sticky{
+      position:fixed;
+    }
+  }
+  .csssticky{
+    .sticky{
+      position: sticky;
+      //top: 6.2rem;
+    }  
+  }
 
 
 

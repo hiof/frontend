@@ -86,15 +86,22 @@
     }
   }
   .sticky{
-    position:fixed;
+    background: @white;
     top:6.2rem;
+    //right: 0;
+    width: inherit;
     z-index:99;
   }
+  .no-csssticky{
+    .sticky{
+      position:fixed;
+    }
+  }
   .csssticky{
-    //.sticky{
-    //  position: sticky;
-    //  top: 6.2rem;
-    //}  
+    .sticky{
+      position: sticky;
+      //top: 6.2rem;
+    }  
   }
   .nav{
     li{
