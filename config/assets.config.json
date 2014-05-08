@@ -1,0 +1,12 @@
+{
+  "hiof": {
+    "assets": {
+      "js": [
+        "/js/application.65b8bead.min.js"
+      ],
+      "css": [
+        "/css/theme-standard.bd2dbef7.min.css"
+      ]
+    }
+  }
+}
