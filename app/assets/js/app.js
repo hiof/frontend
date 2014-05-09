@@ -15,7 +15,8 @@ $(function() {
 
     // ----------------------------------------------------------------------------------------------------
     // Fire code
-
+      // Layout helper
+      Hiof.LayoutHelper();
 
 
       // Append toolbar
@@ -65,6 +66,14 @@ $(function() {
     // Events
 
 
+    // Keyboard Shortcuts
+    $(document).on('keydown', function(e){
+      //console.log(e.keyCode);
+      if(e.altKey){
+        Hiof.KeyboardShortcuts(e);
+      }
+    });
+
     $(document).on("click touchstart", ".mobile-pages", function(e) {
         e.preventDefault();
         toggleLeftNavigation();
@@ -75,7 +84,7 @@ $(function() {
     });
 
     // Redirect the user to the brand site when they right-clicl on the logo
-    $("#logo-hiof").bind("contextmenu", function(e) {
+    $("#logo-hiof").on("contextmenu", function(e) {
       e.preventDefault();
       if (e.which === 3) {
         window.location.href = "http://hiof.no/designmal";
