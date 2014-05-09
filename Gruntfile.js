@@ -199,6 +199,12 @@ module.exports = function(grunt) {
             'app/views/pages/content/table.html',
             'app/views/partials/_footer.html'
           ],
+          'build/content-it-help.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/content-it-help.html',
+            'app/views/partials/_footer.html'
+          ],
           'build/article-research.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
@@ -267,6 +273,12 @@ module.exports = function(grunt) {
             'app/views/pages/content/intranet-student.html',
             'app/views/partials/_footer.html'
           ],
+          'build/student-fronter.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/intranet-student-fronter.html',
+            'app/views/partials/_footer.html'
+          ],
           'build/ansatt.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
@@ -312,11 +324,12 @@ module.exports = function(grunt) {
             assets: [{
               src: 'tmp/css/theme-standard.min.css',
               dest: 'tmp/css/theme-standard.css'
-            }], 
-            //
-            // src: 'tmp/css/theme-helvetica.min.css',
-            // dest: 'tmp/css/theme-helvetica.css'
-            //, {
+            }, 
+            {
+             src: 'tmp/css/theme-standard-canvas.min.css',
+             dest: 'tmp/css/theme-standard-canvas.css'
+            }],
+            // {
             // src: 'tmp/css/theme-verdana.min.css',
             // dest: 'tmp/css/theme-verdana.css'
             //, {
@@ -332,7 +345,7 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
-          output: 'php'
+          //output: 'php'
         },
         files: [{
             assets: [{
