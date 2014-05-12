@@ -2,8 +2,8 @@
 var Hiof = Hiof || {};
 
 
-Hiof.FadeInContent = function(distanceToTop) {
-    var toTop = distanceToTop;
+Hiof.FadeInContent = function() {
+    var toTop = Hiof.Options.distanceToTop;
     $('.fade-in').each(function(i) {
 
         var bottom_of_object = $(this).position().top + ($(this).outerHeight() / 2);

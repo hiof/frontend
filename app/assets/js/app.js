@@ -6,11 +6,24 @@ var Hiof = Hiof || {};
 
 $(function() {
     // ----------------------------------------------------------------------------------------------------
-    // Variables
-    var distanceToTop = $(window).scrollTop(),
-        distanceToTopBreakPoint,
-        viewportWidth = $(window).width();
+    // Variables / options
 
+    Hiof.Options = {
+      distanceToTop: $(window).scrollTop(),
+      windowWidth: $(window).width(),
+      distanceToTopBreakPoint: 0
+    };
+
+
+    // Updated #Header toggle option
+    if ($("#index").length) {
+        Hiof.Options.distanceToTopBreakPoint = 30;
+    } else {
+        Hiof.Options.distanceToTopBreakPoint = 410;
+    }
+
+
+    //var $viewportWidth = viewportWidth = $(window).width();
 
 
     // ----------------------------------------------------------------------------------------------------
@@ -48,15 +61,10 @@ $(function() {
       // Fade in all visible content
       Hiof.FadeInContent(0);
 
-      // Toggle #Header if the page is scrolled to a sertain point
-      if ($("#index").length) {
-          distanceToTopBreakPoint = 30;
-      } else {
-          distanceToTopBreakPoint = 410;
-      }
 
-      if (distanceToTop > 0) {
-          Hiof.HeaderToggle(distanceToTop, distanceToTopBreakPoint, viewportWidth);
+
+      if (Hiof.Options.distanceToTop > 0) {
+          Hiof.HeaderToggle();
       } else {
           //$("#header").addClass("light");
       }
@@ -117,22 +125,28 @@ $(function() {
 
     // When window resize, fire the following code
      $(window).resize(function() {
-        viewportWidth = $(window).width();
-        if(viewportWidth < 770){
-          Hiof.HeaderToggle(distanceToTop, distanceToTopBreakPoint, viewportWidth);
+        // Updated the settings for the viewport size when the website is reset.
+        Hiof.Options.viewportWidth = $(window).width();
+        //viewportWidth = $(window).width();
+        if(Hiof.Options.viewportWidth < 770){
+          Hiof.HeaderToggle();
         }
+
+
      });
 
 
 
     $(window).scroll(function() {
-        var distanceToTop = $(window).scrollTop(),
-            windowWidth = $(window).width();
+        // Updated the settings for the scroll position when the user scroll on the site
+        Hiof.Options.distanceToTop = $(window).scrollTop();
 
-        Hiof.HeaderToggle(distanceToTop, distanceToTopBreakPoint, viewportWidth);
+        //Fire functions
+        Hiof.HeaderToggle();
+        Hiof.NavigationPageSection();
+        Hiof.FadeInContent();
 
-        Hiof.NavigationPageSection(distanceToTop, windowWidth);
-        Hiof.FadeInContent(distanceToTop);
+
     });
 
 

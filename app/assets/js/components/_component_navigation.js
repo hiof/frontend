@@ -8,13 +8,16 @@ var Hiof = Hiof || {};
 
 
 
-Hiof.HeaderToggle = function(distanceToTop, distanceToTopBreakPoint, viewportWidth) {
+Hiof.HeaderToggle = function() {
+    //console.log("viewportWidth is:" + viewportWidth);
+    //console.log("Option.viewportWidth is:" + Hiof.Options.viewportWidth);
+
     if ($("html.cover").length) {
-        if (viewportWidth < 770) {
+        if (Hiof.Options.viewportWidth < 770) {
             //console.log("mobile navigation is activated");
             $("#header").removeClass("light");
         } else {
-            if (distanceToTop > distanceToTopBreakPoint) {
+            if (Hiof.Options.distanceToTop > Hiof.Options.distanceToTopBreakPoint) {
                 $("#header").removeClass("light");
             } else {
                 $("#header").addClass("light");
@@ -24,10 +27,10 @@ Hiof.HeaderToggle = function(distanceToTop, distanceToTopBreakPoint, viewportWid
 
 
 };
-Hiof.NavigationPageSection = function(distanceToTop, windowWidth) {
+Hiof.NavigationPageSection = function() {
     if ($(".nav-page").length) {
-      if (windowWidth > 770){
-        if (distanceToTop > 575) {
+      if (Hiof.Options.viewportWidth > 770){
+        if (Hiof.Options.distanceToTop > 575) {
             $(".nav-page").addClass("sticky");
         } else {
             $(".nav-page").removeClass("sticky");
@@ -92,7 +95,7 @@ Hiof.ToggleMobileNavigation = function(){
     });
     $("#body").on('click touchstart', '#mobile-overlay', function(e){
       e.preventDefault();
-      console.log("Overlay clicked...");
+      //console.log("Overlay clicked...");
       $('#body').toggleClass('push-right');
     });
   });
