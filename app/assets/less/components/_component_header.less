@@ -72,11 +72,20 @@
           transition: color 1s;
           //color: #fff;
         }
+
+
+        #logo-wrapper{
+          &:before,
+          &:after{
+            display: none;
+          }
+        }
       }
       &.header-dark{
 
       }
     }
+
   }
 }
 
@@ -178,7 +187,29 @@
     }
   }
 
+  #logo-wrapper{
+    //position: relative;
+    &:before,
+    &:after{
 
+      content: "";
+      position: fixed;
+      left: 50%;
+      margin-left: -.9rem;
+      border-left: .8rem solid transparent;
+      border-right: .8rem solid transparent;
+    }
+    &:before{
+      top: 6.1rem;
+      border-top: .8rem solid fade(@black, 15%);
+      
+    }
+    &:after{
+      top: 6rem;
+      border-top: .8rem solid @white;
+
+    }
+  }
 
 
 
@@ -194,7 +225,7 @@
 .small(){
   //.nav-vertical();
   #header{
-    height: 3rem;
+    //height: 3rem;
     height: 4.4rem;
     //#logo{
     //  height: 3rem;
@@ -223,20 +254,29 @@
       //padding: 0;
     }
   }
-    #logo-alternative{
-      margin-top:-14px;
-      width: 121px;
-      margin-left: -60px;
-      height: 100px;
-      position: absolute;
-      left: 50%;
-      z-index: 999;
-      border-radius: .4rem;
-      top: -.5rem;
-      #text{
-        display: none;
-      }
+  #logo-alternative{
+    margin-top:-14px;
+    width: 121px;
+    margin-left: -60px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    z-index: 999;
+    border-radius: .4rem;
+    top: -.5rem;
+    #text{
+      display: none;
     }
+  }
+  #logo-wrapper{
+    &:before,
+    &:after{
+      top: 4.4rem;
+    }
+    &:before{
+      top: 4.5rem;
+    }
+  }
 }
 
 .medium(){
@@ -269,20 +309,29 @@
       margin-top: .8rem;
     }
   }
-    #logo-alternative{
-      margin-top:-14px;
-      width: 121px;
-      margin-left: -60px;
-      height: 100px;
-      position: absolute;
-      left: 50%;
-      z-index: 999;
-      border-radius: .4rem;
-      top: -.5rem;
-      #text{
-        display: none;
-      }
+  #logo-alternative{
+    margin-top:-14px;
+    width: 121px;
+    margin-left: -60px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    z-index: 999;
+    border-radius: .4rem;
+    top: -.5rem;
+    #text{
+      display: none;
     }
+  }
+  #logo-wrapper{
+    &:before,
+    &:after{
+      top: 4.4rem;
+    }
+    &:before{
+      top: 4.5rem;
+    }
+  }
 }
 
 
