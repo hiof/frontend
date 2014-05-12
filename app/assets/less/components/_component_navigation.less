@@ -135,7 +135,8 @@
     //}
   }
   .mobile-pages,
-  .mobile-user{
+  .mobile-user,
+  .mobile-internal{
     display: none;
   }
   #global-search{
@@ -148,6 +149,15 @@
     margin-right: 2rem;
   }
 }
+
+
+
+
+
+// Vertical navigation
+
+
+
 .nav-vertical(){
   .slideout-navigation();
   #nav{
@@ -183,7 +193,8 @@
       }
     }
   }
-  #nav-internal{
+  #nav-internal,
+  .nav-page{
     //li{
     //  display: inline-block;
     //  list-style: none;
@@ -210,27 +221,58 @@
       top: 4.2rem;
     }
   }
+  .nav-page{
+    z-index: 997;
+    position: fixed;
+  }
   .mobile-pages,
-  .mobile-user{
+  .mobile-user, 
+  .mobile-internal{
     top: 0rem;
   }
-  .mobile-pages{
+  
+  .mobile-pages,
+  .mobile-user, 
+  .mobile-internal{
     svg{
+      width: 1.6rem;
+      height: 1.6rem;
       float: left;
       margin-top: .8rem;
       margin-left: .8rem;
       .item{
 
-        //fill: #f00;
+        fill: #444;
 
       }
 
     }
   }
-
+  .mobile-user{}
+  .mobile-internal{
+    position: absolute;
+    top:.5rem;
+    right: 6.5rem;
+    float: right;
+    border: 1px solid #eee;
+    border-radius: @border-radius-standard;
+    color: #aaa;
+    line-height: 3.2rem;
+    padding-right: .8rem;
+    svg{
+      margin-right: .5rem;
+    }
+  }
+  #sidebar .nav{
+    margin-bottom: 0;
+  }
+  .nav-page{
+    padding-bottom: 0;
+  }
   .mobile-pages{
     width: 8rem;
   }
+
   .push-right {
     #header{
       left: 240px;
@@ -244,14 +286,14 @@
 
 
 
-  .nav-page{
-    position: fixed;
-    height: 33px;
-    bottom: 0;
-    width: 100%;
-    background: #000;
-    left: 0;
-  }
+  //.nav-page{
+  //  position: fixed;
+  //  height: 33px;
+  //  bottom: 0;
+  //  width: 100%;
+  //  background: #000;
+  //  left: 0;
+  //}
 
 
 

@@ -24,7 +24,8 @@ $(function() {
       Hiof.Toolbar.SocialShare();
       Hiof.Toolbar.Print();
 
-
+      // Attach mobile nav icons
+      Hiof.ToggleMobileNavigation();
 
       // Check if the page should use quotes
       if($('.cover.page.quote').length){
@@ -74,14 +75,14 @@ $(function() {
       }
     });
 
-    $(document).on("click touchstart", ".mobile-pages", function(e) {
-        e.preventDefault();
-        toggleLeftNavigation();
-    });    
-    $(document).on("click touchstart", ".mobile-user", function(e) {
-        e.preventDefault();
-        Hiof.ToggleUserNavigation();
-    });
+    //$(document).on("click touchstart", ".mobile-pages", function(e) {
+    //    e.preventDefault();
+    //    toggleLeftNavigation();
+    //});    
+    //$(document).on("click touchstart", ".mobile-user", function(e) {
+    //    e.preventDefault();
+    //    Hiof.ToggleUserNavigation();
+    //});
 
     // Redirect the user to the brand site when they right-clicl on the logo
     $("#logo-hiof").on("contextmenu", function(e) {
@@ -99,6 +100,7 @@ $(function() {
         if (url.indexOf("#") != -1) {
             //console.log("Url has a Hash");
             e.preventDefault();
+            Hiof.ToggleInternalNavigation();
             $(".nav-page .active").removeClass("active");
             $(this).parent().addClass("active");
             $.scrollTo($(url), 500, {
@@ -123,14 +125,13 @@ $(function() {
 
 
 
-
     $(window).scroll(function() {
-        var distanceToTop = $(window).scrollTop();
-            //windowWidth = $(window).width();
+        var distanceToTop = $(window).scrollTop(),
+            windowWidth = $(window).width();
 
         Hiof.HeaderToggle(distanceToTop, distanceToTopBreakPoint, viewportWidth);
 
-        Hiof.NavigationPageSection(distanceToTop);
+        Hiof.NavigationPageSection(distanceToTop, windowWidth);
         Hiof.FadeInContent(distanceToTop);
     });
 
