@@ -69,9 +69,8 @@ Hiof.ToggleMobileNavigation = function(){
     $("#header").append(buttonNavUser);
 
     if($('#nav-page').length){
-      if(Hiof.Options.windowWidth < 640){
-        $("#header").append(buttonNavPage);
-      }
+      $("#header").append(buttonNavPage);
+  
       //console.log(Hiof.Options.windowWidth);
       
     }
