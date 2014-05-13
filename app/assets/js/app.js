@@ -4,22 +4,33 @@ var Hiof = Hiof || {};
 
 
 
+Hiof.Options = {
+  distanceToTop: $(window).scrollTop(),
+  windowWidth: $(window).width(),
+  distanceToTopBreakPoint: 0,
+  distanceToSidebarSticky: 0,
+  navigationBreakpoint: 770
+};
+
+
 $(function() {
     // ----------------------------------------------------------------------------------------------------
     // Variables / options
 
-    Hiof.Options = {
-      distanceToTop: $(window).scrollTop(),
-      windowWidth: $(window).width(),
-      distanceToTopBreakPoint: 0
-    };
 
 
-    // Updated #Header toggle option
+    // Updated #Header toggle option if the page is scrolled to a sertain point
     if ($("#index").length) {
         Hiof.Options.distanceToTopBreakPoint = 30;
     } else {
         Hiof.Options.distanceToTopBreakPoint = 410;
+    }
+
+
+    if ($("#index").length) {
+        //Hiof.Options.distanceToTopBreakPoint = 575;
+    } else {
+        Hiof.Options.distanceToSidebarSticky = 20;
     }
 
 
@@ -70,6 +81,15 @@ $(function() {
       }
 
 
+      // If the device does not have touch, fix z-index on embed
+      //if($("html.no-touch").length){
+      //   $('iframe[src^="//www.youtube.com/embed"').each(function(){
+      //        var url = $(this).attr("src");
+      //        var separator = (url.indexOf('?') > 0) ? '&' : '?';
+      //        $(this).attr('src', url + separator + 'wmode=transparent');
+      //    });
+      //}
+ 
 
     // ----------------------------------------------------------------------------------------------------
     // Events
@@ -143,6 +163,7 @@ $(function() {
 
         //Fire functions
         Hiof.HeaderToggle();
+        
         Hiof.NavigationPageSection();
         Hiof.FadeInContent();
 
