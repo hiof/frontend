@@ -100,6 +100,7 @@ Hiof.ToggleMobileNavigation = function(){
       e.preventDefault();
       //console.log("Overlay clicked...");
       $('#body').toggleClass('push-right');
+      $('#mobile-overlay').remove();
     });
   });
 
