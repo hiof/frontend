@@ -13,7 +13,7 @@ Hiof.HeaderToggle = function() {
     //console.log("Option.viewportWidth is:" + Hiof.Options.viewportWidth);
 
     if ($("html.cover").length) {
-        if (Hiof.Options.windowWidth < 770) {
+        if (Hiof.Options.windowWidth < Hiof.Options.navigationBreakpoint) {
             //console.log("mobile navigation is activated");
             $("#header").removeClass("light");
         } else {
@@ -28,12 +28,18 @@ Hiof.HeaderToggle = function() {
 
 };
 Hiof.NavigationPageSection = function() {
-    if ($(".nav-page").length) {
-      if (Hiof.Options.windowWidth > 770){
-        if (Hiof.Options.distanceToTop > 575) {
-            $(".nav-page").addClass("sticky");
+
+
+
+    if ($("#nav-page").length) {
+      if (Hiof.Options.windowWidth > Hiof.Options.navigationBreakpoint){
+        //console.log("The windowWidth is " + Hiof.Options.windowWidth + " bigger than navigationBreakpoint " + Hiof.Options.navigationBreakpoint);
+        if (Hiof.Options.distanceToTop > Hiof.Options.distanceToSidebarSticky) {
+            //console.log("The distanceToTop is " + Hiof.Options.distanceToTop + " and it is larger than distanceToSidebarSticky " + Hiof.Options.distanceToSidebarSticky);
+            $("#nav-page").addClass("sticky");
+            
         } else {
-            $(".nav-page").removeClass("sticky");
+            $("#nav-page").removeClass("sticky");
         }
       }
 
@@ -76,7 +82,6 @@ Hiof.ToggleMobileNavigation = function(){
     }
 
   }
-
 
   // Attach click events to generated navigation
   $(function() {
