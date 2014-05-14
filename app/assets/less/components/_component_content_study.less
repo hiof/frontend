@@ -43,7 +43,7 @@
         list-style: none;
         display: inline-block;
         margin: 0;
-        margin-right: 2rem;
+        //margin-right: 2rem;
         position: relative;
         a{
           line-height: 4.4rem;
@@ -63,9 +63,14 @@
           display: none;
           position: absolute;
           width: 40rem;
-          left: -1rem;
+          left: 0;
           z-index: 999;
+          padding: 0;
+          top: 100%;
+          margin: 0;
           border-top: .2rem solid darken(@color-primary-action, 10%);
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
           li{
             display: block;
             a{
