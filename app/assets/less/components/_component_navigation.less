@@ -63,7 +63,6 @@
 }
 
 
-
 .nav-horizontal(){
   #nav{
     ul{
@@ -107,7 +106,9 @@
       }
     }
   }
-
+  #nav-pages{
+    //padding-left: 0;
+  }
   //#universal-access{
   //  //color: @color-primary-action;
   //  #icon-universal-access{
@@ -160,6 +161,9 @@
 
 .nav-vertical(){
   .slideout-navigation();
+  #mobile-overlay{
+    background: rgba(255,255,255,.4);
+  }
   #nav{
     ul{
       ul{
@@ -171,6 +175,7 @@
   }
   #header{
     transition: left .3s ease;
+    //transform: translate3d(0px,0px,0px);
   }
   #nav-pages{
     //top: 0rem;
@@ -205,7 +210,8 @@
     position: absolute;
     top: -14rem;
     left: 0;
-    transition: top .5s ease;
+    transition: top .3s ease;
+    transform: translate3d(0px,0px,0px);
     z-index: -9;
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
     li{
@@ -292,7 +298,44 @@
   //}
 
 
+  .nav-page{
+    //li{
+    //  display: inline-block;
+    //  list-style: none;
+    //}
+    //margin: 0 4rem;
+    padding: 2rem;
+    width: 100%;
+    background: @white;
+    position: absolute;
+    top: -14rem;
+    left: 0;
+    transition: top .3s ease;
+    transform: translateZ(1);
+    z-index: -9;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    li{
+      list-style: none;
+      margin-bottom: .5rem;
+      a{
+        display: block;
+        text-align: left;
+      }
+    }
+    &.show{
+      top: 4.2rem;
+    }
+  }
 
+
+  
+  .nav-page{
+    background-color: #fff;
+    top: -100%;
+
+    z-index: 997;
+    position: fixed;
+  }
 
 
 }
@@ -301,6 +344,7 @@
 
 .universal(){
   @import "../../vendor/bootstrap/less/navs.less";
+  @import "../../vendor/filament-sticky/fixedsticky.css";
   // UI helper helper
   #nav-guide{
     background: fade(@black, 0%);
@@ -392,43 +436,7 @@
 .small(){
 
 
-  .nav-page{
-    //li{
-    //  display: inline-block;
-    //  list-style: none;
-    //}
-    //margin: 0 4rem;
-    padding: 2rem;
-    width: 100%;
-    background: @white;
-    position: absolute;
-    top: -14rem;
-    left: 0;
-    transition: top .5s ease;
-    z-index: -9;
-    box-shadow: 0 1px 1px rgba(0,0,0,.1);
-    li{
-      list-style: none;
-      margin-bottom: .5rem;
-      a{
-        display: block;
-        text-align: left;
-      }
-    }
-    &.show{
-      top: 4.2rem;
-    }
-  }
 
-
-  
-  .nav-page{
-    background-color: #fff;
-    top: -100%;
-    transition: top .3s ease;
-    z-index: 997;
-    position: fixed;
-  }
   //.nav-page-show{
   //  .nav-page{
   //    top: 4.4rem;
@@ -447,5 +455,7 @@
 
 }
 .large(){
-
+  #nav-pages{
+    padding-left: 0;
+  }
 }

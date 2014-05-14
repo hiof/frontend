@@ -55,18 +55,8 @@
   #main, #footer{
     max-width: 104rem;
     margin: 0 auto;
-    //position: re
   }
-  //#content{
-  //  width: 100% * 0.618;
-  //  padding: 0 2rem;
-  //  float: left;
-  //}
-  //#sidebar{
-  //  float: left;
-  //  width: 100% * 0.382;
-  //  padding: 0 2rem;
-  //}
+
   #content{
     padding-left: 2rem;
     > header{
@@ -83,14 +73,7 @@
     }
   }
 
-  #footer{
-    //float: left;
-    //width: 100%;
-    //p{
-    //text-align: center;
-    //  
-    //}
-  }
+
   .float-left{
     float: left;
   }
@@ -99,14 +82,41 @@
   }
 
 
+  html.index{
+    .lo-full,
+    .lo-half,
+    .lo-auron-1-3,
+    .lo-auron-2-3{
+      header{
+        h2{
+          float: left;
+        }
+      }
+    }
+  }
 
   .lo-full,
-  .lo-half,
-  .lo-auron-1-3,
-  .lo-auron-2-3{
-    header{
-      h2{
-        float: left;
+  .lo-half, 
+  .lo-quarter, 
+  .lo-auron-1-3, 
+  .lo-auron-2-3,
+  .lo-one-third,
+  .lo-two-thirds{
+    .lo-full,
+    .lo-half, 
+    .lo-quarter, 
+    .lo-auron-1-3, 
+    .lo-auron-2-3,
+    .lo-one-third,
+    .lo-two-thirds{
+      &:not(.btn){
+        padding: 0;
+      }
+      &.lo-first{
+        padding-right: 2rem;
+      }
+      &.lo-last{        
+        padding-left: 2rem;
       }
     }
   }
@@ -115,6 +125,10 @@
   //    padding: 0;
   //  }
   //}
+
+
+
+
 }
 
 .small(){
@@ -173,7 +187,7 @@
   }
   .lo-auron-2-3{
     width: 100% * 0.618;
-    
+    width: 100%;
   }
 
 
