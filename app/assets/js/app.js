@@ -9,9 +9,10 @@ Hiof.Options = {
   windowWidth: $(window).width(),
   distanceToTopBreakPoint: 0,
   distanceToSidebarSticky: 0,
-  navigationBreakpoint: 770
+  navigationBreakpoint: 770,
+  contentHeight: $("#main").outerHeight()
 };
-
+//console.log(Hiof.Options.contentHeight);
 
 $(function() {
     // ----------------------------------------------------------------------------------------------------
@@ -27,14 +28,16 @@ $(function() {
     }
 
 
-    if ($("#index").length) {
-        //Hiof.Options.distanceToTopBreakPoint = 575;
+    if ($("html.cover").length) {
+        Hiof.Options.distanceToSidebarSticky = 575;
     } else {
         Hiof.Options.distanceToSidebarSticky = 20;
     }
 
+ 
+    Hiof.Options.contentHeight = $("#main").outerHeight();
 
-    //var $viewportWidth = viewportWidth = $(window).width();
+    //console.log(Hiof.Options.contentHeight);
 
 
     // ----------------------------------------------------------------------------------------------------
@@ -68,7 +71,12 @@ $(function() {
 
       // Equal height of articles
       Hiof.EqualHeight($(".article"));
+
+      window.setInterval(function(){
       Hiof.EqualHeightContentAndSidebar();
+      }, 3000);
+
+      
       // Fade in all visible content
       Hiof.FadeInContent(0);
 
@@ -146,9 +154,9 @@ $(function() {
     // When window resize, fire the following code
      $(window).resize(function() {
         // Updated the settings for the viewport size when the website is reset.
-        Hiof.Options.viewportWidth = $(window).width();
+        Hiof.Options.windowWidth = $(window).width();
         //viewportWidth = $(window).width();
-        if(Hiof.Options.viewportWidth < 770){
+        if(Hiof.Options.windowWidth < 770){
           Hiof.HeaderToggle();
         }
 
@@ -160,15 +168,16 @@ $(function() {
     $(window).scroll(function() {
         // Updated the settings for the scroll position when the user scroll on the site
         Hiof.Options.distanceToTop = $(window).scrollTop();
-
+        Hiof.Options.contentHeight = $("#main").outerHeight();
         //Fire functions
         Hiof.HeaderToggle();
-        
+
         Hiof.NavigationPageSection();
         Hiof.FadeInContent();
 
 
     });
+
 
 
 

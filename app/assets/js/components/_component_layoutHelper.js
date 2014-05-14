@@ -74,8 +74,10 @@ Hiof.EqualHeight = function(group) {
 Hiof.EqualHeightContentAndSidebar = function() {
     var highestCol = Math.max($('#content').height(), $('#sidebar').height());
     // TODO: Refactor the window width check to work on the fly instead of on-load
-    var viewportWidth = $(window).width();
-    if (viewportWidth > 900){
-      $('#content, #sidebar').height(highestCol);
+    //var viewportWidth = $(window).width();
+    if (Hiof.Options.windowWidth > 900){
+      // Remove 150px from the #sidebar height due to the offsett of the #content
+      highestCol = highestCol - 150;
+      $('#sidebar').height(highestCol);
     }
 };
