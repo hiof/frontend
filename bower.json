@@ -1,6 +1,6 @@
 {
   "name": "Hiof-frontend",
-  "version": "3.0.0.7",
+  "version": "3.0.0.9",
   "homepage": "https://github.com/hiof/frontend",
   "authors": [
     "Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>"
@@ -9,7 +9,7 @@
   "license": "GNU",
   "dependencies": {
     "modernizr": "~2.7.1",
-    "jquery": "~2.1.0",
+    "jquery": "~2.1.1",
     "bootstrap": "~3.1.1",
     "livereload": "~2.0.8",
     "footable": "git@github.com:bradvin/FooTable.git#V2",
