@@ -99,7 +99,7 @@ module.exports = function(grunt) {
       build: ['build/**/*']
     },
     jshint: {
-      files: ['app/assets/js/**/*.js']
+      files: ['app/assets/js/**/*.js', 'Gruntfile.js', 'bower.json', 'package.json']
     },
 
     concat: {
@@ -445,9 +445,6 @@ module.exports = function(grunt) {
           livereload: true,
         },
       },
- 
-
-
 
       fonts:{
         files: ['app/assets/fonts/**/*'],
