@@ -3550,8 +3550,8 @@ a.bg-danger:hover {
     -webkit-transition: color 1s;
     transition: color 1s;
   }
-  html.cover #header.light #logo-wrapper:before,
-  html.cover #header.light #logo-wrapper:after {
+  html.cover #header.light #logo-hiof:before,
+  html.cover #header.light #logo-hiof:after {
     display: none;
   }
   #header {
