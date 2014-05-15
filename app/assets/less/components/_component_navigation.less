@@ -59,7 +59,35 @@
   }
 }
 .breadcrumb-vertical(){
-  
+  #breadcrumb{
+    background-color: @hiof-blue;
+    padding: 0;
+    ol{
+      //padding: 0;
+      margin: 0;
+
+    }
+    a{
+      color: @white;
+      display: block;
+      text-align: center;
+      //padding-left: 2rem;
+      padding-top: .5rem;
+      line-height: 4.4rem;
+    }
+    li{
+      border-bottom: .1rem solid @white;
+      //text-align: center;
+      position: relative;
+      .gfx-arrow-down(@hiof-blue, @white, 4.9rem);
+      &:last-child{
+        &:before,
+        &:after{
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 
