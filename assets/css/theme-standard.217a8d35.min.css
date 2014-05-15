@@ -2311,6 +2311,45 @@ tfoot tr {
   top: 1.6rem;
 }
 @media screen and (max-width: 769px) {
+  #breadcrumb {
+    background-color: #073b58;
+    padding: 0;
+  }
+  #breadcrumb ol {
+    margin: 0;
+  }
+  #breadcrumb a {
+    color: #ffffff;
+    display: block;
+    text-align: center;
+    padding-top: .5rem;
+    line-height: 4.4rem;
+  }
+  #breadcrumb li {
+    border-bottom: 0.1rem solid #ffffff;
+    position: relative;
+  }
+  #breadcrumb li:before,
+  #breadcrumb li:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-left: -0.8rem;
+    border-left: .8rem solid transparent;
+    border-right: .8rem solid transparent;
+  }
+  #breadcrumb li:before {
+    top: 5rem;
+    border-top: 0.8rem solid #ffffff;
+  }
+  #breadcrumb li:after {
+    top: 4.9rem;
+    border-top: 0.8rem solid #073b58;
+  }
+  #breadcrumb li:last-child:before,
+  #breadcrumb li:last-child:after {
+    display: none;
+  }
   body {
     width: 100%;
     position: relative;
@@ -2870,20 +2909,20 @@ a.list-group-item.active > .badge,
 .light #logo-alternative {
   margin-top: -14px;
 }
-#logo-wrapper:before,
-#logo-wrapper:after {
+#logo-hiof:before,
+#logo-hiof:after {
   content: "";
-  position: fixed;
+  position: absolute;
   left: 50%;
   margin-left: -0.8rem;
   border-left: .8rem solid transparent;
   border-right: .8rem solid transparent;
 }
-#logo-wrapper:before {
+#logo-hiof:before {
   top: 6.1rem;
   border-top: 0.8rem solid rgba(0, 0, 0, 0.13);
 }
-#logo-wrapper:after {
+#logo-hiof:after {
   top: 6rem;
   border-top: 0.8rem solid #ffffff;
 }
@@ -3046,13 +3085,12 @@ img {
   color: pink;
 }
 #study {
-  margin-top: -50rem;
-  height: 40.8rem;
   background: #fff;
   border-radius: .4rem;
   padding: 2rem;
   position: relative;
   margin-bottom: 8rem;
+  padding-bottom: 6rem;
 }
 #study > header {
   width: 100%;
@@ -3326,11 +3364,11 @@ a.bg-danger:hover {
   #logo-alternative #text {
     display: none;
   }
-  #logo-wrapper:before,
-  #logo-wrapper:after {
+  #logo-hiof:before,
+  #logo-hiof:after {
     top: 4.4rem;
   }
-  #logo-wrapper:before {
+  #logo-hiof:before {
     top: 4.5rem;
   }
 }
@@ -3396,11 +3434,11 @@ a.bg-danger:hover {
   #logo-alternative #text {
     display: none;
   }
-  #logo-wrapper:before,
-  #logo-wrapper:after {
+  #logo-hiof:before,
+  #logo-hiof:after {
     top: 4.4rem;
   }
-  #logo-wrapper:before {
+  #logo-hiof:before {
     top: 4.5rem;
   }
 }
@@ -3540,6 +3578,9 @@ a.bg-danger:hover {
   .article-vertical header h3,
   .article-horizontal header h3 {
     font-size: 1.4rem;
+  }
+  .cover #study {
+    margin-top: -50rem;
   }
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dppx) {
