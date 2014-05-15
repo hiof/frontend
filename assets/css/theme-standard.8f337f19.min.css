@@ -1,3 +1,4 @@
+@import "../../vendor/filament-sticky/fixedsticky.css";
 fieldset {
   padding: 0;
   margin: 0;
@@ -684,11 +685,168 @@ html {
 .float-right {
   float: right;
 }
-.lo-full header h2,
-.lo-half header h2,
-.lo-auron-1-3 header h2,
-.lo-auron-2-3 header h2 {
+html.index .lo-full header h2,
+html.index .lo-half header h2,
+html.index .lo-auron-1-3 header h2,
+html.index .lo-auron-2-3 header h2 {
   float: left;
+}
+.lo-full .lo-full:not(.btn),
+.lo-half .lo-full:not(.btn),
+.lo-quarter .lo-full:not(.btn),
+.lo-auron-1-3 .lo-full:not(.btn),
+.lo-auron-2-3 .lo-full:not(.btn),
+.lo-one-third .lo-full:not(.btn),
+.lo-two-thirds .lo-full:not(.btn),
+.lo-full .lo-half:not(.btn),
+.lo-half .lo-half:not(.btn),
+.lo-quarter .lo-half:not(.btn),
+.lo-auron-1-3 .lo-half:not(.btn),
+.lo-auron-2-3 .lo-half:not(.btn),
+.lo-one-third .lo-half:not(.btn),
+.lo-two-thirds .lo-half:not(.btn),
+.lo-full .lo-quarter:not(.btn),
+.lo-half .lo-quarter:not(.btn),
+.lo-quarter .lo-quarter:not(.btn),
+.lo-auron-1-3 .lo-quarter:not(.btn),
+.lo-auron-2-3 .lo-quarter:not(.btn),
+.lo-one-third .lo-quarter:not(.btn),
+.lo-two-thirds .lo-quarter:not(.btn),
+.lo-full .lo-auron-1-3:not(.btn),
+.lo-half .lo-auron-1-3:not(.btn),
+.lo-quarter .lo-auron-1-3:not(.btn),
+.lo-auron-1-3 .lo-auron-1-3:not(.btn),
+.lo-auron-2-3 .lo-auron-1-3:not(.btn),
+.lo-one-third .lo-auron-1-3:not(.btn),
+.lo-two-thirds .lo-auron-1-3:not(.btn),
+.lo-full .lo-auron-2-3:not(.btn),
+.lo-half .lo-auron-2-3:not(.btn),
+.lo-quarter .lo-auron-2-3:not(.btn),
+.lo-auron-1-3 .lo-auron-2-3:not(.btn),
+.lo-auron-2-3 .lo-auron-2-3:not(.btn),
+.lo-one-third .lo-auron-2-3:not(.btn),
+.lo-two-thirds .lo-auron-2-3:not(.btn),
+.lo-full .lo-one-third:not(.btn),
+.lo-half .lo-one-third:not(.btn),
+.lo-quarter .lo-one-third:not(.btn),
+.lo-auron-1-3 .lo-one-third:not(.btn),
+.lo-auron-2-3 .lo-one-third:not(.btn),
+.lo-one-third .lo-one-third:not(.btn),
+.lo-two-thirds .lo-one-third:not(.btn),
+.lo-full .lo-two-thirds:not(.btn),
+.lo-half .lo-two-thirds:not(.btn),
+.lo-quarter .lo-two-thirds:not(.btn),
+.lo-auron-1-3 .lo-two-thirds:not(.btn),
+.lo-auron-2-3 .lo-two-thirds:not(.btn),
+.lo-one-third .lo-two-thirds:not(.btn),
+.lo-two-thirds .lo-two-thirds:not(.btn) {
+  padding: 0;
+}
+.lo-full .lo-full.lo-first,
+.lo-half .lo-full.lo-first,
+.lo-quarter .lo-full.lo-first,
+.lo-auron-1-3 .lo-full.lo-first,
+.lo-auron-2-3 .lo-full.lo-first,
+.lo-one-third .lo-full.lo-first,
+.lo-two-thirds .lo-full.lo-first,
+.lo-full .lo-half.lo-first,
+.lo-half .lo-half.lo-first,
+.lo-quarter .lo-half.lo-first,
+.lo-auron-1-3 .lo-half.lo-first,
+.lo-auron-2-3 .lo-half.lo-first,
+.lo-one-third .lo-half.lo-first,
+.lo-two-thirds .lo-half.lo-first,
+.lo-full .lo-quarter.lo-first,
+.lo-half .lo-quarter.lo-first,
+.lo-quarter .lo-quarter.lo-first,
+.lo-auron-1-3 .lo-quarter.lo-first,
+.lo-auron-2-3 .lo-quarter.lo-first,
+.lo-one-third .lo-quarter.lo-first,
+.lo-two-thirds .lo-quarter.lo-first,
+.lo-full .lo-auron-1-3.lo-first,
+.lo-half .lo-auron-1-3.lo-first,
+.lo-quarter .lo-auron-1-3.lo-first,
+.lo-auron-1-3 .lo-auron-1-3.lo-first,
+.lo-auron-2-3 .lo-auron-1-3.lo-first,
+.lo-one-third .lo-auron-1-3.lo-first,
+.lo-two-thirds .lo-auron-1-3.lo-first,
+.lo-full .lo-auron-2-3.lo-first,
+.lo-half .lo-auron-2-3.lo-first,
+.lo-quarter .lo-auron-2-3.lo-first,
+.lo-auron-1-3 .lo-auron-2-3.lo-first,
+.lo-auron-2-3 .lo-auron-2-3.lo-first,
+.lo-one-third .lo-auron-2-3.lo-first,
+.lo-two-thirds .lo-auron-2-3.lo-first,
+.lo-full .lo-one-third.lo-first,
+.lo-half .lo-one-third.lo-first,
+.lo-quarter .lo-one-third.lo-first,
+.lo-auron-1-3 .lo-one-third.lo-first,
+.lo-auron-2-3 .lo-one-third.lo-first,
+.lo-one-third .lo-one-third.lo-first,
+.lo-two-thirds .lo-one-third.lo-first,
+.lo-full .lo-two-thirds.lo-first,
+.lo-half .lo-two-thirds.lo-first,
+.lo-quarter .lo-two-thirds.lo-first,
+.lo-auron-1-3 .lo-two-thirds.lo-first,
+.lo-auron-2-3 .lo-two-thirds.lo-first,
+.lo-one-third .lo-two-thirds.lo-first,
+.lo-two-thirds .lo-two-thirds.lo-first {
+  padding-right: 2rem;
+}
+.lo-full .lo-full.lo-last,
+.lo-half .lo-full.lo-last,
+.lo-quarter .lo-full.lo-last,
+.lo-auron-1-3 .lo-full.lo-last,
+.lo-auron-2-3 .lo-full.lo-last,
+.lo-one-third .lo-full.lo-last,
+.lo-two-thirds .lo-full.lo-last,
+.lo-full .lo-half.lo-last,
+.lo-half .lo-half.lo-last,
+.lo-quarter .lo-half.lo-last,
+.lo-auron-1-3 .lo-half.lo-last,
+.lo-auron-2-3 .lo-half.lo-last,
+.lo-one-third .lo-half.lo-last,
+.lo-two-thirds .lo-half.lo-last,
+.lo-full .lo-quarter.lo-last,
+.lo-half .lo-quarter.lo-last,
+.lo-quarter .lo-quarter.lo-last,
+.lo-auron-1-3 .lo-quarter.lo-last,
+.lo-auron-2-3 .lo-quarter.lo-last,
+.lo-one-third .lo-quarter.lo-last,
+.lo-two-thirds .lo-quarter.lo-last,
+.lo-full .lo-auron-1-3.lo-last,
+.lo-half .lo-auron-1-3.lo-last,
+.lo-quarter .lo-auron-1-3.lo-last,
+.lo-auron-1-3 .lo-auron-1-3.lo-last,
+.lo-auron-2-3 .lo-auron-1-3.lo-last,
+.lo-one-third .lo-auron-1-3.lo-last,
+.lo-two-thirds .lo-auron-1-3.lo-last,
+.lo-full .lo-auron-2-3.lo-last,
+.lo-half .lo-auron-2-3.lo-last,
+.lo-quarter .lo-auron-2-3.lo-last,
+.lo-auron-1-3 .lo-auron-2-3.lo-last,
+.lo-auron-2-3 .lo-auron-2-3.lo-last,
+.lo-one-third .lo-auron-2-3.lo-last,
+.lo-two-thirds .lo-auron-2-3.lo-last,
+.lo-full .lo-one-third.lo-last,
+.lo-half .lo-one-third.lo-last,
+.lo-quarter .lo-one-third.lo-last,
+.lo-auron-1-3 .lo-one-third.lo-last,
+.lo-auron-2-3 .lo-one-third.lo-last,
+.lo-one-third .lo-one-third.lo-last,
+.lo-two-thirds .lo-one-third.lo-last,
+.lo-full .lo-two-thirds.lo-last,
+.lo-half .lo-two-thirds.lo-last,
+.lo-quarter .lo-two-thirds.lo-last,
+.lo-auron-1-3 .lo-two-thirds.lo-last,
+.lo-auron-2-3 .lo-two-thirds.lo-last,
+.lo-one-third .lo-two-thirds.lo-last,
+.lo-two-thirds .lo-two-thirds.lo-last {
+  padding-left: 2rem;
+}
+#research .article,
+#news .article {
+  margin: 0 1rem;
 }
 html {
   font-size: 62.5%;
@@ -1741,6 +1899,9 @@ input[type="button"].btn-block {
 #study .arrow.btn-link:after {
   border-left: 5px solid #3276b1;
 }
+#study .arrow.btn-link:hover:after {
+  border-left: 5px solid #4a90cc;
+}
 .arrow-right {
   padding-right: 2.4rem;
 }
@@ -2157,6 +2318,9 @@ tfoot tr {
     overflow-x: hidden;
     -webkit-transition: left .3s ease;
     transition: left .3s ease;
+    -webkit-transform: translateZ(1);
+    -ms-transform: translateZ(1);
+    transform: translateZ(1);
   }
   .mobile-pages,
   .mobile-user {
@@ -2268,6 +2432,9 @@ tfoot tr {
   #mobile-overlay {
     border: none;
   }
+  #mobile-overlay {
+    background: rgba(255, 255, 255, 0.4);
+  }
   #nav ul ul {
     display: none;
   }
@@ -2301,8 +2468,11 @@ tfoot tr {
     position: absolute;
     top: -14rem;
     left: 0;
-    -webkit-transition: top .5s ease;
-    transition: top .5s ease;
+    -webkit-transition: top .3s ease;
+    transition: top .3s ease;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -ms-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
     z-index: -9;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   }
@@ -2318,13 +2488,43 @@ tfoot tr {
     top: 4.2rem;
   }
   .mobile-pages,
-  .mobile-user {
+  .mobile-user,
+  .mobile-internal {
     top: 0rem;
   }
-  .mobile-pages svg {
+  .mobile-pages svg,
+  .mobile-user svg,
+  .mobile-internal svg {
+    width: 1.6rem;
+    height: 1.6rem;
     float: left;
     margin-top: .8rem;
     margin-left: .8rem;
+  }
+  .mobile-pages svg .item,
+  .mobile-user svg .item,
+  .mobile-internal svg .item {
+    fill: #444;
+  }
+  .mobile-internal {
+    position: absolute;
+    top: .5rem;
+    right: 6.5rem;
+    float: right;
+    border: 1px solid #eee;
+    border-radius: 0.4rem;
+    color: #aaa;
+    line-height: 3.2rem;
+    padding-right: .8rem;
+  }
+  .mobile-internal svg {
+    margin-right: .5rem;
+  }
+  #sidebar .nav {
+    margin-bottom: 0;
+  }
+  .nav-page {
+    padding-bottom: 0;
   }
   .mobile-pages {
     width: 8rem;
@@ -2336,12 +2536,36 @@ tfoot tr {
     display: none;
   }
   .nav-page {
-    position: fixed;
-    height: 33px;
-    bottom: 0;
+    padding: 2rem;
     width: 100%;
-    background: #000;
+    background: #ffffff;
+    position: absolute;
+    top: -14rem;
     left: 0;
+    -webkit-transition: top .3s ease;
+    transition: top .3s ease;
+    -webkit-transform: translateZ(1);
+    -ms-transform: translateZ(1);
+    transform: translateZ(1);
+    z-index: -9;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  }
+  .nav-page li {
+    list-style: none;
+    margin-bottom: .5rem;
+  }
+  .nav-page li a {
+    display: block;
+    text-align: left;
+  }
+  .nav-page.show {
+    top: 4.2rem;
+  }
+  .nav-page {
+    background-color: #fff;
+    top: -100%;
+    z-index: 997;
+    position: fixed;
   }
 }
 @media screen and (min-width: 770px) {
@@ -2436,7 +2660,8 @@ tfoot tr {
     border-color: #3276b1;
   }
   .mobile-pages,
-  .mobile-user {
+  .mobile-user,
+  .mobile-internal {
     display: none;
   }
   #global-search {
@@ -2603,7 +2828,7 @@ a.list-group-item.active > .badge,
   display: block;
   position: absolute;
   left: -20%;
-  z-index: -1;
+  z-index: -8;
 }
 #header .icon {
   position: relative;
@@ -2645,11 +2870,33 @@ a.list-group-item.active > .badge,
 .light #logo-alternative {
   margin-top: -14px;
 }
+#logo-wrapper:before,
+#logo-wrapper:after {
+  content: "";
+  position: fixed;
+  left: 50%;
+  margin-left: -0.8rem;
+  border-left: .8rem solid transparent;
+  border-right: .8rem solid transparent;
+}
+#logo-wrapper:before {
+  top: 6.1rem;
+  border-top: 0.8rem solid rgba(0, 0, 0, 0.13);
+}
+#logo-wrapper:after {
+  top: 6rem;
+  border-top: 0.8rem solid #ffffff;
+}
 #body {
   color: #333333;
 }
 #content {
   background: #ffffff;
+}
+iframe,
+video,
+img {
+  margin-bottom: 4rem;
 }
 hr {
   border: 0;
@@ -2766,7 +3013,7 @@ img {
   border-bottom: none;
 }
 #calendar .calendar-entry h3 {
-  width: 21rem;
+  width: 20rem;
 }
 .article {
   border: 1px solid #eee;
@@ -2834,7 +3081,6 @@ img {
   list-style: none;
   display: inline-block;
   margin: 0;
-  margin-right: 2rem;
   position: relative;
 }
 #study footer li a {
@@ -2854,9 +3100,14 @@ img {
   display: none;
   position: absolute;
   width: 40rem;
-  left: -1rem;
+  left: 0;
   z-index: 999;
+  padding: 0;
+  top: 100%;
+  margin: 0;
   border-top: 0.2rem solid #275b89;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 #study footer li ul li {
   display: block;
@@ -2976,6 +3227,7 @@ img {
   background: #ffffff;
   top: 6.2rem;
   width: 100%;
+  max-width: 357px;
   z-index: 99;
 }
 .no-csssticky .sticky {
@@ -3050,17 +3302,7 @@ a.bg-danger:hover {
     background-image: none;
     height: 0;
   }
-  .nav-page {
-    background-color: #fff;
-    top: -100%;
-    -webkit-transition: top .3s ease;
-    transition: top .3s ease;
-  }
-  .nav-page-show .nav-page {
-    top: 4.4rem;
-  }
   #header {
-    height: 3rem;
     height: 4.4rem;
   }
   #header li {
@@ -3084,21 +3326,15 @@ a.bg-danger:hover {
   #logo-alternative #text {
     display: none;
   }
+  #logo-wrapper:before,
+  #logo-wrapper:after {
+    top: 4.4rem;
+  }
+  #logo-wrapper:before {
+    top: 4.5rem;
+  }
 }
 @media screen and (min-width: 641px) and (max-width: 899px) {
-  html.cover #body {
-    background: #fff;
-    margin-top: 55rem;
-    float: left;
-  }
-  html.cover #content {
-    margin-top: -15rem;
-    border-radius: .4rem;
-    padding-top: 10px;
-  }
-  #main header {
-    clear: both;
-  }
   .lo-full {
     width: 100%;
   }
@@ -3106,57 +3342,34 @@ a.bg-danger:hover {
     width: 50%;
     padding: 0 2rem;
   }
-  .cover-inline {
-    display: none;
-  }
-  html.cover .cover-inline {
-    display: block;
+  .lo-one-third {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-height: 60rem;
-    z-index: -10;
+    padding: 0 2rem;
   }
-  html.cover.study .cover-inline {
-    background: url(../images/bg-study.jpg) fixed;
+  .lo-two-third {
+    width: 100%;
+    padding: 0 2rem;
   }
-  html.cover.index .cover-inline {
-    background: url(../images/bg-index.jpg) fixed;
+  .lo-quarter {
+    width: 50%;
+    padding: 0 2rem;
   }
-  html.cover.page .cover-inline {
-    background: url(../images/bg-index.jpg) fixed;
+  .lo-auron-1-3 {
+    width: 38.2%;
+    padding: 0 2rem;
   }
-  html.cover.ingenior .cover-inline {
-    background: url(../images/bg-ingenior.jpg) fixed;
+  .lo-auron-2-3 {
+    width: 61.8%;
+    width: 100%;
   }
-  html.cover.no-sticky .cover-inline {
-    background-attachment: initial;
+  #content {
+    font-size: 120%;
   }
-  html.cover #header.light {
-    margin-top: 2rem;
-    -webkit-transition: margin-top 1s;
-    transition: margin-top 1s;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
-  }
-  html.cover #header.light:before {
-    background: rgba(255, 255, 255, 0);
-  }
-  html.cover #header.light #logo-alternative {
-    margin-top: -2rem;
-    -webkit-transition: margin-top 1s;
-    transition: margin-top 1s;
-  }
-  html.cover #header.light #logo-alternative .item {
-    fill: #fff;
-  }
-  html.cover #header.light #logo-alternative #text {
-    display: block;
-  }
-  html.cover #header.light a {
-    -webkit-transition: color 1s;
-    transition: color 1s;
+  #content p,
+  #content ul,
+  #content ol {
+    max-width: 60rem;
+    line-height: 1.5em;
   }
   #header {
     height: 4.4rem;
@@ -3182,6 +3395,13 @@ a.bg-danger:hover {
   }
   #logo-alternative #text {
     display: none;
+  }
+  #logo-wrapper:before,
+  #logo-wrapper:after {
+    top: 4.4rem;
+  }
+  #logo-wrapper:before {
+    top: 4.5rem;
   }
 }
 @media screen and (min-width: 900px) {
@@ -3237,6 +3457,9 @@ a.bg-danger:hover {
   .cover #icon-print .item {
     fill: #ffffff;
   }
+  #nav-pages {
+    padding-left: 0;
+  }
   .cover-inline {
     display: none;
   }
@@ -3289,6 +3512,10 @@ a.bg-danger:hover {
     -webkit-transition: color 1s;
     transition: color 1s;
   }
+  html.cover #header.light #logo-wrapper:before,
+  html.cover #header.light #logo-wrapper:after {
+    display: none;
+  }
   #header {
     height: 6rem;
   }
@@ -3313,5 +3540,10 @@ a.bg-danger:hover {
   .article-vertical header h3,
   .article-horizontal header h3 {
     font-size: 1.4rem;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dppx) {
+  #content {
+    font-weight: 300;
   }
 }
