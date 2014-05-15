@@ -10,6 +10,34 @@
   width: 1px;
 }
 
+
+.gfx-arrow-down(@color, @border-color, @position-offset){
+
+
+    &:before,
+    &:after{
+
+      content: "";
+      position: absolute;
+      left: 50%;
+      margin-left: -.8rem;
+      border-left: .8rem solid transparent;
+      border-right: .8rem solid transparent;
+    }
+    &:before{
+      top: (@position-offset + .1);
+      border-top: .8rem solid @border-color;
+      
+    }
+    &:after{
+      top: @position-offset;
+      border-top: .8rem solid @color;
+
+    }
+
+
+}
+
 .universal(){
 
 
