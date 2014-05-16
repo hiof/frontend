@@ -2350,6 +2350,9 @@ tfoot tr {
   #breadcrumb li:last-child:after {
     display: none;
   }
+  #study footer {
+    display: none;
+  }
   body {
     width: 100%;
     position: relative;
@@ -3048,6 +3051,9 @@ img {
 .calendar-entry h3 a {
   color: #073b58;
 }
+.calendar-entry:hover {
+  background-color: #eee;
+}
 #calendar .calendar-entry {
   border-bottom: none;
 }
@@ -3510,6 +3516,9 @@ a.bg-danger:hover {
     left: 0;
     max-height: 60rem;
     z-index: -10;
+  }
+  html.cover .cover-inline.background-cover {
+    background-size: cover;
   }
   html.cover.study .cover-inline {
     background: url(../images/bg-study.jpg) fixed;
