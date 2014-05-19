@@ -76,6 +76,13 @@ module.exports = function(grunt) {
         dest: 'dist',
         filter: 'isFile'
       },
+      deploy: {
+        expand: true,
+        cwd: 'build/',
+        src: '**',
+        dest: 'deploy',
+        filter: 'isFile'
+      },
       jsdata: {
         expand: true,
         cwd: 'app/assets/js/data/',
@@ -96,6 +103,7 @@ module.exports = function(grunt) {
       before: ['build/assets', 'build/css', 'build/js', 'build/config'],
       after: ['tmp/**/*'],
       dist: ['dist/**/*'],
+      deploy: ['deploy/**/*'],
       build: ['build/**/*']
     },
     jshint: {
@@ -306,9 +314,9 @@ module.exports = function(grunt) {
       options: {
         cwd: 'build/assets',
         outputConfigDir: 'build/config',
-          namespace: 'hiof'
+        namespace: 'hiof'
       },
-      prod: {
+      build: {
         files: [{
             assets: [{
               src: ['tmp/js/application.min.js'],
@@ -346,6 +354,44 @@ module.exports = function(grunt) {
       dist: {
         options: {
           //output: 'php'
+        },
+        files: [{
+            assets: [{
+              src: ['tmp/js/application.min.js'],
+              dest: 'tmp/js/application.min.js'
+            }],
+            key: 'assets',
+            dest: 'js',
+            type: 'js',
+            ext: '.min.js'
+          },
+
+          {
+            assets: [{
+              src: 'tmp/css/theme-standard.min.css',
+              dest: 'tmp/css/theme-standard.css'
+            }], 
+            //{
+            //  src: 'tmp/css/theme-helvetica.min.css',
+            //  dest: 'tmp/css/theme-helvetica.css'
+            //}, {
+            //  src: 'tmp/css/theme-verdana.min.css',
+            //  dest: 'tmp/css/theme-verdana.css'
+            //}, {
+            //  src: 'tmp/css/theme-source-pro.min.css',
+            //  dest: 'tmp/css/theme-source-pro.css'
+            //}],
+            key: 'assets',
+            dest: 'css',
+            type: 'css',
+            ext: '.min.css'
+          }
+        ]
+      },
+      deploy: {
+        options: {
+          output: 'php',
+          outputConfigDir: 'build/assets',
         },
         files: [{
             assets: [{
@@ -466,8 +512,11 @@ module.exports = function(grunt) {
   grunt.registerTask('subtaskViews', ['concat:pages']);
 
 
-  grunt.registerTask('build', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:prod', 'subtaskCopy', 'subtaskViews']);
+  grunt.registerTask('build', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:build', 'subtaskCopy', 'subtaskViews']);
   grunt.registerTask('dist', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:dist', 'subtaskCopy', 'subtaskViews', 'clean:dist', 'copy:dist']);
+  grunt.registerTask('deploy', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:deploy', 'subtaskCopy', 'subtaskViews', 'clean:deploy', 'copy:deploy']);
+
+
 
   grunt.registerTask('server', [
     'build',
