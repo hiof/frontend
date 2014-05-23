@@ -199,6 +199,14 @@ $(function() {
               desktop: 900
             }, 
             limitNavigation: 5
+            //debug: true,
+            //log: function(message, type) {
+            //    counter++;
+            //    var console = $("#console");
+            //    if (counter > 1) console.append('\n');
+            //    console.append(counter + ': ' + message);
+            //    console[0].scrollTop = console[0].scrollHeight;
+            //}
           }).bind({
             'footable_paging' : function(e) {
               showPreAndNextPages(e);
