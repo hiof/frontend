@@ -7,7 +7,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     // Tasks
-
+    
     less: {
       standard: {
         options: {
@@ -296,7 +296,18 @@ module.exports = function(grunt) {
         }
       },
       scripts: {
-        src: ['app/assets/js/components/*.js', 'app/assets/js/*.js', 'app/vendor/jquery.scrollTo/jquery.scrollTo.js', 'app/vendor/bootstrap/js/dropdown.js', 'app/vendor/slideout/slideout-navigation.js'],
+        src: [
+          'app/vendor/footable/js/footable.js', 
+          'app/vendor/footable/js/footable.paginate.js', 
+          'app/vendor/footable/js/footable.filter.js', 
+          'app/vendor/footable/js/footable.sort.js', 
+          'app/vendor/footable/js/footable.striping.js',
+          'app/assets/js/components/*.js', 
+          'app/assets/js/*.js', 
+          'app/vendor/jquery.scrollTo/jquery.scrollTo.js', 
+          'app/vendor/bootstrap/js/dropdown.js', 
+          'app/vendor/slideout/slideout-navigation.js'
+        ],
         dest: 'tmp/js/application.min.js'
       }
     },
@@ -428,7 +439,40 @@ module.exports = function(grunt) {
       }
 
     },
-
+    secret: grunt.file.readJSON('secret.json'),
+    //sshconfig: {
+    //},
+    sftp: {
+      prod: {
+        files: {
+           "./": "deploy/assets/**"
+        },
+        options: {
+          path: '/neted/sites/www.hiof.no/public/assets/',
+          srcBasePath: "deploy/assets/",
+          host: '<%= secret.host %>',
+          username: '<%= secret.username %>',
+          password: '<%= secret.password %>',
+          //privateKey: grunt.file.read('id_rsa'),
+          //passphrase: '<%= secret.passphrase %>',
+          showProgress: true,
+          createDirectories: true,
+          directoryPermissions: parseInt(755, 8)
+        }
+      }
+    },
+    sshexec: {
+      test: {
+        command: 'uptime',
+        options: {
+          host: '<%= secret.host %>',
+          username: '<%= secret.username %>',
+          password: '<%= secret.password %>'
+          //privateKey: grunt.file.read('id_rsa'),
+          //passphrase: '<%= secret.passphrase %>',
+        }
+      }
+    },
     express: {
       all: {
         options: {
@@ -457,14 +501,14 @@ module.exports = function(grunt) {
     watch: {
       js: {
         files: ['app/assets/js/**/*.js', 'app/assets/js/**/*.json'],
-        tasks: ['jshint', 'concat:scripts', 'versioning:prod', 'copy:jsdata'],
+        tasks: ['jshint', 'concat:scripts', 'versioning:build', 'copy:jsdata'],
         options: {
           livereload: true,
         },
       },
       css: {
         files: ['app/assets/less/**/*.less'],
-        tasks: ['less', 'autoprefixer', 'cssmin', 'versioning:prod'],
+        tasks: ['less', 'autoprefixer', 'cssmin', 'versioning:build'],
         options: {
           livereload: true,
         },
@@ -514,7 +558,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:build', 'subtaskCopy', 'subtaskViews']);
   grunt.registerTask('dist', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:dist', 'subtaskCopy', 'subtaskViews', 'clean:dist', 'copy:dist']);
-  grunt.registerTask('deploy', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:deploy', 'subtaskCopy', 'subtaskViews', 'clean:deploy', 'copy:deploy']);
+  grunt.registerTask('deploy', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:deploy', 'subtaskCopy', 'subtaskViews', 'clean:deploy', 'copy:deploy', 'sftp']);
 
 
 
