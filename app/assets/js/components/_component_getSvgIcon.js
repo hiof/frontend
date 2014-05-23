@@ -5,7 +5,7 @@ var Hiof = Hiof || {};
 Hiof.getSvgIcon = function(icon){
 
 
-  var url = "assets/images/icons/" + icon + ".svg";
+  var url = "/assets/images/icons/" + icon + ".svg";
 
   xhr = new XMLHttpRequest();
 
@@ -17,3 +17,5 @@ Hiof.getSvgIcon = function(icon){
   return response;
   //console.log(xhr.responseXML.documentElement);
 };
+
+
