@@ -210,6 +210,24 @@ $(function() {
           }).bind({
             'footable_paging' : function(e) {
               showPreAndNextPages(e);
+            },
+            'footable_filtering': function(e){
+              console.log("Filter fired");
+            },
+            'footable_filtered': function(e){
+              //console.log("Filter finished");
+              //console.log("Number of visible rows" + numOfVisibleRows);
+              if($('#main table caption span').length){
+                var numOfVisibleRows = $('#main table tbody tr:visible').length;
+                $('#main table caption .label').removeClass('label-info').addClass('label-warning');
+                $('#main table caption span').html(numOfVisibleRows);
+                setInterval(function(){
+                  if($('#main table caption .label-warning').length){
+                    $('#main table caption .label').removeClass('label-warning').addClass('label-info');
+                  }                  
+                },2000);
+                //console.log("Counter exsist");
+              }
             }
         });
       }
