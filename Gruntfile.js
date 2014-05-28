@@ -553,12 +553,13 @@ module.exports = function(grunt) {
   grunt.registerTask('subtaskJs', ['jshint', 'concat:scripts', 'uglify', 'copy:jsdata']);
   grunt.registerTask('subtaskCss', ['less', 'autoprefixer', 'cssmin']);
   grunt.registerTask('subtaskCopy', ['copy:images', 'copy:fonts', 'copy:vendor', 'copy:favicon']);
+  grunt.registerTask('subtaskCopyDeploy', ['copy:images', 'copy:vendor', 'copy:favicon']);
   grunt.registerTask('subtaskViews', ['concat:pages']);
 
 
   grunt.registerTask('build', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:build', 'subtaskCopy', 'subtaskViews']);
   grunt.registerTask('dist', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:dist', 'subtaskCopy', 'subtaskViews', 'clean:dist', 'copy:dist']);
-  grunt.registerTask('deploy', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:deploy', 'subtaskCopy', 'subtaskViews', 'clean:deploy', 'copy:deploy', 'sftp']);
+  grunt.registerTask('deploy', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:deploy', 'subtaskCopyDeploy', 'subtaskViews', 'clean:deploy', 'copy:deploy', 'sftp']);
 
 
 
