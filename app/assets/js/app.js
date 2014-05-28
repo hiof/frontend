@@ -208,11 +208,15 @@ $(function() {
             //    console[0].scrollTop = console[0].scrollHeight;
             //}
           }).bind({
+            'footable_breakpoint' : function(e) {
+                //console.log("footable_breakpoint initiated");
+                
+            },
             'footable_paging' : function(e) {
               showPreAndNextPages(e);
             },
             'footable_filtering': function(e){
-              console.log("Filter fired");
+              //console.log("Filter fired");
             },
             'footable_filtered': function(e){
               //console.log("Filter finished");
@@ -229,9 +233,14 @@ $(function() {
                 //console.log("Counter exsist");
               }
             }
+
+
+
+
+
         });
       }
-
+      $('.footable-loaded').trigger('footable_expand_first_row');
       // Check if the page has a filter element for the table
       if($('.filter').length){
         $('.filter').change(function (e) {
