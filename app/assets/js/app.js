@@ -42,6 +42,9 @@ $(function() {
 
     // ----------------------------------------------------------------------------------------------------
     // Fire code
+      // Polyfill helper
+      Hiof.Polyfill();
+
       // Layout helper
       Hiof.LayoutHelper();
 
@@ -70,7 +73,7 @@ $(function() {
       }
 
       // Equal height of articles
-      Hiof.EqualHeight($(".article"));
+      //Hiof.EqualHeight($(".article"));
 
       window.setInterval(function(){
       Hiof.EqualHeightContentAndSidebar();
