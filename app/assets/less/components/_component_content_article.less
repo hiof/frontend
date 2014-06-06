@@ -14,6 +14,7 @@
     p{
       margin-bottom: 0;
       padding: 1rem;
+      
     }
     
   }
@@ -40,7 +41,20 @@
   .article-vertical{
 
   }
-
+  #news,
+  #research{
+    .article{
+      a{
+          h3{
+            color: @color-primary-action;
+          }
+          .lead-paragraph{
+            color: @text-color;
+          }
+        
+      }
+    }
+  }
 }
 
 .small(){}
