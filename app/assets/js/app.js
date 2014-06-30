@@ -39,7 +39,6 @@ $(function() {
 
     //console.log(Hiof.Options.contentHeight);
 
-
     // ----------------------------------------------------------------------------------------------------
     // Fire code
       // Polyfill helper
@@ -58,7 +57,7 @@ $(function() {
       Hiof.ToggleMobileNavigation();
 
       // Check if the page should use quotes
-      if($('.cover.page.quote').length){
+      if($('html.quote').length){
         // Add Quotes
         Hiof.Quotes();
         // Refresh Quotes
@@ -69,14 +68,14 @@ $(function() {
             $(this).remove();
             Hiof.Quotes(quoteId);
           });
-        }, 10000);
+        }, 100000);
       }
 
       // Equal height of articles
       //Hiof.EqualHeight($(".article"));
 
       window.setInterval(function(){
-      Hiof.EqualHeightContentAndSidebar();
+        Hiof.EqualHeightContentAndSidebar();
       }, 3000);
 
       

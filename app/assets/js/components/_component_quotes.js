@@ -12,7 +12,7 @@ Hiof.Quotes = function(quoteId) {
         //console.log(".. But is now: " + randomEntry.id);
       }
     }
-    var quote = '<blockquote class="cover-quote" data-id="' + randomEntry.id + '""><p>' + randomEntry.text + '</p><footer><cite>- ' + randomEntry.cite + '</cite></footer></blockquote>';
+    var quote = '<blockquote class="cover-quote" data-id="' + randomEntry.id + '""><a href="' + randomEntry.url + '"><p>&ldquo;' + randomEntry.text + '&rdquo;</p><footer><cite>- ' + randomEntry.cite + '</cite></footer></a></blockquote>';
     $('#content').append(quote);
     $('.cover-quote').fadeIn("slow");
   });

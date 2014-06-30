@@ -1,23 +1,51 @@
 {
     "quotes": [{
         "id": 1,
-        "text": "Innovation distinguishes between a leader and a follower.",
-        "cite": "Steve Jobs"
+        "text": "Studiet i sosialt arbeid har gitt meg større innsikt i forskjellene i samfunnet. Et fantastisk spennende studie!",
+        "cite": "Anniken Øvre",
+        "url": "http://www.hiof.no/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/viser-aktuelle-beskrivelser?displayitem=204&module=studieinfo&type=katalog",
+        "urlCourse": "",
+        "category": "",
+        "type": ""
     }, {
         "id": 2,
-        "text": "If you can't explain it simply, <br>you don't understand it well enough.",
-        "cite": "Albert Einstein"
+        "text": "Siden samarbeidet har gått så bra, rekrutterer jeg selvsagt fra studentgruppen. Jeg skulle helst ha ansatt dem alle sammen!",
+        "cite": "Vidar Pedersen, fra Snø Designstudio AS",
+        "url": "http://www.hiof.no/nor/hogskolen-i-ostfold/aktuelt/hogskoleavisa?%2Fnor%2Fhogskolen-i-ostfold%2Faktuelt%2Fhogskoleavisa%2F%3F=&displayitem=3861&module=news",
+        "urlCourse": "",
+        "category": "",
+        "type": ""
     }, {
         "id": 3,
-        "text": "Education is the most powerful weapon which you can use to change the world.",
-        "cite": "Nelson Mandela"
+        "text": "Vi ansetter en til to hvert år, basert på kontakten gjennom studentprosjektene. Studentene har kommet med viktige bidrag i en større forskningsjobb.",
+        "cite": "Joachim Zimmermann Helgesen, Seksjonsleder samferdselskonstruksjoner, Multiconsult AS",
+        "url": "http://www.hiof.no/nor/hogskolen-i-ostfold/aktuelt/hogskoleavisa?%2Fnor%2Fhogskolen-i-ostfold%2Faktuelt%2Fhogskoleavisa%2F%3F=&displayitem=3861&module=news",
+        "urlCourse": "",
+        "category": "",
+        "type": ""
     }, {
         "id": 4,
-        "text": "The goal of education is the advancement of knowledge and the dissemination of truth.",
-        "cite": "John F. Kennedy"
+        "text": "Det er bra å blande studenter fra ulike avdelinger, det har en symbolsk effekt. Og her har vi kunst og entreprenørskap som et møtepunkt.",
+        "cite": "Serge von Arx, kunstnerisk leder, Akademi for scenekunst",
+        "url": "http://hiof.no/nor/hogskolen-i-ostfold/aktuelt/hogskoleavisa/nyhetsarkiv/arkiv_-alle-nyheter/?&displayitem=3803&module=news",
+        "urlCourse": "",
+        "category": "",
+        "type": ""
     }, {
         "id": 5,
-        "text": "The roots of education are bitter, but the fruit is sweet.",
-        "cite": "Aristotle"
+        "text": "Et masterstudium rettet mot de yngste barna gir store muligheter for å bidra aktivt til å øke kompetansen i det småbarnspedagogiske feltet.",
+        "cite": "Ninni Sandvik, dosent ved avdeling for lærerutdanning",
+        "url": "http://hiof.no/nor/hogskolen-i-ostfold/aktuelt/hogskoleavisa/nyhetsarkiv/arkiv_-alle-nyheter/?&displayitem=3698&module=news",
+        "urlCourse": "",
+        "category": "",
+        "type": ""
+    }, {
+        "id": 6,
+        "text": "Det å vinne Oda-prisen er stor stas, den anerkjenner all den tiden jeg og så mange ildsjeler legger i å styrke digital kompetanse og for å skape større mangfold i bransjen.",
+        "cite": "Beathe Due, dekan ved HiØ’s avdeling for IT",
+        "url": "http://hiof.no/nor/hogskolen-i-ostfold/aktuelt/hogskoleavisa/nyhetsarkiv/arkiv_-alle-nyheter/?&displayitem=3840&module=news",
+        "urlCourse": "",
+        "category": "",
+        "type": ""
     }]
 }
