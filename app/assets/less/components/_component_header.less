@@ -48,6 +48,33 @@
       }
     }
     #header{
+      #logo{
+        width: 70%;
+        margin-left: 61.5%;
+        //padding-left: 0;
+        transition: margin-left .5s;
+        transform: translateZ(0);
+        .item{
+          fill: #111;
+          //transform: rotate(0deg);
+          transition: fill 1s ease;
+        }
+        //#circle{
+        //  transform: rotate(0deg);
+        //  transform-origin:50% 50%;
+        //  transition: transform .5s ease;
+        //    transform: translateZ(0);
+        //}
+        #text{
+          display: none;
+        }
+      }
+      #logo-alternative{
+        .item{
+          fill: #111;
+          //transition: fill 1s ease;
+        }
+      }
       &.light{
         margin-top: 2rem;
         transition: margin-top 1s;
@@ -66,6 +93,7 @@
           .item{
             fill: #fff;
             //transition: fill 1s;
+            transition: fill 1s ease;
           }
           #text{
             display: block;
@@ -75,7 +103,23 @@
           transition: color 1s;
           //color: #fff;
         }
+        #logo{
+          margin-left: 23%;
+          .item{
+            fill: #fff;
+            //transition: fill 1s;
+            //transform: rotate(360deg);
+          }
 
+          //#circle{
+          //  transform: rotate(-360deg);
+          //  transform-origin:50% 50%;
+          //  //transition: transform 1s ease;
+          //}
+           #text{
+            display: block;
+          }
+        }
 
         #logo-hiof{
           &:before,
