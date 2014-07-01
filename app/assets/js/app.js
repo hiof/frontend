@@ -200,8 +200,22 @@ $(function() {
               tablet: 899,
               desktop: 900
             }, 
-            limitNavigation: 5
+            limitNavigation: 5,
             //debug: true,
+            filter: {
+              filterFunction: function(index) {
+                var $t = $(this),
+                    $table = $t.parents('table:first'),
+                    filter = $table.data('current-filter').toUpperCase(),
+                    text = $t.find('td').text();
+                if (!$table.data('filter-text-only')) {
+                    $t.find('tr[data-value]').each(function () {
+                        text += $(this).data('value');
+                    });
+                }
+                return text.toUpperCase().indexOf(filter) >= 0;
+              }
+            }
             //log: function(message, type) {
             //    counter++;
             //    var console = $("#console");
@@ -215,7 +229,7 @@ $(function() {
                 
             },
             'footable_paging' : function(e) {
-              showPreAndNextPages(e);
+              //showPreAndNextPages(e);
             },
             'footable_filtering': function(e){
               //console.log("Filter fired");
@@ -223,6 +237,7 @@ $(function() {
             'footable_filtered': function(e){
               //console.log("Filter finished");
               //console.log("Number of visible rows" + numOfVisibleRows);
+              
               if($('#main table caption span').length){
                 var numOfVisibleRows = $('#main table tbody tr:visible').length;
                 $('#main table caption .label').removeClass('label-info').addClass('label-warning');
