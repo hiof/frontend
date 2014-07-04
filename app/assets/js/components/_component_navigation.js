@@ -1,6 +1,6 @@
 var Hiof = Hiof || {};
 
-
+Hiof.Navigation = {};
 
 
 // This page use slideout-navigation functions from 
@@ -64,17 +64,39 @@ Hiof.ToggleMobileNavigation = function() {
 
     // Check if the buttons exsist
     if ($('#nav-mobile-internal').length) {
+        // If it exsist, return the function without doing anything else.
+        return;
+    } 
 
-    } else {
         // Variables
+
+        
+        var navButtonTextMobileSite,
+            navButtonTextMobileUser,
+            navButtonTextInternal,
+            lang = Hiof.Language.Check();
+
+        //console.log(lang);
+
+        if (lang === "eng"){
+            //console.log("English site");
+            navButtonTextMobileSite = "Menu";
+            navButtonTextMobileUser = "";
+            navButtonTextInternal = "Go to";
+        }else{
+            //console.log("Snakker du norsk?");
+            navButtonTextMobileSite = "Meny";
+            navButtonTextMobileUser = "";
+            navButtonTextInternal = "Gå til";
+        }
 
         var button = '<a aria-hidden="true" class="navigation-mobile" href="#"></a>',
             svgNavSite = Hiof.getSvgIcon("nav-site"),
             svgNavUser = Hiof.getSvgIcon("user"),
             svgPageNav = Hiof.getSvgIcon("nav-page"),
-            buttonNavSite = $(button).append("Meny").attr('id', 'nav-mobile-site').addClass('mobile-pages').append(svgNavSite),
-            buttonNavUser = $(button).append("").attr('id', 'nav-mobile-user').addClass('mobile-user').append(svgNavUser),
-            buttonNavPage = $(button).append("Gå til").attr('id', 'nav-mobile-internal').addClass('mobile-internal').append(svgPageNav);
+            buttonNavSite = $(button).append(navButtonTextMobileSite).attr('id', 'nav-mobile-site').addClass('mobile-pages').append(svgNavSite),
+            buttonNavUser = $(button).append(navButtonTextMobileUser).attr('id', 'nav-mobile-user').addClass('mobile-user').append(svgNavUser),
+            buttonNavPage = $(button).append(navButtonTextInternal).attr('id', 'nav-mobile-internal').addClass('mobile-internal').append(svgPageNav);
 
 
         $("#header").append(buttonNavSite);
@@ -82,12 +104,9 @@ Hiof.ToggleMobileNavigation = function() {
 
         if ($('#nav-page').length) {
             $("#header").append(buttonNavPage);
-
-            //console.log(Hiof.Options.windowWidth);
-
         }
 
-    }
+    
 
     // Attach click events to generated navigation
     $(function() {
@@ -115,4 +134,42 @@ Hiof.ToggleMobileNavigation = function() {
         });
     });
 
+};
+
+// Functionality to toggle sub-navs
+Hiof.ToggleSubNavigations = function(el) {
+    el.siblings(".dropdown-menu").slideToggle();
+};
+
+
+// Functionalyt to manipulate markup for the left-navigation on small screens
+Hiof.Navigation.ManipulateMarkupForVerticalNavigation = function(el) {
+    if (Hiof.Options.windowWidth < 770) {
+        //console.log("Hello");
+        var subNav = $(".dropdown-menu .dropdown-menu", el),
+            subNavSiblingAnchor = subNav.siblings("a"),
+            subNavSiblingAnchorHref = subNavSiblingAnchor.attr("href"),
+            subNavSiblingAnchorText = subNavSiblingAnchor.text(),
+            newSubNavEl = '<li data-temp="true"><a href="' + subNavSiblingAnchorHref + '">' + subNavSiblingAnchorText + '</a></li>';
+
+        //console.log(newSubNavEl);
+        //subNavSiblingAnchor.css("background", "pink");
+        if ($("li[data-temp]", el).length){
+
+            //console.log("Generated content exsist");
+        }else{
+            //console.log("Generated content does not exsist");
+            subNav.prepend(newSubNavEl);
+            // Highlight generated content for test purposes
+            $("li[data-temp]", el).css("background", "pink");
+        }
+        
+    } else {
+        if ($("li[data-temp]", el).length){
+            //console.log("Removing all elements with data-temp");
+            $("li[data-temp]", el).remove();
+        }else{
+
+        }
+    }
 };

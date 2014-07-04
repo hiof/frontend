@@ -20,6 +20,7 @@ $(function() {
 
 
 
+
     // Updated #Header toggle option if the page is scrolled to a sertain point
     if ($("#index").length) {
         Hiof.Options.distanceToTopBreakPoint = 30;
@@ -91,6 +92,12 @@ $(function() {
       }
 
 
+      if(Hiof.Options.windowWidth < 770){
+        Hiof.Navigation.ManipulateMarkupForVerticalNavigation("#nav-pages");
+      }else{
+
+      }
+
       // If the device does not have touch, fix z-index on embed
       //if($("html.no-touch").length){
       //   $('iframe[src^="//www.youtube.com/embed"').each(function(){
@@ -130,6 +137,20 @@ $(function() {
       }
     });
 
+    // Toggle the visibility of subnavigation on the external nav tree
+
+
+    $("span.btn, a", "#nav-pages").on("click", function(e){
+      if(Hiof.Options.windowWidth < 770){
+
+        var thisElement = $(this);
+        if (thisElement.siblings(".dropdown-menu").length){
+          console.log("element has a sibling with the dropdown-menu class");
+          e.preventDefault();
+          Hiof.ToggleSubNavigations(thisElement);
+        }
+      }
+    });
 
     // Page navigation
     $(".nav-page a").on("click", function(e) {
@@ -160,6 +181,9 @@ $(function() {
         //viewportWidth = $(window).width();
         if(Hiof.Options.windowWidth < 770){
           Hiof.HeaderToggle();
+          Hiof.Navigation.ManipulateMarkupForVerticalNavigation("#nav-pages");
+        }else{
+          Hiof.Navigation.ManipulateMarkupForVerticalNavigation("#nav-pages");
         }
 
 
@@ -192,6 +216,50 @@ $(function() {
     // ----------------------------------------------------------------------------------------------------
     // Responsive Tables
 
+
+
+
+
+
+
+
+
+      //window.footable.options.filter.filterFunction = function(index) {
+      //  var $t = $(this),
+      //    $table = $t.parents('table:first'),
+      //    filter = $table.data('current-filter').toUpperCase(),
+      //    columns = $t.find('td'),
+      //    row = $t.find('tr');
+      //  var regEx = new RegExp("\\b" + filter + "\\b");
+      //  var result = false;
+      //  for (i = 0; i < columns.length; i++) {
+      //    var text = $(columns[i]).text();
+      //    result = regEx.test(text.toUpperCase());
+      //    if (result === true)
+      //      break;
+      //    if (!$table.data('filter-text-only')) {
+      //      text = $(columns[i]).data("value");
+      //      if (text)
+      //        result = regEx.test(text.toString().toUpperCase());
+      //    }
+      //    if (result === true)
+      //      break;
+      //  }
+      //  return result;
+      //};
+
+
+
+
+
+
+
+
+
+
+
+
+
       // If there is a table on the page, activate the footable() plugin
       if($('#main table').length){
         $("#main table:not(.not-responsive)").footable({
@@ -202,20 +270,22 @@ $(function() {
             }, 
             limitNavigation: 5,
             //debug: true,
-            filter: {
-              filterFunction: function(index) {
-                var $t = $(this),
-                    $table = $t.parents('table:first'),
-                    filter = $table.data('current-filter').toUpperCase(),
-                    text = $t.find('td').text();
-                if (!$table.data('filter-text-only')) {
-                    $t.find('tr[data-value]').each(function () {
-                        text += $(this).data('value');
-                    });
-                }
-                return text.toUpperCase().indexOf(filter) >= 0;
-              }
-            }
+            //filter: {
+            //  filterFunction: function(index) {
+            //    var $t = $(this),
+            //        $table = $t.parents('table:first'),
+            //        filter = $table.data('current-filter').toUpperCase(),
+            //        text = $t.find('td').text();
+            //    if (!$table.data('filter-text-only')) {
+            //        $t.find('tr[data-value]').each(function () {
+            //            //console.log($this);
+            //            text += $(this).data('value');
+            //        });
+            //    }
+            //    return text.toUpperCase().indexOf(filter) >= 0;
+            //  }
+            //}
+
             //log: function(message, type) {
             //    counter++;
             //    var console = $("#console");
@@ -252,12 +322,11 @@ $(function() {
             }
 
 
-
-
-
         });
       }
       $('.footable-loaded').trigger('footable_expand_first_row');
+
+
       // Check if the page has a filter element for the table
       if($('.filter').length){
         $('.filter').change(function (e) {
