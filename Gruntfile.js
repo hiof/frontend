@@ -128,7 +128,7 @@ module.exports = function(grunt) {
           'build/typography-kitchen-sink.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
-            'app/views/pages/content/typography-kitchen-sink.html',
+            'app/views/pages/content/content-kitchen-sink.html',
             'app/views/partials/_footer.html'
           ],
           'build/form-index.html': [
