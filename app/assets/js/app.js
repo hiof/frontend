@@ -97,6 +97,14 @@ $(function() {
 
       }
 
+
+
+
+      // Search
+
+      //$('#global-search-input').addClass('initial');
+
+
       // If the device does not have touch, fix z-index on embed
       //if($("html.no-touch").length){
       //   $('iframe[src^="//www.youtube.com/embed"').each(function(){
@@ -116,6 +124,16 @@ $(function() {
       //console.log(e.keyCode);
       if(e.altKey){
         Hiof.KeyboardShortcuts(e);
+      }else if(e.keyCode == 27){
+        
+        if($('#global-search-input').is(':focus')){
+          //console.log("Input has focus when esc key is clicked");
+          Hiof.Search.Toggle();
+
+        }else{
+          //console.log("Esc key pressed");
+        }
+        //e.k
       }
     });
 
@@ -206,7 +224,19 @@ $(function() {
 
 
 
-
+    $('#search').on('click', function(e){
+      console.log("Clicked...");
+      if($('#global-search').hasClass('initial')){
+        console.log("#global-search-input has .initial");
+        e.preventDefault();
+        Hiof.Search.Toggle();
+        $('#global-search-input').focus();
+      }
+    });
+    $('#search-close').on('click', function(e){
+      e.preventDefault();
+      Hiof.Search.Toggle();
+    });
 
 
       // Start the responsive table plugin
