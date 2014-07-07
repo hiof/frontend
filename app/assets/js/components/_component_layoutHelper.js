@@ -22,8 +22,8 @@ Hiof.LayoutHelper = function(parrent) {
       //console.log("Parrent variable is not defined (fire standardcode)");
       // Half layout helper-inject
       if ($('.lo-auron-2-3 .lo-half').length) {
-          $('.lo-half:odd').addClass(classFirst);
-          $('.lo-half:even').addClass(classLast);
+          $('.lo-half:even').addClass(classFirst);
+          $('.lo-half:odd').addClass(classLast);
       }
 
       // Querter layout helper-inject
@@ -72,7 +72,7 @@ Hiof.EqualHeight = function(group) {
 
 
 Hiof.EqualHeightContentAndSidebar = function() {
-    var highestCol = Math.max($('#content').height(), $('#sidebar').height());
+    var highestCol = Math.max($('#content, #news').height(), $('#sidebar').height());
     // TODO: Refactor the window width check to work on the fly instead of on-load
     //var viewportWidth = $(window).width();
     if (Hiof.Options.windowWidth > 900){
