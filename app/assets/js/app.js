@@ -72,8 +72,7 @@ $(function() {
         }, 100000);
       }
 
-      // Equal height of articles
-      //Hiof.EqualHeight($(".article"));
+
 
       window.setInterval(function(){
         Hiof.EqualHeightContentAndSidebar();
@@ -350,6 +349,12 @@ $(function() {
 
 
 });
+$( window ).load(function() {
+    // Equal height of articles
+    Hiof.EqualHeight($(".article"));
+});
+
+
 
 // Verktøy
 
