@@ -10,7 +10,8 @@ Hiof.Options = {
   distanceToTopBreakPoint: 0,
   distanceToSidebarSticky: 0,
   navigationBreakpoint: 770,
-  contentHeight: $("#main").outerHeight()
+  contentHeight: $("#main").outerHeight(),
+  language: Hiof.Language.GetUrlParameter("lang")
 };
 //console.log(Hiof.Options.contentHeight);
 
@@ -48,6 +49,8 @@ $(function() {
       // Layout helper
       Hiof.LayoutHelper();
 
+      Hiof.LayoutHelper("#research");
+      Hiof.LayoutHelper("#news");
 
       // Append toolbar
       Hiof.Toolbar();
@@ -73,10 +76,12 @@ $(function() {
       }
 
 
+      Hiof.EqualHeightContentAndSidebar();
+      //Hiof.EqualHeight($('#content, #news, #sidebar'));
 
-      window.setInterval(function(){
-        Hiof.EqualHeightContentAndSidebar();
-      }, 3000);
+      //window.setInterval(function(){
+      //  Hiof.EqualHeightContentAndSidebar();
+      //}, 3000);
 
       
       // Fade in all visible content
@@ -94,10 +99,11 @@ $(function() {
       if(Hiof.Options.windowWidth < 770){
         Hiof.Navigation.ManipulateMarkupForVerticalNavigation("#nav-pages");
       }else{
-
       }
 
-
+      if($("#program-KS601").length){
+        Hiof.Study.DuplicateStudyCourseFacts();
+      }
 
 
       // Search
@@ -137,6 +143,7 @@ $(function() {
       }
     });
 
+
     //$(document).on("click touchstart", ".mobile-pages", function(e) {
     //    e.preventDefault();
     //    toggleLeftNavigation();
@@ -162,7 +169,7 @@ $(function() {
 
         var thisElement = $(this);
         if (thisElement.siblings(".dropdown-menu").length){
-          console.log("element has a sibling with the dropdown-menu class");
+          //console.log("element has a sibling with the dropdown-menu class");
           e.preventDefault();
           Hiof.ToggleSubNavigations(thisElement);
         }
@@ -170,8 +177,9 @@ $(function() {
     });
 
     // Page navigation
-    $(".nav-page a").on("click", function(e) {
+    $("#nav-page").on("click", "a", function(e) {
         var url = $(this).attr("href");
+        //e.preventDefault();
         // If the link is internal, prevent default behaviour 
         if (url.indexOf("#") != -1) {
             //console.log("Url has a Hash");
@@ -199,15 +207,17 @@ $(function() {
         if(Hiof.Options.windowWidth < 770){
           Hiof.HeaderToggle();
           Hiof.Navigation.ManipulateMarkupForVerticalNavigation("#nav-pages");
+          Hiof.EqualHeightContentAndSidebar();
         }else{
           Hiof.Navigation.ManipulateMarkupForVerticalNavigation("#nav-pages");
+          Hiof.EqualHeightContentAndSidebar();
         }
 
 
      });
 
 
-
+    // Update settings and execute functions when the user scroll
     $(window).scroll(function() {
         // Updated the settings for the scroll position when the user scroll on the site
         Hiof.Options.distanceToTop = $(window).scrollTop();
@@ -223,20 +233,26 @@ $(function() {
 
 
 
-
+    // Toogle the global search field and submit the search 
     $('#search').on('click', function(e){
-      console.log("Clicked...");
       if($('#global-search').hasClass('initial')){
-        console.log("#global-search-input has .initial");
         e.preventDefault();
         Hiof.Search.Toggle();
         $('#global-search-input').focus();
+      }else{
+        $('#global-search').submit();
       }
     });
     $('#search-close').on('click', function(e){
       e.preventDefault();
       Hiof.Search.Toggle();
     });
+
+
+
+
+
+
 
 
       // Start the responsive table plugin
@@ -290,7 +306,7 @@ $(function() {
 
 
       // If there is a table on the page, activate the footable() plugin
-      if($('#main table').length){
+      if($('#main table').length && $('#KS016').length === 0){
         $("#main table:not(.not-responsive)").footable({
             breakpoints: {
               phone: 640,
@@ -298,6 +314,7 @@ $(function() {
               desktop: 900
             }, 
             limitNavigation: 5,
+            pageSize: 40,
             //debug: true,
             //filter: {
             //  filterFunction: function(index) {
@@ -373,8 +390,10 @@ $(function() {
       }
 
 
-
-
+      // 
+      if ($("#studie").length){
+        Hiof.Study.ExecuteFilterFromUrl();
+      }
 
 
 

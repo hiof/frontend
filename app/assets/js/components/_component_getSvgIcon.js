@@ -10,7 +10,7 @@ Hiof.getSvgIcon = function(icon){
   xhr = new XMLHttpRequest();
 
   xhr.open("GET",url,false);
-  xhr.overrideMimeType("image/svg+xml");
+  //if(xhr.overrideMimeType) xhr.overrideMimeType("image/svg+xml");
   xhr.send("");
 
   var response = xhr.responseXML.documentElement;

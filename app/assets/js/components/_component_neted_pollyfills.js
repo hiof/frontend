@@ -10,11 +10,11 @@ Hiof.Polyfill = function() {
   if($('#active-link').length){
     $('#active-link').parent().addClass("active");
   }
+  if($('#active-node').length){
+    $('#active-node').addClass("active");
+  }
 
 
-
-    
-
-
+  
 
 };

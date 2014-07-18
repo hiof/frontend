@@ -110,7 +110,16 @@
       }
     }
   }
-
+  .lang-en.index{
+    // Override to fix a spacing issue when the index hero-layout is combined
+    // with normal page content
+    #study{
+      padding-bottom: 0;
+    }
+    #content{
+      margin-top: 0;
+    }
+  }
   #research, #news{
     margin-bottom: 4rem;
     > header{
@@ -118,6 +127,9 @@
       width: 100%;
       float: left;
       margin-bottom: 4rem;
+      //h2{
+      //  padding-left: 1rem;
+      //}
       &.blue-background{
         &:before{
           content: "";
@@ -170,8 +182,168 @@
   }
   .study-course{}
   .study-course-facts{
-
+      float: right;
+      padding-left: 3rem !important;
+      /* padding-bottom: 3rem; */
+      padding-top: 2rem !important;
+      border: 1px solid #ddd;
+      border-radius: .4rem;
+      margin: 2rem;
+    }
+  // KD: Hack for the Study-model to look descent
+  .study-model-wrapper{
+    width: 100%;
+    overflow-x: scroll;
   }
+  .study-model{
+    width: 800px;
+  }
+  .studieinfoexplanationicons{
+    img{
+      margin-bottom: 0;
+    }
+  }
+  #overDiv table{
+    background: #fff;
+    border: 1px solid #eee;
+    td{
+      padding: 4px 10px !important;
+    }
+    font{
+      color: @text-color !important;
+      font-family: @body-font-family !important; 
+      font-size: @body-font-size !important;
+      line-height: @body-line-height !important;
+    }
+  }
+  .sp_table {
+      table-layout: fixed;
+      empty-cells: show;
+      width:100%;
+      vertical-align: middle;
+      img{
+        margin-bottom: 0;
+      }
+      td{
+        border-right: inherit;
+        padding-top: 0;
+        padding: 0;
+      }
+      tr{
+        border-botton: none;
+      }
+      .sp_category_header{
+      background-color : @color-primary-action;
+      }
+      .sp_course_header{
+          font-family: @body-font-family, Arial,  Helvetica, sans-serif;
+          font-size: 12px;
+          background-color : @color-primary-action;
+          color: @white;
+          text-align: center;
+      }
+      td.sp_course_header{
+          font-family: @body-font-family, Arial,  Helvetica, sans-serif;
+          font-size: 12px;
+          background-color : @color-primary-action;
+          color: @white;
+          text-align: center;
+      }
+      .sp_category {
+          font-family: @body-font-family, Arial,  Helvetica, sans-serif;
+          font-size: 12px;
+          background-color : @color-primary-action;
+          color: @white;
+          text-align: center;
+      }
+      .sp_strip{
+          font-size: 1px;
+          background-color: green;
+      }
+      .sp_space {
+      }
+      .sp_stripple {
+          height:2px;
+      }
+      .sp_stripple td {
+          height:2px;
+          border-top:2px dashed lightgray;
+          overflow: hidden;
+      }
+      .sp_course {
+          border: 1px #000000 solid;
+          background-color : #fff;
+          padding-left: 2px;
+          padding-right: 2px;
+      }
+      .sp_course_name {
+          font-size: 12px;
+          /*white-space:nowrap;*/
+      }
+      td.sp_course_name {
+          font-size: 12px;
+          /*white-space:nowrap;*/
+      }
+      .sp_course_icon img {
+          width: 12px;
+          height: 12px;
+      }
+      .sp_course_table {
+          height: 12px;
+          overflow:hidden;
+          word-wrap:break-word;
+      }
+
+      a.sp_link {
+          font-family: @body-font-family, Arial,  Helvetica, sans-serif;
+          font-size: 12px;
+          color : #000000;
+          text-decoration: underline;
+      }
+
+      a.sp_link:link {
+       
+      }
+
+      a.sp_link:visited {
+       
+      }
+
+      a.sp_link:active {
+         
+      }
+
+      a.sp_link:hover {
+          
+          //background-color: #FFE7A5;
+          text-decoration: none;
+          color: @color-primary-action;
+      }
+
+      .sp_title {
+          background-color:#eee;
+          border: 1px solid black;
+          padding-left:4px;
+      }
+
+      .sp_title_main {
+          background-color:#eee;
+          border: 1px solid black;
+          padding-left:4px;
+      }
+
+      .sp_title_model{
+          /*
+          background-color : #336699;
+          color : #FFFFFF;
+          */
+          font-size:12px;
+          font-weight:bold;
+      }
+  }
+
+
+
 
 }
 

@@ -1,0 +1,44 @@
+.universal(){
+  // Google Search overrides
+  .gsc-result .gs-title{
+    height: auto;
+  }
+  .gsc-control-cse, .gsc-control-cse .gsc-table-result{
+    font-size: @body-font-size;
+    line-height: @body-line-height;
+    font-family: @body-font-family;
+    font-style: normal;
+    font-weight: 400;
+  }
+  .gsc-thumbnail-inside, .gsc-url-top{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .gsc-webResult{
+    border-bottom: .1rem solid #eee;
+  }
+  .gsc-tabsArea > div{
+    overflow: inherit !important;
+  }
+  .cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2{
+    height: 28px !important;
+    width: 69px !important;
+    margin-top: 5px !important;
+  }
+  .gsc-control-wrapper-cse{
+    td{
+      border-right: none;
+      padding-left: 0 ;
+      &.gsib_a{
+        padding: 0;
+        padding-left: 8px;
+      }
+    }
+  }
+  .gs-image{
+    margin: 0;
+  }
+  #___gcse_0 .gsc-selected-option-container{
+    width: auto !important;
+  }
+}

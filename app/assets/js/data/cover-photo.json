@@ -1,0 +1,82 @@
+{
+    "cover": {
+        "index": {
+            "1": {
+                "700": "path/to/image.jpg",
+                "900": "path/to/image.jpg",
+                "1200": "path/to/image.jpg",
+                "1600": "path/to/image.jpg"
+                },
+            "2": {
+                "700": "path/to/image.jpg",
+                "900": "path/to/image.jpg",
+                "1200": "path/to/image.jpg",
+                "1600": "path/to/image.jpg"
+            },
+            "3": {
+                "700": "path/to/image.jpg",
+                "900": "path/to/image.jpg",
+                "1200": "path/to/image.jpg",
+                "1600": "path/to/image.jpg"
+            },
+            "4": {
+                "700": "path/to/image.jpg",
+                "900": "path/to/image.jpg",
+                "1200": "path/to/image.jpg",
+                "1600": "path/to/image.jpg"
+            }
+        },
+        "study": {
+            "1": {
+                "700": "path/to/image.jpg",
+                "900": "path/to/image.jpg",
+                "1200": "path/to/image.jpg",
+                "1600": "path/to/image.jpg"
+                },
+            "2": {
+                "700": "path/to/image.jpg",
+                "900": "path/to/image.jpg",
+                "1200": "path/to/image.jpg",
+                "1600": "path/to/image.jpg"
+            },
+            "3": {
+                "700": "path/to/image.jpg",
+                "900": "path/to/image.jpg",
+                "1200": "path/to/image.jpg",
+                "1600": "path/to/image.jpg"
+            },
+            "4": {
+                "700": "path/to/image.jpg",
+                "900": "path/to/image.jpg",
+                "1200": "path/to/image.jpg",
+                "1600": "path/to/image.jpg"
+            }
+        },
+        "page": {
+            "1": {
+                "700": "path/to/image.jpg",
+                "900": "path/to/image.jpg",
+                "1200": "path/to/image.jpg",
+                "1600": "path/to/image.jpg"
+                },
+            "2": {
+                "700": "path/to/image.jpg",
+                "900": "path/to/image.jpg",
+                "1200": "path/to/image.jpg",
+                "1600": "path/to/image.jpg"
+            },
+            "3": {
+                "700": "path/to/image.jpg",
+                "900": "path/to/image.jpg",
+                "1200": "path/to/image.jpg",
+                "1600": "path/to/image.jpg"
+            },
+            "4": {
+                "700": "path/to/image.jpg",
+                "900": "path/to/image.jpg",
+                "1200": "path/to/image.jpg",
+                "1600": "path/to/image.jpg"
+            }
+        }
+    }
+}

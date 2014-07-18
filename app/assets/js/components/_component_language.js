@@ -5,17 +5,15 @@ Hiof.Language = {};
 
 Hiof.Language.Check = function(){
 
-  var language = Hiof.GetUrlParameter("lang");
+  var language = Hiof.Options.language;
 
    if (typeof language === 'undefined') {
     language = "nor";
    }
-
-
   return language;
 };
 
-Hiof.GetUrlParameter = function(sParam){
+Hiof.Language.GetUrlParameter = function(sParam){
 
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&');

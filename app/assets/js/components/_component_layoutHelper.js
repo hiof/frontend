@@ -1,7 +1,7 @@
 // Defualt namespace
 var Hiof = Hiof || {};
 
-
+Hiof.Layout = {};
 
 
 Hiof.LayoutHelper = function(parrent) {
@@ -67,7 +67,7 @@ Hiof.EqualHeight = function(group) {
         }
     });
     group.height(tallest);
-
+    //console.log("EqualHeight executed");
 };
 
 

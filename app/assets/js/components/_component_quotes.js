@@ -1,6 +1,6 @@
 Hiof.Quotes = function(quoteId) {
 
-  $.getJSON("assets/js/data/quotes.json", function(data) {
+  $.getJSON("/assets/js/data/quotes.json", function(data) {
     var randomEntry = data.quotes[Math.floor(Math.random()*data.quotes.length)];
 
     if (randomEntry.id == quoteId){

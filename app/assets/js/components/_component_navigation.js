@@ -120,6 +120,13 @@ Hiof.ToggleMobileNavigation = function() {
                 Hiof.ToggleUserNavigation();
             } else if ($(this).is("#nav-mobile-internal")) {
                 //console.log("#nav-mobile-internal clicked");
+                $.scrollTo($("#content"), 500, {
+                    axis: 'y',
+                    offset: {
+                        top: -80
+                    }
+                });
+
                 Hiof.ToggleInternalNavigation();
             } else {
                 return;
@@ -142,26 +149,24 @@ Hiof.ToggleSubNavigations = function(el) {
 };
 
 
-// Functionalyt to manipulate markup for the left-navigation on small screens
+// Functionality to manipulate markup for the left-navigation on small screens
 Hiof.Navigation.ManipulateMarkupForVerticalNavigation = function(el) {
     if (Hiof.Options.windowWidth < 770) {
-        //console.log("Hello");
-        var subNav = $(".dropdown-menu .dropdown-menu", el),
-            subNavSiblingAnchor = subNav.siblings("a"),
-            subNavSiblingAnchorHref = subNavSiblingAnchor.attr("href"),
-            subNavSiblingAnchorText = subNavSiblingAnchor.text(),
-            newSubNavEl = '<li data-temp="true"><a href="' + subNavSiblingAnchorHref + '">' + subNavSiblingAnchorText + '</a></li>';
 
-        //console.log(newSubNavEl);
-        //subNavSiblingAnchor.css("background", "pink");
+        var subNav = $(".dropdown-menu .dropdown-menu", el);
+  
         if ($("li[data-temp]", el).length){
 
             //console.log("Generated content exsist");
         }else{
             //console.log("Generated content does not exsist");
-            subNav.prepend(newSubNavEl);
-            // Highlight generated content for test purposes
-            $("li[data-temp]", el).css("background", "pink");
+            $(subNav).each(function(){
+                var subNavSiblingAnchor = $(this).prev(),
+                    subNavSiblingAnchorHref = $(subNavSiblingAnchor).attr("href"),
+                    subNavSiblingAnchorText = $(subNavSiblingAnchor).text(),
+                    newSubNavEl = '<li data-temp="true"><a href="' + subNavSiblingAnchorHref + '">' + subNavSiblingAnchorText + '</a></li>';
+                    $(this).prepend(newSubNavEl);
+            });
         }
         
     } else {
@@ -172,4 +177,18 @@ Hiof.Navigation.ManipulateMarkupForVerticalNavigation = function(el) {
 
         }
     }
+};
+
+
+Hiof.Navigation.AddInternalLinksToPageNav = function(){
+    var list = document.createElement("ul"),
+        listItem = "";
+    $(list).addClass("nav nav-pills nav-stacked");
+
+    $("#content h3").each(function() {
+        listItem = listItem + '<li><a href="#' + $(this).attr("id") + '" title="Internlink til: ' + $(this).text() + '">' + $(this).text() + '</a></li>';
+        return listItem;
+    });
+
+    $("#nav-page > ul").append(listItem);
 };
