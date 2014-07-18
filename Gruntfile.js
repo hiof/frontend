@@ -269,6 +269,15 @@ module.exports = function(grunt) {
             'app/views/pages/content/study-programs-sidebar-end.html',
             'app/views/partials/_footer.html'
           ],
+          'build/studier-dataingenior-studymodel.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/study-program-ingenior-computer-studymodel.html',
+            'app/views/pages/content/study-programs-sidebar-start.html',
+            'app/views/pages/content/study-programs-sidebar-page-nav.html',
+            'app/views/pages/content/study-programs-sidebar-end.html',
+            'app/views/partials/_footer.html'
+          ],
           'build/universiell-utforming.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
