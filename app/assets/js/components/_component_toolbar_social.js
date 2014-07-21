@@ -3,11 +3,12 @@ var Hiof = Hiof || {};
 
 Hiof.Toolbar.SocialShare = function() {
 
-        var facebook = "Facebook",
+        var lang = Hiof.Language.Check(),
+            facebook = "Facebook",
             twitter = "Twitter",
             sharePage;
 
-      if (Hiof.Options.language === "nor"){
+      if (lang === "nor"){
         sharePage = "Del på ";
       }else{
         sharePage = "Share page on ";

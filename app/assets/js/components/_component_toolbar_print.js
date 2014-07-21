@@ -4,9 +4,11 @@ Hiof.Toolbar.Print = function() {
 
 
 
-  var printText, printThisPage;
+  var lang = Hiof.Language.Check(),
+      printText, 
+      printThisPage;
 
-  if (Hiof.Options.language === "nor"){
+  if (lang === "nor"){
     printText = "Print";
     printThisPage = "Print denne siden";
   }else{

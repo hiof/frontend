@@ -4,9 +4,10 @@ var Hiof = Hiof || {};
 Hiof.Toolbar = function() {
 
 
-  var shareText;
+  var lang = Hiof.Language.Check(),
+      shareText;
 
-  if (Hiof.Options.language === "nor"){
+  if (lang === "nor"){
     shareText = "Del eller skriv ut denne siden";
   }else{
     shareText = "Share or print this page";
