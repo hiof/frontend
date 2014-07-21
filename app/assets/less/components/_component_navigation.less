@@ -38,7 +38,8 @@
     right: 5rem;
     width: 31rem;
     top: 1.7rem;
-    transition: width .5s ease;
+    opacity: 1;
+    transition: opacity .3s ease;
     //transform: translateZ(1);
   }
   #global-search{
@@ -67,12 +68,14 @@
       height: 1.6rem;
       background: url(../images/icons/cross.svg) no-repeat;
       background-size: 100% 100%;
-      transition: right .5s ease;
+      transition: opacity .3s ease;
+      //transition-delay: .3s;
       opacity: 1;
+      display: block;
     }
     &.initial{
       #global-search-input{
-
+        opacity: 0;
         width: 0;
         padding: 0;
         border: none;
@@ -80,7 +83,11 @@
       #search-close{
         right: 1rem;
         opacity: 0;
-        //display: none;
+        display: none;
+      }
+      #search{
+        border-top-left-radius: .4rem;
+        border-bottom-left-radius: .4rem;
       }
     }
 
@@ -415,8 +422,31 @@
     // Override .btn styling
     box-shadow: 1px 0 1px rgba(0,0,0,.1);
     a{
+      position: relative;
+      //background: pink;
+      &.icon-down{
+        &:after{
+          content: "";
+          position: absolute;
+          top: 2rem;
+          right: 1rem;
+          width: 10px;
+          height: 10px;
+          display: block;
+          //background-color: #f00;
+          background: url(../images/icons/arrow-down.svg) no-repeat top right;
+          background-size: 100%;
+          transition: transform .3s ease;
+        } 
+      }
 
+      &.open{
+        &:after{
+          transform: rotate(180deg);
+        }
+      }
     }
+
     .btn-primary{
       background: none;
       color: @hiof-blue;

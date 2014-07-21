@@ -145,9 +145,17 @@ Hiof.ToggleMobileNavigation = function() {
 
 // Functionality to toggle sub-navs
 Hiof.ToggleSubNavigations = function(el) {
+   
+    el.toggleClass("open");
     el.siblings(".dropdown-menu").slideToggle();
 };
 
+// Functionality to add a down-arrow to the vertical navigation
+Hiof.Navigation.AddDropdownIconToVerticalNavigation = function(el){
+    $(".dropdown-menu").siblings("a").each(function(){
+        $(this).toggleClass("icon-down");
+    });
+};
 
 // Functionality to manipulate markup for the left-navigation on small screens
 Hiof.Navigation.ManipulateMarkupForVerticalNavigation = function(el) {
@@ -191,4 +199,7 @@ Hiof.Navigation.AddInternalLinksToPageNav = function(){
     });
 
     $("#nav-page > ul").append(listItem);
+};
+Hiof.Navigation.ToggleInternalNavigationIndexDisplay = function(){
+  $("#index-internal").toggleClass("visuallyhidden");
 };

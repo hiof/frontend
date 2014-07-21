@@ -13,7 +13,6 @@ Hiof.Options = {
   contentHeight: $("#main").outerHeight(),
   language: Hiof.Language.GetUrlParameter("lang")
 };
-//console.log(Hiof.Options.contentHeight);
 
 $(function() {
     // ----------------------------------------------------------------------------------------------------
@@ -76,7 +75,7 @@ $(function() {
       }
 
 
-      Hiof.EqualHeightContentAndSidebar();
+      //Hiof.EqualHeightContentAndSidebar();
       //Hiof.EqualHeight($('#content, #news, #sidebar'));
 
       //window.setInterval(function(){
@@ -98,6 +97,11 @@ $(function() {
 
       if(Hiof.Options.windowWidth < 770){
         Hiof.Navigation.ManipulateMarkupForVerticalNavigation("#nav-pages");
+        
+
+
+        Hiof.Navigation.AddDropdownIconToVerticalNavigation();
+
       }else{
       }
 
@@ -207,10 +211,11 @@ $(function() {
         if(Hiof.Options.windowWidth < 770){
           Hiof.HeaderToggle();
           Hiof.Navigation.ManipulateMarkupForVerticalNavigation("#nav-pages");
-          Hiof.EqualHeightContentAndSidebar();
+          //Hiof.EqualHeightContentAndSidebar();
         }else{
           Hiof.Navigation.ManipulateMarkupForVerticalNavigation("#nav-pages");
-          Hiof.EqualHeightContentAndSidebar();
+          //Hiof.EqualHeightContentAndSidebar();
+          Hiof.Navigation.AddDropdownIconToVerticalNavigation();
         }
 
 
@@ -314,7 +319,7 @@ $(function() {
               desktop: 900
             }, 
             limitNavigation: 5,
-            pageSize: 40,
+            pageSize: 50,
             //debug: true,
             //filter: {
             //  filterFunction: function(index) {
