@@ -49,9 +49,9 @@ Hiof.SetupStudyFilter = function(e){
   //return thisFormValues;
 };
 
-Hiof.ExecuteFilterFromUrl = function(e){
-  e.preventDefault();
-};
+//Hiof.ExecuteFilterFromUrl = function(e){
+//  e.preventDefault();
+//};
 
 
 
