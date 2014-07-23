@@ -24,17 +24,17 @@ Hiof.Toolbar = function() {
     var footerElement = document.createElement('footer'),
         headerElement = document.createElement('header'),
         heading = document.createElement('h2'),
-        menu = document.createElement('menu');
+        menu = document.createElement('ul');
 
 
     $(footerElement).addClass('lo-full');
     $(headerElement).addClass('lo-full');
     $(heading).text(shareText);
-    $(menu).addClass('lo-full').attr('id', 'toolbar').attr('type', 'toolbar');
+    $(menu).addClass('lo-full').attr('id', 'toolbar');
 
 
-    $(headerElement).append($(heading) , $(menu));
-    $(footerElement).append($(headerElement));
+    //$(headerElement).append();
+    $(footerElement).append($(heading) , $(menu));
 
 
 
@@ -62,7 +62,7 @@ Hiof.Toolbar.Print = function() {
 
 
 
-        var button = '<li><menu label="Print"><button id="print-page" class="btn btn-primary btn-line" onclick="javascript:window.print()" title="' + printThisPage + '">' + printThisPage + '</button></menu></li>';
+        var button = '<li><button id="print-page" class="btn btn-primary btn-line" onclick="javascript:window.print()" title="' + printThisPage + '">' + printThisPage + '</button></li>';
         $("#toolbar").append(button);
         svgPrint = Hiof.getSvgIcon("print");
         //console.log(svgFacebook);
@@ -93,8 +93,8 @@ Hiof.Toolbar.SocialShare = function() {
  
 
 
-        var socialMenu = '<li><menu label="Share"><button id="social-facebook" class="btn btn-primary btn-line" onclick="javascript:Hiof.Share.Facebook()">' + sharePage + facebook + '</button>';
-        socialMenu += '<button id="social-twitter" class="btn btn-primary btn-line" onclick="javascript:Hiof.Share.Twitter()">' + sharePage + twitter + '</button></menu></li>';
+        var socialMenu = '<li class="margin-l-off"><button id="social-facebook" class="btn btn-primary btn-line" onclick="javascript:Hiof.Share.Facebook()">' + sharePage + facebook + '</button></li>';
+        socialMenu += '<li><button id="social-twitter" class="btn btn-primary btn-line" onclick="javascript:Hiof.Share.Twitter()">' + sharePage + twitter + '</button></li>';
 
         $("#toolbar").append(socialMenu);
 
