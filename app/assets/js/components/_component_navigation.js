@@ -90,18 +90,38 @@ Hiof.ToggleMobileNavigation = function() {
             navButtonTextInternal = "Gå til";
         }
 
-        var button = '<a aria-hidden="true" class="navigation-mobile" href="#"></a>',
-            svgNavSite = Hiof.getSvgIcon("nav-site"),
-            svgNavUser = Hiof.getSvgIcon("user"),
-            svgPageNav = Hiof.getSvgIcon("nav-page"),
-            buttonNavSite = $(button).append(navButtonTextMobileSite).attr('id', 'nav-mobile-site').addClass('mobile-pages').append(svgNavSite),
-            buttonNavUser = $(button).append(navButtonTextMobileUser).attr('id', 'nav-mobile-user').addClass('mobile-user').append(svgNavUser),
-            buttonNavPage = $(button).append(navButtonTextInternal).attr('id', 'nav-mobile-internal').addClass('mobile-internal').append(svgPageNav);
+
+        // Create a button
+        var button = document.createElement('a');
+
+        // Append standard attributes
+        $(button).addClass('navigation-mobile').attr('aria-hidden', 'true').attr('href', '#');
+
+        
+        // Setup the different buttons
+        var buttonNavSite = $(button).clone().text(navButtonTextMobileSite).attr('id', 'nav-mobile-site').addClass('mobile-pages'),
+            buttonNavUser = $(button).clone().text(navButtonTextMobileUser).attr('id', 'nav-mobile-user').addClass('mobile-user'),
+            buttonNavPage = $(button).clone().text(navButtonTextInternal).attr('id', 'nav-mobile-internal').addClass('mobile-internal');
+
+        //$(buttonNavSite);
+        //$(buttonNavUser);
+        //$(buttonNavPage);
 
 
+        if(!$("html.lt-ie10").length){
+          var svgNavSite = Hiof.getSvgIcon("nav-site"),
+              svgNavUser = Hiof.getSvgIcon("user"),
+              svgPageNav = Hiof.getSvgIcon("nav-page");
+            
+          $(buttonNavSite).append(svgNavSite);
+          $(buttonNavUser).append(svgNavUser);
+          $(buttonNavPage).append(svgPageNav);
+        }
+
+
+        // Append the buttons to the DOM
         $("#header").append(buttonNavSite);
         $("#header").append(buttonNavUser);
-
         if ($('#nav-page').length) {
             $("#header").append(buttonNavPage);
         }
@@ -126,7 +146,6 @@ Hiof.ToggleMobileNavigation = function() {
                         top: -80
                     }
                 });
-
                 Hiof.ToggleInternalNavigation();
             } else {
                 return;
