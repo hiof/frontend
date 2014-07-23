@@ -37,7 +37,7 @@ $(function() {
 
  
     Hiof.Options.contentHeight = $("#main").outerHeight();
-
+    Hiof.CoverPhoto.AddCoverPhotoToPage();
     //console.log(Hiof.Options.contentHeight);
 
     // ----------------------------------------------------------------------------------------------------
@@ -201,6 +201,14 @@ $(function() {
             //console.log("URL does not contain a hash");
         }
     });
+
+
+
+    // Reset filter
+    $('#study-search-reset').on("click", function(){
+      $('table').data('footable-filter').clearFilter();
+    });
+
 
 
     // When window resize, fire the following code
