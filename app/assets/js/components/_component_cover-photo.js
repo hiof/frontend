@@ -4,46 +4,63 @@ var Hiof = Hiof || {};
 Hiof.CoverPhoto = {};
 
 
+Hiof.CoverPhoto.AddCoverPhotoToPage = function (){
+  var pageType = $("#main").data("page-category"),
+      entry;
+  
+  //onsole.log(pageType);
 
-
-Hiof.CoverPhoto.GenerateMarkup = function(){
-  var photoWrapper = '<div class="cover-inline" data-id="' + randomEntry.id + '"><p>&ldquo;' + randomEntry.text + '&rdquo;</p></div>';
-  if($(".cover-inline").length){
-
+  if(typeof pageType === "undefined"){
+    //console.log('pageType was undefined, default to "page"');
+    pageType = "page";
   }
-};
-
-Hiof.CoverPhoto.Show = function(){
-//  if(){}
-};
 
 
 
 
 
-
-Hiof.CoverPhoto.FindFoto = function() {
-  //var category = category;
+  // Load the data
   $.getJSON("/assets/js/data/cover-photo.json", function(data) {
+      // Get data from a random entry based on the pageType
+      //console.log(data.cover[pageType]);
 
-    var entries = data;
+      var entriesInCategory = data.cover[pageType],
+          totalEntries = Object.keys(entriesInCategory).length,
+          randomEntry = entriesInCategory[Math.floor(Math.random()*totalEntries)];
+      
+      // Set the entry to be the randomEntry data
+      //entry = randomEntry;
 
-    //var randomEntry = data.cover[Math.floor(Math.random()*data.cover.length)];
+      // Callback to generate the content
+      Hiof.CoverPhoto.GenerateMarkup(randomEntry);
 
-    //if (randomEntry.id == quoteId){
-    //  //console.log("Random entry was equal");
-    //  randomEntry.id--;
-    //  if (randomEntry.id == "0"){
-    //    //console.log("Random entry turned zero");
-    //    randomEntry.id = "3";
-    //    //console.log(".. But is now: " + randomEntry.id);
-    //  }
-    //}
-    //console.log(entries);
-    //var quote = '<div class="cover-inline" data-id="' + randomEntry.id + '"><p>&ldquo;' + randomEntry.text + '&rdquo;</p></div>';
-    //$('#content').append(quote);
-    //$('.cover-inline').addClass("show");
-  }).done(function(data){
-    console.log(data.cover);
   });
+
+
 };
+
+
+
+
+
+Hiof.CoverPhoto.GenerateMarkup = function(data){
+  var photoWrapper;
+
+  photoWrapper = '<div id="cover-photo" class="cover-inline initial" data-cover-photo-blurred="' + data[1200]  + '" style="background-image:url(' + data[1200] + ')"></div>';
+
+  if(Hiof.Options.windowWidth > 650){
+
+  }else if (Hiof.Options.windowWidth > Hiof.Options.navigationBreakpoint){
+    
+  }
+  if((Hiof.Options.windowWidth > 900)){
+    //console.log("large view inc.");
+    
+  }
+  //console.log(data[1200]);
+  //var imageUrl = data[1200] + "";
+  
+  $('#main').prepend(photoWrapper);
+  //return photoWrapper;
+};
+

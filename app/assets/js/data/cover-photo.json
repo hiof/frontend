@@ -1,82 +1,36 @@
 {
     "cover": {
         "index": {
-            "1": {
-                "700": "path/to/image.jpg",
-                "900": "path/to/image.jpg",
-                "1200": "path/to/image.jpg",
-                "1600": "path/to/image.jpg"
-                },
-            "2": {
-                "700": "path/to/image.jpg",
-                "900": "path/to/image.jpg",
-                "1200": "path/to/image.jpg",
-                "1600": "path/to/image.jpg"
-            },
-            "3": {
-                "700": "path/to/image.jpg",
-                "900": "path/to/image.jpg",
-                "1200": "path/to/image.jpg",
-                "1600": "path/to/image.jpg"
-            },
-            "4": {
-                "700": "path/to/image.jpg",
-                "900": "path/to/image.jpg",
-                "1200": "path/to/image.jpg",
-                "1600": "path/to/image.jpg"
+            "0": {
+                "700": "/assets/images/cover-photo/index/index-1-2000X600.jpg",
+                "900": "/assets/images/cover-photo/index/index-1-2000X600.jpg",
+                "1200": "/assets/images/cover-photo/index/index-1-2000X600.jpg",
+                "1600": "/assets/images/cover-photo/index/index-1-2000X600.jpg"
             }
         },
         "study": {
-            "1": {
-                "700": "path/to/image.jpg",
-                "900": "path/to/image.jpg",
-                "1200": "path/to/image.jpg",
-                "1600": "path/to/image.jpg"
-                },
-            "2": {
-                "700": "path/to/image.jpg",
-                "900": "path/to/image.jpg",
-                "1200": "path/to/image.jpg",
-                "1600": "path/to/image.jpg"
-            },
-            "3": {
-                "700": "path/to/image.jpg",
-                "900": "path/to/image.jpg",
-                "1200": "path/to/image.jpg",
-                "1600": "path/to/image.jpg"
-            },
-            "4": {
-                "700": "path/to/image.jpg",
-                "900": "path/to/image.jpg",
-                "1200": "path/to/image.jpg",
-                "1600": "path/to/image.jpg"
+            "0": {
+                "700": "/assets/images/cover-photo/study/study-car-1-2000X600.jpg",
+                "900": "/assets/images/cover-photo/study/study-car-1-2000X600.jpg",
+                "1200": "/assets/images/cover-photo/study/study-car-1-2000X600.jpg",
+                "1600": "/assets/images/cover-photo/study/study-car-1-2000X600.jpg"
             }
+
         },
         "page": {
+            "0": {
+                "700": "/assets/images/cover-photo/page/page-students-1-2000X600.jpg",
+                "900": "/assets/images/cover-photo/page/page-students-1-2000X600.jpg",
+                "1200": "/assets/images/cover-photo/page/page-students-1-2000X600.jpg",
+                "1600": "/assets/images/cover-photo/page/page-students-1-2000X600.jpg"
+            },
             "1": {
-                "700": "path/to/image.jpg",
-                "900": "path/to/image.jpg",
-                "1200": "path/to/image.jpg",
-                "1600": "path/to/image.jpg"
-                },
-            "2": {
-                "700": "path/to/image.jpg",
-                "900": "path/to/image.jpg",
-                "1200": "path/to/image.jpg",
-                "1600": "path/to/image.jpg"
-            },
-            "3": {
-                "700": "path/to/image.jpg",
-                "900": "path/to/image.jpg",
-                "1200": "path/to/image.jpg",
-                "1600": "path/to/image.jpg"
-            },
-            "4": {
-                "700": "path/to/image.jpg",
-                "900": "path/to/image.jpg",
-                "1200": "path/to/image.jpg",
-                "1600": "path/to/image.jpg"
+                "700": "/assets/images/cover-photo/page/page-coffee-2-2000X600.jpg",
+                "900": "/assets/images/cover-photo/page/page-coffee-2-2000X600.jpg",
+                "1200": "/assets/images/cover-photo/page/page-coffee-2-2000X600.jpg",
+                "1600": "/assets/images/cover-photo/page/page-coffee-2-2000X600.jpg"
             }
+
         }
     }
 }
