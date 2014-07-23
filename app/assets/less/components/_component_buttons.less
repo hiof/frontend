@@ -66,62 +66,29 @@
 
 
   .btn-icon{
-    background: none;
-    height: 3rem;
-    padding: .3rem;
-    line-height: 2.4rem;
-    opacity: .5;
-    transition: opacity .4s;
+
+    position: relative;
     svg{
       width: 2.4rem;
       height: 2.4rem;
+      position: absolute;
+      top: .5rem;
+      right: .6rem;
+      //opacity: .7;
+      //transition: opacity .3s;
     }
     .helper-text{
-      display: inline-block;
-      //line-height: 8rem;
-      padding-right: 1rem;
-      padding-left: .5rem;
-      margin-top: -1.4rem;
-      vertical-align:middle;
+      padding-right: 3rem;
     }
     &:hover{
-      opacity: 1;
-      .helper-text{
+      #icon-print{
+        .item{
+          fill: @white;
+        }
       }
     }
   }
-  .no-touch{
-    .btn-icon{
-      .helper-text{
-        display: none;
-        background: #fff;
-        //margin-left: -3rem;
-        transition: padding-left 1s;
-        padding: 0;
-        //position: absolute;
-        //text-align: right;
-        //width: 0;
 
-      }
-      &:hover{
-        .helper-text{
-          display: inline-block;
-          //width: auto;
-          padding: 0 1rem;
-        }
-      }
-    }
-  }
-  .no-touch.cover{ 
-    .btn-icon{
-      &:hover{
-        .helper-text{
-          color: @hiof-blue;
-        }
-      }
-    }
-      
-  }
 
 
 
