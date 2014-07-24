@@ -232,6 +232,12 @@ $(function() {
 
     // Update settings and execute functions when the user scroll
     $(window).scroll(function() {
+
+        var oVal = $(window).scrollTop() / 200;
+        
+        $(".cover-photo-blur").css("opacity", oVal);
+
+
         // Updated the settings for the scroll position when the user scroll on the site
         Hiof.Options.distanceToTop = $(window).scrollTop();
         Hiof.Options.contentHeight = $("#main").outerHeight();

@@ -2,33 +2,145 @@
     "cover": {
         "index": {
             "0": {
-                "700": "/assets/images/cover-photo/index/index-1-2000X600.jpg",
-                "900": "/assets/images/cover-photo/index/index-1-2000X600.jpg",
-                "1200": "/assets/images/cover-photo/index/index-1-2000X600.jpg",
-                "1600": "/assets/images/cover-photo/index/index-1-2000X600.jpg"
+                "400": {
+                    "normal": "/assets/images/cover-photo/index/index-1/normal/index-1-400X200.jpg",
+                    "blurred": "/assets/images/cover-photo/index/index-1/blurred/index-1-400X200.jpg"
+                },
+                "500": {
+                    "normal": "/assets/images/cover-photo/index/index-1/normal/index-1-400X200.jpg",
+                    "blurred": "/assets/images/cover-photo/index/index-1/blurred/index-1-400X200.jpg"
+                },
+                "600": {
+                    "normal": "/assets/images/cover-photo/index/index-1/normal/index-1-600X300.jpg",
+                    "blurred": "/assets/images/cover-photo/index/index-1/blurred/index-1-400X200.jpg"
+                },
+                "800": {
+                    "normal": "/assets/images/cover-photo/index/index-1/normal/index-1-800X300.jpg",
+                    "blurred": "/assets/images/cover-photo/index/index-1/blurred/index-1-400X200.jpg"
+                },
+                "1000": {
+                    "normal": "/assets/images/cover-photo/index/index-1/normal/index-1-1000X600.jpg",
+                    "blurred": "/assets/images/cover-photo/index/index-1/blurred/index-1-2000X600.jpg"
+                },
+                "1200": {
+                    "normal": "/assets/images/cover-photo/index/index-1/normal/index-1-1200X600.jpg",
+                    "blurred": "/assets/images/cover-photo/index/index-1/blurred/index-1-2000X600.jpg"
+                },
+                "1600": {
+                    "normal": "/assets/images/cover-photo/index/index-1/normal/index-1-1600X600.jpg",
+                    "blurred": "/assets/images/cover-photo/index/index-1/blurred/index-1-2000X600.jpg"
+                },
+                "2000": {
+                    "normal": "/assets/images/cover-photo/index/index-1/normal/index-1-2000X600.jpg",
+                    "blurred": "/assets/images/cover-photo/index/index-1/blurred/index-1-2000X600.jpg"
+                }
             }
         },
         "study": {
             "0": {
-                "700": "/assets/images/cover-photo/study/study-car-1-2000X600.jpg",
-                "900": "/assets/images/cover-photo/study/study-car-1-2000X600.jpg",
-                "1200": "/assets/images/cover-photo/study/study-car-1-2000X600.jpg",
-                "1600": "/assets/images/cover-photo/study/study-car-1-2000X600.jpg"
+                "400": {
+                    "normal": "/assets/images/cover-photo/study/study-car-1/normal/study-car-1-400X200.jpg",
+                    "blurred": "/assets/images/cover-photo/study/study-car-1/blurred/study-car-1-400X200.jpg"
+                },
+                "500": {
+                    "normal": "/assets/images/cover-photo/study/study-car-1/normal/study-car-1-400X200.jpg",
+                    "blurred": "/assets/images/cover-photo/study/study-car-1/blurred/study-car-1-400X200.jpg"
+                },
+                "600": {
+                    "normal": "/assets/images/cover-photo/study/study-car-1/normal/study-car-1-600X300.jpg",
+                    "blurred": "/assets/images/cover-photo/study/study-car-1/blurred/study-car-1-400X200.jpg"
+                },
+                "800": {
+                    "normal": "/assets/images/cover-photo/study/study-car-1/normal/study-car-1-800X300.jpg",
+                    "blurred": "/assets/images/cover-photo/study/study-car-1/blurred/study-car-1-400X200.jpg"
+                },
+                "1000": {
+                    "normal": "/assets/images/cover-photo/study/study-car-1/normal/study-car-1-1000X600.jpg",
+                    "blurred": "/assets/images/cover-photo/study/study-car-1/blurred/study-car-1-2000X600.jpg"
+                },
+                "1200": {
+                    "normal": "/assets/images/cover-photo/study/study-car-1/normal/study-car-1-1200X600.jpg",
+                    "blurred": "/assets/images/cover-photo/study/study-car-1/blurred/study-car-1-2000X600.jpg"
+                },
+                "1600": {
+                    "normal": "/assets/images/cover-photo/study/study-car-1/normal/study-car-1-1600X600.jpg",
+                    "blurred": "/assets/images/cover-photo/study/study-car-1/blurred/study-car-1-1600X600.jpg"
+                },
+                "2000": {
+                    "normal": "/assets/images/cover-photo/study/study-car-1/normal/study-car-1-2000X600.jpg",
+                    "blurred": "/assets/images/cover-photo/study/study-car-1/blurred/study-car-1-2000X600.jpg"
+                }
             }
 
         },
         "page": {
             "0": {
-                "700": "/assets/images/cover-photo/page/page-students-1-2000X600.jpg",
-                "900": "/assets/images/cover-photo/page/page-students-1-2000X600.jpg",
-                "1200": "/assets/images/cover-photo/page/page-students-1-2000X600.jpg",
-                "1600": "/assets/images/cover-photo/page/page-students-1-2000X600.jpg"
+                "400": {
+                    "normal": "/assets/images/cover-photo/page/page-coffee-1/normal/page-coffee-1-400X200.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-coffee-1/blurred/page-coffee-1-400X200.jpg"
+                },
+                "500": {
+                    "normal": "/assets/images/cover-photo/page/page-coffee-1/normal/page-coffee-1-400X200.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-coffee-1/blurred/page-coffee-1-400X200.jpg"
+                },
+                "600": {
+                    "normal": "/assets/images/cover-photo/page/page-coffee-1/normal/page-coffee-1-600X300.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-coffee-1/blurred/page-coffee-1-400X200.jpg"
+                },
+                "800": {
+                    "normal": "/assets/images/cover-photo/page/page-coffee-1/normal/page-coffee-1-800X300.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-coffee-1/blurred/page-coffee-1-400X200.jpg"
+                },
+                "1000": {
+                    "normal": "/assets/images/cover-photo/page/page-coffee-1/normal/page-coffee-1-1000X600.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-coffee-1/blurred/page-coffee-1-2000X600.jpg"
+                },
+                "1200": {
+                    "normal": "/assets/images/cover-photo/page/page-coffee-1/normal/page-coffee-1-1200X600.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-coffee-1/blurred/page-coffee-1-2000X600.jpg"
+                },
+                "1600": {
+                    "normal": "/assets/images/cover-photo/page/page-coffee-1/normal/page-coffee-1-1600X600.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-coffee-1/blurred/page-coffee-1-1600X600.jpg"
+                },
+                "2000": {
+                    "normal": "/assets/images/cover-photo/page/page-coffee-1/normal/page-coffee-1-2000X600.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-coffee-1/blurred/page-coffee-1-2000X600.jpg"
+                }
             },
             "1": {
-                "700": "/assets/images/cover-photo/page/page-coffee-2-2000X600.jpg",
-                "900": "/assets/images/cover-photo/page/page-coffee-2-2000X600.jpg",
-                "1200": "/assets/images/cover-photo/page/page-coffee-2-2000X600.jpg",
-                "1600": "/assets/images/cover-photo/page/page-coffee-2-2000X600.jpg"
+                "400": {
+                    "normal": "/assets/images/cover-photo/page/page-students-1/normal/page-students-1-400X200.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-students-1/blurred/page-students-1-400X200.jpg"
+                },
+                "500": {
+                    "normal": "/assets/images/cover-photo/page/page-students-1/normal/page-students-1-400X200.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-students-1/blurred/page-students-1-400X200.jpg"
+                },
+                "600": {
+                    "normal": "/assets/images/cover-photo/page/page-students-1/normal/page-students-1-600X300.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-students-1/blurred/page-students-1-400X200.jpg"
+                },
+                "800": {
+                    "normal": "/assets/images/cover-photo/page/page-students-1/normal/page-students-1-800X300.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-students-1/blurred/page-students-1-400X200.jpg"
+                },
+                "1000": {
+                    "normal": "/assets/images/cover-photo/page/page-students-1/normal/page-students-1-1000X600.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-students-1/blurred/page-students-1-2000X600.jpg"
+                },
+                "1200": {
+                    "normal": "/assets/images/cover-photo/page/page-students-1/normal/page-students-1-1200X600.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-students-1/blurred/page-students-1-2000X600.jpg"
+                },
+                "1600": {
+                    "normal": "/assets/images/cover-photo/page/page-students-1/normal/page-students-1-1600X600.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-students-1/blurred/page-students-1-1600X600.jpg"
+                },
+                "2000": {
+                    "normal": "/assets/images/cover-photo/page/page-students-1/normal/page-students-1-2000X600.jpg",
+                    "blurred": "/assets/images/cover-photo/page/page-students-1/blurred/page-students-1-2000X600.jpg"
+                }
             }
 
         }
