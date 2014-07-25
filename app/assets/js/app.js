@@ -25,7 +25,7 @@ $(function() {
     if ($("#index").length) {
         Hiof.Options.distanceToTopBreakPoint = 30;
     } else {
-        Hiof.Options.distanceToTopBreakPoint = 410;
+        Hiof.Options.distanceToTopBreakPoint = 525;
     }
 
 
@@ -233,14 +233,23 @@ $(function() {
     // Update settings and execute functions when the user scroll
     $(window).scroll(function() {
 
-        var oVal = $(window).scrollTop() / 200;
-        
-        $(".cover-photo-blur").css("opacity", oVal);
+
 
 
         // Updated the settings for the scroll position when the user scroll on the site
         Hiof.Options.distanceToTop = $(window).scrollTop();
         Hiof.Options.contentHeight = $("#main").outerHeight();
+
+
+
+        //var oVal = Hiof.Options.distanceToTop / 240;
+        
+        $(".cover-photo-blur").css("opacity", (Hiof.Options.distanceToTop / 240));
+
+
+        //console.log(Hiof.Options.distanceToTop);
+
+
         //Fire functions
         Hiof.HeaderToggle();
 
