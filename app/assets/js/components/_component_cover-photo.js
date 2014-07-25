@@ -62,36 +62,43 @@ Hiof.CoverPhoto.GenerateMarkup = function(data){
   //});
 
   if(Hiof.Options.windowWidth < 400){
-      $(photoWrapper).css('background-image', 'url(' + data[400].normal + ')');
-      $(blurWrapper).css('background-image', 'url(' + data[400].blurred + ')');
+      $(coverWrapper).addClass('height-200');
+      $(photoWrapper).css('background-image', 'url(' + data[400].normal + ')').addClass('height-200');
+      $(blurWrapper).css('background-image', 'url(' + data[400].blurred + ')').addClass('height-200');
 
   }else if ((Hiof.Options.windowWidth > 400) && (Hiof.Options.windowWidth < 500)){
-      $(photoWrapper).css('background-image', 'url(' + data[500].normal + ')');
-      $(blurWrapper).css('background-image', 'url(' + data[500].blurred + ')');
+      $(coverWrapper).addClass('height-200');
+      $(photoWrapper).css('background-image', 'url(' + data[500].normal + ')').addClass('height-200');
+      $(blurWrapper).css('background-image', 'url(' + data[500].blurred + ')').addClass('height-200');
   }else if ((Hiof.Options.windowWidth > 500) && (Hiof.Options.windowWidth < 600)){
-      $(photoWrapper).css('background-image', 'url(' + data[600].normal + ')');
-      $(blurWrapper).css('background-image', 'url(' + data[600].blurred + ')');
+      $(coverWrapper).addClass('height-300');
+      $(photoWrapper).css('background-image', 'url(' + data[600].normal + ')').addClass('height-300');
+      $(blurWrapper).css('background-image', 'url(' + data[600].blurred + ')').addClass('height-300');
    
   }else if ((Hiof.Options.windowWidth > 600) && (Hiof.Options.windowWidth < 800)){
-      $(photoWrapper).css('background-image', 'url(' + data[800].normal + ')');
-      $(blurWrapper).css('background-image', 'url(' + data[800].blurred + ')');
+      $(coverWrapper).addClass('height-300');
+      $(photoWrapper).css('background-image', 'url(' + data[800].normal + ')').addClass('height-300');
+      $(blurWrapper).css('background-image', 'url(' + data[800].blurred + ')').addClass('height-300');
      
   }else if ((Hiof.Options.windowWidth > 800) && (Hiof.Options.windowWidth < 1000)){
-      $(photoWrapper).css('background-image', 'url(' + data[1000].normal + ')');
-      $(blurWrapper).css('background-image', 'url(' + data[1000].blurred + ')');
+      $(coverWrapper).addClass('height-600');
+      $(photoWrapper).css('background-image', 'url(' + data[1000].normal + ')').addClass('height-600');
+      $(blurWrapper).css('background-image', 'url(' + data[1000].blurred + ')').addClass('height-600');
     
   }else if ((Hiof.Options.windowWidth > 1000) && (Hiof.Options.windowWidth < 1200)){
-      $(photoWrapper).css('background-image', 'url(' + data[1200].normal + ')');
-      $(blurWrapper).css('background-image', 'url(' + data[1200].blurred + ')');
+      $(coverWrapper).addClass('height-600');
+      $(photoWrapper).css('background-image', 'url(' + data[1200].normal + ')').addClass('height-600');
+      $(blurWrapper).css('background-image', 'url(' + data[1200].blurred + ')').addClass('height-600');
       
   }else if ((Hiof.Options.windowWidth > 1200) && (Hiof.Options.windowWidth < 1600)){
-      $(photoWrapper).css('background-image', 'url(' + data[1600].normal + ')');
-      $(blurWrapper).css('background-image', 'url(' + data[1600].blurred + ')');
+      $(coverWrapper).addClass('height-600');
+      $(photoWrapper).css('background-image', 'url(' + data[1600].normal + ')').addClass('height-600');
+      $(blurWrapper).css('background-image', 'url(' + data[1600].blurred + ')').addClass('height-600');
      
   }else if (Hiof.Options.windowWidth > 1600){
-      $(photoWrapper).css('background-image', 'url(' + data[2000].normal + ')');
-      $(blurWrapper).css('background-image', 'url(' + data[2000].blurred + ')');
-  
+      $(coverWrapper).addClass('height-600');
+      $(photoWrapper).css('background-image', 'url(' + data[2000].normal + ')').addClass('height-600');
+      $(blurWrapper).css('background-image', 'url(' + data[2000].blurred + ')').addClass('height-600');
   }
   $(coverWrapper).append(photoWrapper).append(blurWrapper);
   //console.log(data[1200]);
