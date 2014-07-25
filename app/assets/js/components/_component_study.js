@@ -75,6 +75,14 @@ Hiof.Study.DuplicateStudyCourseFacts = function(){
 
 Hiof.Study.ExecuteFilterFromUrl = function(){
   var searchTerm = Hiof.Helper.getUrlParameterByName("filterDepartment").toString();
+
+
+  if (searchTerm.match("^ovrig")) {
+     var newSearchTerm = searchTerm.split('_');
+     newSearchTerm = newSearchTerm[1];
+     searchTerm = "kat_" + newSearchTerm;
+  }
+
   //console.log("Søker etter " + searchTerm);
   if(typeof searchTerm != 'undefined'){
     //console.log("gogo filter");
