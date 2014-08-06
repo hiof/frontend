@@ -1,0 +1,167 @@
+
+
+
+
+
+#content-container.search-for-study-programs{
+
+
+
+
+  .studieinfoSearchHeader{
+    //margin-top: 20px !important;
+    //margin-bottom: 10px !important;
+  }
+
+  .tab-page{
+    width: 100% !important;
+  }
+  .tab.selected{
+    display: none;
+  }
+  .studieinfo_search_main{
+    width: 100% !important;
+  }
+
+  #stprogDiv,
+  #studtype,
+  #campus,
+  #freetext,
+  #study-alternativly,
+  #ovrig{
+    width: 30%;
+    margin: 15px 10px;
+  }
+  #campus{
+    margin-bottom: 0;
+  }
+  .studieinfoSingleSelector,
+  .studieinfoAllSelector{
+    margin-right: 8px;
+  }
+  .StudieinfoProgramDiv, .StudieinfoCourseDiv{
+    
+  }
+
+
+  .kat,
+  .sttype{
+    line-height: 2em;
+  }
+  // Button overrride
+  .stColumn4 .studieinfocontent{
+    background-color: transparent;
+    text-align: inherit;
+    padding: 0;
+    border: none;
+    margin: 0px;
+    height: auto;
+    width: auto;
+    overflow: auto;
+  }
+
+  .btn{
+    background-image: none;
+    box-shadow: none;
+    color: #fff;
+    text-transform:inherit;
+    text-shadow: none;
+    font-weight: bold !important;
+    &.btn-sm{
+      line-height: 20px;
+      height: auto;
+      width: auto;
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+  }
+}
+
+
+
+@media only screen and (max-width: 599px){
+  // Small
+  #content-container.search-for-study-programs{
+      .StudieinfoProgramDiv, .StudieinfoCourseDiv{
+        width: 100% !important;
+      }
+    #stprogDiv,
+    #studtype,
+    #campus,
+    #freetext,
+    #study-alternativly,
+    #ovrig{
+      width: 100%;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+
+    .stColumn3,
+    .stColumn5{
+      display: none;
+    }
+  }
+}
+
+
+
+
+@media only screen and (min-width: 600px) and (max-width: 1039px){
+
+  // Medium
+  #content-container.search-for-study-programs{
+      .StudieinfoProgramDiv, .StudieinfoCourseDiv{
+          width: 94% !important;
+        }
+    #stprogDiv,
+    #studtype,
+    #campus,
+    #freetext,
+    #study-alternativly,
+    #ovrig{
+      width: 80%;
+    }
+    #campus{
+      //float:right;
+    }
+    .stColumn3,
+    .stColumn5{
+      display: none;
+    }
+  }
+}
+
+
+
+@media only screen and (min-width: 1040px){
+  // Large
+
+  #content-container.search-for-study-programs{
+
+
+    #page_tree_nav,
+    #sidebar_a{
+      margin-left: -100%;
+    }
+
+
+
+
+    #content{
+      width: 80%;
+    }
+
+    #stprogDiv,
+    #studtype,
+    #campus,
+    #freetext,
+    #study-alternativly,
+    #ovrig{
+      width: 30%;
+    }
+
+
+  }
+
+}
