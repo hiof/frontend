@@ -6,7 +6,7 @@
     border-radius: .4rem;
     img{
       margin-top: 0;
-      margin-bottom: 1rem;
+      margin-bottom: 1rem !important;
     }
     h3{
       padding: 1rem;
@@ -17,7 +17,9 @@
       padding: 1rem;
       
     }
-    
+    //&:hover{
+    //  border: 1px solid @color-primary-action;
+    //}
   }
   .article-single{
     .lo-full{
@@ -48,20 +50,24 @@
   .article-vertical{
 
   }
-  #news,
-  #research{
-    .article{
-      a{
-          h3{
-            color: @color-primary-action;
-          }
-          .lead-paragraph{
-            color: @text-color;
-          }
-        
+
+  .article{
+    a{
+      color: @text-color;
+        h3{
+          color: @color-primary-action;
+        }
+        .lead-paragraph{
+          color: @text-color;
+        }
+      &:hover{
+        h3{
+          text-decoration: underline;
+        }
       }
     }
   }
+  
 }
 
 .small(){}
