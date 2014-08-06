@@ -205,7 +205,9 @@ $(function() {
 
 
     // Reset filter
-    $('#study-search-reset').on("click", function(){
+    $('#study-search-reset').on("click", function(e){
+      e.preventDefault();
+      $('#searchcontent').val('');
       $('table').data('footable-filter').clearFilter();
     });
 
