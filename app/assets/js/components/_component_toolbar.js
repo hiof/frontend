@@ -30,7 +30,7 @@ Hiof.Toolbar = function() {
     $(footerElement).addClass('lo-full');
     $(headerElement).addClass('lo-full');
     $(heading).text(shareText);
-    $(menu).addClass('lo-full').attr('id', 'toolbar');
+    $(menu).addClass('btn-group').attr('id', 'toolbar');
 
 
     //$(headerElement).append();
@@ -62,7 +62,7 @@ Hiof.Toolbar.Print = function() {
 
 
 
-        var button = '<li><button id="print-page" class="btn btn-primary btn-line" onclick="javascript:window.print()" title="' + printThisPage + '">' + printThisPage + '</button></li>';
+        var button = '<button id="print-page" class="btn btn-primary btn-line" onclick="javascript:window.print()" title="' + printThisPage + '">' + printThisPage + '</button>';
         $("#toolbar").append(button);
         svgPrint = Hiof.getSvgIcon("print");
         //console.log(svgFacebook);
@@ -93,8 +93,8 @@ Hiof.Toolbar.SocialShare = function() {
  
 
 
-        var socialMenu = '<li class="margin-l-off"><button id="social-facebook" class="btn btn-primary btn-line" onclick="javascript:Hiof.Share.Facebook()">' + sharePage + facebook + '</button></li>';
-        socialMenu += '<li><button id="social-twitter" class="btn btn-primary btn-line" onclick="javascript:Hiof.Share.Twitter()">' + sharePage + twitter + '</button></li>';
+        var socialMenu = '<button id="social-facebook" class="btn btn-primary btn-line" onclick="javascript:Hiof.Share.Facebook()">' + sharePage + facebook + '</button>';
+        socialMenu += '<button id="social-twitter" class="btn btn-primary btn-line" onclick="javascript:Hiof.Share.Twitter()">' + sharePage + twitter + '</button>';
 
         $("#toolbar").append(socialMenu);
 
