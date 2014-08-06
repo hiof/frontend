@@ -10,7 +10,21 @@
 
 
 // Components
-//@import "components/_component_typography.less";
+
 @import "_components-standard.less";
 
 .print();
+
+noscript,
+#header,
+#cover,
+#sidebar,
+#footer,
+.btn,
+#main footer{
+  display: none !important;
+}
+#main,
+#content{
+  margin-top: 0!important;
+}

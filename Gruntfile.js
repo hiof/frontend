@@ -306,6 +306,7 @@ module.exports = function(grunt) {
       },
       scripts: {
         src: [
+          //'app/vendor/60fps-scroll/dist/60fps-scroll.js', 
           'app/vendor/footable/js/footable.js', 
           'app/vendor/footable/js/footable.paginate.js', 
           'app/vendor/footable/js/footable.filter.js', 
@@ -356,6 +357,10 @@ module.exports = function(grunt) {
             {
              src: 'tmp/css/theme-standard-canvas.min.css',
              dest: 'tmp/css/theme-standard-canvas.css'
+            },
+            {
+              src: 'tmp/css/print.min.css',
+              dest: 'tmp/css/print.css'
             }],
             // {
             // src: 'tmp/css/theme-verdana.min.css',
@@ -390,6 +395,14 @@ module.exports = function(grunt) {
             assets: [{
               src: 'tmp/css/theme-standard.min.css',
               dest: 'tmp/css/theme-standard.css'
+            }, 
+            {
+             src: 'tmp/css/theme-standard-canvas.min.css',
+             dest: 'tmp/css/theme-standard-canvas.css'
+            },
+            {
+              src: 'tmp/css/print.min.css',
+              dest: 'tmp/css/print.css'
             }], 
             //{
             //  src: 'tmp/css/theme-helvetica.min.css',
@@ -428,6 +441,14 @@ module.exports = function(grunt) {
             assets: [{
               src: 'tmp/css/theme-standard.min.css',
               dest: 'tmp/css/theme-standard.css'
+            }, 
+            {
+             src: 'tmp/css/theme-standard-canvas.min.css',
+             dest: 'tmp/css/theme-standard-canvas.css'
+            },
+            {
+              src: 'tmp/css/print.min.css',
+              dest: 'tmp/css/print.css'
             }], 
             //{
             //  src: 'tmp/css/theme-helvetica.min.css',
