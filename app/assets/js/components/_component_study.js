@@ -57,3 +57,13 @@ Hiof.Study.ExecuteFilterFromUrl = function(){
   }
 
 };
+
+
+
+//KD: temporary hack
+$(document).on('click', '#knapp1', function(e) {
+  e.preventDefault();
+  $(this).toggleClass("btn-line");
+  $('#toggleme').slideToggle();
+});
+
