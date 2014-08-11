@@ -10,31 +10,35 @@ Hiof.CoverPhoto.AddCoverPhotoToPage = function (){
   
   //onsole.log(pageType);
 
-  if(typeof pageType === "undefined"){
+  if(typeof pageType === "undefined" || pageType === ""){
     //console.log('pageType was undefined, default to "page"');
     pageType = "page";
   }
 
 
+  if(pageType === "index"){
+  }else{
+    // Load the data
+    $.getJSON("/assets/js/data/cover-photo.json", function(data) {
+        // Get data from a random entry based on the pageType
+        //console.log(data.cover[pageType]);
+
+        var entriesInCategory = data.cover[pageType],
+            totalEntries = Object.keys(entriesInCategory).length,
+            randomEntry = entriesInCategory[Math.floor(Math.random()*totalEntries)];
+        
+        // Set the entry to be the randomEntry data
+        //entry = randomEntry;
+
+        // Callback to generate the content
+        Hiof.CoverPhoto.GenerateMarkup(randomEntry);
+
+    });
+
+  }
 
 
 
-  // Load the data
-  $.getJSON("/assets/js/data/cover-photo.json", function(data) {
-      // Get data from a random entry based on the pageType
-      //console.log(data.cover[pageType]);
-
-      var entriesInCategory = data.cover[pageType],
-          totalEntries = Object.keys(entriesInCategory).length,
-          randomEntry = entriesInCategory[Math.floor(Math.random()*totalEntries)];
-      
-      // Set the entry to be the randomEntry data
-      //entry = randomEntry;
-
-      // Callback to generate the content
-      Hiof.CoverPhoto.GenerateMarkup(randomEntry);
-
-  });
 
 
 };
