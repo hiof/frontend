@@ -473,6 +473,23 @@ module.exports = function(grunt) {
     //sshconfig: {
     //},
     sftp: {
+      stage: {
+        files: {
+           "./": "deploy/assets/**"
+        },
+        options: {
+          path: '/neted/sites/www.hiof.no/public/assets/',
+          srcBasePath: "deploy/assets/",
+          host: '<%= secret.stage.host %>',
+          username: '<%= secret.stage.username %>',
+          password: '<%= secret.stage.password %>',
+          //privateKey: grunt.file.read('id_rsa'),
+          //passphrase: '<%= secret.passphrase %>',
+          showProgress: true,
+          createDirectories: true,
+          directoryPermissions: parseInt(755, 8)
+        }        
+      },
       prod: {
         files: {
            "./": "deploy/assets/**"
@@ -480,9 +497,9 @@ module.exports = function(grunt) {
         options: {
           path: '/neted/sites/www.hiof.no/public/assets/',
           srcBasePath: "deploy/assets/",
-          host: '<%= secret.host %>',
-          username: '<%= secret.username %>',
-          password: '<%= secret.password %>',
+          host: '<%= secret.prod.host %>',
+          username: '<%= secret.prod.username %>',
+          password: '<%= secret.prod.password %>',
           //privateKey: grunt.file.read('id_rsa'),
           //passphrase: '<%= secret.passphrase %>',
           showProgress: true,
@@ -577,7 +594,8 @@ module.exports = function(grunt) {
 
   });
 
-
+  // ----------------------------------------------------------
+  // Tasks
 
   // Register tasks
   grunt.registerTask('subtaskJs', ['jshint', 'concat:scripts', 'uglify', 'copy:jsdata']);
@@ -585,20 +603,47 @@ module.exports = function(grunt) {
   grunt.registerTask('subtaskCopy', ['copy:images', 'copy:fonts', 'copy:vendor', 'copy:favicon']);
   grunt.registerTask('subtaskCopyDeploy', ['copy:images', 'copy:vendor', 'copy:favicon']);
   grunt.registerTask('subtaskViews', ['concat:pages']);
-
-
   grunt.registerTask('build', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:build', 'subtaskCopy', 'subtaskViews']);
-  grunt.registerTask('dist', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:dist', 'subtaskCopy', 'subtaskViews', 'clean:dist', 'copy:dist']);
-  grunt.registerTask('deploy', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:deploy', 'subtaskCopyDeploy', 'subtaskViews', 'clean:deploy', 'copy:deploy', 'sftp']);
 
 
 
+  // grunt.registerTask('dist', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:dist', 'subtaskCopy', 'subtaskViews', 'clean:dist', 'copy:dist']);
+
+
+
+  // Deploy tasks
+  grunt.registerTask('deploy-stage', [
+                                        'clean:build', 
+                                        'subtaskCss', 
+                                        'subtaskJs', 
+                                        'versioning:deploy', 
+                                        'subtaskCopyDeploy', 
+                                        'subtaskViews', 
+                                        'clean:deploy', 
+                                        'copy:deploy', 
+                                        'sftp:stage'
+                                      ]);
+
+  grunt.registerTask('deploy-prod', [
+                                      'clean:build', 
+                                      'subtaskCss', 
+                                      'subtaskJs', 
+                                      'versioning:deploy', 
+                                      'subtaskCopyDeploy', 
+                                      'subtaskViews', 
+                                      'clean:deploy', 
+                                      'copy:deploy', 
+                                      'sftp:prod'
+                                    ]);
+
+
+  // Server tasks
   grunt.registerTask('server', [
-    'build',
-    'express',
-    'open',
-    'watch'
-  ]);
+                                'build',
+                                'express',
+                                'open',
+                                'watch'
+                              ]);
 
 
 };
