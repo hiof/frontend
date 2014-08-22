@@ -1,6 +1,6 @@
 {
   "name": "Hiof-frontend",
-  "version": "3.0.0-beta.12",
+  "version": "3.1.0",
   "homepage": "https://github.com/hiof/frontend",
   "authors": [
     "Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>"
@@ -13,8 +13,8 @@
     "bootstrap": "~3.1.1",
     "livereload": "~2.0.8",
     "footable": "git@github.com:bradvin/FooTable.git#V2",
-    "cookieconsent": "git@github.com:silktide/cookieconsent.git",
     "jquery.scrollTo": "~1.4.11",
-    "slideout": "git@github.com:kedano/Slideout.git"
+    "slideout": "git@github.com:kedano/Slideout.git",
+    "jquery-cookie": "git@github.com:carhartl/jquery-cookie.git"
   }
 }
