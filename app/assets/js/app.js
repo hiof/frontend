@@ -30,7 +30,7 @@ $(function() {
 
 
     if ($("html.cover").length) {
-        Hiof.Options.distanceToSidebarSticky = 575;
+        Hiof.Options.distanceToSidebarSticky = 365;
     } else {
         Hiof.Options.distanceToSidebarSticky = 20;
     }

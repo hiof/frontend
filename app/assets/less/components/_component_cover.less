@@ -5,6 +5,23 @@
 .universal(){
 
 
+  .height-150{
+    height: 150px;
+    height: 15rem;
+  }
+  .height-300{
+    height: 300px;
+    height: 30rem;
+  }
+  .height-450{
+    height: 450px;
+    height: 45rem;
+  }
+  .height-600{
+    height: 600px;
+    height: 60rem;
+  }
+
   #cover{
     display: none;
   }
@@ -13,10 +30,11 @@
 
         display:block;
         width: 100%;
+        //position: relative;
         //height: 60rem;
         //position: absolute;
         //top: 0;
-        //left: 0;
+        overflow: hidden;
     }
     .cover-photo{
         display:block;
@@ -25,11 +43,28 @@
         position: absolute;
         top: 0;
         left: 0;
-        //max-height:60rem;
-        z-index: -10;
+
+        //max-height:45rem;
+        //z-index: -10;
         background-size: cover;
-        &.background-cover{
-          background-size: cover;
+        background-repeat: no-repeat;
+        //background-attachment: fixed;
+        background-position: 50% 0;
+        //padding-bottom: 56.25%;
+        //padding-bottom: 56.25%;
+        //no-repeat center center fixed
+        //&.background-cover{
+        //  background-size: cover;
+        //}
+
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0 auto 1em;
+        //max-height: 600px;
+        //max-width: 600px;
+        &:before {
+          padding-bottom: 56.25%;
         }
     }
     .cover-photo-blur{
