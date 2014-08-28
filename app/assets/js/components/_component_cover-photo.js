@@ -20,29 +20,22 @@ Hiof.CoverPhoto.AddCoverPhotoToPage = function (){
 
   if ((windowWidth <= Hiof.Options.navigationBreakpoint) && (pageType === "homepage")){
     // Add HiØ logo as the cover photo on Index
-
+    Hiof.CoverPhoto.GenerateMarkupBranding();
   }else if(windowWidth <= 420){
     // Dont add a cover-photo on the smallest screens 
   }else{
     // Add cover photo
+    if(pageType === "homepage"){
+        //console.log('pageType was homepage, default to "page"');
+        pageType = "index";
+    }
+
     Hiof.CoverPhoto.GetImageData(pageType);
   }
 
-
-  // Load the data
-  //$.getJSON("/assets/js/data/cover-photo.json", function(data) {
-  //    // Get data from a random entry based on the pageType
-  //    //console.log(data.cover[pageType]);
-  //    var entriesInCategory = data.cover[pageType],
-  //        totalEntries = Object.keys(entriesInCategory).length,
-  //        randomEntry = entriesInCategory[Math.floor(Math.random()*totalEntries)];
-  //    // Set the entry to be the randomEntry data
-  //    //entry = randomEntry;
-  //    // Callback to generate the content
-  //    Hiof.CoverPhoto.GenerateMarkup(randomEntry);
-  //});
-
 };
+
+
 
 Hiof.CoverPhoto.GetImageData = function(pageType){
 
@@ -63,8 +56,16 @@ Hiof.CoverPhoto.GetImageData = function(pageType){
 };
 
 Hiof.CoverPhoto.GenerateMarkupBranding = function(){
-  var coverWrapper = document.createElement('div'),
+  var brandingWrapper = document.createElement('div'),
+      lang = Hiof.Language.Check(),
       logo;
+      if (lang === "eng"){
+        logo = Hiof.getSvgIcon("logo-hiof-en");
+      }else{
+        logo = Hiof.getSvgIcon("logo-hiof");
+      }
+      $(brandingWrapper).addClass("branding").append(logo);
+      $('#main').prepend(brandingWrapper);
 };
 
 Hiof.CoverPhoto.GenerateMarkup = function(data){
@@ -73,9 +74,7 @@ Hiof.CoverPhoto.GenerateMarkup = function(data){
         photoWrapper = $(coverWrapper).clone(),
         blurWrapper = $(coverWrapper).clone(),
         windowWidth = $(window).width(),
-        elementHeight;
-
-
+        windowHeight = $(window).height();
 
   $(coverWrapper).addClass("cover").attr("id", "cover");
   $(photoWrapper).addClass("cover-photo cover-photo-normal");
@@ -86,6 +85,11 @@ Hiof.CoverPhoto.GenerateMarkup = function(data){
   //    console.log(item.normal);
   //  }
   //});
+  if (windowHeight <= 470) {
+    // If the height of the viewport is less than 400px, return false
+    return;
+  }
+
 
   if(windowWidth < 400){
 
@@ -127,6 +131,7 @@ Hiof.CoverPhoto.GenerateMarkup = function(data){
       $(photoWrapper).css('background-image', 'url(' + data[2000].normal + ')').addClass('height-' + data[2000].imgHeight);
       $(blurWrapper).css('background-image', 'url(' + data[2000].blurred + ')').addClass('height-' + data[2000].imgHeight);
   }
+  
   $(coverWrapper).append(photoWrapper).append(blurWrapper);
   //console.log(data[1200]);
   //var imageUrl = data[1200] + "";
