@@ -25,7 +25,7 @@ $(function() {
     if ($("#index").length) {
         Hiof.Options.distanceToTopBreakPoint = 30;
     } else {
-        Hiof.Options.distanceToTopBreakPoint = 525;
+        Hiof.Options.distanceToTopBreakPoint = 365;
     }
 
 
