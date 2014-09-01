@@ -161,7 +161,7 @@ $(function() {
     $("#logo-hiof").on("contextmenu", function(e) {
       e.preventDefault();
       if (e.which === 3) {
-        window.location.href = "http://hiof.no/designmal";
+        window.location.href = "http://hiof.no/index.php?ID=21067";
       }
     });
 
