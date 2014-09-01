@@ -34,6 +34,37 @@
   }
 
 
+  .video-fullscreen{
+    z-index: 9999;
+    display: none;
+    position: fixed;
+    background: @black;
+    background: fade(@black, 85%);
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    iframe{
+      //padding-left: 10%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-top: -150px;
+      margin-left: -300px;
+    }
+  }
+
+}
 
 
+.small(){
+    .video-fullscreen{ 
+      iframe{
+        position: relative;
+        left: inherit;
+        top: 200px;
+        width: 100%;
+        margin-left: inherit;
+      }
+  }
 }
