@@ -180,16 +180,20 @@
   .study{
 
   }
+
   .study-course{}
   .study-course-facts{
-      float: right;
-      padding-left: 3rem !important;
-      padding-bottom: 2rem !important;
-      padding-top: 2rem !important;
-      border: 1px solid #ddd;
-      border-radius: .4rem;
-      margin: 2rem;
-    }
+    float: right;
+    padding-left: 3rem !important;
+    padding-bottom: 2rem !important;
+    padding-top: 2rem !important;
+    border: 1px solid #ddd;
+    border-radius: .4rem;
+    margin: 2rem;
+  }
+
+
+
   // KD: Hack for the Study-model to look descent
   .study-model-wrapper{
     width: 100%;
@@ -357,6 +361,14 @@
 }
 
 .small(){
+  [data-page-category="study"]{
+    .footable-first-column{
+      font-size: 1.2rem;
+      //overflow-x: hidden;
+      //text-overflow: ellipsis;
+      //white-space: nowrap;
+    }
+  }
   .study-course-facts{
     margin: inherit;
   }
