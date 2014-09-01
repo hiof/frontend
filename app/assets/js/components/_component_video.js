@@ -45,7 +45,7 @@
     //console.log(this);
     Hiof.Video.InitiateEmbed($(this));
   });  
-  $(document).on("click", ".video-fullscreen", function(e) {
+  $(document).on("click touchstart", ".video-fullscreen", function(e) {
     e.preventDefault();
     $(this).remove();
   });
