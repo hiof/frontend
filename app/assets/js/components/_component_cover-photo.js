@@ -6,6 +6,7 @@ Hiof.CoverPhoto = {};
 
 Hiof.CoverPhoto.AddCoverPhotoToPage = function (){
   var pageType = $("#main").data("page-category"),
+      windowWidth = $(window).width(),
       entry;
   
   //onsole.log(pageType);
@@ -17,52 +18,63 @@ Hiof.CoverPhoto.AddCoverPhotoToPage = function (){
 
 
 
-  // Load the data
-  $.getJSON("/assets/js/data/cover-photo.json", function(data) {
-      // Get data from a random entry based on the pageType
-      //console.log(data.cover[pageType]);
+  if ((windowWidth <= Hiof.Options.navigationBreakpoint) && (pageType === "homepage")){
+    // Add HiØ logo as the cover photo on Index
+    Hiof.CoverPhoto.GenerateMarkupBranding();
+  }else if(windowWidth <= 420){
+    // Dont add a cover-photo on the smallest screens 
+  }else{
+    // Add cover photo
+    if(pageType === "homepage"){
+        //console.log('pageType was homepage, default to "page"');
+        pageType = "index";
+    }
 
-      var entriesInCategory = data.cover[pageType],
-          totalEntries = Object.keys(entriesInCategory).length,
-          randomEntry = entriesInCategory[Math.floor(Math.random()*totalEntries)];
-      
-      // Set the entry to be the randomEntry data
-      //entry = randomEntry;
-
-      // Callback to generate the content
-      Hiof.CoverPhoto.GenerateMarkup(randomEntry);
-
-  });
+    Hiof.CoverPhoto.GetImageData(pageType);
+  }
 
 };
 
-//Hiof.CoverPhoto.GetImageData = function(pageType){
-//
-//    $.getJSON("/assets/js/data/cover-photo.json", function(data) {
-//        // Get data from a random entry based on the pageType
-//        //console.log(data.cover[pageType]);
-//
-//        var entriesInCategory = data.cover[pageType],
-//            totalEntries = Object.keys(entriesInCategory).length,
-//            randomEntry = entriesInCategory[Math.floor(Math.random()*totalEntries)];
-//        
-//        // Set the entry to be the randomEntry data
-//        //entry = randomEntry;
-//
-//        // Callback to generate the content
-//        Hiof.CoverPhoto.GenerateMarkup(randomEntry);
-//    });
-//};
 
+
+Hiof.CoverPhoto.GetImageData = function(pageType){
+
+    $.getJSON("/assets/js/data/cover-photo.json", function(data) {
+        // Get data from a random entry based on the pageType
+        //console.log(data.cover[pageType]);
+
+        var entriesInCategory = data.cover[pageType],
+            totalEntries = Object.keys(entriesInCategory).length,
+            randomEntry = entriesInCategory[Math.floor(Math.random()*totalEntries)];
+        
+        // Set the entry to be the randomEntry data
+        //entry = randomEntry;
+
+        // Callback to generate the content
+        Hiof.CoverPhoto.GenerateMarkup(randomEntry);
+    });
+};
+
+Hiof.CoverPhoto.GenerateMarkupBranding = function(){
+  var brandingWrapper = document.createElement('div'),
+      lang = Hiof.Language.Check(),
+      logo;
+      if (lang === "eng"){
+        logo = Hiof.getSvgIcon("logo-hiof-en");
+      }else{
+        logo = Hiof.getSvgIcon("logo-hiof");
+      }
+      $(brandingWrapper).addClass("branding").append(logo);
+      $('#main').prepend(brandingWrapper);
+};
 
 Hiof.CoverPhoto.GenerateMarkup = function(data){
 
   var coverWrapper = document.createElement('div'),
         photoWrapper = $(coverWrapper).clone(),
         blurWrapper = $(coverWrapper).clone(),
-        windowWidth = $(window).width();
-
-
+        windowWidth = $(window).width(),
+        windowHeight = $(window).height();
 
   $(coverWrapper).addClass("cover").attr("id", "cover");
   $(photoWrapper).addClass("cover-photo cover-photo-normal");
@@ -73,46 +85,53 @@ Hiof.CoverPhoto.GenerateMarkup = function(data){
   //    console.log(item.normal);
   //  }
   //});
+  if (windowHeight <= 470) {
+    // If the height of the viewport is less than 400px, return false
+    return;
+  }
+
 
   if(windowWidth < 400){
-      $(coverWrapper).addClass('height-200');
-      $(photoWrapper).css('background-image', 'url(' + data[400].normal + ')').addClass('height-200');
-      $(blurWrapper).css('background-image', 'url(' + data[400].blurred + ')').addClass('height-200');
+
+      $(coverWrapper).addClass('height-' + data[400].imgHeight );
+      $(photoWrapper).css('background-image', 'url(' + data[400].normal + ')').addClass('height-' + data[400].imgHeight);
+      $(blurWrapper).css('background-image', 'url(' + data[400].blurred + ')').addClass('height-' + data[400].imgHeight);
 
   }else if ((windowWidth > 400) && (windowWidth < 500)){
-      $(coverWrapper).addClass('height-200');
-      $(photoWrapper).css('background-image', 'url(' + data[500].normal + ')').addClass('height-200');
-      $(blurWrapper).css('background-image', 'url(' + data[500].blurred + ')').addClass('height-200');
+      $(coverWrapper).addClass('height-' + data[500].imgHeight);
+      $(photoWrapper).css('background-image', 'url(' + data[500].normal + ')').addClass('height-' + data[500].imgHeight);
+      $(blurWrapper).css('background-image', 'url(' + data[500].blurred + ')').addClass('height-' + data[500].imgHeight);
   }else if ((windowWidth > 500) && (windowWidth < 600)){
-      $(coverWrapper).addClass('height-300');
-      $(photoWrapper).css('background-image', 'url(' + data[600].normal + ')').addClass('height-300');
-      $(blurWrapper).css('background-image', 'url(' + data[600].blurred + ')').addClass('height-300');
+      $(coverWrapper).addClass('height-' + data[600].imgHeight);
+      $(photoWrapper).css('background-image', 'url(' + data[600].normal + ')').addClass('height-' + data[600].imgHeight);
+      $(blurWrapper).css('background-image', 'url(' + data[600].blurred + ')').addClass('height-' + data[600].imgHeight);
    
   }else if ((windowWidth > 600) && (windowWidth < 800)){
-      $(coverWrapper).addClass('height-300');
-      $(photoWrapper).css('background-image', 'url(' + data[800].normal + ')').addClass('height-300');
-      $(blurWrapper).css('background-image', 'url(' + data[800].blurred + ')').addClass('height-300');
+      $(coverWrapper).addClass('height-' + data[800].imgHeight);
+      $(photoWrapper).css('background-image', 'url(' + data[800].normal + ')').addClass('height-' + data[800].imgHeight);
+      $(blurWrapper).css('background-image', 'url(' + data[800].blurred + ')').addClass('height-' + data[800].imgHeight);
      
   }else if ((windowWidth > 800) && (windowWidth < 1000)){
-      $(coverWrapper).addClass('height-600');
-      $(photoWrapper).css('background-image', 'url(' + data[1000].normal + ')').addClass('height-600');
-      $(blurWrapper).css('background-image', 'url(' + data[1000].blurred + ')').addClass('height-600');
+      $(coverWrapper).addClass('height-' + data[1000].imgHeight);
+      $(photoWrapper).css('background-image', 'url(' + data[1000].normal + ')').addClass('height-' + data[1000].imgHeight);
+      $(blurWrapper).css('background-image', 'url(' + data[1000].blurred + ')').addClass('height-' + data[1000].imgHeight);
     
   }else if ((windowWidth > 1000) && (windowWidth < 1200)){
-      $(coverWrapper).addClass('height-600');
-      $(photoWrapper).css('background-image', 'url(' + data[1200].normal + ')').addClass('height-600');
-      $(blurWrapper).css('background-image', 'url(' + data[1200].blurred + ')').addClass('height-600');
+      $(coverWrapper).addClass('height-' + data[1200].imgHeight);
+      $(photoWrapper).css('background-image', 'url(' + data[1200].normal + ')').addClass('height-' + data[1200].imgHeight);
+      $(blurWrapper).css('background-image', 'url(' + data[1200].blurred + ')').addClass('height-' + data[1200].imgHeight);
       
   }else if ((windowWidth > 1200) && (windowWidth < 1600)){
-      $(coverWrapper).addClass('height-600');
-      $(photoWrapper).css('background-image', 'url(' + data[1600].normal + ')').addClass('height-600');
-      $(blurWrapper).css('background-image', 'url(' + data[1600].blurred + ')').addClass('height-600');
+      $(coverWrapper).addClass('height-' + data[1600].imgHeight);
+      $(photoWrapper).css('background-image', 'url(' + data[1600].normal + ')').addClass('height-' + data[1600].imgHeight);
+      $(blurWrapper).css('background-image', 'url(' + data[1600].blurred + ')').addClass('height-' + data[1600].imgHeight);
      
   }else if (windowWidth > 1600){
-      $(coverWrapper).addClass('height-600');
-      $(photoWrapper).css('background-image', 'url(' + data[2000].normal + ')').addClass('height-600');
-      $(blurWrapper).css('background-image', 'url(' + data[2000].blurred + ')').addClass('height-600');
+      $(coverWrapper).addClass('height-' + data[2000].imgHeight);
+      $(photoWrapper).css('background-image', 'url(' + data[2000].normal + ')').addClass('height-' + data[2000].imgHeight);
+      $(blurWrapper).css('background-image', 'url(' + data[2000].blurred + ')').addClass('height-' + data[2000].imgHeight);
   }
+  
   $(coverWrapper).append(photoWrapper).append(blurWrapper);
   //console.log(data[1200]);
   //var imageUrl = data[1200] + "";

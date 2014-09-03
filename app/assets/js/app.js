@@ -25,12 +25,12 @@ $(function() {
     if ($("#index").length) {
         Hiof.Options.distanceToTopBreakPoint = 30;
     } else {
-        Hiof.Options.distanceToTopBreakPoint = 525;
+        Hiof.Options.distanceToTopBreakPoint = 365;
     }
 
 
     if ($("html.cover").length) {
-        Hiof.Options.distanceToSidebarSticky = 575;
+        Hiof.Options.distanceToSidebarSticky = 365;
     } else {
         Hiof.Options.distanceToSidebarSticky = 20;
     }
@@ -161,7 +161,7 @@ $(function() {
     $("#logo-hiof").on("contextmenu", function(e) {
       e.preventDefault();
       if (e.which === 3) {
-        window.location.href = "http://hiof.no/designmal";
+        window.location.href = "http://hiof.no/index.php?ID=21067";
       }
     });
 

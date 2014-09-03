@@ -24,8 +24,8 @@ $(document).on('click', '#studie .dropdown-menu a', function(e) {
 
 Hiof.Study.DuplicateStudyCourseFacts = function(){
 
-    var studyCourseFacts = $("#program-KS601").parent().clone();
-
+    var studyCourseFacts = $("#program-KS601").parent().clone(),
+        btnApply = $("#program-KS602").next().find("a");
 
     $(studyCourseFacts).addClass("study-course-facts");
     
@@ -35,6 +35,8 @@ Hiof.Study.DuplicateStudyCourseFacts = function(){
     $(".study-course-facts #knapp1").remove();
     $(".study-course-facts #toggleme").remove();
 
+    $(".study-course-facts").append(btnApply);
+      
     //console.log(studyCourseFacts);
   
 
