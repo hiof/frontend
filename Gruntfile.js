@@ -312,6 +312,7 @@ module.exports = function(grunt) {
           'app/vendor/footable/js/footable.filter.js', 
           'app/vendor/footable/js/footable.sort.js', 
           'app/vendor/footable/js/footable.striping.js',
+          'app/vendor/jquery-cookie/jquery.cookie.js',
           'app/assets/js/components/*.js', 
           'app/assets/js/*.js', 
           'app/vendor/jquery.scrollTo/jquery.scrollTo.js', 
