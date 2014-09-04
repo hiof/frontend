@@ -25,7 +25,7 @@ $(document).on('click', '#studie .dropdown-menu a', function(e) {
 Hiof.Study.DuplicateStudyCourseFacts = function(){
 
     var studyCourseFacts = $("#program-KS601").parent().clone(),
-        btnApply = $("#program-KS602").next().find("a");
+        btnApply = $("#program-KS602").next().find("a").clone();
 
     $(studyCourseFacts).addClass("study-course-facts");
     
