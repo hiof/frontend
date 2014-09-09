@@ -29,58 +29,59 @@ Hiof.KeyboardShortcuts = function(e) {
     if (altPlusS) {
         // Study index
         //console.log(" alt + S - pressed");
-        window.location = "studier-index.html";
+        window.location = "/studier";
     }
     if (altPlusZero) {
         // Universal access information
         //console.log(" alt + 0 - pressed");
-        window.location = "universiell-utforming.html";
+        window.location = "/?ID=30038";
     }
     if (altPlusOne) {
         // Index
         //console.log(" alt + 1 - pressed");
-        window.location = "index2.html";
+        window.location = "/";
     }
     if (altPlusTwo) {
         // Student intranet
         //console.log(" alt + 2 - pressed");
-        window.location = "student.html";
+        window.location = "http://www2.hiof.no/student";
     }
     if (altPlusThree) {
         // Fronter innlogging
         //console.log(" alt + 3 - pressed");
-        window.location = "student-fronter.html";
+        window.location = "http://www2.hiof.no/fronter";
     }
     if (altPlusFour) {
         // Employee intranet
         //console.log(" alt + 4 - pressed");
-        window.location = "ansatt.html";
+        window.location = "http://www2.hiof.no/ansatt";
     }
     if (altPlusFive) {
         // Search
         //console.log(" alt + 5 - pressed");
         //window.location.hash = "#search";
-        $("#search").focus();
+        Hiof.Search.Toggle();
+        $("#global-search-input").focus();
     }
     if (altPlusSix) {
         // It-help
         //console.log(" alt + 6 - pressed");
-        window.location = "content-it-help.html";
+        window.location = "https://www2.hiof.no/?ID=22512";
     }
     if (altPlusSeven) {
         // Contact
         //console.log(" alt + 7 - pressed");
-        window.location = "content-contact.html";
+        window.location = "/index.php?ID=612";
     }
     if (altPlusEight) {
         // Relevant information
         //console.log(" alt + 8 - pressed");
-        window.location = "article-list.html";
+        window.location = "/index.php?ID=30037";
     }
     if (altPlusNine) {
         // Fronter innlogging
         //console.log(" alt + 9 - pressed");
-        window.location = "index2.html";
+        //window.location = "index2.html";
     }
 
 
