@@ -1,50 +1,46 @@
 # hiof.no
 
-## Generell info
+## About
 
-Frontend kode til Høgskolen i Østfold sine sider. Se [http://hiof.github.io/frontend](http://hiof.github.io/frontend) for prosjektstatus.
-
-
-## Kopibeskyttelse
+Frontend code for the Østfold University College website.
 
 
-- Prosjektet er distrubiert under GNU General Public License v3 - se COPYING filen for detaljer. 
-- Prosjektet bruker diverse åpen kildekode teknologier. For mer informasjon om lisensieringen av disse kan du lese LICENSE.md filen.
-- Prosjektet inneholder submodule-linker til moduler som er kopibeskyttet (disse modulene er tilgjenglig på private repositories kun for HiØ ansatte tilknyttet dette prosjektet).
+## Copyright
+
+- This project is distributed under a  GNU General Public License v3 - Take a look at the COPYING file for details. 
 
 
-## Installasjon
+## Install
+
+
+Install [Git](http://git-scm.com) if it's not already installed on your computer. Then run (this will download this project to the folder the shell has open):
 
     $ git clone https://github.com/hiof/frontend.git
-    # Kloner prosjektet inn i din nåværende lokale mappe.
 
-Installer [Node.js](http://nodejs.org) hvis du ikke allerede har det installert.
+
+Install [Node.js](http://nodejs.org) if it's not already installed on your computer. Then run (this will install the project dependencies):
 
     $ sudo npm install -g grunt-cli
     $ npm install
 
-Du har nå `$ grunt dev` og `$ grunt prod` tilgjengelig. Disse oppgavene har to forskjellgie formål. `$ grunt prod` er en oppgave som genererer frontend stacken til ./build mappen. `$ grunt dev` er en oppgave som kontinuelig overvåker endringer i dine assets filer for å se om de endres. Hvis en asset fil endres når `$ grunt dev` tråden kjøres vil oppgaver for output generering automatisk kjøres.
 
-## Versjon
+The following commands are now available within the project folder `$ grunt server`, `$ grunt deploy-stage` og `$ grunt deploy-prod`. 
 
-* v2.0.0 - Some bugfixes + build prosess updated to use grunt
-* v1.3.0 - Ny layout module
-* v1.2.0 - Ansatt katalog
-* v1.1.0 - Sass is now build in modules
-* v1.0.0 - Responsive design av den genrelle malen
-* v0.1.1 - Bugfikser
-* v0.1.0 - milestone 1 av prosjektet. Inneholder stilsett og funksjonalitet for responsive design av Høgskoleavisa
-* v0.0.1 - Initial commit
+- $ grunt server: You get a local version of the code running at localhost. Code is build whenever you change a file in /app and automaticly loaded in your browser.
+- $ grunt deploy-stage: Deploys the code to staging.hiof.no
+- $ grunt deploy-prod: Deploys the code to hiof.no
+
+
+## Releases
+
+[Github releases](https://github.com/hiof/frontend/releases)
 
 ### Roadmap
 
-v3.0.0.X - Ukentlige releaser etter hvert som sprinter blir ferdige.
+v3.2.0 - Integrated news (and design adjustments)
+v3.3.0 - Personal profile data integration (and design adjustments)
+v3.4.0 - Study cataloge, several content improvements
 
 
-
-
-### Future goal
-
-* v3.0.0 - Redesign of the information architecture layer + new visual profile 
 
 
