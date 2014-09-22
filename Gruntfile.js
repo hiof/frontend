@@ -301,6 +301,12 @@ module.exports = function(grunt) {
             'app/views/partials/_header.html',
             'app/views/pages/content/intranet-employee.html',
             'app/views/partials/_footer.html'
+          ],
+          'build/map.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/map.html',
+            'app/views/partials/_footer.html'
           ]
         }
       },
