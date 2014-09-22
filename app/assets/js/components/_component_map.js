@@ -1,5 +1,5 @@
 // Defualt namespace
-var Hiof = Hiof || {};
+//var Hiof = Hiof || {};
 
 
 //Hiof.MapFredrikstad = {
@@ -13,7 +13,11 @@ var Hiof = Hiof || {};
 
 
 
+(function() {
 
+  var Hiof = Hiof || {};
+
+  //Hiof.Video = {};
 
 
 
@@ -25,7 +29,17 @@ var Hiof = Hiof || {};
 //
 //};
 
-Hiof.Map = {};
+    Hiof.Map = {
+        bothLat: 59.2302809,
+        bothLng: 11.1991417,
+        bothZoom: 8,
+        haldenLat: 59.12870517113603,
+        haldenLng: 11.353683471679688,
+        haldenZoom: 14,
+        fredrikstadLat: 59.21313702139788,
+        fredrikstadLng: 10.930860042572021,
+        fredrikstadZoom: 15
+    };
 
 
 
@@ -35,68 +49,89 @@ Hiof.Map = {};
 
 // Campus Halden - 59.12870517113603,11.353683471679688
 
+    
+
+    Hiof.Map.Both = function() {
+        // set up the map
+        map = new L.Map('mapBoth');
+
+        // create the tile layer with correct attribution
+        var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+        var osm = new L.TileLayer(osmUrl, {minZoom: 7, maxZoom: 16, attribution: osmAttrib});       
+
+        // start the map at Stuediested Halden
+        map.setView(new L.LatLng(Hiof.Map.bothLat, Hiof.Map.bothLng),Hiof.Map.bothZoom);
+        map.addLayer(osm);
+
+        // Add marker
+        var marker = L.marker([Hiof.Map.haldenLat, Hiof.Map.haldenLng]).addTo(map);
+        marker.bindPopup("<b>Høgskolen i Østfold</b><br>Studiested Halden").openPopup();
+
+        var markerFred = L.marker([Hiof.Map.fredrikstadLat, Hiof.Map.fredrikstadLng]).addTo(map);
+        markerFred.bindPopup("<b>Høgskolen i Østfold</b><br>Studiested Fredrikstad").openPopup();
+
+    };
 
 
-Hiof.Map.Footer = function() {
-    var map = L.map('map').setView([59.2302809, 11.1991417], 9);
-
-    L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-        id: 'examples.map-i86knfo3'
-    }).addTo(map);
+    Hiof.Map.Halden = function() {
 
 
-    L.marker([59.21313702139788,10.930860042572021]).addTo(map)
-        .bindPopup('<b>Høgskolen i Østfold</b><br /><a href="#">Campus Fredrikstad</a>.');
-    L.marker([59.12870517113603,11.353683471679688]).addTo(map)
-        .bindPopup('<b>Høgskolen i Østfold</b><br /><a href="#">Campus Halden</a>.');
-};
+        // set up the map
+        map = new L.Map('mapHalden');
+
+        // create the tile layer with correct attribution
+        var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+        var osm = new L.TileLayer(osmUrl, {minZoom: 7, maxZoom: 16, attribution: osmAttrib});       
+
+        // start the map at Stuediested Halden
+        map.setView(new L.LatLng(Hiof.Map.haldenLat, Hiof.Map.haldenLng),Hiof.Map.haldenZoom);
+        map.addLayer(osm);
+
+        // Add marker
+        var marker = L.marker([Hiof.Map.haldenLat, Hiof.Map.haldenLng]).addTo(map);
+        marker.bindPopup("<b>Høgskolen i Østfold</b><br>Studiested Halden").openPopup();
 
 
-Hiof.Map.Halden = function() {
-    var mapHalden = L.map('mapHalden').setView([59.12870517113603, 11.353683471679688], 13);
+    };
 
-    L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-        id: 'examples.map-i86knfo3'
-    }).addTo(mapHalden);
+    Hiof.Map.Fredrikstad = function() {
 
-    L.marker([59.12870517113603, 11.353683471679688]).addTo(mapHalden)
-        .bindPopup('<b>Høgskolen i Østfold</b><br /><a href="#">Campus Halden</a>.');
-};
+        // set up the map
+        map = new L.Map('mapFredrikstad');
 
-Hiof.Map.Fredrikstad = function() {
-    var mapFredrikstad = L.map('mapFredrikstad').setView([59.21313702139788,10.930860042572021], 14);
+        // create the tile layer with correct attribution
+        var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+        var osm = new L.TileLayer(osmUrl, {minZoom: 7, maxZoom: 16, attribution: osmAttrib});       
 
-    L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-        id: 'examples.map-i86knfo3'
-    }).addTo(mapFredrikstad);
+        // start the map at Stuediested Halden
+        map.setView(new L.LatLng(Hiof.Map.fredrikstadLat, Hiof.Map.fredrikstadLng),Hiof.Map.fredrikstadZoom);
+        map.addLayer(osm);
 
-    L.marker([59.21313702139788,10.930860042572021]).addTo(mapFredrikstad)
-        .bindPopup('<b>Høgskolen i Østfold</b><br /><a href="#">Campus Fredrikstad</a>.');
+        // Add marker
+        var marker = L.marker([Hiof.Map.fredrikstadLat, Hiof.Map.fredrikstadLng]).addTo(map);
+        marker.bindPopup("<b>Høgskolen i Østfold</b><br>Studiested Fredrikstad").openPopup();
 
-};
+    };
 
 
 
 
 
-$(function() {
-    //Hiof.Map.Footer();
-    if($('#mapHalden').length){
-      Hiof.Map.Halden();
-    }
-    if($('#mapFredrikstad').length){
-      Hiof.Map.Fredrikstad();
-    }
-});
+    $(function() {
+        //Hiof.Map.Footer();
+        if($('#mapBoth').length){
+          Hiof.Map.Both();
+        }
+        if($('#mapHalden').length){
+          Hiof.Map.Halden();
+        }
+        if($('#mapFredrikstad').length){
+          Hiof.Map.Fredrikstad();
+        }
+    });
+
+
+})();
