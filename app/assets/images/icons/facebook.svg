@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-facebook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<linearGradient id="facebook-bg_1_" gradientUnits="userSpaceOnUse" x1="23.9995" y1="0" x2="23.9995" y2="48.0005">
+	<stop  offset="0" style="stop-color:#4B71B8"/>
+	<stop  offset="1" style="stop-color:#293F7E"/>
+</linearGradient>
+<rect id="facebook-bg" class="item" fill="url(#facebook-bg_1_)" width="48" height="48"/>
+<path id="facebook-f" class="item" fill="#FFFFFF" d="M39.731,9.367c0,0-3.711,0-6.172,0c-3.665,0-7.738,1.537-7.738,6.841
+	c0.02,1.847,0,3.617,0,5.608h-4.238v6.734h4.37v19.387h8.028V28.422h5.3l0.479-6.625h-5.919c0,0,0.018-2.949,0-3.803
+	c0-2.095,2.187-1.976,2.316-1.976c1.042,0,3.062,0.003,3.581,0V9.366L39.731,9.367L39.731,9.367z"/>
+</svg>
