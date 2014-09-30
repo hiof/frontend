@@ -1,7 +1,7 @@
 <section id="content" class="lo-auron-2-3">
     <header><h1>Aktuelt</h1></header>
     <article class="article article-entry article-vertical lo-half">
-        <a href="article-single.html"><img src="http://www.placehold.it/654x350"></a>
+        <a href="article-single.html"><img src="http://www.placehold.it/654x350">
         <header>
             <h3><a href="article-single.html">Unge entreprenører</a></h3>
         </header>
@@ -9,6 +9,34 @@
             Kårer Smartingen 2014: I dag er 200 skolelever fra hele Østfold samlet sammen med lærerstudentene ved Høgskolen i Østfold, Halden for å kåre årets smarteste nyskapning.
         </p>
     </article>
+
+
+    <script id="article-posts" type="text/x-handlebars-template">
+        {{#each posts}}
+            <article class="article article-entry article-vertical lo-half">
+                <a href="{{this.articleId}}">
+                    <img src="{{this.articleImage}}" />
+                    <header>
+                        <h3>{{this.articleTitle}}</h3>
+                    </header>
+                    <p>{{this.articleIntro}}</p>
+                  {{{this.articleContent}}}
+                </a>
+            </article>
+        {{/each}}
+    </script>
+
+
+    <script id="article-post-single" type="text/x-handlebars-template">
+
+        <header>
+            <h3>{{title}}</h3>
+        </header>
+        <p>{{intro}}</p>
+          {{{content}}
+  
+    </script>
+
    <div id="article-load"></div>
 
     <footer class="lo-full">
