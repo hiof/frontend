@@ -21,7 +21,7 @@
 
             Hiof.setRedirectCookie();
 
-            console.log("Hiof.redirectUsers(), 5 sekond delay");
+            //console.log("Hiof.redirectUsers(), 5 sekond delay");
 
 
             window.setTimeout(function() {
@@ -31,13 +31,13 @@
             }, 5000);
         } else {
             if ($.cookie('HiofRedirectEmployee') == 'true') {
-                console.log("You are now redirected to ansatt....");
-                //window.location.href = "http://hiof.no/ansatt";
+                //console.log("You are now redirected to ansatt....");
+                window.location.href = "http://hiof.no/ansatt";
             }
         }
     };
     Hiof.cancelRedirect = function() {
-        console.log("Hiof.cancelRedirect initiated");
+        //console.log("Hiof.cancelRedirect initiated");
         $.cookie('HiofRedirectEmployee', 'false', {
             path: '/',
             expires: 60
@@ -61,7 +61,7 @@
     $(function() {
         if ($('#redirect').length) {
             if ($.cookie('HiofRedirectEmployee') == 'false') {
-                console.log("HiofRedirectEmployee is set to false");
+                //console.log("HiofRedirectEmployee is set to false");
                 //$('.modal').modal();
             } else {
                 Hiof.setupRedirect();
