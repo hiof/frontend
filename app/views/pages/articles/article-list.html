@@ -11,31 +11,7 @@
     </article>
 
 
-    <script id="article-posts" type="text/x-handlebars-template">
-        {{#each posts}}
-            <article class="article article-entry article-vertical lo-half">
-                <a href="{{this.articleId}}">
-                    <img src="{{this.articleImage}}" />
-                    <header>
-                        <h3>{{this.articleTitle}}</h3>
-                    </header>
-                    <p>{{this.articleIntro}}</p>
-                  {{{this.articleContent}}}
-                </a>
-            </article>
-        {{/each}}
-    </script>
-
-
-    <script id="article-post-single" type="text/x-handlebars-template">
-
-        <header>
-            <h3>{{title}}</h3>
-        </header>
-        <p>{{intro}}</p>
-          {{{content}}
-  
-    </script>
+    <div id="outlet"></div>
 
    <div id="article-load"></div>
 
@@ -68,6 +44,40 @@
     </footer>
 
 </section>
+
+
+
+    <script id="article-posts" type="text/x-handlebars-template">
+
+
+           {{#each posts}}
+                <article data-article-id="{{articleId}}" class="article article-entry article-vertical lo-half">
+                <a href="{{articleId}}">
+                    <img src="http://hiof.no/neted/services/file/?hash={{articleImage}}" alt="{{articleImageAltText}}" class="picture" />
+                 <h3>{{ articleTitle }}</h3>
+                 <p class="lead-paragraph">{{ articleIntro }}</p>
+                </a>
+                </article>
+            {{/each}}
+
+    </script>
+
+
+    <script id="article-post-single" type="text/x-handlebars-template">
+
+           {{#each posts}}
+                <article data-article-id="{{articleId}}" class="article-single lo-full">
+      
+                    <h3>{{ articleTitle }}</h3>
+                    <p>Publisert den {{articlePublished}} av <a href="http://hiof.no/nor/om-hogskolen/sok-pa-sidene/profil/?&displayitem={{authorId}}&module=admin" title="Se {{authorName}} sin profil">{{authorName}}</a></p>
+                    <img src="{{articleImage}}" alt="{{articleImageAltText}}" class="picture" />
+                    <p class="lead-paragraph">{{ articleIntro }}</p>
+                    {{ articleContent }}
+                    <p>Sist oppdatert {{articleUpdated}} av <a href="http://hiof.no/nor/om-hogskolen/sok-pa-sidene/profil/?&displayitem={{authorId}}&module=admin" title="Se {{authorName}} sin profil">{{authorName}}</a></p>
+                </article>
+            {{/each}}
+  
+    </script>
 
 
 

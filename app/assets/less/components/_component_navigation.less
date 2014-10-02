@@ -388,6 +388,25 @@
 
 .nav-vertical(){
   .slideout-navigation();
+
+
+  // Start overrides of the slieout plugin
+  body{
+    transition: none;
+    transition: left .3s ease;
+    transform: translateZ(1);
+  }
+  #nav-pages, #nav-user{
+    transition: none;
+    transition: left .3s ease;
+  }
+  #nav-pages{
+    right: auto;
+    left: -240px
+  }
+  // End overrride
+
+
   .global-search-vertical();
   #mobile-overlay{
     background: rgba(255,255,255,.6);
@@ -642,8 +661,6 @@
       border-top-right-radius: .4rem;
     }
   }
-
-
 
 
   .nav{
