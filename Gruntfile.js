@@ -318,12 +318,13 @@ module.exports = function(grunt) {
           'app/vendor/footable/js/footable.filter.js', 
           'app/vendor/footable/js/footable.sort.js', 
           'app/vendor/footable/js/footable.striping.js',
+          'app/vendor/bootstrap/js/modal.js',
+          'app/vendor/bootstrap/js/dropdown.js', 
           'app/vendor/jquery-cookie/jquery.cookie.js',
           'app/vendor/handlebars/handlebars.js',
           'app/assets/js/components/*.js', 
           'app/assets/js/*.js', 
           'app/vendor/jquery.scrollTo/jquery.scrollTo.js', 
-          'app/vendor/bootstrap/js/dropdown.js', 
           'app/vendor/slideout/slideout-navigation.js'
         ],
         dest: 'tmp/js/application.min.js'
