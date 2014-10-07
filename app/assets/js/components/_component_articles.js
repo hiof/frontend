@@ -1,16 +1,16 @@
 //var HIOF = Hiof || {};
 
 
-var ARTICLES = (function() {
+(function(Hiof, undefined) {
 
 
 
 
 
 
-  var LOAD_ARTICLES = {
 
-    handlerData: function(data, singleView) {
+
+    Hiof.handlerData = function(data, singleView) {
       var templateSource;
       if (singleView) {
         templateSource = $("#article-post-single").html();
@@ -28,8 +28,8 @@ var ARTICLES = (function() {
         //Hiof.LayoutHelper();
         //Hiof.EqualHeight($(".article"));
       }
-    },
-    loadArticleData: function(options) {
+    };
+    Hiof.loadArticleData = function(options) {
 
       // Setup the query
       var settings = $.extend({
@@ -70,8 +70,8 @@ var ARTICLES = (function() {
         }
 
       });
-    }
-  };
+    };
+
 
 
   $(function() {
@@ -81,8 +81,8 @@ var ARTICLES = (function() {
       };
 
 
-      LOAD_ARTICLES.loadArticleData(options);
+      Hiof.loadArticleData(options);
     }
   });
 
-})();
+})(window.Hiof = window.Hiof || {});
