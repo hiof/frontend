@@ -16,6 +16,7 @@
     "jquery.scrollTo": "~1.4.11",
     "slideout": "git@github.com:kedano/Slideout.git",
     "jquery-cookie": "git@github.com:carhartl/jquery-cookie.git",
-    "handlebars": "git@github.com:components/handlebars.js.git"
+    "handlebars": "git@github.com:components/handlebars.js.git",
+    "pathjs": "git@github.com:mtrpcic/pathjs.git"
   }
 }

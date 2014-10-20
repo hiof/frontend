@@ -322,6 +322,7 @@ module.exports = function(grunt) {
           'app/vendor/bootstrap/js/dropdown.js', 
           'app/vendor/jquery-cookie/jquery.cookie.js',
           'app/vendor/handlebars/handlebars.js',
+          'app/vendor/pathjs/path.js',
           'app/assets/js/components/*.js', 
           'app/assets/js/*.js', 
           'app/vendor/jquery.scrollTo/jquery.scrollTo.js', 
