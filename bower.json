@@ -9,7 +9,7 @@
   "license": "GNU",
   "dependencies": {
     "modernizr": "~2.7.1",
-    "jquery": "~2.1.1",
+    "jquery": "~1.11.1",
     "bootstrap": "~3.1.1",
     "livereload": "~2.0.8",
     "footable": "git@github.com:bradvin/FooTable.git#V2",
