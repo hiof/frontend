@@ -92,7 +92,7 @@
       // Get options from the initializer element
       Hiof.articleSetupOptions();
     }
-
+    //console.log(options);
 
 
 
@@ -130,8 +130,8 @@
   // This is our "rescue" method.
   function notFound() {
       $("#content").html("Fant ingen artikler.");
-    }
-    // Standard path
+  }
+  // Standard path
   Path.map("#/articles").to(function() {
     Hiof.articleLoadData();
   });
