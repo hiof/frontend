@@ -334,6 +334,7 @@ module.exports = function(grunt) {
       scripts: {
         src: [
           //'app/vendor/60fps-scroll/dist/60fps-scroll.js', 
+          'app/vendor/leaflet/dist/leaflet.js', 
           'app/vendor/footable/js/footable.js', 
           'app/vendor/footable/js/footable.paginate.js', 
           'app/vendor/footable/js/footable.filter.js', 
