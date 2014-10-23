@@ -15,16 +15,22 @@
     //  templateSource = $("#article-posts").html();
     //}
     if (typeof options.template === 'undefined' || options.template === '') {
-      templateSource = $("#article-posts").html();
+      //templateSource = $("#article-posts").html();
+
+      templateSource = Hiof.Templates['articles/posts'];
+      console.log('Template:' + templateSource);
     }else{
-      templateSource = $(options.template).html();
+      console.log(options.template);
+      //templateSource = $(options.template).html();
+      templateSource = Hiof.Templates['articles/' + options.template];
     }
 
 
     //console.log("Singleview = " + singleView);
 
-    var template = Handlebars.compile(templateSource),
-      studentHTML = template(data);
+    //var template = Handlebars.compile(templateSource),
+
+    var studentHTML = templateSource(data);
     //console.log(template);
 
     if (!!options.destination) {
@@ -120,7 +126,7 @@
       pageId: null,
       page: 1,
       pageSize: 20,
-      template: '',
+      template: 'posts',
       authorId: '',
       category: '',
       destination: ''
@@ -163,7 +169,7 @@
   Path.map("#/articles/:article_id").to(function() {
     var options = {
       pageId: this.params.article_id,
-      template: '#article-post-single'
+      template: 'post-single'
     };
 
     Hiof.articleLoadData(options);
