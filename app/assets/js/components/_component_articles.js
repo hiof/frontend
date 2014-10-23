@@ -3,28 +3,37 @@
 
 
   Hiof.articleDisplayView = function(data, options) {
+    //console.log(options);
     var templateSource;
 
 
-    if (options.viewer === 'single') {
-      templateSource = $("#article-post-single").html();
-    } else if (options.viewer === 'feed') {
+    //if (options.template === 'single') {
+    //  templateSource = $("#article-post-single").html();
+    //} else if (options.template === 'feed') {
+    //  templateSource = $("#article-posts").html();
+    //} else {
+    //  templateSource = $("#article-posts").html();
+    //}
+    if (typeof options.template === 'undefined' || options.template === '') {
       templateSource = $("#article-posts").html();
-    } else {
-      templateSource = $("#article-posts").html();
+    }else{
+      templateSource = $(options.template).html();
     }
+
+
     //console.log("Singleview = " + singleView);
 
     var template = Handlebars.compile(templateSource),
       studentHTML = template(data);
     //console.log(template);
 
-    if (options.destination === '.outlet') {
+    if (!!options.destination) {
       //var articleCount = $('.article').length;
-
+      //console.log("options.destination has something: " + options.destination);
       $(options.destination).append(studentHTML);
       //Hiof.EqualHeight($(".article"));
     } else {
+      //console.log("options.destination is empty");
       $('#content').html(studentHTML);
     }
     //if (!singleView) {
@@ -34,63 +43,72 @@
     //}
 
 
-    $.scrollTo($("#content"), 500, {
-      axis: 'y',
-      offset: {
-        top: -80
-      }
-    });
+    //$.scrollTo($("#content"), 500, {
+    //  axis: 'y',
+    //  offset: {
+    //    top: -80
+    //  }
+    //});
 
 
   };
-  Hiof.articleSetupOptions = function() {
-    var thisLoader = $('.article-load'),
-      thisPageId = null,
-      thisPage = 1,
-      thisPageSize = 20,
-      thisViewer = false,
-      thisAuthorId = '',
-      thisCategory = '',
-      thisDestination = '';
-    if (thisLoader.attr('data-pageId')) {
-      thisPageId = $(thisLoader).attr('data-pageId');
-    }
-    if (thisLoader.attr('data-page')) {
-      thisPage = $(thisLoader).attr('data-page');
-    }
-    if (thisLoader.attr('data-pageSize')) {
-      thisPageSize = $(thisLoader).attr('data-pageSize');
-    }
-    if (thisLoader.attr('data-viewer')) {
-      thisFullArticle = $(thisLoader).attr('data-viewer');
-    }
-    if (thisLoader.attr('data-authorId')) {
-      thisAuthorId = $(thisLoader).attr('data-authorId');
-    }
-    if (thisLoader.attr('data-category')) {
-      thisCategory = $(thisLoader).attr('data-category');
-    }
-    if (thisLoader.attr('data-destination')) {
-      thisDestination = $(thisLoader).attr('data-destination');
+  Hiof.articleSetupOptions = function(el) {
+    var thisLoader;
+    if (typeof el === 'undefined') {
+      thisLoader = $('.article-load');
+    }else{
+      thisLoader = $(el);
     }
 
+
+    var thisPageId = null,
+        thisPage = 1,
+        thisPageSize = 20,
+        thisTemplate = '',
+        thisAuthorId = '',
+        thisCategory = '',
+        thisDestination = '';
+    if (thisLoader.attr('data-pageId')) {
+      thisPageId = thisLoader.attr('data-pageId');
+    }
+    if (thisLoader.attr('data-page')) {
+      thisPage = thisLoader.attr('data-page');
+    }
+    if (thisLoader.attr('data-pageSize')) {
+      thisPageSize = thisLoader.attr('data-pageSize');
+    }
+    if (thisLoader.attr('data-template')) {
+      thisTemplate = thisLoader.attr('data-template');
+    }
+    if (thisLoader.attr('data-authorId')) {
+      thisAuthorId = thisLoader.attr('data-authorId');
+    }
+    if (thisLoader.attr('data-category')) {
+      thisCategory = thisLoader.attr('data-category');
+    }
+    if (thisLoader.attr('data-destination')) {
+      thisDestination = thisLoader.attr('data-destination');
+    }
+    //console.log(thisDestination);
 
     options = {
       pageId: thisPageId,
       page: thisPage,
       pageSize: thisPageSize,
-      viewer: thisViewer,
+      template: thisTemplate,
       authorId: thisAuthorId,
       category: thisCategory,
       destination: thisDestination
     };
     return options;
   };
-  Hiof.articleLoadData = function(options) {
+  Hiof.articleLoadData = function(options, element) {
+    //console.log(element);
     // If options are not defined
-    if (typeof options === 'undefined') {
+    if (typeof options === 'undefined' || options === null) {
       // Get options from the initializer element
-      Hiof.articleSetupOptions();
+      //console.log("options is undefined");
+      options = Hiof.articleSetupOptions(element);
     }
     //console.log(options);
 
@@ -102,9 +120,10 @@
       pageId: null,
       page: 1,
       pageSize: 20,
-      viewer: 'feed',
+      template: '',
       authorId: '',
-      category: ''
+      category: '',
+      destination: ''
     }, options);
 
 
@@ -133,7 +152,10 @@
   }
   // Standard path
   Path.map("#/articles").to(function() {
-    Hiof.articleLoadData();
+    $('.article-load').each(function(){
+      //console.log(this);
+      Hiof.articleLoadData(null, this);
+    });
   });
 
 
@@ -141,7 +163,7 @@
   Path.map("#/articles/:article_id").to(function() {
     var options = {
       pageId: this.params.article_id,
-      viewer: 'single'
+      template: '#article-post-single'
     };
 
     Hiof.articleLoadData(options);
