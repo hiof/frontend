@@ -54,7 +54,7 @@ Hiof.Study.ExecuteFilterFromUrl = function() {
 
 
 
-    if ($("#KS033").length > 0) {
+    if ($(".lang-nb #KS033").length > 0) {
       var showDetailsUrl = $("#content a").first().attr('href');
       if (showDetailsUrl.toLowerCase().indexOf("studieplaner") >= 0) {
         var showDetails = $("#content a").first(),
