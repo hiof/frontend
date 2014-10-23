@@ -40,6 +40,11 @@ Thumbs.db
 **/*/.sass-cache/**/*
 .sass-cache/**/*
 
+
+
+
+templates.js
+
 logo-*.png
 
 fire_app_log.txt
