@@ -119,6 +119,12 @@ module.exports = function(grunt) {
       files: ['app/assets/js/**/*.js', 'Gruntfile.js', 'bower.json', 'package.json']
     },
     handlebars: {
+        options: {
+            namespace: 'Hiof.Templates',
+            processName: function(filePath) {
+              return filePath.replace(/^app\/templates\//, '').replace(/\.hbs$/, '');
+            }
+        },
         all: {
             files: {
                 "app/assets/js/templates/templates.js": ["app/templates/**/*.hbs"]
@@ -337,7 +343,8 @@ module.exports = function(grunt) {
           'app/vendor/bootstrap/js/dropdown.js', 
           'app/vendor/jquery-cookie/jquery.cookie.js',
           'app/vendor/pathjs/path.js',
-          'app/assets/js/template/*.js', 
+          'app/vendor/handlebars/handlebars.js',
+          'app/assets/js/templates/*.js', 
           'app/assets/js/components/*.js', 
           'app/assets/js/*.js', 
           'app/vendor/jquery.scrollTo/jquery.scrollTo.js', 
