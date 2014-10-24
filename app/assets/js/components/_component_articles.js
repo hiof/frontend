@@ -22,7 +22,8 @@
     }else{
       //console.log(options.template);
       //templateSource = $(options.template).html();
-      templateSource = Hiof.Templates['articles/' + options.template];
+      var thisView = 'articles/' + options.template + '';
+      templateSource = Hiof.Templates[thisView];
     }
 
 
