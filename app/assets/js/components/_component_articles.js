@@ -3,7 +3,7 @@
 
 
   Hiof.articleDisplayView = function(data, options) {
-    //console.log(options);
+    console.log(options);
     var templateSource;
 
 
@@ -18,9 +18,9 @@
       //templateSource = $("#article-posts").html();
 
       templateSource = Hiof.Templates['articles/posts'];
-      console.log('Template:' + templateSource);
+      //console.log('Template:' + templateSource);
     }else{
-      console.log(options.template);
+      //console.log(options.template);
       //templateSource = $(options.template).html();
       templateSource = Hiof.Templates['articles/' + options.template];
     }
