@@ -1,7 +1,5 @@
-
  {{#each posts}}
     <div class="lo-quarter">
-      
       <article data-article-id="{{articleId}}" class="article article-entry {{#if articleExternal}}article-external{{/if}}">
       
       <a href="{{#if articleExternal}}{{articleExternal}}{{else}}#/articles/{{articleId}}{{/if}}" title="Link til {{ articleTitle }}">
@@ -11,7 +9,6 @@
        <p class="lead-paragraph">{{ articleIntro }}</p>
       </a>
 
-      </article>
-      </div>
-  {{/each}}
-
+    </article>
+  </div>
+{{/each}}
