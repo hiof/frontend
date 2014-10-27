@@ -3,7 +3,7 @@
 
 
   Hiof.articleDisplayView = function(data, options) {
-    console.log(options);
+    //console.log(options);
     var templateSource;
 
 
@@ -14,16 +14,23 @@
     //} else {
     //  templateSource = $("#article-posts").html();
     //}
-    if (typeof options.template === 'undefined' || options.template === '') {
-      //templateSource = $("#article-posts").html();
+    //if (typeof options.template === 'undefined' || options.template === '') {
+    //  //templateSource = $("#article-posts").html();
+    //  
+    //  templateSource = Hiof.Templates['articles/posts'];
+    //  //console.log('Template:' + templateSource);
+    //} else 
 
+    if(options.template === 'posts'){
       templateSource = Hiof.Templates['articles/posts'];
-      //console.log('Template:' + templateSource);
+    } else if(options.template === 'single'){
+      templateSource = Hiof.Templates['articles/post-single'];
     }else{
-      //console.log(options.template);
-      //templateSource = $(options.template).html();
-      var thisView = 'articles/' + options.template + '';
-      templateSource = Hiof.Templates[thisView];
+      templateSource = Hiof.Templates['articles/posts'];
+      ////console.log(options.template);
+      ////templateSource = $(options.template).html();
+      //var thisView = 'articles/' + options.template + '';
+      //templateSource = Hiof.Templates[thisView];
     }
 
 
@@ -31,17 +38,17 @@
 
     //var template = Handlebars.compile(templateSource),
 
-    var studentHTML = templateSource(data);
+    var markup = templateSource(data);
     //console.log(template);
 
     if (!!options.destination) {
       //var articleCount = $('.article').length;
       //console.log("options.destination has something: " + options.destination);
-      $(options.destination).append(studentHTML);
+      $(options.destination).append(markup);
       //Hiof.EqualHeight($(".article"));
     } else {
       //console.log("options.destination is empty");
-      $('#content').html(studentHTML);
+      $('#content').html(markup);
     }
     //if (!singleView) {
     //  // Fix the layout
@@ -74,7 +81,8 @@
         thisTemplate = '',
         thisAuthorId = '',
         thisCategory = '',
-        thisDestination = '';
+        thisDestination = '',
+        thisArticleLoClass = '';
     if (thisLoader.attr('data-pageId')) {
       thisPageId = thisLoader.attr('data-pageId');
     }
@@ -96,6 +104,9 @@
     if (thisLoader.attr('data-destination')) {
       thisDestination = thisLoader.attr('data-destination');
     }
+    if (thisLoader.attr('data-article-lo-class')) {
+      thisArticleLoClass = thisLoader.attr('data-article-lo-class');
+    }
     //console.log(thisDestination);
 
     options = {
@@ -105,7 +116,8 @@
       template: thisTemplate,
       authorId: thisAuthorId,
       category: thisCategory,
-      destination: thisDestination
+      destination: thisDestination,
+      articleLoClass: thisArticleLoClass
     };
     return options;
   };
@@ -130,12 +142,13 @@
       template: 'posts',
       authorId: '',
       category: '',
-      destination: ''
+      destination: '',
+      articleLoClass: "lo-half"
     }, options);
 
 
     $.ajax({
-      url: 'http://staging.hiof.no/api/v1/articles/',
+      url: 'http://hiof.no/api/v1/articles/',
       method: 'GET',
       async: false,
       dataType: 'json',
@@ -170,7 +183,7 @@
   Path.map("#/articles/:article_id").to(function() {
     var options = {
       pageId: this.params.article_id,
-      template: 'post-single'
+      template: 'single'
     };
 
     Hiof.articleLoadData(options);
