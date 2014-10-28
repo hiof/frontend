@@ -49,10 +49,25 @@
       }else{
         $(options.destination).html(markup);
       }
+
+      $.scrollTo($(options.destination), 500, {
+        axis: 'y',
+        offset: {
+          top: -80
+        }
+      });
+
       //Hiof.EqualHeight($(".article"));
     } else {
       //console.log("options.destination is empty");
       $('#content').html(markup);
+      $.scrollTo($("#content"), 500, {
+        axis: 'y',
+        offset: {
+          top: -80
+        }
+      });
+
     }
     //if (!singleView) {
     //  // Fix the layout
@@ -61,12 +76,7 @@
     //}
 
 
-    //$.scrollTo($("#content"), 500, {
-    //  axis: 'y',
-    //  offset: {
-    //    top: -80
-    //  }
-    //});
+
 
 
   };
@@ -114,7 +124,7 @@
     }
     if (thisLoader.attr('data-article-add-type')) {
       thisAddType = thisLoader.attr('data-article-add-type');
-    };
+    }
     //console.log(thisDestination);
 
     options = {
@@ -153,7 +163,8 @@
       category: '',
       destination: '',
       articleLoClass: "lo-half",
-      addType: ''
+      addType: '',
+      destinationAddress: null
     }, options);
 
 
@@ -208,7 +219,7 @@
     var thisDestination = '';
     if ($('.article-load').attr('data-destination')) {
       thisDestination = $('.article-load').attr('data-destination');
-    };
+    }
     var options = {
       pageId: this.params.article_id,
       template: 'single',
@@ -222,7 +233,7 @@
     var thisDestination = '';
     if ($('.article-load').attr('data-destination')) {
       thisDestination = $('.article-load').attr('data-destination');
-    };
+    }
     var options = {
       category: this.params.category_id,
       destination: thisDestination
@@ -235,7 +246,7 @@
     var thisDestination = '';
     if ($('.article-load').attr('data-destination')) {
       thisDestination = $('.article-load').attr('data-destination');
-    };
+    }
 
     var options = {
       page: this.params.page_id,
