@@ -44,7 +44,11 @@
     if (!!options.destination) {
       //var articleCount = $('.article').length;
       //console.log("options.destination has something: " + options.destination);
-      $(options.destination).append(markup);
+      if (options.addType === 'append') {
+        $(options.destination).append(markup);
+      }else{
+        $(options.destination).html(markup);
+      }
       //Hiof.EqualHeight($(".article"));
     } else {
       //console.log("options.destination is empty");
@@ -78,11 +82,12 @@
     var thisPageId = null,
         thisPage = 1,
         thisPageSize = 20,
-        thisTemplate = '',
+        thisTemplate = 'posts',
         thisAuthorId = '',
         thisCategory = '',
         thisDestination = '',
-        thisArticleLoClass = '';
+        thisArticleLoClass = 'lo-half',
+        thisAddType = '';
     if (thisLoader.attr('data-pageId')) {
       thisPageId = thisLoader.attr('data-pageId');
     }
@@ -107,6 +112,9 @@
     if (thisLoader.attr('data-article-lo-class')) {
       thisArticleLoClass = thisLoader.attr('data-article-lo-class');
     }
+    if (thisLoader.attr('data-article-add-type')) {
+      thisAddType = thisLoader.attr('data-article-add-type');
+    };
     //console.log(thisDestination);
 
     options = {
@@ -117,7 +125,8 @@
       authorId: thisAuthorId,
       category: thisCategory,
       destination: thisDestination,
-      articleLoClass: thisArticleLoClass
+      articleLoClass: thisArticleLoClass,
+      addType: thisAddType
     };
     return options;
   };
@@ -143,7 +152,8 @@
       authorId: '',
       category: '',
       destination: '',
-      articleLoClass: "lo-half"
+      articleLoClass: "lo-half",
+      addType: ''
     }, options);
 
 
@@ -166,11 +176,25 @@
     });
   };
 
+  Hiof.updateAnalytics = function(){
+    ga('set', 'page', document.location.href);
+    ga('send', 'pageview');
+
+    //ga('send', 'pageview', document.location.href);
+  };
+
   // This is our "rescue" method.
   function notFound() {
       $("#content").html("Fant ingen artikler.");
   }
   // Standard path
+
+
+  //Path.map("#/my/first/route").enter(function(){
+  //  alert("Enter, minions!");
+  //});
+
+
   Path.map("#/articles").to(function() {
     $('.article-load').each(function(){
       //console.log(this);
@@ -180,27 +204,42 @@
 
 
   // Path for specific article content 
-  Path.map("#/articles/:article_id").to(function() {
+  Path.map("#/articles/:article_id").enter(Hiof.updateAnalytics).to(function() {
+    var thisDestination = '';
+    if ($('.article-load').attr('data-destination')) {
+      thisDestination = $('.article-load').attr('data-destination');
+    };
     var options = {
       pageId: this.params.article_id,
-      template: 'single'
+      template: 'single',
+      destination: thisDestination
     };
-
     Hiof.articleLoadData(options);
   });
 
   // Path for categorized content 
-  Path.map("#/articles/category/:category_id").to(function() {
+  Path.map("#/articles/category/:category_id").enter(Hiof.updateAnalytics).to(function() {
+    var thisDestination = '';
+    if ($('.article-load').attr('data-destination')) {
+      thisDestination = $('.article-load').attr('data-destination');
+    };
     var options = {
-      category: this.params.category_id
+      category: this.params.category_id,
+      destination: thisDestination
     };
     Hiof.articleLoadData(options);
   });
 
   // Path for paged content 
-  Path.map("#/articles/page/:page_id").to(function() {
+  Path.map("#/articles/page/:page_id").enter(Hiof.updateAnalytics).to(function() {
+    var thisDestination = '';
+    if ($('.article-load').attr('data-destination')) {
+      thisDestination = $('.article-load').attr('data-destination');
+    };
+
     var options = {
-      page: this.params.page_id
+      page: this.params.page_id,
+      destination: thisDestination
     };
 
     Hiof.articleLoadData(options);
