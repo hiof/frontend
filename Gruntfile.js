@@ -345,11 +345,11 @@ module.exports = function(grunt) {
           'app/vendor/jquery-cookie/jquery.cookie.js',
           'app/vendor/pathjs/path.js',
           'app/vendor/handlebars/handlebars.js',
+          'app/vendor/jquery.scrollTo/jquery.scrollTo.js', 
+          'app/vendor/slideout/slideout-navigation.js',
           'app/assets/js/templates/*.js', 
           'app/assets/js/components/*.js', 
-          'app/assets/js/*.js', 
-          'app/vendor/jquery.scrollTo/jquery.scrollTo.js', 
-          'app/vendor/slideout/slideout-navigation.js'
+          'app/assets/js/*.js'
         ],
         dest: 'tmp/js/application.min.js'
       }
