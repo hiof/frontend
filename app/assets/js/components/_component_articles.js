@@ -97,7 +97,8 @@
         thisCategory = '',
         thisDestination = '',
         thisArticleLoClass = 'lo-half',
-        thisAddType = '';
+        thisAddType = '',
+        thisDestinationAddress = null
     if (thisLoader.attr('data-pageId')) {
       thisPageId = thisLoader.attr('data-pageId');
     }
@@ -125,6 +126,9 @@
     if (thisLoader.attr('data-article-add-type')) {
       thisAddType = thisLoader.attr('data-article-add-type');
     }
+    if (thisLoader.attr('data-article-destination-address')) {
+      thisDestinationAddress = thisLoader.attr('data-article-destination-address');
+    }
     //console.log(thisDestination);
 
     options = {
@@ -136,7 +140,8 @@
       category: thisCategory,
       destination: thisDestination,
       articleLoClass: thisArticleLoClass,
-      addType: thisAddType
+      addType: thisAddType,
+      destinationAddress: thisDestinationAddress
     };
     return options;
   };
