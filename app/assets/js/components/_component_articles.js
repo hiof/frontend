@@ -98,7 +98,7 @@
         thisDestination = '',
         thisArticleLoClass = 'lo-half',
         thisAddType = '',
-        thisDestinationAddress = null
+        thisDestinationAddress = null;
     if (thisLoader.attr('data-pageId')) {
       thisPageId = thisLoader.attr('data-pageId');
     }
