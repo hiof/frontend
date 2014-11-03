@@ -514,7 +514,7 @@ module.exports = function(grunt) {
            "./": "deploy/assets/**"
         },
         options: {
-          path: '/neted/sites/www.hiof.no/public/assets/',
+          path: '<%= secret.prod.path %>',
           srcBasePath: "deploy/assets/",
           host: '<%= secret.stage.host %>',
           username: '<%= secret.stage.username %>',
@@ -531,7 +531,7 @@ module.exports = function(grunt) {
            "./": "deploy/assets/**"
         },
         options: {
-          path: '/neted/sites/www.hiof.no/public/assets/',
+          path: '<%= secret.prod.path %>',
           srcBasePath: "deploy/assets/",
           host: '<%= secret.prod.host %>',
           username: '<%= secret.prod.username %>',
