@@ -40,6 +40,11 @@ Thumbs.db
 **/*/.sass-cache/**/*
 .sass-cache/**/*
 
+
+
+# Remove the generated hbs template file
+app/assets/js/templates/templates.js
+
 logo-*.png
 
 fire_app_log.txt

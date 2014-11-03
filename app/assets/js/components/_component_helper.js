@@ -9,9 +9,6 @@ Hiof.Helper.getUrlParameterByName = function(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 };
 
-//function getParameterByName(name) {
-//
-//}
 
 (function(Hiof, undefined) {
     Hiof.getUrlParameterByName = function(name) {

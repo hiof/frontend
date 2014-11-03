@@ -39,12 +39,11 @@ module.exports = function(grunt) {
         options: {
           banner: '/*!  HiØ stylesheets v<%= pkg.version %> by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */'
         },
-
-          expand: true,
-          cwd: 'tmp/css/',
-          src: ['*.css', '!*.min.css'],
-          dest: 'tmp/css/',
-          ext: '.min.css'
+        expand: true,
+        cwd: 'tmp/css/',
+        src: ['*.css', '!*.min.css'],
+        dest: 'tmp/css/',
+        ext: '.min.css'
       }
     },
     copy: {
@@ -90,6 +89,13 @@ module.exports = function(grunt) {
         dest: 'build/assets/js/data/',
         filter: 'isFile'
       },
+      jstemplates: {
+        expand: true,
+        cwd: 'app/assets/js/templates/',
+        src: '**',
+        dest: 'build/assets/js/templates/',
+        filter: 'isFile'
+      },
       favicon: {
         expand: true,
         cwd: 'app/assets/images/app-icons',
@@ -107,9 +113,24 @@ module.exports = function(grunt) {
       build: ['build/**/*']
     },
     jshint: {
+      options: {
+        ignores: ['app/assets/js/templates/templates.js']
+      },
       files: ['app/assets/js/**/*.js', 'Gruntfile.js', 'bower.json', 'package.json']
     },
-
+    handlebars: {
+        options: {
+            namespace: 'Hiof.Templates',
+            processName: function(filePath) {
+              return filePath.replace(/^app\/templates\//, '').replace(/\.hbs$/, '');
+            }
+        },
+        all: {
+            files: {
+                "app/assets/js/templates/templates.js": ["app/templates/**/*.hbs"]
+            }
+        }
+    },
     concat: {
       pages: {
         files: {
@@ -313,6 +334,7 @@ module.exports = function(grunt) {
       scripts: {
         src: [
           //'app/vendor/60fps-scroll/dist/60fps-scroll.js', 
+          'app/vendor/leaflet/dist/leaflet.js', 
           'app/vendor/footable/js/footable.js', 
           'app/vendor/footable/js/footable.paginate.js', 
           'app/vendor/footable/js/footable.filter.js', 
@@ -321,17 +343,23 @@ module.exports = function(grunt) {
           'app/vendor/bootstrap/js/modal.js',
           'app/vendor/bootstrap/js/dropdown.js', 
           'app/vendor/jquery-cookie/jquery.cookie.js',
-          'app/assets/js/components/*.js', 
-          'app/assets/js/*.js', 
+          'app/vendor/pathjs/path.js',
+          'app/vendor/handlebars/handlebars.js',
           'app/vendor/jquery.scrollTo/jquery.scrollTo.js', 
-          'app/vendor/slideout/slideout-navigation.js'
+          'app/vendor/slideout/slideout-navigation.js',
+          'app/assets/js/templates/*.js', 
+          'app/assets/js/components/*.js', 
+          'app/assets/js/*.js'
         ],
         dest: 'tmp/js/application.min.js'
       }
     },
     uglify: {
       options: {
-        mangle: false
+        mangle: false,
+        //compress: true,
+        preserveComments: false,
+        banner: '/*!  HiØ JavaScript v<%= pkg.version %> by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */'
       },
       main: {
         files: {
@@ -554,6 +582,13 @@ module.exports = function(grunt) {
 
 
     watch: {
+      hbs: {
+        files: ['app/templates/**/*.hbs'],
+        tasks: ['handlebars','copy:jstemplates'],
+        options: {
+          livereload: true,
+        },
+      },
       js: {
         files: ['app/assets/js/**/*.js', 'app/assets/js/**/*.json'],
         tasks: ['jshint', 'concat:scripts', 'versioning:build', 'copy:jsdata'],
@@ -606,7 +641,7 @@ module.exports = function(grunt) {
   // Tasks
 
   // Register tasks
-  grunt.registerTask('subtaskJs', ['jshint', 'concat:scripts', 'uglify', 'copy:jsdata']);
+  grunt.registerTask('subtaskJs', ['jshint', 'concat:scripts', 'uglify', 'copy:jsdata', 'copy:jstemplates']);
   grunt.registerTask('subtaskCss', ['less', 'autoprefixer', 'cssmin']);
   grunt.registerTask('subtaskCopy', ['copy:images', 'copy:fonts', 'copy:vendor', 'copy:favicon']);
   grunt.registerTask('subtaskCopyDeploy', ['copy:images', 'copy:vendor', 'copy:favicon']);
