@@ -1,6 +1,6 @@
 {
   "name": "Hiof-frontend",
-  "version": "3.1.4",
+  "version": "3.2.0",
   "homepage": "https://github.com/hiof/frontend",
   "authors": [
     "Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>"
@@ -9,12 +9,15 @@
   "license": "GNU",
   "dependencies": {
     "modernizr": "~2.7.1",
-    "jquery": "~2.1.1",
+    "jquery": "~1.11.1",
     "bootstrap": "~3.1.1",
     "livereload": "~2.0.8",
     "footable": "git@github.com:bradvin/FooTable.git#V2",
     "jquery.scrollTo": "~1.4.11",
     "slideout": "git@github.com:kedano/Slideout.git",
-    "jquery-cookie": "git@github.com:carhartl/jquery-cookie.git"
+    "jquery-cookie": "git@github.com:carhartl/jquery-cookie.git",
+    "handlebars": "git@github.com:components/handlebars.js.git",
+    "pathjs": "git@github.com:mtrpcic/pathjs.git",
+    "leaflet": "~0.7.3"
   }
 }
