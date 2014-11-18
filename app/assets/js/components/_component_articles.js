@@ -1,10 +1,11 @@
 (function(Hiof, undefined) {
 
 
-
+  var scrollDest = false;
   Hiof.articleDisplayView = function(data, options) {
     //console.log(options);
     var templateSource;
+
 
 
     //if (options.template === 'single') {
@@ -50,24 +51,13 @@
         $(options.destination).html(markup);
       }
 
-      $.scrollTo($(options.destination), 500, {
-        axis: 'y',
-        offset: {
-          top: -80
-        }
-      });
+      Hiof.articleScrollTo(options.destination);
 
-      //Hiof.EqualHeight($(".article"));
     } else {
       //console.log("options.destination is empty");
       $('#content').html(markup);
-      $.scrollTo($("#content"), 500, {
-        axis: 'y',
-        offset: {
-          top: -80
-        }
-      });
-
+      var scrollDestEl = "#content";
+      Hiof.articleScrollTo(scrollDestEl);
     }
     //if (!singleView) {
     //  // Fix the layout
@@ -80,6 +70,18 @@
 
 
   };
+
+  Hiof.articleScrollTo = function(destination){
+    if (scrollDest) {
+      $.scrollTo($(destination), 500, {
+        axis: 'y',
+        offset: {
+          top: -80
+        }
+      });
+    }
+  };
+
   Hiof.articleSetupOptions = function(el) {
     var thisLoader;
     if (typeof el === 'undefined') {
@@ -195,8 +197,6 @@
   Hiof.updateAnalytics = function(){
     ga('set', 'page', document.location.href);
     ga('send', 'pageview');
-
-    //ga('send', 'pageview', document.location.href);
   };
 
   // This is our "rescue" method.
@@ -205,13 +205,8 @@
   }
   // Standard path
 
-
-  //Path.map("#/my/first/route").enter(function(){
-  //  alert("Enter, minions!");
-  //});
-
-
   Path.map("#/articles").to(function() {
+    //scrollDest = false;
     $('.article-load').each(function(){
       //console.log(this);
       Hiof.articleLoadData(null, this);
@@ -221,6 +216,7 @@
 
   // Path for specific article content 
   Path.map("#/articles/:article_id").enter(Hiof.updateAnalytics).to(function() {
+    scrollDest = true;
     var thisDestination = '';
     if ($('.article-load').attr('data-destination')) {
       thisDestination = $('.article-load').attr('data-destination');
@@ -235,6 +231,7 @@
 
   // Path for categorized content 
   Path.map("#/articles/category/:category_id").enter(Hiof.updateAnalytics).to(function() {
+    scrollDest = true;
     var thisDestination = '';
     if ($('.article-load').attr('data-destination')) {
       thisDestination = $('.article-load').attr('data-destination');
@@ -248,6 +245,7 @@
 
   // Path for paged content 
   Path.map("#/articles/page/:page_id").enter(Hiof.updateAnalytics).to(function() {
+    scrollDest = true;
     var thisDestination = '';
     if ($('.article-load').attr('data-destination')) {
       thisDestination = $('.article-load').attr('data-destination');

@@ -1,4 +1,4 @@
-//var Hiof = Hiof || {};
+var Hiof = Hiof || {};
 
 Hiof.Helper = {};
 
@@ -11,14 +11,14 @@ Hiof.Helper.getUrlParameterByName = function(name) {
 
 
 (function(Hiof, undefined) {
-    Hiof.getUrlParameterByName = function(name) {
+    getUrlParameterByName = function(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
         var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
             results = regex.exec(location.search);
         return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     };
 
-    Hiof.createModal = function(options) {
+    createModal = function(options) {
 
         //console.log("Hiof.createModal  is running");
         var settings = $.extend({
@@ -28,8 +28,6 @@ Hiof.Helper.getUrlParameterByName = function(name) {
             footer: ""
         }, options);
 
-
-
         var div = document.createElement('div'),
             modal,
             modalWrapper = $(div).clone().addClass("modal fade"),
@@ -38,12 +36,6 @@ Hiof.Helper.getUrlParameterByName = function(name) {
             modalHeader = $(div).clone().addClass("modal-header"),
             modalBody = $(div).clone().addClass("modal-body"),
             modalFooter = $(div).clone().addClass("modal-footer");
-
-
-
-
-
-
 
         if (settings.header) {
             //header = "";
@@ -66,4 +58,40 @@ Hiof.Helper.getUrlParameterByName = function(name) {
         return modal;
 
     };
+
+
+
+    languageCheck = function() {
+
+        var language = Hiof.Options.language;
+
+        if (typeof language === 'undefined') {
+            language = "nor";
+        }
+        return language;
+    };
+
+    getUrlParameter = function(sParam) {
+
+        var sPageURL = window.location.search.substring(1),
+            sURLVariables = sPageURL.split('&');
+
+        for (var i = 0; i < sURLVariables.length; i++) {
+            var sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] == sParam) {
+                return sParameterName[1];
+            }
+        }
+    };
+
+
+
+     //In this context, 'window' refers to the parameter
+
+    window.Hiof.languageCheck = languageCheck;
+    window.Hiof.languageGetUrlParameter = getUrlParameter;
+    window.Hiof.getUrlParameterByName = getUrlParameterByName;
+    window.Hiof.createModal = createModal;
+
+
 })(window.Hiof = window.Hiof || {});

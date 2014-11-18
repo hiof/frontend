@@ -1,18 +1,4 @@
-// Defualt namespace
-var Hiof = Hiof || {};
 
-
-
-
-Hiof.Options = {
-  distanceToTop: $(window).scrollTop(),
-  windowWidth: $(window).width(),
-  distanceToTopBreakPoint: 0,
-  distanceToSidebarSticky: 0,
-  navigationBreakpoint: 770,
-  contentHeight: $("#main").outerHeight(),
-  language: Hiof.Language.GetUrlParameter("lang")
-};
 
 $(function() {
     // ----------------------------------------------------------------------------------------------------
@@ -52,9 +38,9 @@ $(function() {
       Hiof.LayoutHelper("#news");
 
       // Append toolbar
-      Hiof.Toolbar();
-      Hiof.Toolbar.SocialShare();
-      Hiof.Toolbar.Print();
+      //Hiof.Toolbar();
+      //Hiof.Toolbar.SocialShare();
+      //Hiof.Toolbar.Print();
 
       // Attach mobile nav icons
       Hiof.ToggleMobileNavigation();
