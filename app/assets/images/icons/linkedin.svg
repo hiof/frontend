@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="icon-linkedin" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="-185 274.3 48 48" enable-background="new -185 274.3 48 48" xml:space="preserve">
+<path id="icon-linkedin-bg" fill="#007BB5" d="M-140.6,274.3h-40.8c-1.9,0-3.5,1.5-3.5,3.4v40.9c0,1.9,1.6,3.5,3.5,3.5h40.8
+	c2,0,3.5-1.5,3.5-3.5v-40.9C-137,275.8-138.6,274.3-140.6,274.3z"/>
+<path id="icon-linkedin-i" fill="#FFFFFF" d="M-177.8,292.2h7.1V315h-7.1V292.2z M-174.2,280.9c2.3,0,4.1,1.8,4.1,4.1
+	c0,2.3-1.8,4.1-4.1,4.1c-2.3,0-4.1-1.8-4.1-4.1C-178.3,282.7-176.5,280.9-174.2,280.9"/>
+<path id="icon-linkedin-n" fill="#FFFFFF" d="M-166.2,292.2h6.8v3.1h0.1c0.9-1.8,3.3-3.7,6.7-3.7c7.2,0,8.5,4.7,8.5,10.9V315h-7.1
+	v-11.1c0-2.6-0.1-6.1-3.7-6.1c-3.7,0-4.3,2.9-4.3,5.9V315h-7.1V292.2z"/>
+</svg>
