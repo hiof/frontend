@@ -37,7 +37,7 @@ $(function() {
 
  
     Hiof.Options.contentHeight = $("#main").outerHeight();
-    Hiof.CoverPhoto.AddCoverPhotoToPage();
+    
     //console.log(Hiof.Options.contentHeight);
 
     // ----------------------------------------------------------------------------------------------------
