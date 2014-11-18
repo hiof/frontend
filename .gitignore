@@ -45,6 +45,9 @@ Thumbs.db
 # Remove the generated hbs template file
 app/assets/js/templates/templates.js
 
+# Remove temp placement of the video
+app/assets/images/cover-video/**/*
+
 logo-*.png
 
 fire_app_log.txt
