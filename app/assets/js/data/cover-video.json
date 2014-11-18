@@ -1,0 +1,70 @@
+{
+    "cover": {
+        "bachelor": {
+
+            "400": {
+                "mp4": "/assets/images/cover-video/cover-video.mp4",
+                "webm": "/assets/images/cover-video/cover-video.webm",
+                "bg": "/assets/images/cover-video/cover-video-bg.jpg",
+                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+            },
+            "500": {
+                "mp4": "/assets/images/cover-video/cover-video.mp4",
+                "webm": "/assets/images/cover-video/cover-video.webm",
+                "pictureLeft": "/assets/images/cover-video/cover-video.jpg",
+                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+            },
+            "600": {
+                "mp4": "/assets/images/cover-video/cover-video.mp4",
+                "webm": "/assets/images/cover-video/cover-video.webm",
+                "bg": "/assets/images/cover-video/cover-video-bg.jpg",
+                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+            }
+
+        },
+        "master": {
+
+            "400": {
+                "mp4": "/assets/images/cover-video/cover-video.mp4",
+                "webm": "/assets/images/cover-video/cover-video.webm",
+                "pictureLeft": "/assets/images/cover-video/cover-video.jpg",
+                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+            },
+            "500": {
+                "mp4": "/assets/images/cover-video/cover-video.mp4",
+                "webm": "/assets/images/cover-video/cover-video.webm",
+                "pictureLeft": "/assets/images/cover-video/cover-video.jpg",
+                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+            },
+            "600": {
+                "mp4": "/assets/images/cover-video/cover-video.mp4",
+                "webm": "/assets/images/cover-video/cover-video.webm",
+                "pictureLeft": "/assets/images/cover-video/cover-video.jpg",
+                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+            }
+
+        },
+        "flexible": {
+
+            "400": {
+                "mp4": "/assets/images/cover-video/cover-video.mp4",
+                "webm": "/assets/images/cover-video/cover-video.webm",
+                "pictureLeft": "/assets/images/cover-video/cover-video.jpg",
+                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+            },
+            "500": {
+                "mp4": "/assets/images/cover-video/cover-video.mp4",
+                "webm": "/assets/images/cover-video/cover-video.webm",
+                "pictureLeft": "/assets/images/cover-video/cover-video.jpg",
+                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+            },
+            "600": {
+                "mp4": "/assets/images/cover-video/cover-video.mp4",
+                "webm": "/assets/images/cover-video/cover-video.webm",
+                "pictureLeft": "/assets/images/cover-video/cover-video.jpg",
+                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+            }
+
+        }
+    }
+}
