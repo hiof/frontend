@@ -74,7 +74,7 @@ Hiof.ToggleMobileNavigation = function() {
         var navButtonTextMobileSite,
             navButtonTextMobileUser,
             navButtonTextInternal,
-            lang = Hiof.Language.Check();
+            lang = Hiof.languageCheck();
 
         //console.log(lang);
 
