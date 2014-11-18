@@ -1,11 +1,11 @@
 (function(Hiof, undefined) {
 
 
-
+  var scrollDest = false;
   Hiof.articleDisplayView = function(data, options) {
     //console.log(options);
-    var templateSource,
-        scrollDest = false;
+    var templateSource;
+
 
 
     //if (options.template === 'single') {
