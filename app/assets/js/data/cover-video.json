@@ -1,68 +1,90 @@
 {
     "cover": {
+        "hero": {
+
+            "520": {
+                "mp4": "/assets/images/cover-video/cover-video-bachelor.mp4.mp4",
+                "webm": "/assets/images/cover-video/cover-video-bachelor.webmhd.webm",
+                "poster": "/assets/images/cover-video/cover-video-bachelor.jpg",
+                "bg": "/assets/images/cover-video/cover-video-bg.jpg"
+            },
+            "750": {
+                "mp4": "/assets/images/cover-video/cover-video-bachelor_1.mp4.mp4",
+                "webm": "/assets/images/cover-video/cover-video-bachelor_1.webmhd.webm",
+                "poster": "/assets/images/cover-video/cover-video-bachelor_1.jpg",
+                "bg": "/assets/images/cover-video/cover-video-bg.jpg"
+            },
+            "1040": {
+                "mp4": "/assets/images/cover-video/cover-video-bachelor_2.mp4.mp4",
+                "webm": "/assets/images/cover-video/cover-video-bachelor_2.webmhd.webm",
+                "poster": "/assets/images/cover-video/cover-video-bachelor_2.jpg",
+                "bg": "/assets/images/cover-video/cover-video-bg.jpg"
+            }
+
+        },
         "bachelor": {
 
-            "400": {
-                "mp4": "/assets/images/cover-video/cover-video.mp4",
-                "webm": "/assets/images/cover-video/cover-video.webm",
-                "bg": "/assets/images/cover-video/cover-video-bg.jpg",
-                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+            "520": {
+                "mp4": "/assets/images/cover-video/cover-video-bachelor.mp4.mp4",
+                "webm": "/assets/images/cover-video/cover-video-bachelor.webmhd.webm",
+                "poster": "/assets/images/cover-video/cover-video-bachelor.jpg",
+                "bg": "/assets/images/cover-video/cover-video-bg.jpg"
             },
-            "500": {
-                "mp4": "/assets/images/cover-video/cover-video.mp4",
-                "webm": "/assets/images/cover-video/cover-video.webm",
-                "pictureLeft": "/assets/images/cover-video/cover-video.jpg",
-                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+            "750": {
+                "mp4": "/assets/images/cover-video/cover-video-bachelor_1.mp4.mp4",
+                "webm": "/assets/images/cover-video/cover-video-bachelor_1.webmhd.webm",
+                "poster": "/assets/images/cover-video/cover-video-bachelor_1.jpg",
+                "bg": "/assets/images/cover-video/cover-video-bg.jpg"
             },
-            "600": {
-                "mp4": "/assets/images/cover-video/cover-video.mp4",
-                "webm": "/assets/images/cover-video/cover-video.webm",
-                "bg": "/assets/images/cover-video/cover-video-bg.jpg",
-                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+            "1040": {
+                "mp4": "/assets/images/cover-video/cover-video-bachelor_2.mp4.mp4",
+                "webm": "/assets/images/cover-video/cover-video-bachelor_2.webmhd.webm",
+                "poster": "/assets/images/cover-video/cover-video-bachelor_2.jpg",
+                "bg": "/assets/images/cover-video/cover-video-bg.jpg"
             }
 
         },
         "master": {
 
             "400": {
-                "mp4": "/assets/images/cover-video/cover-video.mp4",
-                "webm": "/assets/images/cover-video/cover-video.webm",
-                "pictureLeft": "/assets/images/cover-video/cover-video.jpg",
-                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+                "mp4": "/assets/images/cover-video/cover-video-bachelor-.mp4.mp4",
+                "webm": "/assets/images/cover-video/cover-video-bachelor-.webmhd.webm",
+                "poster": "/assets/images/cover-video/cover-video-bachelor-.jpg",
+                "bg": "/assets/images/cover-video/cover-video-bg.jpg"
             },
             "500": {
-                "mp4": "/assets/images/cover-video/cover-video.mp4",
-                "webm": "/assets/images/cover-video/cover-video.webm",
-                "pictureLeft": "/assets/images/cover-video/cover-video.jpg",
-                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+                "mp4": "/assets/images/cover-video/cover-video-bachelor-.mp4.mp4",
+                "webm": "/assets/images/cover-video/cover-video-bachelor-.webmhd.webm",
+                "poster": "/assets/images/cover-video/cover-video-bachelor-.jpg",
+                "bg": "/assets/images/cover-video/cover-video-bg.jpg"
             },
             "600": {
-                "mp4": "/assets/images/cover-video/cover-video.mp4",
-                "webm": "/assets/images/cover-video/cover-video.webm",
-                "pictureLeft": "/assets/images/cover-video/cover-video.jpg",
-                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+                "mp4": "/assets/images/cover-video/cover-video-bachelor-.mp4.mp4",
+                "webm": "/assets/images/cover-video/cover-video-bachelor-.webmhd.webm",
+                "poster": "/assets/images/cover-video/cover-video-bachelor-.jpg",
+                "bg": "/assets/images/cover-video/cover-video-bg.jpg"
             }
 
         },
         "flexible": {
 
             "400": {
-                "mp4": "/assets/images/cover-video/cover-video.mp4",
-                "webm": "/assets/images/cover-video/cover-video.webm",
-                "pictureLeft": "/assets/images/cover-video/cover-video.jpg",
-                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+                "mp4": "/assets/images/cover-video/cover-video-bachelor-.mp4.mp4",
+                "webm": "/assets/images/cover-video/cover-video-bachelor-.webmhd.webm",
+                "poster": "/assets/images/cover-video/cover-video-bachelor-.jpg",
+                "bg": "/assets/images/cover-video/cover-video-bg.jpg"
             },
             "500": {
-                "mp4": "/assets/images/cover-video/cover-video.mp4",
-                "webm": "/assets/images/cover-video/cover-video.webm",
-                "pictureLeft": "/assets/images/cover-video/cover-video.jpg",
-                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+                "mp4": "/assets/images/cover-video/cover-video-bachelor-.mp4.mp4",
+                "webm": "/assets/images/cover-video/cover-video-bachelor-.webmhd.webm",
+                "poster": "/assets/images/cover-video/cover-video-bachelor-.jpg",
+                "bg": "/assets/images/cover-video/cover-video-bg.jpg"
             },
             "600": {
-                "mp4": "/assets/images/cover-video/cover-video.mp4",
-                "webm": "/assets/images/cover-video/cover-video.webm",
-                "pictureLeft": "/assets/images/cover-video/cover-video.jpg",
-                "pictureright": "/assets/images/cover-video/cover-video.jpg"
+                "mp4": "/assets/images/cover-video/cover-video-bachelor-.mp4.mp4",
+                "webm": "/assets/images/cover-video/cover-video-bachelor-.webmhd.webm",
+                "poster": "/assets/images/cover-video/cover-video-bachelor-.jpg",
+                "bg": "/assets/images/cover-video/cover-video-bg.jpg"
             }
 
         }
