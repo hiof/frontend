@@ -195,8 +195,8 @@
   };
 
   Hiof.updateAnalytics = function(){
-    ga('set', 'page', document.location.href);
-    ga('send', 'pageview');
+    //ga('set', 'page', document.location.href);
+    //ga('send', 'pageview');
   };
 
   // This is our "rescue" method.
