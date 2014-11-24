@@ -26,7 +26,45 @@
     //display: none;
   }
   html.cover {
-
+    &.index{
+      #study{
+        //height: 44.4rem;
+        //margin-top:-40rem;
+        padding: 0;
+        //margin: 0;
+        padding-top: 6px;
+        background: transparent;
+        article{
+          padding-top: 20rem;
+          text-align: center;
+          //display: none;
+          height: 48rem;
+          background: transparent;
+          h1{
+            font-size: 6rem;
+            font-weight: 100;
+            line-height: 2em;
+            color: @black;
+          }
+        }
+        footer{
+          margin-left: 0;
+          &:before{
+            content: "";
+            width: 300%;
+            display: block;
+            background: @color-primary-action;
+            height: 48px;
+            bottom: 0px;
+            position: absolute;
+            z-index: -1;
+            left: -50%;
+          }
+          //border-radius: .4rem;
+          //margin-bottom: 4rem;
+        }
+      }
+    }
 
     //#cover {
     //  //display: block;
