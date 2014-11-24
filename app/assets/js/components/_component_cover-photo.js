@@ -88,19 +88,20 @@
             imagebg = document.createElement('img'),
             videoWrapper = document.createElement('video'),
             videoSourceWebm = document.createElement('source'),
-            videoSourceMp4 = document.createElement('source');
+            videoSourceMp4 = document.createElement('source'),
+            windowWidth = $(window).width();
        
 
         $(coverWrapper).attr({
             "class": "cover",
             "id": "cover",
-            "style": 'height:400px;'
+            "style": 'height:450px;'
 
         });       
         $(imagebg).attr({
             "class": "cover-video-bg",
-            "src": data[600].bg,
-            "style": 'height:400px;'
+            "src": data[1040].bg,
+            "style": 'height:450px;'
         });
 
         $(videoWrapper).attr({
@@ -113,26 +114,43 @@
         });
         $(videoSourceWebm).attr({
             'class': 'cover-video-source cover-video-source-webm',
-            'type': 'video/webm',
-            'src': data[600].webm
+            'type': 'video/webm'
         });
         $(videoSourceMp4).attr({
             'class': 'cover-video-source cover-video-source-mp4',
-            'type': 'video/mp4',
-            'src': data[600].mp4
+            'type': 'video/mp4'
         });
 
-        $('#cover').remove();
+        //$('#cover').remove();
+        if(windowWidth < 520){
+          $(videoWrapper).attr('poster', data[520].poster);
+          $(videoSourceWebm).attr('src', data[520].webm);
+          $(videoSourceMp4).attr('src', data[520].mp4);
+        }else if ((windowWidth > 520) && (windowWidth < 700)){
+          $(videoWrapper).attr('poster', data[700].poster);
+          $(videoSourceWebm).attr('src', data[700].webm);
+          $(videoSourceMp4).attr('src', data[700].mp4);
+        }else if ((windowWidth > 700)){
+          $(videoWrapper).attr('poster', data[1040].poster);
+          $(videoSourceWebm).attr('src', data[1040].webm);
+          $(videoSourceMp4).attr('src', data[1040].mp4);
+        }else{
+
+        }
+
+
 
         $(videoWrapper).append(videoSourceWebm);
         $(videoWrapper).append(videoSourceMp4);
-        $(coverWrapper).append(imagebg);
+        if (windowWidth >= 1040) {
+          $(coverWrapper).append(imagebg);
+        }
         $(coverWrapper).append(videoWrapper);
         //console.log($(coverWrapper));
         $('#main').prepend(coverWrapper);
 
 
-
+        //console.log($('.cover-video').height());
         //var video = '<video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0"> 
         //                <source src="videos/splash.webm" type="video/webm"> 
         //                <source src="videos/splash.mp4" type="video/mp4"> 
