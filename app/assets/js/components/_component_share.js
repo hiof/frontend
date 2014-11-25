@@ -20,9 +20,19 @@
         window.open(shareUrl, '_blank');
     };
     shareLinkedIn = function() {
+        var lang = Hiof.languageCheck(),
+            source;
+
+            if (lang === "nor") {
+                source = "Høgskolen i Østfold";
+            } else {
+                source = "Østfold University College";
+            }
+
         var url = escape(document.URL),
             title = escape($('#content header *').text()),
-            shareUrl = "https://twitter.com/shareArticle?mini=true&url=" + url + '&title=' + title;
+            description =  escape($("meta[name=Description]").attr('content')),
+            shareUrl = "http://www.linkedin.com/shareArticle?mini=true&url=" + url + '&title=' + title + '&source=' + source + '&summary=' + description;
         window.open(shareUrl, '_blank');
     };
 
