@@ -18,7 +18,9 @@
   .calendar{
 
   }
-
+  time{
+    text-transform: lowercase;
+  }
   #people, #calendar{
     margin-bottom: 4rem;
     > header{
@@ -43,8 +45,7 @@
       width: 4.4rem;
       height: 4.4rem;
       text-align:center;
-      padding-top: .7rem;        
-      //background: @hiof-blue;
+      padding-top: .7rem;
       color: @color-primary-action;
       border: 1px solid @color-primary-action;
       border-radius: @border-radius-standard;
@@ -97,6 +98,9 @@
             border-top: .1rem solid @white;
           }        
       }
+    }
+    section{
+      padding-left: 5.5rem;
     }
   }
   #calendar{
