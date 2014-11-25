@@ -17,7 +17,7 @@
             Hiof.coverGenerateMarkupBranding();
         } else if (windowWidth <= 420) {
             // Dont add a cover-photo on the smallest screens 
-        } else if (pageType === "bachelor") {
+        } else if ((pageType === "hero") || (pageType === "bachelor")  || (pageType === "master")  || (pageType === "flexible") ) {
             Hiof.coverGetVideo(pageType);
         } else {
             // Add cover photo
@@ -189,7 +189,6 @@
         }
         var photoSrcSet = data[400].normal + ' 400w, ' + data[500].normal + ' 400w, ' + data[500].normal + ' 500w, ' + data[800].normal + ' 800w, ' + data[1000].normal + ' 1000w, ' + data[1200].normal + ' 1200w, ' + data[1600].normal + ' 1600w, ' + data[2000].normal + ' 2000w',
             photoBlurredSrcSet = data[400].blurred + ' 400w, ' + data[500].blurred + ' 400w, ' + data[500].blurred + ' 500w, ' + data[800].blurred + ' 800w, ' + data[1000].blurred + ' 1000w, ' + data[1200].blurred + ' 1200w, ' + data[1600].blurred + ' 1600w, ' + data[2000].blurred + ' 2000w';
-
 
 
 
