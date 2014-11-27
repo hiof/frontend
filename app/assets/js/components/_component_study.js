@@ -60,9 +60,12 @@ Hiof.Study.ExecuteFilterFromUrl = function() {
         var showDetails = $("#content a").first(),
           newShowDetails = $(showDetails).clone().addClass("btn btn-primary").text("Vis studie-/fagplan med emnebeskrivelse");
         $(showDetails).remove();
-        $("#content h2").first().remove();
+        $("#content h1").first().remove();
         $("#content h2").first().after(newShowDetails);
         $("#content h2").first().detach().appendTo("#content header");
+        $('#content header').find('h2').replaceWith(function() {
+                return '<h1>' + $(this).text() + '</h1>';
+        });
       }
     }
 
