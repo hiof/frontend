@@ -57,7 +57,7 @@ Hiof.CoverPhoto.GetImageData = function(pageType){
 
 Hiof.CoverPhoto.GenerateMarkupBranding = function(){
   var brandingWrapper = document.createElement('div'),
-      lang = Hiof.Language.Check(),
+      lang = Hiof.languageCheck(),
       logo;
       if (lang === "eng"){
         logo = Hiof.getSvgIcon("logo-hiof-en");
