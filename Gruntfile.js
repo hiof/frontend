@@ -6,8 +6,16 @@ module.exports = function(grunt) {
   // Initiate grunt tasks
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     // Tasks
-    
+    lesslint:{
+      src: ['app/assets/less/*.less'],
+      options:{
+        csslint:{
+          'known-properties': false
+        }
+      }
+    },
     less: {
       standard: {
         options: {
@@ -116,7 +124,7 @@ module.exports = function(grunt) {
       options: {
         ignores: ['app/assets/js/templates/templates.js']
       },
-      files: ['app/assets/js/**/*.js', 'Gruntfile.js', 'bower.json', 'package.json']
+      files: ['app/assets/js/**/*.js','app/assets/js/**/*.json', 'Gruntfile.js', 'bower.json', 'package.json']
     },
     handlebars: {
         options: {
@@ -334,6 +342,8 @@ module.exports = function(grunt) {
       scripts: {
         src: [
           //'app/vendor/60fps-scroll/dist/60fps-scroll.js', 
+          //'app/vendor/jquery/dist/jquery.js', 
+          'app/vendor/modernizr/modernizr.js', 
           'app/vendor/leaflet/dist/leaflet.js', 
           'app/vendor/footable/js/footable.js', 
           'app/vendor/footable/js/footable.paginate.js', 
@@ -347,6 +357,7 @@ module.exports = function(grunt) {
           'app/vendor/handlebars/handlebars.js',
           'app/vendor/jquery.scrollTo/jquery.scrollTo.js', 
           'app/vendor/slideout/slideout-navigation.js',
+          'app/vendor/picturefill/dist/picturefill.min.js',
           'app/assets/js/templates/*.js', 
           'app/assets/js/components/*.js', 
           'app/assets/js/*.js'
@@ -439,17 +450,7 @@ module.exports = function(grunt) {
             {
               src: 'tmp/css/print.min.css',
               dest: 'tmp/css/print.css'
-            }], 
-            //{
-            //  src: 'tmp/css/theme-helvetica.min.css',
-            //  dest: 'tmp/css/theme-helvetica.css'
-            //}, {
-            //  src: 'tmp/css/theme-verdana.min.css',
-            //  dest: 'tmp/css/theme-verdana.css'
-            //}, {
-            //  src: 'tmp/css/theme-source-pro.min.css',
-            //  dest: 'tmp/css/theme-source-pro.css'
-            //}],
+            }],
             key: 'assets',
             dest: 'css',
             type: 'css',
@@ -485,17 +486,7 @@ module.exports = function(grunt) {
             {
               src: 'tmp/css/print.min.css',
               dest: 'tmp/css/print.css'
-            }], 
-            //{
-            //  src: 'tmp/css/theme-helvetica.min.css',
-            //  dest: 'tmp/css/theme-helvetica.css'
-            //}, {
-            //  src: 'tmp/css/theme-verdana.min.css',
-            //  dest: 'tmp/css/theme-verdana.css'
-            //}, {
-            //  src: 'tmp/css/theme-source-pro.min.css',
-            //  dest: 'tmp/css/theme-source-pro.css'
-            //}],
+            }],
             key: 'assets',
             dest: 'css',
             type: 'css',
@@ -506,8 +497,6 @@ module.exports = function(grunt) {
 
     },
     secret: grunt.file.readJSON('secret.json'),
-    //sshconfig: {
-    //},
     sftp: {
       stage: {
         files: {
@@ -519,8 +508,6 @@ module.exports = function(grunt) {
           host: '<%= secret.stage.host %>',
           username: '<%= secret.stage.username %>',
           password: '<%= secret.stage.password %>',
-          //privateKey: grunt.file.read('id_rsa'),
-          //passphrase: '<%= secret.passphrase %>',
           showProgress: true,
           createDirectories: true,
           directoryPermissions: parseInt(755, 8)
@@ -536,8 +523,6 @@ module.exports = function(grunt) {
           host: '<%= secret.prod.host %>',
           username: '<%= secret.prod.username %>',
           password: '<%= secret.prod.password %>',
-          //privateKey: grunt.file.read('id_rsa'),
-          //passphrase: '<%= secret.passphrase %>',
           showProgress: true,
           createDirectories: true,
           directoryPermissions: parseInt(755, 8)
@@ -551,8 +536,6 @@ module.exports = function(grunt) {
           host: '<%= secret.host %>',
           username: '<%= secret.username %>',
           password: '<%= secret.password %>'
-          //privateKey: grunt.file.read('id_rsa'),
-          //passphrase: '<%= secret.passphrase %>',
         }
       }
     },
@@ -562,19 +545,13 @@ module.exports = function(grunt) {
           port: 9000,
           hostname: "0.0.0.0",
           bases: 'build',
-          // Replace with the directory you want the files served from
-          // Make sure you don't use `.` or `..` in the path as Express
-          // is likely to return 403 Forbidden responses if you do
-          // http://stackoverflow.com/questions/14594121/express-res-sendfile-throwing-forbidden-error
           livereload: true
         }
       }
     },
  
-    // grunt-open will open your browser at the project's URL
     open: {
       all: {
-        // Gets the port from the connect configuration
         path: 'http://localhost:<%= express.all.options.port%>'
       }
     },

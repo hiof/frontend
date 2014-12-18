@@ -8,7 +8,7 @@
   "description": "Frontend code for hiof.no",
   "license": "GNU",
   "dependencies": {
-    "modernizr": "~2.7.1",
+    "modernizr": "~2.8.3",
     "jquery": "~1.11.1",
     "bootstrap": "~3.1.1",
     "livereload": "~2.0.8",
@@ -18,6 +18,7 @@
     "jquery-cookie": "git@github.com:carhartl/jquery-cookie.git",
     "handlebars": "git@github.com:components/handlebars.js.git",
     "pathjs": "git@github.com:mtrpcic/pathjs.git",
-    "leaflet": "~0.7.3"
+    "leaflet": "~0.7.3",
+    "picturefill": "~2.1.0"
   }
 }

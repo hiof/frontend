@@ -6,7 +6,6 @@
 *.exe
 *.o
 *.so
-
 # Packages #
 ############
 # it's better to unpack these files and commit the raw source
@@ -19,34 +18,27 @@
 # *.rar
 # *.tar
 # *.zip
-
 # Logs and databases #
 ######################
 *.log
 *.sql
 *.sqlite
 app/assets/stylesheets/compass_app_log.txt
-
 # OS generated files #
 ######################
 .DS_Store*
 ehthumbs.db
 # Icon?
 Thumbs.db
-
-
 # Temporary generated files #
 ######################
 **/*/.sass-cache/**/*
 .sass-cache/**/*
-
-
-
 # Remove the generated hbs template file
 app/assets/js/templates/templates.js
-
+# Remove temp placement of the video
+app/assets/images/cover-video/**/*
 logo-*.png
-
 fire_app_log.txt
 build_*
 output
@@ -54,15 +46,10 @@ output/**/*
 stylesheets/
 stylesheets/**/*
 # coffeescripts/**/*
-
-
 # Server config
 secret.json
-
-
 # NODE STUFF #
 node_modules
-
-
 # Bower STUFF #
 app/vendor
+.jsbeautifyrc

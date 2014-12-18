@@ -38,18 +38,16 @@ Hiof.NavigationPageSection = function() {
 
     //console.log("Height of #navbar: " + thisElementheight);
     //console.log("bottomSidebar  is:  " + bottomSidebar);
-    if ($("#nav-page").length) {
-
-        if ((Hiof.Options.windowWidth > Hiof.Options.navigationBreakpoint) && (Hiof.Options.distanceToTop > Hiof.Options.distanceToSidebarSticky)) {
-            //console.log("The windowWidth is " + Hiof.Options.windowWidth + " bigger than navigationBreakpoint " + Hiof.Options.navigationBreakpoint);
-            //console.log("The distanceToTop is " + Hiof.Options.distanceToTop + " and it is larger than distanceToSidebarSticky " + Hiof.Options.distanceToSidebarSticky);
-            //console.log("The distanceToTop is " + Hiof.Options.distanceToTop + " is smaller than bottomSidebar " + bottomSidebar);
-            $("#nav-page").addClass("sticky");
-        } else {
-            $("#nav-page").removeClass("sticky");
-        }
-
-    }
+    //if ($("#nav-page").length) {
+    //    if ((Hiof.Options.windowWidth > Hiof.Options.navigationBreakpoint) && (Hiof.Options.distanceToTop > Hiof.Options.distanceToSidebarSticky)) {
+    //        //console.log("The windowWidth is " + Hiof.Options.windowWidth + " bigger than navigationBreakpoint " + Hiof.Options.navigationBreakpoint);
+    //        //console.log("The distanceToTop is " + Hiof.Options.distanceToTop + " and it is larger than distanceToSidebarSticky " + Hiof.Options.distanceToSidebarSticky);
+    //        //console.log("The distanceToTop is " + Hiof.Options.distanceToTop + " is smaller than bottomSidebar " + bottomSidebar);
+    //        $("#nav-page").addClass("sticky");
+    //    } else {
+    //        $("#nav-page").removeClass("sticky");
+    //    }
+    //}
 };
 
 Hiof.ToggleUserNavigation = function() {
