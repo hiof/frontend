@@ -91,9 +91,6 @@ $(function() {
       }else{
       }
 
-      if($("#program-KS601").length){
-        Hiof.Study.DuplicateStudyCourseFacts();
-      }
 
 
       // Search
@@ -407,9 +404,7 @@ $(function() {
 
 
       // 
-      if ($("#studie").length){
-        Hiof.Study.ExecuteFilterFromUrl();
-      }
+
 
 
 
