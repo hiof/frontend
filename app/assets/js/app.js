@@ -45,20 +45,7 @@ $(function() {
       // Attach mobile nav icons
       Hiof.ToggleMobileNavigation();
 
-      // Check if the page should use quotes
-      if($('html.quote').length){
-        // Add Quotes
-        Hiof.Quotes();
-        // Refresh Quotes
-        window.setInterval(function(){
-          $(".cover-quote").fadeOut(500, function() { 
-            var quoteId = $(this).data("id");
-            //console.log(quoteId);
-            $(this).remove();
-            Hiof.Quotes(quoteId);
-          });
-        }, 100000);
-      }
+
 
 
       //Hiof.EqualHeightContentAndSidebar();
@@ -217,7 +204,6 @@ $(function() {
 
     // Update settings and execute functions when the user scroll
     $(window).scroll(function() {
-
 
 
 
