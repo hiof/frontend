@@ -104,7 +104,7 @@
 
 
       $('input[name=typeStudy]:checked').each(function(i, item) {
-        console.log("Filter for typeStudy");
+        //console.log("Filter for typeStudy");
 
         if (this.checked) {
 
@@ -124,8 +124,8 @@
         filter += "))";
 
       }
-      console.log(filter);
-      console.log("------------------------");
+      //console.log(filter);
+      //console.log("------------------------");
 
 
 
@@ -135,7 +135,7 @@
 
 
       $('input[name=fagomraader]:checked').each(function(i, item) {
-        console.log("Filter for fagomraader");
+        //console.log("Filter for fagomraader");
 
         if (this.checked) {
           //filter += "(";
@@ -153,15 +153,15 @@
       if ($('input[name=fagomraader]').is(':checked')) {
         filter += "))";
       }
-      console.log(filter);
-      console.log("------------------------");
+      //console.log(filter);
+      //console.log("------------------------");
 
 
       if ($('input[name=OvrigeStudierAlternativer]').is(':checked')) {
         filter += "(?=.*(";
       }
       $('input[name=OvrigeStudierAlternativer]:checked').each(function(i, item) {
-        console.log("Filter for OvrigeStudierAlternativer");
+        //console.log("Filter for OvrigeStudierAlternativer");
 
         if (this.checked) {
           //console.log('Item is:' + i);
@@ -180,8 +180,8 @@
       }
 
 
-      console.log(filter);
-      console.log("------------------------");
+      //console.log(filter);
+      //console.log("------------------------");
 
 
 
@@ -190,7 +190,7 @@
       }
 
       $('input[name=studiested]:checked').each(function(i, item) {
-        console.log("Filter for studiested");
+        //console.log("Filter for studiested");
         if (this.checked) {
           //console.log('Item is:' + i);
           if (i === totalCheckboxStudiested) {
@@ -205,8 +205,8 @@
       if ($('input[name=studiested]').is(':checked')) {
         filter += "))";
       }
-      console.log(filter);
-      console.log("------------------------");
+      //console.log(filter);
+      //console.log("------------------------");
       $('#main table').trigger('footable_filter', {
         filter: filter
       });
