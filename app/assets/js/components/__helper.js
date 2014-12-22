@@ -83,6 +83,20 @@ Hiof.Helper.getUrlParameterByName = function(name) {
             }
         }
     };
+    getSvgIcon = function(icon) {
+
+
+    var url = "/assets/images/icons/" + icon + ".svg";
+
+    xhr = new XMLHttpRequest();
+
+    xhr.open("GET", url, false);
+    if (xhr.overrideMimeType) xhr.overrideMimeType("image/svg+xml");
+    xhr.send("");
+
+    var response = xhr.responseXML.documentElement;
+    return response;
+  };
 
 
 
@@ -92,6 +106,7 @@ Hiof.Helper.getUrlParameterByName = function(name) {
     window.Hiof.languageGetUrlParameter = getUrlParameter;
     window.Hiof.getUrlParameterByName = getUrlParameterByName;
     window.Hiof.createModal = createModal;
+    window.Hiof.getSvgIcon = getSvgIcon;
 
 
 })(window.Hiof = window.Hiof || {});
