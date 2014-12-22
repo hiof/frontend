@@ -90,6 +90,20 @@ module.exports = function(grunt) {
         dest: 'deploy',
         filter: 'isFile'
       },
+      jscomponents: {
+        expand: true,
+        cwd: 'app/assets/js/components/',
+        src: '**',
+        dest: 'build/assets/js/components/',
+        filter: 'isFile'
+      },
+      jsmap: {
+        expand: true,
+        cwd: 'tmp/js/',
+        src: 'application.min.map',
+        dest: 'build/assets/js/',
+        filter: 'isFile'
+      },
       jsdata: {
         expand: true,
         cwd: 'app/assets/js/data/',
@@ -340,6 +354,10 @@ module.exports = function(grunt) {
         }
       },
       scripts: {
+        options:{
+          sourceMap: true,
+          sourceMapStyle: 'inline'
+        },
         src: [
           //'app/vendor/60fps-scroll/dist/60fps-scroll.js', 
           //'app/vendor/jquery/dist/jquery.js', 
@@ -370,7 +388,10 @@ module.exports = function(grunt) {
         mangle: false,
         //compress: true,
         preserveComments: false,
-        banner: '/*!  HiØ JavaScript v<%= pkg.version %> by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */'
+        banner: '/*!  HiØ JavaScript v<%= pkg.version %> by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */',
+        sourceMap: true,
+        sourceMapIncludeSources: true,
+        sourceMapIn: 'tmp/js/application.min.js.map', // input sourcemap from a previous compilation
       },
       main: {
         files: {
@@ -618,7 +639,7 @@ module.exports = function(grunt) {
   // Tasks
 
   // Register tasks
-  grunt.registerTask('subtaskJs', ['jshint', 'concat:scripts', 'uglify', 'copy:jsdata', 'copy:jstemplates']);
+  grunt.registerTask('subtaskJs', ['jshint', 'concat:scripts', 'uglify', 'copy:jscomponents', 'copy:jsmap', 'copy:jsdata', 'copy:jstemplates']);
   grunt.registerTask('subtaskCss', ['less', 'autoprefixer', 'cssmin']);
   grunt.registerTask('subtaskCopy', ['copy:images', 'copy:fonts', 'copy:vendor', 'copy:favicon']);
   grunt.registerTask('subtaskCopyDeploy', ['copy:images', 'copy:vendor', 'copy:favicon']);

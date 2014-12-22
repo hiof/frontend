@@ -42,8 +42,7 @@ $(function() {
       //Hiof.Toolbar.SocialShare();
       //Hiof.Toolbar.Print();
 
-      // Attach mobile nav icons
-      Hiof.ToggleMobileNavigation();
+  
 
 
 
@@ -61,22 +60,10 @@ $(function() {
 
 
 
-      if (Hiof.Options.distanceToTop > 0) {
-          Hiof.HeaderToggle();
-      } else {
-          //$("#header").addClass("light");
-      }
 
 
-      if(Hiof.Options.windowWidth < 770){
-        Hiof.Navigation.ManipulateMarkupForVerticalNavigation("#nav-pages");
-        
 
 
-        Hiof.Navigation.AddDropdownIconToVerticalNavigation();
-
-      }else{
-      }
 
 
 
@@ -135,42 +122,7 @@ $(function() {
       }
     });
 
-    // Toggle the visibility of subnavigation on the external nav tree
 
-
-    $("span.btn, a", "#nav-pages").on("click", function(e){
-      if(Hiof.Options.windowWidth < 770){
-
-        var thisElement = $(this);
-        if (thisElement.siblings(".dropdown-menu").length){
-          //console.log("element has a sibling with the dropdown-menu class");
-          e.preventDefault();
-          Hiof.ToggleSubNavigations(thisElement);
-        }
-      }
-    });
-
-    // Page navigation
-    $("#nav-page").on("click", "a", function(e) {
-        var url = $(this).attr("href");
-        //e.preventDefault();
-        // If the link is internal, prevent default behaviour 
-        if (url.indexOf("#") != -1) {
-            //console.log("Url has a Hash");
-            e.preventDefault();
-            Hiof.ToggleInternalNavigation();
-            $(".nav-page .active").removeClass("active");
-            $(this).parent().addClass("active");
-            $.scrollTo($(url), 500, {
-                axis: 'y',
-                offset: {
-                    top: -62
-                }
-            });
-        } else {
-            //console.log("URL does not contain a hash");
-        }
-    });
 
 
 
@@ -183,23 +135,7 @@ $(function() {
 
 
 
-    // When window resize, fire the following code
-     $(window).resize(function() {
-        // Updated the settings for the viewport size when the website is reset.
-        Hiof.Options.windowWidth = $(window).width();
-        //viewportWidth = $(window).width();
-        if(Hiof.Options.windowWidth < 770){
-          Hiof.HeaderToggle();
-          Hiof.Navigation.ManipulateMarkupForVerticalNavigation("#nav-pages");
-          //Hiof.EqualHeightContentAndSidebar();
-        }else{
-          Hiof.Navigation.ManipulateMarkupForVerticalNavigation("#nav-pages");
-          //Hiof.EqualHeightContentAndSidebar();
-          Hiof.Navigation.AddDropdownIconToVerticalNavigation();
-        }
 
-
-     });
 
 
     // Update settings and execute functions when the user scroll
@@ -224,7 +160,6 @@ $(function() {
         //Fire functions
         Hiof.HeaderToggle();
 
-        Hiof.NavigationPageSection();
         Hiof.FadeInContent();
 
 
