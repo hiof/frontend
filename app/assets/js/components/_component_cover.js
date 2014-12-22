@@ -1,11 +1,47 @@
 (function(Hiof, undefined) {
 
 
-
   Hiof.coverAddCoverContentToPage = function() {
-    var pageType = $("#main").data("page-category"),
-      windowWidth = $(window).width(),
-      entry;
+
+
+
+    var pageType,
+        windowWidth = $(window).width(),
+        entry;
+
+
+      if ($('#study-catalog-cover-id').length) {
+        var facultyId = $('#study-catalog-cover-id').attr('data-study-catalog-cover-id');
+        if (facultyId === '22440') {
+          // HS
+          pageType = 'hs';
+        }else if(facultyId === '22450'){
+          // IR
+          pageType = 'ir';
+        }else if(facultyId === '22455'){
+          // IT
+          pageType = 'it';
+        }else if(facultyId === '22430'){
+          // LU
+          pageType = 'lu';
+        }else if(facultyId === '22460'){
+          // ØSS
+          pageType = 'oss';
+        }else if(facultyId === '22470'){
+          // Scenekunst
+          pageType = "page";
+          //pageType = 'as';
+        }else if(facultyId === '22480'){
+          // HiØ Videre
+          pageType = "page";
+          //pageType = 'as';
+        }else{
+          pageType = "page";
+        }
+      }else{
+        pageType = $("#main").data("page-category");
+      }
+
 
     if (typeof pageType === "undefined" || pageType === "") {
       //console.log('pageType was undefined, default to "page"');
