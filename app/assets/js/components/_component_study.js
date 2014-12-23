@@ -2,10 +2,11 @@
 
 
 
-  Hiof.studyDuplicateStudyCourseFacts = function() {
+  studyDuplicateStudyCourseFacts = function() {
 
     var studyCourseFacts = $("#program-KS601").parent().clone(),
-      btnApply = $("#program-KS602").next().find("a").clone();
+      btnApply = $("#program-KS602").next().find("a").clone(),
+      btnStudyModel = $(".study-plan-model-link").clone();
 
     $(studyCourseFacts).addClass("study-course-facts");
 
@@ -14,7 +15,7 @@
     $(".study-course-facts h3").remove();
     $(".study-course-facts #knapp1").remove();
     $(".study-course-facts #toggleme").remove();
-
+    $(".study-course-facts").append(btnStudyModel);
     $(".study-course-facts").append(btnApply);
 
     //console.log(studyCourseFacts);
@@ -24,8 +25,13 @@
 
 
 
-  Hiof.studyExecuteFilterFromUrl = function() {
-    var searchTerm = Hiof.Helper.getUrlParameterByName("filterDepartment").toString();
+  studyExecuteFilterFromUrl = function() {
+    var searchTerm = Hiof.getUrlParameterByName("filterDepartment").toString();
+
+    if (searchTerm === '') {
+      //console.log('searchTerm is empty');
+      return;
+    }
 
 
     if (searchTerm.match("^ovrig")) {
@@ -35,15 +41,24 @@
     }
 
     //console.log("Søker etter " + searchTerm);
+
+
+
     if (typeof searchTerm != 'undefined') {
-      //console.log("gogo filter");
-      $('#main table').trigger('footable_filter', {
-        filter: searchTerm
-      });
+      var el = 'input[value=' + searchTerm + ']';
+      var filter = "(?=.*(" + searchTerm + "))";
+      //console.log(filter);
+
+      $(el, '#studie .checkbox').prop('checked', true);
+      setTimeout(
+        function(){
+          $('#main table').trigger('footable_filter', {
+            filter: filter
+          });
+        }, 1000);
+
     }
-
   };
-
 
 
   $(function() {
@@ -51,7 +66,7 @@
 
 
 
-
+    // Change the footable filter to a regex filter
     if ($('#studie').length) {
       window.footable.options.filter.filterFunction = function(index) {
         var $t = $(this),
@@ -85,7 +100,7 @@
 
 
 
-
+    // Filter based on the checkboxes
     $(document).on('click', '#studie .checkbox input', function(e) {
       var thisFilter = $('form').serialize(),
         thisValue = $(this).attr('value'),
@@ -222,11 +237,11 @@
 
     // Check if you are on the study page
     if ($("#studie").length) {
-      Hiof.studyExecuteFilterFromUrl();
+      studyExecuteFilterFromUrl();
     }
     // Check if you are within a study-page
     if ($("#program-KS601").length) {
-      Hiof.studyDuplicateStudyCourseFacts();
+      studyDuplicateStudyCourseFacts();
     }
 
     // Fix the name of a studyplan on the Norwegian page
@@ -254,20 +269,20 @@
     });
 
 
-    $(document).on('click', '#studie .dropdown-menu a', function(e) {
-      e.preventDefault();
-      var filter = $(this).data("filter"),
-        filterText = $(this).text();
-      $('#main table').trigger('footable_filter', {
-        filter: filter
-      });
-      //if(){
-      //
-      //}else{
-      //
-      //}
-      //$('#content table caption .label').after('<span style="margin-left: 10px;">Filter: <span class="label label-info">' + filterText + '</span></span>');
-    });
+    //$(document).on('click', '#studie .dropdown-menu a', function(e) {
+    //  e.preventDefault();
+    //  var filter = $(this).data("filter"),
+    //    filterText = $(this).text();
+    //  $('#main table').trigger('footable_filter', {
+    //    filter: filter
+    //  });
+    //  //if(){
+    //  //
+    //  //}else{
+    //  //
+    //  //}
+    //  //$('#content table caption .label').after('<span style="margin-left: 10px;">Filter: <span class="label label-info">' + filterText + '</span></span>');
+    //});
 
 
     //KD: temporary hack
