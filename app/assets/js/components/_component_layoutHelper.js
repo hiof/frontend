@@ -22,8 +22,8 @@ Hiof.LayoutHelper = function(parrent) {
       //console.log("Parrent variable is not defined (fire standardcode)");
       // Half layout helper-inject
       if ($('.lo-auron-2-3 .lo-half').length) {
-          $('.lo-half:odd').addClass(classFirst);
-          $('.lo-half:even').addClass(classLast);
+          $('.lo-half:even').addClass(classFirst);
+          $('.lo-half:odd').addClass(classLast);
       }
 
       // Querter layout helper-inject
