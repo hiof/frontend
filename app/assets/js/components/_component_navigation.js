@@ -270,7 +270,7 @@
       //$("#header").addClass("light");
     }
 
-    $(".toggle-filter").on('click touchstart', function(e) {
+    $(".toggle-filter").on('click', function(e) {
       toggleFilterVisibility();
     });
 
