@@ -4,13 +4,13 @@
       "0": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/index/index-1/cover-photo-1-400X150-blurred.jpg",
-          "blurred": "/assets/images/cover-photo/index/index-1/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/index/index-1/cover-photo-1-400X200-blurred.jpg",
+          "blurred": "/assets/images/cover-photo/index/index-1/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/index/index-1/cover-photo-1-500X150-blurred.jpg",
-          "blurred": "/assets/images/cover-photo/index/index-1/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/index/index-1/cover-photo-1-500X200-blurred.jpg",
+          "blurred": "/assets/images/cover-photo/index/index-1/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -48,13 +48,13 @@
       "0": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/study/page-students-1/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/study/page-students-1/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/study/page-students-1/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/study/page-students-1/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/study/page-students-1/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/study/page-students-1/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/study/page-students-1/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/study/page-students-1/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -95,13 +95,13 @@
       "0": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/page-library-1/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/page-library-1/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/page-library-1/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/page-library-1/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/page-library-1/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/page-library-1/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/page-library-1/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/page-library-1/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -138,13 +138,13 @@
       "1": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/page-potential-students-1/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/page-potential-students-1/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/page-potential-students-1/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/page-potential-students-1/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/page-potential-students-1/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/page-potential-students-1/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/page-potential-students-1/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/page-potential-students-1/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -181,13 +181,13 @@
       "2": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-1/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-1/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-1/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-1/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-1/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-1/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-1/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-1/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -224,13 +224,13 @@
       "3": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-2/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-2/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-2/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-2/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-2/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-2/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-2/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-2/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -267,13 +267,13 @@
       "4": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-3/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-3/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-3/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-3/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-3/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-3/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-3/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-3/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -310,13 +310,13 @@
       "5": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-4/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-4/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-4/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-4/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-4/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-4/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/campus-fredrikstad-4/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/campus-fredrikstad-4/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -352,13 +352,13 @@
       "6": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/campus-halden-3/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/campus-halden-3/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/campus-halden-3/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/campus-halden-3/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/campus-halden-3/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/campus-halden-3/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/campus-halden-3/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/campus-halden-3/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -394,13 +394,13 @@
       "7": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/campus-halden-4/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/campus-halden-4/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/campus-halden-4/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/campus-halden-4/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/campus-halden-4/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/campus-halden-4/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/campus-halden-4/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/campus-halden-4/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -436,13 +436,13 @@
       "8": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/international/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/international/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/international/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/international/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/page/international/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/page/international/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/page/international/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/page/international/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -482,13 +482,13 @@
       "0": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/hs/hs-in-practice/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/hs/hs-in-practice/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/hs/hs-in-practice/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/hs/hs-in-practice/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/hs/hs-in-practice/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/hs/hs-in-practice/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/hs/hs-in-practice/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/hs/hs-in-practice/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -525,13 +525,13 @@
       "1": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/hs/hs-needle/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/hs/hs-needle/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/hs/hs-needle/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/hs/hs-needle/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/hs/hs-needle/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/hs/hs-needle/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/hs/hs-needle/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/hs/hs-needle/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -571,13 +571,13 @@
       "0": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/ir/students/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/ir/students/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/ir/students/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/ir/students/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/ir/students/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/ir/students/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/ir/students/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/ir/students/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -614,13 +614,13 @@
       "1": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/ir/campus/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/ir/campus/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/ir/campus/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/ir/campus/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/ir/campus/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/ir/campus/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/ir/campus/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/ir/campus/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -657,13 +657,13 @@
       "2": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/ir/study-car-1/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/ir/study-car-1/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/ir/study-car-1/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/ir/study-car-1/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/ir/study-car-1/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/ir/study-car-1/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/ir/study-car-1/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/ir/study-car-1/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -702,13 +702,13 @@
       "0": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/it/maker-space-1/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/it/maker-space-1/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/it/maker-space-1/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/it/maker-space-1/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/it/maker-space-1/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/it/maker-space-1/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/it/maker-space-1/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/it/maker-space-1/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -747,13 +747,13 @@
       "0": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/lu/kindergarden-teacher/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/lu/kindergarden-teacher/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/lu/kindergarden-teacher/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/lu/kindergarden-teacher/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/lu/kindergarden-teacher/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/lu/kindergarden-teacher/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/lu/kindergarden-teacher/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/lu/kindergarden-teacher/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -790,13 +790,13 @@
       "1": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/lu/sports/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/lu/sports/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/lu/sports/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/lu/sports/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/lu/sports/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/lu/sports/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/lu/sports/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/lu/sports/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -833,13 +833,13 @@
       "2": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/lu/arts-and-crafts/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/lu/arts-and-crafts/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/lu/arts-and-crafts/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/lu/arts-and-crafts/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/lu/arts-and-crafts/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/lu/arts-and-crafts/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/lu/arts-and-crafts/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/lu/arts-and-crafts/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -880,13 +880,13 @@
       "0": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/oss/oss/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/oss/oss/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/oss/oss/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/oss/oss/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/oss/oss/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/oss/oss/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/oss/oss/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/oss/oss/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -924,13 +924,13 @@
       "1": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/oss/oss-language/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/oss/oss-language/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/oss/oss-language/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/oss/oss-language/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/oss/oss-language/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/oss/oss-language/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/oss/oss-language/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/oss/oss-language/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
@@ -969,13 +969,13 @@
       "0": {
         "400": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/as/as-1/cover-photo-1-400X150.jpg",
-          "blurred": "/assets/images/cover-photo/as/as-1/cover-photo-1-400X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/as/as-1/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/images/cover-photo/as/as-1/cover-photo-1-400X200-blurred.jpg"
         },
         "500": {
           "imgHeight": "150",
-          "normal": "/assets/images/cover-photo/as/as-1/cover-photo-1-500X150.jpg",
-          "blurred": "/assets/images/cover-photo/as/as-1/cover-photo-1-500X150-blurred.jpg"
+          "normal": "/assets/images/cover-photo/as/as-1/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/images/cover-photo/as/as-1/cover-photo-1-500X200-blurred.jpg"
         },
         "600": {
           "imgHeight": "300",
