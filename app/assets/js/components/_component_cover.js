@@ -41,7 +41,25 @@
       }else{
         pageType = $("#main").data("page-category");
       }
-
+    if (pageType === 'hs-index') {
+      pageType = "index";
+    }else if (pageType === 'ir-index') {
+      pageType = "index";
+    }else if (pageType === 'it-index') {
+      pageType = "index";
+    }else if (pageType === 'lu-index') {
+      pageType = "index";
+    }else if (pageType === 'oss-index') {
+      pageType = "index";
+    }else if (pageType === 'ask-index') {
+      pageType = "index";
+    }else if (pageType === 'ask') {
+      pageType = "page";
+    }else if (pageType === 'vid-index') {
+      pageType = "index";
+    }else if (pageType === 'vid') {
+      pageType = "page";
+    }
 
     if (typeof pageType === "undefined" || pageType === "") {
       //console.log('pageType was undefined, default to "page"');
