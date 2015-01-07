@@ -5,8 +5,13 @@
   studyDuplicateStudyCourseFacts = function() {
 
     var studyCourseFacts = $("#program-KS601").parent().clone(),
-      btnApply = $("#program-KS602").next().find("a").clone(),
-      btnStudyModel = $(".study-plan-model-link").clone();
+      btnApply = $("#program-KS602").next().find("a").addClass('btn-study-apply');
+
+
+    $('.btn-study-apply span').remove();
+
+    var btnApplyClone = btnApply.clone(),
+        btnStudyModel = $(".study-plan-model-link").clone();
 
     $(studyCourseFacts).addClass("study-course-facts");
 
@@ -16,13 +21,22 @@
     $(".study-course-facts #knapp1").remove();
     $(".study-course-facts #toggleme").remove();
     $(".study-course-facts").append(btnStudyModel);
-    $(".study-course-facts").append(btnApply);
+    $(".study-course-facts").append(btnApplyClone);
 
     //console.log(studyCourseFacts);
 
+    // TODO: temporary change the apply-button text
+    var now = new Date().getTime(),
+        future = new Date('2015-02-01').getTime();
+    if (now < future) {
+      $( ".btn-study-apply" ).each(function( index ) {
+        if (($(this).text() == 'Søk her før 15. april! ') || ($(this).text() == 'Søk her før 1. mars! ')) {
+          $('.btn-study-apply').text('Søking åpner 1. februar');
+        }
+      });
+    }
 
   };
-
 
 
   studyExecuteFilterFromUrl = function() {
@@ -64,9 +78,7 @@
   $(function() {
 
 
-    if ($('#main[data-page-category="homepage"]') && (Hiof.Options.windowWidth <= 769)) {
-      $('.study .nav li:first-child .btn').text('Se våre studier');
-    }
+
 
     // Change the footable filter to a regex filter
     if ($('#studie').length) {
@@ -99,7 +111,9 @@
     }
 
 
-
+    if ($('#main[data-page-category="homepage"]') && (Hiof.Options.windowWidth <= 769)) {
+      $('.study .nav li:first-child .btn').text('Se våre studier');
+    }
 
 
     // Filter based on the checkboxes
