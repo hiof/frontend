@@ -64,7 +64,9 @@
   $(function() {
 
 
-
+    if ($('#main[data-page-category="homepage"]') && (Hiof.Options.windowWidth <= 769)) {
+      $('.study .nav li:first-child .btn').text('Se våre studier');
+    }
 
     // Change the footable filter to a regex filter
     if ($('#studie').length) {
