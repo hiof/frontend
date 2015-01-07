@@ -181,8 +181,33 @@
   }
   // TODO: Temp hack until a better solution is implemented.
   #study {
+
+    padding-top: 7rem !important;
+
     footer {
-      display: none;
+      position: absolute;
+      top: -1rem;
+      left: 0;
+      bottom: auto !important;
+      background-color: transparent !important;
+      margin-left: 0 !important;
+      //width: 90% !important;
+      //height: 6rem;
+      .nav{
+        li{
+          display: none;
+          &:first-child{
+            display: block;
+            //margin-left: .5rem;
+            margin-right: 1rem;
+            .btn{
+              border-radius: .2rem;
+              background-color: @color-primary-action;
+              //margin: 0 1rem;
+            }
+          }
+        }
+      }
     }
   }
 }

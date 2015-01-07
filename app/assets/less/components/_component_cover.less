@@ -28,7 +28,6 @@
         position: relative;
         margin-bottom: 8rem;
         padding-bottom: 6rem;
-
         article {
   
         }
@@ -43,20 +42,38 @@
     [data-page-category='master'],
     [data-page-category='flexible']{
       #study{
+        background: transparent;
         article{
-          padding-top: 15rem;
+          padding-top: 12rem;
           text-align: center;
-          background: transparent;
           height: 48.6rem;
-          h1 {
-            font-size: 6rem;
+          h1,h2{
             font-weight: 100;
             line-height: 2em;
             color: @black;
           }
-        } 
+          h1 {
+            font-size: 6rem;
+          }
+          h2{
+            font-size: 4rem;
+          }
+        }
+        &.light{
+          h1,h2{
+            color: @black;
+          }
+
+        }
+        &.dark{
+          h1,h2{
+            color: @white;
+          }
+
+        }
       }
     }
+
     #cover {
       display: block;
       width: 100%;
