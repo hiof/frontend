@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Stillingstittel</th>
+      <th data-hide="all">Beskrivelse</th>
+      <th>Søknadsfrist</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each jobs}}
+      <tr>
+        <td>{{title}}</td>
+        <td>{{description}}</td>
+        <td>{{dateDeadline.[0]}}</td>
+        <td><a class="btn btn-primary btn-line" target="_blank" href="{{link}}">mer info</a></td>
+      </tr>
+      {{/each}}
+  </tbody>
+</table>
