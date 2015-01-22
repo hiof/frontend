@@ -38,8 +38,9 @@ module.exports = function(grunt) {
       prefix: {
         expand: true,
         //flatten: true,
-        src: 'tmp/css/*.css'
-        //dest: 'tmp/css/prefixed/'
+        cwd: 'tmp/css/',
+        src: '*.css',
+        dest: 'tmp/css/prefixed/'
       }
     },
     cssmin: {
@@ -48,9 +49,9 @@ module.exports = function(grunt) {
           banner: '/*!  HiØ stylesheets v<%= pkg.version %> by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */'
         },
         expand: true,
-        cwd: 'tmp/css/',
+        cwd: 'tmp/css/prefixed/',
         src: ['*.css', '!*.min.css'],
-        dest: 'tmp/css/',
+        dest: 'tmp/css/minified',
         ext: '.min.css'
       }
     },
@@ -355,8 +356,8 @@ module.exports = function(grunt) {
       },
       scripts: {
         options:{
-          sourceMap: true,
-          sourceMapStyle: 'inline'
+          //sourceMap: true,
+          //sourceMapStyle: 'inline'
         },
         src: [
           //'app/vendor/60fps-scroll/dist/60fps-scroll.js', 
@@ -389,9 +390,9 @@ module.exports = function(grunt) {
         //compress: true,
         preserveComments: false,
         banner: '/*!  HiØ JavaScript v<%= pkg.version %> by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */',
-        sourceMap: true,
-        sourceMapIncludeSources: true,
-        sourceMapIn: 'tmp/js/application.min.js.map', // input sourcemap from a previous compilation
+        //sourceMap: true,
+        //sourceMapIncludeSources: true,
+        //sourceMapIn: 'tmp/js/application.min.js.map', // input sourcemap from a previous compilation
       },
       main: {
         files: {
@@ -419,24 +420,17 @@ module.exports = function(grunt) {
 
           {
             assets: [{
-              src: 'tmp/css/theme-standard.min.css',
-              dest: 'tmp/css/theme-standard.css'
+              src: 'tmp/css/minified/theme-standard.min.css',
+              dest: 'tmp/css/minified/theme-standard.min.css'
             }, 
             {
-             src: 'tmp/css/theme-standard-canvas.min.css',
-             dest: 'tmp/css/theme-standard-canvas.css'
+             src: 'tmp/css/minified/theme-standard-canvas.min.css',
+             dest: 'tmp/css/minified/theme-standard-canvas.min.css'
             },
             {
-              src: 'tmp/css/print.min.css',
-              dest: 'tmp/css/print.css'
+              src: 'tmp/css/minified/print.min.css',
+              dest: 'tmp/css/minified/print.min.css'
             }],
-            // {
-            // src: 'tmp/css/theme-verdana.min.css',
-            // dest: 'tmp/css/theme-verdana.css'
-            //, {
-            // src: 'tmp/css/theme-source-pro.min.css',
-            // dest: 'tmp/css/theme-source-pro.css'
-            //],
             key: 'assets',
             dest: 'css',
             type: 'css',
@@ -461,16 +455,16 @@ module.exports = function(grunt) {
 
           {
             assets: [{
-              src: 'tmp/css/theme-standard.min.css',
-              dest: 'tmp/css/theme-standard.css'
+              src: 'tmp/css/minified/theme-standard.min.css',
+              dest: 'tmp/css/minified/theme-standard.min.css'
             }, 
             {
-             src: 'tmp/css/theme-standard-canvas.min.css',
-             dest: 'tmp/css/theme-standard-canvas.css'
+             src: 'tmp/css/minified/theme-standard-canvas.min.css',
+             dest: 'tmp/css/minified/theme-standard-canvas.min.css'
             },
             {
-              src: 'tmp/css/print.min.css',
-              dest: 'tmp/css/print.css'
+              src: 'tmp/css/minified/print.min.css',
+              dest: 'tmp/css/minified/print.min.css'
             }],
             key: 'assets',
             dest: 'css',
@@ -497,16 +491,16 @@ module.exports = function(grunt) {
 
           {
             assets: [{
-              src: 'tmp/css/theme-standard.min.css',
-              dest: 'tmp/css/theme-standard.css'
+              src: 'tmp/css/minified/theme-standard.min.css',
+              dest: 'tmp/css/minified/theme-standard.min.css'
             }, 
             {
-             src: 'tmp/css/theme-standard-canvas.min.css',
-             dest: 'tmp/css/theme-standard-canvas.css'
+             src: 'tmp/css/minified/theme-standard-canvas.min.css',
+             dest: 'tmp/css/minified/theme-standard-canvas.min.css'
             },
             {
-              src: 'tmp/css/print.min.css',
-              dest: 'tmp/css/print.css'
+              src: 'tmp/css/minified/print.min.css',
+              dest: 'tmp/css/minified/print.min.css'
             }],
             key: 'assets',
             dest: 'css',
