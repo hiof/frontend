@@ -11,6 +11,33 @@
 
 
 (function(Hiof, undefined) {
+
+
+
+
+
+
+
+
+
+  // This is our "rescue" method.
+  function notFound() {
+    if ($('#studie').length) {
+
+    } else {
+      $("#content").html("Fant ikke det du lette etter.");
+    }
+  }
+
+  // Error message
+  Path.rescue(notFound);
+
+
+
+
+
+
+
   getUrlParameterByName = function(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -106,13 +133,48 @@
 
       var response = req.responseXML.documentElement;
       return response;
-    }else{
+    } else {
       // Unable to get the data
     }
   };
 
+  debug = function(value) {
+    console.log(value);
+  };
 
 
+
+  $(function() {
+    // Set the footable.filterFunction to use regex on the #studie page
+    if ($('#studie').length) {
+      window.footable.options.filter.filterFunction = function(index) {
+        var $t = $(this),
+          $table = $t.parents('table:first'),
+          filter = $table.data('current-filter').toUpperCase(),
+          columns = $t.find('td');
+
+        var regEx = new RegExp(filter);
+        var result = false;
+        for (i = 0; i < columns.length; i++) {
+          var text = $(columns[i]).text();
+          result = regEx.test(text.toUpperCase());
+          if (result === true)
+            break;
+
+          if (!$table.data('filter-text-only')) {
+            text = $(columns[i]).data("value");
+            if (text)
+              result = regEx.test(text.toString().toUpperCase());
+          }
+
+          if (result === true)
+            break;
+        }
+        return result;
+      };
+
+    }
+  });
   //In this context, 'window' refers to the parameter
 
   window.Hiof.languageCheck = languageCheck;
@@ -120,6 +182,7 @@
   window.Hiof.getUrlParameterByName = getUrlParameterByName;
   window.Hiof.createModal = createModal;
   window.Hiof.getSvgIcon = getSvgIcon;
+  window.debug = debug;
 
 
 })(window.Hiof = window.Hiof || {});

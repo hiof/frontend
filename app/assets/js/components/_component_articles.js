@@ -199,10 +199,7 @@
     //ga('send', 'pageview');
   };
 
-  // This is our "rescue" method.
-  function notFound() {
-      $("#content").html("Fant ingen artikler.");
-  }
+
   // Standard path
 
   Path.map("#/articles").to(function() {
@@ -262,8 +259,7 @@
   // Load root path if no path is active
   Path.root("#/articles");
 
-  // Error message
-  Path.rescue(notFound);
+
 
 
 
