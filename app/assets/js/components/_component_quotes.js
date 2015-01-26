@@ -48,4 +48,6 @@
     });
   });
 
+  // Expose functions to the window
+  window.Hiof.catalogQuotes = quotes;
 })(window.Hiof = window.Hiof || {});

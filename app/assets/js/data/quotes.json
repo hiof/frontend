@@ -1,31 +1,31 @@
 {
     "quotes": [{
         "id": 1,
-        "text": "Studiet i sosialt arbeid har gitt meg større innsikt i forskjellene i samfunnet. Et fantastisk spennende studie!",
-        "cite": "Anniken Øvre",
-        "url": "http://www.hiof.no/nor/hogskolen-i-ostfold/studiekatalog-_-rekrutteringssider/studietilbudet/viser-aktuelle-beskrivelser?displayitem=204&module=studieinfo&type=katalog",
+        "text": "Det er fantastisk å være student ved Høgskolen i Østfold. Jeg møter stadig nye mennesker, samtidig som det er et godt samhold både i klassen og generelt. Gode forelesere gir stort utbytte og det er positivt.",
+        "cite": "Johanne Gjerdsbakk, student ved bachelorstudium i Arbeids- og velferdsfag",
+        "url": "http://www.hiof.no/aktuelt?displayitem=3917&module=news&newscat=aktuelt",
         "urlCourse": "",
         "category": "",
         "type": ""
     }, {
         "id": 2,
-        "text": "Siden samarbeidet har gått så bra, rekrutterer jeg selvsagt fra studentgruppen. Jeg skulle helst ha ansatt dem alle sammen!",
-        "cite": "Vidar Pedersen, fra Snø Designstudio AS",
-        "url": "http://www.hiof.no/nor/hogskolen-i-ostfold/aktuelt/hogskoleavisa?%2Fnor%2Fhogskolen-i-ostfold%2Faktuelt%2Fhogskoleavisa%2F%3F=&displayitem=3861&module=news",
+        "text": "Jeg hadde egentlig ikke vurdert en master før fordi det ikke var noen slik mulighet. Men så fikk jeg høre om dette programmet.",
+        "cite": "Maret Tamme, masterstudent ved masterstudium i scenografi",
+        "url": "http://www.hiof.no/aktuelt?displayitem=3949&module=news&newscat=aktuelt",
         "urlCourse": "",
         "category": "",
         "type": ""
     }, {
         "id": 3,
-        "text": "Vi ansetter en til to hvert år, basert på kontakten gjennom studentprosjektene. Studentene har kommet med viktige bidrag i en større forskningsjobb.",
-        "cite": "Joachim Zimmermann Helgesen, Seksjonsleder samferdselskonstruksjoner, Multiconsult AS",
-        "url": "http://www.hiof.no/nor/hogskolen-i-ostfold/aktuelt/hogskoleavisa?%2Fnor%2Fhogskolen-i-ostfold%2Faktuelt%2Fhogskoleavisa%2F%3F=&displayitem=3861&module=news",
+        "text": "På HiØ får man tilgjengelige forelesere, toveiskommunikasjon i undervisningen, mindre og sosiale klasser, ikke minst enormt gode studieveiledere. Den nærheten og tilgjengeligheten er uvurderlig.",
+        "cite": "Zorav Darisiro, student ved bachelorstudium i samfunn, språk og kultur",
+        "url": "http://www.hiof.no/aktuelt/nyheter/?&displayitem=3916&module=news",
         "urlCourse": "",
         "category": "",
         "type": ""
     }, {
         "id": 4,
-        "text": "Det er bra å blande studenter fra ulike avdelinger, det har en symbolsk effekt. Og her har vi kunst og entreprenørskap som et møtepunkt.",
+        "text": "Å være aktiv student samtidig som man er i jobb, krever struktur og planlegging. Samtidig er det absolutt verdt det, fordi dette studiet er så interessant.",
         "cite": "Serge von Arx, kunstnerisk leder, Akademi for scenekunst",
         "url": "http://hiof.no/nor/hogskolen-i-ostfold/aktuelt/hogskoleavisa/nyhetsarkiv/arkiv_-alle-nyheter/?&displayitem=3803&module=news",
         "urlCourse": "",
@@ -34,16 +34,24 @@
     }, {
         "id": 5,
         "text": "Et masterstudium rettet mot de yngste barna gir store muligheter for å bidra aktivt til å øke kompetansen i det småbarnspedagogiske feltet.",
-        "cite": "Ninni Sandvik, dosent ved avdeling for lærerutdanning",
-        "url": "http://hiof.no/nor/hogskolen-i-ostfold/aktuelt/hogskoleavisa/nyhetsarkiv/arkiv_-alle-nyheter/?&displayitem=3698&module=news",
+        "cite": "Studenter ved masterstudium i barnehagepedagogikk og småbarnsvitenskap (0-3 år)",
+        "url": "http://www.hiof.no/aktuelt/nyheter/?&displayitem=3943&module=news",
         "urlCourse": "",
         "category": "",
         "type": ""
     }, {
         "id": 6,
-        "text": "Det å vinne Oda-prisen er stor stas, den anerkjenner all den tiden jeg og så mange ildsjeler legger i å styrke digital kompetanse og for å skape større mangfold i bransjen.",
-        "cite": "Beathe Due, dekan ved HiØ’s avdeling for IT",
-        "url": "http://hiof.no/nor/hogskolen-i-ostfold/aktuelt/hogskoleavisa/nyhetsarkiv/arkiv_-alle-nyheter/?&displayitem=3840&module=news",
+        "text": "Studiet har gitt meg mye på mange områder, både privat og profesjonelt. Jeg har blitt flinkere til å se muligheter og ta initiativ. Studiet har uten tvil gjort meg faglig trygg og gitt meg mer selvtillit",
+        "cite": "Camilla Simonsen, Design Manager, Snø Designstudio. Tidligere student ved Innovasjon og prosjektledelse",
+        "url": "http://www.hiof.no/aktuelt/nyhetsarkiv/arkiv_-alle-nyheter/?&displayitem=3888&module=news",
+        "urlCourse": "",
+        "category": "",
+        "type": ""
+    }, {
+        "id": 7,
+        "text": "Hensikten med HiØ Makerspace er å tilby studenter et fysisk rom og et levende miljø der målet er å lære noe nytt ved å oppmuntre til nysgjerrighet og skaperglede",
+        "cite": "FoU-leder Harald Holone ved avdeling for informasjonsteknologi",
+        "url": "http://www.hiof.no/aktuelt/nyhetsarkiv/arkiv_-alle-nyheter/?&displayitem=3888&module=news",
         "urlCourse": "",
         "category": "",
         "type": ""
