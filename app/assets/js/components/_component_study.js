@@ -2,6 +2,9 @@
 
 
 
+
+
+  // Functions
   studyDuplicateStudyCourseFacts = function() {
 
     var studyCourseFacts = $("#program-KS601").parent().clone(),
@@ -11,7 +14,7 @@
     $('.btn-study-apply span').remove();
 
     var btnApplyClone = btnApply.clone(),
-        btnStudyModel = $(".study-plan-model-link").clone();
+      btnStudyModel = $(".study-plan-model-link").clone();
 
     $(studyCourseFacts).addClass("study-course-facts");
 
@@ -27,9 +30,9 @@
 
     // TODO: temporary change the apply-button text
     var now = new Date().getTime(),
-        future = new Date('2015-02-01').getTime();
+      future = new Date('2015-02-01').getTime();
     if (now < future) {
-      $( ".btn-study-apply" ).each(function( index ) {
+      $(".btn-study-apply").each(function(index) {
         if (($(this).text() == 'Søk her før 15. april! ') || ($(this).text() == 'Søk her før 1. mars! ')) {
           $('.btn-study-apply').text('Søking åpner 1. februar');
         }
@@ -41,11 +44,39 @@
 
   studyExecuteFilterFromUrl = function() {
     var searchTerm = Hiof.getUrlParameterByName("filterDepartment").toString();
+    //var multiFilter = Hiof.getUrlParameterByName("filter").toString();
+    //var filter = '';
+    //debug("Singlefilter: " + singleFilter);
+    //console.log("multiFilter: " + multiFilter);
+    //console.log('---------------------------------------------');
 
-    if (searchTerm === '') {
+
+
+    //debug('SearchTerm: ' +searchTerm);
+
+    //var filterValues;
+    //
+    //if(singleFilter !== ''){
+    //  filterValues = singleFilter;
+    //}
+    //if(multiFilter !== ''){
+    //  filterValues = multiFilter;
+    //}
+
+    //console.log("Filtervalue: " + filterValues);
+    //console.log('---------------------------------------------');
+
+    if (typeof searchTerm !== 'undefined') {
       //console.log('searchTerm is empty');
       return;
     }
+
+    //console.log(filterValues);
+
+
+
+
+
 
 
     if (searchTerm.match("^ovrig")) {
@@ -54,72 +85,52 @@
       searchTerm = "kat_" + newSearchTerm;
     }
 
-    //console.log("Søker etter " + searchTerm);
+
+
+    // Multiparam functionality
 
 
 
-    if (typeof searchTerm != 'undefined') {
-      var el = 'input[value=' + searchTerm + ']';
-      var filter = "(?=.*(" + searchTerm + "))";
-      //console.log(filter);
+//    if (filterValues !== '') {
+//      filterValues.replace(/%2C/g, ',');
+//      //console.log("filterValues = ");
+//      //console.log(filterValues);
+//      var thisFilter = filterValues.split(',');
+//      //console.log("thisFilter = ");
+//      //console.log(thisFilter);
+//      $.each(thisFilter, function(key, value) {
+//        //console.log("value = ");
+//        //console.log(value);
+//        $('input[value="' + value + '"]').trigger('click');
+//      });
+//      //return;
+//    }
 
-      $(el, '#studie .checkbox').prop('checked', true);
-      setTimeout(
-        function(){
-          $('#main table').trigger('footable_filter', {
-            filter: filter
-          });
-        }, 1000);
 
-    }
+
+    //// Legacy singleparam functionality
+        if (typeof searchTerm != 'undefined' && searchTerm !== '') {
+          var el = 'input[value=' + searchTerm + ']';
+          //filter = "(?=.*(" + searchTerm + "))";
+          //console.log(filter);
+        
+          $(el, '#studie .checkbox').trigger('click');
+          filterData();
+        //  //setTimeout(
+        //  //  function() {
+        //  //    $('#main table').trigger('footable_filter', {
+        //  //      filter: filter
+        //  //    });
+        //  //  }, 1000);
+        //
+        }
   };
 
 
-  $(function() {
 
-
-
-
-    // Change the footable filter to a regex filter
-    if ($('#studie').length) {
-      window.footable.options.filter.filterFunction = function(index) {
-        var $t = $(this),
-          $table = $t.parents('table:first'),
-          filter = $table.data('current-filter').toUpperCase(),
-          columns = $t.find('td');
-
-        var regEx = new RegExp(filter);
-        var result = false;
-        for (i = 0; i < columns.length; i++) {
-          var text = $(columns[i]).text();
-          result = regEx.test(text.toUpperCase());
-          if (result === true)
-            break;
-
-          if (!$table.data('filter-text-only')) {
-            text = $(columns[i]).data("value");
-            if (text)
-              result = regEx.test(text.toString().toUpperCase());
-          }
-
-          if (result === true)
-            break;
-        }
-        return result;
-      };
-
-    }
-
-
-    if ($('#main[data-page-category="homepage"]') && (Hiof.Options.windowWidth <= 769)) {
-      $('.study .nav li:first-child .btn').text('Se våre studier');
-    }
-
-
-    // Filter based on the checkboxes
-    $(document).on('click', '#studie .checkbox input', function(e) {
-      var thisFilter = $('form').serialize(),
-        thisValue = $(this).attr('value'),
+  filterData = function(){
+    var thisFilter = $('form').serialize(),
+        //thisValue = $(element).attr('value'),
         filter = "",
         totalCheckboxtypeStudy = $('input[name=typeStudy]:checked').length - 1,
         totalCheckboxFagomraader = $('input[name=fagomraader]:checked').length - 1,
@@ -127,6 +138,9 @@
         totalCheckboxStudiested = $('input[name=studiested]:checked').length - 1;
 
 
+      //debug(thisFilter);
+      //Update the URL from the form filter
+      //updateUrl(thisFilter);
       //console.log("Total checkbox: " + totalCheckbox);
 
       if ($('input[name=typeStudy]').is(':checked')) {
@@ -236,24 +250,154 @@
       if ($('input[name=studiested]').is(':checked')) {
         filter += "))";
       }
-      //console.log(filter);
+      //
+      //debug('Full filter: '+filter);
       //console.log("------------------------");
       $('#main table').trigger('footable_filter', {
         filter: filter
       });
+  };
+
+
+  resetFilter = function(url, section){
+    //$('#studie .checkbox input').each(function(){
+    //  this.prop('checked', false);
+    //});
+    if (url) {
+      var newPage = '#/filter/';
+      window.location.hash = newPage;
+    }
+
+
+    if (section) {
+      debug('Reset section-filter initiated, section: ' + section);
+      $('input[name="' + section + '"]').prop('checked', false);
+      //$('input[name="' + section + '"]')[0].prop('checked', true);
+    }else{
+      debug('Reset whole filter initiated');
+      $('#studie')[0].reset();
+    }
+
+  };
+
+
+  Path.map("#/filter").to(function() {
+    //scrollDest = false;
+    resetFilter(true);
+  });
+  Path.map("#/filter/").to(function() {
+    //scrollDest = false;
+    resetFilter(true);
+    filterData();
+  });
+
+  Path.map("#/filter/:values").enter(function(){
+    //Reset checkboxes
+    resetFilter();
+  }).to(function() {
+  
+
+    //scrollDest = false;
+    var thisValue = this.params.values;
+    //debug('ThisValue: ' + thisValue);
+    //debug("thisValue before string replace " + thisValue);
+    thisValue.replace(/%2C/g, ',');
+
+    //debug('ThisValue: ' + thisValue);
+
+    //debug("thisValue after string replace " + thisValue);
+    var thisFilter = thisValue.split(',');
+
+
+    $.each(thisFilter, function(key, value) {
+      var thisCheckbox = $('input[value="' + value + '"]');
+      // If all study-types / all categories / all locations are clicked, do this, then else
+      if (value === 'sttype_all' || value === 'kat_all' || value === 'camp_all' ) {
+        var thisCheckboxName = thisCheckbox.attr('name');
+
+      }else{
+        thisCheckbox.prop('checked', true);
+      }
+
+    });
+    filterData();
+  });
+
+
+  // Load root path if no path is active
+  Path.root("#/filter");
+
+
+
+
+
+
+  $(function() {
+
+
+
+      if ($("#studie").length) {
+        Path.listen();
+      }
+
+
+    if ($("#studie").length) {
+        setTimeout(
+        function(){
+          Hiof.filterStudies();
+        },1000);
+      
+    }
+
+
+    $('#study-search-reset').on('click', function(e){
+      resetFilter(true);
     });
 
 
 
 
+    $(document).on('click', '#studie .checkbox input', function(e) {
+      var thisFilter = [];
 
+
+       $('#studie .checkbox input:checked').each(function(){
+          thisFilter.push($(this).val());
+       });
+       newPage = '#/filter/' + thisFilter.toString();
+      //e.preventDefault();
+      //debug(newPage);
+      window.location.hash = newPage;
+      //Path.dispatch('#/filter/' + thisFilter);
+      //if(filter !== ''){
+      //  var thisUrl = document.URL,
+      //      thisValue = $(this).val();
+      //  //debug('thisUrl' + thisUrl);
+      //}
+    });
+
+
+
+
+    if ($('#main[data-page-category="homepage"]') && (Hiof.Options.windowWidth <= 769)) {
+      $('.study .nav li:first-child .btn').text('Se våre studier');
+    }
+
+
+    // Filter based on the checkboxes
+    $(document).on('change', '#studie .checkbox input', function(e) {
+      //filterData();
+    });
 
 
 
 
     // Check if you are on the study page
     if ($("#studie").length) {
-      studyExecuteFilterFromUrl();
+      setTimeout(
+        function(){
+          studyExecuteFilterFromUrl();
+        },1000);
     }
     // Check if you are within a study-page
     if ($("#program-KS601").length) {
@@ -285,22 +429,6 @@
     });
 
 
-    //$(document).on('click', '#studie .dropdown-menu a', function(e) {
-    //  e.preventDefault();
-    //  var filter = $(this).data("filter"),
-    //    filterText = $(this).text();
-    //  $('#main table').trigger('footable_filter', {
-    //    filter: filter
-    //  });
-    //  //if(){
-    //  //
-    //  //}else{
-    //  //
-    //  //}
-    //  //$('#content table caption .label').after('<span style="margin-left: 10px;">Filter: <span class="label label-info">' + filterText + '</span></span>');
-    //});
-
-
     //KD: temporary hack
     $(document).on('click', '#knapp1', function(e) {
       e.preventDefault();
@@ -308,4 +436,10 @@
       $('#toggleme').slideToggle();
     });
   });
+
+
+  // Expose functions to the window
+  window.Hiof.filterStudies = filterData;
+
+
 })(window.Hiof = window.Hiof || {});
