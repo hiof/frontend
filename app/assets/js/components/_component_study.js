@@ -270,11 +270,11 @@
 
 
     if (section) {
-      debug('Reset section-filter initiated, section: ' + section);
+      //debug('Reset section-filter initiated, section: ' + section);
       $('input[name="' + section + '"]').prop('checked', false);
       //$('input[name="' + section + '"]')[0].prop('checked', true);
     }else{
-      debug('Reset whole filter initiated');
+      //debug('Reset whole filter initiated');
       $('#studie')[0].reset();
     }
 
