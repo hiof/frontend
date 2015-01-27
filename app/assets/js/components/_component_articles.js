@@ -256,8 +256,13 @@
     Hiof.articleLoadData(options);
   });
 
-  // Load root path if no path is active
-  Path.root("#/articles");
+
+  initatePathArticle = function(){
+    // Load root path if no path is active
+    Path.root("#/articles");
+  };
+
+
 
 
 
@@ -267,7 +272,9 @@
   $(function() {
 
     if ($('.article-load').length) {
+      initatePathArticle();
       Path.listen();
+
     }
 
     $('#content').on('click', '.article-more', function(e) {
