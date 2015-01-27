@@ -622,6 +622,26 @@
       }
     }
   }
+
+  [data-page-category='hero'],
+  [data-page-category='bachelor'],
+  [data-page-category='master'],
+  [data-page-category='flexible']{
+    #study {
+      padding-top: 0rem !important;
+      footer {
+        .nav{
+          li{
+            &:first-child{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
 }
 .universal() {
   @import "../../vendor/bootstrap/less/navs.less";
