@@ -91,181 +91,182 @@
 
 
 
-//    if (filterValues !== '') {
-//      filterValues.replace(/%2C/g, ',');
-//      //console.log("filterValues = ");
-//      //console.log(filterValues);
-//      var thisFilter = filterValues.split(',');
-//      //console.log("thisFilter = ");
-//      //console.log(thisFilter);
-//      $.each(thisFilter, function(key, value) {
-//        //console.log("value = ");
-//        //console.log(value);
-//        $('input[value="' + value + '"]').trigger('click');
-//      });
-//      //return;
-//    }
+    //    if (filterValues !== '') {
+    //      filterValues.replace(/%2C/g, ',');
+    //      //console.log("filterValues = ");
+    //      //console.log(filterValues);
+    //      var thisFilter = filterValues.split(',');
+    //      //console.log("thisFilter = ");
+    //      //console.log(thisFilter);
+    //      $.each(thisFilter, function(key, value) {
+    //        //console.log("value = ");
+    //        //console.log(value);
+    //        $('input[value="' + value + '"]').trigger('click');
+    //      });
+    //      //return;
+    //    }
 
 
 
     //// Legacy singleparam functionality
-        if (typeof searchTerm != 'undefined' && searchTerm !== '') {
-          var el = 'input[value=' + searchTerm + ']';
-          //filter = "(?=.*(" + searchTerm + "))";
-          //console.log(filter);
-        
-          $(el, '#studie .checkbox').trigger('click');
-          filterData();
-        //  //setTimeout(
-        //  //  function() {
-        //  //    $('#main table').trigger('footable_filter', {
-        //  //      filter: filter
-        //  //    });
-        //  //  }, 1000);
-        //
-        }
-  };
-
-
-
-  filterData = function(){
-    var thisFilter = $('form').serialize(),
-        //thisValue = $(element).attr('value'),
-        filter = "",
-        totalCheckboxtypeStudy = $('input[name=typeStudy]:checked').length - 1,
-        totalCheckboxFagomraader = $('input[name=fagomraader]:checked').length - 1,
-        totalCheckboxOvrigeStudierAlternativer = $('input[name=OvrigeStudierAlternativer]:checked').length - 1,
-        totalCheckboxStudiested = $('input[name=studiested]:checked').length - 1;
-
-
-      //debug(thisFilter);
-      //Update the URL from the form filter
-      //updateUrl(thisFilter);
-      //console.log("Total checkbox: " + totalCheckbox);
-
-      if ($('input[name=typeStudy]').is(':checked')) {
-        filter += "(?=.*(";
-      }
-
-
-      $('input[name=typeStudy]:checked').each(function(i, item) {
-        //console.log("Filter for typeStudy");
-
-        if (this.checked) {
-
-          //console.log('Item is:' + i);
-          if (i === totalCheckboxtypeStudy) {
-            filter += $(this).val() + "";
-          } else {
-            filter += $(this).val() + "|";
-            //console.log($(this).val()); 
-          }
-
-
-        }
-      });
-
-      if ($('input[name=typeStudy]').is(':checked')) {
-        filter += "))";
-
-      }
+    if (typeof searchTerm != 'undefined' && searchTerm !== '') {
+      var el = 'input[value=' + searchTerm + ']';
+      //filter = "(?=.*(" + searchTerm + "))";
       //console.log(filter);
-      //console.log("------------------------");
 
-
-
-      if ($('input[name=fagomraader]').is(':checked')) {
-        filter += "(?=.*(";
-      }
-
-
-      $('input[name=fagomraader]:checked').each(function(i, item) {
-        //console.log("Filter for fagomraader");
-
-        if (this.checked) {
-          //filter += "(";
-          //console.log('Item is:' + i);
-          if (i === totalCheckboxFagomraader) {
-            filter += $(this).val() + "";
-          } else {
-            filter += $(this).val() + "|";
-            //console.log($(this).val()); 
-          }
-
-          //filter += ")";
-        }
-      });
-      if ($('input[name=fagomraader]').is(':checked')) {
-        filter += "))";
-      }
-      //console.log(filter);
-      //console.log("------------------------");
-
-
-      if ($('input[name=OvrigeStudierAlternativer]').is(':checked')) {
-        filter += "(?=.*(";
-      }
-      $('input[name=OvrigeStudierAlternativer]:checked').each(function(i, item) {
-        //console.log("Filter for OvrigeStudierAlternativer");
-
-        if (this.checked) {
-          //console.log('Item is:' + i);
-          if (i === totalCheckboxOvrigeStudierAlternativer) {
-            filter += $(this).val() + "";
-          } else {
-            filter += $(this).val() + "|";
-            //console.log($(this).val()); 
-          }
-
-        }
-      });
-
-      if ($('input[name=OvrigeStudierAlternativer]').is(':checked')) {
-        filter += "))";
-      }
-
-
-      //console.log(filter);
-      //console.log("------------------------");
-
-
-
-      if ($('input[name=studiested]').is(':checked')) {
-        filter += "(?=.*(";
-      }
-
-      $('input[name=studiested]:checked').each(function(i, item) {
-        //console.log("Filter for studiested");
-        if (this.checked) {
-          //console.log('Item is:' + i);
-          if (i === totalCheckboxStudiested) {
-            filter += $(this).val() + "";
-          } else {
-            filter += $(this).val() + "|";
-            //console.log($(this).val()); 
-          }
-
-        }
-      });
-      if ($('input[name=studiested]').is(':checked')) {
-        filter += "))";
-      }
+      $(el, '#studie .checkbox').trigger('click');
+      filterData();
+      //  //setTimeout(
+      //  //  function() {
+      //  //    $('#main table').trigger('footable_filter', {
+      //  //      filter: filter
+      //  //    });
+      //  //  }, 1000);
       //
-      //debug('Full filter: '+filter);
-      //console.log("------------------------");
-      $('#main table').trigger('footable_filter', {
-        filter: filter
-      });
+    }
   };
 
 
-  resetFilter = function(url, section){
+
+  filterData = function() {
+    var thisFilter = $('form').serialize(),
+      //thisValue = $(element).attr('value'),
+      filter = "",
+      totalCheckboxtypeStudy = $('input[name=typeStudy]:checked').length - 1,
+      totalCheckboxFagomraader = $('input[name=fagomraader]:checked').length - 1,
+      totalCheckboxOvrigeStudierAlternativer = $('input[name=OvrigeStudierAlternativer]:checked').length - 1,
+      totalCheckboxStudiested = $('input[name=studiested]:checked').length - 1;
+
+
+    //debug(thisFilter);
+    //Update the URL from the form filter
+    //updateUrl(thisFilter);
+    //console.log("Total checkbox: " + totalCheckbox);
+
+    if ($('input[name=typeStudy]').is(':checked')) {
+      filter += "(?=.*(";
+    }
+
+
+    $('input[name=typeStudy]:checked').each(function(i, item) {
+      //console.log("Filter for typeStudy");
+
+      if (this.checked) {
+
+        //console.log('Item is:' + i);
+        if (i === totalCheckboxtypeStudy) {
+          filter += $(this).val() + "";
+        } else {
+          filter += $(this).val() + "|";
+          //console.log($(this).val()); 
+        }
+
+
+      }
+    });
+
+    if ($('input[name=typeStudy]').is(':checked')) {
+      filter += "))";
+
+    }
+    //console.log(filter);
+    //console.log("------------------------");
+
+
+
+    if ($('input[name=fagomraader]').is(':checked')) {
+      filter += "(?=.*(";
+    }
+
+
+    $('input[name=fagomraader]:checked').each(function(i, item) {
+      //console.log("Filter for fagomraader");
+
+      if (this.checked) {
+        //filter += "(";
+        //console.log('Item is:' + i);
+        if (i === totalCheckboxFagomraader) {
+          filter += $(this).val() + "";
+        } else {
+          filter += $(this).val() + "|";
+          //console.log($(this).val()); 
+        }
+
+        //filter += ")";
+      }
+    });
+    if ($('input[name=fagomraader]').is(':checked')) {
+      filter += "))";
+    }
+    //console.log(filter);
+    //console.log("------------------------");
+
+
+    if ($('input[name=OvrigeStudierAlternativer]').is(':checked')) {
+      filter += "(?=.*(";
+    }
+    $('input[name=OvrigeStudierAlternativer]:checked').each(function(i, item) {
+      //console.log("Filter for OvrigeStudierAlternativer");
+
+      if (this.checked) {
+        //console.log('Item is:' + i);
+        if (i === totalCheckboxOvrigeStudierAlternativer) {
+          filter += $(this).val() + "";
+        } else {
+          filter += $(this).val() + "|";
+          //console.log($(this).val()); 
+        }
+
+      }
+    });
+
+    if ($('input[name=OvrigeStudierAlternativer]').is(':checked')) {
+      filter += "))";
+    }
+
+
+    //console.log(filter);
+    //console.log("------------------------");
+
+
+
+    if ($('input[name=studiested]').is(':checked')) {
+      filter += "(?=.*(";
+    }
+
+    $('input[name=studiested]:checked').each(function(i, item) {
+      //console.log("Filter for studiested");
+      if (this.checked) {
+        //console.log('Item is:' + i);
+        if (i === totalCheckboxStudiested) {
+          filter += $(this).val() + "";
+        } else {
+          filter += $(this).val() + "|";
+          //console.log($(this).val()); 
+        }
+
+      }
+    });
+    if ($('input[name=studiested]').is(':checked')) {
+      filter += "))";
+    }
+    //
+    //debug('Full filter: '+filter);
+    //console.log("------------------------");
+    $('#main table').trigger('footable_filter', {
+      filter: filter
+    });
+  };
+
+
+  resetFilter = function(url, section) {
     //$('#studie .checkbox input').each(function(){
     //  this.prop('checked', false);
     //});
     if (url) {
-      var newPage = '#/filter/';
-      window.location.hash = newPage;
+      //var newPage = '#/filter';
+      //window.location.hash = newPage;
+      //$('table').data('footable-filter').clearFilter();
     }
 
 
@@ -273,60 +274,67 @@
       //debug('Reset section-filter initiated, section: ' + section);
       $('input[name="' + section + '"]').prop('checked', false);
       //$('input[name="' + section + '"]')[0].prop('checked', true);
-    }else{
+    } else {
       //debug('Reset whole filter initiated');
       $('#studie')[0].reset();
+      //$('table').data('footable-filter').clearFilter();
     }
 
   };
 
 
-  Path.map("#/filter").to(function() {
-    //scrollDest = false;
-    resetFilter(true);
-  });
-  Path.map("#/filter/").to(function() {
-    //scrollDest = false;
-    resetFilter(true);
-    filterData();
-  });
-
-  Path.map("#/filter/:values").enter(function(){
-    //Reset checkboxes
-    resetFilter();
-  }).to(function() {
-  
-
-    //scrollDest = false;
-    var thisValue = this.params.values;
-    //debug('ThisValue: ' + thisValue);
-    //debug("thisValue before string replace " + thisValue);
-    thisValue.replace(/%2C/g, ',');
-
-    //debug('ThisValue: ' + thisValue);
-
-    //debug("thisValue after string replace " + thisValue);
-    var thisFilter = thisValue.split(',');
 
 
-    $.each(thisFilter, function(key, value) {
-      var thisCheckbox = $('input[value="' + value + '"]');
-      // If all study-types / all categories / all locations are clicked, do this, then else
-      if (value === 'sttype_all' || value === 'kat_all' || value === 'camp_all' ) {
-        var thisCheckboxName = thisCheckbox.attr('name');
-
-      }else{
-        thisCheckbox.prop('checked', true);
-      }
-
+    Path.map("#/filter").to(function() {
+      //scrollDest = false;
+      resetFilter(true);
+      filterData();
     });
-    filterData();
-  });
+    Path.map("#/filter/").to(function() {
+      //scrollDest = false;
+      resetFilter(true);
+      filterData();
+    });
+
+    Path.map("#/filter/:values").enter(function() {
+      //Reset checkboxes
+      resetFilter();
+    }).to(function() {
 
 
+      //scrollDest = false;
+      var thisValue = this.params.values;
+      //debug('ThisValue: ' + thisValue);
+      //debug("thisValue before string replace " + thisValue);
+      thisValue.replace(/%2C/g, ',');
+
+      //debug('ThisValue: ' + thisValue);
+
+      //debug("thisValue after string replace " + thisValue);
+      var thisFilter = thisValue.split(',');
+
+
+      $.each(thisFilter, function(key, value) {
+        var thisCheckbox = $('input[value="' + value + '"]');
+        // If all study-types / all categories / all locations are clicked, do this, then else
+        if (value === 'sttype_all' || value === 'kat_all' || value === 'camp_all') {
+          var thisCheckboxName = thisCheckbox.attr('name');
+
+        } else {
+          thisCheckbox.prop('checked', true);
+        }
+
+      });
+      filterData();
+    });
+
+
+
+
+  initatePathStudyCatalog = function(){
   // Load root path if no path is active
-  Path.root("#/filter");
-
+    Path.root("#/filter");
+  };
 
 
 
@@ -336,23 +344,32 @@
 
 
 
-      if ($("#studie").length) {
-        Path.listen();
-      }
-
 
     if ($("#studie").length) {
-        setTimeout(
-        function(){
+      initatePathStudyCatalog();
+      // Initiate Pathjs listener
+      Path.listen();
+
+
+
+      // Initiate filter 1 second after the page is loaded
+      setTimeout(
+        function() {
           Hiof.filterStudies();
-        },1000);
-      
+        }, 1000);
+
+
+      //Enable reset-filter functionality
+      $('#study-search-reset').on('click', function(e) {
+        e.preventDefault();
+        resetFilter(true);
+      });
+
+
     }
 
 
-    $('#study-search-reset').on('click', function(e){
-      resetFilter(true);
-    });
+
 
 
 
@@ -361,10 +378,10 @@
       var thisFilter = [];
 
 
-       $('#studie .checkbox input:checked').each(function(){
-          thisFilter.push($(this).val());
-       });
-       newPage = '#/filter/' + thisFilter.toString();
+      $('#studie .checkbox input:checked').each(function() {
+        thisFilter.push($(this).val());
+      });
+      newPage = '#/filter/' + thisFilter.toString();
       //e.preventDefault();
       //debug(newPage);
       window.location.hash = newPage;
@@ -395,9 +412,9 @@
     // Check if you are on the study page
     if ($("#studie").length) {
       setTimeout(
-        function(){
+        function() {
           studyExecuteFilterFromUrl();
-        },1000);
+        }, 1000);
     }
     // Check if you are within a study-page
     if ($("#program-KS601").length) {
