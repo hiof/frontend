@@ -45,9 +45,7 @@
         background: transparent;
         padding-bottom: 0rem;
         article{
-          padding-top: 12rem;
           text-align: center;
-          height: 48.6rem;
           h1,h2{
             font-weight: 100;
             line-height: 2em;
@@ -118,10 +116,23 @@
     }
     // video styling
     .cover-video {
+      //background: #fff;
       position: absolute;
       top: 0;
+      //min-width: 100%;
+      //min-height: 100%;
       max-width: 100%;
+      //left: 50%;
+      //-webkit-background-size:cover; 
+      //-moz-background-size:cover; 
+      //-o-background-size:cover; 
+      //background-size:cover; 
     }
+    .touch{
+      .cover-video{
+        min-width: 100%;
+      }
+    }  
     .cover-video-bg {
       position: absolute;
       top: 0;
@@ -130,6 +141,7 @@
       width: 2000px;
       margin-top: 0;
     }
+
   }
   .branding {
     width: 100%;
@@ -186,6 +198,25 @@
   .cover-quote {
     display: none !important;
   }
+  html.cover {
+    [data-page-category='hero'],
+    [data-page-category='bachelor'],
+    [data-page-category='master'],
+    [data-page-category='flexible']{
+      #study{
+        article{
+          h1{
+            font-size: 2.2rem;
+          }
+          h2{
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+
+
 }
 .medium() {
   .cover-quote {
@@ -193,5 +224,43 @@
     font-size: 2rem;
     width: 76rem;
     margin-left: -38rem;
+  }
+  html.cover {
+    [data-page-category='hero'],
+    [data-page-category='bachelor'],
+    [data-page-category='master'],
+    [data-page-category='flexible']{
+      #study{
+        article{
+          padding-top: 0rem;
+          //text-align: center;
+          height: auto;
+          h1{
+            font-size: 3.2rem;
+          }
+          h2{
+            font-size: 2.4rem;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.large(){
+  html.cover {
+    [data-page-category='hero'],
+    [data-page-category='bachelor'],
+    [data-page-category='master'],
+    [data-page-category='flexible']{
+      #study{
+        article{
+          padding-top: 12rem;
+          //text-align: center;
+          height: 48.6rem;
+        }
+      }
+    }
   }
 }
