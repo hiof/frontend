@@ -69,8 +69,12 @@
     if ((windowWidth <= 770) && (pageType === "homepage")) {
       // Add HiØ logo as the cover photo on Index
       Hiof.coverGenerateMarkupBranding();
+      if (windowWidth <= 420) {
+        Hiof.coverGenerateMarkupVideoMobile();
+      }
     } else if (windowWidth <= 420) {
       // Dont add a cover-photo on the smallest screens 
+      Hiof.coverGenerateMarkupVideoMobile(pageType);
     } else if ((pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible")) {
       Hiof.coverGetVideo(pageType);
     } else {
@@ -119,6 +123,30 @@
     });
 
 
+  };
+  Hiof.coverGenerateMarkupVideoMobile = function(pageType){
+    var vimeoElement = document.createElement('iframe');
+
+
+    $(vimeoElement).attr({
+      'width': '420',
+      'height': '236',
+      'frameborder': '0',
+      'webkitallowfullscreen': '',
+      'mozallowfullscreen': '',
+      'allowfullscreen': ''
+    });
+
+
+    if ((pageType === "hero") || (pageType === "flexible")) {
+      $(vimeoElement).attr({'src': '//player.vimeo.com/video/118909248?autoplay=1&loop=1&byline=0&portrait=0&title=0'});
+    }else if (pageType === "bachelor") {
+      $(vimeoElement).attr({'src': '//player.vimeo.com/video/118909247?autoplay=1&loop=1&byline=0&portrait=0&title=0'});
+    }else if (pageType === "master") {
+      $(vimeoElement).attr({'src': '//player.vimeo.com/video/118908762?autoplay=1&loop=1&byline=0&portrait=0&title=0'});
+    }
+    $('#study h1').hide();
+    $('#main').prepend(vimeoElement);
   };
   Hiof.coverGenerateMarkupBranding = function() {
     var brandingWrapper = document.createElement('div'),
