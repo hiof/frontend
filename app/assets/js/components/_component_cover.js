@@ -29,7 +29,7 @@
         pageType = 'oss';
       } else if (facultyId === '22470') {
         // Scenekunst
-        pageType = "page";
+        pageType = "as";
         //pageType = 'as';
       } else if (facultyId === '22480') {
         // HiØ Videre
@@ -54,7 +54,7 @@
     } else if (pageType === 'ask-index') {
       pageType = "index";
     } else if (pageType === 'ask') {
-      pageType = "page";
+      pageType = "as";
     } else if (pageType === 'vid-index') {
       pageType = "index";
     } else if (pageType === 'vid') {
