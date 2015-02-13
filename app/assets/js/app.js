@@ -304,7 +304,9 @@ $(function() {
 
         });
       }
-      $('.footable-loaded').trigger('footable_expand_first_row');
+      if ($('#jobs-list').length === 0) {
+        $('.footable-loaded').trigger('footable_expand_first_row');
+      }
 
 
       // Check if the page has a filter element for the table
