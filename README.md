@@ -1,5 +1,7 @@
 # hiof.no
 
+[![Build Status](https://travis-ci.org/hiof/frontend.svg?branch=master)](https://travis-ci.org/hiof/frontend)
+
 ## About
 
 Frontend code for the Østfold University College website.
