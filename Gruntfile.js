@@ -3,6 +3,13 @@ module.exports = function(grunt) {
   require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   require('time-grunt')(grunt);
 
+
+  var mySecret = false;
+  if (grunt.file.exists('secret.json')) {
+    mySecret = grunt.file.readJSON('secret.json');
+  }
+
+
   // Initiate grunt tasks
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -124,6 +131,13 @@ module.exports = function(grunt) {
         cwd: 'app/assets/images/app-icons',
         src: 'favicon.ico',
         dest: 'build/',
+        filter: 'isFile'
+      },
+      tests: {
+        expand: true,
+        cwd: 'tests',
+        src: '**',
+        dest: 'build/tests/',
         filter: 'isFile'
       }
     },
@@ -517,7 +531,7 @@ module.exports = function(grunt) {
       }
 
     },
-    secret: grunt.file.readJSON('secret.json'),
+    secret: mySecret,
     sftp: {
       stage: {
         files: {
@@ -577,9 +591,27 @@ module.exports = function(grunt) {
       }
     },
 
+    qunit: {
+      all: {
+        options: {
+          timeout: 10000,
+          urls: [
+            'http://localhost:9000/tests/qunit/index.html',
+            'http://localhost:9000/tests/qunit/study-catalog/study-catalog.html',
+            'http://localhost:9000/tests/qunit/jobs/jobs-list.html',
+          ]
+        }
+      }
+    },
 
-
-    watch: {
+    watch: {      
+      tests: {
+        files: ['tests/**/*'],
+        tasks: ['copy:tests', 'qunit'],
+        options: {
+          livereload: true,
+        },
+      },
       hbs: {
         files: ['app/templates/**/*.hbs'],
         tasks: ['handlebars','copy:jstemplates'],
@@ -641,7 +673,7 @@ module.exports = function(grunt) {
   // Register tasks
   grunt.registerTask('subtaskJs', ['jshint', 'concat:scripts', 'uglify', 'copy:jscomponents', 'copy:jsmap', 'copy:jsdata', 'copy:jstemplates']);
   grunt.registerTask('subtaskCss', ['less', 'autoprefixer', 'cssmin']);
-  grunt.registerTask('subtaskCopy', ['copy:images', 'copy:fonts', 'copy:vendor', 'copy:favicon']);
+  grunt.registerTask('subtaskCopy', ['copy:images', 'copy:fonts', 'copy:vendor', 'copy:favicon', 'copy:tests']);
   grunt.registerTask('subtaskCopyDeploy', ['copy:images', 'copy:vendor', 'copy:favicon']);
   grunt.registerTask('subtaskViews', ['concat:pages']);
   grunt.registerTask('build', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:build', 'subtaskCopy', 'subtaskViews']);
@@ -685,6 +717,10 @@ module.exports = function(grunt) {
                                 'open',
                                 'watch'
                               ]);
-
+  grunt.registerTask('test', [
+                                'build',
+                                'express',
+                                'qunit'
+                              ]);
 
 };
