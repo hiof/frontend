@@ -40,9 +40,5 @@ The following commands are now available within the project folder `$ grunt serv
 ### Roadmap
 
 v3.2.0 - Integrated news (and design adjustments)
-v3.3.0 - Personal profile data integration (and design adjustments)
-v3.4.0 - Study cataloge, several content improvements
-
-
-
-
+v3.3.0 - Study cataloge, several content improvements and video-campaign functionality
+v3.4.0 - Personal profile data integration and initial frontend-testing
