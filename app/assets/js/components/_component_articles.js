@@ -149,7 +149,7 @@
     return options;
   };
   Hiof.articleLoadData = function(options, element) {
-    debug('Hiof.articleLoadData initiated');
+    //debug('Hiof.articleLoadData initiated');
     // If options are not defined
     if (typeof options === 'undefined' || options === null) {
       // Get options from the initializer element
@@ -188,7 +188,7 @@
         Hiof.articleDisplayView(data, settings);
       },
       error: function(data) {
-        debug("Error: ");
+        console.log("Error: ");
         console.log(data);
       }
 
