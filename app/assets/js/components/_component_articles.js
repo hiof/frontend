@@ -8,32 +8,41 @@
 
 
 
-    //if (options.template === 'single') {
-    //  templateSource = $("#article-post-single").html();
-    //} else if (options.template === 'feed') {
-    //  templateSource = $("#article-posts").html();
-    //} else {
-    //  templateSource = $("#article-posts").html();
-    //}
-    //if (typeof options.template === 'undefined' || options.template === '') {
-    //  //templateSource = $("#article-posts").html();
-    //  
-    //  templateSource = Hiof.Templates['articles/posts'];
-    //  //console.log('Template:' + templateSource);
-    //} else 
 
-    if(options.template === 'posts'){
-      templateSource = Hiof.Templates['articles/posts'];
-    } else if(options.template === 'single'){
-      templateSource = Hiof.Templates['articles/post-single'];
-    }else{
-      templateSource = Hiof.Templates['articles/posts'];
-      ////console.log(options.template);
-      ////templateSource = $(options.template).html();
-      //var thisView = 'articles/' + options.template + '';
-      //templateSource = Hiof.Templates[thisView];
+    if ($('html.lt-ie10').length) {
+      var templateUrl;
+      if (options.template === 'single') {
+        templateUrl = 'http://www2.hiof.no/assets/article-view/templates/post-single.hbs';
+      } else {
+        templateUrl = 'http://www2.hiof.no/assets/article-view/templates/posts.hbs';
+      }
+
+
+      $.ajax({
+        url: templateUrl,
+        method: 'GET',
+        async: false,
+        success: function(data) {
+          console.log("Template ajax Success: ");
+          //console.log("Success: ");
+          //console.log(data);
+          templateSource = data;
+        },
+        error: function(data) {
+          console.log("Template ajax error: ");
+          //console.log(data.responseText);
+        }
+
+      });
+
+
+    } else {
+      if (options.template === 'single') {
+        templateSource = Hiof.Templates['articles/post-single'];
+      } else {
+        templateSource = Hiof.Templates['articles/posts'];
+      }
     }
-
 
     //console.log("Singleview = " + singleView);
 
@@ -47,7 +56,7 @@
       //console.log("options.destination has something: " + options.destination);
       if (options.addType === 'append') {
         $(options.destination).append(markup);
-      }else{
+      } else {
         $(options.destination).html(markup);
       }
 
@@ -59,19 +68,12 @@
       var scrollDestEl = "#content";
       Hiof.articleScrollTo(scrollDestEl);
     }
-    //if (!singleView) {
-    //  // Fix the layout
-    //  Hiof.LayoutHelper();
-    //  //Hiof.EqualHeight($(".article"));
-    //}
-
-
 
 
 
   };
 
-  Hiof.articleScrollTo = function(destination){
+  Hiof.articleScrollTo = function(destination) {
     if (scrollDest) {
       $.scrollTo($(destination), 500, {
         axis: 'y',
@@ -86,7 +88,7 @@
     var thisLoader;
     if (typeof el === 'undefined') {
       thisLoader = $('.article-load');
-    }else{
+    } else {
       thisLoader = $(el);
     }
 
@@ -194,7 +196,7 @@
     });
   };
 
-  Hiof.updateAnalytics = function(){
+  Hiof.updateAnalytics = function() {
     //ga('set', 'page', document.location.href);
     //ga('send', 'pageview');
   };
@@ -204,7 +206,7 @@
 
   Path.map("#/articles").to(function() {
     //scrollDest = false;
-    $('.article-load').each(function(){
+    $('.article-load').each(function() {
       //console.log(this);
       Hiof.articleLoadData(null, this);
     });
@@ -257,7 +259,7 @@
   });
 
 
-  initatePathArticle = function(){
+  initatePathArticle = function() {
     // Load root path if no path is active
     Path.root("#/articles");
   };
