@@ -40,6 +40,12 @@
 
 
 
+
+  // Enable cors
+  jQuery.support.cors = true;
+
+
+
   // This is our "rescue" method.
   function notFound() {
     if ($('#studie').length) {
