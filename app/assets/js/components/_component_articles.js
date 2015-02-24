@@ -12,9 +12,9 @@
     if ($('html.lt-ie10').length) {
       var templateUrl;
       if (options.template === 'single') {
-        templateUrl = 'http://www2.hiof.no/assets/article-view/templates/post-single.hbs';
+        templateUrl = 'http://staging2.hiof.no/assets/article-view/templates/articles/post-single.hbs';
       } else {
-        templateUrl = 'http://www2.hiof.no/assets/article-view/templates/posts.hbs';
+        templateUrl = 'http://staging2.hiof.no/assets/article-view/templates/articles/posts.hbs';
       }
 
 
