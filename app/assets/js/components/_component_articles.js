@@ -29,7 +29,7 @@
         },
         error: function(data) {
           console.log("Template ajax error: ");
-          //console.log(data.responseText);
+          console.dir(data);
         }
 
       });
@@ -183,13 +183,13 @@
       dataType: 'json',
       data: settings,
       success: function(data) {
-        console.log("Success: ");
+        //console.log("Success: ");
         //console.log(data);
         Hiof.articleDisplayView(data, settings);
       },
       error: function(data) {
-        console.log("Error: ");
-        console.log(data);
+        console.log("Hiof.articleLoadData Error: ");
+        console.dir(data);
       }
 
     });
