@@ -7,9 +7,8 @@
     var templateSource;
 
 
-
-
     if ($('html.lt-ie10').length) {
+      console.log("Lower than IE10!");
       var templateUrl;
       if (options.template === 'single') {
         templateUrl = 'http://staging2.hiof.no/assets/article-view/templates/articles/post-single.hbs';
@@ -150,7 +149,7 @@
     return options;
   };
   Hiof.articleLoadData = function(options, element) {
-    //console.log(element);
+    debug('Hiof.articleLoadData initiated');
     // If options are not defined
     if (typeof options === 'undefined' || options === null) {
       // Get options from the initializer element
@@ -184,13 +183,13 @@
       dataType: 'json',
       data: settings,
       success: function(data) {
-        //console.log("Success: ");
+        console.log("Success: ");
         //console.log(data);
         Hiof.articleDisplayView(data, settings);
       },
       error: function(data) {
-        //console.log("Error: ");
-        //console.log(data.responseText);
+        debug("Error: ");
+        console.log(data);
       }
 
     });
@@ -207,7 +206,7 @@
   Path.map("#/articles").to(function() {
     //scrollDest = false;
     $('.article-load').each(function() {
-      //console.log(this);
+      //debug(this);
       Hiof.articleLoadData(null, this);
     });
   });
