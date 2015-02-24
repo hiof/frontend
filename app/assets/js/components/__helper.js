@@ -14,6 +14,14 @@
 
 
 
+
+
+
+  $.support.cors = true;
+
+
+
+
   Handlebars.registerHelper('each_upto', function(ary, max, options) {
       if(!ary || ary.length === 0)
           return options.inverse(this);
