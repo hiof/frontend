@@ -22,7 +22,7 @@
         method: 'GET',
         async: false,
         crossDomain: true,  // added in jQuery 1.5
-        headers: {'Access-Control-Allow-Origin': '*'},
+        //headers: {'Access-Control-Allow-Origin': '*'},
         success: function(data) {
           console.log("Template ajax Success: ");
           //console.log("Success: ");
@@ -185,7 +185,7 @@
       dataType: 'json',
       data: settings,
       crossDomain: true,  // added in jQuery 1.5
-      headers: {'Access-Control-Allow-Origin': '*'},
+      //headers: {'Access-Control-Allow-Origin': '*'},
       success: function(data) {
         //console.log("Success: ");
         //console.log(data);
