@@ -1,0 +1,67 @@
+<div role="tabpanel">
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#research-list-topp" aria-controls="research-list-topp" role="tab" data-toggle="tab">Sist publisert</a></li> 
+    <li role="presentation"><a href="#research-list-all" aria-controls="research-list-all" role="tab" data-toggle="tab">Alle</a></li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="research-list-topp">
+      <table id="research-list">
+        <thead>
+          <tr>
+            <th>Tittel</th>
+            <th data-hide="all">Publisert år</th>
+            <th data-hide="all">Kategori</th>
+            <th data-hide="all">Underkattegori</th>
+            <th data-hide="all">Publikasjon</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each_upto research 10}}
+          <tr>
+            <td>{{title}}</td>
+            <td>{{pubYear}}</td>
+            <td>{{category}}</td>
+            <td>{{categorySub}}</td>
+            <td><a class="btn btn-primary btn-line btn-sm" target="_blank" href="http://bibsys-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?vid=HIO&institution=HIO&search_scope=default_scope&lang=nor&prefLang=no_NO&afterPDS=true&check=checked&query=any,contains,{{searchterm}}">Søk etter publikasjon hos biblioteket</a>
+            </td>
+          </tr>
+          {{/each_upto}}
+        </tbody>
+        <tfoot></tfoot>
+      </table> 
+    </div>
+    <div role="tabpanel" class="tab-pane" id="research-list-all">
+      <table id="research-list">
+        <thead>
+          <tr>
+            <th>Tittel</th>
+            <th data-hide="all">Publisert år</th>
+            <th data-hide="all">Kategori</th>
+            <th data-hide="all">Underkattegori</th>
+            <th data-hide="all"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each research}}
+          <tr>
+            <td>{{title}}</td>
+            <td>{{pubYear}}</td>
+            <td>{{category}}</td>
+            <td>{{categorySub}}</td>
+            <td><a class="btn btn-primary btn-line btn-sm" target="_blank" href="http://bibsys-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?vid=HIO&institution=HIO&search_scope=default_scope&lang=nor&prefLang=no_NO&afterPDS=true&check=checked&query=any,contains,{{searchterm}}">Søk etter publikasjon hos biblioteket</a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+        <tfoot class="hide-if-no-paging">
+          <tr>
+            <td colspan="5">
+              <div class="pagination pagination-centered"></div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+
+  </div>

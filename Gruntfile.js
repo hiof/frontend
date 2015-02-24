@@ -157,6 +157,11 @@ module.exports = function(grunt) {
     },
     handlebars: {
         options: {
+            compilerOptions: {
+              knownHelpers: {
+                'each_upto': true
+              }
+            },
             namespace: 'Hiof.Templates',
             processName: function(filePath) {
               return filePath.replace(/^app\/templates\//, '').replace(/\.hbs$/, '');
@@ -391,6 +396,7 @@ module.exports = function(grunt) {
           'app/vendor/footable/js/footable.striping.js',
           'app/vendor/bootstrap/js/modal.js',
           'app/vendor/bootstrap/js/dropdown.js', 
+          'app/vendor/bootstrap/js/tab.js', 
           'app/vendor/jquery-cookie/jquery.cookie.js',
           'app/vendor/pathjs/path.js',
           'app/vendor/handlebars/handlebars.js',
@@ -675,7 +681,7 @@ module.exports = function(grunt) {
   grunt.registerTask('subtaskCopy', ['copy:images', 'copy:fonts', 'copy:vendor', 'copy:favicon', 'copy:tests']);
   grunt.registerTask('subtaskCopyDeploy', ['copy:images', 'copy:vendor', 'copy:favicon']);
   grunt.registerTask('subtaskViews', ['concat:pages']);
-  grunt.registerTask('build', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:build', 'subtaskCopy', 'subtaskViews']);
+  grunt.registerTask('build', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:build', 'subtaskCopy', 'subtaskViews', 'handlebars']);
 
 
 
