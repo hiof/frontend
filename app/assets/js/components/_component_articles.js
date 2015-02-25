@@ -6,70 +6,22 @@
     //console.log(options);
     var templateSource;
 
-
-    ///if ($('html.lt-ie10').length) {
-    ///  console.log("Lower than IE10!");
-    ///  var templateUrl;
-    ///  if (options.template === 'single') {
-    ///    templateUrl = 'http://staging2.hiof.no/assets/article-view/templates/articles/post-single.hbs';
-    ///  } else {
-    ///    templateUrl = 'http://staging2.hiof.no/assets/article-view/templates/articles/posts.hbs';
-    ///  }
-///
-    ///var contentType = "application/x-www-form-urlencoded; charset=utf-8";
-///
-    ///if (window.XDomainRequest) { //for IE8,IE9
-    ///  contentType = "text/plain";
-    ///}
-///
-    ///  $.ajax({
-    ///    url: templateUrl,
-    ///    method: 'GET',
-    ///    async: true,
-    ///    contentType:contentType,  
-    ///    //crossDomain: true, // added in jQuery 1.5
-    ///    //headers: {'Access-Control-Allow-Origin': '*'},
-    ///    success: function(data) {
-    ///      alert("Data from Server: "+JSON.stringify(data));
-    ///      //console.log("Success: ");
-    ///      //console.log(data);
-    ///      templateSource = data;
-    ///    },
-    ///    error: function(jqXHR, textStatus, errorThrown) {
-    ///      alert("You can not send Cross Domain AJAX requests: " + errorThrown);
-    ///    }
-///
-    ///  });
-///
-///
-    ///} else {
-      if (options.template === 'single') {
-        templateSource = Hiof.Templates['articles/post-single'];
-      } else {
-        templateSource = Hiof.Templates['articles/posts'];
-      }
-    //}
-
-    //console.log("Singleview = " + singleView);
-
-    //var template = Handlebars.compile(templateSource),
+    if (options.template === 'single') {
+      templateSource = Hiof.Templates['articles/post-single'];
+    } else {
+      templateSource = Hiof.Templates['articles/posts'];
+    }
 
     var markup = templateSource(data);
-    //console.log(template);
 
     if (!!options.destination) {
-      //var articleCount = $('.article').length;
-      //console.log("options.destination has something: " + options.destination);
       if (options.addType === 'append') {
         $(options.destination).append(markup);
       } else {
         $(options.destination).html(markup);
       }
-
       Hiof.articleScrollTo(options.destination);
-
     } else {
-      //console.log("options.destination is empty");
       $('#content').html(markup);
       var scrollDestEl = "#content";
       Hiof.articleScrollTo(scrollDestEl);
@@ -195,19 +147,13 @@
       async: true,
       dataType: 'json',
       data: settings,
-      contentType:contentType,  
-      //crossDomain: true,  // added in jQuery 1.5
-      //headers: {'Access-Control-Allow-Origin': '*'},
+      contentType:contentType,
       success: function(data) {
-        //console.log("Success: ");
-        //console.log(data);
-        alert("Data from Server: "+JSON.stringify(data));
+        //alert("Data from Server: "+JSON.stringify(data));
         Hiof.articleDisplayView(data, settings);
       },
       error: function(jqXHR, textStatus, errorThrown) {
-        alert("You can not send Cross Domain AJAX requests: " + errorThrown);
-        //console.log("Hiof.articleLoadData Error: ");
-        //console.dir(data);
+        //alert("You can not send Cross Domain AJAX requests: " + errorThrown);
       }
 
     });
