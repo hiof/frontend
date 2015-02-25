@@ -7,43 +7,48 @@
     var templateSource;
 
 
-    if ($('html.lt-ie10').length) {
-      console.log("Lower than IE10!");
-      var templateUrl;
-      if (options.template === 'single') {
-        templateUrl = 'http://staging2.hiof.no/assets/article-view/templates/articles/post-single.hbs';
-      } else {
-        templateUrl = 'http://staging2.hiof.no/assets/article-view/templates/articles/posts.hbs';
-      }
-
-
-      $.ajax({
-        url: templateUrl,
-        method: 'GET',
-        async: false,
-        crossDomain: true, // added in jQuery 1.5
-        //headers: {'Access-Control-Allow-Origin': '*'},
-        success: function(data) {
-          console.log("Template ajax Success: ");
-          //console.log("Success: ");
-          //console.log(data);
-          templateSource = data;
-        },
-        error: function(data) {
-          console.log("Template ajax error: ");
-          console.dir(data);
-        }
-
-      });
-
-
-    } else {
+    ///if ($('html.lt-ie10').length) {
+    ///  console.log("Lower than IE10!");
+    ///  var templateUrl;
+    ///  if (options.template === 'single') {
+    ///    templateUrl = 'http://staging2.hiof.no/assets/article-view/templates/articles/post-single.hbs';
+    ///  } else {
+    ///    templateUrl = 'http://staging2.hiof.no/assets/article-view/templates/articles/posts.hbs';
+    ///  }
+///
+    ///var contentType = "application/x-www-form-urlencoded; charset=utf-8";
+///
+    ///if (window.XDomainRequest) { //for IE8,IE9
+    ///  contentType = "text/plain";
+    ///}
+///
+    ///  $.ajax({
+    ///    url: templateUrl,
+    ///    method: 'GET',
+    ///    async: true,
+    ///    contentType:contentType,  
+    ///    //crossDomain: true, // added in jQuery 1.5
+    ///    //headers: {'Access-Control-Allow-Origin': '*'},
+    ///    success: function(data) {
+    ///      alert("Data from Server: "+JSON.stringify(data));
+    ///      //console.log("Success: ");
+    ///      //console.log(data);
+    ///      templateSource = data;
+    ///    },
+    ///    error: function(jqXHR, textStatus, errorThrown) {
+    ///      alert("You can not send Cross Domain AJAX requests: " + errorThrown);
+    ///    }
+///
+    ///  });
+///
+///
+    ///} else {
       if (options.template === 'single') {
         templateSource = Hiof.Templates['articles/post-single'];
       } else {
         templateSource = Hiof.Templates['articles/posts'];
       }
-    }
+    //}
 
     //console.log("Singleview = " + singleView);
 
