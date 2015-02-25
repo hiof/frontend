@@ -21,7 +21,7 @@
         url: templateUrl,
         method: 'GET',
         async: false,
-        crossDomain: true,  // added in jQuery 1.5
+        crossDomain: true, // added in jQuery 1.5
         //headers: {'Access-Control-Allow-Origin': '*'},
         success: function(data) {
           console.log("Template ajax Success: ");
@@ -178,22 +178,31 @@
     }, options);
 
 
+    var contentType = "application/x-www-form-urlencoded; charset=utf-8";
+
+    if (window.XDomainRequest) { //for IE8,IE9
+      contentType = "text/plain";
+    }
+
     $.ajax({
       url: 'http://hiof.no/api/v1/articles/',
       method: 'GET',
-      async: false,
+      async: true,
       dataType: 'json',
       data: settings,
-      crossDomain: true,  // added in jQuery 1.5
+      contentType:contentType,  
+      //crossDomain: true,  // added in jQuery 1.5
       //headers: {'Access-Control-Allow-Origin': '*'},
       success: function(data) {
         //console.log("Success: ");
         //console.log(data);
+        alert("Data from Server: "+JSON.stringify(data));
         Hiof.articleDisplayView(data, settings);
       },
-      error: function(data) {
-        console.log("Hiof.articleLoadData Error: ");
-        console.dir(data);
+      error: function(jqXHR, textStatus, errorThrown) {
+        alert("You can not send Cross Domain AJAX requests: " + errorThrown);
+        //console.log("Hiof.articleLoadData Error: ");
+        //console.dir(data);
       }
 
     });
