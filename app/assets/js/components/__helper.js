@@ -34,8 +34,6 @@
 
 
 
-
-
   // This is our "rescue" method.
   function notFound() {
     if ($('#studie').length) {
