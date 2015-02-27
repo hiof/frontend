@@ -334,7 +334,7 @@
       var url = $(this).attr("href");
       //e.preventDefault();
       // If the link is internal, prevent default behaviour 
-      if (url.indexOf("#") != -1) {
+      if (url.startsWith("#")) {
         //console.log("Url has a Hash");
         e.preventDefault();
         toggleInternalNavigation();
