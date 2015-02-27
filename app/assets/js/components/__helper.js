@@ -15,8 +15,12 @@
 
 
 
-
-
+  // Pollyfill for startsWith if it does not excist
+  if(!String.prototype.startsWith){
+      String.prototype.startsWith = function (str) {
+          return !this.indexOf(str);
+      };
+  }
 
 
 
