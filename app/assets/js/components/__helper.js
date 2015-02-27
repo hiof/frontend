@@ -12,9 +12,12 @@
 
 (function(Hiof, undefined) {
 
-
-
-
+  // Pollyfill for startsWith if it does not excist
+  if(!String.prototype.startsWith){
+      String.prototype.startsWith = function (str) {
+          return !this.indexOf(str);
+      };
+  }
 
 
   $.support.cors = true;
@@ -31,6 +34,8 @@
           result.push(options.fn(ary[i]));
       return result.join('');
   });
+
+
 
 
 
