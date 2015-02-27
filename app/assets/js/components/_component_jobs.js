@@ -22,6 +22,7 @@
         markup = templateSource(data);
 
     $('#content .outlet').append(markup);
+    $('#content .outlet table').footable();
   };
 
 
