@@ -5,18 +5,13 @@
     $.ajax({
       url: 'http://hiof.no/api/v1/jobs/',
       method: 'GET',
-      async: false,
+      async: true,
       dataType: 'json',
       //data: settings,
       success: function(data) {
-        //console.log("Success: ");
-        //console.log(data);
-        //Hiof.articleDisplayView(data, settings);
         appendJobs(data);
       },
       error: function(data) {
-        //console.log("Error: ");
-        //console.log(data);
       }
 
     });
@@ -27,6 +22,7 @@
         markup = templateSource(data);
 
     $('#content .outlet').append(markup);
+    $('#content .outlet table').footable();
   };
 
 

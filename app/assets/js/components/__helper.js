@@ -12,15 +12,32 @@
 
 (function(Hiof, undefined) {
 
-
-
-
   // Pollyfill for startsWith if it does not excist
   if(!String.prototype.startsWith){
       String.prototype.startsWith = function (str) {
           return !this.indexOf(str);
       };
   }
+
+
+  $.support.cors = true;
+
+
+
+
+  Handlebars.registerHelper('each_upto', function(ary, max, options) {
+      if(!ary || ary.length === 0)
+          return options.inverse(this);
+
+      var result = [ ];
+      for(var i = 0; i < max && i < ary.length; ++i)
+          result.push(options.fn(ary[i]));
+      return result.join('');
+  });
+
+
+
+
 
   // This is our "rescue" method.
   function notFound() {
