@@ -57,11 +57,18 @@ module.exports = function(config) {
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['qunit'],
-    plugins: ['karma-qunit'],
+    plugins: [
+        'karma-qunit',
+        'karma-chrome-launcher',
+        'karma-firefox-launcher',
+        'karma-jasmine',
+        'karma-phantomjs-launcher'
+    ],
 
     // list of files / patterns to load in the browser
     files: [
-      'tests/qunit/**/*.html',
+      'app/vendor/jquery/dist/jquery.js',
+      //'tests/qunit/**/*.html'
       'tests/qunit/*.js'
     ],
 
