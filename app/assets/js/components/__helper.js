@@ -24,7 +24,7 @@
 
 
 
-
+  // Handlebars helper
   Handlebars.registerHelper('each_upto', function(ary, max, options) {
       if(!ary || ary.length === 0)
           return options.inverse(this);
@@ -193,6 +193,9 @@
       };
 
     }
+
+
+    
   });
   //In this context, 'window' refers to the parameter
 
