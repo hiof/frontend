@@ -138,9 +138,17 @@
   };
 
   // Functionality to add a down-arrow to the vertical navigation
-  addDropdownIconToVerticalNavigation = function(el) {
+  addDropdownIconToVerticalNavigation = function(direction) {
+
+
+
+
     $(".dropdown-menu").siblings("a").each(function() {
-      $(this).toggleClass("icon-down");
+      if(direction === "down"){
+        $(this).toggleClass("icon-down");
+      }else{
+        $(this).toggleClass("icon-right");
+      }
     });
   };
 
@@ -259,9 +267,12 @@
 
       manipulateMarkupForStudyPageOnMobile();
 
-      addDropdownIconToVerticalNavigation();
+      addDropdownIconToVerticalNavigation("down");
 
-    } else {}
+    } else {
+
+      addDropdownIconToVerticalNavigation("right");
+    }
 
 
     if (Hiof.Options.distanceToTop > 0) {

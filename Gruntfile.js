@@ -380,9 +380,9 @@ module.exports = function(grunt) {
           //sourceMapStyle: 'inline'
         },
         src: [
-          //'app/vendor/60fps-scroll/dist/60fps-scroll.js', 
           //'app/vendor/jquery/dist/jquery.js', 
           'app/vendor/modernizr/modernizr.js', 
+          'app/vendor/jQuery-ajaxTransport-XDomainRequest/jquery.xdomainrequest.min.js', 
           'app/vendor/leaflet/dist/leaflet.js', 
           'app/vendor/footable/js/footable.js', 
           'app/vendor/footable/js/footable.paginate.js', 
