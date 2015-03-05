@@ -72,7 +72,7 @@
       if (windowWidth <= 420) {
         Hiof.coverGenerateMarkupVideoMobile();
       }
-    } else if (windowWidth <= 420) {
+    } else if ((windowWidth <= 420 && ((pageType === "homepage") || (pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible"))) ) {
       // Dont add a cover-photo on the smallest screens 
       Hiof.coverGenerateMarkupVideoMobile(pageType);
     } else if ((pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible")) {
