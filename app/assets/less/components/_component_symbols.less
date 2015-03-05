@@ -170,13 +170,14 @@
     margin-right: 1rem;
     background-position-y: 5px;
     // TODO: Implement transition between states
-    //transition: transform .1s linear;
+    transition: all .1s linear;
   }
   .footable-detail-show {
     .footable-toggle {
       transform: rotate(90deg);
-      background-position-y: 0px;
-      background-position-x: 6px;
+      transform-origin: 50%;
+      //background-position-y: 5px;
+      background-position-x: 8px;
     }
   }
 }
