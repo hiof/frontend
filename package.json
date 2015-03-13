@@ -1,5 +1,6 @@
 {
-  "name": "hiof-frontend",-beta.2",
+  "name": "hiof-frontend",
+  "version": "3.4.2",
   "author": "HiØ ved Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>",
   "repository": {
     "type": "git",
