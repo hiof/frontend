@@ -1,10 +1,6 @@
 {
   "name": "hiof-frontend",
-<<<<<<< HEAD
-  "version": "3.4.5",
-=======
-  "version": "3.5.0-beta.1",
->>>>>>> feature/animate-header
+  "version": "3.5.0-beta.2",
   "author": "HiØ ved Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>",
   "repository": {
     "type": "git",
