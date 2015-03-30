@@ -1,6 +1,10 @@
 {
   "name": "hiof-frontend",
+<<<<<<< HEAD
   "version": "3.4.5",
+=======
+  "version": "3.5.0-beta.1",
+>>>>>>> feature/animate-header
   "author": "HiØ ved Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>",
   "repository": {
     "type": "git",
@@ -26,7 +30,7 @@
     "grunt-contrib-jshint": "^0.9.2",
     "grunt-contrib-less": "^0.10.0",
     "grunt-contrib-uglify": "^0.4.0",
-    "grunt-contrib-watch": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
     "grunt-express": "^1.2.1",
     "grunt-lesslint": "^1.1.13",
     "grunt-open": "^0.2.3",
