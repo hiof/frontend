@@ -85,32 +85,38 @@
                 facebook = "Facebook",
                 twitter = "Twitter",
                 LinkedIn = "LinkedIn",
+                mail = "Mail",
                 sharePage;
 
             if (lang === "nor") {
-                sharePage = "Del på ";
+                sharePage = "Del side ";
             } else {
-                sharePage = "Share page on ";
+                sharePage = "Share page ";
             }
 
 
 
 
 
-            var socialMenu = '<button id="social-facebook" class="btn btn-primary btn-line" onclick="javascript:Hiof.shareFacebook()">' + sharePage + facebook + '</button>';
-            socialMenu += '<button id="social-twitter" class="btn btn-primary btn-line" onclick="javascript:Hiof.shareTwitter()">' + sharePage + twitter + '</button>';
-            socialMenu += '<button id="social-linkedin" class="btn btn-primary btn-line" onclick="javascript:Hiof.shareLinkedIn()">' + sharePage + LinkedIn + '</button>';
+            var socialMenu = '<div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">'+sharePage+' <span class="caret"></span></button>';
+            socialMenu += '<ul class="dropdown-menu" role="menu"><li><a href="#" id="social-facebook" class="">' + facebook + '</a></li>';
+            socialMenu += '<li><a href="#" id="social-twitter">' + twitter + '</a></li>';
+            socialMenu += '<li><a href="#" id="social-linkedin">' + LinkedIn + '</a></li>';
+            //socialMenu += '<li><a href="#" id="social-mail">' + mail + '</a></li></ul>';
+            socialMenu += '</div>';
 
             $("#toolbar").append(socialMenu);
 
-            svgFacebook = Hiof.getSvgIcon("facebook");
-            svgTwitter = Hiof.getSvgIcon("twitter");
-            svgLinkedIn = Hiof.getSvgIcon("linkedin");
             //console.log(svgFacebook);
             if (!$("html").hasClass("lt-ie10")) {
-                $("#social-facebook").html("").addClass("btn-icon").append(svgFacebook).prepend('<span class="helper-text">' + sharePage + facebook + '</span>');
-                $("#social-twitter").html("").addClass("btn-icon").append(svgTwitter).prepend('<span class="helper-text">' + sharePage + twitter + '</span>');
-                $("#social-linkedin").html("").addClass("btn-icon").append(svgLinkedIn).prepend('<span class="helper-text">' + sharePage + LinkedIn + '</span>');
+                var svgFacebook = Hiof.getSvgIcon("facebook"),
+                    svgTwitter = Hiof.getSvgIcon("twitter"),
+                    svgLinkedIn = Hiof.getSvgIcon("linkedin");
+                    //svgMail = Hiof.getSvgIcon("mail");
+                $("#social-facebook").html("").append(svgFacebook).prepend('<span class="helper-text">' + facebook + '</span>');
+                $("#social-twitter").html("").append(svgTwitter).prepend('<span class="helper-text">' + twitter + '</span>');
+                $("#social-linkedin").html("").append(svgLinkedIn).prepend('<span class="helper-text">' + LinkedIn + '</span>');
+                //$("#social-mail").html("").append(svgMail).prepend('<span class="helper-text">' + mail + '</span>');
             }
 
             //$("#social-twitter").append(svgTwitter);
@@ -118,11 +124,11 @@
     };
 
     // Execute functions
-    $(function(){
-      // Append toolbar
-      //console.log("Dette er en test");
-      Hiof.pageFooterToolbar();
-      Hiof.pageFooterToolbarShare();
-      Hiof.pageFooterToolbarPrint();
+    $(function() {
+        // Append toolbar
+        //console.log("Dette er en test");
+        Hiof.pageFooterToolbar();
+        Hiof.pageFooterToolbarShare();
+        Hiof.pageFooterToolbarPrint();
     });
 })(window.Hiof = window.Hiof || {});
