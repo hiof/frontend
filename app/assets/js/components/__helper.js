@@ -166,6 +166,30 @@
 		return re.test(email);
 	};
 
+	getHostname = function(url) {
+		//debug('URL: ' + url);
+		var pattern = /^(http|https)/;
+		if (pattern.test(url)) {
+			//debug("url starts with http|https");
+			var m = url.match(/^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/);
+
+			return m[1]+':'+m[2]+m[3];
+		}else{return;}
+		//if (url  != null) {
+		//			var link = url.match(/^(([a-z]+:)?(\/\/)?[^\/]+\/).*$/);
+		//			debug(link[0]);
+		//}else{return;}
+
+
+
+
+				//result = parts[0]+':'+parts[2]+parts[3]+'/' ;
+
+		//return result;
+    //var m = url.match(/^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/);
+    //return m ? m[0] : null;
+	};
+
 	$(function() {
 		// Set the footable.filterFunction to use regex on the #studie page
 		if ($('#studie').length) {
@@ -211,6 +235,8 @@
 	window.Hiof.getSvgIcon = getSvgIcon;
 	window.debug = debug;
 	window.Hiof.validateEmail = validateEmail;
+	window.Hiof.getHostname = getHostname;
+
 
 
 })(window.Hiof = window.Hiof || {});
