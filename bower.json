@@ -1,6 +1,6 @@
 {
   "name": "Hiof-frontend",
-  "version": "3.5.0-beta.4",
+  "version": "3.5.0-beta.5",
   "homepage": "https://github.com/hiof/frontend",
   "authors": [
     "Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>"
@@ -20,6 +20,7 @@
     "pathjs": "https://github.com/mtrpcic/pathjs.git",
     "leaflet": "~0.7.3",
     "picturefill": "~2.1.0",
-    "jQuery-ajaxTransport-XDomainRequest": "https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest.git"
+    "jQuery-ajaxTransport-XDomainRequest": "https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest.git",
+    "detectjs": "https://github.com/darcyclarke/Detect.js.git"
   }
 }
