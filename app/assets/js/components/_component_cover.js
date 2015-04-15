@@ -69,11 +69,11 @@
     if ((windowWidth <= 770) && (pageType === "homepage")) {
       // Add HiØ logo as the cover photo on Index
       Hiof.coverGenerateMarkupBranding();
-      if (windowWidth <= 420) {
+      if (windowWidth <= 420 && ((pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible"))) {
         Hiof.coverGenerateMarkupVideoMobile();
       }
     } else if ((windowWidth <= 420 && ((pageType === "homepage") || (pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible"))) ) {
-      // Dont add a cover-photo on the smallest screens 
+      // Dont add a cover-photo on the smallest screens
       Hiof.coverGenerateMarkupVideoMobile(pageType);
     } else if ((pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible")) {
       Hiof.coverGetVideo(pageType);
@@ -277,9 +277,9 @@
 
 
     //console.log($('.cover-video').height());
-    //var video = '<video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0"> 
-    //                <source src="videos/splash.webm" type="video/webm"> 
-    //                <source src="videos/splash.mp4" type="video/mp4"> 
+    //var video = '<video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+    //                <source src="videos/splash.webm" type="video/webm">
+    //                <source src="videos/splash.mp4" type="video/mp4">
     //                Video not supported </video>';
 
 
