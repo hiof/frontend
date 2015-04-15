@@ -8,7 +8,7 @@
     position: relative;
     margin-bottom: 8rem;
     padding-bottom: 6rem;
-    .lo-full{
+    .lo-full {
       margin-bottom: 0;
     }
     > header {
@@ -110,7 +110,6 @@
       }
     }
   }
-
   .lang-en.index {
     // Override to fix a spacing issue when the index hero-layout is combined
     // with normal page content
@@ -126,7 +125,7 @@
   //  padding-right: 3rem;
   //  &:after{
   //    content: "";
-  //  
+  //
   //    width: 1.6rem;
   //    height: 1.6rem;
   //    //background: url(../images/icons/cross.svg) no-repeat;
@@ -138,7 +137,8 @@
   //
   //  }
   //}
-  #research, #news {
+  #research,
+  #news {
     margin-bottom: 4rem;
     > header {
       position: relative;
@@ -191,7 +191,9 @@
       }
     }
   }
-  .study {} .study-course {} .study-course-facts {
+  .study {}
+  .study-course {}
+  .study-course-facts {
     float: right;
     padding-left: 3rem !important;
     padding-bottom: 2rem !important;
@@ -200,8 +202,8 @@
     border-radius: .4rem;
     margin: 2rem;
   }
-  .study-course-facts{
-    .study-plan-model-link{
+  .study-course-facts {
+    .study-plan-model-link {
       width: 90%;
       margin-bottom: 2rem;
     }
@@ -276,7 +278,8 @@
       font-size: 1px;
       background-color: green;
     }
-    .sp_space {} .sp_stripple {
+    .sp_space {}
+    .sp_stripple {
       height: 2px;
     }
     .sp_stripple td {
@@ -313,7 +316,10 @@
       color: #000000;
       text-decoration: underline;
     }
-    a.sp_link:link {} a.sp_link:visited {} a.sp_link:active {} a.sp_link:hover {
+    a.sp_link:link {}
+    a.sp_link:visited {}
+    a.sp_link:active {}
+    a.sp_link:hover {
       //background-color: #FFE7A5;
       text-decoration: none;
       color: @color-primary-action;
@@ -333,7 +339,7 @@
           background-color : #336699;
           color : #FFFFFF;
           */
-      
+
       font-size: 12px;
       font-weight: bold;
     }
@@ -348,10 +354,11 @@
       }
     }
   }
-  .studieinfo_displayHeadlinesOnly{
+  .studieinfo_displayHeadlinesOnly {
     float: left;
   }
 }
+
 .small() {
   [data-page-category="study"] {
     .footable-first-column {
@@ -377,58 +384,52 @@
     //width: 100%;
     //margin-left: -20px;
     //margin-right: -20px;
-     position:relative;
-    overflow:hidden; 
-    border-top:1px solid #ddd;
-    border-bottom:1px solid #ddd; 
-
-      &:before {
-        content: ""; 
-        position:absolute; 
-        z-index: 1; 
-        width:96%;  
-        top: -10px; 
-        height: 10px; 
-        left: 2%; 
-        border-radius: 100px / 5px; 
-        box-shadow:0 0 18px rgba(0,0,0,0.6); 
-      }
-      &:after {
-        content: "";
-        position:absolute;
-        z-index: 1;
-        width:96%; 
-        bottom: -10px;
-        height: 10px;
-        left: 2%;
-        border-radius: 100px / 5px;
-        box-shadow:0 0 18px rgba(0,0,0,0.6);
-      }
-    
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      width: 96%;
+      top: -10px;
+      height: 10px;
+      left: 2%;
+      border-radius: 100px / 5px;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.6);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      width: 96%;
+      bottom: -10px;
+      height: 10px;
+      left: 2%;
+      border-radius: 100px / 5px;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.6);
+    }
   }
 }
+
 .medium() {
   .cover {
     #study {
-      margin-top: -50rem;
+      //margin-top: -50rem;
     }
-
-
+    [data-page-category='hero'] {}
     [data-page-category='hero'],
     [data-page-category='bachelor'],
     [data-page-category='master'],
-    [data-page-category='flexible']{
-      #study{
-
+    [data-page-category='flexible'] {
+      #study {
         margin-top: -32rem;
       }
-      
     }
-
-
   }
-
 }
+
 .large() {
   .cover {
     #study {
