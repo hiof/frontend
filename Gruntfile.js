@@ -398,7 +398,7 @@ module.exports = function(grunt) {
           'app/vendor/jquery.scrollTo/jquery.scrollTo.js',
           'app/vendor/slideout/slideout-navigation.js',
           'app/vendor/picturefill/dist/picturefill.min.js',
-          'app/vendor/detectjs/builds/1.0.0/detect.min.js',
+          'app/vendor/detectjs/detect.min.js',
           'app/assets/js/templates/*.js',
           'app/assets/js/components/*.js',
           'app/assets/js/*.js'

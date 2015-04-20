@@ -197,28 +197,28 @@
     var ua = detect.parse(navigator.userAgent);
 
 
-      if (ua.browser) {
-        var browserVersionMajor,
-          browserVersionMinor,
-          browserVersionPatch;
-        if (ua.browser.major) {
-          browserVersionMajor = ua.browser.major;
-        } else {
-          browserVersionMajor = '0';
-        }
-        if (ua.browser.minor) {
-          browserVersionMinor = ua.browser.minor;
-        } else {
-          browserVersionMinor = '0';
-        }
-        if (ua.browser.patch) {
-          browserVersionPatch = ua.browser.patch;
-        } else {
-          browserVersionPatch = '0';
-        }
-
-        browserVersion = browserVersionMajor + '.' + browserVersionMinor + '.' + browserVersionPatch;
+    if (ua.browser) {
+      var browserVersionMajor,
+        browserVersionMinor,
+        browserVersionPatch;
+      if (ua.browser.major) {
+        browserVersionMajor = ua.browser.major;
+      } else {
+        browserVersionMajor = '0';
       }
+      if (ua.browser.minor) {
+        browserVersionMinor = ua.browser.minor;
+      } else {
+        browserVersionMinor = '0';
+      }
+      if (ua.browser.patch) {
+        browserVersionPatch = ua.browser.patch;
+      } else {
+        browserVersionPatch = '0';
+      }
+
+      browserVersion = browserVersionMajor + '.' + browserVersionMinor + '.' + browserVersionPatch;
+    }
 
 
     if (ua.os) {
@@ -253,7 +253,6 @@
     options.client.browserVersion = browserVersion;
     options.client.viewportWidth = window.innerWidth;
     options.client.viewportHeight = window.innerHeight;
-
 
   };
 

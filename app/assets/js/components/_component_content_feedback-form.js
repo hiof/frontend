@@ -20,8 +20,8 @@
       myData.clientViewportWidth = clientOptions.viewportWidth;
       myData.clientViewportHeight = clientOptions.viewportHeight;
 
-      appendFeedbackForm(myData);
 
+      appendFeedbackForm(myData);
     });
     //return feedbackForm;
   };
@@ -57,8 +57,7 @@
         },
         success: function(data, textStatus, jqXHR) {
           //data - response from server
-          //debug(data);
-
+          //debug('success:' + data);
           $('.feedback-form').slideToggle();
           $('.feedback-form-success').slideToggle();
         },
@@ -70,11 +69,6 @@
 
         }
       });
-      //debug(formHeight);
-
-
-      //debug(formData);
-
 
 
     });
