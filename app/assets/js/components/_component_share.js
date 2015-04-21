@@ -23,7 +23,7 @@
 				var lang = Hiof.languageCheck(),
 						source;
 
-						if (lang === "nor") {
+						if (lang === "nb") {
 								source = "Høgskolen i Østfold";
 						} else {
 								source = "Østfold University College";
@@ -117,7 +117,7 @@
 				//});
 				$('body').on('blur', '#share-email-addresses', function(e){
 					e.preventDefault();
-					debug("Focus is happening...");
+					//debug("Focus is happening...");
 					var emailInput = $('#share-email-addresses'),
 							emailInputParent = emailInput.parents('.form-group'),
 							shareEmailSend = $('#share-email-send');

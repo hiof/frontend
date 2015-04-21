@@ -17,8 +17,8 @@
 
 						var lang = Hiof.languageCheck(),
 								shareText;
-
-						if (lang === "nor") {
+						//console.log(lang);
+						if (lang === "nb") {
 								shareText = "Del eller skriv ut denne siden";
 						} else {
 								shareText = "Share or print this page";
@@ -55,7 +55,7 @@
 								printText,
 								printThisPage;
 
-						if (lang === "nor") {
+						if (lang === "nb") {
 								printText = "Print";
 								printThisPage = "Print denne siden";
 						} else {
@@ -88,7 +88,7 @@
 								mail = "Mail",
 								sharePage;
 
-						if (lang === "nor") {
+						if (lang === "nb") {
 								sharePage = "Del side ";
 						} else {
 								sharePage = "Share page ";
