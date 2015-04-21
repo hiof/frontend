@@ -1,0 +1,40 @@
+{
+  "nb": {
+    "feedback-form": {
+      "title": "Fant du det du lette etter?",
+      "labelOption1": "Ja",
+      "labelOption2": "Nei",
+      "labelLookingfor": "Hva lette du etter?",
+      "labelSubmit": "Svar",
+      "language": "nb",
+      "formCompleteTitle": "Tilbakemelding sendt",
+      "formCompleteContent": "<p>Takk for at du tok deg tid til å gi oss tilbakemelding.</p>"
+    }
+  },
+  "nn": {
+    "feedback-form": {
+      "title": "Fant du det du lette etter?",
+      "labelOption1": "Ja",
+      "labelOption2": "Nei",
+      "labelLookingfor": "Hva lette du etter?",
+      "labelSubmit": "Svar",
+      "language": "nn",
+      "formCompleteTitle": "Tilbakemelding sendt",
+      "formCompleteContent": "<p>Takk for at du tok deg tid til å gi oss tilbakemelding.</p>"
+    }
+  },
+  "en": {
+    "feedback-form": {
+      "title": "Did you find what you were looking for?",
+      "labelOption1": "Yes",
+      "labelOption2": "No",
+      "labelLookingfor": "What were you looking for?",
+      "labelSubmit": "Answer",
+      "language": "en",
+      "formCompleteTitle": "Request sent",
+      "formCompleteContent": "<p>Thank you for </p>"
+
+    }
+
+  }
+}

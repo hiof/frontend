@@ -1,15 +1,29 @@
 // Defualt namespace
-var Hiof = Hiof || {};
+(function(Hiof, undefined) {
 
 
 
 
-Hiof.Options = {
-  distanceToTop: $(window).scrollTop(),
-  windowWidth: $(window).width(),
-  distanceToTopBreakPoint: 0,
-  distanceToSidebarSticky: 0,
-  navigationBreakpoint: 770,
-  contentHeight: $("#main").outerHeight(),
-  language: Hiof.languageGetUrlParameter("lang")
-};
+  options = {
+    distanceToTop: $(window).scrollTop(),
+    windowWidth: $(window).width(),
+    distanceToTopBreakPoint: 0,
+    distanceToSidebarSticky: 0,
+    navigationBreakpoint: 770,
+    contentHeight: $("#main").outerHeight(),
+    language: $("html").attr('lang')
+  };
+
+
+
+  window.Hiof.Options = options;
+  window.Hiof.options = options;
+
+
+  // Setup client informaton
+  setupClientInformationInOptions();
+
+
+
+
+})(window.Hiof = window.Hiof || {});

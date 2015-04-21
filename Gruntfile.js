@@ -380,25 +380,27 @@ module.exports = function(grunt) {
           //sourceMapStyle: 'inline'
         },
         src: [
-          //'app/vendor/jquery/dist/jquery.js', 
-          'app/vendor/modernizr/modernizr.js', 
-          'app/vendor/jQuery-ajaxTransport-XDomainRequest/jquery.xdomainrequest.min.js', 
-          'app/vendor/leaflet/dist/leaflet.js', 
-          'app/vendor/footable/js/footable.js', 
-          'app/vendor/footable/js/footable.paginate.js', 
-          'app/vendor/footable/js/footable.filter.js', 
-          'app/vendor/footable/js/footable.sort.js', 
+          //'app/vendor/jquery/dist/jquery.js',
+          'app/vendor/modernizr/modernizr.js',
+          'app/vendor/jQuery-ajaxTransport-XDomainRequest/jquery.xdomainrequest.min.js',
+          'app/vendor/leaflet/dist/leaflet.js',
+          'app/vendor/footable/js/footable.js',
+          'app/vendor/footable/js/footable.paginate.js',
+          'app/vendor/footable/js/footable.filter.js',
+          'app/vendor/footable/js/footable.sort.js',
           'app/vendor/footable/js/footable.striping.js',
           'app/vendor/bootstrap/js/modal.js',
-          'app/vendor/bootstrap/js/dropdown.js', 
+          'app/vendor/bootstrap/js/dropdown.js',
+          'app/vendor/bootstrap/js/tooltip.js',
           'app/vendor/jquery-cookie/jquery.cookie.js',
           'app/vendor/pathjs/path.js',
           'app/vendor/handlebars/handlebars.js',
-          'app/vendor/jquery.scrollTo/jquery.scrollTo.js', 
+          'app/vendor/jquery.scrollTo/jquery.scrollTo.js',
           'app/vendor/slideout/slideout-navigation.js',
           'app/vendor/picturefill/dist/picturefill.min.js',
-          'app/assets/js/templates/*.js', 
-          'app/assets/js/components/*.js', 
+          'app/vendor/detectjs/detect.min.js',
+          'app/assets/js/templates/*.js',
+          'app/assets/js/components/*.js',
           'app/assets/js/*.js'
         ],
         dest: 'tmp/js/application.min.js'
@@ -442,7 +444,7 @@ module.exports = function(grunt) {
             assets: [{
               src: 'tmp/css/minified/theme-standard.min.css',
               dest: 'tmp/css/minified/theme-standard.min.css'
-            }, 
+            },
             {
              src: 'tmp/css/minified/theme-standard-canvas.min.css',
              dest: 'tmp/css/minified/theme-standard-canvas.min.css'
@@ -477,7 +479,7 @@ module.exports = function(grunt) {
             assets: [{
               src: 'tmp/css/minified/theme-standard.min.css',
               dest: 'tmp/css/minified/theme-standard.min.css'
-            }, 
+            },
             {
              src: 'tmp/css/minified/theme-standard-canvas.min.css',
              dest: 'tmp/css/minified/theme-standard-canvas.min.css'
@@ -513,7 +515,7 @@ module.exports = function(grunt) {
             assets: [{
               src: 'tmp/css/minified/theme-standard.min.css',
               dest: 'tmp/css/minified/theme-standard.min.css'
-            }, 
+            },
             {
              src: 'tmp/css/minified/theme-standard-canvas.min.css',
              dest: 'tmp/css/minified/theme-standard-canvas.min.css'
@@ -546,7 +548,7 @@ module.exports = function(grunt) {
           showProgress: true,
           createDirectories: true,
           directoryPermissions: parseInt(755, 8)
-        }        
+        }
       },
       prod: {
         files: {
@@ -584,7 +586,7 @@ module.exports = function(grunt) {
         }
       }
     },
- 
+
     open: {
       all: {
         path: 'http://localhost:<%= express.all.options.port%>'
@@ -603,7 +605,7 @@ module.exports = function(grunt) {
       }
     },
 
-    watch: {      
+    watch: {
       tests: {
         files: ['tests/**/*'],
         tasks: ['copy:tests', 'qunit'],
@@ -685,26 +687,26 @@ module.exports = function(grunt) {
 
   // Deploy tasks
   grunt.registerTask('deploy-stage', [
-                                        'clean:build', 
-                                        'subtaskCss', 
-                                        'subtaskJs', 
-                                        'versioning:deploy', 
-                                        'subtaskCopyDeploy', 
-                                        'subtaskViews', 
-                                        'clean:deploy', 
-                                        'copy:deploy', 
+                                        'clean:build',
+                                        'subtaskCss',
+                                        'subtaskJs',
+                                        'versioning:deploy',
+                                        'subtaskCopyDeploy',
+                                        'subtaskViews',
+                                        'clean:deploy',
+                                        'copy:deploy',
                                         'sftp:stage'
                                       ]);
 
   grunt.registerTask('deploy-prod', [
-                                      'clean:build', 
-                                      'subtaskCss', 
-                                      'subtaskJs', 
-                                      'versioning:deploy', 
-                                      'subtaskCopyDeploy', 
-                                      'subtaskViews', 
-                                      'clean:deploy', 
-                                      'copy:deploy', 
+                                      'clean:build',
+                                      'subtaskCss',
+                                      'subtaskJs',
+                                      'versioning:deploy',
+                                      'subtaskCopyDeploy',
+                                      'subtaskViews',
+                                      'clean:deploy',
+                                      'copy:deploy',
                                       'sftp:prod'
                                     ]);
 

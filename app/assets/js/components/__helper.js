@@ -13,10 +13,10 @@
 (function(Hiof, undefined) {
 
   // Pollyfill for startsWith if it does not excist
-  if(!String.prototype.startsWith){
-      String.prototype.startsWith = function (str) {
-          return !this.indexOf(str);
-      };
+  if (!String.prototype.startsWith) {
+    String.prototype.startsWith = function(str) {
+      return !this.indexOf(str);
+    };
   }
 
 
@@ -26,13 +26,13 @@
 
   // Handlebars helper
   Handlebars.registerHelper('each_upto', function(ary, max, options) {
-      if(!ary || ary.length === 0)
-          return options.inverse(this);
+    if (!ary || ary.length === 0)
+      return options.inverse(this);
 
-      var result = [ ];
-      for(var i = 0; i < max && i < ary.length; ++i)
-          result.push(options.fn(ary[i]));
-      return result.join('');
+    var result = [];
+    for (var i = 0; i < max && i < ary.length; ++i)
+      result.push(options.fn(ary[i]));
+    return result.join('');
   });
 
 
@@ -161,7 +161,100 @@
     console.log(value);
   };
 
+  validateEmail = function(email) {
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    return re.test(email);
+  };
 
+  getHostname = function(url) {
+    //debug('URL: ' + url);
+    var pattern = /^(http|https)/;
+    if (pattern.test(url)) {
+      //debug("url starts with http|https");
+      var m = url.match(/^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/);
+
+      return m[1] + ':' + m[2] + m[3];
+    } else {
+      return;
+    }
+    //if (url  != null) {
+    //			var link = url.match(/^(([a-z]+:)?(\/\/)?[^\/]+\/).*$/);
+    //			debug(link[0]);
+    //}else{return;}
+
+
+
+
+    //result = parts[0]+':'+parts[2]+parts[3]+'/' ;
+
+    //return result;
+    //var m = url.match(/^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/);
+    //return m ? m[0] : null;
+  };
+
+
+  setupClientInformationInOptions = function() {
+    var ua = detect.parse(navigator.userAgent);
+
+
+    if (ua.browser) {
+      var browserVersionMajor,
+        browserVersionMinor,
+        browserVersionPatch;
+      if (ua.browser.major) {
+        browserVersionMajor = ua.browser.major;
+      } else {
+        browserVersionMajor = '0';
+      }
+      if (ua.browser.minor) {
+        browserVersionMinor = ua.browser.minor;
+      } else {
+        browserVersionMinor = '0';
+      }
+      if (ua.browser.patch) {
+        browserVersionPatch = ua.browser.patch;
+      } else {
+        browserVersionPatch = '0';
+      }
+
+      browserVersion = browserVersionMajor + '.' + browserVersionMinor + '.' + browserVersionPatch;
+    }
+
+
+    if (ua.os) {
+      var osVersionMajor,
+        osVersionMinor,
+        osVersionPatch;
+      if (ua.os.major) {
+        osVersionMajor = ua.os.major;
+      } else {
+        osVersionMajor = '0';
+      }
+      if (ua.os.minor) {
+        osVersionMinor = ua.os.minor;
+      } else {
+        osVersionMinor = '0';
+      }
+      if (ua.os.patch) {
+        osVersionPatch = ua.os.patch;
+      } else {
+        osVersionPatch = '0';
+      }
+
+      osVersion = osVersionMajor + '.' + osVersionMinor + '.' + osVersionPatch;
+    }
+
+
+    options.client = {};
+    options.client.url = window.location.href;
+    options.client.osName = ua.os.family;
+    options.client.osVersion = osVersion;
+    options.client.browserName = ua.browser.family;
+    options.client.browserVersion = browserVersion;
+    options.client.viewportWidth = window.innerWidth;
+    options.client.viewportHeight = window.innerHeight;
+
+  };
 
   $(function() {
     // Set the footable.filterFunction to use regex on the #studie page
@@ -195,8 +288,10 @@
     }
 
 
-    
+
   });
+
+
   //In this context, 'window' refers to the parameter
 
   window.Hiof.languageCheck = languageCheck;
@@ -205,6 +300,9 @@
   window.Hiof.createModal = createModal;
   window.Hiof.getSvgIcon = getSvgIcon;
   window.debug = debug;
+  window.Hiof.validateEmail = validateEmail;
+  window.Hiof.getHostname = getHostname;
+
 
 
 })(window.Hiof = window.Hiof || {});
