@@ -40,7 +40,7 @@
 
       var lang = $('html').attr('lang');
 
-      //setupFeedbackForm(lang);
+      setupFeedbackForm(lang);
 
     }
 

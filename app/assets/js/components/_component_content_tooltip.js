@@ -28,11 +28,11 @@
 		});
 
 	};
-	//addTooltipToContentLinks();
+	addTooltipToContentLinks();
 
 	$(function() {
 		// Run the bootstrap tooltip function
-		//$('[data-toggle="tooltip"]').tooltip();
+		$('[data-toggle="tooltip"]').tooltip();
 	});
 
 })(window.Hiof = window.Hiof || {});

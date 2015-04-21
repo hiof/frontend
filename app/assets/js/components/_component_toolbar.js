@@ -65,7 +65,7 @@
 
 
 
-						var button = '<button id="print-page" class="btn btn-primary btn-line" onclick="javascript:window.print()" title="' + printThisPage + '">' + printThisPage + '</button>';
+						var button = '<button id="print-page" class="btn btn-default btn-line" onclick="javascript:window.print()" title="' + printThisPage + '">' + printThisPage + '</button>';
 						$("#toolbar").append(button);
 						svgPrint = Hiof.getSvgIcon("print");
 						//console.log(svgFacebook);
