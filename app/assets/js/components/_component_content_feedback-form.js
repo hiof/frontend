@@ -44,13 +44,11 @@
 
     }
 
+
     $('body').on('submit', '.feedback-form', function(e) {
       e.preventDefault();
 
-      if (!$("input[name='feedbackFoundCorrectContent']:checked").val()) {
-        //alert('Nothing is checked!');
-        return false;
-      } else {
+
 
         var formData = $('.feedback-form').serialize();
         $.ajax({
@@ -75,7 +73,7 @@
           }
         });
 
-      }
+
     });
 
   });
