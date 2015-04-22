@@ -48,30 +48,28 @@
     $('body').on('submit', '.feedback-form', function(e) {
       e.preventDefault();
 
+      var formData = $('.feedback-form').serialize();
+      $.ajax({
+        url: "http://hiof.no/api/v1/feedback/",
+        type: "POST",
+        data: formData,
+        beforeSend: function() {
+          $('.feedback-form fieldset').attr('disabled', 'disabled');
+        },
+        success: function(data, textStatus, jqXHR) {
+          //data - response from server
+          //debug('success:' + data);
+          $('.feedback-form').slideToggle();
+          $('.feedback-form-success').slideToggle();
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          $('.feedback-form fieldset').prop('disabled', false);
+          //data - response from server
+          //debug('error: ' + jqXHR + textStatus + errorThrown);
+          //debug(textStatus);
 
-
-        var formData = $('.feedback-form').serialize();
-        $.ajax({
-          url: "http://hiof.no/api/v1/feedback/",
-          type: "POST",
-          data: formData,
-          beforeSend: function() {
-            $('.feedback-form fieldset').attr('disabled', 'disabled');
-          },
-          success: function(data, textStatus, jqXHR) {
-            //data - response from server
-            //debug('success:' + data);
-            $('.feedback-form').slideToggle();
-            $('.feedback-form-success').slideToggle();
-          },
-          error: function(jqXHR, textStatus, errorThrown) {
-            $('.feedback-form fieldset').prop('disabled', false);
-            //data - response from server
-            //debug('error: ' + jqXHR + textStatus + errorThrown);
-            //debug(textStatus);
-
-          }
-        });
+        }
+      });
 
 
     });
