@@ -47,6 +47,7 @@
 
     $('body').on('submit', '.feedback-form', function(e) {
       e.preventDefault();
+
       var formData = $('.feedback-form').serialize();
       $.ajax({
         url: "http://hiof.no/api/v1/feedback/",
