@@ -21,8 +21,8 @@
 
 
   // Setup client informaton
-  setupClientInformationInOptions();
-  setupi18n();
+  Hiof.setupClientInformationInOptions();
+  Hiof.setupi18n();
 
 
 })(window.Hiof = window.Hiof || {});
