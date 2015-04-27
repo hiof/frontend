@@ -9,6 +9,12 @@
       "language": "nb",
       "formCompleteTitle": "Tilbakemelding sendt",
       "formCompleteContent": "<p>Takk for at du tok deg tid til å gi oss tilbakemelding.</p>"
+    },
+    "jobs": {
+      "title": "Stillingstittel",
+      "deadline": "Søknadsfrist",
+      "description": "Beskrivelse",
+      "readmore": "mer info"
     }
   },
   "nn": {
@@ -34,7 +40,12 @@
       "formCompleteTitle": "Request sent",
       "formCompleteContent": "<p>Thank you for </p>"
 
+    },
+    "jobs": {
+      "title": "Job title",
+      "deadline": "Deadline",
+      "description": "Description",
+      "readmore": "moreNorwegian info"
     }
-
   }
 }

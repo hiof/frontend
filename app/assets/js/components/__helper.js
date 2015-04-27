@@ -1,15 +1,3 @@
-//var Hiof = Hiof || {};
-//
-//Hiof.Helper = {};
-//
-//Hiof.Helper.getUrlParameterByName = function(name) {
-//  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-//  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-//    results = regex.exec(location.search);
-//  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-//};
-
-
 (function(Hiof, undefined) {
 
   // Pollyfill for startsWith if it does not excist
@@ -256,6 +244,17 @@
 
   };
 
+  setupi18n = function() {
+    $.ajax({
+      dataType: "json",
+      url: "/assets/js/data/i18n.json",
+      async: false,
+      success: function(data) {
+        Hiof.options.i18n = data;
+      }
+    });
+  };
+
   $(function() {
     // Set the footable.filterFunction to use regex on the #studie page
     if ($('#studie').length) {
@@ -302,6 +301,8 @@
   window.debug = debug;
   window.Hiof.validateEmail = validateEmail;
   window.Hiof.getHostname = getHostname;
+  window.Hiof.setupClientInformationInOptions = setupClientInformationInOptions;
+  window.Hiof.setupi18n = setupi18n;
 
 
 
