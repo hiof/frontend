@@ -22,8 +22,7 @@
 
   // Setup client informaton
   setupClientInformationInOptions();
-
-
+  setupi18n();
 
 
 })(window.Hiof = window.Hiof || {});

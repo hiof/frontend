@@ -256,6 +256,17 @@
 
   };
 
+  setupi18n = function() {
+    $.ajax({
+      dataType: "json",
+      url: "/assets/js/data/i18n.json",
+      async: false,
+      success: function(data) {
+        Hiof.options.i18n = data;
+      }
+    });
+  };
+
   $(function() {
     // Set the footable.filterFunction to use regex on the #studie page
     if ($('#studie').length) {
