@@ -12,6 +12,7 @@
 
 
 
+
   // Handlebars helper
   Handlebars.registerHelper('each_upto', function(ary, max, options) {
     if (!ary || ary.length === 0)
@@ -24,6 +25,10 @@
   });
 
 
+  Handlebars.registerHelper('trimString70', function(passedString) {
+    var theString = passedString.substring(0, 70);
+    return new Handlebars.SafeString(theString) + "...";
+  });
 
 
 
