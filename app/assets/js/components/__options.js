@@ -7,6 +7,7 @@
   options = {
     distanceToTop: $(window).scrollTop(),
     windowWidth: $(window).width(),
+    windowHeight: $(window).height(),
     distanceToTopBreakPoint: 0,
     distanceToSidebarSticky: 0,
     navigationBreakpoint: 770,
