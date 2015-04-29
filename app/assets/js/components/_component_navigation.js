@@ -6,7 +6,7 @@
   Hiof.Navigation = {};
 
 
-  // This page use slideout-navigation functions from 
+  // This page use slideout-navigation functions from
   // the slideout vendor plugin (defined in bower.json)
 
 
@@ -144,9 +144,9 @@
 
 
     $(".dropdown-menu").siblings("a").each(function() {
-      if(direction === "down"){
+      if (direction === "down") {
         $(this).toggleClass("icon-down");
-      }else{
+      } else {
         $(this).toggleClass("icon-right");
       }
     });
@@ -172,6 +172,8 @@
         });
       }
 
+      $('#nav-pages').css('height', Hiof.options.windowHeight + 'px');
+
     } else {
       if ($("li[data-temp]", el).length) {
         //console.log("Removing all elements with data-temp");
@@ -180,6 +182,10 @@
 
       }
     }
+
+
+
+
   };
 
 
@@ -344,7 +350,7 @@
     $("#nav-page").on("click", "a", function(e) {
       var url = $(this).attr("href");
       //e.preventDefault();
-      // If the link is internal, prevent default behaviour 
+      // If the link is internal, prevent default behaviour
       if (url.startsWith("#")) {
         //console.log("Url has a Hash");
         e.preventDefault();
