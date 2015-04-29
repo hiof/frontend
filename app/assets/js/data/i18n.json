@@ -27,6 +27,12 @@
       "language": "nn",
       "formCompleteTitle": "Tilbakemelding sendt",
       "formCompleteContent": "<p>Takk for at du tok deg tid til å gi oss tilbakemelding.</p>"
+    },
+    "jobs": {
+      "title": "Stillingstittel",
+      "deadline": "Søknadsfrist",
+      "description": "Beskriving",
+      "readmore": "Meir informasjon"
     }
   },
   "en": {
