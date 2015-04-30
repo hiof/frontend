@@ -443,7 +443,7 @@ module.exports = function(grunt) {
             key: 'assets',
             dest: 'js',
             type: 'js',
-            ext: '.min.js'
+            ext: '.v<%= pkg.version %>.min.js'
           },
 
           {
@@ -462,7 +462,7 @@ module.exports = function(grunt) {
             key: 'assets',
             dest: 'css',
             type: 'css',
-            ext: '.min.css'
+            ext: '.v<%= pkg.version %>.min.css'
           }
         ]
       },
@@ -478,7 +478,7 @@ module.exports = function(grunt) {
             key: 'assets',
             dest: 'js',
             type: 'js',
-            ext: '.min.js'
+            ext: '.v<%= pkg.version %>.min.js'
           },
 
           {
@@ -497,7 +497,7 @@ module.exports = function(grunt) {
             key: 'assets',
             dest: 'css',
             type: 'css',
-            ext: '.min.css'
+            ext: '.v<%= pkg.version %>.min.css'
           }
         ]
       },
@@ -514,7 +514,7 @@ module.exports = function(grunt) {
             key: 'assets',
             dest: 'js',
             type: 'js',
-            ext: '.min.js'
+            ext: '.v<%= pkg.version %>.min.js'
           },
 
           {
@@ -533,7 +533,7 @@ module.exports = function(grunt) {
             key: 'assets',
             dest: 'css',
             type: 'css',
-            ext: '.min.css'
+            ext: '.v<%= pkg.version %>.min.css'
           }
         ]
       }
