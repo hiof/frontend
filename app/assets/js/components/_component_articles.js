@@ -27,9 +27,8 @@
       Hiof.articleScrollTo(scrollDestEl);
     }
 
-
-
   };
+
 
   Hiof.articleScrollTo = function(destination) {
     if (scrollDest) {
@@ -52,15 +51,15 @@
 
 
     var thisPageId = null,
-        thisPage = 1,
-        thisPageSize = 20,
-        thisTemplate = 'posts',
-        thisAuthorId = '',
-        thisCategory = '',
-        thisDestination = '',
-        thisArticleLoClass = 'lo-half',
-        thisAddType = '',
-        thisDestinationAddress = null;
+      thisPage = 1,
+      thisPageSize = 20,
+      thisTemplate = 'posts',
+      thisAuthorId = '',
+      thisCategory = '',
+      thisDestination = '',
+      thisArticleLoClass = 'lo-half',
+      thisAddType = '',
+      thisDestinationAddress = null;
     if (thisLoader.attr('data-pageId')) {
       thisPageId = thisLoader.attr('data-pageId');
     }
@@ -140,14 +139,13 @@
     if (window.XDomainRequest) { //for IE8,IE9
       contentType = "text/plain";
     }
-
     $.ajax({
       url: 'http://hiof.no/api/v1/articles/',
       method: 'GET',
       async: true,
       dataType: 'json',
       data: settings,
-      contentType:contentType,
+      contentType: contentType,
       success: function(data) {
         //alert("Data from Server: "+JSON.stringify(data));
         Hiof.articleDisplayView(data, settings);
@@ -159,10 +157,10 @@
     });
   };
 
-  Hiof.updateAnalytics = function() {
-    //ga('set', 'page', document.location.href);
-    //ga('send', 'pageview');
-  };
+  //Hiof.updateAnalytics = function() {
+  //  //ga('set', 'page', document.location.href);
+  //  //ga('send', 'pageview');
+  //};
 
 
   // Standard path
@@ -176,7 +174,7 @@
   });
 
 
-  // Path for specific article content 
+  // Path for specific article content
   Path.map("#/articles/:article_id").enter(Hiof.updateAnalytics).to(function() {
     scrollDest = true;
     var thisDestination = '';
@@ -191,7 +189,7 @@
     Hiof.articleLoadData(options);
   });
 
-  // Path for categorized content 
+  // Path for categorized content
   Path.map("#/articles/category/:category_id").enter(Hiof.updateAnalytics).to(function() {
     scrollDest = true;
     var thisDestination = '';
@@ -205,7 +203,7 @@
     Hiof.articleLoadData(options);
   });
 
-  // Path for paged content 
+  // Path for paged content
   Path.map("#/articles/page/:page_id").enter(Hiof.updateAnalytics).to(function() {
     scrollDest = true;
     var thisDestination = '';
@@ -249,5 +247,10 @@
     });
 
   });
+
+
+
+  // Expose functions to the window
+  //window.Hiof.updateMetaInformation = updateMetaInformation;
 
 })(window.Hiof = window.Hiof || {});
