@@ -1,4 +1,8 @@
 {
+  "meta": {
+      "fbid": "265676486878954",
+      "fbpublisher": "http://facebook.com/hiofnorge"
+  },
   "nb": {
     "feedback-form": {
       "title": "Fant du det du lette etter?",
@@ -15,6 +19,10 @@
       "deadline": "Søknadsfrist",
       "description": "Beskrivelse",
       "readmore": "mer info"
+    },
+    "meta": {
+      "name": "Høgskolen i Østfold",
+      "logo": "http://hiof.no/assets/images/logo.svg"
     }
   },
   "nn": {
@@ -33,6 +41,10 @@
       "deadline": "Søknadsfrist",
       "description": "Beskriving",
       "readmore": "Meir informasjon"
+    },
+    "meta": {
+      "name": "Høgskolen i Østfold",
+      "logo": "http://hiof.no/assets/images/logo.svg"
     }
   },
   "en": {
@@ -52,6 +64,10 @@
       "deadline": "Deadline",
       "description": "Description",
       "readmore": "more info"
+    },
+    "meta": {
+      "name": "Østfold University College",
+      "logo": "http://hiof.no/assets/images/logo-en.svg"
     }
   }
 }

@@ -171,8 +171,8 @@
       return;
     }
     //if (url  != null) {
-    //			var link = url.match(/^(([a-z]+:)?(\/\/)?[^\/]+\/).*$/);
-    //			debug(link[0]);
+    //      var link = url.match(/^(([a-z]+:)?(\/\/)?[^\/]+\/).*$/);
+    //      debug(link[0]);
     //}else{return;}
 
 
@@ -260,6 +260,29 @@
     });
   };
 
+
+  Element.prototype.setAttributes = function(attrs) {
+    for (var idx in attrs) {
+      if ((idx === 'styles' || idx === 'style') && typeof attrs[idx] === 'object') {
+        for (var prop in attrs[idx]) {
+          this.style[prop] = attrs[idx][prop];
+        }
+      } else if (idx === 'html') {
+        this.innerHTML = attrs[idx];
+      } else {
+        this.setAttribute(idx, attrs[idx]);
+      }
+    }
+  };
+
+
+
+  updateAnalytics = function() {
+    ga('set', 'page', document.location.href);
+    ga('send', 'pageview');
+  };
+
+
   $(function() {
     // Set the footable.filterFunction to use regex on the #studie page
     if ($('#studie').length) {
@@ -308,6 +331,7 @@
   window.Hiof.getHostname = getHostname;
   window.Hiof.setupClientInformationInOptions = setupClientInformationInOptions;
   window.Hiof.setupi18n = setupi18n;
+  window.Hiof.updateAnalytics = updateAnalytics;
 
 
 
