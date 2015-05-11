@@ -50,4 +50,10 @@ If you have the deploy authentication details, please add those to `secret.json`
 
 ## Roadmap
 
-- v3.6.0 - June 2. 2015 - Improve navigation and header behaviour on mobile/smaller screens.
+- [ ] v3.6.0 - June 2. 2015
+  - [ ] Improve navigation and header behaviour on mobile/smaller screens.
+- [ ] v3.7.0 - July 17. 2015
+  - [ ] Refactor deploy
+    - [ ] Split asset and code deploy into seperate tasks and combine them for one *full deploy*
+  - [ ] Switch from Less to Sass for stylesheets preprosessing
+    -  [ ] Do work on outputted media-queries?
