@@ -24,6 +24,11 @@
       "calendar": "kalender",
       "information": "informasjon",
       "name": "navn"
+    },
+    "itservices": {
+      "titlestudents": "It-tjenester for studenter",
+      "titleemployee": "It-tjenester for ansatte",
+      "readmore": "mer info"
     }
   },
   "nn": {
@@ -51,6 +56,11 @@
       "calendar": "kalender",
       "information": "informasjon",
       "name": "navn"
+    },
+    "itservices": {
+      "titlestudents": "It-tjenester for studenter",
+      "titleemployee": "It-tjenester for ansatte",
+      "readmore": "meir info"
     }
   },
   "en": {
@@ -79,6 +89,11 @@
       "calendar": "calendar",
       "information": "information",
       "name": "name"
+    },
+    "itservices": {
+      "titlestudents": "It-services for students",
+      "titleemployee": "It-services for employees",
+      "readmore": "more info"
     }
   }
 }

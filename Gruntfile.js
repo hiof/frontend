@@ -383,6 +383,12 @@ module.exports = function(grunt) {
             'app/views/partials/_header.html',
             'app/views/pages/content/semester-start.html',
             'app/views/partials/_footer.html'
+          ],
+          'build/itservices.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/itservices.html',
+            'app/views/partials/_footer.html'
           ]
         }
       },

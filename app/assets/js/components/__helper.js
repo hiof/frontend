@@ -393,7 +393,16 @@
     //ga('set', 'page', document.location.href);
     //ga('send', 'pageview');
   };
+  scrollToElement = function(destination){
 
+      $.scrollTo($(destination), 500, {
+        axis: 'y',
+        offset: {
+          top: -80
+        }
+      });
+
+  };
 
   $(function() {
     // Set the footable.filterFunction to use regex on the #studie page
@@ -444,6 +453,8 @@
   window.Hiof.syncMetaInformation = syncMetaInformation;
   window.Hiof.storeInitialMetaInOptions = storeInitialMetaInOptions;
   window.Hiof.updateAnalytics = updateAnalytics;
+  window.Hiof.scrollToElement = scrollToElement;
+
 
 
 
