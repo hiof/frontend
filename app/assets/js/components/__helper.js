@@ -17,7 +17,6 @@
   Handlebars.registerHelper('each_upto', function(ary, max, options) {
     if (!ary || ary.length === 0)
       return options.inverse(this);
-
     var result = [];
     for (var i = 0; i < max && i < ary.length; ++i)
       result.push(options.fn(ary[i]));
@@ -30,6 +29,23 @@
     return new Handlebars.SafeString(theString) + "...";
   });
 
+  Handlebars.registerHelper('capitalizeFirstLetter', function(value) {
+    return new Handlebars.SafeString(value.charAt(0).toUpperCase() + value.slice(1));
+  });
+  Handlebars.registerHelper('eachProperty', function(context, options) {
+      var ret = "";
+      for(var prop in context)
+      {
+          ret = ret + options.fn({property:prop,value:context[prop]});
+      }
+      return ret;
+  });
+  Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+    if(v1 === v2) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
 
 
   // This is our "rescue" method.

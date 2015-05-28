@@ -19,6 +19,11 @@
     "meta": {
       "name": "Høgskolen i Østfold",
       "logo": "http://hiof.no/assets/images/logo.svg"
+    },
+    "study": {
+      "calendar": "kalender",
+      "information": "informasjon",
+      "name": "navn"
     }
   },
   "nn": {
@@ -41,6 +46,11 @@
     "meta": {
       "name": "Høgskolen i Østfold",
       "logo": "http://hiof.no/assets/images/logo.svg"
+    },
+    "study": {
+      "calendar": "kalender",
+      "information": "informasjon",
+      "name": "navn"
     }
   },
   "en": {
@@ -64,6 +74,11 @@
     "meta": {
       "name": "Østfold University College",
       "logo": "http://hiof.no/assets/images/logo-en.svg"
+    },
+    "study": {
+      "calendar": "calendar",
+      "information": "information",
+      "name": "name"
     }
   }
 }

@@ -377,6 +377,12 @@ module.exports = function(grunt) {
             'app/views/partials/_header.html',
             'app/views/pages/content/jobs-list.html',
             'app/views/partials/_footer.html'
+          ],
+          'build/semester-start.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/semester-start.html',
+            'app/views/partials/_footer.html'
           ]
         }
       },
