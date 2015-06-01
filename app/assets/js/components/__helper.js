@@ -347,16 +347,13 @@
     $.each(settings, function(key, value) {
 
       if (key === "og:title") {
+        // If the string contains pipe, remove it and everything after the pipe
         if (value.indexOf('|')) {
-          //debug("Value before stripping: " + value);
           value = value.substring(0, value.indexOf('|'));
-          //debug("Value after stripping: " + value);
         }
 
         if ($('meta[property="' + key + '"]').length) {
           $('head title').text(value + ' | ' + settings.site_name);
-          //debug("Current head-title value: " + value);
-          // If the string contains pipe, remove it and everything after the pipe
           $('meta[property="' + key + '"]').attr('content', value);
 
         } else {
@@ -383,7 +380,6 @@
         createAndApplyMetaElement(key, value);
       }
 
-      //debug("Current setting applied to meta = " + key + " with value = " + value);
     });
 
   };

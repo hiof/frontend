@@ -8,7 +8,7 @@
 //
 //
 //Hiof.MapHalden = {
-//  
+//
 //};
 
 
@@ -49,7 +49,9 @@
 
 // Campus Halden - 59.12870517113603,11.353683471679688
 
-    
+
+    // Config the default image path for the Leafletjs plugin
+    L.Icon.Default.imagePath = '/assets/images/icons/leaflet/';
 
     Hiof.Map.Both = function() {
         // set up the map
@@ -58,7 +60,7 @@
         // create the tile layer with correct attribution
         var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
         var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-        var osm = new L.TileLayer(osmUrl, {minZoom: 7, maxZoom: 16, attribution: osmAttrib});       
+        var osm = new L.TileLayer(osmUrl, {minZoom: 7, maxZoom: 16, attribution: osmAttrib});
 
         // start the map at Stuediested Halden
         map.setView(new L.LatLng(Hiof.Map.bothLat, Hiof.Map.bothLng),Hiof.Map.bothZoom);
@@ -83,7 +85,7 @@
         // create the tile layer with correct attribution
         var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
         var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-        var osm = new L.TileLayer(osmUrl, {minZoom: 7, maxZoom: 16, attribution: osmAttrib});       
+        var osm = new L.TileLayer(osmUrl, {minZoom: 7, maxZoom: 16, attribution: osmAttrib});
 
         // start the map at Stuediested Halden
         map.setView(new L.LatLng(Hiof.Map.haldenLat, Hiof.Map.haldenLng),Hiof.Map.haldenZoom);
@@ -104,7 +106,7 @@
         // create the tile layer with correct attribution
         var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
         var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-        var osm = new L.TileLayer(osmUrl, {minZoom: 7, maxZoom: 16, attribution: osmAttrib});       
+        var osm = new L.TileLayer(osmUrl, {minZoom: 7, maxZoom: 16, attribution: osmAttrib});
 
         // start the map at Stuediested Halden
         map.setView(new L.LatLng(Hiof.Map.fredrikstadLat, Hiof.Map.fredrikstadLng),Hiof.Map.fredrikstadZoom);
