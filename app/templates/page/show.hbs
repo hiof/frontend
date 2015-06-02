@@ -1,0 +1,32 @@
+
+{{#ifCond meta.type 'studystart'}}
+<ol class="breadcrumb">
+  <li><a href="#/finn-studie">Velg studium/kurs</a></li>
+  {{#if meta.courseId}}<li class="active"><a href="#/detaljer/{{meta.courseId}}">Detaljer for {{meta.courseId}}</a></li>{{/if}}
+  {{#if meta.id}}<li><a href="#">{{capitalizeFirstLetter page.[0].pagetitle}}</a></li>{{/if}}
+</ol>
+{{/ifCond}}
+{{#ifCond meta.type 'itservices'}}
+<ol class="breadcrumb">
+  <li><a href="#/it-tjenester">{{meta.title}}</a></li>
+    {{#if meta.id}}<li class="active"><a href="#/it-tjenester/{{meta.id}}">Mer om {{meta.pagetitle}}</a></li>{{/if}}
+</ol>
+{{/ifCond}}
+{{#each page}}
+<article class="lo-full no-padding">
+<header>
+  <h2>{{capitalizeFirstLetter pagetitle}}</h2>
+</header>
+{{{contents}}}
+<footer>
+  <p>
+  {{#if time_modified}}
+
+    <small>Sist oppdatert av <a href="mailto:{{modified_by_email}}">{{modified_by}}</a> den {{time_modified}}</small>
+  {{else}}
+    <small>Skrevet av <a href="mailto:{{created_by_email}}">{{created_by}}</a> den {{time_created}}</small>
+  {{/if}}
+  </p>
+</footer>
+</article>
+{{/each}}
