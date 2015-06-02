@@ -1,0 +1,66 @@
+
+{{#ifCond meta.type 'studystart'}}
+<ol class="breadcrumb">
+  <li><a href="#/finn-studie">Velg studium/kurs</a></li>
+  {{#if meta.courseId}}<li class="active"><a href="#">Detaljer for {{meta.courseId}}</a></li>{{/if}}
+  {{#if meta.id}}<li><a href="#">{{meta.pageTitle}}</a></li>{{/if}}
+</ol>
+{{/ifCond}}
+
+<section class="lo-full no-padding semester-start semester-start-details">
+
+    {{#each semesterstart}}
+
+        <article class="semester-start-details-item semester-start-details-item-icon">
+        {{#if parking}}
+        <a href="#/detaljer/{{../../meta.courseId}}/{{parking.id}}">
+          <h1>{{parking.pagetitle}}</h1>
+          <div class="semester-start-details-item-moreinfo">
+              {{{parking.contents}}}
+          </div>
+        </a>
+        {{/if}}
+        {{#if freetransport}}
+        <a href="#/detaljer/{{../../meta.courseId}}/{{freetransport.id}}">
+          <h1>{{freetransport.pagetitle}}</h1>
+          <div class="semester-start-details-item-moreinfo">
+              {{{freetransport.contents}}}
+          </div>
+        </a>
+        {{/if}}
+        {{#if studentlife}}
+        <a href="#/detaljer/{{../../meta.courseId}}/{{studentlife.id}}">
+          <h1>{{studentlife.pagetitle}}</h1>
+          <div class="semester-start-details-item-moreinfo">
+              {{{studentlife.contents}}}
+          </div>
+        </a>
+        {{/if}}
+        {{#if itservices}}
+        <a href="#/detaljer/{{../../meta.courseId}}/{{itservices.id}}">
+          <h1>{{itservices.pagetitle}}</h1>
+          <div class="semester-start-details-item-moreinfo">
+              {{{itservices.contents}}}
+          </div>
+        </a>
+        {{/if}}
+        {{#if aditionalinformation}}
+        <a href="#/detaljer/{{../../meta.courseId}}/{{aditionalinformation.id}}">
+          <h1>{{aditionalinformation.pagetitle}}</h1>
+          <div class="semester-start-details-item-moreinfo">
+              {{{aditionalinformation.contents}}}
+          </div>
+        </a>
+        {{/if}}
+        {{#if libraryservices}}
+        <a href="#/detaljer/{{../../meta.courseId}}/{{libraryservices.id}}">
+          <h1>{{libraryservices.pagetitle}}</h1>
+          <div class="semester-start-details-item-moreinfo">
+              {{{libraryservices.contents}}}
+          </div>
+        </a>
+        {{/if}}
+    </article>
+    {{/each}}
+
+</section>

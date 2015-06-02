@@ -1,0 +1,30 @@
+{{#ifCond meta.type 'studystart'}}
+<ol class="breadcrumb">
+  <li>Velg studium/kurs</li>
+  {{#if meta.courseId}}<li class="active"><a href="#">Detaljer for {{meta.courseId}}</a></li>{{/if}}
+  {{#if meta.pageId}}<li><a href="#">Side</a></li>{{/if}}
+</ol>
+{{/ifCond}}
+<article class="lo-full padding-off semester-start">
+<p>Finn informasjon om studiestart tilrettelagt deg.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Navn</th>
+            <th>Informasjon</th>
+            <th>Kalender</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each semesterstart}}
+        <tr data-course-id="{{course-id}}">
+            <td>{{capitalizeFirstLetter name}}</td>
+
+            <td><a class="btn btn-default" href="#/detaljer/{{studyprogramcode}}">mer informasjon</a></td>
+            <td><a class="btn btn-default" target="_blank" href="{{timedit}}">din kalender</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</article>
+

@@ -21,9 +21,9 @@ $(function() {
         Hiof.Options.distanceToSidebarSticky = 20;
     }
 
- 
+
     Hiof.Options.contentHeight = $("#main").outerHeight();
-    
+    Hiof.syncMetaInformation();
     //console.log(Hiof.Options.contentHeight);
 
     // ----------------------------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ $(function() {
       //Hiof.Toolbar.SocialShare();
       //Hiof.Toolbar.Print();
 
-  
+
 
 
 
@@ -54,7 +54,7 @@ $(function() {
       //  Hiof.EqualHeightContentAndSidebar();
       //}, 3000);
 
-      
+
       // Fade in all visible content
       Hiof.FadeInContent(0);
 
@@ -80,7 +80,7 @@ $(function() {
       //        $(this).attr('src', url + separator + 'wmode=transparent');
       //    });
       //}
- 
+
 
     // ----------------------------------------------------------------------------------------------------
     // Events
@@ -92,7 +92,7 @@ $(function() {
       if(e.altKey){
         Hiof.KeyboardShortcuts(e);
       }else if(e.keyCode == 27){
-        
+
         if($('#global-search-input').is(':focus')){
           //console.log("Input has focus when esc key is clicked");
           Hiof.Search.Toggle();
@@ -108,7 +108,7 @@ $(function() {
     //$(document).on("click touchstart", ".mobile-pages", function(e) {
     //    e.preventDefault();
     //    toggleLeftNavigation();
-    //});    
+    //});
     //$(document).on("click touchstart", ".mobile-user", function(e) {
     //    e.preventDefault();
     //    Hiof.ToggleUserNavigation();
@@ -150,7 +150,7 @@ $(function() {
 
 
         //var oVal = Hiof.Options.distanceToTop / 240;
-        
+
         $(".cover-photo-blur").css("opacity", (Hiof.Options.distanceToTop / 240));
 
 
@@ -167,7 +167,7 @@ $(function() {
 
 
 
-    // Toogle the global search field and submit the search 
+    // Toogle the global search field and submit the search
     $('#search').on('click', function(e){
       if($('#global-search').hasClass('initial')){
         e.preventDefault();
@@ -246,7 +246,7 @@ $(function() {
               phone: 640,
               tablet: 899,
               desktop: 900
-            }, 
+            },
             limitNavigation: 5,
             pageSize: 50,
             //debug: true,
@@ -276,7 +276,7 @@ $(function() {
           }).bind({
             'footable_breakpoint' : function(e) {
                 //console.log("footable_breakpoint initiated");
-                
+
             },
             'footable_paging' : function(e) {
               //showPreAndNextPages(e);
@@ -287,7 +287,7 @@ $(function() {
             'footable_filtered': function(e){
               //console.log("Filter finished");
               //console.log("Number of visible rows" + numOfVisibleRows);
-              
+
               if($('#main table caption span').length){
                 var numOfVisibleRows = $('#main table tbody tr:visible').length;
                 $('#main table caption .label').removeClass('label-info').addClass('label-warning');
@@ -295,7 +295,7 @@ $(function() {
                 setInterval(function(){
                   if($('#main table caption .label-warning').length){
                     $('#main table caption .label').removeClass('label-warning').addClass('label-info');
-                  }                  
+                  }
                 },2000);
                 //console.log("Counter exsist");
               }
@@ -322,11 +322,11 @@ $(function() {
 
         $('#search-advanced-activate').click(function (e) {
           $("#search-advanced").toggle();
-        });       
+        });
       }
 
 
-      // 
+      //
 
 
 

@@ -17,7 +17,6 @@
   Handlebars.registerHelper('each_upto', function(ary, max, options) {
     if (!ary || ary.length === 0)
       return options.inverse(this);
-
     var result = [];
     for (var i = 0; i < max && i < ary.length; ++i)
       result.push(options.fn(ary[i]));
@@ -30,6 +29,23 @@
     return new Handlebars.SafeString(theString) + "...";
   });
 
+  Handlebars.registerHelper('capitalizeFirstLetter', function(value) {
+    return new Handlebars.SafeString(value.charAt(0).toUpperCase() + value.slice(1));
+  });
+  Handlebars.registerHelper('eachProperty', function(context, options) {
+      var ret = "";
+      for(var prop in context)
+      {
+          ret = ret + options.fn({property:prop,value:context[prop]});
+      }
+      return ret;
+  });
+  Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+    if(v1 === v2) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
 
 
   // This is our "rescue" method.
@@ -274,14 +290,115 @@
       }
     }
   };
+  storeInitialMetaInOptions = function() {
 
+
+    var documentTitle = $('head title').text(),
+      documentDescription = "",
+      documentAuthor = "",
+      documentImage = Hiof.options.meta.restimage.prefix + Hiof.options.meta.restimage["1200x675"]["1"];
+    //debug(documentTitle);
+    if ($('#content header h1').length) {
+      documentTitle = $('#content header h1').text();
+    }
+    if ($('head meta[name="Description"]').length) {
+      documentDescription = $('head meta[name="Description"]').attr("content");
+    }
+    if ($('head meta[name="Author"]').length) {
+      documentAuthor = $('head meta[name="Author"]').attr("content");
+    }
+    //Hiof.options.meta = {};
+    var meta = Hiof.options.meta;
+    meta.site_name = Hiof.options.i18n.nb.meta.name;
+    meta["og:url"] = window.location.href;
+    meta["og:title"] = documentTitle;
+    meta["og:description"] = documentDescription;
+    meta["og:type"] = "website";
+    meta["og:image"] = documentImage;
+    meta.author = documentAuthor;
+    //meta["fb:app_id"] = Hiof.options.i18n.meta.fbid;
+  };
+
+  createAndApplyMetaElement = function(key, value) {
+    var meta = document.createElement('meta');
+    meta.setAttributes({
+      'property': key,
+      'content': value
+    });
+    document.getElementsByTagName('head')[0].appendChild(meta);
+  };
+
+  syncMetaInformation = function(options) {
+
+    // Setup the settings
+    var settings = $.extend({
+      // These are the defaults.
+      "site_name": Hiof.options.meta.site_name,
+      "og:url": Hiof.options.meta["og:url"],
+      "og:title": Hiof.options.meta["og:title"],
+      "og:description": Hiof.options.meta["og:description"],
+      "og:type": Hiof.options.meta["og:type"],
+      "og:image": Hiof.options.meta["og:image"],
+      "fb:app_id": Hiof.options.meta.fbid,
+      "article:author": Hiof.options.meta.author
+    }, options);
+
+    // Updated / create meta-tags
+    $.each(settings, function(key, value) {
+
+      if (key === "og:title") {
+        // If the string contains pipe, remove it and everything after the pipe
+        if (value.indexOf('|')) {
+          value = value.substring(0, value.indexOf('|'));
+        }
+
+        if ($('meta[property="' + key + '"]').length) {
+          $('head title').text(value + ' | ' + settings.site_name);
+          $('meta[property="' + key + '"]').attr('content', value);
+
+        } else {
+          createAndApplyMetaElement(key, value);
+        }
+      } else if (key === "article:author") {
+        if ($('meta[property="' + key + '"]').length) {
+          $('meta[property="' + key + '"]').attr('content', value);
+          $('meta[name="Author"]').attr('content', value);
+        } else {
+          createAndApplyMetaElement(key, value);
+        }
+
+      } else if (key === "og:description") {
+        if ($('meta[property="' + key + '"]').length) {
+          $('meta[property="' + key + '"]').attr('content', value);
+          $('meta[name="Description"]').attr('content', value);
+        } else {
+          createAndApplyMetaElement(key, value);
+        }
+      } else if ($('meta[property="' + key + '"]').length) {
+        $('meta[property="' + key + '"]').attr('content', value);
+      } else {
+        createAndApplyMetaElement(key, value);
+      }
+
+    });
+
+  };
 
 
   updateAnalytics = function() {
-    ga('set', 'page', document.location.href);
-    ga('send', 'pageview');
+    //ga('set', 'page', document.location.href);
+    //ga('send', 'pageview');
   };
+  scrollToElement = function(destination){
 
+      $.scrollTo($(destination), 500, {
+        axis: 'y',
+        offset: {
+          top: -80
+        }
+      });
+
+  };
 
   $(function() {
     // Set the footable.filterFunction to use regex on the #studie page
@@ -314,8 +431,6 @@
 
     }
 
-
-
   });
 
 
@@ -331,7 +446,11 @@
   window.Hiof.getHostname = getHostname;
   window.Hiof.setupClientInformationInOptions = setupClientInformationInOptions;
   window.Hiof.setupi18n = setupi18n;
+  window.Hiof.syncMetaInformation = syncMetaInformation;
+  window.Hiof.storeInitialMetaInOptions = storeInitialMetaInOptions;
   window.Hiof.updateAnalytics = updateAnalytics;
+  window.Hiof.scrollToElement = scrollToElement;
+
 
 
 

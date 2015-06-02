@@ -3,7 +3,7 @@
 
   var scrollDest = false;
   Hiof.articleDisplayView = function(data, options) {
-    //console.log(options);
+    //console.log(data);
     var templateSource;
 
     if (options.template === 'single') {
@@ -26,7 +26,22 @@
       var scrollDestEl = "#content";
       Hiof.articleScrollTo(scrollDestEl);
     }
+    if (options.template === 'single') {
+      var thisArticleImage = "http://hiof.no/neted/services/file/?hash=" + data.posts[0].articleImage;
+      var meta = {
+        "og:url": window.location.href,
+        "og:title": data.posts[0].articleTitle,
+        "og:description": data.posts[0].articleIntro,
+        "og:type": "article",
+        "og:image": thisArticleImage,
+        "article:author": data.posts[0].authorName,
+        "article:publisher": Hiof.options.meta.fbpublisher
+      };
 
+      Hiof.syncMetaInformation(meta);
+    } else {
+      Hiof.syncMetaInformation();
+    }
   };
 
 
