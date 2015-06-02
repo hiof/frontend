@@ -46,15 +46,23 @@ If you have the deploy authentication details, please add those to `secret.json`
 
 ## Releases
 
+- [x] v3.6.0 - June 2. 2015
+  - [x] Update and syncronize meta information in head unnafected by the view-type(backend-/frontendrendered)
+  - [x] Implement semesterstart functionality
+  - [x] Implement it-services functionality
+  - [x] Implement library functionality
+
 [Github releases](https://github.com/hiof/frontend/releases)
+
 
 ## Roadmap
 
-- [ ] v3.6.0 - June 2. 2015
-  - [x] Update and syncronize meta information in head unnafected by the view-type(backend-/frontendrendered)
-  - [ ] Implement semesterstart functionality
-  - [ ] Implement it-services functionality
-  - [ ] Implement library functionality
+- [ ] v3.6.1
+  - [ ] Activate semesterstart functionality
+- [ ] v3.6.2
+  - [ ] Activate it-services functionality
+- [ ] v3.6.3
+  - [ ] Activate library functionality
 - [ ] v3.7.0 - July 17. 2015
   - [ ] Improve navigation and header behaviour on mobile/smaller screens.
   - [ ] Refactor deploy
