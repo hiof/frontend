@@ -30,7 +30,9 @@
   });
 
   Handlebars.registerHelper('capitalizeFirstLetter', function(value) {
-    return new Handlebars.SafeString(value.charAt(0).toUpperCase() + value.slice(1));
+    if (value) {
+      return new Handlebars.SafeString(value.charAt(0).toUpperCase() + value.slice(1));
+    }
   });
   Handlebars.registerHelper('eachProperty', function(context, options) {
       var ret = "";

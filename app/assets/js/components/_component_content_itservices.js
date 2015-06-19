@@ -12,9 +12,9 @@
 
 
         if (settings.audience === 'employee') {
-          data.meta.title = Hiof.options.i18n.nb.itservices.titleeployee;
-        }else{
-          data.meta.title = Hiof.options.i18n.nb.itservices.titlestudents;
+            data.meta.title = Hiof.options.i18n.nb.itservices.titleeployee;
+        } else {
+            data.meta.title = Hiof.options.i18n.nb.itservices.titlestudents;
         }
 
 
@@ -39,7 +39,7 @@
 
         var audience = $('#itservices').attr('data-audience');
         if (typeof audience !== typeof undefined && audience !== false) {
-          audience = 'student';
+            audience = 'student';
         }
 
 
@@ -106,11 +106,13 @@
 
     // Run functions on load
     $(function() {
+      if (!$('#semesterstart').length) {
         if ($('#itservices').length) {
-            //semesterStart();
+
             initatePathItservices();
             Path.listen();
         }
+      }
     });
     // Expose functions to the window
 

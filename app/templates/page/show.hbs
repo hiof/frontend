@@ -13,20 +13,20 @@
 </ol>
 {{/ifCond}}
 {{#each page}}
-<article class="lo-full no-padding">
-<header>
-  <h2>{{capitalizeFirstLetter pagetitle}}</h2>
-</header>
-{{{contents}}}
-<footer>
-  <p>
-  {{#if time_modified}}
+  <article class="lo-full padding-off">
+    <header>
+      <h1>{{capitalizeFirstLetter pagetitle}}</h1>
+    </header>
+    {{{contents}}}
+    <footer>
+      <p>
+      {{#if time_modified}}
 
-    <small>Sist oppdatert av <a href="mailto:{{modified_by_email}}">{{modified_by}}</a> den {{time_modified}}</small>
-  {{else}}
-    <small>Skrevet av <a href="mailto:{{created_by_email}}">{{created_by}}</a> den {{time_created}}</small>
-  {{/if}}
-  </p>
-</footer>
-</article>
+        <small>Sist oppdatert av <a href="mailto:{{modified_by_email}}">{{modified_by}}</a> den {{time_modified}}</small>
+      {{else}}
+        <small>Skrevet av <a href="mailto:{{created_by_email}}">{{created_by}}</a> den {{time_created}}</small>
+      {{/if}}
+      </p>
+    </footer>
+  </article>
 {{/each}}

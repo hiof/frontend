@@ -327,27 +327,44 @@
         });
         filterData();
     });
-    Path.map("#/finn-studie").to(function() {
+    Path.map("#/finn-studie").enter(function() {
+        //Reset checkboxes
+        //resetFilter();
+        scrollToElement('#content');
+    }).to(function() {
         semesterStartLoadData();
     });
-    Path.map("#/finn-studie/").to(function() {
+    Path.map("#/finn-studie/").enter(function() {
+        //Reset checkboxes
+        //resetFilter();
+        scrollToElement('#content');
+    }).to(function() {
         semesterStartLoadData();
     });
     Path.map("#/detaljer/:course/:page").enter(function() {
         //Reset checkboxes
         //resetFilter();
+        scrollToElement('#content');
     }).to(function() {
         var options = {};
         options.id = this.params.page;
         options.courseId = this.params.course;
         options.template = 'details';
-        options.url = 'http://hiof.no/api/v1/page/';
+
+        if(options.id === '30712'){
+            options.openingday = true;
+        }else{
+            options.url = 'http://hiof.no/api/v1/page/';
+        }
+
+
         semesterStartLoadData(options);
     });
 
     Path.map("#/detaljer/:course").enter(function() {
         //Reset checkboxes
         //resetFilter();
+        scrollToElement('#content');
     }).to(function() {
         var options = {};
         options.courseId = this.params.course;
@@ -370,7 +387,7 @@
         //debug(data);
         data.meta = settings;
         data.meta.type = 'studystart';
-        debug(data);
+
         var templateSource;
 
         if (settings.template === 'details') {
@@ -382,7 +399,16 @@
         }
 
         var markup = templateSource(data);
-        $('#semseterstart').html(markup);
+        $('#semesterstart').html(markup);
+        if ($('.footable').length) {
+            $('.footable').footable();
+        }
+        // Check if the user want to save theirs study preference
+        //if (settings.template === 'single'){
+        //    if (!$.cookie('semesterstart')) {
+        //        debug('Semesterstart cookie does not excist');
+        //    }
+        //}
     };
 
     semesterStartLoadData = function(options) {
@@ -396,9 +422,12 @@
         // Setup the query
         var settings = $.extend({
             id: null,
+            server: 'www2',
             courseId: null,
             template: "list",
-            url: 'http://hiof.no/api/v1/semesterstart/'
+            openingday: false,
+            url: 'http://hiof.no/api/v1/semesterstart/',
+            calendar: null
         }, options);
 
         //debug(settings);
@@ -408,6 +437,8 @@
             contentType = "text/plain";
         }
 
+        //debug("Settings: ");
+        //debug(settings);
         $.ajax({
             url: settings.url,
             method: 'GET',
@@ -417,12 +448,19 @@
             contentType: contentType,
             success: function(data) {
                 //alert("Data from Server: "+JSON.stringify(data));
+                //debug("Data: ");
                 //debug(data);
                 //return data;
                 semesterStartAppendData(data, settings);
                 //Hiof.articleDisplayView(data, settings);
             },
             error: function(jqXHR, textStatus, errorThrown) {
+                //debug("jqXHR: ");
+                //debug(jqXHR);
+                //debug("textStatus: ");
+                //debug(textStatus);
+                //debug("errorThrown: ");
+                //debug(errorThrown);
                 //alert("You can not send Cross Domain AJAX requests: " + errorThrown);
             }
 
@@ -448,7 +486,7 @@
 
     $(function() {
 
-        if ($('#semseterstart').length) {
+        if ($('#semesterstart').length) {
             //semesterStart();
             initatePathSemesterStart();
             Path.listen();
@@ -570,7 +608,10 @@
             $(this).toggleClass("btn-line");
             $('#toggleme').slideToggle();
         });
-
+        $(document).on('click', '.openingday-readmore', function(e){
+            e.preventDefault();
+            $(this).parent().toggleClass("open");
+        });
         //$(document).on('click', '.semester-start-details-item', function(e) {
         //    e.preventDefault();
         //    $(this).toggleClass("open");
