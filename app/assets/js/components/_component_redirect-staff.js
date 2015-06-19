@@ -7,7 +7,7 @@
             var options = {
                 header: '<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><h4>Hei, HiØ ansatt</h4>',
                 content: "<p>Du blir nå redirigert til web-sidene for ansatte ved høgskolen.</p><script>Hiof.redirectUsers();</script>",
-                footer: '<button class="btn btn-primary" onclick="Hiof.redirectUsers(true);">Gå til ansatt sidene</button>'
+                footer: '<button id="redirect-dialog" class="btn btn-primary" onclick="Hiof.redirectUsers(true);">Gå til ansatt sidene</button>'
             };
             var modal = Hiof.createModal(options);
             //(console.log(modal);
@@ -15,7 +15,7 @@
             $('.modal').modal();
         }
     };
-    // [KEDA] - This function redirects the user is the 
+    // [KEDA] - This function redirects the user is the
     Hiof.redirectUsers = function(redirect) {
         if (typeof redirect === 'undefined') {
 
@@ -60,8 +60,10 @@
             }
         }
         $(document).on("click touchstart", ".modal, .close", function(e) {
-            e.preventDefault();
-            Hiof.cancelRedirect();
+            if ($('#redirect-dialog').length) {
+                e.preventDefault();
+                Hiof.cancelRedirect();
+            }
         });
     });
 

@@ -46,6 +46,8 @@ If you have the deploy authentication details, please add those to `secret.json`
 
 ## Releases
 
+- [x] v3.6.1
+  - [x] Activate semesterstart functionality
 - [x] v3.6.0 - June 2. 2015
   - [x] Update and syncronize meta information in head unnafected by the view-type(backend-/frontendrendered)
   - [x] Implement semesterstart functionality
@@ -57,8 +59,7 @@ If you have the deploy authentication details, please add those to `secret.json`
 
 ## Roadmap
 
-- [ ] v3.6.1
-  - [ ] Activate semesterstart functionality
+
 - [ ] v3.6.2
   - [ ] Activate it-services functionality
 - [ ] v3.6.3

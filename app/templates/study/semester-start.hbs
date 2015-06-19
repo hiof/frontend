@@ -1,18 +1,18 @@
+<aside class="lo-full padding-off">
+<p>Finn informasjon om studiestart tilrettelagt deg.</p>
 {{#ifCond meta.type 'studystart'}}
 <ol class="breadcrumb">
-  <li>Velg studium/kurs</li>
-  {{#if meta.courseId}}<li class="active"><a href="#">Detaljer for {{meta.courseId}}</a></li>{{/if}}
-  {{#if meta.pageId}}<li><a href="#">Side</a></li>{{/if}}
+  <li><form class="form-inline"><div class="form-group"><label for="semesterstart-filter" class="visuallyhidden">Søk etter ditt studie</label><input id="semesterstart-filter" type="text" class="form-control" placeholder="Søk etter ditt studie" ></div></form></li>
 </ol>
 {{/ifCond}}
+</aside>
 <article class="lo-full padding-off semester-start">
-<p>Finn informasjon om studiestart tilrettelagt deg.</p>
-<table>
+<table class="lo-full padding-off footable" data-page-size="200" data-filter="#semesterstart-filter">
     <thead>
         <tr>
-            <th>Navn</th>
-            <th>Informasjon</th>
-            <th>Kalender</th>
+            <th data-sort-initial="true">Navn</th>
+            <th data-hide="phone">Informasjon</th>
+            <th data-hide="phone">Kalender</th>
         </tr>
     </thead>
     <tbody>
@@ -21,10 +21,9 @@
             <td>{{capitalizeFirstLetter name}}</td>
 
             <td><a class="btn btn-default" href="#/detaljer/{{studyprogramcode}}">mer informasjon</a></td>
-            <td><a class="btn btn-default" target="_blank" href="{{timedit}}">din kalender</a></td>
+            <td>{{#if timedit}}<a class="btn btn-default" target="_blank" href="{{timedit}}">din kalender</a>{{/if}}</td>
         </tr>
         {{/each}}
     </tbody>
 </table>
 </article>
-
