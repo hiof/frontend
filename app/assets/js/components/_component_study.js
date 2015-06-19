@@ -403,6 +403,12 @@
         if ($('.footable').length) {
             $('.footable').footable();
         }
+        // Check if the user want to save theirs study preference
+        //if (settings.template === 'single'){
+        //    if (!$.cookie('semesterstart')) {
+        //        debug('Semesterstart cookie does not excist');
+        //    }
+        //}
     };
 
     semesterStartLoadData = function(options) {
@@ -420,7 +426,8 @@
             courseId: null,
             template: "list",
             openingday: false,
-            url: 'http://hiof.no/api/v1/semesterstart/'
+            url: 'http://hiof.no/api/v1/semesterstart/',
+            calendar: null
         }, options);
 
         //debug(settings);

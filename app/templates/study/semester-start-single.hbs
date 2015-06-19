@@ -22,6 +22,13 @@
           <a href="#" class="btn btn-default openingday-readmore">Les mer</a>
         </article>
         {{/if}}
+        {{#if calendar}}
+        <article class="semester-start-details-item semester-start-details-item-icon lo-half">
+        <a href="{{calendar}}">
+          <h1>Se din kalender</h1>
+        </a>
+        </article>
+        {{/if}}
         {{#if aditionalinformation}}
         <article class="semester-start-details-item semester-start-details-item-icon lo-half">
         <a href="#/detaljer/{{../../meta.courseId}}/{{aditionalinformation.id}}">
