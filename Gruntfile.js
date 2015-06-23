@@ -3,7 +3,6 @@ module.exports = function(grunt) {
   require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   require('time-grunt')(grunt);
 
-
   var mySecret = false;
   if (grunt.file.exists('secret.json')) {
     mySecret = grunt.file.readJSON('secret.json');
@@ -13,6 +12,7 @@ module.exports = function(grunt) {
   // Initiate grunt tasks
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    moment: require('moment'),
 
     // Tasks
     lesslint:{
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
     cssmin: {
       main: {
         options: {
-          banner: '/*!  HiØ stylesheets v<%= pkg.version %> by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */'
+          banner: '/*!  HiØ stylesheets v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("hh:mm DD-MM-YYYY") %> */'
         },
         expand: true,
         cwd: 'tmp/css/prefixed/',
@@ -429,7 +429,7 @@ module.exports = function(grunt) {
         mangle: false,
         //compress: true,
         preserveComments: false,
-        banner: '/*!  HiØ JavaScript v<%= pkg.version %> by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */',
+        banner: '/*!  HiØ JavaScript v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("hh:mm DD-MM-YYYY") %> */',
         //sourceMap: true,
         //sourceMapIncludeSources: true,
         //sourceMapIn: 'tmp/js/application.min.js.map', // input sourcemap from a previous compilation
