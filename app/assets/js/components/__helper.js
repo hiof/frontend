@@ -397,7 +397,7 @@
     if($(destination).length){
       thisDestination = $(destination);
     }else{
-      thisDestination = $('a[name="' + destination + ']');
+      thisDestination = $('a[name="' + destination + '"]');
     }
     $.scrollTo(thisDestination, 500, {
       axis: 'y',
