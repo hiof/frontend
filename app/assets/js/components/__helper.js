@@ -392,13 +392,19 @@
     //ga('send', 'pageview');
   };
   scrollToElement = function(destination){
+    var thisDestination;
 
-      $.scrollTo($(destination), 500, {
-        axis: 'y',
-        offset: {
-          top: -80
-        }
-      });
+    if($(destination).length){
+      thisDestination = $(destination);
+    }else{
+      thisDestination = $('a[name="' + destination + ']');
+    }
+    $.scrollTo(thisDestination, 500, {
+      axis: 'y',
+      offset: {
+        top: -80
+      }
+    });
 
   };
 
