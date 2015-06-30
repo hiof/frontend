@@ -398,22 +398,9 @@
 
         if ($(destination).length) {
             thisDestination = $(destination);
-
-            //$('html, body').animate({
-            //    scrollTop: $(destination).offset().top
-            //}, 500);
-            //return false;
-
-
         } else {
             thisDestination = $('a[name="' + destination.substr(1) + '"]');
-
-            //$('html, body').animate({
-            //    scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
-            //}, 500);
-            //return false;
         }
-
         $.scrollTo(thisDestination, 500, {
             axis: 'y',
             offset: {
