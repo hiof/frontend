@@ -26,8 +26,8 @@
       "name": "navn"
     },
     "itservices": {
-      "titlestudents": "It-tjenester for studenter",
-      "titleemployee": "It-tjenester for ansatte",
+      "titlestudents": "Brukerstøtte for IT-tjenester",
+      "titleemployee": "Brukerstøtte for IT-tjenester",
       "readmore": "mer info"
     }
   },
@@ -58,8 +58,8 @@
       "name": "navn"
     },
     "itservices": {
-      "titlestudents": "It-tjenester for studenter",
-      "titleemployee": "It-tjenester for ansatte",
+      "titlestudents": "Brukerstøtte for IT-tjenester",
+      "titleemployee": "Brukerstøtte for IT-tjenester",
       "readmore": "meir info"
     }
   },
@@ -91,8 +91,8 @@
       "name": "name"
     },
     "itservices": {
-      "titlestudents": "It-services for students",
-      "titleemployee": "It-services for employees",
+      "titlestudents": "Support for IT-services",
+      "titleemployee": "Support for IT-services",
       "readmore": "more info"
     }
   }
