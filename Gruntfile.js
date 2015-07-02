@@ -53,7 +53,7 @@ module.exports = function(grunt) {
     cssmin: {
       main: {
         options: {
-          banner: '/*!  HiØ stylesheets v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("hh:mm DD-MM-YYYY") %> */'
+          banner: '/*!  HiØ stylesheets v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("HH:mm DD-MM-YYYY") %> */'
         },
         expand: true,
         cwd: 'tmp/css/prefixed/',
@@ -429,7 +429,7 @@ module.exports = function(grunt) {
         mangle: false,
         //compress: true,
         preserveComments: false,
-        banner: '/*!  HiØ JavaScript v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("hh:mm DD-MM-YYYY") %> */',
+        banner: '/*!  HiØ JavaScript v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("HH:mm DD-MM-YYYY") %> */',
         //sourceMap: true,
         //sourceMapIncludeSources: true,
         //sourceMapIn: 'tmp/js/application.min.js.map', // input sourcemap from a previous compilation
