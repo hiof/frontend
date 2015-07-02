@@ -9,11 +9,17 @@
       background: none;
     }
   }
-  .btn-group .btn + .btn, 
-  .btn-group .btn + .btn-group, 
-  .btn-group .btn-group + .btn, 
+  .btn-group .btn + .btn,
+  .btn-group .btn + .btn-group,
+  .btn-group .btn-group + .btn,
   .btn-group .btn-group + .btn-group{
     margin-left: -3px;
+  }
+
+
+  .input-group-btn:last-child>.btn,
+  .input-group-btn:last-child>.btn-group{
+    margin-top: 0;
   }
   .btn-default {
     //&.btn-line {

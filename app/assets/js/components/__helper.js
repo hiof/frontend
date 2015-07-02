@@ -397,9 +397,16 @@
         var thisDestination;
 
         if ($(destination).length) {
-            thisDestination = $(destination);
-        } else {
+
+            //debug('element exsist.. This is the value:');
+            //debug(destination);
+            thisDestination = $(destination + "");
+        } else if($('a[name="' + destination.substr(1) + '"]').length) {
+            //debug('element does exsist with a name slector..');
             thisDestination = $('a[name="' + destination.substr(1) + '"]');
+        }else{
+            //debug('Element does not exsist..');
+            return;
         }
         $.scrollTo(thisDestination, 500, {
             axis: 'y',
