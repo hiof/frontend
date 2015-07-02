@@ -50,3 +50,11 @@ $whitespace-4rem: 4rem;
 // Divider
 
 $divider-border-standard: 1px solid #eee;
+
+
+// MQ breakpoints
+
+$mq-breakpoints: (
+    small:  640px,
+    large: 900px
+);
