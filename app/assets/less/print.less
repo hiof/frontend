@@ -1,40 +1,45 @@
-
-
-
-
 // Theme
 @import "variables/_standard.less";
-
-
-
-
-
 // Components
-
 @import "_components-standard.less";
-
 .print();
-
 noscript,
 #header,
 #cover,
 #sidebar,
 #footer,
-.btn,
-#main footer{
-  display: none !important;
+#main footer,
+#cookie-disclaimer,
+.feedback {
+    display: none !important;
 }
+
 #main,
-#content{
-  margin-top: 0!important;
+#content {
+    margin-top: 0!important;
 }
 
 * {
-  overflow: visible !important;
+    overflow: visible !important;
 }
-#content header{
-  width: 100%;
+
+#content header {
+    width: 100%;
 }
-#cookie-disclaimer{
-  display: none !important;
+
+.btn,
+a {
+    &:after {
+        content: " (" attr(href) ") ";
+        font-size: 0.8em;
+        font-weight: normal;
+    }
+}
+
+.study-model-wrapper {
+    .btn, a {
+        &:after {
+            display: none !important
+        }
+    }
 }
