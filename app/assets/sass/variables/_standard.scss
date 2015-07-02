@@ -58,3 +58,5 @@ $mq-breakpoints: (
     small:  640px,
     large: 900px
 );
+$mq-static-breakpoint: large;
+$mq-show-breakpoints: (small, large);
