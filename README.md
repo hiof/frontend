@@ -47,6 +47,10 @@ If you have the deploy authentication details, please add those to `secret.json`
 ## Releases
 
 
+- [x] v3.6.4
+  - [x] Bugfixes
+- [x] v3.6.3
+  - [x] Activate library functionality
 - [x] v3.6.2
   - [x] Activate it-services functionality
   - [x] Move code to plugin
@@ -63,10 +67,8 @@ If you have the deploy authentication details, please add those to `secret.json`
 
 ## Roadmap
 
-- [ ] v3.6.3
-  - [ ] Activate library functionality
 - [ ] v3.7.0 - July 17. 2015
-  - [ ] Minor refinements
+  - [ ] Minor refinements to project setup
 - [ ] v3.X.X
   - [ ] Improve navigation and header behaviour on mobile/smaller screens.
   - [ ] Refactor deploy
