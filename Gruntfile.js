@@ -59,7 +59,7 @@ module.exports = function(grunt) {
         cwd: 'tmp/css/prefixed/',
         src: ['*.css', '!*.min.css'],
         dest: 'tmp/css/minified',
-        ext: '.min.css'
+        ext: '.v<%= pkg.version %>.min.css'
       }
     },
     copy: {
@@ -436,7 +436,7 @@ module.exports = function(grunt) {
       },
       main: {
         files: {
-          'tmp/js/application.min.js': ['tmp/js/application.min.js']
+          'tmp/js/application.v<%= pkg.version %>.min.js': ['tmp/js/application.min.js']
         }
       }
     },
@@ -449,32 +449,32 @@ module.exports = function(grunt) {
       build: {
         files: [{
             assets: [{
-              src: ['tmp/js/application.min.js'],
-              dest: 'tmp/js/application.min.js'
+              src: ['tmp/js/application.v<%= pkg.version %>.min.js'],
+              dest: 'tmp/js/application.v<%= pkg.version %>.min.js'
             }],
             key: 'assets',
             dest: 'js',
             type: 'js',
-            ext: '.v<%= pkg.version %>.min.js'
+            ext: '.min.js'
           },
 
           {
             assets: [{
-              src: 'tmp/css/minified/theme-standard.min.css',
-              dest: 'tmp/css/minified/theme-standard.min.css'
+              src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
+              dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
             },
             {
-             src: 'tmp/css/minified/theme-standard-canvas.min.css',
-             dest: 'tmp/css/minified/theme-standard-canvas.min.css'
+             src: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css',
+             dest: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css'
             },
             {
-              src: 'tmp/css/minified/print.min.css',
-              dest: 'tmp/css/minified/print.min.css'
+              src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
+              dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
             }],
             key: 'assets',
             dest: 'css',
             type: 'css',
-            ext: '.v<%= pkg.version %>.min.css'
+            ext: '.min.css'
           }
         ]
       },
@@ -484,32 +484,32 @@ module.exports = function(grunt) {
         },
         files: [{
             assets: [{
-              src: ['tmp/js/application.min.js'],
-              dest: 'tmp/js/application.min.js'
+              src: ['tmp/js/application.v<%= pkg.version %>.min.js'],
+              dest: 'tmp/js/application.v<%= pkg.version %>.min.js'
             }],
             key: 'assets',
             dest: 'js',
             type: 'js',
-            ext: '.v<%= pkg.version %>.min.js'
+            ext: '.min.js'
           },
 
           {
             assets: [{
-              src: 'tmp/css/minified/theme-standard.min.css',
-              dest: 'tmp/css/minified/theme-standard.min.css'
+              src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
+              dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
             },
             {
-             src: 'tmp/css/minified/theme-standard-canvas.min.css',
-             dest: 'tmp/css/minified/theme-standard-canvas.min.css'
+             src: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css',
+             dest: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css'
             },
             {
-              src: 'tmp/css/minified/print.min.css',
-              dest: 'tmp/css/minified/print.min.css'
+              src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
+              dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
             }],
             key: 'assets',
             dest: 'css',
             type: 'css',
-            ext: '.v<%= pkg.version %>.min.css'
+            ext: '.min.css'
           }
         ]
       },
@@ -520,32 +520,32 @@ module.exports = function(grunt) {
         },
         files: [{
             assets: [{
-              src: ['tmp/js/application.min.js'],
-              dest: 'tmp/js/application.min.js'
+              src: ['tmp/js/application.v<%= pkg.version %>.min.js'],
+              dest: 'tmp/js/application.v<%= pkg.version %>.min.js'
             }],
             key: 'assets',
             dest: 'js',
             type: 'js',
-            ext: '.v<%= pkg.version %>.min.js'
+            ext: '.min.js'
           },
 
           {
             assets: [{
-              src: 'tmp/css/minified/theme-standard.min.css',
-              dest: 'tmp/css/minified/theme-standard.min.css'
+              src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
+              dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
             },
             {
-             src: 'tmp/css/minified/theme-standard-canvas.min.css',
-             dest: 'tmp/css/minified/theme-standard-canvas.min.css'
+             src: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css',
+             dest: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css'
             },
             {
-              src: 'tmp/css/minified/print.min.css',
-              dest: 'tmp/css/minified/print.min.css'
+              src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
+              dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
             }],
             key: 'assets',
             dest: 'css',
             type: 'css',
-            ext: '.v<%= pkg.version %>.min.css'
+            ext: '.min.css'
           }
         ]
       }
