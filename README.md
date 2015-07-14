@@ -47,6 +47,8 @@ If you have the deploy authentication details, please add those to `secret.json`
 ## Releases
 
 
+- [x] v3.7.0 - July 17. 2015
+  - [x] Minor refinements to project setup
 - [x] v3.6.4
   - [x] Bugfixes
 - [x] v3.6.3
@@ -67,8 +69,6 @@ If you have the deploy authentication details, please add those to `secret.json`
 
 ## Roadmap
 
-- [ ] v3.7.0 - July 17. 2015
-  - [ ] Minor refinements to project setup
 - [ ] v3.X.X
   - [ ] Improve navigation and header behaviour on mobile/smaller screens.
   - [ ] Refactor deploy
