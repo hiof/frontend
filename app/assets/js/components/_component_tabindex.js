@@ -1,29 +1,32 @@
-var Hiof = Hiof || {};
+(function(Hiof, undefined) {
 
-//Hiof.Tabindex = {};
+    //Hiof.Tabindex = {};
 
 
-Hiof.Tabindex = function(e){
-  var headerStartIndex = 1000,
-      contentStartIndex = 2000,
-      sidebarStartIndex = 3000,
-      footerStartIndex = 4000,
-      childrenElements = "a, area, button, input:visible, object, select, textarea";
+    tabindex = function(e) {
+        var headerStartIndex = 1000,
+            contentStartIndex = 2000,
+            sidebarStartIndex = 3000,
+            footerStartIndex = 4000,
+            childrenElements = "a, area, button, input:visible, object, select, textarea";
 
-  $("#header").find(childrenElements).each(function(){
-    $(this).attr('tabindex', headerStartIndex++);
-  });
+        $("#header").find(childrenElements).each(function() {
+            $(this).attr('tabindex', headerStartIndex++);
+        });
 
-  $("#content").find(childrenElements).each(function(){
-    $(this).attr('tabindex', contentStartIndex++);
-  });
+        $("#content").find(childrenElements).each(function() {
+            $(this).attr('tabindex', contentStartIndex++);
+        });
 
-  $("#sidebar").find(childrenElements).each(function(){
-    $(this).attr('tabindex', sidebarStartIndex++);
-  });
+        $("#sidebar").find(childrenElements).each(function() {
+            $(this).attr('tabindex', sidebarStartIndex++);
+        });
 
-  $("#footer").find(childrenElements).each(function(){
-    $(this).attr('tabindex', footerStartIndex++);
-  });
+        $("#footer").find(childrenElements).each(function() {
+            $(this).attr('tabindex', footerStartIndex++);
+        });
 
-};
+    };
+
+
+})(window.Hiof = window.Hiof || {});
