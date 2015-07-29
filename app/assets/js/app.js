@@ -240,7 +240,7 @@ $(function() {
 
 
       // If there is a table on the page, activate the footable() plugin
-      if($('#main table').length && $('#KS016').length === 0){
+      if($('#main table').length && $('#KS016').length === 0 && $('#hiofboard').length === 0) {
         $("#main table:not(.not-responsive)").footable({
             breakpoints: {
               phone: 640,
