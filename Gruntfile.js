@@ -616,7 +616,6 @@ module.exports = function(grunt) {
         options: {
           urls: [
             'http://localhost:9000/tests/qunit/index.html',
-            'http://localhost:9000/tests/qunit/study-catalog/study-catalog.html',
             'http://localhost:9000/tests/qunit/jobs/jobs-list.html',
           ]
         }
