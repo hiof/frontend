@@ -45,7 +45,7 @@
       markup = templateSource(data);
 
     $('#content .outlet').append(markup);
-    $('#content .outlet table').footable().trigger('footable_expand_first_row');
+    $('#content .outlet table').footable();
     if ($('#jobs-available').length) {
       statusJobs(ln);
     }
@@ -68,7 +68,7 @@
       });
 
     } else {
-      debug("test");
+      //debug("test");
       $.ajax({
         url: 'http://hiof.no/api/v1/jobs/',
         method: 'GET',
