@@ -1,9 +1,9 @@
-<table>
+<table data-page-size="100">
   <thead>
     <tr>
-      <th>Stillingstittel</th>
-      <th data-hide="all">Beskrivelse</th>
-      <th>Søknadsfrist</th>
+      <th>{{view.title}}</th>
+      <th data-hide="phone">{{view.deadline}}</th>
+      <th data-hide="all">{{view.description}}</th>
       <th></th>
     </tr>
   </thead>
@@ -11,9 +11,9 @@
     {{#each jobs}}
       <tr>
         <td>{{title}}</td>
-        <td>{{description}}</td>
         <td>{{dateDeadline.[0]}}</td>
-        <td><a class="btn btn-primary btn-line" target="_blank" href="{{link}}">mer info</a></td>
+        <td>{{description}}</td>
+        <td><a class="btn btn-primary btn-line" target="_blank" href="{{link}}">{{../view.readmore}}</a></td>
       </tr>
       {{/each}}
   </tbody>

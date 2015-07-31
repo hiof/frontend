@@ -3,7 +3,6 @@ module.exports = function(grunt) {
   require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
   require('time-grunt')(grunt);
 
-
   var mySecret = false;
   if (grunt.file.exists('secret.json')) {
     mySecret = grunt.file.readJSON('secret.json');
@@ -13,6 +12,7 @@ module.exports = function(grunt) {
   // Initiate grunt tasks
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    moment: require('moment'),
 
     // Tasks
     lesslint:{
@@ -53,13 +53,13 @@ module.exports = function(grunt) {
     cssmin: {
       main: {
         options: {
-          banner: '/*!  HiØ stylesheets v<%= pkg.version %> by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */'
+          banner: '/*!  HiØ stylesheets v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("HH:mm DD-MM-YYYY") %> */'
         },
         expand: true,
         cwd: 'tmp/css/prefixed/',
         src: ['*.css', '!*.min.css'],
         dest: 'tmp/css/minified',
-        ext: '.min.css'
+        ext: '.v<%= pkg.version %>.min.css'
       }
     },
     copy: {
@@ -366,10 +366,28 @@ module.exports = function(grunt) {
             'app/views/pages/content/map.html',
             'app/views/partials/_footer.html'
           ],
+          'build/jobs-list-en.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/jobs-list-en.html',
+            'app/views/partials/_footer.html'
+          ],
           'build/jobs-list.html': [
             'app/views/partials/_head.html',
             'app/views/partials/_header.html',
             'app/views/pages/content/jobs-list.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/semester-start.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/semester-start.html',
+            'app/views/partials/_footer.html'
+          ],
+          'build/itservices.html': [
+            'app/views/partials/_head.html',
+            'app/views/partials/_header.html',
+            'app/views/pages/content/itservices.html',
             'app/views/partials/_footer.html'
           ]
         }
@@ -380,25 +398,27 @@ module.exports = function(grunt) {
           //sourceMapStyle: 'inline'
         },
         src: [
-          //'app/vendor/jquery/dist/jquery.js', 
-          'app/vendor/modernizr/modernizr.js', 
-          'app/vendor/jQuery-ajaxTransport-XDomainRequest/jquery.xdomainrequest.min.js', 
-          'app/vendor/leaflet/dist/leaflet.js', 
-          'app/vendor/footable/js/footable.js', 
-          'app/vendor/footable/js/footable.paginate.js', 
-          'app/vendor/footable/js/footable.filter.js', 
-          'app/vendor/footable/js/footable.sort.js', 
+          //'app/vendor/jquery/dist/jquery.js',
+          'app/vendor/modernizr/modernizr.js',
+          'app/vendor/jQuery-ajaxTransport-XDomainRequest/jquery.xdomainrequest.min.js',
+          'app/vendor/leaflet/dist/leaflet-src.js',
+          'app/vendor/footable/js/footable.js',
+          'app/vendor/footable/js/footable.paginate.js',
+          'app/vendor/footable/js/footable.filter.js',
+          'app/vendor/footable/js/footable.sort.js',
           'app/vendor/footable/js/footable.striping.js',
           'app/vendor/bootstrap/js/modal.js',
-          'app/vendor/bootstrap/js/dropdown.js', 
+          'app/vendor/bootstrap/js/dropdown.js',
+          'app/vendor/bootstrap/js/tooltip.js',
           'app/vendor/jquery-cookie/jquery.cookie.js',
           'app/vendor/pathjs/path.js',
           'app/vendor/handlebars/handlebars.js',
-          'app/vendor/jquery.scrollTo/jquery.scrollTo.js', 
+          'app/vendor/jquery.scrollTo/jquery.scrollTo.js',
           'app/vendor/slideout/slideout-navigation.js',
           'app/vendor/picturefill/dist/picturefill.min.js',
-          'app/assets/js/templates/*.js', 
-          'app/assets/js/components/*.js', 
+          'app/vendor/detectjs/detect.min.js',
+          'app/assets/js/templates/*.js',
+          'app/assets/js/components/*.js',
           'app/assets/js/*.js'
         ],
         dest: 'tmp/js/application.min.js'
@@ -409,14 +429,14 @@ module.exports = function(grunt) {
         mangle: false,
         //compress: true,
         preserveComments: false,
-        banner: '/*!  HiØ JavaScript v<%= pkg.version %> by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */',
+        banner: '/*!  HiØ JavaScript v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("HH:mm DD-MM-YYYY") %> */',
         //sourceMap: true,
         //sourceMapIncludeSources: true,
         //sourceMapIn: 'tmp/js/application.min.js.map', // input sourcemap from a previous compilation
       },
       main: {
         files: {
-          'tmp/js/application.min.js': ['tmp/js/application.min.js']
+          'tmp/js/application.v<%= pkg.version %>.min.js': ['tmp/js/application.min.js']
         }
       }
     },
@@ -429,8 +449,8 @@ module.exports = function(grunt) {
       build: {
         files: [{
             assets: [{
-              src: ['tmp/js/application.min.js'],
-              dest: 'tmp/js/application.min.js'
+              src: ['tmp/js/application.v<%= pkg.version %>.min.js'],
+              dest: 'tmp/js/application.v<%= pkg.version %>.min.js'
             }],
             key: 'assets',
             dest: 'js',
@@ -440,16 +460,16 @@ module.exports = function(grunt) {
 
           {
             assets: [{
-              src: 'tmp/css/minified/theme-standard.min.css',
-              dest: 'tmp/css/minified/theme-standard.min.css'
-            }, 
-            {
-             src: 'tmp/css/minified/theme-standard-canvas.min.css',
-             dest: 'tmp/css/minified/theme-standard-canvas.min.css'
+              src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
+              dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
             },
             {
-              src: 'tmp/css/minified/print.min.css',
-              dest: 'tmp/css/minified/print.min.css'
+             src: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css',
+             dest: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css'
+            },
+            {
+              src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
+              dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
             }],
             key: 'assets',
             dest: 'css',
@@ -464,8 +484,8 @@ module.exports = function(grunt) {
         },
         files: [{
             assets: [{
-              src: ['tmp/js/application.min.js'],
-              dest: 'tmp/js/application.min.js'
+              src: ['tmp/js/application.v<%= pkg.version %>.min.js'],
+              dest: 'tmp/js/application.v<%= pkg.version %>.min.js'
             }],
             key: 'assets',
             dest: 'js',
@@ -475,16 +495,16 @@ module.exports = function(grunt) {
 
           {
             assets: [{
-              src: 'tmp/css/minified/theme-standard.min.css',
-              dest: 'tmp/css/minified/theme-standard.min.css'
-            }, 
-            {
-             src: 'tmp/css/minified/theme-standard-canvas.min.css',
-             dest: 'tmp/css/minified/theme-standard-canvas.min.css'
+              src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
+              dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
             },
             {
-              src: 'tmp/css/minified/print.min.css',
-              dest: 'tmp/css/minified/print.min.css'
+             src: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css',
+             dest: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css'
+            },
+            {
+              src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
+              dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
             }],
             key: 'assets',
             dest: 'css',
@@ -500,8 +520,8 @@ module.exports = function(grunt) {
         },
         files: [{
             assets: [{
-              src: ['tmp/js/application.min.js'],
-              dest: 'tmp/js/application.min.js'
+              src: ['tmp/js/application.v<%= pkg.version %>.min.js'],
+              dest: 'tmp/js/application.v<%= pkg.version %>.min.js'
             }],
             key: 'assets',
             dest: 'js',
@@ -511,16 +531,16 @@ module.exports = function(grunt) {
 
           {
             assets: [{
-              src: 'tmp/css/minified/theme-standard.min.css',
-              dest: 'tmp/css/minified/theme-standard.min.css'
-            }, 
-            {
-             src: 'tmp/css/minified/theme-standard-canvas.min.css',
-             dest: 'tmp/css/minified/theme-standard-canvas.min.css'
+              src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
+              dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
             },
             {
-              src: 'tmp/css/minified/print.min.css',
-              dest: 'tmp/css/minified/print.min.css'
+             src: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css',
+             dest: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css'
+            },
+            {
+              src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
+              dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
             }],
             key: 'assets',
             dest: 'css',
@@ -546,7 +566,7 @@ module.exports = function(grunt) {
           showProgress: true,
           createDirectories: true,
           directoryPermissions: parseInt(755, 8)
-        }        
+        }
       },
       prod: {
         files: {
@@ -584,7 +604,7 @@ module.exports = function(grunt) {
         }
       }
     },
- 
+
     open: {
       all: {
         path: 'http://localhost:<%= express.all.options.port%>'
@@ -596,14 +616,13 @@ module.exports = function(grunt) {
         options: {
           urls: [
             'http://localhost:9000/tests/qunit/index.html',
-            'http://localhost:9000/tests/qunit/study-catalog/study-catalog.html',
             'http://localhost:9000/tests/qunit/jobs/jobs-list.html',
           ]
         }
       }
     },
 
-    watch: {      
+    watch: {
       tests: {
         files: ['tests/**/*'],
         tasks: ['copy:tests', 'qunit'],
@@ -685,26 +704,26 @@ module.exports = function(grunt) {
 
   // Deploy tasks
   grunt.registerTask('deploy-stage', [
-                                        'clean:build', 
-                                        'subtaskCss', 
-                                        'subtaskJs', 
-                                        'versioning:deploy', 
-                                        'subtaskCopyDeploy', 
-                                        'subtaskViews', 
-                                        'clean:deploy', 
-                                        'copy:deploy', 
+                                        'clean:build',
+                                        'subtaskCss',
+                                        'subtaskJs',
+                                        'versioning:deploy',
+                                        'subtaskCopyDeploy',
+                                        'subtaskViews',
+                                        'clean:deploy',
+                                        'copy:deploy',
                                         'sftp:stage'
                                       ]);
 
   grunt.registerTask('deploy-prod', [
-                                      'clean:build', 
-                                      'subtaskCss', 
-                                      'subtaskJs', 
-                                      'versioning:deploy', 
-                                      'subtaskCopyDeploy', 
-                                      'subtaskViews', 
-                                      'clean:deploy', 
-                                      'copy:deploy', 
+                                      'clean:build',
+                                      'subtaskCss',
+                                      'subtaskJs',
+                                      'versioning:deploy',
+                                      'subtaskCopyDeploy',
+                                      'subtaskViews',
+                                      'clean:deploy',
+                                      'copy:deploy',
                                       'sftp:prod'
                                     ]);
 

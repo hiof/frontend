@@ -1,18 +1,16 @@
-{{#each posts}}        
-    <article data-article-id="{{articleId}}" class="article-single lo-full">  
+{{#each posts}}
+    <article data-article-id="{{articleId}}" class="article-single lo-full">
         <h1>{{ articleTitle }}</h1>
-        <p>Publisert den {{articlePublishedDate}} klokken {{articlePublishedTime}} av <a href="http://hiof.no/nor/om-hogskolen/sok-pa-sidene/profil/?&displayitem={{authorId}}&module=admin" title="Se {{authorName}} sin profil">{{authorName}}</a></p>
+        <p><small>Publisert den {{articlePublishedDate}} klokken {{articlePublishedTime}} av <a href="http://hiof.no/nor/om-hogskolen/sok-pa-sidene/profil/?&displayitem={{authorId}}&module=admin" title="Se {{authorName}} sin profil">{{authorName}}</a></small></p>
         <p class="intro">{{ articleIntro }}</p>
+        <div class="picture-container ratio-16-9"><img src="http://hiof.no/neted/services/file/?hash={{articleImage}}" alt="{{articleImageAltText}}" class="picture" /></div>
         {{{ articleContent }}}
-        <p>Sist oppdatert {{articleUpdated}} av <a href="http://hiof.no/nor/om-hogskolen/sok-pa-sidene/profil/?&displayitem={{authorId}}&module=admin" title="Se {{authorName}} sin profil">{{authorName}}</a></p>                
+        <p><small>Sist oppdatert {{articleUpdated}} av <a href="http://hiof.no/nor/om-hogskolen/sok-pa-sidene/profil/?&displayitem={{authorId}}&module=admin" title="Se {{authorName}} sin profil">{{authorName}}</a></small></p>
         <h2>Kategorier</h2>
-        <ul>
             {{#each category}}
-                <li><a href="#/articles/category/{{@key}}">{{this}}</a></li>
+                <a href="#/articles/category/{{@key}}" class="article-category-link">{{this}}</a>
             {{/each}}
-        </ul>
         <h2>Relaterte artikkler</h2>
-
             {{#each relatedArticles}}
                 <div class="lo-half">
                     <article data-article-id="{{this.articleId}}" class="article article-entry {{#if articleExternal}}article-external{{/if}}">

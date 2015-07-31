@@ -3,7 +3,7 @@
 
   var scrollDest = false;
   Hiof.articleDisplayView = function(data, options) {
-    //console.log(options);
+    //console.log(data);
     var templateSource;
 
     if (options.template === 'single') {
@@ -26,10 +26,24 @@
       var scrollDestEl = "#content";
       Hiof.articleScrollTo(scrollDestEl);
     }
+    if (options.template === 'single') {
+      var thisArticleImage = "http://hiof.no/neted/services/file/?hash=" + data.posts[0].articleImage;
+      var meta = {
+        "og:url": window.location.href,
+        "og:title": data.posts[0].articleTitle,
+        "og:description": data.posts[0].articleIntro,
+        "og:type": "article",
+        "og:image": thisArticleImage,
+        "article:author": data.posts[0].authorName,
+        "article:publisher": Hiof.options.meta.fbpublisher
+      };
 
-
-
+      Hiof.syncMetaInformation(meta);
+    } else {
+      Hiof.syncMetaInformation();
+    }
   };
+
 
   Hiof.articleScrollTo = function(destination) {
     if (scrollDest) {
@@ -52,15 +66,15 @@
 
 
     var thisPageId = null,
-        thisPage = 1,
-        thisPageSize = 20,
-        thisTemplate = 'posts',
-        thisAuthorId = '',
-        thisCategory = '',
-        thisDestination = '',
-        thisArticleLoClass = 'lo-half',
-        thisAddType = '',
-        thisDestinationAddress = null;
+      thisPage = 1,
+      thisPageSize = 20,
+      thisTemplate = 'posts',
+      thisAuthorId = '',
+      thisCategory = '',
+      thisDestination = '',
+      thisArticleLoClass = 'lo-half',
+      thisAddType = '',
+      thisDestinationAddress = null;
     if (thisLoader.attr('data-pageId')) {
       thisPageId = thisLoader.attr('data-pageId');
     }
@@ -140,14 +154,13 @@
     if (window.XDomainRequest) { //for IE8,IE9
       contentType = "text/plain";
     }
-
     $.ajax({
       url: 'http://hiof.no/api/v1/articles/',
       method: 'GET',
       async: true,
       dataType: 'json',
       data: settings,
-      contentType:contentType,
+      contentType: contentType,
       success: function(data) {
         //alert("Data from Server: "+JSON.stringify(data));
         Hiof.articleDisplayView(data, settings);
@@ -159,10 +172,10 @@
     });
   };
 
-  Hiof.updateAnalytics = function() {
-    //ga('set', 'page', document.location.href);
-    //ga('send', 'pageview');
-  };
+  //Hiof.updateAnalytics = function() {
+  //  //ga('set', 'page', document.location.href);
+  //  //ga('send', 'pageview');
+  //};
 
 
   // Standard path
@@ -176,7 +189,7 @@
   });
 
 
-  // Path for specific article content 
+  // Path for specific article content
   Path.map("#/articles/:article_id").enter(Hiof.updateAnalytics).to(function() {
     scrollDest = true;
     var thisDestination = '';
@@ -191,7 +204,7 @@
     Hiof.articleLoadData(options);
   });
 
-  // Path for categorized content 
+  // Path for categorized content
   Path.map("#/articles/category/:category_id").enter(Hiof.updateAnalytics).to(function() {
     scrollDest = true;
     var thisDestination = '';
@@ -205,7 +218,7 @@
     Hiof.articleLoadData(options);
   });
 
-  // Path for paged content 
+  // Path for paged content
   Path.map("#/articles/page/:page_id").enter(Hiof.updateAnalytics).to(function() {
     scrollDest = true;
     var thisDestination = '';
@@ -249,5 +262,10 @@
     });
 
   });
+
+
+
+  // Expose functions to the window
+  //window.Hiof.updateMetaInformation = updateMetaInformation;
 
 })(window.Hiof = window.Hiof || {});

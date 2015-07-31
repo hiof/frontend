@@ -1,6 +1,9 @@
 language: node_js
 node_js:
+  - "0.12"
+  - "0.11"
   - "0.10"
+  - "iojs"
 git:
   submodules: false
 before_install: npm install -g grunt-cli
@@ -11,3 +14,6 @@ env:
     - secure: xSzy2FfniyngrLB0+IiDBlt0FTsdjhkY+9bV+pEmdBmqv5Tgkce9Em4ukTkOBxh3iRKEG+uK4JhilP0yhb5OmRI4U/HhNSV/hK+6JuQ9waW0fPwbjdqfW2TCjndoAEhGB0Ec5AOa5DPoe0/HURjjgwv6O4H38fTl6xv/ajlskV4=
 addons:
   sauce_connect: true
+notifications:
+  slack:
+    secure: 1ea7hB8sM+yinn4I5Yr3xprSNJWo+7mXrqHvUjMoJ+IN+q6Mr6Lq7aQO69FV+Gt/BGRrVAFlL7LsSz00WOTxjO+51vth0hhvPoIa+vICZ88PxbMMgoZ+EtwC10RRSacMpFj3NGCEQQl00fV1SLAlL+/jX5pth1H7V+SbggrtgPQ=

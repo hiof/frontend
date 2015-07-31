@@ -6,39 +6,72 @@
 
 Frontend code for the Østfold University College website.
 
-
 ## Copyright
 
-- This project is distributed under a  GNU General Public License v3 - Take a look at the COPYING file for details. 
-
+- This project is distributed under a  GNU General Public License v3 - Take a look at the COPYING file for details.
 
 ## Install
-
 
 Install [Git](http://git-scm.com) if it's not already installed on your computer. Then run (this will download this project to the folder the shell has open):
 
     $ git clone https://github.com/hiof/frontend.git
 
 
-Install [Node.js](http://nodejs.org) if it's not already installed on your computer. Then run (this will install the project dependencies):
+Install [io.js](https://iojs.org) (or [Node.js](http://nodejs.org)) if it's not already installed on your computer. Then run (this will install the project dependencies):
 
     $ sudo npm install -g grunt-cli
     $ npm install
+    $ bower install
 
+## Build and deploy
 
-The following commands are now available within the project folder `$ grunt server`, `$ grunt deploy-stage` og `$ grunt deploy-prod`. 
+If you just want to work on the code locally and then send push-requests on github you have to rename the `secret-template.json` file to `secret.json`. The `secret.json` is automaticly ignored from code checkin.
 
+### Build
+
+The following commands are now available within the project folder `$ grunt server` and `$ grunt build`.
+
+- $ grunt build: Builds the code to /build
 - $ grunt server: You get a local version of the code running at localhost. Code is build whenever you change a file in /app and automaticly loaded in your browser.
-- $ grunt deploy-stage: Deploys the code to staging.hiof.no
-- $ grunt deploy-prod: Deploys the code to hiof.no
+
+
+### Deploy
+
+If you have the deploy authentication details, please add those to `secret.json`. You wil then have the following deploy commands available:
+
+- $ grunt deploy-stage: deploys the code to staging.hiof.no
+- $ grunt deploy-prod: deploys the code to hiof.no
+
 
 
 ## Releases
 
+
+- [x] v3.7.0 - July 17. 2015
+  - [x] Minor refinements to project setup
+- [x] v3.6.4
+  - [x] Bugfixes
+- [x] v3.6.3
+  - [x] Activate library functionality
+- [x] v3.6.2
+  - [x] Activate it-services functionality
+  - [x] Move code to plugin
+- [x] v3.6.1
+  - [x] Activate semesterstart functionality
+- [x] v3.6.0 - June 2. 2015
+  - [x] Update and syncronize meta information in head unnafected by the view-type(backend-/frontendrendered)
+  - [x] Implement semesterstart functionality
+  - [x] Implement it-services functionality
+  - [x] Implement library functionality
+
 [Github releases](https://github.com/hiof/frontend/releases)
 
-### Roadmap
 
-v3.2.0 - Integrated news (and design adjustments)
-v3.3.0 - Study cataloge, several content improvements and video-campaign functionality
-v3.4.0 - Personal profile data integration and initial frontend-testing
+## Roadmap
+
+- [ ] v3.X.X
+  - [ ] Improve navigation and header behaviour on mobile/smaller screens.
+  - [ ] Refactor deploy
+    - [ ] Split asset and code deploy into seperate tasks and combine them for one *full deploy*
+  - [ ] Switch from Less to Sass for stylesheets preprosessing
+    -  [ ] Do work on outputted media-queries?

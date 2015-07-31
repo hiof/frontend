@@ -1,6 +1,6 @@
 {
   "name": "Hiof-frontend",
-  "version": "3.4.0-beta.4",
+  "version": "3.7.2",
   "homepage": "https://github.com/hiof/frontend",
   "authors": [
     "Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>"
@@ -10,7 +10,7 @@
   "dependencies": {
     "modernizr": "~2.8.3",
     "jquery": "~1.11.1",
-    "bootstrap": "~3.1.1",
+    "bootstrap": "~3.3.5",
     "livereload": "~2.0.8",
     "footable": "https://github.com/bradvin/FooTable.git#V2",
     "jquery.scrollTo": "~1.4.11",
@@ -20,6 +20,7 @@
     "pathjs": "https://github.com/mtrpcic/pathjs.git",
     "leaflet": "~0.7.3",
     "picturefill": "~2.1.0",
-    "jQuery-ajaxTransport-XDomainRequest": "https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest.git"
+    "jQuery-ajaxTransport-XDomainRequest": "https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest.git",
+    "detectjs": "https://github.com/darcyclarke/Detect.js.git"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "hiof-frontend",
-  "version": "3.4.0-beta.4",
+  "version": "3.7.2",
   "author": "HiØ ved Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "grunt-contrib-less": "^0.10.0",
     "grunt-contrib-qunit": ">=0.2.1",
     "grunt-contrib-uglify": "^0.4.0",
-    "grunt-contrib-watch": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
     "grunt-express": "^1.2.1",
     "grunt-lesslint": "^1.1.13",
     "grunt-open": "^0.2.3",
@@ -44,6 +44,7 @@
     "karma-sauce-launcher": "^0.2.10",
     "matchdep": "*",
     "qunitjs": "^1.17.1",
+    "moment": "^2.10.3",
     "time-grunt": "^0.3.1"
   },
   "dependencies": {
