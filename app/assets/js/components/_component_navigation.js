@@ -6,7 +6,7 @@
   Hiof.Navigation = {};
 
 
-  // This page use slideout-navigation functions from 
+  // This page use slideout-navigation functions from
   // the slideout vendor plugin (defined in bower.json)
 
 
@@ -138,9 +138,17 @@
   };
 
   // Functionality to add a down-arrow to the vertical navigation
-  addDropdownIconToVerticalNavigation = function(el) {
+  addDropdownIconToVerticalNavigation = function(direction) {
+
+
+
+
     $(".dropdown-menu").siblings("a").each(function() {
-      $(this).toggleClass("icon-down");
+      if (direction === "down") {
+        $(this).toggleClass("icon-down");
+      } else {
+        $(this).toggleClass("icon-right");
+      }
     });
   };
 
@@ -164,6 +172,8 @@
         });
       }
 
+      $('#nav-pages').css('height', Hiof.options.windowHeight + 'px');
+
     } else {
       if ($("li[data-temp]", el).length) {
         //console.log("Removing all elements with data-temp");
@@ -172,6 +182,10 @@
 
       }
     }
+
+
+
+
   };
 
 
@@ -259,9 +273,12 @@
 
       manipulateMarkupForStudyPageOnMobile();
 
-      addDropdownIconToVerticalNavigation();
+      addDropdownIconToVerticalNavigation("down");
 
-    } else {}
+    } else {
+
+      addDropdownIconToVerticalNavigation("right");
+    }
 
 
     if (Hiof.Options.distanceToTop > 0) {
@@ -333,8 +350,8 @@
     $("#nav-page").on("click", "a", function(e) {
       var url = $(this).attr("href");
       //e.preventDefault();
-      // If the link is internal, prevent default behaviour 
-      if (url.indexOf("#") != -1) {
+      // If the link is internal, prevent default behaviour
+      if (url.startsWith("#")) {
         //console.log("Url has a Hash");
         e.preventDefault();
         toggleInternalNavigation();

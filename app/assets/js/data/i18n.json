@@ -1,0 +1,99 @@
+{
+  "nb": {
+    "feedback-form": {
+      "title": "Fant du det du lette etter?",
+      "labelOption1": "Ja",
+      "labelOption2": "Nei",
+      "labelLookingfor": "Hva lette du etter?",
+      "labelSubmit": "Svar",
+      "language": "nb",
+      "formCompleteTitle": "Tilbakemelding sendt",
+      "formCompleteContent": "<p>Takk for at du tok deg tid til å gi oss tilbakemelding.</p>"
+    },
+    "jobs": {
+      "title": "Stillingstittel",
+      "deadline": "Søknadsfrist",
+      "description": "Beskrivelse",
+      "readmore": "mer info"
+    },
+    "meta": {
+      "name": "Høgskolen i Østfold",
+      "logo": "http://hiof.no/assets/images/logo.svg"
+    },
+    "study": {
+      "calendar": "kalender",
+      "information": "informasjon",
+      "name": "navn"
+    },
+    "itservices": {
+      "titlestudents": "Brukerstøtte for IT-tjenester",
+      "titleemployee": "Brukerstøtte for IT-tjenester",
+      "readmore": "mer info"
+    }
+  },
+  "nn": {
+    "feedback-form": {
+      "title": "Fant du det du lette etter?",
+      "labelOption1": "Ja",
+      "labelOption2": "Nei",
+      "labelLookingfor": "Hva lette du etter?",
+      "labelSubmit": "Svar",
+      "language": "nn",
+      "formCompleteTitle": "Tilbakemelding sendt",
+      "formCompleteContent": "<p>Takk for at du tok deg tid til å gi oss tilbakemelding.</p>"
+    },
+    "jobs": {
+      "title": "Stillingstittel",
+      "deadline": "Søknadsfrist",
+      "description": "Beskriving",
+      "readmore": "Meir informasjon"
+    },
+    "meta": {
+      "name": "Høgskolen i Østfold",
+      "logo": "http://hiof.no/assets/images/logo.svg"
+    },
+    "study": {
+      "calendar": "kalender",
+      "information": "informasjon",
+      "name": "navn"
+    },
+    "itservices": {
+      "titlestudents": "Brukerstøtte for IT-tjenester",
+      "titleemployee": "Brukerstøtte for IT-tjenester",
+      "readmore": "meir info"
+    }
+  },
+  "en": {
+    "feedback-form": {
+      "title": "Did you find what you were looking for?",
+      "labelOption1": "Yes",
+      "labelOption2": "No",
+      "labelLookingfor": "What were you looking for?",
+      "labelSubmit": "Answer",
+      "language": "en",
+      "formCompleteTitle": "Request sent",
+      "formCompleteContent": "<p>Thank you for </p>"
+
+    },
+    "jobs": {
+      "title": "Job title",
+      "deadline": "Deadline",
+      "description": "Description",
+      "readmore": "more info"
+    },
+    "meta": {
+      "name": "Østfold University College",
+      "logo": "http://hiof.no/assets/images/logo-en.svg"
+    },
+    "study": {
+      "calendar": "calendar",
+      "information": "information",
+      "name": "name"
+    },
+    "itservices": {
+      "titlestudents": "Support for IT-services",
+      "titleemployee": "Support for IT-services",
+      "readmore": "more info"
+    }
+  }
+}
