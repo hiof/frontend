@@ -1,7 +1,5 @@
 {
   "name": "Hiof-frontend",
-  "version": "3.7.4",
-  "homepage": "https://github.com/hiof/frontend",
   "authors": [
     "Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>"
   ],
@@ -21,6 +19,7 @@
     "leaflet": "~0.7.3",
     "picturefill": "~2.1.0",
     "jQuery-ajaxTransport-XDomainRequest": "https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest.git",
-    "detectjs": "https://github.com/darcyclarke/Detect.js.git"
+    "detectjs": "https://github.com/darcyclarke/Detect.js.git",
+    "hiof-colors": "https://github.com/hiof/colors.git"
   }
 }
