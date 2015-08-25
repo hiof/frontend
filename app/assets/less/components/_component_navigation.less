@@ -90,92 +90,6 @@
   }
 }
 
-.breadcrumb-horizontal() {
-  #breadcrumb {
-    font-size: 1.4rem;
-    &:before {
-      content: "";
-      height: 4.4rem;
-      position: absolute;
-      left: 0;
-      width: 100%;
-      background: @hiof-blue;
-      z-index: -1;
-    }
-    ol {
-      margin-bottom: 0;
-    }
-    li {
-      display: inline-block;
-      list-style: none;
-      line-height: 4.4rem;
-      position: relative;
-      margin-left: -.4rem;
-      a {
-        color: @white;
-        padding: 0 4.4rem;
-        padding-right: 2.2rem;
-      }
-      &:first-child {
-        a {
-          padding-left: 2.2rem;
-        }
-      }
-      &:before,
-      &:after {
-        content: "";
-        display: block;
-        width: 0;
-        height: 0;
-        border-top: 22px solid transparent;
-        border-left: 22px solid @white;
-        border-bottom: 22px solid transparent;
-        top: 0;
-        position: absolute;
-        z-index: 1;
-        right: -20px;
-      }
-      &:before {}
-      &:after {
-        right: -18px;
-        border-left-color: @hiof-blue;
-      }
-      &:hover {
-        background-color: lighten(@hiof-blue, 20%);
-        &:after {
-          border-left-color: lighten(@hiof-blue, 20%);
-        }
-      }
-    }
-  }
-}
-
-.breadcrumb-vertical() {
-  #breadcrumb {
-    background-color: @hiof-blue;
-    padding: 0;
-    ol {
-      margin: 0;
-    }
-    a {
-      color: @white;
-      display: block;
-      text-align: center;
-      padding-top: .5rem;
-      line-height: 4.4rem;
-    }
-    li {
-      border-bottom: .1rem solid @white;
-      position: relative;
-      .gfx-arrow-down(@hiof-blue, @white, 4.9rem);
-      &:last-child {
-        &:before, &:after {
-          display: none;
-        }
-      }
-    }
-  }
-}
 
 .nav-horizontal() {
   .global-search-horizontal();
@@ -671,11 +585,11 @@
     }
   }
   @media screen and (max-width: 769px) {
-    .breadcrumb-vertical();
+    //.breadcrumb-vertical();
     .nav-vertical();
   }
   @media screen and (min-width: 770px) {
-    .breadcrumb-horizontal();
+    //.breadcrumb-horizontal();
     .nav-horizontal();
   }
 }
