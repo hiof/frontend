@@ -399,7 +399,6 @@ module.exports = function(grunt) {
                 },
                 src: [
                     //'app/vendor/jquery/dist/jquery.js',
-                    'app/vendor/modernizr/modernizr.js',
                     'app/vendor/jQuery-ajaxTransport-XDomainRequest/jquery.xdomainrequest.min.js',
                     'app/vendor/leaflet/dist/leaflet-src.js',
                     'app/vendor/footable/js/footable.js',
