@@ -21,6 +21,7 @@
     "jQuery-ajaxTransport-XDomainRequest": "https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest.git",
     "detectjs": "https://github.com/darcyclarke/Detect.js.git",
     "hiof-colors": "https://github.com/hiof/colors.git",
-    "hiof-layout": "https://github.com/hiof/layout.git"
+    "hiof-layout": "https://github.com/hiof/layout.git",
+    "hiof-typography": "https://github.com/hiof/typography.git"
   }
 }
