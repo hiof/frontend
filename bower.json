@@ -16,7 +16,6 @@
     "handlebars": "~2.0.0",
     "pathjs": "https://github.com/mtrpcic/pathjs.git",
     "leaflet": "~0.7.3",
-    "picturefill": "~2.1.0",
     "jQuery-ajaxTransport-XDomainRequest": "https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest.git",
     "detectjs": "https://github.com/darcyclarke/Detect.js.git",
     "hiof-colors": "https://github.com/hiof/colors.git",
