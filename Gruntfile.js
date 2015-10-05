@@ -399,7 +399,6 @@ module.exports = function(grunt) {
                 },
                 src: [
                     //'app/vendor/jquery/dist/jquery.js',
-                    'app/vendor/modernizr/modernizr.js',
                     'app/vendor/jQuery-ajaxTransport-XDomainRequest/jquery.xdomainrequest.min.js',
                     'app/vendor/leaflet/dist/leaflet-src.js',
                     'app/vendor/footable/js/footable.js',
@@ -415,7 +414,6 @@ module.exports = function(grunt) {
                     'app/vendor/handlebars/handlebars.js',
                     'app/vendor/jquery.scrollTo/jquery.scrollTo.js',
                     'app/vendor/slideout/slideout-navigation.js',
-                    'app/vendor/picturefill/dist/picturefill.min.js',
                     'app/vendor/detectjs/detect.min.js',
                     'app/assets/js/templates/*.js',
                     'app/assets/js/components/*.js',

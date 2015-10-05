@@ -6,7 +6,6 @@
   "description": "Frontend code for hiof.no",
   "license": "GNU",
   "dependencies": {
-    "modernizr": "~2.8.3",
     "jquery": "~1.11.1",
     "bootstrap": "~3.3.5",
     "livereload": "~2.0.8",
@@ -17,10 +16,10 @@
     "handlebars": "~2.0.0",
     "pathjs": "https://github.com/mtrpcic/pathjs.git",
     "leaflet": "~0.7.3",
-    "picturefill": "~2.1.0",
     "jQuery-ajaxTransport-XDomainRequest": "https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest.git",
     "detectjs": "https://github.com/darcyclarke/Detect.js.git",
     "hiof-colors": "https://github.com/hiof/colors.git",
-    "hiof-layout": "https://github.com/hiof/layout.git"
+    "hiof-layout": "https://github.com/hiof/layout.git",
+    "hiof-typography": "https://github.com/hiof/typography.git"
   }
 }
