@@ -27,6 +27,8 @@
         });
 
     };
-
+    $(function() {
+        tabindex();
+    });
 
 })(window.Hiof = window.Hiof || {});

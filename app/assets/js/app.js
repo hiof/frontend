@@ -61,7 +61,11 @@ $(function() {
 
 
 
-
+      $('#nav-pages a, #nav-internal a').focus(function(e){
+        //console.log('Focus on element');
+        //$('#nav-pages .dropdown-menu, #nav-internal .dropdown-menu').hide();
+        $(this).next().toggle();
+      });
 
 
 
@@ -177,6 +181,16 @@ $(function() {
         $('#global-search').submit();
       }
     });
+
+    $('#search').focus(function(e){
+      if($('#global-search').hasClass('initial')){
+        e.preventDefault();
+        Hiof.Search.Toggle();
+        $('#global-search-input').focus();
+      }
+    });
+
+
     $('#search-close').on('click', function(e){
       e.preventDefault();
       Hiof.Search.Toggle();
