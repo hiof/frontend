@@ -182,13 +182,13 @@ $(function() {
       }
     });
 
-    $('#search').focus(function(e){
-      if($('#global-search').hasClass('initial')){
-        e.preventDefault();
-        Hiof.Search.Toggle();
-        $('#global-search-input').focus();
-      }
-    });
+    //$('#search').focus(function(e){
+    //  if($('#global-search').hasClass('initial')){
+    //    e.preventDefault();
+    //    Hiof.Search.Toggle();
+    //    $('#global-search-input').focus();
+    //  }
+    //});
 
 
     $('#search-close').on('click', function(e){
