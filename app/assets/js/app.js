@@ -60,17 +60,6 @@ $(function() {
 
 
 
-
-      $('#nav-pages a, #nav-internal a').focus(function(e){
-        //console.log('Focus on element');
-        //$('#nav-pages .dropdown-menu, #nav-internal .dropdown-menu').hide();
-        $(this).next().toggle();
-      });
-
-
-
-
-
       // Search
 
       //$('#global-search-input').addClass('initial');
