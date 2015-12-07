@@ -293,7 +293,7 @@ $(function() {
 
             },
             'footable_paging' : function(e) {
-              //showPreAndNextPages(e);
+              Hiof.scrollToElement('#content');
             },
             'footable_filtering': function(e){
               //console.log("Filter fired");
@@ -338,13 +338,6 @@ $(function() {
           $("#search-advanced").toggle();
         });
       }
-
-
-      //
-
-
-
-
 });
 $( window ).load(function() {
     // Equal height of articles
