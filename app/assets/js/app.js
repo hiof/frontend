@@ -60,17 +60,6 @@ $(function() {
 
 
 
-
-      $('#nav-pages a, #nav-internal a').focus(function(e){
-        //console.log('Focus on element');
-        //$('#nav-pages .dropdown-menu, #nav-internal .dropdown-menu').hide();
-        $(this).next().toggle();
-      });
-
-
-
-
-
       // Search
 
       //$('#global-search-input').addClass('initial');
@@ -293,7 +282,7 @@ $(function() {
 
             },
             'footable_paging' : function(e) {
-              //showPreAndNextPages(e);
+              Hiof.scrollToElement('#content');
             },
             'footable_filtering': function(e){
               //console.log("Filter fired");
@@ -338,13 +327,6 @@ $(function() {
           $("#search-advanced").toggle();
         });
       }
-
-
-      //
-
-
-
-
 });
 $( window ).load(function() {
     // Equal height of articles

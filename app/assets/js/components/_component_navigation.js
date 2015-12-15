@@ -34,10 +34,10 @@
 
     // TODO: add check for #footer position
     var $el = $("#nav-page"),
-      thisElementheight = $el.outerHeight(),
-      $parent = $el.parent(),
-      contentHeight = $("#main").outerHeight(),
-      bottomSidebar = Hiof.Options.contentHeight - thisElementheight;
+    thisElementheight = $el.outerHeight(),
+    $parent = $el.parent(),
+    contentHeight = $("#main").outerHeight(),
+    bottomSidebar = Hiof.Options.contentHeight - thisElementheight;
 
     //console.log("Height of #navbar: " + thisElementheight);
     //console.log("bottomSidebar  is:  " + bottomSidebar);
@@ -73,9 +73,9 @@
 
 
     var navButtonTextMobileSite,
-      navButtonTextMobileUser,
-      navButtonTextInternal,
-      lang = Hiof.languageCheck();
+    navButtonTextMobileUser,
+    navButtonTextInternal,
+    lang = Hiof.languageCheck();
 
     //console.log(lang);
 
@@ -101,8 +101,8 @@
 
     // Setup the different buttons
     var buttonNavSite = $(button).clone().text(navButtonTextMobileSite).attr('id', 'nav-mobile-site').addClass('mobile-pages'),
-      buttonNavUser = $(button).clone().text(navButtonTextMobileUser).attr('id', 'nav-mobile-user').addClass('mobile-user'),
-      buttonNavPage = $(button).clone().text(navButtonTextInternal).attr('id', 'nav-mobile-internal').addClass('mobile-internal');
+    buttonNavUser = $(button).clone().text(navButtonTextMobileUser).attr('id', 'nav-mobile-user').addClass('mobile-user'),
+    buttonNavPage = $(button).clone().text(navButtonTextInternal).attr('id', 'nav-mobile-internal').addClass('mobile-internal');
 
     //$(buttonNavSite);
     //$(buttonNavUser);
@@ -111,8 +111,8 @@
 
     if (!$("html.lt-ie10").length) {
       var svgNavSite = Hiof.getSvgIcon("nav-site"),
-        svgNavUser = Hiof.getSvgIcon("user"),
-        svgPageNav = Hiof.getSvgIcon("nav-page");
+      svgNavUser = Hiof.getSvgIcon("user"),
+      svgPageNav = Hiof.getSvgIcon("nav-page");
 
       $(buttonNavSite).append(svgNavSite);
       $(buttonNavUser).append(svgNavUser);
@@ -165,9 +165,9 @@
         //console.log("Generated content does not exsist");
         $(subNav).each(function() {
           var subNavSiblingAnchor = $(this).prev(),
-            subNavSiblingAnchorHref = $(subNavSiblingAnchor).attr("href"),
-            subNavSiblingAnchorText = $(subNavSiblingAnchor).text(),
-            newSubNavEl = '<li data-temp="true"><a href="' + subNavSiblingAnchorHref + '">' + subNavSiblingAnchorText + '</a></li>';
+          subNavSiblingAnchorHref = $(subNavSiblingAnchor).attr("href"),
+          subNavSiblingAnchorText = $(subNavSiblingAnchor).text(),
+          newSubNavEl = '<li data-temp="true"><a href="' + subNavSiblingAnchorHref + '">' + subNavSiblingAnchorText + '</a></li>';
           $(this).prepend(newSubNavEl);
         });
       }
@@ -243,7 +243,7 @@
 
   Hiof.Navigation.AddInternalLinksToPageNav = function() {
     var list = document.createElement("ul"),
-      listItem = "";
+    listItem = "";
     $(list).addClass("nav nav-pills nav-stacked");
 
     $("#content h3").each(function() {
@@ -335,16 +335,23 @@
 
 
     $("span.btn, a", "#nav-pages").on("click", function(e) {
+      var thisElement = $(this);
       if (Hiof.Options.windowWidth < 770) {
-
-        var thisElement = $(this);
         if (thisElement.siblings(".dropdown-menu").length) {
-          //console.log("element has a sibling with the dropdown-menu class");
           e.preventDefault();
           toggleSubNavigations(thisElement);
         }
       }
+
     });
+
+    $('#nav-pages a, #nav-internal a').focus(function(e){
+      if (Hiof.Options.windowWidth > 770) {
+        $(this).next().toggle();
+      }
+    });
+
+
 
     // Page navigation
     $("#nav-page").on("click", "a", function(e) {
@@ -368,6 +375,15 @@
       }
     });
 
+
+
+    //      $('#nav-pages a, #nav-internal a').focus(function(e){
+    //        //console.log('Focus on element');
+    //        //$('#nav-pages .dropdown-menu, #nav-internal .dropdown-menu').hide();
+    //        $(this).next().toggle();
+    //      });
+
+
     // When window resize, fire the following code
     $(window).resize(function() {
       // Updated the settings for the viewport size when the website is reset.
@@ -385,8 +401,6 @@
         addDropdownIconToVerticalNavigation();
         manipulateMarkupForStudyPageOnMobile();
       }
-
-
     });
 
 
