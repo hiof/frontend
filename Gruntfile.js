@@ -461,9 +461,6 @@ module.exports = function(grunt) {
                             src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
                             dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
                         }, {
-                            src: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css',
-                            dest: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css'
-                        }, {
                             src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
                             dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
                         }],
@@ -493,9 +490,6 @@ module.exports = function(grunt) {
                         assets: [{
                             src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
                             dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
-                        }, {
-                            src: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css',
-                            dest: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css'
                         }, {
                             src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
                             dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
@@ -527,9 +521,6 @@ module.exports = function(grunt) {
                         assets: [{
                             src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
                             dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
-                        }, {
-                            src: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css',
-                            dest: 'tmp/css/minified/theme-standard-canvas.v<%= pkg.version %>.min.css'
                         }, {
                             src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
                             dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
