@@ -366,18 +366,6 @@ module.exports = function(grunt) {
                         'app/views/pages/content/map.html',
                         'app/views/partials/_footer.html'
                     ],
-                    'build/jobs-list-en.html': [
-                        'app/views/partials/_head.html',
-                        'app/views/partials/_header.html',
-                        'app/views/pages/content/jobs-list-en.html',
-                        'app/views/partials/_footer.html'
-                    ],
-                    'build/jobs-list.html': [
-                        'app/views/partials/_head.html',
-                        'app/views/partials/_header.html',
-                        'app/views/pages/content/jobs-list.html',
-                        'app/views/partials/_footer.html'
-                    ],
                     'build/semester-start.html': [
                         'app/views/partials/_head.html',
                         'app/views/partials/_header.html',
@@ -599,7 +587,6 @@ module.exports = function(grunt) {
                 options: {
                     urls: [
                         'http://localhost:9000/tests/qunit/index.html',
-                        'http://localhost:9000/tests/qunit/jobs/jobs-list.html',
                     ]
                 }
             }
