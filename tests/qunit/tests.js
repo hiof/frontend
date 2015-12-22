@@ -19,10 +19,10 @@ $q(function() {
   QUnit.module("Tests for the study catalog");
   if ($q('#test-study-catalog').length) {
     $q('#test-study-catalog').load(function() {
-      // Get the jQuery Object from the original code      
+      // Get the jQuery Object from the original code
       $ = window.frames[0].jQuery;
       test('Check if footable is loaded', function(assert) {
-        // On start this is visible         
+        // On start this is visible
         assert.ok($('#content table').length);
       });
 
@@ -33,7 +33,7 @@ $q(function() {
           assert.ok($('tr.footable-detail-show').length);
           done();
         }, 100);
-        
+
       });
 
 
@@ -65,28 +65,4 @@ $q(function() {
 
     });
   }
-
-
-  QUnit.module("Test the jobs component");
-
-  if ($q('#test-jobs').length) {
-    
-    $q('#test-jobs').load(function() {
-      $ = window.frames[0].jQuery;
-      var iFrame = $("test-jobs");
-      test('Check if page is loaded', function(assert) {
-        // On start this is visible         
-        assert.ok($('#content h1').length);
-      });
-
-      test('Check if the first job is closed', function(assert){
-        assert.ok($('#content table tbody tr.footable-detail-show').length === 0);
-      });
-
-    });
-  }
-
-
-
-
 });
