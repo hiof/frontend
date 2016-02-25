@@ -1,4 +1,4 @@
-export default class View {
+class View {
   constructor() {
     this.ln = $('html').attr('lang');
     this.pageCategory = $('#main').attr('data-page-category');
@@ -126,3 +126,4 @@ export default class View {
   }
 
 }
+export {View};
