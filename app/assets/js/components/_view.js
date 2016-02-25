@@ -50,6 +50,7 @@ class View {
     if (window.XDomainRequest) { //for IE8,IE9
       contentType = "text/plain";
     }
+    console.log(settings);
     $.ajax({
       url: settings.url,
       method: 'GET',
@@ -63,7 +64,7 @@ class View {
         return data;
       },
       error: function(jqXHR, textStatus, errorThrown) {
-        alert("You can not send Cross Domain AJAX requests: " + errorThrown);
+        console.log("You can not send Cross Domain AJAX requests: " + errorThrown);
       }
 
     });
