@@ -9,7 +9,31 @@ class View {
     this.distanceToSidebarSticky: 0;
     this.navigationBreakpoint: 770;
     this.contentHeight: $("#main").outerHeight();
-
+    this.options = {
+      distanceToTop: $(window).scrollTop(),
+      windowWidth: $(window).width(),
+      windowHeight: $(window).height(),
+      distanceToTopBreakPoint: 0,
+      distanceToSidebarSticky: 0,
+      navigationBreakpoint: 770,
+      contentHeight: $("#main").outerHeight(),
+      language: $("html").attr('lang'),
+      "meta": {
+        "fbid": "265676486878954",
+        "fbpublisher": "http://facebook.com/hiofnorge",
+        "restimage": {
+          "prefix": "http://staging.hiof.no/assets/images/rest/",
+          "1200x675": {
+            "0": "hiof-varmgraa.jpg",
+            "1": "hiof-aqua.jpg",
+            "2": "hiof-lavendel.jpg",
+            "3": "hiof-lysgraa.jpg",
+            "4": "hiof-rosa.jpg",
+            "5": "hiof-sjoegroenn.jpg"
+          }
+        }
+      }
+    };
     this.defaults = {
       // These are the defaults.
       id: null,
@@ -308,3 +332,22 @@ class View {
     }
 
   }
+  (function(Hiof, undefined) {
+    let myView = new View();
+
+
+    // Backward compability
+    window.Hiof.Options = myView.options;
+    window.Hiof.options = myView.options;
+    window.Hiof.setupClientInformationInOptions = myView.setupClientInformationInOptions;
+    window.Hiof.setupi18n = myView.setupi18n;
+    window.Hiof.syncMetaInformation = myView.syncMetaInformation;
+    window.Hiof.storeInitialMetaInOptions = myView.storeInitialMetaInOptions;
+    window.Hiof.updateAnalytics = myView.updateAnalytics;
+    window.Hiof.scrollToElement = myView.scrollToElement;
+
+    // Run setups to bind data to view
+    myView.setupClientInformationInOptions();
+    myView.setupi18n();
+    myView.storeInitialMetaInOptions();
+  })(window.Hiof = window.Hiof || {});
