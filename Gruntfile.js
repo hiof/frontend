@@ -143,6 +143,9 @@ module.exports = function(grunt) {
     },
 
     clean: {
+      options: {
+        force: true
+      },
       before: ['build/assets', 'build/css', 'build/js', 'build/config'],
       after: ['tmp/**/*'],
       dist: ['dist/**/*'],
