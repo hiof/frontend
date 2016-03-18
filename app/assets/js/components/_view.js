@@ -2,13 +2,13 @@ class View {
   constructor() {
     this.ln = $('html').attr('lang');
     this.pageCategory = $('#main').attr('data-page-category');
-    this.distanceToTop: $(window).scrollTop();
-    this.windowWidth: $(window).width();
-    this.windowHeight: $(window).height();
-    this.distanceToTopBreakPoint: 0;
-    this.distanceToSidebarSticky: 0;
-    this.navigationBreakpoint: 770;
-    this.contentHeight: $("#main").outerHeight();
+    this.distanceToTop = $(window).scrollTop();
+    this.windowWidth = $(window).width();
+    this.windowHeight = $(window).height();
+    this.distanceToTopBreakPoint = 0;
+    this.distanceToSidebarSticky = 0;
+    this.navigationBreakpoint = 770;
+    this.contentHeight = $("#main").outerHeight();
     this.options = {
       distanceToTop: $(window).scrollTop(),
       windowWidth: $(window).width(),
