@@ -6,173 +6,43 @@
       return !this.indexOf(str);
     };
   }
+  //if (!Element.prototype.setAttributes) {
+  //  Element.prototype.setAttributes(attrs) {
+  //    for (var idx in attrs) {
+  //      if ((idx === 'styles' || idx === 'style') && typeof attrs[idx] === 'object') {
+  //        for (var prop in attrs[idx]) {
+  //          this.style[prop] = attrs[idx][prop];
+  //        }
+  //      } else if (idx === 'html') {
+  //        this.innerHTML = attrs[idx];
+  //      } else {
+  //        this.setAttribute(idx, attrs[idx]);
+  //      }
+  //    }
+  //  };
+  //}
 
+})(window.Hiof = window.Hiof || {});
+
+
+(function(Hiof, undefined) {
 
   $.support.cors = true;
 
-
-
-
-  // Handlebars helper
-  Handlebars.registerHelper('each_upto', function(ary, max, options) {
-    if (!ary || ary.length === 0)
-    return options.inverse(this);
-    var result = [];
-    for (var i = 0; i < max && i < ary.length; ++i)
-    result.push(options.fn(ary[i]));
-    return result.join('');
-  });
-
-
-  Handlebars.registerHelper('trimString70', function(passedString) {
-    var theString = passedString.substring(0, 70);
-    return new Handlebars.SafeString(theString) + "...";
-  });
-
-  Handlebars.registerHelper('capitalizeFirstLetter', function(value) {
-    if (value) {
-      return new Handlebars.SafeString(value.charAt(0).toUpperCase() + value.slice(1));
-    }
-  });
-  Handlebars.registerHelper('eachProperty', function(context, options) {
-    var ret = "";
-    for (var prop in context) {
-      ret = ret + options.fn({
-        property: prop,
-        value: context[prop]
-      });
-    }
-    return ret;
-  });
-  Handlebars.registerHelper('ifCond', function(v1, v2, options) {
-    if (v1 === v2) {
-      return options.fn(this);
-    }
-    return options.inverse(this);
-  });
-
-
-  // This is our "rescue" method.
-  function notFound() {
-    if ($('#studie').length) {
-
-    } else {
-      $("#content").html("Fant ikke det du lette etter.");
-    }
-  }
-
-  // Error message
-  Path.rescue(notFound);
+})(window.Hiof = window.Hiof || {});
 
 
 
 
 
 
-
-  getUrlParameterByName = function(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-    results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-  };
-
-  createModal = function(options) {
-
-    //console.log("Hiof.createModal  is running");
-    var settings = $.extend({
-      // These are the defaults.
-      header: "",
-      content: "",
-      footer: ""
-    }, options);
-
-    var div = document.createElement('div'),
-    modal,
-    modalWrapper = $(div).clone().addClass("modal fade"),
-    modalDialog = $(div).clone().addClass("modal-dialog"),
-    modalContent = $(div).clone().addClass("modal-content"),
-    modalHeader = $(div).clone().addClass("modal-header"),
-    modalBody = $(div).clone().addClass("modal-body"),
-    modalFooter = $(div).clone().addClass("modal-footer");
-
-    if (settings.header) {
-      //header = "";
-      $(modalContent).append($(modalHeader).append(settings.header));
-    }
-
-    if (settings.content) {
-      //content = "";
-      $(modalContent).append($(modalBody).append(settings.content));
-    }
-
-    if (settings.footer) {
-      //footer = "";
-      $(modalContent).append($(modalFooter).append(settings.footer));
-    }
-    $(modalDialog).append($(modalContent));
-    $(modalWrapper).append($(modalDialog));
-    modal = $(modalWrapper);
-
-    return modal;
-
-  };
+(function(Hiof, undefined) {
 
 
 
-  languageCheck = function() {
-
-    var language = Hiof.Options.language;
-
-    if (typeof language === 'undefined') {
-      language = "nor";
-    }
-    return language;
-  };
-
-  getUrlParameter = function(sParam) {
-
-    var sPageURL = window.location.search.substring(1),
-    sURLVariables = sPageURL.split('&');
-
-    for (var i = 0; i < sURLVariables.length; i++) {
-      var sParameterName = sURLVariables[i].split('=');
-      if (sParameterName[0] == sParam) {
-        return sParameterName[1];
-      }
-    }
-  };
-  getSvgIcon = function(icon) {
-    var req;
-
-    if (window.XMLHttpRequest) {
-      req = new XMLHttpRequest();
-    }
-
-
-    if (req !== null) {
-
-      var url = "/assets/images/icons/" + icon + ".svg";
-
-      req.open("GET", url, false);
-
-      req.onreadystatechange = function() {
-        if (req.readyState == 4 && req.status == 200) {}
-      };
-
-      if (req.overrideMimeType) req.overrideMimeType("image/svg+xml");
-      req.send();
-
-      var response = req.responseXML.documentElement;
-      return response;
-    } else {
-      // Unable to get the data
-    }
-  };
-
-  debug = function(value) {
-    console.log(value);
-  };
+  //debug = function(value) {
+  //  console.log(value);
+  //};
 
   validateEmail = function(email) {
     var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -227,28 +97,14 @@
 
   });
 
-  Element.prototype.setAttributes(attrs) {
-    for (var idx in attrs) {
-      if ((idx === 'styles' || idx === 'style') && typeof attrs[idx] === 'object') {
-        for (var prop in attrs[idx]) {
-          this.style[prop] = attrs[idx][prop];
-        }
-      } else if (idx === 'html') {
-        this.innerHTML = attrs[idx];
-      } else {
-        this.setAttribute(idx, attrs[idx]);
-      }
-    }
-  };
 
   //In this context, 'window' refers to the parameter
 
-  window.Hiof.languageCheck = languageCheck;
-  window.Hiof.languageGetUrlParameter = getUrlParameter;
-  window.Hiof.getUrlParameterByName = getUrlParameterByName;
-  window.Hiof.createModal = createModal;
-  window.Hiof.getSvgIcon = getSvgIcon;
-  window.debug = debug;
+  //window.Hiof.languageCheck = languageCheck;
+  //window.Hiof.languageGetUrlParameter = getUrlParameter;
+  //window.Hiof.getUrlParameterByName = getUrlParameterByName;
+  //window.Hiof.getSvgIcon = getSvgIcon;
+  //window.debug = debug;
   window.Hiof.validateEmail = validateEmail;
   window.Hiof.getHostname = getHostname;
 

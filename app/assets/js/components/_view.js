@@ -17,7 +17,7 @@ class View {
       distanceToSidebarSticky: 0,
       navigationBreakpoint: 770,
       contentHeight: $("#main").outerHeight(),
-      language: $("html").attr('lang'),
+      language: this.languageCheck(this.ln),
       "meta": {
         "fbid": "265676486878954",
         "fbpublisher": "http://facebook.com/hiofnorge",
@@ -32,8 +32,10 @@ class View {
             "5": "hiof-sjoegroenn.jpg"
           }
         }
-      }
+      },
+
     };
+    this.i18n = this.getData({url: "/assets/js/data/i18n.json"}, this).success(function(data) {return data;});
     this.defaults = {
       // These are the defaults.
       id: null,
@@ -42,46 +44,25 @@ class View {
       template: null
     };
     this.scrollDest = false;
-    this.metaData = {
-      "sitename": "//hiof.no",
-      "fbid": "265676486878954",
-      "fbpublisher": "http://facebook.com/hiofnorge",
-      "restimage": {
-        "prefix": "http://hiof.no/assets/images/rest/",
-        "1200x675": {
-          "0": "hiof-varmgraa.jpg",
-          "1": "hiof-aqua.jpg",
-          "2": "hiof-lavendel.jpg",
-          "3": "hiof-lysgraa.jpg",
-          "4": "hiof-rosa.jpg",
-          "5": "hiof-sjoegroenn.jpg"
-        }
-      }
-    };
+    this.meta = this.storeInitialMetaInOptions();
 
 
-    this.meta = {
-      "site_name": "//hiof.no",
-      "og:url": Hiof.options.meta["og:url"],
-      "og:type": "article",
-      //"og:image": Hiof.options.meta["og:image"],
-      "fb:app_id": "265676486878954",
-      "og:title": Hiof.options.meta["og:title"],
-      "og:description": Hiof.options.meta["og:description"],
-      "article:author": Hiof.options.meta.author
-    };
+    //this.meta = {
+    //  "site_name": "Høgskolen i Østfold",
+    //  "og:url": '//hiof.no',
+    //  "og:type": "article",
+    //  //"og:image": Hiof.options.meta["og:image"],
+    //  "fb:app_id": "265676486878954",
+    //  "og:title": $('title').text(),
+    //  "og:description": Hiof.options.meta["og:description"],
+    //  "article:author": Hiof.options.meta.author
+    //};
 
-  }
+  };
   scrollTo(destination) {
     console.log('scollto function is running..');
-    setTimeout(
-      $.scrollTo($(destination), 500, {
-        axis: 'y',
-        offset: {
-          top: -80
-        }
-      }), 3000);
-  };  
+    setTimeout($.scrollTo($(destination), 500, {axis: 'y',offset: {top: -80}}), 3000);
+  };
   getData(options = {}, that){
     // Setup the query
     let settings = Object.assign(
@@ -89,18 +70,14 @@ class View {
       this.defaults,
       options
     );
-
-
     var contentType = "application/x-www-form-urlencoded; charset=utf-8";
-
     if (window.XDomainRequest) { //for IE8,IE9
       contentType = "text/plain";
     }
-
-    console.log('options from articleViewClass');
-    console.log(options);
-    console.log('merged settings...');
-    console.log(settings);
+    //console.log('options from articleViewClass');
+    //console.log(options);
+    //console.log('merged settings...');
+    //console.log(settings);
     return $.ajax({
       url: settings.url,
       method: 'GET',
@@ -118,7 +95,47 @@ class View {
       //}
 
     });
-  }
+  };
+  createModal(options) {
+
+    //console.log("Hiof.createModal  is running");
+    var settings = $.extend({
+      // These are the defaults.
+      header: "",
+      content: "",
+      footer: ""
+    }, options);
+
+    var div = document.createElement('div'),
+    modal,
+    modalWrapper = $(div).clone().addClass("modal fade"),
+    modalDialog = $(div).clone().addClass("modal-dialog"),
+    modalContent = $(div).clone().addClass("modal-content"),
+    modalHeader = $(div).clone().addClass("modal-header"),
+    modalBody = $(div).clone().addClass("modal-body"),
+    modalFooter = $(div).clone().addClass("modal-footer");
+
+    if (settings.header) {
+      //header = "";
+      $(modalContent).append($(modalHeader).append(settings.header));
+    }
+
+    if (settings.content) {
+      //content = "";
+      $(modalContent).append($(modalBody).append(settings.content));
+    }
+
+    if (settings.footer) {
+      //footer = "";
+      $(modalContent).append($(modalFooter).append(settings.footer));
+    }
+    $(modalDialog).append($(modalContent));
+    $(modalWrapper).append($(modalDialog));
+    modal = $(modalWrapper);
+
+    return modal;
+
+  };
   setupClientInformationInOptions() {
     var ua = detect.parse(navigator.userAgent);
     if (ua.browser) {
@@ -165,8 +182,7 @@ class View {
 
       osVersion = osVersionMajor + '.' + osVersionMinor + '.' + osVersionPatch;
     }
-
-
+    let options = this.options;
     options.client = {};
     options.client.url = window.location.href;
     options.client.osName = ua.os.family;
@@ -175,19 +191,23 @@ class View {
     options.client.browserVersion = browserVersion;
     options.client.viewportWidth = window.innerWidth;
     options.client.viewportHeight = window.innerHeight;
-
   };
 
-  setupi18n() {
-    $.ajax({
-      dataType: "json",
-      url: "/assets/js/data/i18n.json",
-      async: false,
-      success: function(data) {
-        Hiof.options.i18n = data;
-      }
-    });
-  };
+  //setupi18n() {
+  //  $.ajax({
+  //    dataType: "json",
+  //    url: "/assets/js/data/i18n.json",
+  //    async: false,
+  //    success: function(data) {
+  //      console.log(data);
+  //      return data;
+  //    },
+  //    done: function(){
+  //      console.log('done from setupi18n():');
+  //      console.log(this.options.i18n);
+  //    }
+  //  });
+  //};
 
   scrollToElement(destination) {
     var thisDestination;
@@ -211,16 +231,47 @@ class View {
       }
     });
   };
+  languageCheck(language) {
+
+    //var language = this.options.language;
+
+    if (typeof language === 'undefined') {
+      language = "nor";
+    }
+    return language;
+  };
+
+  getUrlParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  };
 
 
+
+  getUrlParameter(sParam) {
+
+    let sPageURL = window.location.search.substring(1),
+    sURLVariables = sPageURL.split('&');
+
+    for (var i = 0; i < sURLVariables.length; i++) {
+      let sParameterName = sURLVariables[i].split('=');
+      if (sParameterName[0] == sParam) {
+        return sParameterName[1];
+      }
+    }
+  };
   storeInitialMetaInOptions() {
     let documentTitle = $('head title').text(),
     documentDescription = "",
     documentAuthor = "",
-    documentImage = Hiof.options.meta.restimage.prefix + Hiof.options.meta.restimage["1200x675"]["1"];
+    documentImage = this.options.meta.restimage.prefix + this.options.meta.restimage["1200x675"]["1"];
     //debug(documentTitle);
     if ($('#content header h1').length) {
       documentTitle = $('#content header h1').text();
+    }else if ($('#content > h1').length) {
+      documentTitle = $('#content > h1').text();
     }
     if ($('head meta[name="Description"]').length) {
       documentDescription = $('head meta[name="Description"]').attr("content");
@@ -229,15 +280,30 @@ class View {
       documentAuthor = $('head meta[name="Author"]').attr("content");
     }
     //Hiof.options.meta = {};
-    var meta = Hiof.options.meta;
-    meta.site_name = Hiof.options.i18n.nb.meta.name;
-    meta["og:url"] = window.location.href;
-    meta["og:title"] = documentTitle;
-    meta["og:description"] = documentDescription;
-    meta["og:type"] = "website";
-    meta["og:image"] = documentImage;
-    meta.author = documentAuthor;
+    //var meta = this.options.meta;
+    //console.log('this.options.i18n from storeInitialMetaInOptions()');
+    //console.log(this.options.i18n);
+    //meta.site_name = this.options.i18n.nb.meta.name;
+    //meta["og:url"] = window.location.href;
+    //meta["og:title"] = documentTitle;
+    //meta["og:description"] = documentDescription;
+    //meta["og:type"] = "website";
+    //meta["og:image"] = documentImage;
+    //meta.author = documentAuthor;
     //meta["fb:app_id"] = Hiof.options.i18n.meta.fbid;
+
+    // TODO: i18n this somethinge
+    let meta = {
+      "site_name": "Høgskolen i Østfold",
+      "og:url": window.location.href,
+      "og:title": documentTitle,
+      "og:description": documentDescription,
+      "og:type": "website",
+      "og:image": documentImage,
+      "author": documentAuthor
+    };
+    return meta;
+
   };
 
   createAndApplyMetaElement(key, value) {
@@ -251,7 +317,7 @@ class View {
 
 
 
-  syncHeadMeta(meta = {}){
+  syncHeadMeta(options = {}){
     // Setup the settings
     //var settings = $.extend({
     //  // These are the defaults.
@@ -309,28 +375,125 @@ class View {
       }
     });
   };
+
+
+
+
+  getSvgIcon(icon) {
+    var req;
+
+    if (window.XMLHttpRequest) {
+      req = new XMLHttpRequest();
+    }
+
+
+    if (req !== null) {
+
+      var url = "/assets/images/icons/" + icon + ".svg";
+
+      req.open("GET", url, false);
+
+      req.onreadystatechange = function() {
+        if (req.readyState == 4 && req.status == 200) {}
+      };
+
+      if (req.overrideMimeType) req.overrideMimeType("image/svg+xml");
+      req.send();
+
+      var response = req.responseXML.documentElement;
+      return response;
+    } else {
+      // Unable to get the data
+    }
+  };
+
+
   updateAnalytics(){
     //ga('set', 'page', document.location.href);
     //ga('send', 'pageview');
   };
 
 };
+
+
+
+
+
+
+
 (function(Hiof, undefined) {
-  let myView = new View();
+  let view = new View();
+  Hiof.view = view;
+
+
+  // Handlebars helper
+  Handlebars.registerHelper('each_upto', function(ary, max, options) {
+    if (!ary || ary.length === 0)
+    return options.inverse(this);
+    var result = [];
+    for (var i = 0; i < max && i < ary.length; ++i)
+    result.push(options.fn(ary[i]));
+    return result.join('');
+  });
+  Handlebars.registerHelper('trimString70', function(passedString) {
+    var theString = passedString.substring(0, 70);
+    return new Handlebars.SafeString(theString) + "...";
+  });
+
+  Handlebars.registerHelper('capitalizeFirstLetter', function(value) {
+    if (value) {
+      return new Handlebars.SafeString(value.charAt(0).toUpperCase() + value.slice(1));
+    }
+  });
+  Handlebars.registerHelper('eachProperty', function(context, options) {
+    var ret = "";
+    for (var prop in context) {
+      ret = ret + options.fn({
+        property: prop,
+        value: context[prop]
+      });
+    }
+    return ret;
+  });
+  Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+    if (v1 === v2) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
+
+
+  // This is our "rescue" method.
+  function notFound() {
+    if ($('#studie').length) {
+
+    } else {
+      $("#content").html("Fant ikke det du lette etter.");
+    }
+  }
+
+  // Error message
+  Path.rescue(notFound);
+
+
+
+
+
 
 
   // Backward compability
-  window.Hiof.Options = myView.options;
-  window.Hiof.options = myView.options;
-  window.Hiof.setupClientInformationInOptions = myView.setupClientInformationInOptions;
-  window.Hiof.setupi18n = myView.setupi18n;
-  window.Hiof.syncMetaInformation = myView.syncMetaInformation;
-  window.Hiof.storeInitialMetaInOptions = myView.storeInitialMetaInOptions;
-  window.Hiof.updateAnalytics = myView.updateAnalytics;
-  window.Hiof.scrollToElement = myView.scrollToElement;
+  window.Hiof.Options = view.options;
+  window.Hiof.options = view.options;
+  window.Hiof.createModal = view.createModal;
+  window.Hiof.setupClientInformationInOptions = view.setupClientInformationInOptions;
+  //window.Hiof.setupi18n = view.setupi18n;
+  window.Hiof.syncMetaInformation = view.syncHeadMeta;
+  window.Hiof.storeInitialMetaInOptions = view.storeInitialMetaInOptions;
+  window.Hiof.updateAnalytics = view.updateAnalytics;
+  window.Hiof.scrollToElement = view.scrollToElement;
 
   // Run setups to bind data to view
-  myView.setupClientInformationInOptions();
-  myView.setupi18n();
-  myView.storeInitialMetaInOptions();
+  //view.setupClientInformationInOptions();
+  //view.setupi18n();
+  //view.storeInitialMetaInOptions();
 })(window.Hiof = window.Hiof || {});
