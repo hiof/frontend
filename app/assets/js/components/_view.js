@@ -351,14 +351,14 @@ class View {
           $('meta[property="' + key + '"]').attr('content', value);
 
         } else {
-          createAndApplyMetaElement(key, value);
+          this.createAndApplyMetaElement(key, value);
         }
       } else if (key === "article:author") {
         if ($('meta[property="' + key + '"]').length) {
           $('meta[property="' + key + '"]').attr('content', value);
           $('meta[name="Author"]').attr('content', value);
         } else {
-          createAndApplyMetaElement(key, value);
+          this.createAndApplyMetaElement(key, value);
         }
 
       } else if (key === "og:description") {
@@ -366,12 +366,12 @@ class View {
           $('meta[property="' + key + '"]').attr('content', value);
           $('meta[name="Description"]').attr('content', value);
         } else {
-          createAndApplyMetaElement(key, value);
+          this.createAndApplyMetaElement(key, value);
         }
       } else if ($('meta[property="' + key + '"]').length) {
         $('meta[property="' + key + '"]').attr('content', value);
       } else {
-        createAndApplyMetaElement(key, value);
+        this.createAndApplyMetaElement(key, value);
       }
     });
   };
