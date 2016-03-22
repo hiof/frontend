@@ -171,218 +171,25 @@ module.exports = function(grunt) {
         }
       }
     },
-    concat: {
-      pages: {
-        files: {
-          'build/index.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/index.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/index2.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/index2.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/typography-kitchen-sink.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/content-kitchen-sink.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/form-index.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/form-control-index.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/form-buttons.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/form-control-buttons.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/content-section-person-search.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/person-search.html',
-            'app/views/partials/_activate_design_page.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/content-section-person-profile-jo.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/person-profile-jo.html',
-            'app/views/partials/_activate_design_page.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/content-section-person-profile-nina.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/person-profile-nina.html',
-            'app/views/partials/_activate_design_page.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/content-section-person-profile-baard.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/person-profile-baard.html',
-            'app/views/partials/_activate_design_page.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/content-section-calendar.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/calendar-entries.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/content-section-calendar-event.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/calendar-event.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/content-contact-web-responsible.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/contact-web-responsible.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/content-contact.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/contact-general.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/content-privacy-policy.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/privacy-policy.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/content-table.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/table.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/content-it-help.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/content-it-help.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/article-research.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/articles/research.html',
-            'app/views/pages/articles/article-sidebar.html',
-            'app/views/pages/articles/article-footer.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/article-single.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/articles/article-single.html',
-            'app/views/pages/articles/article-sidebar.html',
-            'app/views/pages/articles/article-footer.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/article-chronicle.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/articles/chronicle.html',
-            'app/views/pages/articles/article-sidebar.html',
-            'app/views/pages/articles/article-footer.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/article-list.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/articles/article-list.html',
-            'app/views/pages/articles/article-sidebar.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/article-archive.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/articles/article-archive.html',
-            'app/views/pages/articles/article-sidebar.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/studier-index.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/study-programs.html',
-            'app/views/pages/content/study-programs-sidebar-start.html',
-            'app/views/pages/content/study-programs-sidebar-search.html',
-            'app/views/pages/content/study-programs-sidebar-end.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/studier-dataingenior.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/study-program-ingenior-computer.html',
-            'app/views/pages/content/study-programs-sidebar-start.html',
-            'app/views/pages/content/study-programs-sidebar-page-nav.html',
-            'app/views/pages/content/study-programs-sidebar-end.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/studier-dataingenior-studymodel.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/study-program-ingenior-computer-studymodel.html',
-            'app/views/pages/content/study-programs-sidebar-start.html',
-            'app/views/pages/content/study-programs-sidebar-page-nav.html',
-            'app/views/pages/content/study-programs-sidebar-end.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/universiell-utforming.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/universal-access.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/student.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/intranet-student.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/student-fronter.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/intranet-student-fronter.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/ansatt.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/intranet-employee.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/map.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/map.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/semester-start.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/semester-start.html',
-            'app/views/partials/_footer.html'
-          ],
-          'build/itservices.html': [
-            'app/views/partials/_head.html',
-            'app/views/partials/_header.html',
-            'app/views/pages/content/itservices.html',
-            'app/views/partials/_footer.html'
-          ]
-        }
+    babel: {
+      options: {
+        sourceMap: true,
+        comments: false
+        //presets: ['es2015']
       },
+      dist: {
+        files: [
+          {
+            expand: true,
+            cwd: 'app/assets/js/components/',
+            src: ['*.js'],
+            filter: 'isFile',
+            dest: 'build/js/components/'
+          }
+        ]
+      }
+    },
+    concat: {
       scripts: {
         options: {
           //sourceMap: true,
@@ -407,7 +214,8 @@ module.exports = function(grunt) {
           'app/vendor/slideout/slideout-navigation.js',
           'app/vendor/detectjs/detect.min.js',
           'app/assets/js/templates/*.js',
-          'app/assets/js/components/*.js',
+          'build/js/components/*.js',
+          //'app/assets/js/components/*.js',
           'app/assets/js/*.js'
         ],
         dest: 'tmp/js/application.min.js'
@@ -418,7 +226,7 @@ module.exports = function(grunt) {
         mangle: false,
         //compress: true,
         preserveComments: false,
-        banner: '/*!  HiØ JavaScript v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("HH:mm DD-MM-YYYY") %> */',
+        banner: '/*!  HiØ JavaScript v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("HH:mm DD-MM-YYYY") %>, license: <%= pkg.license %>  */',
         //sourceMap: true,
         //sourceMapIncludeSources: true,
         //sourceMapIn: 'tmp/js/application.min.js.map', // input sourcemap from a previous compilation
@@ -624,13 +432,13 @@ watch: {
       livereload: true,
     },
   },
-  views: {
-    files: ['app/views/**/*.html'],
-    tasks: ['concat:pages'],
-    options: {
-      livereload: true,
-    },
-  },
+  //views: {
+  //  files: ['app/views/**/*.html'],
+  //  tasks: ['concat:pages'],
+  //  options: {
+  //    livereload: true,
+  //  },
+  //},
   images: {
     files: ['app/assets/images/**/*.jpg', 'app/assets/images/**/*.png', 'app/assets/images/**/*.svg'],
     tasks: ['copy:images'],
@@ -679,12 +487,12 @@ bump: {
 // Tasks
 
 // Register tasks
-grunt.registerTask('subtaskJs', ['jshint', 'concat:scripts', 'uglify', 'copy:jscomponents', 'copy:jsmap', 'copy:jsdata', 'copy:jstemplates']);
+grunt.registerTask('subtaskJs', ['babel', 'concat:scripts', 'uglify', 'copy:jscomponents', 'copy:jsmap', 'copy:jsdata', 'copy:jstemplates']);
 grunt.registerTask('subtaskCss', ['less', 'autoprefixer', 'cssmin']);
 grunt.registerTask('subtaskCopy', ['copy:images', 'copy:fonts', 'copy:vendor', 'copy:favicon', 'copy:tests']);
 grunt.registerTask('subtaskCopyDeploy', ['copy:images', 'copy:vendor', 'copy:favicon']);
-grunt.registerTask('subtaskViews', ['concat:pages']);
-grunt.registerTask('build', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:build', 'subtaskCopy', 'subtaskViews']);
+//grunt.registerTask('subtaskViews', ['concat:pages']);
+grunt.registerTask('build', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:build', 'subtaskCopy']);
 
 
 // Deploy tasks
@@ -694,7 +502,6 @@ grunt.registerTask('deploy-stage', [
   'subtaskJs',
   'versioning:deploy',
   'subtaskCopyDeploy',
-  'subtaskViews',
   'clean:deploy',
   'copy:deploy',
   'sftp:stage'
@@ -706,7 +513,6 @@ grunt.registerTask('deploy-prod', [
   'subtaskJs',
   'versioning:deploy',
   'subtaskCopyDeploy',
-  'subtaskViews',
   'clean:deploy',
   'copy:deploy',
   'sftp:prod'
