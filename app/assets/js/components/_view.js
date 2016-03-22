@@ -292,7 +292,7 @@ class View {
     //meta.author = documentAuthor;
     //meta["fb:app_id"] = Hiof.options.i18n.meta.fbid;
 
-    // TODO: i18n this somethinge
+    // TODO: i18n this
     let meta = {
       "site_name": "Høgskolen i Østfold",
       "og:url": window.location.href,
@@ -307,11 +307,12 @@ class View {
   };
 
   createAndApplyMetaElement(key, value) {
-    var meta = document.createElement('meta');
-    meta.setAttributes({
-      'property': key,
-      'content': value
-    });
+    let meta = document.createElement('meta');
+    $(meta).attr('property', key).attr('content', value);
+    //meta.setAttributes({
+    //  'property': key,
+    //  'content': value
+    //});
     document.getElementsByTagName('head')[0].appendChild(meta);
   };
 
@@ -336,14 +337,13 @@ class View {
       this.meta,
       options
     );
-
-
+    let that = this;
     // Updated / create meta-tags
     $.each(settings, function(key, value) {
       if (key === "og:title") {
         // If the string contains pipe, remove it and everything after the pipe
         if (value.indexOf('|')) {
-          value = value.substring(0, value.indexOf('|'));
+          //value = value.substring(0, value.indexOf('|'));
         }
 
         if ($('meta[property="' + key + '"]').length) {
@@ -351,14 +351,15 @@ class View {
           $('meta[property="' + key + '"]').attr('content', value);
 
         } else {
-          this.createAndApplyMetaElement(key, value);
+          $('head title').text(value + ' | ' + settings.site_name);
+          that.createAndApplyMetaElement(key, value);
         }
       } else if (key === "article:author") {
         if ($('meta[property="' + key + '"]').length) {
           $('meta[property="' + key + '"]').attr('content', value);
           $('meta[name="Author"]').attr('content', value);
         } else {
-          this.createAndApplyMetaElement(key, value);
+          that.createAndApplyMetaElement(key, value);
         }
 
       } else if (key === "og:description") {
@@ -366,12 +367,12 @@ class View {
           $('meta[property="' + key + '"]').attr('content', value);
           $('meta[name="Description"]').attr('content', value);
         } else {
-          this.createAndApplyMetaElement(key, value);
+          that.createAndApplyMetaElement(key, value);
         }
       } else if ($('meta[property="' + key + '"]').length) {
         $('meta[property="' + key + '"]').attr('content', value);
       } else {
-        this.createAndApplyMetaElement(key, value);
+        that.createAndApplyMetaElement(key, value);
       }
     });
   };
