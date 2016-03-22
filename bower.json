@@ -20,6 +20,7 @@
     "detectjs": "https://github.com/darcyclarke/Detect.js.git",
     "hiof-colors": "https://github.com/hiof/colors.git",
     "hiof-layout": "https://github.com/hiof/layout.git",
+    "page-view": "https://github.com/hiof/page-view.git",
     "hiof-typography": "https://github.com/hiof/typography.git"
   }
 }

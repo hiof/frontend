@@ -62,7 +62,7 @@
 
 
   toggleMobileNavigation = function() {
-
+    //var view = new View();
     // Check if the buttons exsist
     if ($('#nav-mobile-internal').length) {
       // If it exsist, return the function without doing anything else.
@@ -71,11 +71,10 @@
 
     // Variables
 
-
     var navButtonTextMobileSite,
     navButtonTextMobileUser,
     navButtonTextInternal,
-    lang = Hiof.languageCheck();
+    lang = Hiof.view.ln;
 
     //console.log(lang);
 
@@ -110,9 +109,9 @@
 
 
     if (!$("html.lt-ie10").length) {
-      var svgNavSite = Hiof.getSvgIcon("nav-site"),
-      svgNavUser = Hiof.getSvgIcon("user"),
-      svgPageNav = Hiof.getSvgIcon("nav-page");
+      var svgNavSite = Hiof.view.getSvgIcon("nav-site"),
+      svgNavUser = Hiof.view.getSvgIcon("user"),
+      svgPageNav = Hiof.view.getSvgIcon("nav-page");
 
       $(buttonNavSite).append(svgNavSite);
       $(buttonNavUser).append(svgNavUser);
