@@ -496,7 +496,7 @@ grunt.registerTask('build', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioni
 
 
 // Deploy tasks
-grunt.registerTask('deploy-stage', [
+grunt.registerTask('deploy-staging', [
   'clean:build',
   'subtaskCss',
   'subtaskJs',
