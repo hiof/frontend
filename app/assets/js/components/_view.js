@@ -381,31 +381,31 @@ class View {
 
 
   getSvgIcon(icon) {
-    var req;
+    //var req;
+    //
+    //if (window.XMLHttpRequest) {
+    //  req = new XMLHttpRequest();
+    //}
 
-    if (window.XMLHttpRequest) {
-      req = new XMLHttpRequest();
-    }
 
-
-    if (req !== null) {
-
-      var url = "/assets/images/icons/" + icon + ".svg";
-
-      req.open("GET", url, false);
-
-      req.onreadystatechange = function() {
-        if (req.readyState == 4 && req.status == 200) {}
-      };
-
-      if (req.overrideMimeType) req.overrideMimeType("image/svg+xml");
-      req.send();
-
-      var response = req.responseXML.documentElement;
-      return response;
-    } else {
-      // Unable to get the data
-    }
+    //if (req !== null) {
+    //
+    //  var url = "//hiof.no/assets/images/icons/" + icon + ".svg";
+    //
+    //  req.open("GET", url, false);
+    //
+    //  req.onreadystatechange = function() {
+    //    if (req.readyState == 4 && req.status == 200) {}
+    //  };
+    //
+    //  if (req.overrideMimeType) req.overrideMimeType("image/svg+xml");
+    //  req.send();
+    //
+    //  var response = req.responseXML.documentElement;
+    //  return response;
+    //} else {
+    //  // Unable to get the data
+    //}
   };
 
 
