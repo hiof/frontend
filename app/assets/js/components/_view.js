@@ -469,7 +469,7 @@ class View {
     if ($('#studie').length) {
 
     } else {
-      $("#content").html("Fant ikke det du lette etter.");
+      //$("#content").html("Fant ikke det du lette etter.");
     }
   }
 
