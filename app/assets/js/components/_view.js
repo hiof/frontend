@@ -410,8 +410,7 @@ class View {
 
 
   updateAnalytics(){
-    //ga('set', 'page', document.location.href);
-    //ga('send', 'pageview');
+    ga('send', 'pageview', document.location.href);
   };
 
 };

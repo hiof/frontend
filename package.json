@@ -1,15 +1,15 @@
 {
   "name": "hiof-frontend",
-  "version": "3.13.2",
-  "author": "HiØ ved Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>",
+  "version": "3.14.0.beta-1",
+  "author": "HiØ ved Kenneth Lindbeck-Dahlstrøm <kld@hiof.no>",
   "repository": {
     "type": "git",
     "url": "https://github.com/hiof/frontend.git"
   },
   "contributors": [
     {
-      "name": "Kenneth Dahlstrøm",
-      "email": "kenneth.dahlstrom@hiof.no"
+      "name": "Kenneth Lindbeck-Dahlstrøm",
+      "email": "kld@hiof.no"
     }
   ],
   "scripts": {
