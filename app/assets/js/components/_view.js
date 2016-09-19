@@ -46,7 +46,6 @@ class View {
     this.scrollDest = false;
     this.meta = this.storeInitialMetaInOptions();
 
-
     //this.meta = {
     //  "site_name": "Høgskolen i Østfold",
     //  "og:url": '//hiof.no',
@@ -58,6 +57,22 @@ class View {
     //  "article:author": Hiof.options.meta.author
     //};
 
+  };
+  countdownTimer(date, element, format){
+    //console.log("timer running");
+    var futureDate = moment(new Date("2016, 9, 20, 0, 0, 1")); // 2016, 9, 20, 0, 0, 1
+    console.log("futureDate="+futureDate);
+    setInterval(function() {
+      //console.log("timer updating....");
+      var ms = moment().diff(moment(futureDate));
+      var duration = moment.duration(ms).format(format); // MM [maneder] dd [dager] hh:mm:ss
+      $(element).text(duration); // #news h2
+    }, 200);
+
+
+    //var no = moment().locale('nb');
+    //let timeTo = no(time).countdown().toString();
+    //return timeTo;
   };
   scrollTo(destination) {
     console.log('scollto function is running..');

@@ -213,6 +213,8 @@ module.exports = function(grunt) {
           'app/vendor/jquery.scrollTo/jquery.scrollTo.js',
           'app/vendor/slideout/slideout-navigation.js',
           'app/vendor/detectjs/detect.min.js',
+          'app/vendor/moment/min/moment-with-locales.js',
+          'app/vendor/moment-duration-format/lib/moment-duration-format.js',
           'app/assets/js/templates/*.js',
           'build/js/components/*.js',
           //'app/assets/js/components/*.js',
