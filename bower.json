@@ -1,5 +1,5 @@
 {
-  "name": "Hiof-frontend",
+  "name": "hiof-frontend",
   "authors": [
     "Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>"
   ],
@@ -21,6 +21,8 @@
     "hiof-colors": "https://github.com/hiof/colors.git",
     "hiof-layout": "https://github.com/hiof/layout.git",
     "page-view": "https://github.com/hiof/page-view.git",
-    "hiof-typography": "https://github.com/hiof/typography.git"
+    "hiof-typography": "https://github.com/hiof/typography.git",
+    "moment": "^2.14.1",
+    "moment-duration-format": "^1.3.0"
   }
 }
