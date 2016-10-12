@@ -15,26 +15,35 @@ module.exports = function(grunt) {
     moment: require('moment'),
 
     // Tasks
-    lesslint: {
-      src: ['app/assets/less/*.less'],
+    //lesslint: {
+    //  src: ['app/assets/less/*.less'],
+    //  options: {
+    //    csslint: {
+    //      'known-properties': false
+    //    }
+    //  }
+    //},
+    //less: {
+    //  standard: {
+    //    options: {
+    //    },
+    //    files: [{
+    //      expand: true,
+    //      cwd: 'app/assets/less/',
+    //      src: ['*.less'],
+    //      dest: 'tmp/css/',
+    //      ext: '.css'
+    //    }]
+    //  }
+    //},
+    sass: {
       options: {
-        csslint: {
-          'known-properties': false
-        }
-      }
-    },
-    less: {
-      standard: {
-        options: {
 
-        },
-        files: [{
-          expand: true,
-          cwd: 'app/assets/less/',
-          src: ['*.less'],
-          dest: 'tmp/css/',
-          ext: '.css'
-        }]
+      },
+      dist: {
+        files: {
+          'tmp/css/<%= pkg.name %>.css': 'app/assets/sass/theme-standard.scss'
+        }
       }
     },
     autoprefixer: {

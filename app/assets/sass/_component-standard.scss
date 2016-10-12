@@ -1,0 +1,68 @@
+
+
+
+
+// Resources
+@import "../../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+@import "../../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+
+
+@import '../../../vendor/sass-mq/mq';
+@import 'variables/_standard';
+
+
+// Layout
+@import "components/_base";
+@import "components/_layout";
+
+
+
+// Typography
+@import "components/_typography";
+
+
+// General components
+@import "components/_buttons";
+@import "components/_dropdown";
+@import "components/_symbols";
+@import "components/_forms";
+@import "components/_table";
+@import "components/_motion";
+@import "components/_pagination";
+@import "components/_toolbar";
+//@import "components/_navigation";
+
+
+
+
+//@import "components/_component_badges.less";
+//@import "components/_component_labels.less";
+//@import "components/_component_cookie-disclaimer.less";
+//@import "components/_component_alert.less";
+//@import "components/_component_modal.less";
+//@import "components/_component_breadcrumb.less";
+//@import "components/_component_colors.less";
+
+
+//// Header styling
+//@import "components/_component_header.less";
+
+
+//// Content styling
+//@import "components/_component_content.less";
+//@import "components/_component_content_media.less";
+//@import "components/_component_content_calendar.less";
+//@import "components/_component_content_profiles.less";
+//@import "components/_component_content_google-search.less";
+//@import "components/_component_content_tooltip.less";
+//@import "components/_component_content_itservices.less";
+//@import "components/_component_map.less";
+
+
+
+//// Footer styling
+//@import "components/_component_footer.less";
+
+
+//// Helpers
+//@import "components/_component_helpers.less";
