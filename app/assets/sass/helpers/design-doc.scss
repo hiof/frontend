@@ -2,57 +2,43 @@
 
 ## hiof.no design
 
-Abstract:
-
-This overall webdesign documentation describe the following content types of the hiof.no website:
-
-- [Index design](#Index-design)
-- Regular page structure
-- The different page-types
-  - Course catalogue
-  - Admission
-  - Research
-  - Faculty/Academy/unit
-  - Vacant positions page
-  - Generic page
-
-Additionaly the components have the following documentation:
-
-- Core design
-  - Typography
-  - Layout
-  - Color
-  - Header
-  - Footer
-- Content design
-  - Articles
-  - Media
-  - Calendar
-  - Profiles
-  - Google Search
-  - Tooltip
-  - Map
-  - Buttons
-  - Forms
-  - Table
-  - Toolbar
-  - Navigation
-  - Cookie disclaimer design
-  - Alerts
-  - Modals
-  - Breadcrumb
-- Helpers
-
 */
 
 /*
-### Index design
+### Header
 */
 
 /*
-##### Header
+
+#### Small screens
+
+<video autoplay><source src="http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-header-navigation-left-nav.mp4" type="video/mp4"></video>
+<video autoplay><source src="http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-header-navigation-right-nav.mp4" type="video/mp4"></video>
+
+Main navigation is found in a slidin navigation accessable through the hamburger-menu button. [The logo](http://design.hiof.no/grafisk-profil?del=1-00-logo) is placed at in the center of the header-banner. On the right, there is a button to toggle internal pages for students and employees and to switch language of the page to English.
+
+##### Medium to large screens
+
+![Screenshot of the header on a medium to large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-navigation-fullscreen.jpg)
 
 Main navigation on the left with studies, research, about and search buttons that include dropdowns. [The logo](http://design.hiof.no/grafisk-profil?del=1-00-logo) is placed at in the center of the header-banner. On the right we have buttons for internal sites for students emploies and language selection. Design is described in the [header](http://hiof.no) section.
+
+
+*/
+
+
+/*
+### Footer
+*/
+
+/*
+### Frontpage content
+
+![Frontpage design on a large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-frontpage-content.jpg)
+
+*/
+
+/*
 
 ##### Marketing
 
@@ -109,6 +95,18 @@ Four articles from the research category. Design is described in the [article](h
 
 - Documentation for this section is not available yet
 
+
+*/
+
+/*
+
+#### English frontpage
+
+- Documentation for this section is not available yet
+
+```
+@import '';
+```
 
 */
 
