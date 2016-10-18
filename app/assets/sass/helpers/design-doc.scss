@@ -12,8 +12,7 @@
 
 #### Small screens
 
-<video autoplay loop><source src="http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-header-navigation-left-nav.mp4" type="video/mp4"></video>
-<video autoplay loop><source src="http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-header-navigation-right-nav.mp4" type="video/mp4"></video>
+<video autoplay loop class="media media-video media-float-left"><source src="http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-header-navigation-left-nav.mp4" type="video/mp4"></video>
 
 Main navigation is found in a slidin navigation accessable through the hamburger-menu button. [The logo](http://design.hiof.no/grafisk-profil?del=1-00-logo) is placed at in the center of the header-banner. On the right, there is a button to toggle internal pages for students and employees and to switch language of the page to English.
 
@@ -21,7 +20,7 @@ Main navigation is found in a slidin navigation accessable through the hamburger
 
 ![Screenshot of the header on a medium to large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-header-fullscreen.jpg)
 
-Main navigation on the left with studies, research, about and search buttons that include dropdowns. [The logo](http://design.hiof.no/grafisk-profil?del=1-00-logo) is placed at in the center of the header-banner. On the right we have buttons for internal sites for students emploies and language selection. Design is described in the [header](http://hiof.no) section.
+Main navigation on the left with studies, research, about and search buttons that include dropdowns. [The logo](http://design.hiof.no/grafisk-profil?del=1-00-logo) is placed at in the center of the header-banner. On the right we have buttons for internal sites for students emploies and language selection. Design is described in the [header (module documentation not available yet)](#) section.
 
 
 */
@@ -30,6 +29,29 @@ Main navigation on the left with studies, research, about and search buttons tha
 /*
 ### Footer
 */
+
+/*
+
+#### Small screens
+
+![Screenshot of the header on a medium to large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-footer-small-screen.jpg)
+
+The breadcrumb fold to a vertical list on small screens with an arrow indicator for the hiracy. The four content sections rearranges vertically with left-to-right priority of modules folded to top-to-bottom priority.
+
+
+#### Medium screens
+
+![Screenshot of the header on a medium to large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-footer-medium-screen.jpg)
+
+#### Large screens
+
+
+![Screenshot of the header on a medium to large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-footer-large-screen.jpg)
+
+
+*/
+
+
 
 /*
 ### Frontpage content
@@ -41,6 +63,7 @@ Main navigation on the left with studies, research, about and search buttons tha
 /*
 
 ##### Marketing
+
 
 The marketing section change form depending on the season / time of the year. During the period between February 1st. and April 15th. this section of the page have displayed a mood-video with links to our study program. Rest of the year this section is filled with three marketing spots and our study/course navigation.
 
@@ -86,382 +109,5 @@ Four articles from the research category. Design is described in the [article](h
 
 ##### Desktop/large size screens
 
-
-*/
-
-/*
-
-### The different page-types
-
-- Documentation for this section is not available yet
-
-
-*/
-
-/*
-
-#### English frontpage
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-#### Course catalogue
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-
-/*
-
-#### Admission
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-#### Research
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-#### Faculty/Academy
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-
-
-
-
-/*
-
-#### Vacant positions page
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-#### Generic page
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-### Core design
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-#### Typography
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-#### Layout
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-#### Color
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-### Page sections
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-#### Header
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-#### Footer
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-### Content design
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-#### Media
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-#### Calendar
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-#### Profiles
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-#### Google Search
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-/*
-
-#### Tooltip
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-
-
-/*
-
-#### Map
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-/*
-
-#### Buttons
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-/*
-
-#### Forms
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-/*
-
-#### Table
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-/*
-
-#### Toolbar
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-/*
-
-#### Navigation
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-/*
-
-#### Cookie disclaimer design
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-/*
-
-#### Alerts
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-/*
-
-#### Modals
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-/*
-
-#### Breadcrumb
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
-
-*/
-/*
-
-### Helpers
-
-- Documentation for this section is not available yet
-
-```
-@import '';
-```
 
 */
