@@ -2,51 +2,72 @@
 
 ## hiof.no design
 
+The university college website have information in both Norwegian and English. The page is consist of a header section, a content section and a footer section. The header and footer sections stay the same throughout the site regardless of the type of content in the content section. The content section have a few different types of page types:
+
+- [Frontpage content](/web?del=frontpage-content)
+- [Regular page content](/web?del=regular-page-content)
+- [Faculty/unit frontpages](/web?del=Facultyunit-frontpages)
+- [Academy frontpage](/web?del=academy-frontpage)
+
+
 */
 
 /*
 ### Header
+
+The header consist of the [brand/logo](http://design.hiof.no/grafisk-profil?del=1-00-logo) element and two navigation areas. The brand is placed in the center of the header-area regardless of screen size.
+
+The navigational area to the left of the logo include the main content sections on the page, the course-catalogue with related resources, research pages, about the university college pages and a button to toggle the site wide search. The navigational area to the right of the logo include menu items for internal sites for students and employees and a language selection button to switch between Norwegian and English.
+
+The navigation consist of two different user experiences, one vertical navigation with menu-toggle buttons and the other a horizontal navigation-experience. The vertical navigation is for small to medium screens sizes with the width of the screen lower than 770 pixel. The horizontal navigation is for screens with a width higher than 770px.
+
 */
 
 /*
 
-#### Small screens
+#### Vertical navigation
 
 <video autoplay loop class="media media-video media-float-left"><source src="http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-header-navigation-left-nav.mp4" type="video/mp4"></video>
 
-Main navigation is found in a slidin navigation accessable through the hamburger-menu button. [The logo](http://design.hiof.no/grafisk-profil?del=1-00-logo) is placed at in the center of the header-banner. On the right, there is a button to toggle internal pages for students and employees and to switch language of the page to English.
+Main navigation is found in a slid-in navigation accessible through the hamburger-menu button. On the right, there is a button to toggle internal pages for students and employees and to switch language of the page to English.
 
-##### Medium to large screens
+Design details is described in the [header (module documentation not available yet)](#) section.
+
+#### Horizontal navigation
 
 ![Screenshot of the header on a medium to large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-header-fullscreen.jpg)
 
-Main navigation on the left with studies, research, about and search buttons that include dropdowns. [The logo](http://design.hiof.no/grafisk-profil?del=1-00-logo) is placed at in the center of the header-banner. On the right we have buttons for internal sites for students emploies and language selection. Design is described in the [header (module documentation not available yet)](#) section.
+Main navigation on the left with studies, research, about and search buttons that include dropdown. On the right we have buttons to internal contents for students and employees and language selection.
 
+Design details is described in the [header (module documentation not available yet)](#) section.
 
 */
 
 
 /*
 ### Footer
+
+The footer include the following section:
+
+- <a href="https://en.wikipedia.org/wiki/Breadcrumb_(navigation)" target="_blank">Breadcrumb</a> section
+- Lists of our faculties, academy and units
+- Other pages owned by the University College
+- Contact information and service hours.
+- A map/location
+- Last updated information related to the specific page you visit + copyright information.
+
+The footer section change form depending on the screen-size of the device used to view the site. **On small screens** the mentioned content is layout vertically on the order their listed. **On medium screens** the breadcrumb has its own row, then a row with units and our pages, then a row with contact and the map/location and lastly the last updated + copyright information. **On large screens** the breadcrumb has their own row, then all the content sections is layout out from left to right in a row and at last the last updated and copyright information have its own row at the bottom.
 */
 
 /*
 
-#### Small screens
+#### Footer screenshots
 
-![Screenshot of the header on a medium to large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-footer-small-screen.jpg)
+![Screenshot of the footer on a small screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-footer-small-screen.jpg)
 
-The breadcrumb fold to a vertical list on small screens with an arrow indicator for the hiracy. The four content sections rearranges vertically with left-to-right priority of modules folded to top-to-bottom priority.
+![Screenshot of the footer on a medium screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-footer-medium-screen.jpg)
 
-
-#### Medium screens
-
-![Screenshot of the header on a medium to large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-footer-medium-screen.jpg)
-
-#### Large screens
-
-
-![Screenshot of the header on a medium to large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-footer-large-screen.jpg)
+![Screenshot of the footer on a large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-footer-large-screen.jpg)
 
 
 */
@@ -56,58 +77,112 @@ The breadcrumb fold to a vertical list on small screens with an arrow indicator 
 /*
 ### Frontpage content
 
-![Frontpage design on a large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-frontpage-content.jpg)
+The frontpage content include the following sections
+
+- Marketing
+- Person search
+- Events calendar
+- News
+- Research news
+
+[Jump to the screenshots of the frontpage on diffent screen sizes](/web?del=frontpage-screenshots).
 
 */
 
 /*
 
-##### Marketing
+#### Marketing
 
 
-The marketing section change form depending on the season / time of the year. During the period between February 1st. and April 15th. this section of the page have displayed a mood-video with links to our study program. Rest of the year this section is filled with three marketing spots and our study/course navigation.
+The marketing section change form depending on the season / time of the year. During the period between February 1st and April 15th this section of the page have displayed a mood-video with links to our study program. Rest of the year this section is filled with three marketing spots and our study/course navigation.
 
-##### Person search
+#### Person search
 
 Minimalistic search-form that post into our find-employees page.
 
-##### Events calendar
+#### Events calendar
 
-Two calendar entries. Design is described in the [calendar](http://hiof.no) component.
+Two calendar entries. Design is described in the [calendar component (documentation not available yet)](#).
 
-##### News
+#### News
 
-Four articles from the news category. Design is described in the [article](http://hiof.no) component.
+Four articles in the news category. Design is described in the [article component (documentation not available yet)](#).
 
-##### Research and development news
+#### Research news
 
-Four articles from the research category. Design is described in the [article](http://hiof.no) component.
+Four articles in the research category. Design is described in the [article component (documentation not available yet)](#).
 
-#### Screenshots
+#### Frontpage screenshots
 
-##### Mobile/small screens
+##### Frontpage on small screens
 
-##### Tablet/mid size sceens
+##### Frontpage on medium sceens
 
-##### Desktop/large size screens
+##### Frontpage on large screens
 
-#### Content sections
+![Frontpage design on a large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-frontpage-content.jpg)
 
 
 */
 
 
 /*
+### Regular page content
+*/
 
-### Regular page design
+/*
+#### Content area
 
-#### Screenshots
+#### Sidebar navigation
 
-##### Mobile/small screens
+#### Regular page screenshots
 
-##### Tablet/mid size sceens
+##### Regular page on small screens
 
-##### Desktop/large size screens
+##### Regular page on medium sceens
 
+##### Regular page on large screens
+
+*/
+
+
+/*
+### Faculty/unit frontpages
+*/
+
+/*
+#### Marketing area
+
+#### News area
+
+#### Sidebar navigation
+
+#### Faculty/unit frontpages screenshots
+
+##### Faculty/unit frontpages on small screens
+
+##### Faculty/unit frontpages on medium sceens
+
+##### Faculty/unit frontpages on large screens
+
+*/
+
+
+/*
+### Academy frontpage
+*/
+
+/*
+#### Content area
+
+#### Sidebar navigation
+
+#### Academy frontpage screenshots
+
+##### Academy frontpage on small screens
+
+##### Academy frontpage on medium sceens
+
+##### Academy frontpage on large screens
 
 */
