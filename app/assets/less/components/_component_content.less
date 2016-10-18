@@ -3,7 +3,6 @@
     color: @text-color;
   }
   #content {
-    //background: @white;
     hr {
       border: 0;
       height: 1px;
@@ -15,8 +14,11 @@
       background: linear-gradient(left, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0));
     }
   }
-
-
-
-
+}
+.small(){
+  #content {
+    > header{
+      margin-top: 2rem;
+    }
+  }
 }
