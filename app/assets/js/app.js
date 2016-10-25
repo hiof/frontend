@@ -324,12 +324,6 @@ $(function() {
         });
       }
 });
-$( window ).load(function() {
-    // Equal height of articles
-    Hiof.EqualHeight($(".article"));
-});
-
-
 
 // Verktøy
 
