@@ -11,7 +11,7 @@ Siden programmeringsspråkene som blir brukt for å beskrive innhold, design og 
 
 /*
 
-## hiof.no design
+# hiof.no design
 
 The university college website have information in both Norwegian and English. The page is consist of a header section, a content section and a footer section. The header and footer sections stay the same throughout the site regardless of the type of content in the content section. The content section have a few different types of page types:
 
@@ -24,7 +24,7 @@ The university college website have information in both Norwegian and English. T
 */
 
 /*
-### Header
+## Header
 
 The header consist of the [brand/logo](http://design.hiof.no/grafisk-profil?del=1-00-logo) element and two navigation areas. The brand is placed in the center of the header-area regardless of screen size.
 
@@ -36,7 +36,7 @@ The navigation consist of two different user experiences, one vertical navigatio
 
 /*
 
-#### Vertical navigation
+### Vertical navigation
 
 <video autoplay loop class="media media-video media-float-left"><source src="http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-header-navigation-left-nav.mp4" type="video/mp4"></video>
 
@@ -44,7 +44,7 @@ Main navigation is found in a slid-in navigation accessible through the hamburge
 
 Design details is described in the [header (module documentation not available yet)](#) section.
 
-#### Horizontal navigation
+### Horizontal navigation
 
 ![Screenshot of the header on a medium to large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-header-fullscreen.jpg)
 
@@ -56,7 +56,7 @@ Design details is described in the [header (module documentation not available y
 
 
 /*
-### Footer
+## Footer
 
 The footer include the following section:
 
@@ -72,7 +72,7 @@ The footer section change form depending on the screen-size of the device used t
 
 /*
 
-#### Footer screenshots
+### Footer screenshots
 
 ![Screenshot of the footer on a small screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-footer-small-screen.jpg)
 
@@ -86,7 +86,7 @@ The footer section change form depending on the screen-size of the device used t
 
 
 /*
-### Frontpage content
+## Frontpage content
 
 The frontpage for the university college gets on average 3200 unique pageviews each day. In addition to the header and footer, the page consist of the following sections:
 
@@ -102,7 +102,7 @@ The frontpage for the university college gets on average 3200 unique pageviews e
 
 /*
 
-#### Marketing
+### Marketing
 
 ![Screenshot of the marketing section on a large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-frontpage-marketing-section.jpg)
 
@@ -114,89 +114,27 @@ The marketing spots include a title, an image and a button that leads to specifi
 
 Minimalistic search-form that post into our find-employees page.
 
-#### Events calendar
+### Events calendar
 
 Two calendar entries. Design is described in the [calendar component (documentation not available yet)](#).
 
-#### News
+### News
 
 Four articles in the news category. Design is described in the [article component (documentation not available yet)](#).
 
-#### Research news
+### Research news
 
 Four articles in the research category. Design is described in the [article component (documentation not available yet)](#).
 
-#### Frontpage screenshots
+### Frontpage screenshots
 
-##### Frontpage on small screens
+#### Frontpage on small screens
 
-##### Frontpage on medium sceens
+#### Frontpage on medium sceens
 
-##### Frontpage on large screens
+#### Frontpage on large screens
 
 ![Frontpage design on a large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-frontpage-content.jpg)
 
-
-*/
-
-
-/*
-### Regular page content
-*/
-
-/*
-#### Content area
-
-#### Sidebar navigation
-
-#### Regular page screenshots
-
-##### Regular page on small screens
-
-##### Regular page on medium sceens
-
-##### Regular page on large screens
-
-*/
-
-
-/*
-### Faculty/unit frontpages
-*/
-
-/*
-#### Marketing area
-
-#### News area
-
-#### Sidebar navigation
-
-#### Faculty/unit frontpages screenshots
-
-##### Faculty/unit frontpages on small screens
-
-##### Faculty/unit frontpages on medium sceens
-
-##### Faculty/unit frontpages on large screens
-
-*/
-
-
-/*
-### Academy frontpage
-*/
-
-/*
-#### Content area
-
-#### Sidebar navigation
-
-#### Academy frontpage screenshots
-
-##### Academy frontpage on small screens
-
-##### Academy frontpage on medium sceens
-
-##### Academy frontpage on large screens
 
 */
