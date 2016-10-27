@@ -15,29 +15,22 @@ Siden programmeringsspråkene som blir brukt for å beskrive innhold, design og 
 
 The university college website have information in both Norwegian and English. The page is consist of a header section, a cover section, a content section and a footer section. The header and footer sections stay the same throughout the site regardless of the type of content in the content section. The content section have a few different types of page types:
 
-- [Frontpage content](/web?del=frontpage-content)
-- [Regular page content](/web?del=regular-page-content)
-- [Faculty/unit frontpages](/web?del=Facultyunit-frontpages)
-- [Academy frontpage](/web?del=academy-frontpage)
-
-
 */
-
 /*
+# Building blocks
+
 ## Header
 
 The header consist of the [brand/logo](http://design.hiof.no/grafisk-profil?del=1-00-logo) element and two navigation areas. The brand is placed in the center of the header-area regardless of screen size.
 
-The navigational area to the left of the logo include the main content sections on the page, the course-catalogue with related resources, research pages, about the university college pages and a button to toggle the site wide search. The navigational area to the right of the logo include menu items for internal sites for students and employees and a language selection button to switch between Norwegian and English.
+The [navigation area](/web?del=navigation) to the left of the logo include links to the main content sections in the site, the course-catalogue with related resources, research pages, about the university college pages and a button to toggle the site wide search. The navigational area to the right of the logo include menu items for internal sites for students and employees and a language selection button to switch between Norwegian and English.
+
+
+## Navigation
 
 The navigation consist of two different user experiences, one vertical navigation with menu-toggle buttons and the other a horizontal navigation-experience. The vertical navigation is for small to medium screens sizes with the width of the screen lower than 770 pixel. The horizontal navigation is for screens with a width higher than 770px.
 
 */
-
-/*
-## Navigation
-*/
-
 
 
 /*
@@ -70,7 +63,13 @@ The cover area
 /*
 ## Content section
 
-The cover area
+Jump to more specific information about the following content types:
+
+- [Frontpage content](/web?del=frontpage-content)
+- [English frontpage content](/web?del=english-rontpage-content)
+- [Regular page content](/web?del=regular-page-content)
+- [Faculty/unit frontpages](/web?del=Facultyunit-frontpages)
+- [Academy frontpage](/web?del=academy-frontpage)
 
 */
 
@@ -154,6 +153,31 @@ Four articles in the research category. Design is described in the [article comp
 #### Frontpage on large screens
 
 ![Frontpage design on a large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-frontpage-content.jpg)
+
+
+*/
+
+
+/*
+### Regular page content
+
+The regular content section consist of two areas. One with the page content and one with a helper navigaton that display resources at the current navigation tree. The areas have two different layouts. The first layout is on small screens where the current navigation tree is hidden behind a toggle button in the header and the content takes the full width of the page. The other layout have the content on the left and navigation on the right in a golden-ration-layout.
+
+
+*/
+
+/*
+### Content area
+
+### Sidebar navigation
+
+### Regular page screenshots
+
+#### Regular page on small screen
+
+#### Regular page on medium sceen
+
+#### Regular page on large screen
 
 
 */
