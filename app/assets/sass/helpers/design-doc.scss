@@ -17,25 +17,26 @@ The university college website have information in both Norwegian and English. T
 
 */
 /*
-# Building blocks
+## Building blocks
+*/
 
-## Header
+/*
+### Header
 
 The header consist of the [brand/logo](http://design.hiof.no/grafisk-profil?del=1-00-logo) element and two navigation areas. The brand is placed in the center of the header-area regardless of screen size.
 
 The [navigation area](/web?del=navigation) to the left of the logo include links to the main content sections in the site, the course-catalogue with related resources, research pages, about the university college pages and a button to toggle the site wide search. The navigational area to the right of the logo include menu items for internal sites for students and employees and a language selection button to switch between Norwegian and English.
-
-
-## Navigation
-
-The navigation consist of two different user experiences, one vertical navigation with menu-toggle buttons and the other a horizontal navigation-experience. The vertical navigation is for small to medium screens sizes with the width of the screen lower than 770 pixel. The horizontal navigation is for screens with a width higher than 770px.
 
 */
 
 
 /*
 
-### Vertical navigation
+### Navigation
+
+The navigation consist of two different user experiences, one vertical navigation with menu-toggle buttons and the other a horizontal navigation-experience. The vertical navigation is for small to medium screens sizes with the width of the screen lower than 770 pixel. The horizontal navigation is for screens with a width higher than 770px.
+
+#### Vertical navigation
 
 <video autoplay loop class="media media-video media-float-left"><source src="http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-header-navigation-left-nav.mp4" type="video/mp4"></video>
 
@@ -43,7 +44,7 @@ Main navigation is found in a slid-in navigation accessible through the menu but
 
 Design details is described in the [header (module documentation not available yet)](#) section.
 
-### Horizontal navigation
+#### Horizontal navigation
 
 ![Screenshot of the header on a medium to large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-header-fullscreen.jpg)
 
@@ -54,14 +55,14 @@ Design details is described in the [header (module documentation not available y
 */
 
 /*
-## Cover content
+### Cover content
 
 The cover area
 
 */
 
 /*
-## Content section
+### Content section
 
 Jump to more specific information about the following content types:
 
@@ -74,7 +75,7 @@ Jump to more specific information about the following content types:
 */
 
 /*
-## Footer
+### Footer
 
 The footer include the following section:
 
@@ -86,11 +87,8 @@ The footer include the following section:
 - Last updated information related to the specific page you visit + copyright information.
 
 The footer section change form depending on the screen-size of the device used to view the site. **On small screens** the mentioned content is layout vertically on the order their listed. **On medium screens** the breadcrumb has its own row, then a row with units and our pages, then a row with contact and the map/location and lastly the last updated + copyright information. **On large screens** the breadcrumb has their own row, then all the content sections is layout out from left to right in a row and at last the last updated and copyright information have its own row at the bottom.
-*/
 
-/*
-
-### Footer screenshots
+#### Footer screenshots
 
 ![Screenshot of the footer on a small screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-footer-small-screen.jpg)
 
@@ -128,21 +126,41 @@ The content of the marketing section change depending on the season / time of th
 
 The marketing spots include a title, an image and a button that leads to specific content elsewhere. This could be study programs, articles, conferences and other type of content that needs some extra visablitiy.
 
-#### Person search
+*/
+
+/*
+
+### Person search
 
 Minimalistic search-form that post into our find-employees page.
+
+*/
+
+/*
 
 ### Events calendar
 
 Two calendar entries. Design is described in the [calendar component (documentation not available yet)](#).
 
+*/
+
+/*
+
 ### News
 
 Four articles in the news category. Design is described in the [article component (documentation not available yet)](#).
 
+*/
+
+/*
+
 ### Research news
 
 Four articles in the research category. Design is described in the [article component (documentation not available yet)](#).
+
+*/
+
+/*
 
 ### Frontpage screenshots
 
@@ -159,7 +177,7 @@ Four articles in the research category. Design is described in the [article comp
 
 
 /*
-### Regular page content
+## Regular page content
 
 The regular content section consist of two areas. One with the page content and one with a helper navigaton that display resources at the current navigation tree. The areas have two different layouts. The first layout is on small screens where the current navigation tree is hidden behind a toggle button in the header and the content takes the full width of the page. The other layout have the content on the left and navigation on the right in a golden-ration-layout.
 
@@ -169,8 +187,14 @@ The regular content section consist of two areas. One with the page content and 
 /*
 ### Content area
 
-### Sidebar navigation
+*/
 
+/*
+
+### Sidebar navigation
+*/
+
+/*
 ### Regular page screenshots
 
 #### Regular page on small screen
@@ -178,6 +202,5 @@ The regular content section consist of two areas. One with the page content and 
 #### Regular page on medium sceen
 
 #### Regular page on large screen
-
 
 */
