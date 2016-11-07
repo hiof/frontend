@@ -13,11 +13,21 @@ Siden programmeringsspråkene som blir brukt for å beskrive innhold, design og 
 
 # hiof.no design
 
-The university college website have information in both Norwegian and English. The page is consist of a header section, a cover section, a content section and a footer section. The header and footer sections stay the same throughout the site regardless of the type of content in the content section. The content section have a few different types of page types:
+The university college website have information in both Norwegian and English. The page is consist of a [header section](/web?del=header), a [cover section](/web?del=cover-content), a [content section](/web?del=content-section) and a [footer section](/web?del=footer-section). The header and footer sections stay the same throughout the site regardless of the type of content in the content section.
 
 */
 /*
 ## Building blocks
+
+The pages use the following base components:
+
+- [Typography](/styleguide?del=component-typography)
+- [Layout](/styleguide?del=component-layout)
+- [Colors](/styleguide?del=component-colors)
+
+Section and content specific styleguide is referenced at the section. 
+
+
 */
 
 /*
@@ -110,6 +120,19 @@ The cover area consist of media content like images, video or graphics to add a 
 
 */
 
+
+/*
+
+### Marketing section
+
+![Screenshot of the marketing section on a large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-frontpage-marketing-section.jpg)
+
+The marketing spots include a title, an image and a button that leads to specific content elsewhere.
+
+
+*/
+
+
 /*
 ### Content section
 
@@ -125,7 +148,7 @@ Jump to more specific information about the following content types:
 
 
 /*
-### Sidebar navigation
+### Sidebar
 
 The sidebar navigation provides contextual navigation to the page you are currently reading. It has two different kinds of layout depending on the screen size. The first layout is hidden away behind a "go to" toggle button in the header. In the other layout the sidebar is on the right of the main content on [regular pages](/web?del=regular-page).
 
@@ -177,13 +200,11 @@ The frontpage for the university college gets on average 3200 unique pageviews e
 
 [Jump to the screenshots of the frontpage on diffent screen sizes](/web?del=frontpage-screenshots).
 
-### Marketing
+### Frontpage marketing section
 
 ![Screenshot of the marketing section on a large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-frontpage-marketing-section.jpg)
 
-The content of the marketing section change depending on the season / time of the year. During the period between February 1st and April 15th this section of the page shows a mood video with links to our study program. Rest of the year this section is filled with three marketing spots and our study/course navigation.
-
-The marketing spots include a title, an image and a button that leads to specific content elsewhere. This could be study programs, articles, conferences and other type of content that needs some extra visablitiy.
+The content of the marketing section change depending on the season / time of the year. During the period between February 1st and April 15th this section of the page shows a mood video with links to our study program. Rest of the year this section is filled with three marketing spots and our study/course navigation. This could be study programs, articles, conferences and other type of content that needs some extra visablitiy.
 
 ### Person search
 
@@ -220,32 +241,79 @@ Four articles in the research category. Design is described in the [article comp
 
 */
 
+/*
+## English frontpage content
+
+The english frontpage consist of a [marketing section](/web?del=marketing-section) as the first element and then a [regular page content](/web?del=regular-page-content) with a [helper navigation](/web?del=sidebar).
+
+*/
 
 /*
 ## Regular page content
 
 The regular content section consist of two areas. One with the page content and one with a helper navigaton that display resources at the current navigation tree. The areas have two different layouts. The first layout is on small screens where the current navigation tree is hidden behind a toggle button in the header and the content takes the full width of the page. The other layout have the content on the left and navigation on the right in a golden-ration-layout.
 
+Regular pages have [cover-content](/web?del=cover-content) depending on the type of page it is. See how the helper navigation work in the [sidebar section](/web?del=sidebar)
 
 */
 
 /*
-### Content area
+## Faculty/unit pages
+
+![Frontpage design on a large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-faculty-unit-it-frontpage-large-screen.jpg)
+*Faculty page on a large screen*
+
+The frontpage for a faculty consist of a [marketing section](/web?del=marketing-section) as the first element and then
+
+### Academy pages
+
+![Frontpage design on a large screen](http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-faculty-unit-academy-frontpage-large-screen.jpg)
+* Academy frontpage on a large screen*
+
+The Norwegian Theatre Academy differ from the other faculty/unit pages since their main external communication is through their english pages. The marketing section on the frontpage differ from the other marketing sections since it has one large marketing image.
 
 */
 
 /*
+## Marketing pages
 
-### Sidebar navigation
+The marketing pages is devided between three different kinds of study types, bachelor studies, master studies and flexible studies. Each study type has it's own marketing page that includes a background video with a slogan on the top that takes the user to that course/degree selection in our study catalogue. The second part of the page is a list of tailored news articles related to the study type.
+
+<video autoplay loop class="media media-video media-full-width"><source src="http://www.hiof.no/assets/plugins/design-webcomponents/illustrations/hiof-marketing-bachelor-large-screen.mp4" type="video/mp4"></video>
+
 */
 
+
 /*
-### Regular page screenshots
+## News pages
 
-#### Regular page on small screen
+The news pages display a stream of articles based on different news categories.
 
-#### Regular page on medium sceen
+The diffent kind of categories is:
 
-#### Regular page on large screen
+- [External news](http://www.hiof.no/aktuelt/nyheter)
+- [Research and development news](http://www.hiof.no/forskning/aktuelt)
+- [Student news](http://hiof.no/student)
+- [Employee news](http://hiof.no/ansatt)
+- Faculty/unit news
+  - [Norwegian Theatre Academy](http://www.hiof.no/index.php?ID=489&lang=nor)
+  - [Faculty of Business, Languages, and Social Sciences](http://www.hiof.no/index.php?ID=487&lang=nor)
+  - [Faculty of Computer Sciences](http://www.hiof.no/index.php?ID=484&lang=nor)
+  - [Faculty of Education](http://www.hiof.no/index.php?ID=486&lang=nor)
+  - [Faculty of Engineering](http://www.hiof.no/index.php?ID=485&lang=nor)
+  - [Faculty of Health and Social Studies](http://www.hiof.no/index.php?ID=488&lang=nor)
+  - [HiØ VIDERE](http://www.hiof.no/index.php?ID=4214&lang=nor)
+
+
+The stream is rendered through an embedable plugin called [article-view](https://github.com/hiof/articles-view).
+
+
+*/
+
+
+/*
+## Study catalogue
+
+The study catalogue pages
 
 */
