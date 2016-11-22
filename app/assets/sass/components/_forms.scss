@@ -7,7 +7,6 @@
 
 */
 
-
 @import "../../../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/_forms";
 @import "../../../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/_input-groups";
 
@@ -25,9 +24,6 @@ input[type="checkbox"] {
   height: 16px;
   height: 1.6rem;
 }
-
-
-
 
 @include mq($until: small) {}
 

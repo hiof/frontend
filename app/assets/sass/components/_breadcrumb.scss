@@ -1,0 +1,17 @@
+
+/*
+### Component: Breadcrumbs
+
+- Bootstrap breadcrumbs
+
+*/
+
+
+@import "../../../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/_breadcrumbs";
+
+
+@include mq($until: small) {}
+
+@include mq($from: small, $until: large) {}
+
+@include mq($from: large) {}

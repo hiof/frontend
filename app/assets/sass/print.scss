@@ -1,8 +1,23 @@
+
+/*
+### Component: Print
+
+
+
+*/
+
+
 // Theme
-@import "variables/_standard.less";
+@import "variables/_standard";
 // Components
-@import "_components-standard.less";
-.print();
+@import "_component-standard";
+
+
+#nav-pages, #nav-internal {
+  display: none;
+}
+
+
 noscript,
 #header,
 #cover,
