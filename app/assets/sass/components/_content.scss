@@ -1,0 +1,32 @@
+
+/*
+### Component: Content
+
+
+*/
+
+  #body {
+    color: $text-color;
+  }
+  #content {
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(left, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0));
+    }
+  }
+
+
+
+
+@include mq($until: small) {
+  #content {
+    > header{
+      margin-top: 2rem;
+    }
+  }
+}
+
+@include mq($from: small, $until: large) {}
+
+@include mq($from: large) {}

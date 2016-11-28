@@ -1,0 +1,18 @@
+
+/*
+### Component: Nadges
+
+- Bootstrap badges
+
+*/
+
+
+
+@import "../../../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/_badges";
+
+
+@include mq($until: small) {}
+
+@include mq($from: small, $until: large) {}
+
+@include mq($from: large) {}
