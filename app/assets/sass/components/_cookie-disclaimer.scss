@@ -1,0 +1,51 @@
+
+/*
+### Component: Cookie disclaimer
+
+
+*/
+
+
+.cookie-disclaimer{
+  width: 100%;
+  background-color: $white;
+  height: 80px;
+  position: relative;
+  z-index: 9999;
+  text-align: center;
+  border-top: .1rem solid fade($black, 30%);
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  padding-top: 2rem;
+  line-height: 1.1;
+  float: left;
+  p{
+    margin: .5rem 0;
+  }
+}
+.cookie-disclaimer-close{
+  color: $white;
+  position: absolute;
+  top: -1.3rem;
+  right: auto;
+  left: 50%;
+  margin-left: -2.2rem;
+  line-height: 1;
+  border: .1rem solid fade($black, 30%);
+  background: $white;
+}
+
+@include mq($until: small) {
+  .cookie-disclaimer{
+    text-align: left;
+    height: 90px;
+  }
+}
+
+@include mq($from: small, $until: large) {
+  .cookie-disclaimer{
+    text-align: left;
+  }
+}
+
+@include mq($from: large) {}

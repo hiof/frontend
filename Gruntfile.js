@@ -15,26 +15,36 @@ module.exports = function(grunt) {
     moment: require('moment'),
 
     // Tasks
-    lesslint: {
-      src: ['app/assets/less/*.less'],
+    //lesslint: {
+    //  src: ['app/assets/less/*.less'],
+    //  options: {
+    //    csslint: {
+    //      'known-properties': false
+    //    }
+    //  }
+    //},
+    //less: {
+    //  standard: {
+    //    options: {
+    //    },
+    //    files: [{
+    //      expand: true,
+    //      cwd: 'app/assets/less/',
+    //      src: ['*.less'],
+    //      dest: 'tmp/css/',
+    //      ext: '.css'
+    //    }]
+    //  }
+    //},
+    sass: {
       options: {
-        csslint: {
-          'known-properties': false
-        }
-      }
-    },
-    less: {
-      standard: {
-        options: {
 
-        },
-        files: [{
-          expand: true,
-          cwd: 'app/assets/less/',
-          src: ['*.less'],
-          dest: 'tmp/css/',
-          ext: '.css'
-        }]
+      },
+      dist: {
+        files: {
+          'tmp/css/<%= pkg.name %>.css': 'app/assets/sass/theme-standard.scss',
+          'tmp/css/print.css': 'app/assets/sass/print.scss',
+        }
       }
     },
     autoprefixer: {
@@ -259,8 +269,8 @@ module.exports = function(grunt) {
 
         {
           assets: [{
-            src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
-            dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
+            src: 'tmp/css/minified/<%= pkg.name %>.v<%= pkg.version %>.min.css',
+            dest: 'tmp/css/minified/<%= pkg.name %>.v<%= pkg.version %>.min.css'
           }, {
             src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
             dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
@@ -289,8 +299,8 @@ module.exports = function(grunt) {
 
       {
         assets: [{
-          src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
-          dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
+          src: 'tmp/css/minified/<%= pkg.name %>.v<%= pkg.version %>.min.css',
+          dest: 'tmp/css/minified/<%= pkg.name %>.v<%= pkg.version %>.min.css'
         }, {
           src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
           dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
@@ -320,8 +330,8 @@ module.exports = function(grunt) {
 
     {
       assets: [{
-        src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
-        dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
+        src: 'tmp/css/minified/<%= pkg.name %>.v<%= pkg.version %>.min.css',
+        dest: 'tmp/css/minified/<%= pkg.name %>.v<%= pkg.version %>.min.css'
       }, {
         src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
         dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
@@ -490,7 +500,7 @@ bump: {
 
 // Register tasks
 grunt.registerTask('subtaskJs', ['babel', 'concat:scripts', 'uglify', 'copy:jscomponents', 'copy:jsmap', 'copy:jsdata', 'copy:jstemplates']);
-grunt.registerTask('subtaskCss', ['less', 'autoprefixer', 'cssmin']);
+grunt.registerTask('subtaskCss', ['sass', 'autoprefixer', 'cssmin']);
 grunt.registerTask('subtaskCopy', ['copy:images', 'copy:fonts', 'copy:vendor', 'copy:favicon', 'copy:tests']);
 grunt.registerTask('subtaskCopyDeploy', ['copy:images', 'copy:vendor', 'copy:favicon']);
 //grunt.registerTask('subtaskViews', ['concat:pages']);

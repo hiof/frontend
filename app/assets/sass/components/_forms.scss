@@ -1,0 +1,32 @@
+
+/*
+### Component: Forms
+
+- Bootstrap forms
+- Bootstrap input-groups
+
+*/
+
+@import "../../../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/_forms";
+@import "../../../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/_input-groups";
+
+.input-group-btn {
+  button.btn {
+    margin: 0;
+  }
+}
+input[type="radio"], input[type="checkbox"] {
+  margin: 10px 0 0;
+}
+input[type="checkbox"] {
+  width: 16px;
+  width: 1.6rem;
+  height: 16px;
+  height: 1.6rem;
+}
+
+@include mq($until: small) {}
+
+@include mq($from: small, $until: large) {}
+
+@include mq($from: large) {}
