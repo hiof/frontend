@@ -61,7 +61,7 @@
       position: absolute;
       left: -25%;
       width: 300%;
-      background: $hiof-blue;
+      background: $color-primary-action;
       z-index: -1;
     }
     ol {
@@ -100,12 +100,13 @@
       &:before {}
       &:after {
         right: -18px;
-        border-left-color: $hiof-blue;
+        border-left-color: $color-primary-action;
       }
       &:hover {
-        background-color: lighten($hiof-blue, 20%);
+        background-color: lighten($color-primary-action, 20%);
+        color: $black;
         &:after {
-          border-left-color: lighten($hiof-blue, 20%);
+          border-left-color: lighten($color-primary-action, 20%);
         }
       }
     }
