@@ -7,25 +7,58 @@
 
 */
 
-
+$grid-float-breakpoint: 770px;
 
 @import "../../../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/_navs";
+
+
+
 @import "../../../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/_navbar";
 
 
 #global-search{
-  display: none;
+  //display: none;
 }
-#header-navigation-left{
-  float: left;
+.navbar{
+  min-height: auto;
+  height: 4.4rem;
+  margin: 0 ;
+  .container-fluid{
+    max-width: 104rem;
+    margin: 0 auto;
+  }
+}
+.navbar-default{
+  background: #fff;
+}
+.navbar-header,
+.navbar-collapse{
+  margin: 0 !important;
+  position: relative;
   padding: 0;
+  max-height: none !important;
 }
-#header-navigation-right{
-  float: right;
-  padding: 0;
+.navbar-header{
+  height: 4.4rem;
 }
-.navbar-nav>li>a{
-  padding: 10px 15px !important;
+.navbar-nav>li{
+  &>a{
+    padding-top: 11px !important;
+    padding-bottom: 12px !important;
+  }
+}
+
+
+.navbar-nav{
+  background: #fff;
+  margin: 0;
+  a{
+    font-size: 1.4rem;
+    &:hover{
+      background-color: $btn-primary-bg !important;
+      color: $white !important;
+    }
+  }
 }
 .nav{
   li{
@@ -33,67 +66,240 @@
   }
 }
 .navbar-brand{
-  padding: 0;
-}
-#nav-pages,
-#nav-internal{
-  &> li{
-    position: relative;
-    &:hover{
-      & > .dropdown-menu{
-        display: block;
-        li{
-          position: relative;
-          &:hover{
-            & > .dropdown-menu{
-              display: block;
-
-
-              top: -5px;
-              left: 100%;
-              border-left: 1px fade(#000, 5%) solid;
-              z-index: 3;
-            //&:after {
-            //  content: "";
-            //  display: block;
-            //  position: absolute;
-            //}
-            //&:before {
-            //  display: none;
-            //}
-            //&:after {
-            //  top: 2.6rem;
-            //  left: -5rem;
-            //  width: 5rem;
-            //  height: 5rem;
-            //  border: none;
-            //  z-index: 4;
-            //}
-
-
-
-            }
-          }
-        }
-      }
-    }
-    & > a{
-      @extend .btn;
-      @extend .btn-primary;
-      padding: 5px 10px !important;
-      margin-top: 4px;
-      margin-right: 5px;
-
+  svg{
+    g {
+      transition: fill .4s ease;
+      fill: #000;
     }
   }
-  //.active-path{
-  //  background: $color-primary-action;
-  //  color: $white;
-  //}
 }
 #nav-internal > li > a{
   @extend .btn-line;
 }
+.navbar-toggle{
+  float:none;
+  margin: 0;
+  margin-top: .8rem;
+  border: 1px solid #eee;
+  padding: 4px 10px;
+  margin-left: .8rem;
+  //background: pink;
+  &.float-right{
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    margin-left: 0;
+  }
+  .helper-text{
+    float: right;
+    line-height: 1.6rem;
+    padding-left: .5rem;
+  }
+  .icon-bar{
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #cccccc;
+    border-radius: 1px;
+  }
+  svg{
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+@include mq($until: 770px) {
+
+  #global-search{
+    position: fixed;
+    top: 5rem;
+    width: 90%;
+    left: 1rem;
+    height: 3.4rem;
+    margin-bottom: 0;
+    #global-search-input{
+
+    }
+  }
+  #nav-pages{
+    padding-top: 5rem;
+  }
+  .navbar-nav{
+    &>li{
+      &>a{
+        line-height: 3rem;
+      }
+    }
+  }
+  .dropdown-menu{
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-width: inherit;
+    box-shadow: none;
+    border: 0;
+    background: #efefef;
+    li{
+      a{
+        line-height: 3rem;
+        padding-left: 3rem;
+      }
+    }
+  }
+}
+
+@include mq($until: small) {
+  #logo-hiof{
+    padding: 0;
+    position: absolute;
+    width: 4.4rem;
+    height: 4.4rem;
+    overflow-x: hidden;
+    top: 0;
+    left: 50%;
+    margin-left: -2.2rem;
+    padding-top: 6px;
+    svg{
+      .text{
+        display: none;
+      }
+    }
+  }
+}
+
+@include mq($from: small, $until: large) {
+  #logo-hiof{
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -8.8rem;
+    padding-top: 6px;
+  }
+}
+
+@include mq($from: large) {
+  #logo-hiof{
+    position: absolute;
+    left: 43rem;
+    top: 0;
+    float: none;
+    padding: 0;
+    padding-top: 8px;
+    margin-left: 0;
+  }
+}
+
+@include mq($from: 770px) {
+
+  #global-search-input {
+    position: absolute;
+    right: 5rem;
+    width: 27rem;
+    top: 0rem;
+    opacity: 1;
+    transition: width .3s ease;
+    border-top-left-radius: .4rem;
+    border-bottom-left-radius: .4rem;
+  }
+  #global-search {
+    width: 5rem;
+    padding: 0;
+    margin: 0;
+    height: 3.6rem;
+    position: relative;
+    margin-top: .4rem;
+    .btn {
+      z-index: 99;
+      height: 3.4rem;
+      &:hover {
+        background-color: $btn-primary-bg;
+      }
+    }
+    #search-close {
+      position: absolute;
+      right: 6rem;
+      top: .9rem;
+      z-index: 9;
+      width: 1.6rem;
+      height: 1.6rem;
+      background: url(../images/icons/cross.svg) no-repeat;
+      background-size: 100% 100%;
+      transition: opacity .3s ease;
+      opacity: 1;
+      display: block;
+      border: 0;
+      padding: 0;
+    }
+    &.initial {
+      #global-search-input {
+        opacity: 0;
+        width: 0;
+        padding: 0;
+        border: none;
+      }
+      #search-close {
+        right: 1rem;
+        opacity: 0;
+        display: none;
+      }
+      #search {
+        border-top-left-radius: .4rem;
+        border-bottom-left-radius: .4rem;
+      }
+    }
+  }
+
+
+  #header-navigation-left{
+    float: left;
+    padding: 0;
+  }
+  #header-navigation-right{
+    float: right;
+    padding: 0;
+  }
+  #nav-pages,
+  #nav-internal{
+    &> li{
+      position: relative;
+      &:hover{
+        & > .dropdown-menu{
+          display: block;
+          li{
+            position: relative;
+            &:hover{
+              & > .dropdown-menu{
+                display: block;
+                top: -5px;
+                left: 100%;
+                border-left: 1px fade(#000, 5%) solid;
+                z-index: 3;
+              }
+            }
+          }
+        }
+      }
+      & > a{
+        //@extend .btn;
+        //@extend .btn-primary;
+        //padding: 5px 10px !important;
+        //margin-top: 4px;
+        //margin-right: 5px;
+
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
 //@import "../../vendor/slideout/slideout-navigation.less";
 //.global-search-vertical() {
 //  #global-search {
@@ -693,12 +899,3 @@
 //    padding-left: 0;
 //  }
 //}
-
-
-
-
-@include mq($until: small) {}
-
-@include mq($from: small, $until: large) {}
-
-@include mq($from: large) {}

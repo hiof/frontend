@@ -1,51 +1,83 @@
 class Navigation {
   constructor() {
+    this.view = new View();
     this.navPages = $('#nav-pages').detach();
     this.brand = $('#logo-wrapper').detach();
     this.navInternal = $('#nav-internal').detach();
+    this.svgNavSite = this.view.getSvgIcon("nav-site"),
+    this.svgNavUser = this.view.getSvgIcon("user"),
+    this.svgPageNav = this.view.getSvgIcon("nav-page");
   }
   fixHeaderNavigationClasses(){
+    let svgNavSite = $(this.svgNavSite).prop('outerHTML');
+    let svgNavUser = $(this.svgNavUser).prop('outerHTML');
 
-    $('#nav').removeClass('lo-full').addClass('navbar ').prepend(`
+
+    $('#nav').removeClass('lo-full').addClass('navbar navbar-default navbar-fixed-top').prepend(`
       <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="header-navigation-left">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navigation-left" aria-expanded="false">
-            <span class="">Meny</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <a class="float-left navbar-brand" id="logo-hiof" href="/"></a>
-        <div class="collapse navbar-collapse" id="header-navigation-right">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navigation-right" aria-expanded="false">
-            <span class="sr-only"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navigation-left" aria-expanded="false">
+      `+svgNavSite+`<span class="helper-text">Meny</span>
+      </button>
+      <a class="navbar-brand" id="logo-hiof" href="/"></a>
+      <button type="button" class="navbar-toggle collapsed float-right" data-toggle="collapse" data-target="#header-navigation-right" aria-expanded="false">
+      `+svgNavUser+`<span class="sr-only">Interne lenker</span>
+      </button>
+      </div>
+      <div class="collapse navbar-collapse" id="header-navigation-left"></div>
+      <div class="collapse navbar-collapse" id="header-navigation-right"></div>
       </div>`);
 
-    let fixedNavPages = $(this.navPages).removeClass('navigation').removeClass('float-left').addClass('nav navbar-nav');
-    let fixedNavInternal = $(this.navInternal).removeClass('float-right').addClass('nav navbar-nav navbar-right');
-    let fixedBrand = $(this.brand).find('svg');
-    $('#header-navigation-left').append(fixedNavPages);
-    $('#nav .navbar-brand').append(fixedBrand);
-    $('#header-navigation-right').append(fixedNavInternal);
 
-    $('#header-navigation-left a').removeClass('btn').removeClass('btn-primary');
-    $('#header-navigation-right a').removeClass('btn').removeClass('btn-primary').removeClass('btn-line');
+
+
+
+      let fixedNavPages = $(this.navPages).removeClass('navigation').removeClass('float-left').addClass('nav navbar-nav');
+      let fixedNavInternal = $(this.navInternal).removeClass('float-right').addClass('nav navbar-nav navbar-right');
+      let fixedBrand = $(this.brand).find('svg');
+      $('#header-navigation-left').append(fixedNavPages);
+      $('#nav .navbar-brand').append(fixedBrand);
+      $('#header-navigation-right').append(fixedNavInternal);
+
+
+      // Move search to the right side on horizontal nav...
+      if (Hiof.Options.windowWidth > 770) {
+        let gSearch = $('#global-search').parent().detach();
+        $('#nav-internal').append(gSearch);
+      }
+
+      $('#header-navigation-left a').removeClass('btn').removeClass('btn-primary');
+      $('#header-navigation-right a').removeClass('btn').removeClass('btn-primary').removeClass('btn-line');
+    }
   }
-}
 
   (function(Hiof, undefined) {
 
 
     $(function() {
       let nav = new Navigation();
-
+      // Toggle between the two types of navigation
+      $( "#nav" ).on( "click", "button", function() {
+        $('.navbar-collapse').not(this).collapse('hide');
+      });
       nav.fixHeaderNavigationClasses();
+
+
+
+      $( "#nav" ).on( "click", ".nav > li> a", function(e) {
+        e.preventDefault();
+        $(this).siblings().slideToggle();
+      });
+
+
+
+      //var burger = document.querySelector('.burger-container'),
+      //header = document.querySelector('.header');
+
+      //burger.onclick = function() {
+      //  header.classList.toggle('menu-opened');
+      //}
+
     });
 
   })(window.Hiof = window.Hiof || {});

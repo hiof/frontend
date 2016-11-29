@@ -1,6 +1,6 @@
 
 /*
-### Component: Dropdowns
+### Component: Header
 
 - Bootstrap dropdown
 
@@ -12,129 +12,134 @@
 //    height: 32px;
 //  }
 //}
+//.header {
+//  position: fixed;
+//  top: 0rem;
+//  left: 0;
+//  right: 0;
+//  margin: 0 auto;
+//  width: 100%;
+//}
+//.header {
+//  position: fixed;
+//  top: 0rem;
+//  left: 0;
+//  right: 0;
+//  margin: 0 auto;
+//  width: 100%;
+//  z-index: 999;
+//  margin-top: 0rem;
+//  transition: top .5s ease;
+//  transform: translate3d(0, 0, 0);
+//  -webkit-transform-style: preserve-3d;
+//  transform-style: preserve-3d;
+//  &:before {
+//    width: 300%;
+//    height: 4.4rem;
+//    content: "";
+//    background: rgba(255, 255, 255, 1);
+//    display: block;
+//    position: absolute;
+//    left: -50%;
+//    top: 0;
+//    z-index: -8;
+//    border-bottom: 1px solid rgba(0, 0, 0, .1);
+//  }
+//  .icon {
+//    position: relative;
+//    padding-right: 4rem;
+//  }
+//  //#logo-hiof {
+//  //  //width: 100%;
+//  //  margin: 0 auto;
+//  //  svg {
+//  //    position: absolute;
+//  //    left: 50%;
+//  //    //margin-left: -10px;
+//  //    margin-top: .6rem;
+//  //    margin-left: -8.8rem;
+//  //    g {
+//  //      transition: fill .4s ease;
+//  //      fill: #000;
+//  //    }
+//  //    .text {
+//  //      opacity: 1;
+//  //    }
+//  //    .circle {}
+//  //  }
+//  //}
+//}
+//@media screen and (min-width: 770px) and (max-width: 930px){
+//  html.cover {
+//    .header {
+//      &.light {
+//        #logo-hiof {
+//          svg {
+//            transform: scale(.7);
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
 
 
-.header {
-  position: fixed;
-  top: 0rem;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: 100%;
-  z-index: 999;
-  margin-top: 0rem;
-  transition: top .5s ease;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  &:before {
-    width: 300%;
-    height: 4.4rem;
-    content: "";
-    background: rgba(255, 255, 255, 1);
-    display: block;
-    position: absolute;
-    left: -50%;
-    top: 0;
-    z-index: -8;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-  }
-  .icon {
-    position: relative;
-    padding-right: 4rem;
-  }
-  #logo-hiof {
-    //width: 100%;
-    margin: 0 auto;
-    svg {
-      position: absolute;
-      left: 50%;
-      //margin-left: -10px;
-      margin-top: .6rem;
-      margin-left: -8.8rem;
-      g {
-        transition: fill .4s ease;
-        fill: #000;
-      }
-      .text {
-        opacity: 1;
-      }
-      .circle {}
-    }
-  }
-}
-@media screen and (min-width: 770px) and (max-width: 930px){
-  html.cover {
-    .header {
-      &.light {
-        #logo-hiof {
-          svg {
-            transform: scale(.7);
-          }
-        }}}}
-      }
 
+//@include mq($until: small) {
+//  .header {
+//    //height: 4.4rem;
+//    //.nav {
+//    //  display: none;
+//    //}
+//    //.icon {}
+//    #logo-hiof {
+//      svg {
+//        margin-left: -1.6rem;
+//        .text {
+//          opacity: 0;
+//        }
+//      }
+//    }
+//  }
+//}
 
+//@include mq($from: small, $until: large) {
+//  .header {
+//    height: 4.4rem;
+//    li {
+//      line-height: 4.4rem;
+//      margin-left: 0;
+//      margin-right: 1rem;
+//    }
+//    button {
+//      margin-top: .8rem;
+//    }
+//  }
+//}
 
-
-
-
-
-      @include mq($until: small) {
-        .header {
-          height: 4.4rem;
-          .nav {
-            display: none;
-          }
-          .icon {}
-          #logo-hiof {
-            svg {
-              margin-left: -1.6rem;
-              .text {
-                opacity: 0;
-              }
-            }
-          }
-        }
-      }
-
-      @include mq($from: small, $until: large) {
-        .header {
-          height: 4.4rem;
-          li {
-            line-height: 4.4rem;
-            margin-left: 0;
-            margin-right: 1rem;
-          }
-          button {
-            margin-top: .8rem;
-          }
-        }
-      }
-
-      @include mq($from: large) {
-        html.cover {
-          .header {
-            &.light {
-              #logo-hiof {
-                svg {
-                  transform: scale(1);
-                }
-              }
-              //box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
-              &:before {
-                //top: 2.4rem;
-              }
-              a {
-                //transition: color .3s;
-              }
-            }
-            &.dark {
-              //box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
-              &:before {
-                //background: rgba(255, 255, 255, 0);
-              }
-            }
-          }
-        }
-      }
+//@include mq($from: large) {
+//  html.cover {
+//    .header {
+//      &.light {
+//        #logo-hiof {
+//          svg {
+//            transform: scale(1);
+//          }
+//        }
+//        //box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+//        &:before {
+//          //top: 2.4rem;
+//        }
+//        a {
+//          //transition: color .3s;
+//        }
+//      }
+//      &.dark {
+//        //box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+//        &:before {
+//          //background: rgba(255, 255, 255, 0);
+//        }
+//      }
+//    }
+//  }
+//}
