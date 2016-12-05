@@ -7,7 +7,7 @@
 
 */
 
-$grid-float-breakpoint: 770px;
+$grid-float-breakpoint: 955px;
 
 @import "../../../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/_navs";
 
@@ -15,6 +15,9 @@ $grid-float-breakpoint: 770px;
 
 @import "../../../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/_navbar";
 
+
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
+$menuItems: 4;
 
 #global-search{
   //display: none;
@@ -29,7 +32,7 @@ $grid-float-breakpoint: 770px;
   }
 }
 .navbar-default{
-  background: #fff;
+  background: rgba(#fff, .8);
 }
 .navbar-header,
 .navbar-collapse{
@@ -45,10 +48,58 @@ $grid-float-breakpoint: 770px;
   &>a{
     padding-top: 11px !important;
     padding-bottom: 12px !important;
+
+    // Hacks for inline buttons in the header if that functionality is turned on.
+    &.btn{
+      padding-top: 6px!important;
+      padding-bottom: 6px!important;
+      margin-top: 4px;
+      margin-right: 5px;
+      color: #fff;
+      font-weight: 300;
+      font-size: 1.4rem;
+      &.btn-line{
+        color: $btn-primary-bg;
+      }
+    }
   }
 }
-
-
+.nav-icon{
+  display: inline-block;
+  width: 2rem;
+  height: 1.4rem;
+  //background: pink;
+  position: relative;
+  .nav-icon-line{
+    height: 1px;
+    width: 1.4rem;
+    position: absolute;
+    top: 0.7rem;
+    left: .2rem;
+    background: #000;
+    transition: all .5s ease;
+    &:nth-child(odd){
+      //top: 1.4rem;
+      transform: translateY(-.2rem);
+    }
+    &:nth-child(even){
+      //top: 1.4rem;
+      transform: translateY(.2rem);
+    }
+  }
+}
+.navbar-toggle.active{
+  .nav-icon{
+    .nav-icon-line{
+      &:nth-child(odd){
+        transform:rotate(-45deg);
+      }
+      &:nth-child(even){
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
 .navbar-nav{
   background: #fff;
   margin: 0;
@@ -94,63 +145,35 @@ $grid-float-breakpoint: 770px;
   .helper-text{
     float: right;
     line-height: 1.6rem;
-    padding-left: .5rem;
+    //padding-left: .5rem;
   }
-  .icon-bar{
-    display: block;
-    width: 22px;
-    height: 2px;
-    background-color: #cccccc;
-    border-radius: 1px;
-  }
+  //.icon-bar{
+  //  display: block;
+  //  width: 22px;
+  //  height: 2px;
+  //  background-color: #cccccc;
+  //  border-radius: 1px;
+  //}
   svg{
     width: 1.6rem;
     height: 1.6rem;
   }
 }
 
-@include mq($until: 770px) {
+// Logo
 
-  #global-search{
-    position: fixed;
-    top: 5rem;
-    width: 90%;
-    left: 1rem;
-    height: 3.4rem;
-    margin-bottom: 0;
-    #global-search-input{
-
-    }
-  }
-  #nav-pages{
-    padding-top: 5rem;
-  }
-  .navbar-nav{
-    &>li{
-      &>a{
-        line-height: 3rem;
-      }
-    }
-  }
-  .dropdown-menu{
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    min-width: inherit;
-    box-shadow: none;
-    border: 0;
-    background: #efefef;
-    li{
-      a{
-        line-height: 3rem;
-        padding-left: 3rem;
-      }
-    }
+@include mq($until: small) {
+  #logo-hiof{
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -8.8rem;
+    padding-top: 6px;
   }
 }
 
-@include mq($until: small) {
+@include mq($until: 350px) {
   #logo-hiof{
     padding: 0;
     position: absolute;
@@ -168,7 +191,6 @@ $grid-float-breakpoint: 770px;
     }
   }
 }
-
 @include mq($from: small, $until: large) {
   #logo-hiof{
     padding: 0;
@@ -192,7 +214,100 @@ $grid-float-breakpoint: 770px;
   }
 }
 
-@include mq($from: 770px) {
+
+@include mq($until: 955px) {
+
+  #global-search{
+    display: none;
+    //position: fixed;
+    //top: 5rem;
+    //width: 90%;
+    //left: 1rem;
+    //height: 3.4rem;
+    //margin-bottom: 0;
+    //#global-search-input{
+    //}
+  }
+  //nav-pages{
+    //padding-top: 5rem;
+  //}
+  //.navbar-toggle{
+  //  #icon-nav-site-line1_1_,
+  //  #icon-nav-site-line1{
+  //    transition: all 1s ease;
+  //  }
+  //}
+  //.navbar-toggle.active{
+  //  #icon-nav-site-line1_1_{
+  //    transform: rotate(45deg) translateX(10px) translateY(-20px);
+  //  }
+  //  #icon-nav-site-line1{
+  //    transform: rotate(-45deg) translateX(-25px) translateY(-5px);
+  //  }
+  //}
+  .navbar-nav-wrapper{
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.5s ease-out, background 1s ease-out;
+    transition-delay: 0.2s;
+    z-index: 1;
+  }
+
+  .navbar-nav{
+    &>li{
+      //border-bottom: 1px solid #333;
+      opacity: 0;
+      transform: scale(1.15) translateY(-30px) translateX(30px);
+      transition: transform 0.5s $cubic, opacity 0.6s $cubic;
+      @for $i from 1 through $menuItems {
+        &:nth-child(#{$i}) {
+          transition-delay: #{0.56 - ($i * 0.07)}s;
+        }
+      }
+      &>a{
+        line-height: 3rem;
+      }
+    }
+  }
+  .navbar-nav-wrapper.open{
+
+    max-height: 500px;
+    background-color: #000;
+    transition: all 0.3s ease-in, background 0.5s ease-in;
+    transition-delay: 0.25s;
+    .navbar-nav{
+      &>li{
+        transform: scale(1) translateY(0px) translateX(0px);
+        opacity: 1;
+        @for $i from 1 through $menuItems {
+          &:nth-child(#{$i}) {
+            transition-delay: #{0.07 * $i+0.2}s;
+          }
+        }
+      }
+    }
+  }
+  .dropdown-menu{
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-width: inherit;
+    box-shadow: none;
+    border: 0;
+    background: #efefef;
+    li{
+      a{
+        line-height: 3rem;
+        padding-left: 3rem;
+      }
+    }
+  }
+}
+
+
+
+@include mq($from: 955px) {
 
   #global-search-input {
     position: absolute;
@@ -211,6 +326,7 @@ $grid-float-breakpoint: 770px;
     height: 3.6rem;
     position: relative;
     margin-top: .4rem;
+    margin-left: .5rem;
     .btn {
       z-index: 99;
       height: 3.4rem;

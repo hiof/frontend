@@ -13,14 +13,18 @@ class Navigation {
     let svgNavUser = $(this.svgNavUser).prop('outerHTML');
 
 
-    $('#nav').removeClass('lo-full').addClass('navbar navbar-default navbar-fixed-top').prepend(`
+    $('#nav').removeClass('lo-full').addClass('navbar navbar-default navbar-fixed-top').html(`
       <div class="container-fluid">
       <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navigation-left" aria-expanded="false">
-      `+svgNavSite+`<span class="helper-text">Meny</span>
+      <button type="button" class="navbar-toggle collapsed" data-target="#header-navigation-left" aria-expanded="false">
+      <div class="nav-icon">
+      <span class="nav-icon-line"></span>
+      <span class="nav-icon-line"></span>
+      </div>
+      <span class="helper-text">Meny</span>
       </button>
       <a class="navbar-brand" id="logo-hiof" href="/"></a>
-      <button type="button" class="navbar-toggle collapsed float-right" data-toggle="collapse" data-target="#header-navigation-right" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed float-right" data-target="#header-navigation-right" aria-expanded="false">
       `+svgNavUser+`<span class="sr-only">Interne lenker</span>
       </button>
       </div>
@@ -41,9 +45,14 @@ class Navigation {
 
 
       // Move search to the right side on horizontal nav...
-      if (Hiof.Options.windowWidth > 770) {
+      if (Hiof.Options.windowWidth > 955) {
         let gSearch = $('#global-search').parent().detach();
         $('#nav-internal').append(gSearch);
+        $('#search').addClass('btn-line');
+      }else{
+        $('#nav').addClass('small-screen');
+        $('#header-navigation-left').removeClass('collapse navbar-collapse').addClass('navbar-nav-wrapper');
+        $('#header-navigation-right').removeClass('collapse navbar-collapse').addClass('navbar-nav-wrapper');
       }
 
       $('#header-navigation-left a').removeClass('btn').removeClass('btn-primary');
@@ -56,27 +65,43 @@ class Navigation {
 
     $(function() {
       let nav = new Navigation();
-      // Toggle between the two types of navigation
-      $( "#nav" ).on( "click", "button", function() {
-        $('.navbar-collapse').not(this).collapse('hide');
-      });
+
       nav.fixHeaderNavigationClasses();
 
 
+      // Toggle between the two types of navigation
+      $("#header").on( "click", "#nav.small-screen button", function(e) {
+        let btn = $(this);
+        //$(this).toggleClass('active');
+        let target = $(this).data('target');
+        //console.log(target);
+        if($(target).hasClass('open')){
+          $(target).removeClass('open');
+          $(btn).removeClass('active');
+        }else{
+          $('.navbar-nav-wrapper').removeClass('open');
+          $(target).addClass('open');
+          $(btn).addClass('active');
+        }
+        //$('.navbar-nav-wrapper').not(this).collapse('hide');
+      });
 
-      $( "#nav" ).on( "click", ".nav > li> a", function(e) {
+
+
+      $("#header").on( "click", "#nav.small-screen .nav > li> a", function(e) {
         e.preventDefault();
         $(this).siblings().slideToggle();
       });
 
 
 
-      //var burger = document.querySelector('.burger-container'),
-      //header = document.querySelector('.header');
 
-      //burger.onclick = function() {
-      //  header.classList.toggle('menu-opened');
-      //}
+
+      window.addEventListener("orientationchange", function() {
+      	// Announce the new orientation number
+        nav.fixHeaderNavigationClasses();
+      	//alert(screen.orientation);
+      }, false);
 
     });
 
