@@ -1,10 +1,10 @@
 {
   "name": "hiof-frontend",
   "authors": [
-    "Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>"
+    "Kenneth Lindbeck-Dahlstrøm <kld@hiof.no>"
   ],
   "description": "Frontend code for hiof.no",
-  "license": "GNU",
+  "license": "GPL-3.0",
   "devDependencies": {
     "jquery": "~1.11.1",
     "bootstrap": "~3.3.5",
