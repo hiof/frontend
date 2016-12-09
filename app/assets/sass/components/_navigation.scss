@@ -60,6 +60,9 @@ $menuItems: 4;
       font-size: 1.4rem;
       &.btn-line{
         color: $btn-primary-bg;
+        &:hover{
+          color: $white;
+        }
       }
     }
   }
@@ -160,6 +163,47 @@ $menuItems: 4;
   }
 }
 
+
+
+.dropdown-menu-item{
+  &> a{
+    padding-right: 2rem !important;
+    svg{
+      content: "";
+      display: block;
+      width: 1.6rem;
+      height: 1.6rem;
+      position: absolute;
+      top: .6rem;
+      right: 0;
+    }
+  }
+  //&:hover svg{
+  //  fill: $white;
+  //}
+}
+.navbar-nav{
+  &>.dropdown-menu-item{
+    &>a{
+      padding-right: 2.2rem !important;
+      &>svg{
+        transition: transform .2s;
+        //transform: rotate(90deg);
+        top: .9rem;
+        right: .4rem;
+        path{
+          fill: $white;
+        }
+      }
+    }
+    &:hover{
+      &>a>svg{
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
 // Logo
 
 @include mq($until: small) {
@@ -244,16 +288,18 @@ $menuItems: 4;
         }
       }
       &>a{
+
         line-height: 3rem;
       }
     }
   }
   .navbar-nav-wrapper.open{
 
-    max-height: 500px;
+    max-height: 100vh;
     background-color: #000;
     transition: all 0.3s ease-in, background 0.5s ease-in;
     transition-delay: 0.25s;
+    overflow-y:auto;
     .navbar-nav{
       &>li{
         transform: scale(1) translateY(0px) translateX(0px);
@@ -274,14 +320,38 @@ $menuItems: 4;
     min-width: inherit;
     box-shadow: none;
     border: 0;
-    background: #efefef;
+    //background: #efefef;
+    padding-bottom: 0;
+
     li{
       a{
+        position: relative;
         line-height: 3rem;
+        padding-left: 3rem;
+        color: $color-primary-action;
+      }
+      border-top: .1rem #eee solid;
+    }
+    .dropdown-menu{
+      margin: 0;
+      li{
         padding-left: 3rem;
       }
     }
   }
+
+  .navbar-nav{
+    &>.dropdown-menu-item{
+      &>a{
+        &>svg{
+          path{
+            fill: $color-primary-action;
+          }
+        }
+      }
+    }
+  }
+
 }
 
 
@@ -291,12 +361,12 @@ $menuItems: 4;
   #global-search-input {
     position: absolute;
     right: 5rem;
-    width: 27rem;
+    width: 32.5rem;
     top: 0rem;
     opacity: 1;
     transition: width .3s ease;
-    border-top-left-radius: .4rem;
-    border-bottom-left-radius: .4rem;
+    border-top-left-radius: $border-radius-standard;
+    border-bottom-left-radius: $border-radius-standard;
   }
   #global-search {
     width: 5rem;
@@ -341,8 +411,8 @@ $menuItems: 4;
         display: none;
       }
       #search {
-        border-top-left-radius: .4rem;
-        border-bottom-left-radius: .4rem;
+        border-top-left-radius: $border-radius-standard;
+        border-bottom-left-radius: $border-radius-standard;
       }
     }
   }
@@ -360,25 +430,26 @@ $menuItems: 4;
   #nav-internal{
     &> li{
       position: relative;
-      margin-right: 2rem;
-      & > a{
+      //margin-right: 2rem;
+      & > a,
+      .btn-link{
         //padding: 1rem .7rem 0;
         //border-bottom: 1px solid $color-primary-action;
         //margin-bottom: 1.2rem;
         position: relative;
-        &:before{
-          content: "";
-          background-color: $color-primary-action;
-          position: absolute;
-          top: 0rem;
-          left: 0;
-          width: 100%;
-          display: block;
-          height: .1rem;
-          transition: all .3s;
-          transform: scaleX(.8) translateY(3rem) ;
-          z-index: -1;
-        }
+        //&:before{
+        //  content: "";
+        //  background-color: $color-primary-action;
+        //  position: absolute;
+        //  top: 0rem;
+        //  left: 0;
+        //  width: 100%;
+        //  display: block;
+        //  height: .1rem;
+        //  transition: all .3s;
+        //  transform: scaleX(.8) translateY(3rem) ;
+        //  z-index: -1;
+        //}
       }
       & > .dropdown-menu{
         display: block;
@@ -389,26 +460,73 @@ $menuItems: 4;
         transition: all .3s;
         //transition-delay: .3s;
       }
+
       &:hover{
         //background-color: $color-primary-action;
 
         &> a{
           color: #fff;
-          background: transparent;
-          &:before{
-            height: 4.4rem;
-            transform: scaleX(1) translateY(0rem) ;
+          background: $color-primary-action;
+          //&:before{
+          //  height: 4.4rem;
+          //  transform: scaleX(1) translateY(0rem) ;
+          //}
+        }
+        & > .dropdown-menu{
+          li{
+            position: relative;
+            &.active{
+              a{
+                color: #fff;
+                background: $color-primary-action !important;
+              }
+            }
+            a{
+              position: relative;
+              background: transparent;
+              &:before{
+
+                content: "";
+                background-color: $color-primary-action;
+                position: absolute;
+                top: -.2rem;
+                left: 0;
+                width: 100%;
+                display: block;
+                height: 106%;
+                //transition: transform .1s;
+                transform: scaleX(0);
+                transform-origin: top left;
+                z-index: -1;
+
+              }
+              &:hover{
+                background: transparent;
+                color: $white;
+                border-bottom-left-radius: $border-radius-standard;
+                border-bottom-right-radius: $border-radius-standard;
+                &:before{
+                  transform: scaleX(1);
+                }
+              }
+            }
+
           }
         }
+      }
+      // Activate subnavigation on hover/focus
+      &:hover{
         & > .dropdown-menu{
           max-height: 60rem;
           padding: .5rem 0;
           border: .1rem solid rgba(0,0,0,.15);
-          //transition: all .3s;
-          //transition-delay: 0s;
-          //display: block;
+          overflow: visible;
+          padding-bottom: 0;
           li{
-            position: relative;
+            &:last-child{
+              border-bottom-left-radius: $border-radius-standard;
+              border-bottom-right-radius: $border-radius-standard;
+            }
             &:hover{
               & > .dropdown-menu{
                 display: block;
