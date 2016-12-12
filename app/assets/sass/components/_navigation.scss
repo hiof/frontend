@@ -355,9 +355,11 @@ $menuItems: 4;
 }
 
 
-
 @include mq($from: 955px) {
-
+  #nav-page{
+    width: 100%;
+    float: left;
+  }
   #global-search-input {
     position: absolute;
     right: 5rem;

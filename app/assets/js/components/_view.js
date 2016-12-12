@@ -75,7 +75,7 @@ class View {
     //return timeTo;
   };
   scrollTo(destination) {
-    console.log('scollto function is running..');
+    //console.log('scollto function is running..');
     setTimeout($.scrollTo($(destination), 500, {axis: 'y',offset: {top: -80}}), 3000);
   };
   getData(options = {}, that){

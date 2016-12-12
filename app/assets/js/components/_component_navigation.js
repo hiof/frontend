@@ -66,6 +66,16 @@ class Navigation {
       let svgArrow = $(this.svgArrow).prop('outerHTML');
       $('.dropdown-menu-item>a').append(svgArrow);
     }
+    duplicateLinkToSubLvl(){
+      var subNav = $("#nav-pages .dropdown-menu .dropdown-menu");
+      $(subNav).each(function() {
+        var subNavSiblingAnchor = $(this).prev(),
+        subNavSiblingAnchorHref = $(subNavSiblingAnchor).attr("href"),
+        subNavSiblingAnchorText = $(subNavSiblingAnchor).text(),
+        newSubNavEl = '<li data-temp="true"><a href="' + subNavSiblingAnchorHref + '">' + subNavSiblingAnchorText + '</a></li>';
+        $(this).prepend(newSubNavEl);
+      });
+    }
   }
 
   (function(Hiof, undefined) {
@@ -104,7 +114,9 @@ class Navigation {
       });
 
 
-
+      if (Hiof.Options.windowWidth < 950) {
+        nav.duplicateLinkToSubLvl();
+      }
 
 
       window.addEventListener("orientationchange", function() {
