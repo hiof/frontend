@@ -16,7 +16,11 @@
     }
   }
 
-
+#body{
+  &:before{
+    display: none;
+  }
+}
 
 
 @include mq($until: small) {

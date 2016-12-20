@@ -49,7 +49,7 @@ module.exports = function(grunt) {
     },
     autoprefixer: {
       options: {
-        browsers: ['last 2 versions', 'ie 8', 'ie 9']
+        browsers: ['last 2 versions', 'ie 9', 'ie 10', 'ie 11', 'edge 13', 'edge 14']
         //diff: 'build/config/*.diff'
       },
       prefix: {
@@ -214,9 +214,11 @@ module.exports = function(grunt) {
           'app/vendor/footable/js/footable.filter.js',
           'app/vendor/footable/js/footable.sort.js',
           'app/vendor/footable/js/footable.striping.js',
-          'app/vendor/bootstrap/js/modal.js',
-          'app/vendor/bootstrap/js/dropdown.js',
-          'app/vendor/bootstrap/js/tooltip.js',
+          'app/vendor/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
+          'app/vendor/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
+          'app/vendor/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
+          'app/vendor/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
+          'app/vendor/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
           'app/vendor/jquery-cookie/jquery.cookie.js',
           'app/vendor/pathjs/path.js',
           'app/vendor/handlebars/handlebars.js',
@@ -416,62 +418,11 @@ qunit: {
 },
 
 watch: {
-  tests: {
-    files: ['tests/**/*'],
-    tasks: ['copy:tests', 'qunit'],
+  all: {
+    files: ['app/assets/**/*'],
+    tasks: ['deploy-staging'],
     options: {
-      livereload: true,
-    },
-  },
-  hbs: {
-    files: ['app/templates/**/*.hbs'],
-    tasks: ['handlebars', 'copy:jstemplates'],
-    options: {
-      livereload: true,
-    },
-  },
-  js: {
-    files: ['app/assets/js/**/*.js', 'app/assets/js/**/*.json'],
-    tasks: ['jshint', 'concat:scripts', 'versioning:build', 'copy:jsdata'],
-    options: {
-      livereload: true,
-    },
-  },
-  css: {
-    files: ['app/assets/less/**/*.less'],
-    tasks: ['less', 'autoprefixer', 'cssmin', 'versioning:build'],
-    options: {
-      livereload: true,
-    },
-  },
-  //views: {
-  //  files: ['app/views/**/*.html'],
-  //  tasks: ['concat:pages'],
-  //  options: {
-  //    livereload: true,
-  //  },
-  //},
-  images: {
-    files: ['app/assets/images/**/*.jpg', 'app/assets/images/**/*.png', 'app/assets/images/**/*.svg'],
-    tasks: ['copy:images'],
-    options: {
-      livereload: true,
-    },
-  },
-
-  favicon: {
-    files: ['app/assets/images/**/*.ico'],
-    tasks: ['copy:favicon'],
-    options: {
-      livereload: true,
-    },
-  },
-
-  fonts: {
-    files: ['app/assets/fonts/**/*'],
-    tasks: ['copy:fonts'],
-    options: {
-      livereload: true,
+      //livereload: true,
     },
   }
 },

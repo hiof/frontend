@@ -1,36 +1,11 @@
 // Variables
 
-// Colors
-$hiof-blue: #073B58;
-$color-primary-action: #3276b1;
-//$btn-primary: $btn-primary-color;
-$black: #000;
-$white: #fff;
+// Import color variables
+@import "../../../../vendor/hiof-color/app/assets/sass/_variables";
 
 
-// Typography
-$body-font-size: 1.8rem;
-$body-line-height: 1.8em;
-$body-font-family: 'Source Sans Pro', sans-serif;
-$text-color: #444;
-$h-font-family: 'Source Sans Pro', sans-serif;
-
-
-$h1-font-size: "";
-$h2-font-size: "";
-$h3-font-size: "";
-$h4-font-size: "";
-$h5-font-size: "";
-$h6-font-size: "";
-
-
-
-// Added from lessline
-$linkColour: #0C89DB;
-$hoverColour: #212121;
-$backgroundColour: #FCFCFC;
-$codeBackgroundColour: #002028;
-
+// Import typography variables
+@import "../../../../vendor/hiof-typography/app/assets/sass/_variables";
 
 
 
