@@ -151,9 +151,9 @@ $(function() {
 
 
         //Fire functions
-        Hiof.HeaderToggle();
+        //Hiof.HeaderToggle();
 
-        Hiof.FadeInContent();
+        //Hiof.FadeInContent();
 
 
     });

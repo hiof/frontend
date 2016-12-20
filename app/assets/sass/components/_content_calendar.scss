@@ -1,0 +1,133 @@
+
+/*
+### Component: Calendar
+
+*/
+
+#calendar{
+  position: relative;
+  //height: 11.5rem;
+  //overflow-y: hidden;
+  //&:before{
+  //  content: "";
+  //  position: absolute;
+  //  top: -4rem;
+  //  left: -100%;
+  //  width: 300%;
+  //  height: 240px;
+  //  background: #000;
+  //  display: block;
+  //  z-index: -1;
+  //}
+
+}
+.calendar{
+
+}
+time{
+  text-transform: lowercase;
+}
+#people, #calendar{
+  margin-bottom: 0rem;
+  > header{
+    position: relative;
+    width: 100%;
+    float: left;
+    margin-bottom: 1rem;
+  }
+}
+#people{
+  form{
+    //margin-top: .5rem;
+    margin-bottom: 0;
+  }
+}
+
+.calendar-entry{
+  //float: left;
+  //width: 50%;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+  border-bottom: $divider-border-standard;
+  time{
+    max-width: 6rem;
+    float: left;
+    display:block;
+    margin-right: 1rem;
+    width: 4.4rem;
+    height: 4.4rem;
+    text-align:center;
+    padding-top: .7rem;
+    color: $color-primary-action;
+    border: 1px solid $color-primary-action;
+    border-radius: $border-radius-standard;
+    span, strong{
+      display:block;
+    }
+    span{
+      font-size: 2rem;
+      text-align: center;
+      line-height: 1;
+    }
+    strong{
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      //background: lighten($hiof-blue, 80%);
+      //height: 1.7rem;
+      color: $color-primary-action;
+      border-top: .1rem solid $color-primary-action;
+      border-bottom-left-radius: $border-radius-standard;
+      border-bottom-right-radius: $border-radius-standard;
+      text-transform: lowercase;
+
+    }
+
+
+  }
+  h3{
+    display: block;
+    float: left;
+    //width: 21rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-top: 0;
+    padding-top:.4rem;
+    font-weight: normal;
+    a{
+      color: $hiof-blue;
+    }
+  }
+  &:hover{
+    //background-color: #eee;
+    a{
+      color: $color-primary-action;
+      text-decoration: underline;
+    }
+    time{
+      background-color: $color-primary-action;
+      color: $white;
+      strong{
+        color: $white;
+        border-top: .1rem solid $white;
+      }
+    }
+  }
+  section{
+    padding-left: 5.5rem;
+  }
+}
+#calendar{
+  .calendar-entry{
+    border-bottom: none;
+    h3{
+      //width: 15.6rem;
+    }
+  }
+}
+
+
+@include mq($until: small) {}
+
+@include mq($from: small, $until: large) {}
+
+@include mq($from: large) {}

@@ -15,31 +15,41 @@ module.exports = function(grunt) {
     moment: require('moment'),
 
     // Tasks
-    lesslint: {
-      src: ['app/assets/less/*.less'],
+    //lesslint: {
+    //  src: ['app/assets/less/*.less'],
+    //  options: {
+    //    csslint: {
+    //      'known-properties': false
+    //    }
+    //  }
+    //},
+    //less: {
+    //  standard: {
+    //    options: {
+    //    },
+    //    files: [{
+    //      expand: true,
+    //      cwd: 'app/assets/less/',
+    //      src: ['*.less'],
+    //      dest: 'tmp/css/',
+    //      ext: '.css'
+    //    }]
+    //  }
+    //},
+    sass: {
       options: {
-        csslint: {
-          'known-properties': false
-        }
-      }
-    },
-    less: {
-      standard: {
-        options: {
 
-        },
-        files: [{
-          expand: true,
-          cwd: 'app/assets/less/',
-          src: ['*.less'],
-          dest: 'tmp/css/',
-          ext: '.css'
-        }]
+      },
+      dist: {
+        files: {
+          'tmp/css/<%= pkg.name %>.css': 'app/assets/sass/theme-standard.scss',
+          'tmp/css/print.css': 'app/assets/sass/print.scss',
+        }
       }
     },
     autoprefixer: {
       options: {
-        browsers: ['last 2 versions', 'ie 8', 'ie 9']
+        browsers: ['last 2 versions', 'ie 9', 'ie 10', 'ie 11', 'edge 13', 'edge 14']
         //diff: 'build/config/*.diff'
       },
       prefix: {
@@ -204,9 +214,11 @@ module.exports = function(grunt) {
           'app/vendor/footable/js/footable.filter.js',
           'app/vendor/footable/js/footable.sort.js',
           'app/vendor/footable/js/footable.striping.js',
-          'app/vendor/bootstrap/js/modal.js',
-          'app/vendor/bootstrap/js/dropdown.js',
-          'app/vendor/bootstrap/js/tooltip.js',
+          'app/vendor/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
+          'app/vendor/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
+          'app/vendor/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
+          'app/vendor/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
+          'app/vendor/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
           'app/vendor/jquery-cookie/jquery.cookie.js',
           'app/vendor/pathjs/path.js',
           'app/vendor/handlebars/handlebars.js',
@@ -259,8 +271,8 @@ module.exports = function(grunt) {
 
         {
           assets: [{
-            src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
-            dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
+            src: 'tmp/css/minified/<%= pkg.name %>.v<%= pkg.version %>.min.css',
+            dest: 'tmp/css/minified/<%= pkg.name %>.v<%= pkg.version %>.min.css'
           }, {
             src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
             dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
@@ -289,8 +301,8 @@ module.exports = function(grunt) {
 
       {
         assets: [{
-          src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
-          dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
+          src: 'tmp/css/minified/<%= pkg.name %>.v<%= pkg.version %>.min.css',
+          dest: 'tmp/css/minified/<%= pkg.name %>.v<%= pkg.version %>.min.css'
         }, {
           src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
           dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
@@ -320,8 +332,8 @@ module.exports = function(grunt) {
 
     {
       assets: [{
-        src: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css',
-        dest: 'tmp/css/minified/theme-standard.v<%= pkg.version %>.min.css'
+        src: 'tmp/css/minified/<%= pkg.name %>.v<%= pkg.version %>.min.css',
+        dest: 'tmp/css/minified/<%= pkg.name %>.v<%= pkg.version %>.min.css'
       }, {
         src: 'tmp/css/minified/print.v<%= pkg.version %>.min.css',
         dest: 'tmp/css/minified/print.v<%= pkg.version %>.min.css'
@@ -406,62 +418,11 @@ qunit: {
 },
 
 watch: {
-  tests: {
-    files: ['tests/**/*'],
-    tasks: ['copy:tests', 'qunit'],
+  all: {
+    files: ['app/assets/**/*'],
+    tasks: ['deploy-staging'],
     options: {
-      livereload: true,
-    },
-  },
-  hbs: {
-    files: ['app/templates/**/*.hbs'],
-    tasks: ['handlebars', 'copy:jstemplates'],
-    options: {
-      livereload: true,
-    },
-  },
-  js: {
-    files: ['app/assets/js/**/*.js', 'app/assets/js/**/*.json'],
-    tasks: ['jshint', 'concat:scripts', 'versioning:build', 'copy:jsdata'],
-    options: {
-      livereload: true,
-    },
-  },
-  css: {
-    files: ['app/assets/less/**/*.less'],
-    tasks: ['less', 'autoprefixer', 'cssmin', 'versioning:build'],
-    options: {
-      livereload: true,
-    },
-  },
-  //views: {
-  //  files: ['app/views/**/*.html'],
-  //  tasks: ['concat:pages'],
-  //  options: {
-  //    livereload: true,
-  //  },
-  //},
-  images: {
-    files: ['app/assets/images/**/*.jpg', 'app/assets/images/**/*.png', 'app/assets/images/**/*.svg'],
-    tasks: ['copy:images'],
-    options: {
-      livereload: true,
-    },
-  },
-
-  favicon: {
-    files: ['app/assets/images/**/*.ico'],
-    tasks: ['copy:favicon'],
-    options: {
-      livereload: true,
-    },
-  },
-
-  fonts: {
-    files: ['app/assets/fonts/**/*'],
-    tasks: ['copy:fonts'],
-    options: {
-      livereload: true,
+      //livereload: true,
     },
   }
 },
@@ -490,7 +451,7 @@ bump: {
 
 // Register tasks
 grunt.registerTask('subtaskJs', ['babel', 'concat:scripts', 'uglify', 'copy:jscomponents', 'copy:jsmap', 'copy:jsdata', 'copy:jstemplates']);
-grunt.registerTask('subtaskCss', ['less', 'autoprefixer', 'cssmin']);
+grunt.registerTask('subtaskCss', ['sass', 'autoprefixer', 'cssmin']);
 grunt.registerTask('subtaskCopy', ['copy:images', 'copy:fonts', 'copy:vendor', 'copy:favicon', 'copy:tests']);
 grunt.registerTask('subtaskCopyDeploy', ['copy:images', 'copy:vendor', 'copy:favicon']);
 //grunt.registerTask('subtaskViews', ['concat:pages']);
