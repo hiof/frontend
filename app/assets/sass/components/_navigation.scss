@@ -263,8 +263,39 @@ $menuItems: 4;
 
   #global-search{
     display: none;
+    width: 92%;
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity .3s ease;
+    margin-top: .5rem;
+    #search-close{
+      display: none;
+    }
+    #global-search-input{
+      border-top-left-radius: $border-radius-standard;
+      border-bottom-left-radius: $border-radius-standard;
+    }
   }
-
+  .open{
+    #global-search{
+      display: block;
+      opacity: 1;
+    }
+  }
+  #nav-pages{
+    position: relative;
+    &>li{
+      &:first-of-type{
+        margin-top: 4.5rem;
+      }
+      &:last-of-type{
+        //background: pink;
+        position: absolute;
+        top: 0;
+        //padding-top: 1rem;
+      }
+    }
+  }
   .navbar-nav-wrapper{
     max-height: 0px;
     overflow: hidden;
