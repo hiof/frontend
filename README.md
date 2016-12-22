@@ -6,6 +6,28 @@
 
 Frontend code for the Østfold University College website.
 
+## Required knowledge
+
+This package require knowledge of the following technologies, technics and modules:
+
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+    - [ES2015](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition)
+    - [Babel](https://babeljs.io)
+    - [jQuery](https://jquery.com)
+    - [JSON](http://jsonapi.org)
+- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+    - [Sass](http://sass-lang.com)
+- [HTML](https://en.wikipedia.org/wiki/HTML)
+    - [Handlebars](http://handlebarsjs.com)
+- [Bootstrap](http://getbootstrap.com)
+- [Node.js](https://nodejs.org)
+    - [NPM](https://www.npmjs.com)
+- [Grunt](http://gruntjs.com) and Grunt tasks (see `Gruntfile.js` for details)
+- [Bower](http://bower.io)
+- [SSH](https://en.wikipedia.org/wiki/Secure_Shell)
+- [Git](https://git-scm.com)
+    - [Github](https://github.com)
+
 ## Copyright
 
 - This project is distributed under a  GNU General Public License v3 - Take a look at the COPYING file for details.
@@ -42,36 +64,8 @@ If you have the deploy authentication details, please add those to `secret.json`
 - $ grunt deploy-stage: deploys the code to staging.hiof.no
 - $ grunt deploy-prod: deploys the code to hiof.no
 
-
-
 ## Releases
-
-
-- [x] v3.7.0 - July 17. 2015
-  - [x] Minor refinements to project setup
-- [x] v3.6.4
-  - [x] Bugfixes
-- [x] v3.6.3
-  - [x] Activate library functionality
-- [x] v3.6.2
-  - [x] Activate it-services functionality
-  - [x] Move code to plugin
-- [x] v3.6.1
-  - [x] Activate semesterstart functionality
-- [x] v3.6.0 - June 2. 2015
-  - [x] Update and syncronize meta information in head unnafected by the view-type(backend-/frontendrendered)
-  - [x] Implement semesterstart functionality
-  - [x] Implement it-services functionality
-  - [x] Implement library functionality
 
 [Github releases](https://github.com/hiof/frontend/releases)
 
-
 ## Roadmap
-
-- [ ] v3.X.X
-  - [ ] Improve navigation and header behaviour on mobile/smaller screens.
-  - [ ] Refactor deploy
-    - [ ] Split asset and code deploy into seperate tasks and combine them for one *full deploy*
-  - [ ] Switch from Less to Sass for stylesheets preprosessing
-    -  [ ] Do work on outputted media-queries?
