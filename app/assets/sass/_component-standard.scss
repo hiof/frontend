@@ -8,7 +8,18 @@
 
 
 @import '../../../vendor/sass-mq/mq';
-@import 'variables/_standard';
+// Theme
+// Import color variables
+@import "../../../vendor/hiof-color/app/assets/sass/_variables";
+
+// Import typography variables
+@import "../../../vendor/hiof-typography/app/assets/sass/_variables";
+
+// Import standard variables from this project
+@import "variables/_border-radius";
+@import "variables/_whitespace";
+@import "variables/_divider";
+@import "variables/_breakpoints";
 
 
 // Layout
