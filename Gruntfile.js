@@ -15,27 +15,6 @@ module.exports = function(grunt) {
     moment: require('moment'),
 
     // Tasks
-    //lesslint: {
-    //  src: ['app/assets/less/*.less'],
-    //  options: {
-    //    csslint: {
-    //      'known-properties': false
-    //    }
-    //  }
-    //},
-    //less: {
-    //  standard: {
-    //    options: {
-    //    },
-    //    files: [{
-    //      expand: true,
-    //      cwd: 'app/assets/less/',
-    //      src: ['*.less'],
-    //      dest: 'tmp/css/',
-    //      ext: '.css'
-    //    }]
-    //  }
-    //},
     sass: {
       options: {
 
@@ -50,11 +29,9 @@ module.exports = function(grunt) {
     autoprefixer: {
       options: {
         browsers: ['last 2 versions', 'ie 9', 'ie 10', 'ie 11', 'edge 13', 'edge 14']
-        //diff: 'build/config/*.diff'
       },
       prefix: {
         expand: true,
-        //flatten: true,
         cwd: 'tmp/css/',
         src: '*.css',
         dest: 'tmp/css/prefixed/'
@@ -202,11 +179,8 @@ module.exports = function(grunt) {
     concat: {
       scripts: {
         options: {
-          //sourceMap: true,
-          //sourceMapStyle: 'inline'
         },
         src: [
-          //'app/vendor/jquery/dist/jquery.js',
           'vendor/jQuery-ajaxTransport-XDomainRequest/jquery.xdomainrequest.min.js',
           'vendor/leaflet/dist/leaflet-src.js',
           'vendor/footable/js/footable.js',
@@ -237,12 +211,8 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         mangle: false,
-        //compress: true,
         preserveComments: false,
         banner: '/*!  HiØ JavaScript v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("HH:mm DD-MM-YYYY") %>, license: <%= pkg.license %>  */',
-        //sourceMap: true,
-        //sourceMapIncludeSources: true,
-        //sourceMapIn: 'tmp/js/application.min.js.map', // input sourcemap from a previous compilation
       },
       main: {
         files: {
@@ -285,7 +255,6 @@ module.exports = function(grunt) {
     },
     dist: {
       options: {
-        //output: 'php'
       },
       files: [{
         assets: [{
@@ -421,7 +390,6 @@ watch: {
     files: ['app/assets/**/*'],
     tasks: ['deploy-staging'],
     options: {
-      //livereload: true,
     },
   }
 },
