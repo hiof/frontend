@@ -204,6 +204,13 @@ $menuItems: 4;
   }
 }
 
+// Indent subnavs in context-nav
+#nav-page.nav-page{
+  li ul{
+    margin-left: 1.5rem;
+  }
+}
+
 // Logo
 
 @include mq($until: small) {
