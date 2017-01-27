@@ -212,7 +212,6 @@ $menuItems: 4;
 }
 
 // Logo
-
 @include mq($until: small) {
   #logo-hiof{
     padding: 0;
