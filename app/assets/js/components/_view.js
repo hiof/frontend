@@ -22,7 +22,7 @@ class View {
         "fbid": "265676486878954",
         "fbpublisher": "http://facebook.com/hiofnorge",
         "restimage": {
-          "prefix": "http://staging.hiof.no/assets/images/rest/",
+          "prefix": "http://www.hiof.no/assets/images/rest/",
           "1200x675": {
             "0": "hiof-varmgraa.jpg",
             "1": "hiof-aqua.jpg",
@@ -48,7 +48,7 @@ class View {
 
     //this.meta = {
     //  "site_name": "Høgskolen i Østfold",
-    //  "og:url": '//hiof.no',
+    //  "og:url": '//www.hiof.no',
     //  "og:type": "article",
     //  //"og:image": Hiof.options.meta["og:image"],
     //  "fb:app_id": "265676486878954",
