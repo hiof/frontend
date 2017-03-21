@@ -109,9 +109,9 @@ module.exports = function(grunt) {
           'tmp/js/application.js': [
             'vendor/modernizr/modernizr.js',
             'tmp/js/neted-common.js',
-            //'vendor/jquery/jquery.js',
+            'vendor/jquery/jquery.js',
             'tmp/js/neted.js',
-            'tmp/js/symbolset.js',
+            //'tmp/js/symbolset.js',
             'assets/coffeescripts/plugins/select2.js',
             'assets/coffeescripts/plugins/waypoints.min.js',
             'tmp/js/app.js'
