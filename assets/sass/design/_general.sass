@@ -44,7 +44,7 @@ a
   height: 44px
   height: 4.4rem
   margin: 20px 0 0 20px
-  margin: 2rem 0 0 2rem 
+  margin: 2rem 0 0 2rem
 
 #site-sublogo
   width: 260px
@@ -116,7 +116,7 @@ a
   .display-table
     .display-table-row
       border: 0 none
-      .display-table-cell 
+      .display-table-cell
         border: 0 none
 
 
@@ -177,7 +177,7 @@ a
     +box-shadow(rgba(black, .7) 0rem 0rem .3rem)
     // +transition-property(width)
     // +transition-duration(.25s)
-    // +transition-timing-function(linear)    
+    // +transition-timing-function(linear)
     // +transition-property(box-shadow)
     // +transition-duration(.25s)
     // +transition-timing-function(linear)
@@ -232,7 +232,7 @@ a
   text-decoration: none !important
   &:before
     content: "right"
-    @extend %SSSymbolicons-block
+    +SSSymbolicons-block
     font-size: 10px
     font-size: 1rem
     color: $blue
@@ -448,7 +448,7 @@ a
 // /form template
 //---------------------------------------------------------------------------
 
-select#list2 
+select#list2
   min-width: 100px
 
 //-------------------------------------------------------------------------------------------------------
@@ -542,7 +542,7 @@ select#list2
     &:before
       border-right-color: $light-blue-oss-darken
     &:after
-      border-left-color: $light-blue-oss-darken      
+      border-left-color: $light-blue-oss-darken
 
   &.orange-ir
     background: $orange-ir
@@ -574,14 +574,14 @@ select#list2
 
 
 // Basic box setup
-%base-box
+=base-box
   position: relative
   padding: 10px 0
   padding: 1rem 0
   // margin-bottom: 20px
   > *
     margin: 0px 15px
-    margin: 0rem 1.5rem  
+    margin: 0rem 1.5rem
   > h1
     display: block
     font-size: 14px
@@ -599,15 +599,15 @@ select#list2
   * a
     text-decoration: none
 .box
-  @extend %base-box
+  +base-box
 .basic
-  @extend %base-box
+  +base-box
   margin: 0 5px 20px
   margin: 0 .5rem 2rem
   border: 1px solid $gray
   border: .1rem solid $gray
 .navigation
-  @extend .base-box
+  +base-box
   background: $light-blue
   padding: 15px 0
   padding: 1.5rem 0
@@ -659,7 +659,7 @@ select#list2
           left: .5rem
           top: 7px
           top: .7rem
-          @extend %SSStandard
+          +SSStandard
           font-size: 10px
           font-size: 1rem
           color: $base-color
@@ -697,7 +697,7 @@ select#list2
   .rss-icon
     display: none
 .paperstack
-  @extend %base-box
+  +base-box
   z-index: 1
   margin: 0 0 20px 0
   margin: 0 0 2em 0
@@ -732,7 +732,7 @@ select#list2
     +transform(rotate(359deg))
 
 .contact
-  @extend %base-box
+  +base-box
   img
     margin: 0 0 10px
     margin: 0 0 1rem
@@ -771,7 +771,7 @@ select#list2
       top: 1.2rem
       content: "news"
       // font-family: "SSStandard"
-      @extend %SSStandard
+      +SSStandard
   li
     list-style: none
     position: relative
@@ -785,7 +785,7 @@ select#list2
       content: "next"
       // font-family: "SSStandard"
       // +font-feature-settings
-      @extend %SSStandard
+      +SSStandard
       // background: yellow
   .news_boxHeadlinesOnly
     margin: 0
@@ -823,7 +823,7 @@ select#list2
       top: 1.2rem
       content: "info"
       // font-family: "SSStandard"
-      @extend %SSStandard
+      +SSStandard
   li
     list-style: none
     position: relative
@@ -837,7 +837,7 @@ select#list2
       content: "next"
       // font-family: "SSStandard"
       // +font-feature-settings
-      @extend %SSStandard
+      +SSStandard
       // background: yellow
 
 .box-studenttorget
@@ -874,7 +874,7 @@ select#list2
     //  top: 1.2rem
     //  content: "chat"
     //  // font-family: "SSStandard"
-    //  @extend %SSStandard
+    //  +SSStandard
   li
     list-style: none
     position: relative
@@ -888,7 +888,7 @@ select#list2
       content: "next"
       // font-family: "SSStandard"
       // +font-feature-settings
-      @extend %SSStandard
+      +SSStandard
       // background: yellow
   .btn
     margin-top: 20px
@@ -927,7 +927,7 @@ select#list2
     //  top: 1.2rem
     //  content: "news"
     //  // font-family: "SSStandard"
-    //  @extend %SSStandard
+    //  +SSStandard
   li
     list-style: none
     position: relative
@@ -941,7 +941,7 @@ select#list2
       content: "next"
       // font-family: "SSStandard"
       // +font-feature-settings
-      @extend %SSStandard
+      +SSStandard
       // background: yellow
   .btn
     margin-top: 20px
@@ -988,7 +988,7 @@ select#list2
       content: "next"
       // font-family: "SSStandard"
       // +font-feature-settings
-      @extend %SSStandard
+      +SSStandard
       // background: yellow
 
 .sidebar-plain
@@ -1018,7 +1018,7 @@ select#list2
       content: "next"
       // font-family: "SSStandard"
       // +font-feature-settings
-      @extend %SSStandard
+      +SSStandard
       // background: yellow
 
 .sidebar-instagram
@@ -1054,7 +1054,7 @@ select#list2
       top: 1.2rem
       content: "instagram"
       // font-family: "SSSocial"
-      @extend %SSSocial
+      +SSSocial
 
 .sidebar-facebook
   @extend .basic
@@ -1089,7 +1089,7 @@ select#list2
       top: 1.2rem
       content: "facebook"
       // font-family: "SSSocial"
-      @extend %SSSocial
+      +SSSocial
 
 .sidebar-twitter
   @extend .basic
@@ -1124,7 +1124,7 @@ select#list2
       top: 1.2rem
       content: "twitter"
       // font-family: "SSSocial"
-      @extend %SSSocial
+      +SSSocial
 
 
   .news_boxHeadlinesOnly-list-date
@@ -1144,11 +1144,11 @@ select#list2
         content: "sample"
 .box
   &.calendar-item
-    @extend %base-box
+    +base-box
 
 // tillegg 2013
 //
-//.box_general 
+//.box_general
 //  margin: 0px 1rem 2rem 0px
 //  border: 0.1rem solid rgb(240, 240, 240)
 //  position: relative
@@ -1170,7 +1170,7 @@ select#list2
 //    margin: 0rem 1.5rem 0.5rem 1.5rem
 //  p
 //    margin: 0rem 1.5rem 1rem 1.5rem
-//  .btn 
+//  .btn
 //    width: 183px
 //    margin-left: 1.5rem
 //    margin-bottom: 1.5rem
@@ -1357,7 +1357,7 @@ select#list2
     &:hover
       +background-image(linear-gradient(color-stops(lighten($blue-light, 5%) 0%, $blue-medium 100%)))
     &:active
-      +background-image(linear-gradient(color-stops($blue-medium 0%, $blue-light 100%)))   
+      +background-image(linear-gradient(color-stops($blue-medium 0%, $blue-light 100%)))
   &.green
     +background-image(linear-gradient(color-stops($green-light 0%, $green-medium 100%)))
     border: 0.1em solid $green-medium
@@ -1435,7 +1435,7 @@ select.btn
       margin-right: 10px
       float: left
       a.contact_link
-        //width: 135px 
+        //width: 135px
         //height: 50px
         color: #ffffff
         padding: 30px 30px 100px 30px
@@ -1455,24 +1455,24 @@ select.btn
       background: #c0c47a
     .color-green
       background: #87c0a3
-    .color-blue 
+    .color-blue
       background: #84b2b3
     .color-grey
       background: #a9b2ad
-    
+
 
 #content
   .contact_form
     padding: 3px
   .formTextLarge,
   .formTextSmall,
-  .formTextAreaLarge 
+  .formTextAreaLarge
     border: 1px solid #CCCCCC
     font-size: 12px
     padding: 3px
-  .formTextSmall 
+  .formTextSmall
     width: 100%
-    
+
 
 // Retina button enhancehement
 
@@ -1480,7 +1480,7 @@ select.btn
   .btn
     border: none
     padding: 0 16px
-    +box-shadow(inset rgba(black, 1) 0 0 1px, inset rgba(#75c2f8, 1) 0 1px 0, rgba(0, 0, 0, .5) 0 1px 1px -1px)    
+    +box-shadow(inset rgba(black, 1) 0 0 1px, inset rgba(#75c2f8, 1) 0 1px 0, rgba(0, 0, 0, .5) 0 1px 1px -1px)
     // box-shadow: inset 0 0 1px #000, inset 0 1px 0 #75c2f8, 0 1px 1px -1px rgba(0, 0, 0, .5)
 
 
@@ -1655,7 +1655,7 @@ select.btn
       border-radius: 3px
       -webkit-transition: background-color .2s ease-in-out
       -moz-transition: background-color .2s ease-in-out
-      transition: background-color .2s ease-in-out 
+      transition: background-color .2s ease-in-out
       &:hover, &:focus
         background-color: #999
       &:active
@@ -1780,7 +1780,7 @@ select.btn
 //     text-decoration: none
 //     // font-family: "SSStandard"
 //     // +font-feature-settings
-//     @extend %SSStandard
+//     +SSStandard
 //     &:hover
 //       background: rgba(black, 1)
 //       color: #fff
@@ -1814,7 +1814,7 @@ select.btn
       border-bottom: 1px solid #ddd
       display: block
       padding: 10px
-      padding: 1rem      
+      padding: 1rem
       +transition-property(padding)
       +transition-duration(.25s)
       &:hover
@@ -1851,7 +1851,7 @@ select.btn
     &:last-child
       margin: 0
       padding: 0
-      border-bottom: none  
+      border-bottom: none
     a
       h3
         font-size: 18px
@@ -2057,7 +2057,7 @@ select.btn
     //     content: "facebook"
     //     position: absolute
     //     top: 10px
-    //     @extend %SSSocial
+    //     +SSSocial
     // &.twitter
     //   &:before
     //     content: "twitter"
@@ -2070,7 +2070,7 @@ select.btn
     //     width: 25px
     //     display: block
     //     position: absolute
-    //     @extend %SSSocial
+    //     +SSSocial
     //     //top: 50px
     //     //left: 50px
     //   &:after
@@ -2083,7 +2083,7 @@ select.btn
     //     position: absolute
     //     //top: 50px
     //     left: 55px
-    //     @extend %SSSocial
+    //     +SSSocial
     &.facebook
       background: blue
     &.instagram
@@ -2110,7 +2110,7 @@ select.btn
 
 
 
-// Selectbox 
+// Selectbox
 
 
 #search
@@ -2157,7 +2157,7 @@ select.btn
   &.vcard
     width: 200px
     width: 20rem
-    float: left  
+    float: left
     margin-top: 10px
     margin-top: 1rem
     padding: 10px 10px 0
@@ -2195,7 +2195,7 @@ select.btn
       border: .1rem solid #fff
       font-size: 30px
       font-size: 3rem
-      display: block    
+      display: block
     .tel
       display: block
       line-height: 1.4
@@ -2272,7 +2272,7 @@ select.btn
           top: 10px
           left: 10px
           font-size: 2rem
-          // @extend %SSSocial
+          // +SSSocial
       &:active
         +box-shadow(inset rgba(black, .8) 0 0 3px)
         +box-shadow(inset rgba(black, .8) 0 0 .3rem)
@@ -2460,7 +2460,7 @@ select.btn
         padding: 5px 10px
         padding-left: 20px
         position: relative
-        background: #f0f0f0    
+        background: #f0f0f0
         +transition-property(background, color)
         +transition-duration(.3s)
         &:before
@@ -2470,7 +2470,7 @@ select.btn
           border-top: 5px solid #fff
           position: absolute
           top: 0px
-          left: 5px      
+          left: 5px
         &:hover
           background: $hiof-blue
           color: #fff
@@ -2555,8 +2555,4 @@ select.btn
   @extend %layout-with-display-table
   // extention of the message-hiof from:
   // ../plugins/hiof-frontend/sass/design/sections/_message-design.sass
-  @extend %message-hiof
-
-
-
-
+  +message-hiof

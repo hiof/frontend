@@ -1,4 +1,4 @@
-%message
+=message
   background: rgb(251, 235, 193)
   position: relative
   border-width: 1px
@@ -26,11 +26,11 @@
     top: 1rem
     left: 10px
     left: 1rem
-    @extend %SSStandard
+    +SSStandard
 
-%message-hiof
+=message-hiof
   .message
-    @extend %message
+    +message
     &.confirmation
       // @extend %message
       border-color: rgb(184, 209, 153)

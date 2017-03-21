@@ -26,7 +26,7 @@ $border-radius-large-rem: 2.3rem
 
 
 
-%font-feature-settings
+=font-feature-settings
   font-style: normal
   text-decoration: none
   text-rendering: optimizeLegibility
@@ -43,34 +43,34 @@ $border-radius-large-rem: 2.3rem
 
 
 
-%SSStandard
+=SSStandard
   font-family: "SSStandard"
   font-weight: normal
-  @extend %font-feature-settings
-  // +font-feature-settings
+  //@extend %font-feature-settings
+  +font-feature-settings
 
-%SSSocial
+=SSSocial
   font-family: "SSSocial"
   font-weight: normal
-  @extend %font-feature-settings
-  // +font-feature-settings
+  //@extend %font-feature-settings
+  +font-feature-settings
 
-%SSsocial-circle
-  @extend %SSSocial
+=SSsocial-circle
+  +SSSocial
   font-weight: bold
 
-%SSSymbolicons-block
+=SSSymbolicons-block
   font-family: "SSSymbolicons"
   font-weight: normal
-  @extend %font-feature-settings
-  // +font-feature-settings
+  //@extend %font-feature-settings
+  +font-feature-settings
 
 
-%SSSymbolicons-line
+=SSSymbolicons-line
   font-family: "SSSymbolicons"
   font-weight: 300
-  @extend %font-feature-settings
-  // +font-feature-settings
+  //@extend %font-feature-settings
+  +font-feature-settings
 
 
 // Colours
@@ -162,5 +162,4 @@ $green-hs-darken: darken($green-hs, 20%)
 
 
 
-%colors
-  
+=colors
