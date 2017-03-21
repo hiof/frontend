@@ -1,15 +1,19 @@
 {
   "name": "hiof-frontend",
   "version": "4.0.0-alpha.1",
-  "author": "HiØ ved Kenneth Lindbeck-Dahlstrøm <kld@hiof.no>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hiof/frontend.git"
+  "description": "The required package for www.hiof.no",
+  "repository": "https://github.com/hiof/frontend.git",
+  "bugs": "https://github.com/hiof/frontend/issues",
+  "author": {
+    "name": "Kenneth Lindbeck-Dahlstrøm",
+    "email": "kld@hiof.no",
+    "url": "http://keda.no"
   },
   "contributors": [
     {
       "name": "Kenneth Lindbeck-Dahlstrøm",
-      "email": "kld@hiof.no"
+      "email": "kld@hiof.no",
+      "url": "http://keda.no"
     }
   ],
   "scripts": {
@@ -41,10 +45,19 @@
     "grunt-static-versioning": "^0.2.2",
     "matchdep": "*",
     "moment": "^2.17.1",
-    "time-grunt": "^1.4.0"
+    "time-grunt": "^1.4.0",
+    "jquery": "~1.11.1",
+    "bootstrap": "^4.0.0-alpha.6",
+    "hiof-colors": "https://github.com/hiof/colors.git",
+    "hiof-layout": "https://github.com/hiof/layout.git",
+    "page-view": "https://github.com/hiof/page-view.git",
+    "hiof-typography": "https://github.com/hiof/typography.git",
+    "moment": "^2.14.1",
+    "moment-duration-format": "^1.3.0"
   },
-  "dependencies": {
-    "bower": "1.8.0"
+  "engines": {
+    "node": ">=6.10.0 <7.0.0",
+    "yarn": "^0.21.3"
   },
   "license": "GPL-3.0"
 }
