@@ -1,6 +1,6 @@
 {
   "name": "hiof-frontend",
-  "version": "4.0.0-alpha.1",
+  "version": "4.0.0-alpha.2",
   "description": "The required package for www.hiof.no",
   "repository": "https://github.com/hiof/frontend.git",
   "bugs": "https://github.com/hiof/frontend/issues",
