@@ -1,4 +1,0 @@
-[submodule "dist"]
-	path = dist
-	url = git@github.com:hiof/frontend.git
-	branch = gh-pages
