@@ -1,0 +1,12 @@
+@import "../../../../vendor/bootstrap-sass/assets/stylesheets/bootstrap/_jumbotron.scss";
+
+
+// Overrides to work in the content flow of hiof.no
+.jumbotron{
+  float: left;
+  padding: 48px;
+  border-radius: .4rem;
+  p:last-child{
+    margin-bottom: 0;
+  }
+}
