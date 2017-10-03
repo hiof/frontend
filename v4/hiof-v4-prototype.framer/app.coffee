@@ -1,15 +1,63 @@
+# Imports
 InputModule = require "input-framer/input"
+ajax = require "ajax"
+
+# viewport sizing
+
+sizing =
+    viewTopPadding: 30
+    mobile:
+        viewSidePadding: 20
+        itemMargin: 16
+        itemSize: 250
+    tablet:
+        viewSidePadding: 40
+        itemMargin: 64
+        itemSize: 400
+    desktop:
+        viewSidePadding: 40
+        itemMargin: 64
+        itemSize: 400
+		
+thisArticle1Id = null
+thisArticle2Id = null
+thisArticle3Id = null
+
+# AJAX data
+
+ajax.get("https://www.hiof.no/api/v1/articles/?id=&url=%2F%2Fwww.hiof.no%2Fapi%2Fv1%2Farticles%2F&template=posts-index&pageId=&page=1&pageSize=10&authorId=&category=3%2C11&destination=.outlet&articleLoClass=lo-half&addType=&destinationAddress=&destinationView=standard", (response) -> setupArticles(response))
+
+
+setupArticles = (data) ->
+	article_1_promoted_title.text = data.posts[0].articleTitle
+	article_1_promoted_intro.text = data.posts[0].articleIntro
+	article_1_promoted_image.image = "//www.hiof.no/neted/services/file/?hash=" + data.posts[0].articleImage
+	thisArticle1Id = data.posts[0].id
+	article_2_title.text = data.posts[1].articleTitle
+	article_2_intro.text = data.posts[1].articleIntro
+	article_2_image.image = "//www.hiof.no/neted/services/file/?hash=" + data.posts[1].articleImage
+	thisArticle2Id = data.posts[1].id
+	article_3_title.text = data.posts[2].articleTitle
+	article_3_intro.text = data.posts[2].articleIntro
+	article_3_image.image = "//www.hiof.no/neted/services/file/?hash=" + data.posts[2].articleImage
+	thisArticle3Id = data.posts[2].id
+
+
+
 # Initialize PageComponent 
 page = new PageComponent
 	width: Screen.width
 	height: Screen.height
 	scrollHorizontal: false 
-	scrollVertical: false
-#  Set up a flow from your artboards 
+	#scrollVertical: false
 
-artboard_homepage.parent = page.content
 
-artboard_studier.parent = page.content
+#pages = []
+page.addPage(artboard_homepage)
+page.addPage(artboard_studier)
+
+#pages.push(page)
+
 #artboard_studier.x = Screen.width
 
 
@@ -21,6 +69,7 @@ nav_research.text = "Forskning"
 nav_about.text = "Om"
 nav_login.text = "Logg inn"
 nav_search_label.text = "Søk"
+go_to_events.text = "Se fler arrangementer >"
 
 
 
@@ -28,8 +77,31 @@ nav_search_label.text = "Søk"
 
 # Artboart homepage
 
-#InputModule = require "input"
+studies_search = new InputModule.Input
+  setup: false # Change to true when positioning the input so you can see it
+  y: -8
+  x: -10
+  width: 140
+  height: 16
+  parent: search_input
+  fontFamily: "Source Sans Pro" #-apple-system
+  fontWeight: 100
+  fontSize: 16
+  lineHeight: 1
+  goButton: true
 
+navigation_search = new InputModule.Input
+  setup: false # Change to true when positioning the input so you can see it
+  y: 0
+  x: 45
+  width: 140
+  height: 30
+  parent: nav_search_form
+  fontFamily: "Source Sans Pro" #-apple-system
+  fontWeight: 100
+  fontSize: 40
+  lineHeight: 1
+  goButton: true
 
 	
 
@@ -99,7 +171,7 @@ more_events.states =
 #--- Event states
 events.states =
 	active:
-		height: 270
+		height: 300
 		animationOptions:
 			time: .3
 			curve: Bezier.ease
@@ -119,7 +191,7 @@ event_1.states =
 	inactive:
 		opacity: 0
 		animationOptions:
-			time: .2
+			time: .3
 event_3.states =
 	active:
 		opacity: 100
@@ -130,13 +202,24 @@ event_3.states =
 	inactive:
 		opacity: 0
 		animationOptions:
-			time: .1
+			time: .2
 
+go_to_events.states =
+	active:
+		opacity: 100
+		animationOptions:
+			time: .3
+			curve: Bezier.ease
+			delay: .3
+	inactive:
+		opacity: 0
+		animationOptions:
+			time: .1
 
 
 frontpage_content.states =
 	expanded_events:
-		height: 233
+		height: 243
 		animationOptions:
 			time: .3
 	unexpanded_events:
@@ -146,17 +229,37 @@ frontpage_content.states =
 			delay: .1
 
 
+searc_input_placeholder.states =
+	active:
+		opacity: 100
+		animationOptions:
+			time: .1
+			curve: Bezier.ease
+	inactive:
+		opacity: 0
+		animationOptions:
+			time: .1
+			curve: Bezier.ease
+
+
 #-- Define change events
+
+studies_search.onFocus ->
+	searc_input_placeholder.stateCycle()
 
 #events.on "change:height", ->
 #	event_1.stateCycle()
 #	event_3.stateCycle()
 	
 	
-# Artboart studier
+
+# Display pages
+displayCourses = ->
+	go_to_events.stateCycle()
+#displayArticle(id) = ->
+#displayPage(id) = ->
 
 
-	
 
 # Define interactions
 
@@ -177,6 +280,12 @@ more_events.onClick (event, layer) ->
 	event_1.stateCycle()
 	event_3.stateCycle()
 	frontpage_content.stateCycle()
+	go_to_events.stateCycle()
+
+
+search_button.onClick (event, layer) ->
+	goToCourses()
+
 
 
 

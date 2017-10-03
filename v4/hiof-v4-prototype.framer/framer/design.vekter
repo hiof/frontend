@@ -133,7 +133,110 @@
           {
             "radius" : 0,
             "children" : [
+              {
+                "sepiaEnabled" : 0,
+                "editable" : false,
+                "rotation" : 0,
+                "blurType" : "layer",
+                "exportEnabled" : false,
+                "id" : "`lWb0qBA",
+                "saturateEnabled" : 0,
+                "x" : 73,
+                "grayscale" : 0,
+                "hueRotateEnabled" : 0,
+                "y" : 68,
+                "__class" : "TextNode",
+                "widthFactor" : null,
+                "opacity" : 1,
+                "contrastEnabled" : 0,
+                "locked" : false,
+                "left" : 73,
+                "styledText" : {
+                  "blocks" : [
+                    {
+                      "depth" : 0,
+                      "inlineStyleRanges" : [
+                        {
+                          "length" : 29,
+                          "style" : "FONT:SourceSansPro-Regular",
+                          "offset" : 0
+                        },
+                        {
+                          "length" : 29,
+                          "style" : "COLOR:rgb(0, 0, 0)",
+                          "offset" : 0
+                        },
+                        {
+                          "length" : 29,
+                          "style" : "SIZE:16",
+                          "offset" : 0
+                        },
+                        {
+                          "length" : 29,
+                          "style" : "LETTERSPACING:0",
+                          "offset" : 0
+                        },
+                        {
+                          "length" : 29,
+                          "style" : "LINEHEIGHT:1.2",
+                          "offset" : 0
+                        }
+                      ],
+                      "entityRanges" : [
 
+                      ],
+                      "data" : {
+                        "emptyStyle" : [
+                          "FONT:SourceSansPro-Regular",
+                          "COLOR:rgb(0, 0, 0)",
+                          "SIZE:16",
+                          "LETTERSPACING:0",
+                          "LINEHEIGHT:1.2"
+                        ]
+                      },
+                      "text" : "Avdeling for Helse og velferd",
+                      "key" : "cpn8v",
+                      "type" : "unstyled"
+                    }
+                  ],
+                  "__class" : "StyledTextDraft",
+                  "entityMap" : {
+
+                  }
+                },
+                "blendingMode" : "normal",
+                "invert" : 0,
+                "sepia" : 0,
+                "centerAnchorX" : 0.17632850241545894,
+                "blurEnabled" : 0,
+                "shadows" : [
+
+                ],
+                "parentid" : "=Y4g_h![",
+                "brightnessEnabled" : 0,
+                "exportOptions" : [
+
+                ],
+                "name" : null,
+                "saturate" : 100,
+                "height" : 0,
+                "top" : 68,
+                "constraintsLocked" : false,
+                "right" : null,
+                "visible" : true,
+                "centerAnchorY" : 0.31481481481481483,
+                "contrast" : 100,
+                "grayScaleEnabled" : 0,
+                "hueRotate" : 0,
+                "heightFactor" : null,
+                "targetName" : null,
+                "bottom" : null,
+                "blur" : 12,
+                "autoSize" : true,
+                "invertEnabled" : 0,
+                "width" : 190,
+                "brightness" : 100
+              }
             ],
             "centerAnchorX" : 0.50241545893719808,
             "id" : "=Y4g_h![",
@@ -223,799 +326,6 @@
               {
                 "radius" : 0,
                 "children" : [
-                  {
-                    "radius" : 0,
-                    "children" : [
-
-                    ],
-                    "centerAnchorX" : 0.5,
-                    "id" : ")v0%dv]9",
-                    "exportOptions" : [
-
-                    ],
-                    "grayScaleEnabled" : 0,
-                    "constraintsLocked" : false,
-                    "blurType" : "layer",
-                    "fillColor" : "rgba(0,170,255,0.5)",
-                    "widthFactor" : null,
-                    "grayscale" : 0,
-                    "blendingEnabled" : 0,
-                    "top" : 34,
-                    "saturate" : 100,
-                    "left" : 0,
-                    "locked" : false,
-                    "sepiaEnabled" : 0,
-                    "fillGradient" : {
-                      "end" : "rgba(0,0,0,0)",
-                      "alpha" : 1,
-                      "angle" : 0,
-                      "__class" : "LinearGradient",
-                      "start" : "black"
-                    },
-                    "blur" : 12,
-                    "radiusTopLeft" : 0,
-                    "sepia" : 0,
-                    "borderColor" : "#222",
-                    "rotation" : 0,
-                    "borderLeft" : 1,
-                    "fillEnabled" : true,
-                    "right" : 0,
-                    "opacity" : 1,
-                    "name" : null,
-                    "blendingMode" : "normal",
-                    "contrast" : 100,
-                    "centerAnchorY" : 0.21698113207547171,
-                    "height" : 231,
-                    "borderWidth" : 1,
-                    "exportEnabled" : false,
-                    "hueRotate" : 0,
-                    "borderStyle" : "solid",
-                    "brightnessEnabled" : 0,
-                    "borderPerSide" : false,
-                    "saturateEnabled" : 0,
-                    "aspectRatioLocked" : false,
-                    "borderRight" : 1,
-                    "parentid" : "TKh?5?8#",
-                    "radiusBottomLeft" : 0,
-                    "boxShadows" : [
-                      {
-                        "x" : 0,
-                        "color" : "rgba(0,0,0,0.25)",
-                        "enabled" : false,
-                        "y" : 2,
-                        "spread" : 0,
-                        "__class" : "BoxShadow",
-                        "inset" : false,
-                        "blur" : 5
-                      }
-                    ],
-                    "contrastEnabled" : 0,
-                    "borderEnabled" : 0,
-                    "radiusPerCorner" : false,
-                    "radiusTopRight" : 0,
-                    "invert" : 0,
-                    "__class" : "RectangleNode",
-                    "clip" : false,
-                    "visible" : true,
-                    "fillType" : "color",
-                    "invertEnabled" : 0,
-                    "heightFactor" : null,
-                    "width" : 414,
-                    "borderBottom" : 1,
-                    "blurEnabled" : 0,
-                    "brightness" : 100,
-                    "bottom" : null,
-                    "borderTop" : 1,
-                    "targetName" : null,
-                    "radiusBottomRight" : 0,
-                    "hueRotateEnabled" : 0
-                  },
-                  {
-                    "radius" : 0,
-                    "children" : [
-
-                    ],
-                    "centerAnchorX" : 0.2560386473429952,
-                    "id" : "cAR<&`Vj",
-                    "exportOptions" : [
-
-                    ],
-                    "grayScaleEnabled" : 0,
-                    "constraintsLocked" : false,
-                    "blurType" : "layer",
-                    "fillColor" : "rgba(0,170,255,0.5)",
-                    "widthFactor" : null,
-                    "grayscale" : 0,
-                    "blendingEnabled" : 0,
-                    "top" : null,
-                    "saturate" : 100,
-                    "left" : 10,
-                    "locked" : false,
-                    "sepiaEnabled" : 0,
-                    "fillGradient" : {
-                      "end" : "rgba(0,0,0,0)",
-                      "alpha" : 1,
-                      "angle" : 0,
-                      "__class" : "LinearGradient",
-                      "start" : "black"
-                    },
-                    "blur" : 12,
-                    "radiusTopLeft" : 0,
-                    "sepia" : 0,
-                    "borderColor" : "#222",
-                    "rotation" : 0,
-                    "borderLeft" : 1,
-                    "fillEnabled" : true,
-                    "right" : null,
-                    "opacity" : 1,
-                    "name" : null,
-                    "blendingMode" : "normal",
-                    "contrast" : 100,
-                    "centerAnchorY" : 0.60885341074020316,
-                    "height" : 107,
-                    "borderWidth" : 1,
-                    "exportEnabled" : false,
-                    "hueRotate" : 0,
-                    "borderStyle" : "solid",
-                    "brightnessEnabled" : 0,
-                    "borderPerSide" : false,
-                    "saturateEnabled" : 0,
-                    "aspectRatioLocked" : true,
-                    "borderRight" : 1,
-                    "parentid" : "TKh?5?8#",
-                    "radiusBottomLeft" : 0,
-                    "boxShadows" : [
-                      {
-                        "x" : 0,
-                        "color" : "rgba(0,0,0,0.25)",
-                        "enabled" : false,
-                        "y" : 2,
-                        "spread" : 0,
-                        "__class" : "BoxShadow",
-                        "inset" : false,
-                        "blur" : 5
-                      }
-                    ],
-                    "contrastEnabled" : 0,
-                    "borderEnabled" : 0,
-                    "radiusPerCorner" : false,
-                    "radiusTopRight" : 0,
-                    "invert" : 0,
-                    "__class" : "RectangleNode",
-                    "clip" : false,
-                    "visible" : true,
-                    "fillType" : "color",
-                    "invertEnabled" : 0,
-                    "heightFactor" : null,
-                    "width" : 192,
-                    "borderBottom" : 1,
-                    "blurEnabled" : 0,
-                    "brightness" : 100,
-                    "bottom" : 216,
-                    "borderTop" : 1,
-                    "targetName" : null,
-                    "radiusBottomRight" : 0,
-                    "hueRotateEnabled" : 0
-                  },
-                  {
-                    "radius" : 0,
-                    "children" : [
-
-                    ],
-                    "centerAnchorX" : 0.7439613526570048,
-                    "id" : "{jdaLrYC",
-                    "exportOptions" : [
-
-                    ],
-                    "grayScaleEnabled" : 0,
-                    "constraintsLocked" : false,
-                    "blurType" : "layer",
-                    "fillColor" : "rgba(0,170,255,0.5)",
-                    "widthFactor" : null,
-                    "grayscale" : 0,
-                    "blendingEnabled" : 0,
-                    "top" : null,
-                    "saturate" : 100,
-                    "left" : null,
-                    "locked" : false,
-                    "sepiaEnabled" : 0,
-                    "fillGradient" : {
-                      "end" : "rgba(0,0,0,0)",
-                      "alpha" : 1,
-                      "angle" : 0,
-                      "__class" : "LinearGradient",
-                      "start" : "black"
-                    },
-                    "blur" : 12,
-                    "radiusTopLeft" : 0,
-                    "sepia" : 0,
-                    "borderColor" : "#222",
-                    "rotation" : 0,
-                    "borderLeft" : 1,
-                    "fillEnabled" : true,
-                    "right" : 10,
-                    "opacity" : 1,
-                    "name" : null,
-                    "blendingMode" : "normal",
-                    "contrast" : 100,
-                    "centerAnchorY" : 0.60885341074020316,
-                    "height" : 107,
-                    "borderWidth" : 1,
-                    "exportEnabled" : false,
-                    "hueRotate" : 0,
-                    "borderStyle" : "solid",
-                    "brightnessEnabled" : 0,
-                    "borderPerSide" : false,
-                    "saturateEnabled" : 0,
-                    "aspectRatioLocked" : true,
-                    "borderRight" : 1,
-                    "parentid" : "TKh?5?8#",
-                    "radiusBottomLeft" : 0,
-                    "boxShadows" : [
-                      {
-                        "x" : 0,
-                        "color" : "rgba(0,0,0,0.25)",
-                        "enabled" : false,
-                        "y" : 2,
-                        "spread" : 0,
-                        "__class" : "BoxShadow",
-                        "inset" : false,
-                        "blur" : 5
-                      }
-                    ],
-                    "contrastEnabled" : 0,
-                    "borderEnabled" : 0,
-                    "radiusPerCorner" : false,
-                    "radiusTopRight" : 0,
-                    "invert" : 0,
-                    "__class" : "RectangleNode",
-                    "clip" : false,
-                    "visible" : true,
-                    "fillType" : "color",
-                    "invertEnabled" : 0,
-                    "heightFactor" : null,
-                    "width" : 192,
-                    "borderBottom" : 1,
-                    "blurEnabled" : 0,
-                    "brightness" : 100,
-                    "bottom" : 216,
-                    "borderTop" : 1,
-                    "targetName" : null,
-                    "radiusBottomRight" : 0,
-                    "hueRotateEnabled" : 0
-                  },
-                  {
-                    "sepiaEnabled" : 0,
-                    "editable" : false,
-                    "rotation" : 0,
-                    "blurType" : "layer",
-                    "exportEnabled" : false,
-                    "id" : "J;f3-92^",
-                    "saturateEnabled" : 0,
-                    "x" : 10,
-                    "grayscale" : 0,
-                    "hueRotateEnabled" : 0,
-                    "y" : 300,
-                    "__class" : "TextNode",
-                    "widthFactor" : null,
-                    "opacity" : 1,
-                    "contrastEnabled" : 0,
-                    "locked" : false,
-                    "left" : 10,
-                    "styledText" : {
-                      "blocks" : [
-                        {
-                          "depth" : 0,
-                          "inlineStyleRanges" : [
-                            {
-                              "length" : 213,
-                              "style" : "FONT:SourceSansPro-Regular",
-                              "offset" : 0
-                            },
-                            {
-                              "length" : 213,
-                              "style" : "SIZE:14",
-                              "offset" : 0
-                            }
-                          ],
-                          "entityRanges" : [
-
-                          ],
-                          "data" : {
-                            "emptyStyle" : [
-                              "FONT:SourceSansPro-Regular"
-                            ]
-                          },
-                          "text" : "KRONIKK. Hvordan skape akademisk dannelse og studentaktiv forskning? Hvilken rolle skal formidling, studieverksted og biblioteket ha? I november setter Høgskolen i Østfold disse spørsmål og flere til på dagsorden.",
-                          "key" : "df841",
-                          "type" : "unstyled"
-                        }
-                      ],
-                      "__class" : "StyledTextDraft",
-                      "entityMap" : {
-
-                      }
-                    },
-                    "blendingMode" : "normal",
-                    "invert" : 0,
-                    "sepia" : 0,
-                    "centerAnchorX" : 0.5,
-                    "blurEnabled" : 0,
-                    "shadows" : [
-                      {
-                        "y" : 2,
-                        "enabled" : false,
-                        "blur" : 5,
-                        "x" : 0,
-                        "__class" : "Shadow",
-                        "color" : "rgba(0,0,0,0.25)"
-                      }
-                    ],
-                    "parentid" : "TKh?5?8#",
-                    "brightnessEnabled" : 0,
-                    "exportOptions" : [
-
-                    ],
-                    "name" : null,
-                    "saturate" : 100,
-                    "height" : 64,
-                    "blendingEnabled" : 0,
-                    "top" : 293,
-                    "constraintsLocked" : false,
-                    "right" : 10,
-                    "visible" : true,
-                    "centerAnchorY" : 0.47169811320754718,
-                    "contrast" : 100,
-                    "grayScaleEnabled" : 0,
-                    "hueRotate" : 0,
-                    "heightFactor" : null,
-                    "targetName" : null,
-                    "bottom" : null,
-                    "blur" : 12,
-                    "autoSize" : false,
-                    "invertEnabled" : 0,
-                    "width" : 394,
-                    "brightness" : 100
-                  },
-                  {
-                    "sepiaEnabled" : 0,
-                    "editable" : false,
-                    "rotation" : 0,
-                    "blurType" : "layer",
-                    "exportEnabled" : false,
-                    "id" : "cXo]>rT^",
-                    "saturateEnabled" : 0,
-                    "x" : 24,
-                    "grayscale" : 0,
-                    "hueRotateEnabled" : 0,
-                    "y" : 9,
-                    "__class" : "TextNode",
-                    "widthFactor" : null,
-                    "opacity" : 1,
-                    "contrastEnabled" : 0,
-                    "locked" : false,
-                    "left" : null,
-                    "styledText" : {
-                      "blocks" : [
-                        {
-                          "depth" : 0,
-                          "inlineStyleRanges" : [
-
-                          ],
-                          "entityRanges" : [
-
-                          ],
-                          "data" : {
-                            "emptyStyle" : [
-
-                            ]
-                          },
-                          "text" : "Akademisk dannelse og førsteårsstudenten",
-                          "key" : "df841",
-                          "type" : "unstyled"
-                        }
-                      ],
-                      "__class" : "StyledTextDraft",
-                      "entityMap" : {
-
-                      }
-                    },
-                    "blendingMode" : "normal",
-                    "invert" : 0,
-                    "sepia" : 0,
-                    "centerAnchorX" : 0.41908212560386471,
-                    "blurEnabled" : 0,
-                    "shadows" : [
-                      {
-                        "y" : 2,
-                        "enabled" : false,
-                        "blur" : 5,
-                        "x" : 0,
-                        "__class" : "Shadow",
-                        "color" : "rgba(0,0,0,0.25)"
-                      }
-                    ],
-                    "parentid" : "TKh?5?8#",
-                    "brightnessEnabled" : 0,
-                    "exportOptions" : [
-
-                    ],
-                    "name" : null,
-                    "saturate" : 100,
-                    "height" : 19,
-                    "blendingEnabled" : 0,
-                    "top" : 274,
-                    "constraintsLocked" : false,
-                    "right" : null,
-                    "visible" : true,
-                    "centerAnchorY" : 0.41146589259796806,
-                    "contrast" : 100,
-                    "grayScaleEnabled" : 0,
-                    "hueRotate" : 0,
-                    "heightFactor" : null,
-                    "targetName" : null,
-                    "bottom" : null,
-                    "blur" : 12,
-                    "autoSize" : true,
-                    "invertEnabled" : 0,
-                    "width" : 327,
-                    "brightness" : 100
-                  },
-                  {
-                    "sepiaEnabled" : 0,
-                    "editable" : false,
-                    "rotation" : 0,
-                    "blurType" : "layer",
-                    "exportEnabled" : false,
-                    "id" : "y~KF,J%w",
-                    "saturateEnabled" : 0,
-                    "x" : 10,
-                    "grayscale" : 0,
-                    "hueRotateEnabled" : 0,
-                    "y" : 300,
-                    "__class" : "TextNode",
-                    "widthFactor" : null,
-                    "opacity" : 1,
-                    "contrastEnabled" : 0,
-                    "locked" : false,
-                    "left" : null,
-                    "styledText" : {
-                      "blocks" : [
-                        {
-                          "depth" : 0,
-                          "inlineStyleRanges" : [
-                            {
-                              "length" : 213,
-                              "style" : "FONT:SourceSansPro-Regular",
-                              "offset" : 0
-                            },
-                            {
-                              "length" : 213,
-                              "style" : "SIZE:14",
-                              "offset" : 0
-                            }
-                          ],
-                          "entityRanges" : [
-
-                          ],
-                          "data" : {
-                            "emptyStyle" : [
-                              "FONT:SourceSansPro-Regular"
-                            ]
-                          },
-                          "text" : "KRONIKK. Hvordan skape akademisk dannelse og studentaktiv forskning? Hvilken rolle skal formidling, studieverksted og biblioteket ha? I november setter Høgskolen i Østfold disse spørsmål og flere til på dagsorden.",
-                          "key" : "df841",
-                          "type" : "unstyled"
-                        }
-                      ],
-                      "__class" : "StyledTextDraft",
-                      "entityMap" : {
-
-                      }
-                    },
-                    "blendingMode" : "normal",
-                    "invert" : 0,
-                    "sepia" : 0,
-                    "centerAnchorX" : 0.7439613526570048,
-                    "blurEnabled" : 0,
-                    "shadows" : [
-                      {
-                        "y" : 2,
-                        "enabled" : false,
-                        "blur" : 5,
-                        "x" : 0,
-                        "__class" : "Shadow",
-                        "color" : "rgba(0,0,0,0.25)"
-                      }
-                    ],
-                    "parentid" : "TKh?5?8#",
-                    "brightnessEnabled" : 0,
-                    "exportOptions" : [
-
-                    ],
-                    "name" : null,
-                    "saturate" : 100,
-                    "height" : 155,
-                    "blendingEnabled" : 0,
-                    "top" : null,
-                    "constraintsLocked" : false,
-                    "right" : 10,
-                    "visible" : true,
-                    "centerAnchorY" : 0.86865021770682149,
-                    "contrast" : 100,
-                    "grayScaleEnabled" : 0,
-                    "hueRotate" : 0,
-                    "heightFactor" : null,
-                    "targetName" : null,
-                    "bottom" : 13,
-                    "blur" : 12,
-                    "autoSize" : false,
-                    "invertEnabled" : 0,
-                    "width" : 192,
-                    "brightness" : 100
-                  },
-                  {
-                    "sepiaEnabled" : 0,
-                    "editable" : false,
-                    "rotation" : 0,
-                    "blurType" : "layer",
-                    "exportEnabled" : false,
-                    "id" : "oM>s*XRX",
-                    "saturateEnabled" : 0,
-                    "x" : 10,
-                    "grayscale" : 0,
-                    "hueRotateEnabled" : 0,
-                    "y" : 300,
-                    "__class" : "TextNode",
-                    "widthFactor" : null,
-                    "opacity" : 1,
-                    "contrastEnabled" : 0,
-                    "locked" : false,
-                    "left" : 10,
-                    "styledText" : {
-                      "blocks" : [
-                        {
-                          "depth" : 0,
-                          "inlineStyleRanges" : [
-                            {
-                              "length" : 269,
-                              "style" : "SIZE:14",
-                              "offset" : 0
-                            },
-                            {
-                              "length" : 269,
-                              "style" : "FONT:SourceSansPro-Regular",
-                              "offset" : 0
-                            }
-                          ],
-                          "entityRanges" : [
-
-                          ],
-                          "data" : {
-                            "emptyStyle" : [
-                              "SIZE:14",
-                              "FONT:SourceSansPro-Regular"
-                            ]
-                          },
-                          "text" : "FOREDRAG. Det er økende interesse for hva oppmerksomhetsbasert opplæring, også kalt mindfullness, kan gjøre for å forbedre barn og unges mental helse, atferd og skoleprestasjon. Det er imidlertid mangel på erfaring i hvordan dette kan implementeres effektivt i skolene.",
-                          "key" : "df841",
-                          "type" : "unstyled"
-                        }
-                      ],
-                      "__class" : "StyledTextDraft",
-                      "entityMap" : {
-
-                      }
-                    },
-                    "blendingMode" : "normal",
-                    "invert" : 0,
-                    "sepia" : 0,
-                    "centerAnchorX" : 0.2560386473429952,
-                    "blurEnabled" : 0,
-                    "shadows" : [
-                      {
-                        "y" : 2,
-                        "enabled" : false,
-                        "blur" : 5,
-                        "x" : 0,
-                        "__class" : "Shadow",
-                        "color" : "rgba(0,0,0,0.25)"
-                      }
-                    ],
-                    "parentid" : "TKh?5?8#",
-                    "brightnessEnabled" : 0,
-                    "exportOptions" : [
-
-                    ],
-                    "name" : null,
-                    "saturate" : 100,
-                    "height" : 109,
-                    "blendingEnabled" : 0,
-                    "top" : null,
-                    "constraintsLocked" : false,
-                    "right" : null,
-                    "visible" : true,
-                    "centerAnchorY" : 0.90203193033381712,
-                    "contrast" : 100,
-                    "grayScaleEnabled" : 0,
-                    "hueRotate" : 0,
-                    "heightFactor" : null,
-                    "targetName" : null,
-                    "bottom" : 13,
-                    "blur" : 12,
-                    "autoSize" : false,
-                    "invertEnabled" : 0,
-                    "width" : 192,
-                    "brightness" : 100
-                  },
-                  {
-                    "sepiaEnabled" : 0,
-                    "editable" : false,
-                    "rotation" : 0,
-                    "blurType" : "layer",
-                    "exportEnabled" : false,
-                    "id" : "V{9{dTT<",
-                    "saturateEnabled" : 0,
-                    "x" : 10,
-                    "grayscale" : 0,
-                    "hueRotateEnabled" : 0,
-                    "y" : 300,
-                    "__class" : "TextNode",
-                    "widthFactor" : null,
-                    "opacity" : 1,
-                    "contrastEnabled" : 0,
-                    "locked" : false,
-                    "left" : null,
-                    "styledText" : {
-                      "blocks" : [
-                        {
-                          "depth" : 0,
-                          "inlineStyleRanges" : [
-
-                          ],
-                          "entityRanges" : [
-
-                          ],
-                          "data" : {
-                            "emptyStyle" : [
-
-                            ]
-                          },
-                          "text" : "Prosjekt \"Bedre helsetjenester...\"",
-                          "key" : "df841",
-                          "type" : "unstyled"
-                        }
-                      ],
-                      "__class" : "StyledTextDraft",
-                      "entityMap" : {
-
-                      }
-                    },
-                    "blendingMode" : "normal",
-                    "invert" : 0,
-                    "sepia" : 0,
-                    "centerAnchorX" : 0.7439613526570048,
-                    "blurEnabled" : 0,
-                    "shadows" : [
-                      {
-                        "y" : 2,
-                        "enabled" : false,
-                        "blur" : 5,
-                        "x" : 0,
-                        "__class" : "Shadow",
-                        "color" : "rgba(0,0,0,0.25)"
-                      }
-                    ],
-                    "parentid" : "TKh?5?8#",
-                    "brightnessEnabled" : 0,
-                    "exportOptions" : [
-
-                    ],
-                    "name" : null,
-                    "saturate" : 100,
-                    "height" : 39,
-                    "blendingEnabled" : 0,
-                    "top" : null,
-                    "constraintsLocked" : false,
-                    "right" : 10,
-                    "visible" : true,
-                    "centerAnchorY" : 0.72786647314949204,
-                    "contrast" : 100,
-                    "grayScaleEnabled" : 0,
-                    "hueRotate" : 0,
-                    "heightFactor" : null,
-                    "targetName" : null,
-                    "bottom" : 168,
-                    "blur" : 12,
-                    "autoSize" : false,
-                    "invertEnabled" : 0,
-                    "width" : 192,
-                    "brightness" : 100
-                  },
-                  {
-                    "sepiaEnabled" : 0,
-                    "editable" : false,
-                    "rotation" : 0,
-                    "blurType" : "layer",
-                    "exportEnabled" : false,
-                    "id" : "sP1@qz1K",
-                    "saturateEnabled" : 0,
-                    "x" : 10,
-                    "grayscale" : 0,
-                    "hueRotateEnabled" : 0,
-                    "y" : 300,
-                    "__class" : "TextNode",
-                    "widthFactor" : null,
-                    "opacity" : 1,
-                    "contrastEnabled" : 0,
-                    "locked" : false,
-                    "left" : 10,
-                    "styledText" : {
-                      "blocks" : [
-                        {
-                          "depth" : 0,
-                          "inlineStyleRanges" : [
-
-                          ],
-                          "entityRanges" : [
-
-                          ],
-                          "data" : {
-                            "emptyStyle" : [
-
-                            ]
-                          },
-                          "text" : "Hvordan kan mindfullness-trening øke barn og unges skoleprestasjon?",
-                          "key" : "df841",
-                          "type" : "unstyled"
-                        }
-                      ],
-                      "__class" : "StyledTextDraft",
-                      "entityMap" : {
-
-                      }
-                    },
-                    "blendingMode" : "normal",
-                    "invert" : 0,
-                    "sepia" : 0,
-                    "centerAnchorX" : 0.2560386473429952,
-                    "blurEnabled" : 0,
-                    "shadows" : [
-                      {
-                        "y" : 2,
-                        "enabled" : false,
-                        "blur" : 5,
-                        "x" : 0,
-                        "__class" : "Shadow",
-                        "color" : "rgba(0,0,0,0.25)"
-                      }
-                    ],
-                    "parentid" : "TKh?5?8#",
-                    "brightnessEnabled" : 0,
-                    "exportOptions" : [
-
-                    ],
-                    "name" : null,
-                    "saturate" : 100,
-                    "height" : 78,
-                    "blendingEnabled" : 0,
-                    "top" : null,
-                    "constraintsLocked" : false,
-                    "right" : null,
-                    "visible" : true,
-                    "centerAnchorY" : 0.75616835994194487,
-                    "contrast" : 100,
-                    "grayScaleEnabled" : 0,
-                    "hueRotate" : 0,
-                    "heightFactor" : null,
-                    "targetName" : null,
-                    "bottom" : 129,
-                    "blur" : 12,
-                    "autoSize" : false,
-                    "invertEnabled" : 0,
-                    "width" : 192,
-                    "brightness" : 100
-                  },
                   {
                     "radius" : 0,
                     "children" : [
@@ -1144,7 +454,7 @@
                         "grayScaleEnabled" : 0,
                         "constraintsLocked" : false,
                         "blurType" : "layer",
-                        "fillColor" : "rgba(0,170,255,0.5)",
+                        "fillColor" : "rgba(0, 0, 0, 0.5)",
                         "widthFactor" : null,
                         "grayscale" : 0,
                         "blendingEnabled" : 0,
@@ -1290,6 +600,1027 @@
                     "targetName" : null,
                     "radiusBottomRight" : 0,
                     "hueRotateEnabled" : 0
+                  },
+                  {
+                    "radius" : 0,
+                    "children" : [
+                      {
+                        "sepiaEnabled" : 0,
+                        "editable" : false,
+                        "rotation" : 0,
+                        "blurType" : "layer",
+                        "exportEnabled" : false,
+                        "id" : "cXo]>rT^",
+                        "saturateEnabled" : 0,
+                        "x" : 24,
+                        "grayscale" : 0,
+                        "hueRotateEnabled" : 0,
+                        "y" : 9,
+                        "__class" : "TextNode",
+                        "widthFactor" : null,
+                        "opacity" : 1,
+                        "contrastEnabled" : 0,
+                        "locked" : false,
+                        "left" : 10,
+                        "styledText" : {
+                          "blocks" : [
+                            {
+                              "depth" : 0,
+                              "inlineStyleRanges" : [
+
+                              ],
+                              "entityRanges" : [
+
+                              ],
+                              "data" : {
+                                "emptyStyle" : [
+
+                                ]
+                              },
+                              "text" : "Akademisk dannelse og førsteårsstudenten",
+                              "key" : "df841",
+                              "type" : "unstyled"
+                            }
+                          ],
+                          "__class" : "StyledTextDraft",
+                          "entityMap" : {
+
+                          }
+                        },
+                        "blendingMode" : "normal",
+                        "invert" : 0,
+                        "sepia" : 0,
+                        "centerAnchorX" : 0.41908212560386471,
+                        "blurEnabled" : 0,
+                        "shadows" : [
+                          {
+                            "y" : 2,
+                            "enabled" : false,
+                            "blur" : 5,
+                            "x" : 0,
+                            "__class" : "Shadow",
+                            "color" : "rgba(0,0,0,0.25)"
+                          }
+                        ],
+                        "parentid" : "o[FBJxr`",
+                        "brightnessEnabled" : 0,
+                        "exportOptions" : [
+
+                        ],
+                        "name" : "article-1-promoted-title",
+                        "saturate" : 100,
+                        "height" : 19,
+                        "blendingEnabled" : 0,
+                        "top" : 240,
+                        "constraintsLocked" : true,
+                        "right" : null,
+                        "visible" : true,
+                        "centerAnchorY" : 0.77244582043343657,
+                        "contrast" : 100,
+                        "grayScaleEnabled" : 0,
+                        "hueRotate" : 0,
+                        "heightFactor" : null,
+                        "targetName" : "article_1_promoted_title",
+                        "bottom" : null,
+                        "blur" : 12,
+                        "autoSize" : true,
+                        "invertEnabled" : 0,
+                        "width" : 327,
+                        "brightness" : 100
+                      },
+                      {
+                        "sepiaEnabled" : 0,
+                        "editable" : false,
+                        "rotation" : 0,
+                        "blurType" : "layer",
+                        "exportEnabled" : false,
+                        "id" : "J;f3-92^",
+                        "saturateEnabled" : 0,
+                        "x" : 10,
+                        "grayscale" : 0,
+                        "hueRotateEnabled" : 0,
+                        "y" : 300,
+                        "__class" : "TextNode",
+                        "widthFactor" : null,
+                        "opacity" : 1,
+                        "contrastEnabled" : 0,
+                        "locked" : false,
+                        "left" : 10,
+                        "styledText" : {
+                          "blocks" : [
+                            {
+                              "depth" : 0,
+                              "inlineStyleRanges" : [
+                                {
+                                  "length" : 213,
+                                  "style" : "FONT:SourceSansPro-Regular",
+                                  "offset" : 0
+                                },
+                                {
+                                  "length" : 213,
+                                  "style" : "SIZE:14",
+                                  "offset" : 0
+                                }
+                              ],
+                              "entityRanges" : [
+
+                              ],
+                              "data" : {
+                                "emptyStyle" : [
+                                  "FONT:SourceSansPro-Regular"
+                                ]
+                              },
+                              "text" : "KRONIKK. Hvordan skape akademisk dannelse og studentaktiv forskning? Hvilken rolle skal formidling, studieverksted og biblioteket ha? I november setter Høgskolen i Østfold disse spørsmål og flere til på dagsorden.",
+                              "key" : "df841",
+                              "type" : "unstyled"
+                            }
+                          ],
+                          "__class" : "StyledTextDraft",
+                          "entityMap" : {
+
+                          }
+                        },
+                        "blendingMode" : "normal",
+                        "invert" : 0,
+                        "sepia" : 0,
+                        "centerAnchorX" : 0.5,
+                        "blurEnabled" : 0,
+                        "shadows" : [
+                          {
+                            "y" : 2,
+                            "enabled" : false,
+                            "blur" : 5,
+                            "x" : 0,
+                            "__class" : "Shadow",
+                            "color" : "rgba(0,0,0,0.25)"
+                          }
+                        ],
+                        "parentid" : "o[FBJxr`",
+                        "brightnessEnabled" : 0,
+                        "exportOptions" : [
+
+                        ],
+                        "name" : "article-1-promoted-intro",
+                        "saturate" : 100,
+                        "height" : 64,
+                        "blendingEnabled" : 0,
+                        "top" : 259,
+                        "constraintsLocked" : true,
+                        "right" : 10,
+                        "visible" : true,
+                        "centerAnchorY" : 0.90092879256965941,
+                        "contrast" : 100,
+                        "grayScaleEnabled" : 0,
+                        "hueRotate" : 0,
+                        "heightFactor" : null,
+                        "targetName" : "article_1_promoted_intro",
+                        "bottom" : null,
+                        "blur" : 12,
+                        "autoSize" : false,
+                        "invertEnabled" : 0,
+                        "width" : 394,
+                        "brightness" : 100
+                      },
+                      {
+                        "radius" : 0,
+                        "children" : [
+
+                        ],
+                        "centerAnchorX" : 0.5,
+                        "id" : ")v0%dv]9",
+                        "exportOptions" : [
+
+                        ],
+                        "grayScaleEnabled" : 0,
+                        "constraintsLocked" : false,
+                        "blurType" : "layer",
+                        "fillColor" : "rgba(0,170,255,0.5)",
+                        "widthFactor" : null,
+                        "grayscale" : 0,
+                        "blendingEnabled" : 0,
+                        "top" : 0,
+                        "saturate" : 100,
+                        "left" : 0,
+                        "locked" : false,
+                        "sepiaEnabled" : 0,
+                        "fillGradient" : {
+                          "end" : "rgba(0,0,0,0)",
+                          "alpha" : 1,
+                          "angle" : 0,
+                          "__class" : "LinearGradient",
+                          "start" : "black"
+                        },
+                        "blur" : 12,
+                        "radiusTopLeft" : 0,
+                        "sepia" : 0,
+                        "borderColor" : "#222",
+                        "rotation" : 0,
+                        "borderLeft" : 1,
+                        "fillEnabled" : true,
+                        "right" : 0,
+                        "opacity" : 1,
+                        "name" : "article-1-promoted-image",
+                        "blendingMode" : "normal",
+                        "contrast" : 100,
+                        "centerAnchorY" : 0.35758513931888547,
+                        "height" : 231,
+                        "borderWidth" : 1,
+                        "exportEnabled" : false,
+                        "hueRotate" : 0,
+                        "borderStyle" : "solid",
+                        "brightnessEnabled" : 0,
+                        "borderPerSide" : false,
+                        "saturateEnabled" : 0,
+                        "aspectRatioLocked" : false,
+                        "borderRight" : 1,
+                        "parentid" : "o[FBJxr`",
+                        "radiusBottomLeft" : 0,
+                        "boxShadows" : [
+                          {
+                            "x" : 0,
+                            "color" : "rgba(0,0,0,0.25)",
+                            "enabled" : false,
+                            "y" : 2,
+                            "spread" : 0,
+                            "__class" : "BoxShadow",
+                            "inset" : false,
+                            "blur" : 5
+                          }
+                        ],
+                        "contrastEnabled" : 0,
+                        "borderEnabled" : 0,
+                        "radiusPerCorner" : false,
+                        "radiusTopRight" : 0,
+                        "invert" : 0,
+                        "__class" : "RectangleNode",
+                        "clip" : false,
+                        "visible" : true,
+                        "fillType" : "color",
+                        "invertEnabled" : 0,
+                        "heightFactor" : null,
+                        "width" : 414,
+                        "borderBottom" : 1,
+                        "blurEnabled" : 0,
+                        "brightness" : 100,
+                        "bottom" : null,
+                        "borderTop" : 1,
+                        "targetName" : "article_1_promoted_image",
+                        "radiusBottomRight" : 0,
+                        "hueRotateEnabled" : 0
+                      }
+                    ],
+                    "centerAnchorX" : 0.5,
+                    "id" : "o[FBJxr`",
+                    "exportOptions" : [
+
+                    ],
+                    "grayScaleEnabled" : 0,
+                    "constraintsLocked" : false,
+                    "blurType" : "layer",
+                    "fillColor" : "transparent",
+                    "widthFactor" : null,
+                    "grayscale" : 0,
+                    "top" : 34,
+                    "saturate" : 100,
+                    "left" : 0,
+                    "locked" : false,
+                    "sepiaEnabled" : 0,
+                    "fillGradient" : {
+                      "end" : "rgba(0,0,0,0)",
+                      "alpha" : 1,
+                      "angle" : 0,
+                      "__class" : "LinearGradient",
+                      "start" : "black"
+                    },
+                    "blur" : 12,
+                    "radiusTopLeft" : 0,
+                    "sepia" : 0,
+                    "borderColor" : "#222",
+                    "rotation" : 0,
+                    "borderLeft" : 1,
+                    "fillEnabled" : true,
+                    "right" : 0,
+                    "opacity" : 1,
+                    "name" : "article-1-promoted",
+                    "blendingMode" : "normal",
+                    "contrast" : 100,
+                    "centerAnchorY" : 0.28374455732946297,
+                    "height" : 323,
+                    "borderWidth" : 1,
+                    "exportEnabled" : false,
+                    "hueRotate" : 0,
+                    "borderStyle" : "solid",
+                    "brightnessEnabled" : 0,
+                    "borderPerSide" : false,
+                    "saturateEnabled" : 0,
+                    "aspectRatioLocked" : false,
+                    "borderRight" : 1,
+                    "parentid" : "TKh?5?8#",
+                    "radiusBottomLeft" : 0,
+                    "boxShadows" : [
+
+                    ],
+                    "contrastEnabled" : 0,
+                    "borderEnabled" : 0,
+                    "radiusPerCorner" : false,
+                    "radiusTopRight" : 0,
+                    "invert" : 0,
+                    "__class" : "RectangleNode",
+                    "clip" : false,
+                    "visible" : true,
+                    "fillType" : "color",
+                    "invertEnabled" : 0,
+                    "heightFactor" : null,
+                    "width" : 414,
+                    "borderBottom" : 1,
+                    "blurEnabled" : 0,
+                    "brightness" : 100,
+                    "bottom" : null,
+                    "borderTop" : 1,
+                    "targetName" : "article_1_promoted",
+                    "radiusBottomRight" : 0,
+                    "hueRotateEnabled" : 0
+                  },
+                  {
+                    "radius" : 0,
+                    "children" : [
+                      {
+                        "sepiaEnabled" : 0,
+                        "editable" : false,
+                        "rotation" : 0,
+                        "blurType" : "layer",
+                        "exportEnabled" : false,
+                        "id" : "oM>s*XRX",
+                        "saturateEnabled" : 0,
+                        "x" : 10,
+                        "grayscale" : 0,
+                        "hueRotateEnabled" : 0,
+                        "y" : 300,
+                        "__class" : "TextNode",
+                        "widthFactor" : null,
+                        "opacity" : 1,
+                        "contrastEnabled" : 0,
+                        "locked" : false,
+                        "left" : 0,
+                        "styledText" : {
+                          "blocks" : [
+                            {
+                              "depth" : 0,
+                              "inlineStyleRanges" : [
+                                {
+                                  "length" : 269,
+                                  "style" : "SIZE:14",
+                                  "offset" : 0
+                                },
+                                {
+                                  "length" : 269,
+                                  "style" : "FONT:SourceSansPro-Regular",
+                                  "offset" : 0
+                                }
+                              ],
+                              "entityRanges" : [
+
+                              ],
+                              "data" : {
+                                "emptyStyle" : [
+                                  "SIZE:14",
+                                  "FONT:SourceSansPro-Regular"
+                                ]
+                              },
+                              "text" : "FOREDRAG. Det er økende interesse for hva oppmerksomhetsbasert opplæring, også kalt mindfullness, kan gjøre for å forbedre barn og unges mental helse, atferd og skoleprestasjon. Det er imidlertid mangel på erfaring i hvordan dette kan implementeres effektivt i skolene.",
+                              "key" : "df841",
+                              "type" : "unstyled"
+                            }
+                          ],
+                          "__class" : "StyledTextDraft",
+                          "entityMap" : {
+
+                          }
+                        },
+                        "blendingMode" : "normal",
+                        "invert" : 0,
+                        "sepia" : 0,
+                        "centerAnchorX" : 0.5,
+                        "blurEnabled" : 0,
+                        "shadows" : [
+                          {
+                            "y" : 2,
+                            "enabled" : false,
+                            "blur" : 5,
+                            "x" : 0,
+                            "__class" : "Shadow",
+                            "color" : "rgba(0,0,0,0.25)"
+                          }
+                        ],
+                        "parentid" : "AfE+v7UT",
+                        "brightnessEnabled" : 0,
+                        "exportOptions" : [
+
+                        ],
+                        "name" : "article-2-intro",
+                        "saturate" : 100,
+                        "height" : 109,
+                        "blendingEnabled" : 0,
+                        "top" : 201,
+                        "constraintsLocked" : true,
+                        "right" : 0,
+                        "visible" : true,
+                        "centerAnchorY" : 0.8241935483870968,
+                        "contrast" : 100,
+                        "grayScaleEnabled" : 0,
+                        "hueRotate" : 0,
+                        "heightFactor" : null,
+                        "targetName" : "article_2_intro",
+                        "bottom" : null,
+                        "blur" : 12,
+                        "autoSize" : false,
+                        "invertEnabled" : 0,
+                        "width" : 192,
+                        "brightness" : 100
+                      },
+                      {
+                        "sepiaEnabled" : 0,
+                        "editable" : false,
+                        "rotation" : 0,
+                        "blurType" : "layer",
+                        "exportEnabled" : false,
+                        "id" : "sP1@qz1K",
+                        "saturateEnabled" : 0,
+                        "x" : 10,
+                        "grayscale" : 0,
+                        "hueRotateEnabled" : 0,
+                        "y" : 300,
+                        "__class" : "TextNode",
+                        "widthFactor" : null,
+                        "opacity" : 1,
+                        "contrastEnabled" : 0,
+                        "locked" : false,
+                        "left" : 0,
+                        "styledText" : {
+                          "blocks" : [
+                            {
+                              "depth" : 0,
+                              "inlineStyleRanges" : [
+
+                              ],
+                              "entityRanges" : [
+
+                              ],
+                              "data" : {
+                                "emptyStyle" : [
+
+                                ]
+                              },
+                              "text" : "Hvordan kan mindfullness-trening øke barn og unges skoleprestasjon?",
+                              "key" : "df841",
+                              "type" : "unstyled"
+                            }
+                          ],
+                          "__class" : "StyledTextDraft",
+                          "entityMap" : {
+
+                          }
+                        },
+                        "blendingMode" : "normal",
+                        "invert" : 0,
+                        "sepia" : 0,
+                        "centerAnchorX" : 0.5,
+                        "blurEnabled" : 0,
+                        "shadows" : [
+                          {
+                            "y" : 2,
+                            "enabled" : false,
+                            "blur" : 5,
+                            "x" : 0,
+                            "__class" : "Shadow",
+                            "color" : "rgba(0,0,0,0.25)"
+                          }
+                        ],
+                        "parentid" : "AfE+v7UT",
+                        "brightnessEnabled" : 0,
+                        "exportOptions" : [
+
+                        ],
+                        "name" : "article-2-title",
+                        "saturate" : 100,
+                        "height" : 78,
+                        "blendingEnabled" : 0,
+                        "top" : 116,
+                        "constraintsLocked" : true,
+                        "right" : 0,
+                        "visible" : true,
+                        "centerAnchorY" : 0.5,
+                        "contrast" : 100,
+                        "grayScaleEnabled" : 0,
+                        "hueRotate" : 0,
+                        "heightFactor" : null,
+                        "targetName" : "article_2_title",
+                        "bottom" : null,
+                        "blur" : 12,
+                        "autoSize" : false,
+                        "invertEnabled" : 0,
+                        "width" : 192,
+                        "brightness" : 100
+                      },
+                      {
+                        "radius" : 0,
+                        "children" : [
+
+                        ],
+                        "centerAnchorX" : 0.5,
+                        "id" : "cAR<&`Vj",
+                        "exportOptions" : [
+
+                        ],
+                        "grayScaleEnabled" : 0,
+                        "constraintsLocked" : false,
+                        "blurType" : "layer",
+                        "fillColor" : "rgba(0,170,255,0.5)",
+                        "widthFactor" : null,
+                        "grayscale" : 0,
+                        "blendingEnabled" : 0,
+                        "top" : 0,
+                        "saturate" : 100,
+                        "left" : 0,
+                        "locked" : false,
+                        "sepiaEnabled" : 0,
+                        "fillGradient" : {
+                          "end" : "rgba(0,0,0,0)",
+                          "alpha" : 1,
+                          "angle" : 0,
+                          "__class" : "LinearGradient",
+                          "start" : "black"
+                        },
+                        "blur" : 12,
+                        "radiusTopLeft" : 0,
+                        "sepia" : 0,
+                        "borderColor" : "#222",
+                        "rotation" : 0,
+                        "borderLeft" : 1,
+                        "fillEnabled" : true,
+                        "right" : 0,
+                        "opacity" : 1,
+                        "name" : "article-2-image",
+                        "blendingMode" : "normal",
+                        "contrast" : 100,
+                        "centerAnchorY" : 0.17258064516129032,
+                        "height" : 107,
+                        "borderWidth" : 1,
+                        "exportEnabled" : false,
+                        "hueRotate" : 0,
+                        "borderStyle" : "solid",
+                        "brightnessEnabled" : 0,
+                        "borderPerSide" : false,
+                        "saturateEnabled" : 0,
+                        "aspectRatioLocked" : true,
+                        "borderRight" : 1,
+                        "parentid" : "AfE+v7UT",
+                        "radiusBottomLeft" : 0,
+                        "boxShadows" : [
+                          {
+                            "x" : 0,
+                            "color" : "rgba(0,0,0,0.25)",
+                            "enabled" : false,
+                            "y" : 2,
+                            "spread" : 0,
+                            "__class" : "BoxShadow",
+                            "inset" : false,
+                            "blur" : 5
+                          }
+                        ],
+                        "contrastEnabled" : 0,
+                        "borderEnabled" : 0,
+                        "radiusPerCorner" : false,
+                        "radiusTopRight" : 0,
+                        "invert" : 0,
+                        "__class" : "RectangleNode",
+                        "clip" : false,
+                        "visible" : true,
+                        "fillType" : "color",
+                        "invertEnabled" : 0,
+                        "heightFactor" : null,
+                        "width" : 192,
+                        "borderBottom" : 1,
+                        "blurEnabled" : 0,
+                        "brightness" : 100,
+                        "bottom" : null,
+                        "borderTop" : 1,
+                        "targetName" : "article_2_image",
+                        "radiusBottomRight" : 0,
+                        "hueRotateEnabled" : 0
+                      }
+                    ],
+                    "centerAnchorX" : 0.2560386473429952,
+                    "id" : "AfE+v7UT",
+                    "exportOptions" : [
+
+                    ],
+                    "grayScaleEnabled" : 0,
+                    "constraintsLocked" : true,
+                    "blurType" : "layer",
+                    "fillColor" : "transparent",
+                    "widthFactor" : null,
+                    "grayscale" : 0,
+                    "top" : 366,
+                    "saturate" : 100,
+                    "left" : 10,
+                    "locked" : false,
+                    "sepiaEnabled" : 0,
+                    "fillGradient" : {
+                      "end" : "rgba(0,0,0,0)",
+                      "alpha" : 1,
+                      "angle" : 0,
+                      "__class" : "LinearGradient",
+                      "start" : "black"
+                    },
+                    "blur" : 12,
+                    "radiusTopLeft" : 0,
+                    "sepia" : 0,
+                    "borderColor" : "#222",
+                    "rotation" : 0,
+                    "borderLeft" : 1,
+                    "fillEnabled" : true,
+                    "right" : null,
+                    "opacity" : 1,
+                    "name" : "article-2",
+                    "blendingMode" : "normal",
+                    "contrast" : 100,
+                    "centerAnchorY" : 0.75616835994194487,
+                    "height" : 310,
+                    "borderWidth" : 1,
+                    "exportEnabled" : false,
+                    "hueRotate" : 0,
+                    "borderStyle" : "solid",
+                    "brightnessEnabled" : 0,
+                    "borderPerSide" : false,
+                    "saturateEnabled" : 0,
+                    "aspectRatioLocked" : false,
+                    "borderRight" : 1,
+                    "parentid" : "TKh?5?8#",
+                    "radiusBottomLeft" : 0,
+                    "boxShadows" : [
+
+                    ],
+                    "contrastEnabled" : 0,
+                    "borderEnabled" : 0,
+                    "radiusPerCorner" : false,
+                    "radiusTopRight" : 0,
+                    "invert" : 0,
+                    "__class" : "RectangleNode",
+                    "clip" : false,
+                    "visible" : true,
+                    "fillType" : "color",
+                    "invertEnabled" : 0,
+                    "heightFactor" : null,
+                    "width" : 192,
+                    "borderBottom" : 1,
+                    "blurEnabled" : 0,
+                    "brightness" : 100,
+                    "bottom" : null,
+                    "borderTop" : 1,
+                    "targetName" : "article_2",
+                    "radiusBottomRight" : 0,
+                    "hueRotateEnabled" : 0
+                  },
+                  {
+                    "radius" : 0,
+                    "children" : [
+                      {
+                        "sepiaEnabled" : 0,
+                        "editable" : false,
+                        "rotation" : 0,
+                        "blurType" : "layer",
+                        "exportEnabled" : false,
+                        "id" : "V{9{dTT<",
+                        "saturateEnabled" : 0,
+                        "x" : 10,
+                        "grayscale" : 0,
+                        "hueRotateEnabled" : 0,
+                        "y" : 300,
+                        "__class" : "TextNode",
+                        "widthFactor" : null,
+                        "opacity" : 1,
+                        "contrastEnabled" : 0,
+                        "locked" : false,
+                        "left" : 0,
+                        "styledText" : {
+                          "blocks" : [
+                            {
+                              "depth" : 0,
+                              "inlineStyleRanges" : [
+
+                              ],
+                              "entityRanges" : [
+
+                              ],
+                              "data" : {
+                                "emptyStyle" : [
+
+                                ]
+                              },
+                              "text" : "Prosjekt \"Bedre helsetjenester...\"",
+                              "key" : "df841",
+                              "type" : "unstyled"
+                            }
+                          ],
+                          "__class" : "StyledTextDraft",
+                          "entityMap" : {
+
+                          }
+                        },
+                        "blendingMode" : "normal",
+                        "invert" : 0,
+                        "sepia" : 0,
+                        "centerAnchorX" : 0.5,
+                        "blurEnabled" : 0,
+                        "shadows" : [
+                          {
+                            "y" : 2,
+                            "enabled" : false,
+                            "blur" : 5,
+                            "x" : 0,
+                            "__class" : "Shadow",
+                            "color" : "rgba(0,0,0,0.25)"
+                          }
+                        ],
+                        "parentid" : "(a@$4%E3",
+                        "brightnessEnabled" : 0,
+                        "exportOptions" : [
+
+                        ],
+                        "name" : "article-3-title",
+                        "saturate" : 100,
+                        "height" : 39,
+                        "blendingEnabled" : 0,
+                        "top" : 116,
+                        "constraintsLocked" : false,
+                        "right" : 0,
+                        "visible" : true,
+                        "centerAnchorY" : 0.43709677419354837,
+                        "contrast" : 100,
+                        "grayScaleEnabled" : 0,
+                        "hueRotate" : 0,
+                        "heightFactor" : null,
+                        "targetName" : "article_3_title",
+                        "bottom" : null,
+                        "blur" : 12,
+                        "autoSize" : false,
+                        "invertEnabled" : 0,
+                        "width" : 192,
+                        "brightness" : 100
+                      },
+                      {
+                        "sepiaEnabled" : 0,
+                        "editable" : false,
+                        "rotation" : 0,
+                        "blurType" : "layer",
+                        "exportEnabled" : false,
+                        "id" : "y~KF,J%w",
+                        "saturateEnabled" : 0,
+                        "x" : 10,
+                        "grayscale" : 0,
+                        "hueRotateEnabled" : 0,
+                        "y" : 300,
+                        "__class" : "TextNode",
+                        "widthFactor" : null,
+                        "opacity" : 1,
+                        "contrastEnabled" : 0,
+                        "locked" : false,
+                        "left" : 0,
+                        "styledText" : {
+                          "blocks" : [
+                            {
+                              "depth" : 0,
+                              "inlineStyleRanges" : [
+                                {
+                                  "length" : 213,
+                                  "style" : "FONT:SourceSansPro-Regular",
+                                  "offset" : 0
+                                },
+                                {
+                                  "length" : 213,
+                                  "style" : "SIZE:14",
+                                  "offset" : 0
+                                }
+                              ],
+                              "entityRanges" : [
+
+                              ],
+                              "data" : {
+                                "emptyStyle" : [
+                                  "FONT:SourceSansPro-Regular"
+                                ]
+                              },
+                              "text" : "KRONIKK. Hvordan skape akademisk dannelse og studentaktiv forskning? Hvilken rolle skal formidling, studieverksted og biblioteket ha? I november setter Høgskolen i Østfold disse spørsmål og flere til på dagsorden.",
+                              "key" : "df841",
+                              "type" : "unstyled"
+                            }
+                          ],
+                          "__class" : "StyledTextDraft",
+                          "entityMap" : {
+
+                          }
+                        },
+                        "blendingMode" : "normal",
+                        "invert" : 0,
+                        "sepia" : 0,
+                        "centerAnchorX" : 0.5,
+                        "blurEnabled" : 0,
+                        "shadows" : [
+                          {
+                            "y" : 2,
+                            "enabled" : false,
+                            "blur" : 5,
+                            "x" : 0,
+                            "__class" : "Shadow",
+                            "color" : "rgba(0,0,0,0.25)"
+                          }
+                        ],
+                        "parentid" : "(a@$4%E3",
+                        "brightnessEnabled" : 0,
+                        "exportOptions" : [
+
+                        ],
+                        "name" : "article-3-intro",
+                        "saturate" : 100,
+                        "height" : 155,
+                        "blendingEnabled" : 0,
+                        "top" : 155,
+                        "constraintsLocked" : true,
+                        "right" : 0,
+                        "visible" : true,
+                        "centerAnchorY" : 0.75,
+                        "contrast" : 100,
+                        "grayScaleEnabled" : 0,
+                        "hueRotate" : 0,
+                        "heightFactor" : null,
+                        "targetName" : "article_3_intro",
+                        "bottom" : null,
+                        "blur" : 12,
+                        "autoSize" : false,
+                        "invertEnabled" : 0,
+                        "width" : 192,
+                        "brightness" : 100
+                      },
+                      {
+                        "radius" : 0,
+                        "children" : [
+
+                        ],
+                        "centerAnchorX" : 0.5,
+                        "id" : "{jdaLrYC",
+                        "exportOptions" : [
+
+                        ],
+                        "grayScaleEnabled" : 0,
+                        "constraintsLocked" : false,
+                        "blurType" : "layer",
+                        "fillColor" : "rgba(0,170,255,0.5)",
+                        "widthFactor" : null,
+                        "grayscale" : 0,
+                        "blendingEnabled" : 0,
+                        "top" : 0,
+                        "saturate" : 100,
+                        "left" : 0,
+                        "locked" : false,
+                        "sepiaEnabled" : 0,
+                        "fillGradient" : {
+                          "end" : "rgba(0,0,0,0)",
+                          "alpha" : 1,
+                          "angle" : 0,
+                          "__class" : "LinearGradient",
+                          "start" : "black"
+                        },
+                        "blur" : 12,
+                        "radiusTopLeft" : 0,
+                        "sepia" : 0,
+                        "borderColor" : "#222",
+                        "rotation" : 0,
+                        "borderLeft" : 1,
+                        "fillEnabled" : true,
+                        "right" : 0,
+                        "opacity" : 1,
+                        "name" : "article-3-image",
+                        "blendingMode" : "normal",
+                        "contrast" : 100,
+                        "centerAnchorY" : 0.17258064516129032,
+                        "height" : 107,
+                        "borderWidth" : 1,
+                        "exportEnabled" : false,
+                        "hueRotate" : 0,
+                        "borderStyle" : "solid",
+                        "brightnessEnabled" : 0,
+                        "borderPerSide" : false,
+                        "saturateEnabled" : 0,
+                        "aspectRatioLocked" : true,
+                        "borderRight" : 1,
+                        "parentid" : "(a@$4%E3",
+                        "radiusBottomLeft" : 0,
+                        "boxShadows" : [
+                          {
+                            "x" : 0,
+                            "color" : "rgba(0,0,0,0.25)",
+                            "enabled" : false,
+                            "y" : 2,
+                            "spread" : 0,
+                            "__class" : "BoxShadow",
+                            "inset" : false,
+                            "blur" : 5
+                          }
+                        ],
+                        "contrastEnabled" : 0,
+                        "borderEnabled" : 0,
+                        "radiusPerCorner" : false,
+                        "radiusTopRight" : 0,
+                        "invert" : 0,
+                        "__class" : "RectangleNode",
+                        "clip" : false,
+                        "visible" : true,
+                        "fillType" : "color",
+                        "invertEnabled" : 0,
+                        "heightFactor" : null,
+                        "width" : 192,
+                        "borderBottom" : 1,
+                        "blurEnabled" : 0,
+                        "brightness" : 100,
+                        "bottom" : null,
+                        "borderTop" : 1,
+                        "targetName" : "article_3_image",
+                        "radiusBottomRight" : 0,
+                        "hueRotateEnabled" : 0
+                      }
+                    ],
+                    "centerAnchorX" : 0.7439613526570048,
+                    "id" : "(a@$4%E3",
+                    "exportOptions" : [
+
+                    ],
+                    "grayScaleEnabled" : 0,
+                    "constraintsLocked" : true,
+                    "blurType" : "layer",
+                    "fillColor" : "transparent",
+                    "widthFactor" : null,
+                    "grayscale" : 0,
+                    "top" : 366,
+                    "saturate" : 100,
+                    "left" : null,
+                    "locked" : false,
+                    "sepiaEnabled" : 0,
+                    "fillGradient" : {
+                      "end" : "rgba(0,0,0,0)",
+                      "alpha" : 1,
+                      "angle" : 0,
+                      "__class" : "LinearGradient",
+                      "start" : "black"
+                    },
+                    "blur" : 12,
+                    "radiusTopLeft" : 0,
+                    "sepia" : 0,
+                    "borderColor" : "#222",
+                    "rotation" : 0,
+                    "borderLeft" : 1,
+                    "fillEnabled" : true,
+                    "right" : 10,
+                    "opacity" : 1,
+                    "name" : "article-3",
+                    "blendingMode" : "normal",
+                    "contrast" : 100,
+                    "centerAnchorY" : 0.75616835994194487,
+                    "height" : 310,
+                    "borderWidth" : 1,
+                    "exportEnabled" : false,
+                    "hueRotate" : 0,
+                    "borderStyle" : "solid",
+                    "brightnessEnabled" : 0,
+                    "borderPerSide" : false,
+                    "saturateEnabled" : 0,
+                    "aspectRatioLocked" : false,
+                    "borderRight" : 1,
+                    "parentid" : "TKh?5?8#",
+                    "radiusBottomLeft" : 0,
+                    "boxShadows" : [
+
+                    ],
+                    "contrastEnabled" : 0,
+                    "borderEnabled" : 0,
+                    "radiusPerCorner" : false,
+                    "radiusTopRight" : 0,
+                    "invert" : 0,
+                    "__class" : "RectangleNode",
+                    "clip" : false,
+                    "visible" : true,
+                    "fillType" : "color",
+                    "invertEnabled" : 0,
+                    "heightFactor" : null,
+                    "width" : 192,
+                    "borderBottom" : 1,
+                    "blurEnabled" : 0,
+                    "brightness" : 100,
+                    "bottom" : null,
+                    "borderTop" : 1,
+                    "targetName" : "article_3",
+                    "radiusBottomRight" : 0,
+                    "hueRotateEnabled" : 0
                   }
                 ],
                 "centerAnchorX" : 0.5,
@@ -1322,7 +1653,7 @@
                 "borderColor" : "#222",
                 "rotation" : 0,
                 "borderLeft" : 1,
-                "fillEnabled" : true,
+                "fillEnabled" : false,
                 "right" : 0,
                 "opacity" : 1,
                 "name" : "articles",
@@ -3055,6 +3386,110 @@
                     "hueRotateEnabled" : 0
                   },
                   {
+                    "sepiaEnabled" : 0,
+                    "editable" : false,
+                    "rotation" : 0,
+                    "blurType" : "layer",
+                    "exportEnabled" : false,
+                    "id" : "?&ynuhHq",
+                    "saturateEnabled" : 0,
+                    "x" : 44,
+                    "grayscale" : 0,
+                    "hueRotateEnabled" : 0,
+                    "y" : 132,
+                    "__class" : "TextNode",
+                    "widthFactor" : null,
+                    "opacity" : 0,
+                    "contrastEnabled" : 0,
+                    "locked" : false,
+                    "left" : null,
+                    "styledText" : {
+                      "blocks" : [
+                        {
+                          "depth" : 0,
+                          "inlineStyleRanges" : [
+                            {
+                              "length" : 19,
+                              "style" : "SIZE:16",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 19,
+                              "style" : "LETTERSPACING:0",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 19,
+                              "style" : "LINEHEIGHT:1.2",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 19,
+                              "style" : "COLOR:rgb(0, 0, 0)",
+                              "offset" : 0
+                            },
+                            {
+                              "length" : 19,
+                              "style" : "FONT:SourceSansPro-Regular",
+                              "offset" : 0
+                            }
+                          ],
+                          "entityRanges" : [
+
+                          ],
+                          "data" : {
+                            "emptyStyle" : [
+                              "FONT:.SFNSText|SFUIText-Regular|.SFUIText",
+                              "COLOR:rgb(0, 0, 0)",
+                              "SIZE:16",
+                              "LETTERSPACING:0",
+                              "LINEHEIGHT:1.2"
+                            ]
+                          },
+                          "text" : "Go to events page >",
+                          "key" : "bq7eh",
+                          "type" : "unstyled"
+                        }
+                      ],
+                      "__class" : "StyledTextDraft",
+                      "entityMap" : {
+
+                      }
+                    },
+                    "blendingMode" : "normal",
+                    "invert" : 0,
+                    "sepia" : 0,
+                    "centerAnchorX" : 0.41545893719806765,
+                    "blurEnabled" : -1,
+                    "shadows" : [
+
+                    ],
+                    "parentid" : "dr?Sk^CS",
+                    "brightnessEnabled" : 0,
+                    "exportOptions" : [
+
+                    ],
+                    "name" : "go-to-events",
+                    "saturate" : 100,
+                    "height" : 19,
+                    "top" : null,
+                    "constraintsLocked" : true,
+                    "right" : null,
+                    "visible" : true,
+                    "centerAnchorY" : 2.9736842105263159,
+                    "contrast" : 100,
+                    "grayScaleEnabled" : 0,
+                    "hueRotate" : 0,
+                    "heightFactor" : null,
+                    "targetName" : "go_to_events",
+                    "bottom" : null,
+                    "blur" : 12,
+                    "autoSize" : true,
+                    "invertEnabled" : 0,
+                    "width" : 132,
+                    "brightness" : 100
+                  },
+                  {
                     "rotation" : 0,
                     "blurType" : "layer",
                     "exportEnabled" : false,
@@ -3409,7 +3844,7 @@
                             "brightness" : 100,
                             "bottom" : 3,
                             "borderTop" : 1,
-                            "targetName" : null,
+                            "targetName" : "search_button",
                             "radiusBottomRight" : 38,
                             "hueRotateEnabled" : 0
                           },
@@ -3768,137 +4203,222 @@
                             "hueRotateEnabled" : 0
                           },
                           {
-                            "sepiaEnabled" : 0,
-                            "editable" : false,
-                            "rotation" : 0,
-                            "blurType" : "layer",
-                            "exportEnabled" : false,
-                            "id" : "l_KH{I4q",
-                            "saturateEnabled" : 0,
-                            "x" : 146,
-                            "grayscale" : 0,
-                            "hueRotateEnabled" : 0,
-                            "y" : 19,
-                            "__class" : "TextNode",
-                            "widthFactor" : null,
-                            "opacity" : 1,
-                            "contrastEnabled" : 0,
-                            "locked" : false,
-                            "left" : null,
-                            "styledText" : {
-                              "blocks" : [
-                                {
-                                  "depth" : 0,
-                                  "inlineStyleRanges" : [
-                                    {
-                                      "length" : 17,
-                                      "style" : "SIZE:16",
-                                      "offset" : 0
-                                    },
-                                    {
-                                      "length" : 17,
-                                      "style" : "LETTERSPACING:0",
-                                      "offset" : 0
-                                    },
-                                    {
-                                      "length" : 17,
-                                      "style" : "LINEHEIGHT:1.2",
-                                      "offset" : 0
-                                    },
-                                    {
-                                      "length" : 17,
-                                      "style" : "FONT:SourceSansPro-Regular",
-                                      "offset" : 0
-                                    },
-                                    {
-                                      "length" : 17,
-                                      "style" : "COLOR:rgba(0, 0, 0, 0.3)",
-                                      "offset" : 0
-                                    }
-                                  ],
-                                  "entityRanges" : [
-
-                                  ],
-                                  "data" : {
-                                    "emptyStyle" : [
-                                      "SIZE:16",
-                                      "LETTERSPACING:0",
-                                      "LINEHEIGHT:1.2",
-                                      "FONT:SourceSansPro-Regular",
-                                      "COLOR:rgba(0, 0, 0, 0.3)"
-                                    ]
-                                  },
-                                  "text" : "Søk etter studier",
-                                  "key" : "df841",
-                                  "type" : "unstyled"
-                                }
-                              ],
-                              "__class" : "StyledTextDraft",
-                              "entityMap" : {
-
-                              }
-                            },
-                            "blendingMode" : "normal",
-                            "invert" : 0,
-                            "sepia" : 0,
-                            "centerAnchorX" : 0.54098360655737709,
-                            "blurEnabled" : 0,
-                            "shadows" : [
-                              {
-                                "y" : 2,
-                                "enabled" : false,
-                                "blur" : 5,
-                                "x" : 0,
-                                "__class" : "Shadow",
-                                "color" : "rgba(0,0,0,0.25)"
-                              }
-                            ],
-                            "parentid" : "#~\/=~QEu",
-                            "brightnessEnabled" : 0,
-                            "exportOptions" : [
-
-                            ],
-                            "name" : null,
-                            "saturate" : 100,
-                            "height" : 19,
-                            "blendingEnabled" : 0,
-                            "top" : null,
-                            "constraintsLocked" : false,
-                            "right" : 112,
-                            "visible" : true,
-                            "centerAnchorY" : 0.4861111111111111,
-                            "contrast" : 100,
-                            "grayScaleEnabled" : 0,
-                            "hueRotate" : 0,
-                            "heightFactor" : null,
-                            "targetName" : null,
-                            "bottom" : null,
-                            "blur" : 12,
-                            "autoSize" : true,
-                            "invertEnabled" : 0,
-                            "width" : 112,
-                            "brightness" : 100
-                          },
-                          {
                             "radius" : 0,
                             "children" : [
+                              {
+                                "radius" : 0,
+                                "children" : [
 
+                                ],
+                                "centerAnchorX" : 0.004424778761061947,
+                                "id" : "1_iUp]I9",
+                                "exportOptions" : [
+
+                                ],
+                                "grayScaleEnabled" : 0,
+                                "constraintsLocked" : false,
+                                "blurType" : "layer",
+                                "fillColor" : "rgba(0, 0, 0, 0.1)",
+                                "widthFactor" : null,
+                                "grayscale" : 0,
+                                "blendingEnabled" : 0,
+                                "top" : 2,
+                                "saturate" : 100,
+                                "left" : 0,
+                                "locked" : false,
+                                "sepiaEnabled" : 0,
+                                "fillGradient" : {
+                                  "end" : "rgba(0,0,0,0)",
+                                  "alpha" : 1,
+                                  "angle" : 0,
+                                  "__class" : "LinearGradient",
+                                  "start" : "black"
+                                },
+                                "blur" : 12,
+                                "radiusTopLeft" : 0,
+                                "sepia" : 0,
+                                "borderColor" : "#222",
+                                "rotation" : 0,
+                                "borderLeft" : 1,
+                                "fillEnabled" : true,
+                                "right" : null,
+                                "opacity" : 1,
+                                "name" : "search-cources-cursor",
+                                "blendingMode" : "normal",
+                                "contrast" : 100,
+                                "centerAnchorY" : 0.52631578947368418,
+                                "height" : 16,
+                                "borderWidth" : 1,
+                                "exportEnabled" : false,
+                                "hueRotate" : 0,
+                                "borderStyle" : "solid",
+                                "brightnessEnabled" : 0,
+                                "borderPerSide" : false,
+                                "saturateEnabled" : 0,
+                                "aspectRatioLocked" : false,
+                                "borderRight" : 1,
+                                "parentid" : "$2j*4T1j",
+                                "radiusBottomLeft" : 0,
+                                "boxShadows" : [
+                                  {
+                                    "x" : 0,
+                                    "color" : "rgba(0,0,0,0.25)",
+                                    "enabled" : false,
+                                    "y" : 2,
+                                    "spread" : 0,
+                                    "__class" : "BoxShadow",
+                                    "inset" : false,
+                                    "blur" : 5
+                                  }
+                                ],
+                                "contrastEnabled" : 0,
+                                "borderEnabled" : 0,
+                                "radiusPerCorner" : false,
+                                "radiusTopRight" : 0,
+                                "invert" : 0,
+                                "__class" : "RectangleNode",
+                                "clip" : false,
+                                "visible" : true,
+                                "fillType" : "color",
+                                "invertEnabled" : 0,
+                                "heightFactor" : null,
+                                "width" : 1,
+                                "borderBottom" : 1,
+                                "blurEnabled" : 0,
+                                "brightness" : 100,
+                                "bottom" : 1,
+                                "borderTop" : 1,
+                                "targetName" : null,
+                                "radiusBottomRight" : 0,
+                                "hueRotateEnabled" : 0
+                              },
+                              {
+                                "sepiaEnabled" : 0,
+                                "editable" : false,
+                                "rotation" : 0,
+                                "blurType" : "layer",
+                                "exportEnabled" : false,
+                                "id" : "l_KH{I4q",
+                                "saturateEnabled" : 0,
+                                "x" : 146,
+                                "grayscale" : 0,
+                                "hueRotateEnabled" : 0,
+                                "y" : 19,
+                                "__class" : "TextNode",
+                                "widthFactor" : null,
+                                "opacity" : 1,
+                                "contrastEnabled" : 0,
+                                "locked" : false,
+                                "left" : null,
+                                "styledText" : {
+                                  "blocks" : [
+                                    {
+                                      "depth" : 0,
+                                      "inlineStyleRanges" : [
+                                        {
+                                          "length" : 17,
+                                          "style" : "SIZE:16",
+                                          "offset" : 0
+                                        },
+                                        {
+                                          "length" : 17,
+                                          "style" : "LETTERSPACING:0",
+                                          "offset" : 0
+                                        },
+                                        {
+                                          "length" : 17,
+                                          "style" : "LINEHEIGHT:1.2",
+                                          "offset" : 0
+                                        },
+                                        {
+                                          "length" : 17,
+                                          "style" : "FONT:SourceSansPro-Regular",
+                                          "offset" : 0
+                                        },
+                                        {
+                                          "length" : 17,
+                                          "style" : "COLOR:rgba(0, 0, 0, 0.3)",
+                                          "offset" : 0
+                                        }
+                                      ],
+                                      "entityRanges" : [
+
+                                      ],
+                                      "data" : {
+                                        "emptyStyle" : [
+                                          "SIZE:16",
+                                          "LETTERSPACING:0",
+                                          "LINEHEIGHT:1.2",
+                                          "FONT:SourceSansPro-Regular",
+                                          "COLOR:rgba(0, 0, 0, 0.3)"
+                                        ]
+                                      },
+                                      "text" : "Søk etter studier",
+                                      "key" : "df841",
+                                      "type" : "unstyled"
+                                    }
+                                  ],
+                                  "__class" : "StyledTextDraft",
+                                  "entityMap" : {
+
+                                  }
+                                },
+                                "blendingMode" : "normal",
+                                "invert" : 0,
+                                "sepia" : 0,
+                                "centerAnchorX" : 0.68141592920353977,
+                                "blurEnabled" : 0,
+                                "shadows" : [
+                                  {
+                                    "y" : 2,
+                                    "enabled" : false,
+                                    "blur" : 5,
+                                    "x" : 0,
+                                    "__class" : "Shadow",
+                                    "color" : "rgba(0,0,0,0.25)"
+                                  }
+                                ],
+                                "parentid" : "$2j*4T1j",
+                                "brightnessEnabled" : 0,
+                                "exportOptions" : [
+
+                                ],
+                                "name" : "searc-input-placeholder",
+                                "saturate" : 100,
+                                "height" : 18,
+                                "blendingEnabled" : 0,
+                                "top" : null,
+                                "constraintsLocked" : false,
+                                "right" : null,
+                                "visible" : true,
+                                "centerAnchorY" : 0.47368421052631576,
+                                "contrast" : 100,
+                                "grayScaleEnabled" : 0,
+                                "hueRotate" : 0,
+                                "heightFactor" : null,
+                                "targetName" : "searc_input_placeholder",
+                                "bottom" : null,
+                                "blur" : 12,
+                                "autoSize" : false,
+                                "invertEnabled" : 0,
+                                "width" : 152,
+                                "brightness" : 100
+                              }
                             ],
-                            "centerAnchorX" : 0.38661202185792348,
-                            "id" : "1_iUp]I9",
+                            "centerAnchorX" : 0.5396174863387978,
+                            "id" : "$2j*4T1j",
                             "exportOptions" : [
 
                             ],
                             "grayScaleEnabled" : 0,
                             "constraintsLocked" : false,
                             "blurType" : "layer",
-                            "fillColor" : "rgba(0, 0, 0, 0.1)",
+                            "fillColor" : "transparent",
                             "widthFactor" : null,
                             "grayscale" : 0,
-                            "blendingEnabled" : 0,
                             "top" : null,
                             "saturate" : 100,
-                            "left" : 141,
+                            "left" : null,
                             "locked" : false,
                             "sepiaEnabled" : 0,
                             "fillGradient" : {
@@ -3915,13 +4435,13 @@
                             "rotation" : 0,
                             "borderLeft" : 1,
                             "fillEnabled" : true,
-                            "right" : null,
+                            "right" : 112,
                             "opacity" : 1,
-                            "name" : "search-cources-cursor",
+                            "name" : "search-input",
                             "blendingMode" : "normal",
                             "contrast" : 100,
-                            "centerAnchorY" : 0.5,
-                            "height" : 16,
+                            "centerAnchorY" : 0.4861111111111111,
+                            "height" : 19,
                             "borderWidth" : 1,
                             "exportEnabled" : false,
                             "hueRotate" : 0,
@@ -3934,16 +4454,7 @@
                             "parentid" : "#~\/=~QEu",
                             "radiusBottomLeft" : 0,
                             "boxShadows" : [
-                              {
-                                "x" : 0,
-                                "color" : "rgba(0,0,0,0.25)",
-                                "enabled" : false,
-                                "y" : 2,
-                                "spread" : 0,
-                                "__class" : "BoxShadow",
-                                "inset" : false,
-                                "blur" : 5
-                              }
+
                             ],
                             "contrastEnabled" : 0,
                             "borderEnabled" : 0,
@@ -3956,13 +4467,13 @@
                             "fillType" : "color",
                             "invertEnabled" : 0,
                             "heightFactor" : null,
-                            "width" : 1,
+                            "width" : 113,
                             "borderBottom" : 1,
                             "blurEnabled" : 0,
                             "brightness" : 100,
                             "bottom" : null,
                             "borderTop" : 1,
-                            "targetName" : "search_cources_cursor",
+                            "targetName" : "search_input",
                             "radiusBottomRight" : 0,
                             "hueRotateEnabled" : 0
                           }

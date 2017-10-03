@@ -7,7 +7,7 @@
   "cachedDeviceWidth" : 414,
   "fullScreen" : false,
   "deviceType" : "apple-iphone-7-plus-black",
-  "sharedPrototype" : 0,
+  "sharedPrototype" : true,
   "propertyPanelToggleStates" : {
 
   },
