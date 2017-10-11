@@ -45,7 +45,7 @@ setupArticles = (data) ->
 
 
 # Initialize PageComponent 
-page = new PageComponent
+flow = new FlowComponent
 	width: Screen.width
 	height: Screen.height
 	scrollHorizontal: false 
@@ -53,8 +53,10 @@ page = new PageComponent
 
 
 #pages = []
-page.addPage(artboard_homepage)
-page.addPage(artboard_studier)
+flow.showNext(artboard_homepage)
+#flow.showNext(artboard_studier, "right")
+
+
 
 #pages.push(page)
 
@@ -71,7 +73,7 @@ nav_login.text = "Logg inn"
 nav_search_label.text = "Søk"
 go_to_events.text = "Se fler arrangementer >"
 
-
+news_header.text = "Aktuelt"
 
 
 
@@ -267,9 +269,7 @@ burger_icon.onClick (event, layer) ->
 	line_top.stateCycle()
 	line_bottom.stateCycle()
 	navigation.stateCycle()
-	# go to studies
-	nav_studies.onClick (event, layer) ->
-		page.snapToPage(artboard_studier)
+
 
 
 
@@ -287,11 +287,17 @@ search_button.onClick (event, layer) ->
 	goToCourses()
 
 
+nav_studies.onClick (event, layer) ->
+	line_top.stateCycle()
+	line_bottom.stateCycle()
+	navigation.stateCycle()
+	flow.showNext(artboard_studier)
 
 
 
 
-scroll = ScrollComponent.wrap(page)
+
+scroll = ScrollComponent.wrap(flow)
 
 
 # Change scroll properties 

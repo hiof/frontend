@@ -28,7 +28,110 @@
           {
             "radius" : 0,
             "children" : [
+              {
+                "sepiaEnabled" : 0,
+                "editable" : false,
+                "rotation" : 0,
+                "blurType" : "layer",
+                "exportEnabled" : false,
+                "id" : "n<5pE:{A",
+                "saturateEnabled" : 0,
+                "x" : 117,
+                "grayscale" : 0,
+                "hueRotateEnabled" : 0,
+                "y" : 68,
+                "__class" : "TextNode",
+                "widthFactor" : null,
+                "opacity" : 1,
+                "contrastEnabled" : 0,
+                "locked" : false,
+                "left" : null,
+                "styledText" : {
+                  "blocks" : [
+                    {
+                      "depth" : 0,
+                      "inlineStyleRanges" : [
+                        {
+                          "length" : 7,
+                          "style" : "COLOR:rgb(0, 0, 0)",
+                          "offset" : 0
+                        },
+                        {
+                          "length" : 7,
+                          "style" : "LETTERSPACING:0",
+                          "offset" : 0
+                        },
+                        {
+                          "length" : 7,
+                          "style" : "LINEHEIGHT:1.2",
+                          "offset" : 0
+                        },
+                        {
+                          "length" : 7,
+                          "style" : "FONT:.SFNSText-Light|SFUIText-Light|.SFUIText-Light",
+                          "offset" : 0
+                        },
+                        {
+                          "length" : 7,
+                          "style" : "SIZE:48",
+                          "offset" : 0
+                        }
+                      ],
+                      "entityRanges" : [
 
+                      ],
+                      "data" : {
+                        "emptyStyle" : [
+                          "COLOR:rgb(0, 0, 0)",
+                          "LETTERSPACING:0",
+                          "LINEHEIGHT:1.2",
+                          "FONT:.SFNSText-Light|SFUIText-Light|.SFUIText-Light",
+                          "SIZE:48"
+                        ]
+                      },
+                      "text" : "STUDIER",
+                      "key" : "qv77",
+                      "type" : "unstyled"
+                    }
+                  ],
+                  "__class" : "StyledTextDraft",
+                  "entityMap" : {
+
+                  }
+                },
+                "blendingMode" : "normal",
+                "invert" : 0,
+                "sepia" : 0,
+                "centerAnchorX" : 0.5,
+                "blurEnabled" : 0,
+                "shadows" : [
+
+                ],
+                "parentid" : "%5MWZ?q|",
+                "brightnessEnabled" : 0,
+                "exportOptions" : [
+
+                ],
+                "name" : null,
+                "saturate" : 100,
+                "height" : 57,
+                "top" : null,
+                "constraintsLocked" : false,
+                "right" : null,
+                "visible" : true,
+                "centerAnchorY" : 0.50367647058823528,
+                "contrast" : 100,
+                "grayScaleEnabled" : 0,
+                "hueRotate" : 0,
+                "heightFactor" : null,
+                "targetName" : null,
+                "bottom" : null,
+                "blur" : 12,
+                "autoSize" : true,
+                "invertEnabled" : 0,
+                "width" : 202,
+                "brightness" : 100
+              }
             ],
             "centerAnchorX" : 0.5,
             "id" : "%5MWZ?q|",
@@ -38,12 +141,12 @@
             "grayScaleEnabled" : 0,
             "constraintsLocked" : false,
             "blurType" : "layer",
-            "fillColor" : "rgb(151, 48, 48)",
+            "fillColor" : "rgb(224, 224, 224)",
             "widthFactor" : null,
             "grayscale" : 0,
-            "top" : 106,
+            "top" : 46,
             "saturate" : 100,
-            "left" : 69,
+            "left" : 0,
             "locked" : false,
             "sepiaEnabled" : 0,
             "fillGradient" : {
@@ -60,13 +163,13 @@
             "rotation" : 0,
             "borderLeft" : 1,
             "fillEnabled" : true,
-            "right" : 69,
+            "right" : 0,
             "opacity" : 1,
             "name" : null,
             "blendingMode" : "normal",
             "contrast" : 100,
-            "centerAnchorY" : 0.15833333333333333,
-            "height" : 168,
+            "centerAnchorY" : 0.095000000000000001,
+            "height" : 136,
             "borderWidth" : 1,
             "exportEnabled" : false,
             "hueRotate" : 0,
@@ -92,7 +195,7 @@
             "fillType" : "color",
             "invertEnabled" : 0,
             "heightFactor" : null,
-            "width" : 276,
+            "width" : 414,
             "borderBottom" : 1,
             "blurEnabled" : 0,
             "brightness" : 100,
@@ -420,7 +523,7 @@
                         "exportOptions" : [
 
                         ],
-                        "name" : null,
+                        "name" : "news-header",
                         "saturate" : 100,
                         "height" : 14,
                         "blendingEnabled" : 0,
@@ -433,7 +536,7 @@
                         "grayScaleEnabled" : 0,
                         "hueRotate" : 0,
                         "heightFactor" : null,
-                        "targetName" : null,
+                        "targetName" : "news_header",
                         "bottom" : null,
                         "blur" : 12,
                         "autoSize" : true,
@@ -937,7 +1040,7 @@
                     "brightness" : 100,
                     "bottom" : null,
                     "borderTop" : 1,
-                    "targetName" : "article_1_promoted",
+                    "targetName" : null,
                     "radiusBottomRight" : 0,
                     "hueRotateEnabled" : 0
                   },
