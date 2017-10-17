@@ -44,6 +44,8 @@ setupArticles = (data) ->
 
 
 
+
+
 # Initialize PageComponent 
 flow = new FlowComponent
 	width: Screen.width
@@ -54,7 +56,14 @@ flow = new FlowComponent
 
 #pages = []
 flow.showNext(artboard_homepage)
+flow.showNext(artboard_studier)
 #flow.showNext(artboard_studier, "right")
+
+
+
+
+flow.header = Header
+
 
 
 
@@ -92,7 +101,7 @@ studies_search = new InputModule.Input
   lineHeight: 1
   goButton: true
 
-navigation_search = new InputModule.Input
+nav_search_form = new InputModule.Input
   setup: false # Change to true when positioning the input so you can see it
   y: 0
   x: 45
@@ -141,21 +150,25 @@ line_bottom.states =
 			curve: Bezier.ease
 
 
-navigation.states =
-	active:
-		y: 48
-		opacity: 100
-		animationOptions:
-			time: .3
-			curve: Bezier.ease
-			delay: .2
-	inactive:
-		y: -1200
-		opacity: 0
-		animationOptions:
-			time: .3
-			curve: Bezier.ease
-			delay: .2
+
+
+#navigation.states =
+#	active:
+#		y: 48
+#		opacity: 100
+#		animationOptions:
+#			time: .3
+#			curve: Bezier.ease
+#			delay: .2
+#	inactive:
+#		y: -1200
+#		opacity: 0
+#		animationOptions:
+#			time: .3
+#			curve: Bezier.ease
+#			delay: .2
+
+	
 
 more_events.states =
 	active:
@@ -219,16 +232,16 @@ go_to_events.states =
 			time: .1
 
 
-frontpage_content.states =
-	expanded_events:
-		height: 243
-		animationOptions:
-			time: .3
-	unexpanded_events:
-		height: 175
-		animationOptions:
-			time: .3
-			delay: .1
+#frontpage_content.states =
+#	expanded_events:
+#		height: 243
+#		animationOptions:
+#			time: .3
+#	unexpanded_events:
+#		height: 175
+#		animationOptions:
+#			time: .3
+#			delay: .1
 
 
 searc_input_placeholder.states =
@@ -265,11 +278,16 @@ displayCourses = ->
 
 # Define interactions
 
+
+
 burger_icon.onClick (event, layer) ->
 	line_top.stateCycle()
 	line_bottom.stateCycle()
-	navigation.stateCycle()
-
+	#navigation.stateCycle()
+	if Menu.visible
+		flow.showOverlayTop(Menu)
+	else
+		flow.showPrevious()
 
 
 
@@ -279,7 +297,7 @@ more_events.onClick (event, layer) ->
 	events.stateCycle()
 	event_1.stateCycle()
 	event_3.stateCycle()
-	frontpage_content.stateCycle()
+	#frontpage_content.stateCycle()
 	go_to_events.stateCycle()
 
 
@@ -287,19 +305,128 @@ search_button.onClick (event, layer) ->
 	goToCourses()
 
 
+
 nav_studies.onClick (event, layer) ->
 	line_top.stateCycle()
 	line_bottom.stateCycle()
-	navigation.stateCycle()
 	flow.showNext(artboard_studier)
+	
+nav_about.onClick (event, layer) ->
+	line_top.stateCycle()
+	line_bottom.stateCycle()
+	flow.showNext(artboard_about)
+	
+nav_research.onClick (event, layer) ->
+	line_top.stateCycle()
+	line_bottom.stateCycle()
+	flow.showNext(artboard_research)
+
+logo.onClick (event, layer) ->
+	flow.showNext(artboard_homepage)
 
 
 
 
+# Studier interaksjon
 
-scroll = ScrollComponent.wrap(flow)
+studies_category_forkurs_button.states =
+	active:
+		y: 0
+		opacity: 0.00
+	inactive:
+		y: 500
+		opacity: 1.00
+studies_category_hv_button.states =
+	active:
+		y: 0
+		opacity: 1.00
+		width: 270
+		backgroundColor: '#347AB7'
+	inactive:
+		y: 500
+		opacity: 1.00
+studies_category_hv_button_text.states =
+	active:
+		color: '#fff'
+	inactive:
+		color: '#347AB7'
+studies_category_ir_button.states =
+	active:
+		y: 0
+		opacity: 0.00
+	inactive:
+		y: 500
+		opacity: 1.00
+studies_category_it_button.states =
+	active:
+		y: 0
+		opacity: 0.00
+	inactive:
+		y: 500
+		opacity: 1.00
+studies_category_lu_button.states =
+	active:
+		y: 0
+		opacity: 0.00
+	inactive:
+		y: 500
+		opacity: 1.00
+studies_category_oss_button.states =
+	active:
+		y: 0
+		opacity: 0.00
+	inactive:
+		y: 500
+		opacity: 1.00
+studies_category_oss_button_1.states =
+	active:
+		y: 0
+		opacity: 0.00
+	inactive:
+		y: 500
+		opacity: 1.00
+studies_category_as_button.states =
+	active:
+		y: 0
+		opacity: 0.00
+	inactive:
+		y: 500
+		opacity: 1.00
+studies_category_wrap.states =
+	inactive:
+		height: 100
+	active:
+		height: 500
+
+studies_type_wrap.states =
+	inactive:
+		y: 320
+	active:
+		y: 1500
+	
+
+studies_category_hv_button.onClick (event, layer) ->
+
+	studies_category_forkurs_button.stateCycle()
+	studies_category_hv_button.stateCycle()
+	studies_category_hv_button_text.stateCycle()
+	studies_category_ir_button.stateCycle()
+	studies_category_it_button.stateCycle()
+	studies_category_lu_button.stateCycle()
+	studies_category_oss_button.stateCycle()
+	studies_category_oss_button_1.stateCycle()
+	studies_category_as_button.stateCycle()
+	studies_category_wrap.stateCycle()
+	studies_type_wrap.stateCycle()
+
+		
+	
+
+#close_menu
+
+#scroll = ScrollComponent.wrap(flow)
 
 
 # Change scroll properties 
-scroll.scrollHorizontal = false
-scroll.speedY = 0.5
+#scroll.scrollHorizontal = false
+#scroll.speedY = 0.5

@@ -9,7 +9,7 @@
   "deviceType" : "apple-iphone-7-plus-black",
   "sharedPrototype" : true,
   "propertyPanelToggleStates" : {
-
+    "Filters" : false
   },
   "projectId" : "17522FBA-EA35-47E5-BA64-F275A1DCB2F1",
   "deviceOrientation" : 0,
