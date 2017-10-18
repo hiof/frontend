@@ -334,63 +334,71 @@ studies_category_forkurs_button.states =
 		y: 0
 		opacity: 0.00
 	inactive:
-		y: 500
+		y: 0
 		opacity: 1.00
 studies_category_hv_button.states =
 	active:
 		y: 0
-		opacity: 1.00
 		width: 270
 		backgroundColor: '#347AB7'
 	inactive:
-		y: 500
-		opacity: 1.00
+		y: 70
+		backgroundColor: '#fff'
+		width: 394
 studies_category_hv_button_text.states =
 	active:
 		color: '#fff'
 	inactive:
 		color: '#347AB7'
+		
+studies_category_expand.states =
+	active:
+		opacity: 1
+		animationOptions:
+			delay: 0.5
+	inactive:
+		opacity: 0
 studies_category_ir_button.states =
 	active:
 		y: 0
 		opacity: 0.00
 	inactive:
-		y: 500
+		y: 140
 		opacity: 1.00
 studies_category_it_button.states =
 	active:
 		y: 0
 		opacity: 0.00
 	inactive:
-		y: 500
+		y: 210
 		opacity: 1.00
 studies_category_lu_button.states =
 	active:
 		y: 0
 		opacity: 0.00
 	inactive:
-		y: 500
-		opacity: 1.00
-studies_category_oss_button.states =
-	active:
-		y: 0
-		opacity: 0.00
-	inactive:
-		y: 500
+		y: 280
 		opacity: 1.00
 studies_category_oss_button_1.states =
 	active:
 		y: 0
 		opacity: 0.00
 	inactive:
-		y: 500
+		y: 350
+		opacity: 1.00
+studies_category_oss_button.states =
+	active:
+		y: 0
+		opacity: 0.00
+	inactive:
+		y: 420
 		opacity: 1.00
 studies_category_as_button.states =
 	active:
 		y: 0
 		opacity: 0.00
 	inactive:
-		y: 500
+		y: 490
 		opacity: 1.00
 studies_category_wrap.states =
 	inactive:
@@ -402,11 +410,9 @@ studies_type_wrap.states =
 	inactive:
 		y: 320
 	active:
-		y: 1500
-	
+		y: 810
 
-studies_category_hv_button.onClick (event, layer) ->
-
+toggleStudiesCategory = ->
 	studies_category_forkurs_button.stateCycle()
 	studies_category_hv_button.stateCycle()
 	studies_category_hv_button_text.stateCycle()
@@ -416,9 +422,106 @@ studies_category_hv_button.onClick (event, layer) ->
 	studies_category_oss_button.stateCycle()
 	studies_category_oss_button_1.stateCycle()
 	studies_category_as_button.stateCycle()
-	studies_category_wrap.stateCycle()
+	#studies_category_wrap.stateCycle()
+	studies_category_expand.stateCycle()
 	studies_type_wrap.stateCycle()
+	
+studies_category_hv_button.onClick (event, layer) ->
+	toggleStudiesCategory()
 
+studies_category_expand.onClick (event, layer) ->
+	toggleStudiesCategory()	
+
+
+studies_type_master.states =
+	active:
+		y: 0
+		opacity: 0.00
+	inactive:
+		y: 0
+		opacity: 1.00
+studies_type_bachelor.states =
+	active:
+		y: 0
+		width: 270
+		backgroundColor: '#347AB7'
+	inactive:
+		y: 70
+		backgroundColor: '#fff'
+		width: 394
+studies_type_bachelor_text.states =
+	active:
+		color: '#fff'
+	inactive:
+		color: '#347AB7'
+		
+studies_type_aarsstudier.states =
+	active:
+		y: 0
+		opacity: 0.00
+	inactive:
+		y: 140
+		opacity: 1.00
+studies_type_expand.states =
+	active:
+		opacity: 1
+		animationOptions:
+			delay: 0.5
+	inactive:
+		opacity: 0
+studies_type_lavere.states =
+	active:
+		y: 0
+		opacity: 0.00
+	inactive:
+		y: 210
+		opacity: 1.00
+studies_type_betal.states =
+	active:
+		y: 0
+		opacity: 0.00
+	inactive:
+		y: 280
+		opacity: 1.00
+studies_type_kfk.states =
+	active:
+		y: 0
+		opacity: 0.00
+	inactive:
+		y: 350
+		opacity: 1.00
+studies_type_kffb.states =
+	active:
+		y: 0
+		opacity: 0.00
+	inactive:
+		y: 420
+		opacity: 1.00
+	
+
+
+	
+toggleStudiesType = ->
+	studies_type_master.stateCycle()
+	studies_type_bachelor.stateCycle()
+	studies_type_bachelor_text.stateCycle()
+	studies_type_aarsstudier.stateCycle()
+	studies_type_lavere.stateCycle()
+	studies_type_betal.stateCycle()
+	studies_type_kfk.stateCycle()
+	studies_type_kffb.stateCycle()
+	#studies_category_oss_button_1.stateCycle()
+	#studies_category_as_button.stateCycle()
+	#studies_category_wrap.stateCycle()
+	studies_type_expand.stateCycle()
+	#studies_type_wrap.stateCycle()
+
+
+studies_type_bachelor.onClick (event, layer) ->
+	toggleStudiesType()
+
+studies_type_expand.onClick (event, layer) ->
+	toggleStudiesType()	
 		
 	
 
