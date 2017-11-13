@@ -56,7 +56,7 @@ flow = new FlowComponent
 
 #pages = []
 flow.showNext(artboard_homepage)
-flow.showNext(artboard_studier)
+#flow.showNext(artboard_studier)
 #flow.showNext(artboard_studier, "right")
 
 
