@@ -333,6 +333,8 @@ studies_category_forkurs_button.states =
 	active:
 		y: 0
 		opacity: 0.00
+		animationOptions:
+			delay: 0.5
 	inactive:
 		y: 0
 		opacity: 1.00
