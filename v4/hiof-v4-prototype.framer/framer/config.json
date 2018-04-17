@@ -1,12 +1,12 @@
 {
   "orientation" : 0,
   "updateDelay" : 0.29999999999999999,
-  "designModeSelected" : 0,
-  "cachedDeviceHeight" : 730.8717041015625,
+  "designModeSelected" : 1,
+  "cachedDeviceHeight" : 812,
   "contentScale" : 1,
-  "cachedDeviceWidth" : 411.11532592773438,
+  "cachedDeviceWidth" : 375,
   "fullScreen" : false,
-  "deviceType" : "google-pixel-2-just-black",
+  "deviceType" : "apple-iphone-x-space-gray",
   "sharedPrototype" : true,
   "propertyPanelToggleStates" : {
     "Filters" : false

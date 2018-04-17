@@ -23,6 +23,8 @@ thisArticle1Id = null
 thisArticle2Id = null
 thisArticle3Id = null
 
+
+
 # AJAX data
 
 ajax.get("https://www.hiof.no/api/v1/articles/?id=&url=%2F%2Fwww.hiof.no%2Fapi%2Fv1%2Farticles%2F&template=posts-index&pageId=&page=1&pageSize=10&authorId=&category=3%2C11&destination=.outlet&articleLoClass=lo-half&addType=&destinationAddress=&destinationView=standard", (response) -> setupArticles(response))
